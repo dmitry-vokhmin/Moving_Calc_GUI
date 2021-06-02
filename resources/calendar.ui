@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>452</width>
+    <height>413</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QFrame" name="frame">
+      <property name="styleSheet">
+       <string notr="true">.QFrame{
+border: 0.5px solid rgba(181, 184, 199, 0.5);
+background: #F9FAFB;
+border-radius: 10px;
+}
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>20</number>
+       </property>
+       <property name="topMargin">
+        <number>20</number>
+       </property>
+       <property name="rightMargin">
+        <number>20</number>
+       </property>
+       <property name="bottomMargin">
+        <number>20</number>
+       </property>
+       <item>
+        <widget class="QCalendarWidget" name="calendarWidget">
+         <property name="styleSheet">
+          <string notr="true">/* navigation bar */
+
+QCalendarWidget QMenu{
+    background-color: #F9FAFB;
+}
+#qt_calendar_calendarview {
+    background-color: #F9FAFB;
+    font: 16px;
+}
+#qt_calendar_monthbutton {
+    background-color: #F9FAFB;
+}
+#qt_calendar_yearbutton {
+    background-color: #F9FAFB;
+}
+#qt_calendar_yearedit {
+    background-color: #F9FAFB;
+}
+#qt_calendar_navigationbar {
+    background-color: #F9FAFB;
+}
+
+QCalendarWidget QWidget#qt_calendar_navigationbar { background-color: #F9FAFB;}
+QCalendarWidget QToolButton {
+	color: black;
+	font-size: 16px;
+	icon-size: 24px, 24px;
+}
+
+QCalendarWidget QToolButton:hover  {
+	border: none
+}
+
+QCalendarWidget QToolButton:pressed {
+	border: none
+}
+
+QCalendarWidget QToolButton#qt_calendar_prevmonth  {
+	qproperty-icon: url(:/image/left_arrow_default.svg);
+}
+
+QCalendarWidget QToolButton#qt_calendar_nextmonth {
+	qproperty-icon: url(:/image/right_arrow_default.svg);
+}
+
+QCalendarWidget QToolButton::menu-indicator#qt_calendar_monthbutton{
+	background-color: transparent;
+}
+
+/* header row */
+QCalendarWidget QWidget { 
+	alternate-background-color: #F9FAFB;
+}
+
+QCalendarWidget QMenu {
+	font-size: 16px;
+	background: #F9FAFB;
+	padding-left: 15px;
+    border: 0.5px solid rgba(181, 184, 199, 0.5);
+	border-radius: 8px;
+    color: #070808;
+    selection-background-color: #F2F3F6;
+	selection-color: #0915CC;
+}
+ 
+/* normal days */
+QCalendarWidget QAbstractItemView:enabled 
+{
+	outline: 0;
+	color: #070808;
+	selection-background-color: #0915CC;
+	selection-color: #FFFFFF;
+}
+ 
+/* days in other months */
+QCalendarWidget QAbstractItemView:disabled { color: #757C9F;}</string>
+         </property>
+         <property name="gridVisible">
+          <bool>false</bool>
+         </property>
+         <property name="selectionMode">
+          <enum>QCalendarWidget::SingleSelection</enum>
+         </property>
+         <property name="horizontalHeaderFormat">
+          <enum>QCalendarWidget::ShortDayNames</enum>
+         </property>
+         <property name="verticalHeaderFormat">
+          <enum>QCalendarWidget::NoVerticalHeader</enum>
+         </property>
+         <property name="navigationBarVisible">
+          <bool>true</bool>
+         </property>
+         <property name="dateEditEnabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>452</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
