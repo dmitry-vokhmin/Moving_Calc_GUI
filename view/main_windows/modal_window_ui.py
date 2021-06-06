@@ -1152,6 +1152,7 @@ class Ui_dialog(object):
                                                     "    border: 1px solid #FF3C2F;\n"
                                                     "}\n"
                                                     "\n"
+                                                    "\n"
                                                     "#inventory_item_header{\n"
                                                     "    font-size: 28px;\n"
                                                     "    color: #070808;\n"
@@ -1385,6 +1386,7 @@ class Ui_dialog(object):
                                                        "}\n"
                                                        "\n"
                                                        "QComboBox {\n"
+                                                       "    background: #FFFFFF;\n"
                                                        "    border-radius: 10px;\n"
                                                        "    border: 1px solid #B5B8C7;\n"
                                                        "    padding-left: 15px;\n"
@@ -1567,7 +1569,7 @@ class Ui_dialog(object):
         self.dialog_layout.addWidget(self.background_frame)
 
         self.retranslateUi(dialog)
-        self.pages.setCurrentIndex(7)
+        self.pages.setCurrentIndex(6)
         QtCore.QMetaObject.connectSlotsByName(dialog)
 
     def retranslateUi(self, dialog):
@@ -1634,7 +1636,7 @@ class Ui_dialog(object):
         self.add_asset_type_butt.setText(_translate("dialog", "Save"))
         self.inventory_item_header.setText(_translate("dialog", "Add new item"))
         self.inventory_item_text.setText(_translate("dialog", "Create new item for the inventory list."))
-        self.inventory_item_name_label.setText(_translate("dialog", "Asset type name"))
+        self.inventory_item_name_label.setText(_translate("dialog", "Item Name"))
         self.inventory_item_name_input.setPlaceholderText(_translate("dialog", "Enter item name"))
         self.error_inventory_item_name.setText(_translate("dialog", "Enter asset type name"))
         self.inventory_item_text_2.setText(_translate("dialog", "Enter item dimensions"))

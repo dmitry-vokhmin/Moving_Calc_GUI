@@ -21,11 +21,12 @@ class CalendarPage:
             self.add_dates(date)
 
     def set_price_tag(self, frame):
+        self.main_window.get_data(self.price_tag.get)
         self.main_window.delete_layout(frame.layout())
         config_price_type_button_layout = QHBoxLayout(frame)
         config_price_type_button_layout.setContentsMargins(20, 10, 0, 30)
         config_price_type_button_layout.setSpacing(5)
-        for idx, price_tag in enumerate(self.main_window.price_tag.price_tags):
+        for idx, price_tag in enumerate(self.price_tag.price_tags):
             config_butt = QPushButton(frame)
             config_butt.setCursor(QCursor(Qt.PointingHandCursor))
             config_butt.setCheckable(True)

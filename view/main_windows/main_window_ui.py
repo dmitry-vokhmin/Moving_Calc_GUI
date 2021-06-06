@@ -1430,7 +1430,7 @@ class Ui_MainWindow(object):
                                                      "    color: rgba(9, 21, 204, 0.8);\n"
                                                      "}\n"
                                                      "")
-        self.equip_new_asset_type_butt.setIconSize(QtCore.QSize(14, 14))
+        self.equip_new_asset_type_butt.setIconSize(QtCore.QSize(24, 24))
         self.equip_new_asset_type_butt.setObjectName("equip_new_asset_type_butt")
         self.equip_middle_layout.addWidget(self.equip_new_asset_type_butt, 0, QtCore.Qt.AlignRight)
         self.equip_new_asset_butt = QtWidgets.QPushButton(self.equip_middle_frame)
@@ -2350,7 +2350,8 @@ class Ui_MainWindow(object):
         self.inventory_search_layout.setSpacing(12)
         self.inventory_search_layout.setObjectName("inventory_search_layout")
         self.inventory_search_label = QtWidgets.QLabel(self.inventory_search_frame)
-        self.inventory_search_label.setMinimumSize(QtCore.QSize(18, 18))
+        self.inventory_search_label.setMinimumSize(QtCore.QSize(24, 24))
+        self.inventory_search_label.setMaximumSize(QtCore.QSize(24, 24))
         self.inventory_search_label.setStyleSheet("image: url(:/image/search_icon_default.svg);\n"
                                                   "background: #F2F3F6;")
         self.inventory_search_label.setText("")
@@ -2422,7 +2423,7 @@ class Ui_MainWindow(object):
         self.inventory_bottom_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.inventory_bottom_frame.setObjectName("inventory_bottom_frame")
         self.inventory_bottom_layout = QtWidgets.QHBoxLayout(self.inventory_bottom_frame)
-        self.inventory_bottom_layout.setContentsMargins(0, 0, 51, 0)
+        self.inventory_bottom_layout.setContentsMargins(0, 0, 49, 0)
         self.inventory_bottom_layout.setSpacing(50)
         self.inventory_bottom_layout.setObjectName("inventory_bottom_layout")
         self.inventory_size_menu = QtWidgets.QStackedWidget(self.inventory_bottom_frame)
@@ -2437,6 +2438,11 @@ class Ui_MainWindow(object):
                                                "\n"
                                                "QPushButton:hover {\n"
                                                "    border: 0.5px solid #0915CC;\n"
+                                               "}\n"
+                                               "\n"
+                                               "QPushButton:checked {\n"
+                                               "    border: 0.5px solid #0915CC;\n"
+                                               "    background: #F9FAFB;\n"
                                                "}")
         self.inventory_size_menu.setObjectName("inventory_size_menu")
         self.inventory_room_page = QtWidgets.QWidget()
@@ -2456,7 +2462,7 @@ class Ui_MainWindow(object):
         self.inventory_room_scrollarea.setWidgetResizable(True)
         self.inventory_room_scrollarea.setObjectName("inventory_room_scrollarea")
         self.inventory_room_frame = QtWidgets.QWidget()
-        self.inventory_room_frame.setGeometry(QtCore.QRect(0, 0, 217, 562))
+        self.inventory_room_frame.setGeometry(QtCore.QRect(0, 0, 100, 30))
         self.inventory_room_frame.setMinimumSize(QtCore.QSize(0, 0))
         self.inventory_room_frame.setObjectName("inventory_room_frame")
         self.inventory_room_layout_2 = QtWidgets.QVBoxLayout(self.inventory_room_frame)
@@ -2480,15 +2486,6 @@ class Ui_MainWindow(object):
         self.inventory_room_menu_layout.setContentsMargins(0, 0, 0, 0)
         self.inventory_room_menu_layout.setSpacing(2)
         self.inventory_room_menu_layout.setObjectName("inventory_room_menu_layout")
-        self.pushButton_4 = QtWidgets.QPushButton(self.inventory_room_menu_frame)
-        self.pushButton_4.setMinimumSize(QtCore.QSize(208, 54))
-        self.pushButton_4.setMaximumSize(QtCore.QSize(208, 54))
-        self.pushButton_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_4.setStyleSheet("")
-        self.pushButton_4.setIconSize(QtCore.QSize(20, 20))
-        self.pushButton_4.setCheckable(True)
-        self.pushButton_4.setObjectName("pushButton_4")
-        self.inventory_room_menu_layout.addWidget(self.pushButton_4)
         self.inventory_room_layout_3.addWidget(self.inventory_room_menu_frame, 0, QtCore.Qt.AlignTop)
         self.inventory_room_layout_2.addWidget(self.inventory_room_frame_2)
         self.inventory_room_scrollarea.setWidget(self.inventory_room_frame)
@@ -2518,6 +2515,7 @@ class Ui_MainWindow(object):
         self.inventory_preset_layout_2.setSpacing(0)
         self.inventory_preset_layout_2.setObjectName("inventory_preset_layout_2")
         self.inventory_preset_frame_2 = QtWidgets.QFrame(self.inventory_preset_frame)
+        self.inventory_preset_frame_2.setMinimumSize(QtCore.QSize(217, 0))
         self.inventory_preset_frame_2.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.inventory_preset_frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.inventory_preset_frame_2.setObjectName("inventory_preset_frame_2")
@@ -2533,15 +2531,6 @@ class Ui_MainWindow(object):
         self.inventory_preset_menu_layout.setContentsMargins(0, 0, 0, 0)
         self.inventory_preset_menu_layout.setSpacing(2)
         self.inventory_preset_menu_layout.setObjectName("inventory_preset_menu_layout")
-        self.pushButton = QtWidgets.QPushButton(self.inventory_preset_menu_frame)
-        self.pushButton.setMinimumSize(QtCore.QSize(208, 54))
-        self.pushButton.setMaximumSize(QtCore.QSize(208, 54))
-        self.pushButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton.setStyleSheet("")
-        self.pushButton.setIconSize(QtCore.QSize(20, 20))
-        self.pushButton.setCheckable(True)
-        self.pushButton.setObjectName("pushButton")
-        self.inventory_preset_menu_layout.addWidget(self.pushButton)
         self.inventory_preset_layout_3.addWidget(self.inventory_preset_menu_frame, 0, QtCore.Qt.AlignTop)
         self.inventory_preset_layout_2.addWidget(self.inventory_preset_frame_2)
         self.inventory_preset_scrollarea.setWidget(self.inventory_preset_frame)
@@ -2549,6 +2538,58 @@ class Ui_MainWindow(object):
         self.inventory_size_menu.addWidget(self.inventory_preset_page)
         self.inventory_bottom_layout.addWidget(self.inventory_size_menu)
         self.inventory_content_frame = QtWidgets.QFrame(self.inventory_bottom_frame)
+        self.inventory_content_frame.setStyleSheet("QComboBox {\n"
+                                                   "    color: #070808;\n"
+                                                   "    font-size: 14px;\n"
+                                                   "    border: 0.5px solid rgba(117, 124, 159, 0.5);\n"
+                                                   "    border-radius: 2px;\n"
+                                                   "    padding-left: 6px;\n"
+                                                   "    padding-right: 15px;\n"
+                                                   "}\n"
+                                                   "\n"
+                                                   "QComboBox:hover {\n"
+                                                   "    border: 0.5px solid #0915CC;\n"
+                                                   "}\n"
+                                                   "\n"
+                                                   "QComboBox::down-arrow {\n"
+                                                   "    image: url(:/image/arrow_drop_down_inventory_default.svg);\n"
+                                                   "}\n"
+                                                   "\n"
+                                                   "QComboBox::down-arrow:hover{\n"
+                                                   "    image: url(:/image/arrow_drop_down_inventory_hover.svg);\n"
+                                                   "}\n"
+                                                   "\n"
+                                                   "QComboBox::drop-down {\n"
+                                                   "    background: #F2F3F6;\n"
+                                                   "    width: 24px;\n"
+                                                   "}\n"
+                                                   "\n"
+                                                   "\n"
+                                                   "QComboBox QAbstractItemView\n"
+                                                   "{\n"
+                                                   "    background: #F9FAFB;\n"
+                                                   "    padding-left: 7px;\n"
+                                                   "    padding-right: 7px;\n"
+                                                   "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
+                                                   "    border-radius: 8px;\n"
+                                                   "    font-size: 14px;\n"
+                                                   "    outline: 0;\n"
+                                                   "}\n"
+                                                   "\n"
+                                                   "\n"
+                                                   "QComboBox QAbstractItemView::item { \n"
+                                                   "    min-height: 20px;\n"
+                                                   "    padding-left: 15px;\n"
+                                                   "    background: #F9FAFB;\n"
+                                                   "    color: #070808;\n"
+                                                   "}\n"
+                                                   "\n"
+                                                   "QListView::item:selected { \n"
+                                                   "    color: #0915CC; \n"
+                                                   "    background-color: #F2F3F6; \n"
+                                                   "    border-radius: 4px;\n"
+                                                   "}\n"
+                                                   "")
         self.inventory_content_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.inventory_content_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.inventory_content_frame.setObjectName("inventory_content_frame")
@@ -2561,6 +2602,35 @@ class Ui_MainWindow(object):
         self.inventory_categor_frame.setStyleSheet(".QFrame {\n"
                                                    "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
                                                    "    border-radius: 4px;\n"
+                                                   "}\n"
+                                                   "\n"
+                                                   "QLabel {\n"
+                                                   "    color: #070808;\n"
+                                                   "    font-size: 14px;\n"
+                                                   "}\n"
+                                                   "\n"
+                                                   "QPushButton {\n"
+                                                   "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
+                                                   "    border-radius: 16px;    \n"
+                                                   "    padding-left: 10px;\n"
+                                                   "    padding-right: 10px;\n"
+                                                   "    padding-top: 8px;\n"
+                                                   "    padding-bottom: 8px;\n"
+                                                   "    color: #757C9F;\n"
+                                                   "    font-size: 14px;\n"
+                                                   "    qproperty-icon: url(:/image/check_icon_default.svg);\n"
+                                                   "    icon-size: 18px, 18px;\n"
+                                                   "    background: #F9FAFB;\n"
+                                                   "}\n"
+                                                   "\n"
+                                                   "QPushButton:hover {\n"
+                                                   "    border: 0.5px solid #0915CC;\n"
+                                                   "    color: #0915CC;\n"
+                                                   "}\n"
+                                                   "\n"
+                                                   "QPushButton:checked {\n"
+                                                   "    border: 0.5px solid #0915CC;\n"
+                                                   "    color: #0915CC;\n"
                                                    "}")
         self.inventory_categor_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.inventory_categor_frame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -2570,38 +2640,14 @@ class Ui_MainWindow(object):
         self.inventory_categor_layout.setSpacing(10)
         self.inventory_categor_layout.setObjectName("inventory_categor_layout")
         self.inventory_categor_label = QtWidgets.QLabel(self.inventory_categor_frame)
-        self.inventory_categor_label.setStyleSheet("color: #070808;\n"
-                                                   "font-size: 14px;")
+        self.inventory_categor_label.setStyleSheet("")
         self.inventory_categor_label.setObjectName("inventory_categor_label")
         self.inventory_categor_layout.addWidget(self.inventory_categor_label)
         self.inventory_categor_butt_frame = QtWidgets.QFrame(self.inventory_categor_frame)
         self.inventory_categor_butt_frame.setStyleSheet("QFrame {\n"
                                                         "    border: none;\n"
                                                         "}\n"
-                                                        "\n"
-                                                        "QPushButton {\n"
-                                                        "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                                        "    border-radius: 16px;    \n"
-                                                        "    padding-left: 10px;\n"
-                                                        "    padding-right: 10px;\n"
-                                                        "    padding-top: 8px;\n"
-                                                        "    padding-bottom: 8px;\n"
-                                                        "    color: #757C9F;\n"
-                                                        "    font-size: 14px;\n"
-                                                        "    qproperty-icon: url(:/image/check_icon_default.svg);\n"
-                                                        "    icon-size: 18px, 18px;\n"
-                                                        "    background: #F9FAFB;\n"
-                                                        "}\n"
-                                                        "\n"
-                                                        "QPushButton:hover {\n"
-                                                        "    border: 0.5px solid #0915CC;\n"
-                                                        "    color: #0915CC;\n"
-                                                        "}\n"
-                                                        "\n"
-                                                        "QPushButton:checked {\n"
-                                                        "    border: 0.5px solid #0915CC;\n"
-                                                        "    color: #0915CC;\n"
-                                                        "}")
+                                                        "")
         self.inventory_categor_butt_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.inventory_categor_butt_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.inventory_categor_butt_frame.setObjectName("inventory_categor_butt_frame")
@@ -2630,9 +2676,20 @@ class Ui_MainWindow(object):
         self.config_peak_butt_2.setCheckable(True)
         self.config_peak_butt_2.setObjectName("config_peak_butt_2")
         self.inventory_categor_butt_layout.addWidget(self.config_peak_butt_2)
-        self.inventory_categor_layout.addWidget(self.inventory_categor_butt_frame, 0, QtCore.Qt.AlignLeft)
+        self.inventory_categor_layout.addWidget(self.inventory_categor_butt_frame)
         self.inventory_content_layout.addWidget(self.inventory_categor_frame, 0, QtCore.Qt.AlignTop)
-        self.inventory_content_clear_frame = QtWidgets.QFrame(self.inventory_content_frame)
+        self.inventory_content_scrollarea = QtWidgets.QScrollArea(self.inventory_content_frame)
+        self.inventory_content_scrollarea.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.inventory_content_scrollarea.setWidgetResizable(True)
+        self.inventory_content_scrollarea.setObjectName("inventory_content_scrollarea")
+        self.inventory_content_scroll_frame = QtWidgets.QWidget()
+        self.inventory_content_scroll_frame.setGeometry(QtCore.QRect(0, 0, 990, 437))
+        self.inventory_content_scroll_frame.setObjectName("inventory_content_scroll_frame")
+        self.inventory_content_scroll_layout = QtWidgets.QVBoxLayout(self.inventory_content_scroll_frame)
+        self.inventory_content_scroll_layout.setContentsMargins(0, 0, 0, 0)
+        self.inventory_content_scroll_layout.setSpacing(0)
+        self.inventory_content_scroll_layout.setObjectName("inventory_content_scroll_layout")
+        self.inventory_content_clear_frame = QtWidgets.QFrame(self.inventory_content_scroll_frame)
         self.inventory_content_clear_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.inventory_content_clear_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.inventory_content_clear_frame.setObjectName("inventory_content_clear_frame")
@@ -2854,12 +2911,12 @@ class Ui_MainWindow(object):
         self.frame_21 = QtWidgets.QFrame(self.inventory_content_clear_frame)
         self.frame_21.setMinimumSize(QtCore.QSize(324, 119))
         self.frame_21.setMaximumSize(QtCore.QSize(324, 119))
-        self.frame_21.setStyleSheet(".QFrame {\n"
+        self.frame_21.setStyleSheet("#frame_21 {\n"
                                     "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
                                     "    border-radius: 10px;\n"
                                     "}\n"
                                     "\n"
-                                    ".QFrame:hover {\n"
+                                    "#frame_21:hover {\n"
                                     "    border: 0.5px solid #0915CC;\n"
                                     "}")
         self.frame_21.setFrameShape(QtWidgets.QFrame.NoFrame)
@@ -2870,7 +2927,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_13.setSpacing(15)
         self.verticalLayout_13.setObjectName("verticalLayout_13")
         self.frame_22 = QtWidgets.QFrame(self.frame_21)
-        self.frame_22.setStyleSheet("border: none;")
+        self.frame_22.setStyleSheet("")
         self.frame_22.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_22.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_22.setObjectName("frame_22")
@@ -2889,6 +2946,7 @@ class Ui_MainWindow(object):
         self.profile_delete_butt_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.profile_delete_butt_3.setLayoutDirection(QtCore.Qt.RightToLeft)
         self.profile_delete_butt_3.setStyleSheet("QPushButton {\n"
+                                                 "    border:none;\n"
                                                  "    background: transparent;\n"
                                                  "    font-size: 14px;\n"
                                                  "    color: #757C9F;\n"
@@ -2905,58 +2963,7 @@ class Ui_MainWindow(object):
         self.comboBox.setMinimumSize(QtCore.QSize(55, 24))
         self.comboBox.setMaximumSize(QtCore.QSize(55, 24))
         self.comboBox.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.comboBox.setStyleSheet("QComboBox {\n"
-                                    "    color: #070808;\n"
-                                    "    font-size: 14px;\n"
-                                    "    border: 0.5px solid rgba(117, 124, 159, 0.5);\n"
-                                    "    border-radius: 2px;\n"
-                                    "    padding-left: 6px;\n"
-                                    "    padding-right: 15px;\n"
-                                    "}\n"
-                                    "\n"
-                                    "QComboBox:hover {\n"
-                                    "    border: 0.5px solid #0915CC;\n"
-                                    "}\n"
-                                    "\n"
-                                    "QComboBox::down-arrow {\n"
-                                    "    image: url(:/image/arrow_drop_down_inventory_default.svg);\n"
-                                    "}\n"
-                                    "\n"
-                                    "QComboBox::down-arrow:hover{\n"
-                                    "    image: url(:/image/arrow_drop_down_inventory_hover.svg);\n"
-                                    "}\n"
-                                    "\n"
-                                    "QComboBox::drop-down {\n"
-                                    "    background: #F2F3F6;\n"
-                                    "    width: 24px;\n"
-                                    "}\n"
-                                    "\n"
-                                    "\n"
-                                    "QComboBox QAbstractItemView\n"
-                                    "{\n"
-                                    "    background: #F9FAFB;\n"
-                                    "    padding-left: 7px;\n"
-                                    "    padding-right: 7px;\n"
-                                    "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                    "    border-radius: 8px;\n"
-                                    "    font-size: 14px;\n"
-                                    "    outline: 0;\n"
-                                    "}\n"
-                                    "\n"
-                                    "\n"
-                                    "QComboBox QAbstractItemView::item { \n"
-                                    "    min-height: 20px;\n"
-                                    "    padding-left: 15px;\n"
-                                    "    background: #F9FAFB;\n"
-                                    "    color: #070808;\n"
-                                    "}\n"
-                                    "\n"
-                                    "QListView::item:selected { \n"
-                                    "    color: #0915CC; \n"
-                                    "    background-color: #F2F3F6; \n"
-                                    "    border-radius: 4px;\n"
-                                    "}\n"
-                                    "")
+        self.comboBox.setStyleSheet("")
         self.comboBox.setObjectName("comboBox")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
@@ -2968,7 +2975,6 @@ class Ui_MainWindow(object):
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.horizontalLayout_11.addWidget(self.comboBox, 0, QtCore.Qt.AlignTop)
-        self.horizontalLayout_11.setStretch(1, 1)
         self.verticalLayout_13.addWidget(self.frame_22)
         self.label_16 = QtWidgets.QLabel(self.frame_21)
         self.label_16.setStyleSheet("color: #070808;\n"
@@ -2976,8 +2982,9 @@ class Ui_MainWindow(object):
         self.label_16.setObjectName("label_16")
         self.verticalLayout_13.addWidget(self.label_16)
         self.inventory_content_clear_layout.addWidget(self.frame_21)
-        self.inventory_content_layout.addWidget(self.inventory_content_clear_frame)
-        self.inventory_content_layout.setStretch(1, 1)
+        self.inventory_content_scroll_layout.addWidget(self.inventory_content_clear_frame)
+        self.inventory_content_scrollarea.setWidget(self.inventory_content_scroll_frame)
+        self.inventory_content_layout.addWidget(self.inventory_content_scrollarea)
         self.inventory_bottom_layout.addWidget(self.inventory_content_frame)
         self.inventory_bottom_layout.setStretch(1, 1)
         self.inventory_page_layout.addWidget(self.inventory_bottom_frame)
@@ -2994,7 +3001,7 @@ class Ui_MainWindow(object):
         self.content_pages.setCurrentIndex(5)
         self.equip_truck_pages.setCurrentIndex(0)
         self.config_pages.setCurrentIndex(0)
-        self.inventory_size_menu.setCurrentIndex(0)
+        self.inventory_size_menu.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -3115,8 +3122,6 @@ class Ui_MainWindow(object):
         self.inventory_search_input.setPlaceholderText(_translate("MainWindow", "Search..."))
         self.inventory_save_butt.setText(_translate("MainWindow", "Save Changes "))
         self.inventory_add_butt.setText(_translate("MainWindow", "Add New Item "))
-        self.pushButton_4.setText(_translate("MainWindow", "  All Items"))
-        self.pushButton.setText(_translate("MainWindow", "  All Items"))
         self.inventory_categor_label.setText(_translate("MainWindow", "Categories:"))
         self.inventory_cat_butt_sample.setText(_translate("MainWindow", "Boxes, Totes"))
         self.inven.setText(_translate("MainWindow", "Dresser, Mirror"))

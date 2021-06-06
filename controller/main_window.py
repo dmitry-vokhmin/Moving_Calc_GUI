@@ -29,7 +29,7 @@ from model.truck.truck import Truck
 from model.truck.truck_type import TruckType
 from model.calendar.calendar import Calendar
 from model.mover_amount.mover_amount import MoverAmount
-from model.price_tag.price_tag import PriceTag
+from model.move_size.move_size import MoveSize
 
 
 class MainWindow(QMainWindow):
@@ -50,8 +50,8 @@ class MainWindow(QMainWindow):
         self.truck = Truck()
         self.truck_type = TruckType()
         self.calendar = Calendar()
+        self.move_size = MoveSize()
         self.mover_amount = MoverAmount()
-        self.price_tag = PriceTag()
         self.modal_window = ModalWindow(self)
         self.login_page = LoginPage(self)
         self.reg_page = RegistrationPage(self)
@@ -65,9 +65,12 @@ class MainWindow(QMainWindow):
         self.check_authorization()
         self.get_price_tags()
         self.get_mover_amount()
+        self.get_move_size()
+
+    def get_move_size(self):
+        self.get_data(self.move_size.get)
 
     def get_price_tags(self):
-        self.get_data(self.price_tag.get)
         self.calendar_ui.set_price_tag(self.ui.config_price_type_butt_frame)
         self.calendar_ui.set_calendars()
         self.configuration_page.set_event_filter()
@@ -96,12 +99,13 @@ class MainWindow(QMainWindow):
         if response_code > 399:
             print(response_data)
         else:
-            return response_code, response_data
+            return response_data
 
     def get_user(self):
         response_code, response_data = self.user.get()
         if response_code > 399:
             print(response_data)
+            raise Exception
         else:
             self.get_privilege()
 

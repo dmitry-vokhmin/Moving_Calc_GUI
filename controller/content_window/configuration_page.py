@@ -97,7 +97,7 @@ class ConfigurationPage(QWidget):
                 if checked_button != button:
                     button.setChecked(False)
                     button.setIcon(QIcon(":/image/check_icon_default.svg"))
-                elif checked_button == button and not checked_button.isChecked():
+                elif checked_button == button:
                     checked_button.setChecked(True)
             if self.price_page:
                 self.main_window.price_settings_ui.set_movers_prices(checked_button.__getattribute__("id"))

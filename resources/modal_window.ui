@@ -101,7 +101,7 @@ QRadioButton {
       <item>
        <widget class="QStackedWidget" name="pages">
         <property name="currentIndex">
-         <number>6</number>
+         <number>7</number>
         </property>
         <widget class="QWidget" name="add_user_page">
          <layout class="QVBoxLayout" name="add_user_layout">
@@ -2393,6 +2393,7 @@ QLineEdit[error=true] {
 	border: 1px solid #FF3C2F;
 }
 
+
 #inventory_item_header{
 	font-size: 28px;
 	color: #070808;
@@ -2480,7 +2481,7 @@ QLineEdit[error=true] {
                 <string notr="true">margin-bottom: 5px;</string>
                </property>
                <property name="text">
-                <string>Asset type name</string>
+                <string>Item Name</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignJustify|Qt::AlignVCenter</set>
@@ -2902,6 +2903,7 @@ QLineEdit[error=true] {
 }
 
 QComboBox {
+	background: #FFFFFF;
 	border-radius: 10px;
 	border: 1px solid #B5B8C7;
 	padding-left: 15px;
@@ -3100,7 +3102,7 @@ QListView::item:selected {
                 <string notr="true"/>
                </property>
                <property name="text">
-                <string>Enter asset name</string>
+                <string>Enter item quantity</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignJustify|Qt::AlignVCenter</set>
