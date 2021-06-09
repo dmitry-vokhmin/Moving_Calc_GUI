@@ -46,6 +46,7 @@ class InventoryItemPresetPage(QDialog):
 
     def get_data(self):
         return {
+            "count": self.main_modal_window.ui.inventory_preset_qty_input.text(),
             "inventory_id": self.inventory_id,
             "move_size_id": self.main_modal_window.ui.inventory_preset_combobox.currentData()
         }

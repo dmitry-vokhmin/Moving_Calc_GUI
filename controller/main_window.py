@@ -110,7 +110,8 @@ class MainWindow(QMainWindow):
             self.get_privilege()
 
     def get_privilege(self):
-        response_code, response_data = UserPrivilege.get()
+        user_privilege = UserPrivilege()
+        response_code, response_data = user_privilege.get()
         if response_code > 399:
             print(response_data)
         else:

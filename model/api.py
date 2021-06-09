@@ -28,12 +28,22 @@ class Api:
 
     def get(self, model):
         url = urljoin(self._domain, model._end_point)
-        response = requests.get(url, headers={"Authorization": f"Bearer {authorization.Authorization()._token}"})
+        if model.query_param:
+            response = requests.get(url,
+                                    params=model.query_param,
+                                    headers={"Authorization": f"Bearer {authorization.Authorization()._token}"}
+                                    )
+        else:
+            response = requests.get(url, headers={"Authorization": f"Bearer {authorization.Authorization()._token}"})
         return response.status_code, response.json()
 
     def delete(self, model):
         url = urljoin(self._domain, model._end_point)
-        response = requests.delete(url,
-                                   json=model.to_json,
-                                   headers={"Authorization": f"Bearer {authorization.Authorization()._token}"})
+        if model.query_param:
+            response = requests.delete(url,
+                                       params=model.query_param,
+                                       headers={"Authorization": f"Bearer {authorization.Authorization()._token}"}
+                                       )
+        else:
+            response = requests.delete(url, headers={"Authorization": f"Bearer {authorization.Authorization()._token}"})
         return response.status_code, response.json()

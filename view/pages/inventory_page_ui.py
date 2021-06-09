@@ -11,6 +11,7 @@ class InventoryPageUi:
         self.first_butt_preset = None
 
     def change_page_selector_style(self, is_all_inventory):
+        self.main_window.ui.inventory_reset_btn.setVisible(not is_all_inventory)
         self.main_window.ui.inventory_all_menu_butt.setProperty("selected", is_all_inventory)
         self.main_window.ui.inventory_all_menu_butt.setStyle(self.main_window.ui.inventory_all_menu_butt.style())
         self.main_window.ui.inventory_preset_choose_butt.setProperty("selected", not is_all_inventory)
@@ -39,6 +40,7 @@ class InventoryPageUi:
             if is_preset_menu:
                 room_menu_butt.setText(room["move_size"]["name"].title().replace("_", " "))
                 room_menu_butt.setIcon(QIcon(":/image/inventory_preset_image.svg"))
+                room_menu_butt.__setattr__("inventory_collection_id", room["id"])
                 room_menu_butt.clicked.connect(funk({"inventory_collection_id": room["id"]}, room_menu_butt, True))
                 if idx == 0:
                     self.first_butt_preset = room_menu_butt
@@ -80,7 +82,6 @@ class InventoryPageUi:
             add_funk,
             is_preset_menu,
             instance,
-            inventory_collection_id=None
     ):
         for button in self.main_window.ui.inventory_content_clear_frame.findChildren(QPushButton):
             button.removeEventFilter(instance)
@@ -94,7 +95,6 @@ class InventoryPageUi:
                                      inventory_content_clear_layout,
                                      self.main_window.ui.inventory_content_clear_frame,
                                      del_funk,
-                                     inventory_collection_id,
                                      instance)
             elif inventory["company_id"]:
                 self.set_custom_room_card(inventory,
@@ -110,7 +110,7 @@ class InventoryPageUi:
                                    add_funk,
                                    instance)
 
-    def set_preset_card(self, inventory, layout, frame, del_funk, inventory_collection_id, instance):
+    def set_preset_card(self, inventory, layout, frame, del_funk, instance):
         card_main_frame = QFrame(frame)
         card_main_frame.setMinimumSize(QSize(324, 119))
         card_main_frame.setMaximumSize(QSize(324, 119))
@@ -124,8 +124,8 @@ class InventoryPageUi:
                                       "}")
         card_main_frame.setFrameShape(QFrame.NoFrame)
         card_main_frame.setFrameShadow(QFrame.Raised)
-        card_main_frame.__setattr__("category_id", inventory["inventory_category_id"])
-        card_main_frame.__setattr__("item_name", inventory["name"])
+        card_main_frame.__setattr__("inventory_id", inventory["inventory_id"])
+        card_main_frame.__setattr__("inventory_collection_id", inventory["inventory_collection_id"])
         card_main_frame.setObjectName("card_main_frame")
         card_main_layout = QVBoxLayout(card_main_frame)
         card_main_layout.setContentsMargins(15, 15, 15, 15)
@@ -160,28 +160,30 @@ class InventoryPageUi:
         delete_item_butt.setIconSize(QSize(24, 24))
         delete_item_butt.setText("Delete")
         delete_item_butt.clicked.connect(
-            lambda: self.main_window.modal_window.show_confirm_dialog(del_funk(inventory["id"],
-                                                                               inventory_collection_id))
+            lambda: self.main_window.modal_window.show_confirm_dialog(del_funk(inventory["inventory_id"],
+                                                                               inventory["inventory_collection_id"]))
         )
         delete_item_butt.installEventFilter(instance)
         delete_item_butt.setObjectName("delete")
         inner_layout.addWidget(delete_item_butt, 0, Qt.AlignLeft | Qt.AlignTop)
         combobox = QComboBox(inner_frame)
-        combobox.setMinimumSize(QSize(55, 24))
-        combobox.setMaximumSize(QSize(55, 24))
+        combobox.setMinimumSize(QSize(60, 24))
+        combobox.setMaximumSize(QSize(60, 24))
         combobox.setCursor(QCursor(Qt.PointingHandCursor))
         combobox.view().window().setWindowFlags(
             Qt.Popup | Qt.FramelessWindowHint | Qt.NoDropShadowWindowHint
         )
         combobox.setItemDelegate(QStyledItemDelegate())
-        for number in range(1, 11):
+        combobox.setEditable(True)
+        combobox.addItem(str(inventory["count"]))
+        for number in range(1, 10):
             combobox.addItem(str(number))
         inner_layout.addWidget(combobox, 0, Qt.AlignTop)
         card_main_layout.addWidget(inner_frame)
         item_description = QLabel(card_main_frame)
         item_description.setStyleSheet("color: #070808;\n"
                                        "font-size: 14px;")
-        item_description.setText(inventory["name"].title())
+        item_description.setText(inventory["inventories"]["name"].title())
         card_main_layout.addWidget(item_description)
         layout.addWidget(card_main_frame)
 

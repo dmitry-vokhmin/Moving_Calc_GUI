@@ -1,10 +1,12 @@
 from model.api import Api
+from model.models import Model
 
 
-class UserRole:
+class UserRole(Model):
     _end_point = "/user_role/"
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
+        super(UserRole, self).__init__(*args, **kwargs)
         self.children_roles = None
 
     def get(self):
@@ -13,3 +15,17 @@ class UserRole:
         if response_code < 399:
             self.children_roles = response_data
         return response_code, response_data
+
+
+# class UserRole:
+#     _end_point = "/user_role/"
+#
+#     def __init__(self):
+#         self.children_roles = None
+#
+#     def get(self):
+#         api = Api()
+#         response_code, response_data = api.get(self)
+#         if response_code < 399:
+#             self.children_roles = response_data
+#         return response_code, response_data

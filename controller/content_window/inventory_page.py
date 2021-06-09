@@ -1,11 +1,12 @@
 import re
-from PyQt5.QtWidgets import QWidget, QFrame, QPushButton
+from PyQt5.QtWidgets import QWidget, QFrame, QPushButton, QComboBox
 from PyQt5.QtGui import QIcon
-from PyQt5.QtCore import QEvent, QSize
+from PyQt5.QtCore import QEvent
 from model.inventory_category.inventory_category import InventoryCategory
 from model.inventory.inventory import Inventory
 from model.room_collection.room_collection import RoomCollection
 from model.inventory_collections.inventory_collection import InventoryCollection
+from model.inventory_inventory_collection.inventory_inventory_collection import InventoryInventoryCollection
 
 
 class InventoryPage(QWidget):
@@ -29,13 +30,43 @@ class InventoryPage(QWidget):
         self.main_window.ui.inventory_search_clear.clicked.connect(
             lambda: self.main_window.ui.inventory_search_input.clear()
         )
+        self.main_window.ui.inventory_reset_btn.clicked.connect(self.reset)
+        self.main_window.ui.inventory_reset_btn.installEventFilter(self)
+
+    def reset(self):
+        for button in self.main_window.ui.inventory_preset_menu_frame.findChildren(QPushButton):
+            if button.isChecked():
+                inventory_collection_id = button.__getattribute__("inventory_collection_id")
+        inventory_collection = InventoryCollection(inventory_collection_id=inventory_collection_id)
+        response_code, response_data = inventory_collection.delete()
+        if response_code > 399:
+            self.main_window.modal_window.show_notification_page(response_data, is_error=True)
+        else:
+            self.main_window.modal_window.show_notification_page(response_data, is_error=False)
 
     def change_inside_page(self, is_all_inventory, page):
         self.main_window.inventory_ui.change_page_selector_style(is_all_inventory)
         self.main_window.ui.inventory_size_menu.setCurrentWidget(page)
 
     def update_preset(self):
-        pass
+        data = self.get_update_data()
+        inventory_collection_api = InventoryInventoryCollection(*data)
+        response_code, response_data = inventory_collection_api.put()
+        if response_code > 399:
+            self.main_window.modal_window.show_notification_page(response_data, is_error=True)
+        else:
+            self.main_window.modal_window.show_notification_page(response_data, is_error=False)
+
+    def get_update_data(self):
+        data = []
+        for frame in self.main_window.ui.inventory_content_clear_frame.findChildren(QFrame, "card_main_frame"):
+            data_frame = {
+                "inventory_id": frame.__getattribute__("inventory_id"),
+                "inventory_collection_id": frame.__getattribute__("inventory_collection_id"),
+                "count": frame.findChild(QComboBox).currentText()
+            }
+            data.append(data_frame)
+        return data
 
     def get_response(self, end_point, room_id=None):
         if room_id:
@@ -59,13 +90,15 @@ class InventoryPage(QWidget):
     def get_inventory(self, button_attribute, button, is_preset):
         def wrap():
             self.select_menu_point(button, is_preset)
-            inventory = self.get_response(Inventory, button_attribute)
+            if is_preset:
+                inventory = self.get_response(InventoryInventoryCollection, button_attribute)
+            else:
+                inventory = self.get_response(Inventory, button_attribute)
             self.main_window.inventory_ui.set_room_inventory_card(inventory,
                                                                   self.del_item,
                                                                   self.add_item,
                                                                   is_preset,
-                                                                  self,
-                                                                  button_attribute)
+                                                                  self)
         return wrap
 
     def select_menu_point(self, button, is_preset):
@@ -85,12 +118,12 @@ class InventoryPage(QWidget):
 
         return wrap
 
-    def del_item(self, inventory_id, inventory_collection: dict = None):
+    def del_item(self, inventory_id, inventory_collection_id: int = None):
         def wrap():
-            if inventory_collection:
-                inventory_collection_api = InventoryCollection(
+            if inventory_collection_id:
+                inventory_collection_api = InventoryInventoryCollection(
                     inventory_id=inventory_id,
-                    inventory_collection_id=inventory_collection["inventory_collection_id"]
+                    inventory_collection_id=inventory_collection_id
                 )
                 inventory_collection_api.delete()
             else:
@@ -180,4 +213,11 @@ class InventoryPage(QWidget):
                     "background: #F2F3F6;border-radius: 5px;")
                 self.main_window.ui.inventory_search_label.setStyleSheet(
                     "image: url(:/image/search_icon_default.svg);background: #F2F3F6;")
+        if obj is self.main_window.ui.inventory_reset_btn:
+            if event.type() == QEvent.HoverEnter:
+                obj.setIcon(QIcon(":/image/inventory_reset_hover.svg"))
+                return True
+            if event.type() == QEvent.HoverLeave:
+                obj.setIcon(QIcon(":/image/inventory_reset_default.svg"))
+                return True
         return False

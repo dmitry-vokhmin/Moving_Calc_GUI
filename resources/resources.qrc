@@ -60,5 +60,15 @@
         <file alias="check_icon_white.svg">image/check_icon_white.svg</file>
         <file alias="inventory_preset_image.svg">image/inventory_preset_image.svg</file>
         <file alias="search_icon_hover.svg">image/search_icon_hover.svg</file>
+        <file alias="inventory_reset_default.svg">image/inventory_reset_default.svg</file>
+        <file alias="inventory_reset_hover.svg">image/inventory_reset_hover.svg</file>
+        <file alias="calculator_white_arrow.svg">image/calculator_white_arrow.svg</file>
+        <file alias="calculator_menu_line_default.svg">image/calculator_menu_line_default.svg</file>
+        <file alias="calculator_menu_line_selected.svg">image/calculator_menu_line_selected.svg</file>
+        <file alias="calculator_zip_code_icon.svg">image/calculator_zip_code_icon.svg</file>
+        <file alias="calculator_service_icon.svg">image/calculator_service_icon.svg</file>
+        <file alias="calculator_move_size_icon.svg">image/calculator_move_size_icon.svg</file>
+        <file alias="calculator_entrance_icon.svg">image/calculator_entrance_icon.svg</file>
+        <file alias="calculator_calendar_icon.svg">image/calculator_calendar_icon.svg</file>
     </qresource>
 </RCC>

@@ -750,14 +750,1985 @@ class Ui_MainWindow(object):
         self.calculator_page = QtWidgets.QWidget()
         self.calculator_page.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.calculator_page.setObjectName("calculator_page")
-        self.label = QtWidgets.QLabel(self.calculator_page)
-        self.label.setGeometry(QtCore.QRect(600, 340, 175, 49))
-        font = QtGui.QFont()
-        font.setFamily("Inter")
-        font.setPointSize(30)
-        self.label.setFont(font)
-        self.label.setAlignment(QtCore.Qt.AlignCenter)
-        self.label.setObjectName("label")
+        self.calculator_layout = QtWidgets.QVBoxLayout(self.calculator_page)
+        self.calculator_layout.setContentsMargins(0, 0, 0, 0)
+        self.calculator_layout.setSpacing(0)
+        self.calculator_layout.setObjectName("calculator_layout")
+        self.calc_main_frame = QtWidgets.QFrame(self.calculator_page)
+        self.calc_main_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_main_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_main_frame.setObjectName("calc_main_frame")
+        self.calc_main_layout = QtWidgets.QVBoxLayout(self.calc_main_frame)
+        self.calc_main_layout.setContentsMargins(30, 50, 45, 0)
+        self.calc_main_layout.setSpacing(10)
+        self.calc_main_layout.setObjectName("calc_main_layout")
+        self.calc_header = QtWidgets.QLabel(self.calc_main_frame)
+        self.calc_header.setStyleSheet("color: #070808;\n"
+                                       "font-size: 28px;")
+        self.calc_header.setObjectName("calc_header")
+        self.calc_main_layout.addWidget(self.calc_header)
+        self.calc_menu_step_frame = QtWidgets.QFrame(self.calc_main_frame)
+        self.calc_menu_step_frame.setStyleSheet("QFrame {\n"
+                                                "    background: #F9FAFB;\n"
+                                                "    border-radius: 5px;\n"
+                                                "}")
+        self.calc_menu_step_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_menu_step_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_menu_step_frame.setObjectName("calc_menu_step_frame")
+        self.calc_menu_step_layout = QtWidgets.QHBoxLayout(self.calc_menu_step_frame)
+        self.calc_menu_step_layout.setContentsMargins(15, 10, 15, 10)
+        self.calc_menu_step_layout.setSpacing(0)
+        self.calc_menu_step_layout.setObjectName("calc_menu_step_layout")
+        self.cacl_menu_label_frame = QtWidgets.QFrame(self.calc_menu_step_frame)
+        self.cacl_menu_label_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.cacl_menu_label_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.cacl_menu_label_frame.setObjectName("cacl_menu_label_frame")
+        self.cacl_menu_label_layout = QtWidgets.QHBoxLayout(self.cacl_menu_label_frame)
+        self.cacl_menu_label_layout.setContentsMargins(0, 0, 0, 0)
+        self.cacl_menu_label_layout.setSpacing(10)
+        self.cacl_menu_label_layout.setObjectName("cacl_menu_label_layout")
+        self.calc_1_sign = QtWidgets.QLabel(self.cacl_menu_label_frame)
+        self.calc_1_sign.setMinimumSize(QtCore.QSize(40, 40))
+        self.calc_1_sign.setMaximumSize(QtCore.QSize(40, 40))
+        self.calc_1_sign.setStyleSheet("QLabel {\n"
+                                       "    border: 1px solid #0915CC;\n"
+                                       "    border-radius: 20px;\n"
+                                       "    color: #0915CC;\n"
+                                       "    font-size: 16px;\n"
+                                       "}\n"
+                                       "\n"
+                                       "QLabel[next=true] {\n"
+                                       "    color: #FFFFFF;\n"
+                                       "    background: #0915CC;\n"
+                                       "}\n"
+                                       "")
+        self.calc_1_sign.setAlignment(QtCore.Qt.AlignCenter)
+        self.calc_1_sign.setObjectName("calc_1_sign")
+        self.cacl_menu_label_layout.addWidget(self.calc_1_sign)
+        self.calc_1_text = QtWidgets.QLabel(self.cacl_menu_label_frame)
+        self.calc_1_text.setStyleSheet("color: #0915CC;\n"
+                                       "font-size: 14px;")
+        self.calc_1_text.setObjectName("calc_1_text")
+        self.cacl_menu_label_layout.addWidget(self.calc_1_text)
+        self.calc_1_line = QtWidgets.QLabel(self.cacl_menu_label_frame)
+        self.calc_1_line.setMinimumSize(QtCore.QSize(40, 0))
+        self.calc_1_line.setMaximumSize(QtCore.QSize(40, 16777215))
+        self.calc_1_line.setStyleSheet("QLabel {\n"
+                                       "    image: url(:/image/calculator_menu_line_default.svg);\n"
+                                       "}\n"
+                                       "\n"
+                                       "QLabel[selected=true] {\n"
+                                       "    image: url(:/image/calculator_menu_line_selected.svg);\n"
+                                       "}\n"
+                                       "")
+        self.calc_1_line.setText("")
+        self.calc_1_line.setObjectName("calc_1_line")
+        self.cacl_menu_label_layout.addWidget(self.calc_1_line)
+        self.calc_2_sign = QtWidgets.QLabel(self.cacl_menu_label_frame)
+        self.calc_2_sign.setMinimumSize(QtCore.QSize(40, 40))
+        self.calc_2_sign.setMaximumSize(QtCore.QSize(40, 40))
+        self.calc_2_sign.setStyleSheet("QLabel {\n"
+                                       "    border: 0.5px solid rgba(9, 21, 204, 0.25);\n"
+                                       "    border-radius: 20px;\n"
+                                       "    color: #0915CC;\n"
+                                       "    font-size: 16px;\n"
+                                       "}\n"
+                                       "\n"
+                                       "QLabel[next=true] {\n"
+                                       "    color: #FFFFFF;\n"
+                                       "    background: #0915CC;\n"
+                                       "}\n"
+                                       "\n"
+                                       "QLabel[selected=true] {\n"
+                                       "    border: 1px solid #0915CC;\n"
+                                       "}")
+        self.calc_2_sign.setAlignment(QtCore.Qt.AlignCenter)
+        self.calc_2_sign.setObjectName("calc_2_sign")
+        self.cacl_menu_label_layout.addWidget(self.calc_2_sign)
+        self.calc_2_text = QtWidgets.QLabel(self.cacl_menu_label_frame)
+        self.calc_2_text.setStyleSheet("color: #0915CC;\n"
+                                       "font-size: 14px;")
+        self.calc_2_text.setObjectName("calc_2_text")
+        self.cacl_menu_label_layout.addWidget(self.calc_2_text)
+        self.calc_2_line = QtWidgets.QLabel(self.cacl_menu_label_frame)
+        self.calc_2_line.setMinimumSize(QtCore.QSize(40, 0))
+        self.calc_2_line.setMaximumSize(QtCore.QSize(40, 16777215))
+        self.calc_2_line.setStyleSheet("QLabel {\n"
+                                       "    image: url(:/image/calculator_menu_line_default.svg);\n"
+                                       "}\n"
+                                       "\n"
+                                       "QLabel[selected=true] {\n"
+                                       "    image: url(:/image/calculator_menu_line_selected.svg);\n"
+                                       "}")
+        self.calc_2_line.setText("")
+        self.calc_2_line.setObjectName("calc_2_line")
+        self.cacl_menu_label_layout.addWidget(self.calc_2_line)
+        self.calc_3_sign = QtWidgets.QLabel(self.cacl_menu_label_frame)
+        self.calc_3_sign.setMinimumSize(QtCore.QSize(40, 40))
+        self.calc_3_sign.setMaximumSize(QtCore.QSize(40, 40))
+        self.calc_3_sign.setStyleSheet("QLabel {\n"
+                                       "    border: 0.5px solid rgba(9, 21, 204, 0.25);\n"
+                                       "    border-radius: 20px;\n"
+                                       "    color: #0915CC;\n"
+                                       "    font-size: 16px;\n"
+                                       "}\n"
+                                       "\n"
+                                       "QLabel[next=true] {\n"
+                                       "    color: #FFFFFF;\n"
+                                       "    background: #0915CC;\n"
+                                       "}\n"
+                                       "\n"
+                                       "QLabel[selected=true] {\n"
+                                       "    border: 1px solid #0915CC;\n"
+                                       "}")
+        self.calc_3_sign.setAlignment(QtCore.Qt.AlignCenter)
+        self.calc_3_sign.setObjectName("calc_3_sign")
+        self.cacl_menu_label_layout.addWidget(self.calc_3_sign)
+        self.calc_3_text = QtWidgets.QLabel(self.cacl_menu_label_frame)
+        self.calc_3_text.setStyleSheet("color: #0915CC;\n"
+                                       "font-size: 14px;")
+        self.calc_3_text.setObjectName("calc_3_text")
+        self.cacl_menu_label_layout.addWidget(self.calc_3_text)
+        self.calc_3_line = QtWidgets.QLabel(self.cacl_menu_label_frame)
+        self.calc_3_line.setMinimumSize(QtCore.QSize(40, 0))
+        self.calc_3_line.setMaximumSize(QtCore.QSize(40, 16777215))
+        self.calc_3_line.setStyleSheet("QLabel {\n"
+                                       "    image: url(:/image/calculator_menu_line_default.svg);\n"
+                                       "}\n"
+                                       "\n"
+                                       "QLabel[selected=true] {\n"
+                                       "    image: url(:/image/calculator_menu_line_selected.svg);\n"
+                                       "}")
+        self.calc_3_line.setText("")
+        self.calc_3_line.setObjectName("calc_3_line")
+        self.cacl_menu_label_layout.addWidget(self.calc_3_line)
+        self.calc_4_sign = QtWidgets.QLabel(self.cacl_menu_label_frame)
+        self.calc_4_sign.setMinimumSize(QtCore.QSize(40, 40))
+        self.calc_4_sign.setMaximumSize(QtCore.QSize(40, 40))
+        self.calc_4_sign.setStyleSheet("QLabel {\n"
+                                       "    border: 0.5px solid rgba(9, 21, 204, 0.25);\n"
+                                       "    border-radius: 20px;\n"
+                                       "    color: #0915CC;\n"
+                                       "    font-size: 16px;\n"
+                                       "}\n"
+                                       "\n"
+                                       "QLabel[selected=true] {\n"
+                                       "    border: 1px solid #0915CC;\n"
+                                       "}")
+        self.calc_4_sign.setAlignment(QtCore.Qt.AlignCenter)
+        self.calc_4_sign.setObjectName("calc_4_sign")
+        self.cacl_menu_label_layout.addWidget(self.calc_4_sign)
+        self.calc_4_text = QtWidgets.QLabel(self.cacl_menu_label_frame)
+        self.calc_4_text.setStyleSheet("color: #0915CC;\n"
+                                       "font-size: 14px;")
+        self.calc_4_text.setObjectName("calc_4_text")
+        self.cacl_menu_label_layout.addWidget(self.calc_4_text)
+        self.calc_menu_step_layout.addWidget(self.cacl_menu_label_frame, 0, QtCore.Qt.AlignLeft)
+        self.calc_menu_btn_frame = QtWidgets.QFrame(self.calc_menu_step_frame)
+        self.calc_menu_btn_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_menu_btn_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_menu_btn_frame.setObjectName("calc_menu_btn_frame")
+        self.calc_menu_btn_layout = QtWidgets.QHBoxLayout(self.calc_menu_btn_frame)
+        self.calc_menu_btn_layout.setContentsMargins(0, 0, 0, 0)
+        self.calc_menu_btn_layout.setSpacing(5)
+        self.calc_menu_btn_layout.setObjectName("calc_menu_btn_layout")
+        self.calc_reset_btn = QtWidgets.QPushButton(self.calc_menu_btn_frame)
+        self.calc_reset_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.calc_reset_btn.setLayoutDirection(QtCore.Qt.RightToLeft)
+        self.calc_reset_btn.setStyleSheet("QPushButton {\n"
+                                          "    margin-left: 5px;\n"
+                                          "    background: transparent;\n"
+                                          "    font-size: 14px;\n"
+                                          "    color: #757C9F;\n"
+                                          "    qproperty-icon: url(:/image/inventory_reset_default.svg);\n"
+                                          "}\n"
+                                          "\n"
+                                          "QPushButton:hover {\n"
+                                          "    color: #FF3C2F;\n"
+                                          "}")
+        self.calc_reset_btn.setIconSize(QtCore.QSize(16, 20))
+        self.calc_reset_btn.setObjectName("calc_reset_btn")
+        self.calc_menu_btn_layout.addWidget(self.calc_reset_btn)
+        self.calc_back_btn = QtWidgets.QPushButton(self.calc_menu_btn_frame)
+        self.calc_back_btn.setMinimumSize(QtCore.QSize(64, 36))
+        self.calc_back_btn.setMaximumSize(QtCore.QSize(64, 36))
+        self.calc_back_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.calc_back_btn.setStyleSheet("QPushButton {\n"
+                                         "    border-radius: 5px;\n"
+                                         "    border: 1px solid #B5B8C7;\n"
+                                         "    font-size: 14px;\n"
+                                         "    color: #757C9F;\n"
+                                         "}\n"
+                                         "\n"
+                                         "QPushButton:hover {\n"
+                                         "    color: #0915CC;\n"
+                                         "    border: 1px solid #0915CC;\n"
+                                         "}")
+        self.calc_back_btn.setObjectName("calc_back_btn")
+        self.calc_menu_btn_layout.addWidget(self.calc_back_btn)
+        self.calc_next_btn = QtWidgets.QPushButton(self.calc_menu_btn_frame)
+        self.calc_next_btn.setMinimumSize(QtCore.QSize(116, 36))
+        self.calc_next_btn.setMaximumSize(QtCore.QSize(116, 36))
+        self.calc_next_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.calc_next_btn.setLayoutDirection(QtCore.Qt.RightToLeft)
+        self.calc_next_btn.setStyleSheet("QPushButton {\n"
+                                         "    background: #0915CC;\n"
+                                         "    border-radius: 5px;\n"
+                                         "    color: #F2F3F6;\n"
+                                         "    qproperty-icon: url(:/image/calculator_white_arrow.svg);\n"
+                                         "    font-size: 14px;\n"
+                                         "}\n"
+                                         "\n"
+                                         "QPushButton:hover {\n"
+                                         "    background: rgba(9, 21, 204, 0.8);\n"
+                                         "}\n"
+                                         "")
+        self.calc_next_btn.setIconSize(QtCore.QSize(24, 24))
+        self.calc_next_btn.setObjectName("calc_next_btn")
+        self.calc_menu_btn_layout.addWidget(self.calc_next_btn)
+        self.calc_menu_step_layout.addWidget(self.calc_menu_btn_frame, 0, QtCore.Qt.AlignRight)
+        self.calc_menu_step_layout.setStretch(0, 1)
+        self.calc_main_layout.addWidget(self.calc_menu_step_frame)
+        self.calc_menu_pages = QtWidgets.QStackedWidget(self.calc_main_frame)
+        self.calc_menu_pages.setObjectName("calc_menu_pages")
+        self.calc_move_detail_page = QtWidgets.QWidget()
+        self.calc_move_detail_page.setObjectName("calc_move_detail_page")
+        self.calc_move_detail_layout = QtWidgets.QVBoxLayout(self.calc_move_detail_page)
+        self.calc_move_detail_layout.setContentsMargins(0, 0, 0, 0)
+        self.calc_move_detail_layout.setSpacing(0)
+        self.calc_move_detail_layout.setObjectName("calc_move_detail_layout")
+        self.calc_move_detail_frame = QtWidgets.QFrame(self.calc_move_detail_page)
+        self.calc_move_detail_frame.setSizeIncrement(QtCore.QSize(0, 0))
+        self.calc_move_detail_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_move_detail_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_move_detail_frame.setObjectName("calc_move_detail_frame")
+        self.calc_move_detail_layout_2 = QtWidgets.QHBoxLayout(self.calc_move_detail_frame)
+        self.calc_move_detail_layout_2.setContentsMargins(0, 20, 0, 0)
+        self.calc_move_detail_layout_2.setSpacing(90)
+        self.calc_move_detail_layout_2.setObjectName("calc_move_detail_layout_2")
+        self.calc_calendar_frame = QtWidgets.QFrame(self.calc_move_detail_frame)
+        self.calc_calendar_frame.setMaximumSize(QtCore.QSize(500, 16777215))
+        self.calc_calendar_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_calendar_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_calendar_frame.setObjectName("calc_calendar_frame")
+        self.cacl_calendar_layout = QtWidgets.QVBoxLayout(self.calc_calendar_frame)
+        self.cacl_calendar_layout.setContentsMargins(0, 0, 0, 0)
+        self.cacl_calendar_layout.setSpacing(10)
+        self.cacl_calendar_layout.setObjectName("cacl_calendar_layout")
+        self.calc_calendar_frame2 = QtWidgets.QFrame(self.calc_calendar_frame)
+        self.calc_calendar_frame2.setMaximumSize(QtCore.QSize(16777215, 330))
+        self.calc_calendar_frame2.setStyleSheet(".QFrame{\n"
+                                                "border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
+                                                "background: #F9FAFB;\n"
+                                                "border-radius: 10px;\n"
+                                                "}\n"
+                                                "")
+        self.calc_calendar_frame2.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_calendar_frame2.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_calendar_frame2.setObjectName("calc_calendar_frame2")
+        self.calc_calendar_layout2 = QtWidgets.QVBoxLayout(self.calc_calendar_frame2)
+        self.calc_calendar_layout2.setContentsMargins(20, 20, 20, 20)
+        self.calc_calendar_layout2.setSpacing(0)
+        self.calc_calendar_layout2.setObjectName("calc_calendar_layout2")
+        self.cacl_calendar_layout.addWidget(self.calc_calendar_frame2)
+        self.calc_price_type_frame = QtWidgets.QFrame(self.calc_calendar_frame)
+        self.calc_price_type_frame.setStyleSheet(".QFrame {\n"
+                                                 "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
+                                                 "    border-radius: 10px;\n"
+                                                 "}\n"
+                                                 "\n"
+                                                 "QLabel {\n"
+                                                 "    font-size: 14px;\n"
+                                                 "    color: #000000;\n"
+                                                 "}")
+        self.calc_price_type_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_price_type_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_price_type_frame.setObjectName("calc_price_type_frame")
+        self.calc_price_type_layout = QtWidgets.QVBoxLayout(self.calc_price_type_frame)
+        self.calc_price_type_layout.setContentsMargins(15, 15, 25, 15)
+        self.calc_price_type_layout.setObjectName("calc_price_type_layout")
+        self.calc_price_type = QtWidgets.QLabel(self.calc_price_type_frame)
+        self.calc_price_type.setObjectName("calc_price_type")
+        self.calc_price_type_layout.addWidget(self.calc_price_type)
+        self.calc_price_type_frame_2 = QtWidgets.QFrame(self.calc_price_type_frame)
+        self.calc_price_type_frame_2.setStyleSheet("border: none;")
+        self.calc_price_type_frame_2.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_price_type_frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_price_type_frame_2.setObjectName("calc_price_type_frame_2")
+        self.calc_price_type_layout_2 = QtWidgets.QHBoxLayout(self.calc_price_type_frame_2)
+        self.calc_price_type_layout_2.setContentsMargins(0, 15, 0, 15)
+        self.calc_price_type_layout_2.setSpacing(9)
+        self.calc_price_type_layout_2.setObjectName("calc_price_type_layout_2")
+        self.calc_blue_color = QtWidgets.QLabel(self.calc_price_type_frame_2)
+        self.calc_blue_color.setMinimumSize(QtCore.QSize(14, 14))
+        self.calc_blue_color.setMaximumSize(QtCore.QSize(14, 14))
+        self.calc_blue_color.setStyleSheet("background-color: #4E50FF;")
+        self.calc_blue_color.setText("")
+        self.calc_blue_color.setObjectName("calc_blue_color")
+        self.calc_price_type_layout_2.addWidget(self.calc_blue_color)
+        self.calc_blue_label = QtWidgets.QLabel(self.calc_price_type_frame_2)
+        self.calc_blue_label.setStyleSheet("")
+        self.calc_blue_label.setObjectName("calc_blue_label")
+        self.calc_price_type_layout_2.addWidget(self.calc_blue_label)
+        self.calc_green_color = QtWidgets.QLabel(self.calc_price_type_frame_2)
+        self.calc_green_color.setMinimumSize(QtCore.QSize(14, 14))
+        self.calc_green_color.setMaximumSize(QtCore.QSize(14, 14))
+        self.calc_green_color.setStyleSheet("background: #26A95D;")
+        self.calc_green_color.setText("")
+        self.calc_green_color.setObjectName("calc_green_color")
+        self.calc_price_type_layout_2.addWidget(self.calc_green_color)
+        self.calc_green_label = QtWidgets.QLabel(self.calc_price_type_frame_2)
+        self.calc_green_label.setObjectName("calc_green_label")
+        self.calc_price_type_layout_2.addWidget(self.calc_green_label)
+        self.calc_yellow_color = QtWidgets.QLabel(self.calc_price_type_frame_2)
+        self.calc_yellow_color.setMinimumSize(QtCore.QSize(14, 14))
+        self.calc_yellow_color.setMaximumSize(QtCore.QSize(14, 14))
+        self.calc_yellow_color.setStyleSheet("background: #FFAC2F;")
+        self.calc_yellow_color.setText("")
+        self.calc_yellow_color.setObjectName("calc_yellow_color")
+        self.calc_price_type_layout_2.addWidget(self.calc_yellow_color)
+        self.calc_yellow_label = QtWidgets.QLabel(self.calc_price_type_frame_2)
+        self.calc_yellow_label.setObjectName("calc_yellow_label")
+        self.calc_price_type_layout_2.addWidget(self.calc_yellow_label)
+        self.calc_price_type_layout.addWidget(self.calc_price_type_frame_2, 0, QtCore.Qt.AlignLeft)
+        self.calc_price_type_frame_3 = QtWidgets.QFrame(self.calc_price_type_frame)
+        self.calc_price_type_frame_3.setStyleSheet("border: none;")
+        self.calc_price_type_frame_3.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_price_type_frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_price_type_frame_3.setObjectName("calc_price_type_frame_3")
+        self.calc_price_type_layout_3 = QtWidgets.QHBoxLayout(self.calc_price_type_frame_3)
+        self.calc_price_type_layout_3.setContentsMargins(0, 0, 0, 0)
+        self.calc_price_type_layout_3.setSpacing(9)
+        self.calc_price_type_layout_3.setObjectName("calc_price_type_layout_3")
+        self.calc_red_color = QtWidgets.QLabel(self.calc_price_type_frame_3)
+        self.calc_red_color.setMinimumSize(QtCore.QSize(14, 14))
+        self.calc_red_color.setMaximumSize(QtCore.QSize(14, 14))
+        self.calc_red_color.setStyleSheet("background: #FF3C2F;")
+        self.calc_red_color.setText("")
+        self.calc_red_color.setObjectName("calc_red_color")
+        self.calc_price_type_layout_3.addWidget(self.calc_red_color)
+        self.calc_red_label = QtWidgets.QLabel(self.calc_price_type_frame_3)
+        self.calc_red_label.setObjectName("calc_red_label")
+        self.calc_price_type_layout_3.addWidget(self.calc_red_label)
+        self.calc_price_type_layout.addWidget(self.calc_price_type_frame_3)
+        self.cacl_calendar_layout.addWidget(self.calc_price_type_frame, 0, QtCore.Qt.AlignTop)
+        self.calc_move_detail_layout_2.addWidget(self.calc_calendar_frame)
+        self.calc_general_info_frame = QtWidgets.QFrame(self.calc_move_detail_frame)
+        self.calc_general_info_frame.setStyleSheet("QLabel {\n"
+                                                   "    color: #757C9F;\n"
+                                                   "    font-size: 16px;\n"
+                                                   "}")
+        self.calc_general_info_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_general_info_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_general_info_frame.setObjectName("calc_general_info_frame")
+        self.calc_general_info_layout = QtWidgets.QVBoxLayout(self.calc_general_info_frame)
+        self.calc_general_info_layout.setContentsMargins(0, 0, 0, 0)
+        self.calc_general_info_layout.setSpacing(20)
+        self.calc_general_info_layout.setObjectName("calc_general_info_layout")
+        self.calc_gen_info_header = QtWidgets.QLabel(self.calc_general_info_frame)
+        self.calc_gen_info_header.setStyleSheet("font-size: 19px;\n"
+                                                "color: #070808;")
+        self.calc_gen_info_header.setObjectName("calc_gen_info_header")
+        self.calc_general_info_layout.addWidget(self.calc_gen_info_header)
+        self.calc_move_date_type_frame = QtWidgets.QFrame(self.calc_general_info_frame)
+        self.calc_move_date_type_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_move_date_type_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_move_date_type_frame.setObjectName("calc_move_date_type_frame")
+        self.calc_move_date_type_layout = QtWidgets.QGridLayout(self.calc_move_date_type_frame)
+        self.calc_move_date_type_layout.setContentsMargins(0, 0, 0, 0)
+        self.calc_move_date_type_layout.setHorizontalSpacing(10)
+        self.calc_move_date_type_layout.setVerticalSpacing(5)
+        self.calc_move_date_type_layout.setObjectName("calc_move_date_type_layout")
+        self.calc_1_move_date_label = QtWidgets.QLabel(self.calc_move_date_type_frame)
+        self.calc_1_move_date_label.setObjectName("calc_1_move_date_label")
+        self.calc_move_date_type_layout.addWidget(self.calc_1_move_date_label, 0, 0, 1, 1)
+        self.calc_1_service_type_label = QtWidgets.QLabel(self.calc_move_date_type_frame)
+        self.calc_1_service_type_label.setObjectName("calc_1_service_type_label")
+        self.calc_move_date_type_layout.addWidget(self.calc_1_service_type_label, 0, 1, 1, 1)
+        self.calc_date_frame = QtWidgets.QFrame(self.calc_move_date_type_frame)
+        self.calc_date_frame.setMinimumSize(QtCore.QSize(258, 48))
+        self.calc_date_frame.setMaximumSize(QtCore.QSize(258, 48))
+        self.calc_date_frame.setStyleSheet("#calc_date_frame {\n"
+                                           "    border: 1px solid #B5B8C7;\n"
+                                           "    border-radius: 10px;\n"
+                                           "}\n"
+                                           "\n"
+                                           "#calc_date_frame:hover {\n"
+                                           "    border: 1px solid #0915CC;\n"
+                                           "}\n"
+                                           "\n"
+                                           "QDateEdit {\n"
+                                           "    border: none;\n"
+                                           "    font-size: 16px;\n"
+                                           "}\n"
+                                           "\n"
+                                           "QDateEdit::drop-down {\n"
+                                           "    border-top-right-radius: 3px;\n"
+                                           "    border-bottom-right-radius: 3px;\n"
+                                           "}\n"
+                                           "\n"
+                                           "QDateEdit::down-arrow {\n"
+                                           "    image: url(:/image/date_down_arrow.svg);\n"
+                                           "}")
+        self.calc_date_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_date_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_date_frame.setObjectName("calc_date_frame")
+        self.config_start_date_layout_2 = QtWidgets.QHBoxLayout(self.calc_date_frame)
+        self.config_start_date_layout_2.setContentsMargins(17, 14, 20, 14)
+        self.config_start_date_layout_2.setSpacing(12)
+        self.config_start_date_layout_2.setObjectName("config_start_date_layout_2")
+        self.calc_start_date_icon = QtWidgets.QLabel(self.calc_date_frame)
+        self.calc_start_date_icon.setMinimumSize(QtCore.QSize(20, 20))
+        self.calc_start_date_icon.setStyleSheet("image: url(:/image/calendar_icon.svg);")
+        self.calc_start_date_icon.setText("")
+        self.calc_start_date_icon.setObjectName("calc_start_date_icon")
+        self.config_start_date_layout_2.addWidget(self.calc_start_date_icon, 0, QtCore.Qt.AlignLeft)
+        self.calc_start_date_edit = QtWidgets.QDateEdit(self.calc_date_frame)
+        self.calc_start_date_edit.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.calc_start_date_edit.setStyleSheet("")
+        self.calc_start_date_edit.setCalendarPopup(True)
+        self.calc_start_date_edit.setObjectName("calc_start_date_edit")
+        self.config_start_date_layout_2.addWidget(self.calc_start_date_edit)
+        self.config_start_date_layout_2.setStretch(1, 1)
+        self.calc_move_date_type_layout.addWidget(self.calc_date_frame, 1, 0, 1, 1)
+        self.calc_sevice_type = QtWidgets.QComboBox(self.calc_move_date_type_frame)
+        self.calc_sevice_type.setMinimumSize(QtCore.QSize(258, 48))
+        self.calc_sevice_type.setMaximumSize(QtCore.QSize(258, 48))
+        self.calc_sevice_type.setStyleSheet("QComboBox {\n"
+                                            "    background: #FFFFFF;\n"
+                                            "    border-radius: 10px;\n"
+                                            "    border: 1px solid #B5B8C7;\n"
+                                            "    padding-left: 15px;\n"
+                                            "    padding-right: 15px;\n"
+                                            "    font-size: 16px;\n"
+                                            "    color: #757C9F;\n"
+                                            "}\n"
+                                            "\n"
+                                            "QComboBox:hover {\n"
+                                            "    border: 1px solid #0915CC;\n"
+                                            "    background: #F2F3F6;\n"
+                                            "}\n"
+                                            "\n"
+                                            "QComboBox::drop-down {\n"
+                                            "    border-top-right-radius: 3px;\n"
+                                            "    border-bottom-right-radius: 3px;\n"
+                                            "}\n"
+                                            "\n"
+                                            "QComboBox::down-arrow {\n"
+                                            "    padding-right: 20px;\n"
+                                            "    image: url(:/image/arrow_drop_down.svg);\n"
+                                            "}\n"
+                                            "\n"
+                                            "QComboBox QAbstractItemView\n"
+                                            "{\n"
+                                            "    background: #F9FAFB;\n"
+                                            "    padding-left: 7px;\n"
+                                            "    padding-right: 7px;\n"
+                                            "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
+                                            "    border-radius: 8px;\n"
+                                            "    outline: 0;\n"
+                                            "}\n"
+                                            "\n"
+                                            "QComboBox QAbstractItemView::item { \n"
+                                            "    min-height: 35px;\n"
+                                            "    padding-left: 15px;\n"
+                                            "    background: #F9FAFB;\n"
+                                            "    color: #070808;\n"
+                                            "}\n"
+                                            "\n"
+                                            "QListView::item:selected { \n"
+                                            "    color: #0915CC; \n"
+                                            "    background-color: #F2F3F6; \n"
+                                            "    border-radius: 4px;\n"
+                                            "}")
+        self.calc_sevice_type.setEditable(False)
+        self.calc_sevice_type.setDuplicatesEnabled(True)
+        self.calc_sevice_type.setObjectName("calc_sevice_type")
+        self.calc_sevice_type.addItem("")
+        self.calc_move_date_type_layout.addWidget(self.calc_sevice_type, 1, 1, 1, 1)
+        self.calc_general_info_layout.addWidget(self.calc_move_date_type_frame)
+        self.calc_zip_code_frame = QtWidgets.QFrame(self.calc_general_info_frame)
+        self.calc_zip_code_frame.setStyleSheet("QLineEdit {\n"
+                                               "    border-radius: 10px;\n"
+                                               "    border: 1px solid #B5B8C7;\n"
+                                               "    padding-left: 15px;\n"
+                                               "    padding-right: 15px;\n"
+                                               "    font-size: 16px;\n"
+                                               "}\n"
+                                               "\n"
+                                               "QLineEdit:hover {\n"
+                                               "    border: 1px solid #0915CC;\n"
+                                               "    background-color: #F2F3F6;\n"
+                                               "}\n"
+                                               "\n"
+                                               "QLineEdit:focus {\n"
+                                               "    border: 1px solid #0915CC;\n"
+                                               "    background-color: #F2F3F6;\n"
+                                               "}\n"
+                                               "\n"
+                                               "QLineEdit[error=true] {\n"
+                                               "    border: 1px solid #FF3C2F;\n"
+                                               "}")
+        self.calc_zip_code_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_zip_code_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_zip_code_frame.setObjectName("calc_zip_code_frame")
+        self.calc_zip_code_layout = QtWidgets.QGridLayout(self.calc_zip_code_frame)
+        self.calc_zip_code_layout.setContentsMargins(0, 0, 0, 0)
+        self.calc_zip_code_layout.setHorizontalSpacing(10)
+        self.calc_zip_code_layout.setVerticalSpacing(5)
+        self.calc_zip_code_layout.setObjectName("calc_zip_code_layout")
+        self.calc_1_zip_from_label = QtWidgets.QLabel(self.calc_zip_code_frame)
+        self.calc_1_zip_from_label.setObjectName("calc_1_zip_from_label")
+        self.calc_zip_code_layout.addWidget(self.calc_1_zip_from_label, 0, 0, 1, 1)
+        self.calc_1_zip_to_label = QtWidgets.QLabel(self.calc_zip_code_frame)
+        self.calc_1_zip_to_label.setObjectName("calc_1_zip_to_label")
+        self.calc_zip_code_layout.addWidget(self.calc_1_zip_to_label, 0, 1, 1, 1)
+        self.calc_zip_from_input = QtWidgets.QLineEdit(self.calc_zip_code_frame)
+        self.calc_zip_from_input.setMinimumSize(QtCore.QSize(258, 48))
+        self.calc_zip_from_input.setMaximumSize(QtCore.QSize(258, 48))
+        self.calc_zip_from_input.setObjectName("calc_zip_from_input")
+        self.calc_zip_code_layout.addWidget(self.calc_zip_from_input, 1, 0, 1, 1)
+        self.calc_zip_to_input = QtWidgets.QLineEdit(self.calc_zip_code_frame)
+        self.calc_zip_to_input.setMinimumSize(QtCore.QSize(258, 48))
+        self.calc_zip_to_input.setMaximumSize(QtCore.QSize(258, 48))
+        self.calc_zip_to_input.setObjectName("calc_zip_to_input")
+        self.calc_zip_code_layout.addWidget(self.calc_zip_to_input, 1, 1, 1, 1)
+        self.error_calc_zip_from = QtWidgets.QLabel(self.calc_zip_code_frame)
+        self.error_calc_zip_from.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.error_calc_zip_from.setStyleSheet("font-size: 14px;\n"
+                                               "color: #FF3C2F;")
+        self.error_calc_zip_from.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.error_calc_zip_from.setObjectName("error_calc_zip_from")
+        self.calc_zip_code_layout.addWidget(self.error_calc_zip_from, 2, 0, 1, 1)
+        self.error_calc_zip_to = QtWidgets.QLabel(self.calc_zip_code_frame)
+        self.error_calc_zip_to.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.error_calc_zip_to.setStyleSheet("font-size: 14px;\n"
+                                             "color: #FF3C2F;")
+        self.error_calc_zip_to.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.error_calc_zip_to.setObjectName("error_calc_zip_to")
+        self.calc_zip_code_layout.addWidget(self.error_calc_zip_to, 2, 1, 1, 1)
+        self.calc_general_info_layout.addWidget(self.calc_zip_code_frame)
+        self.calc_move_size_frame = QtWidgets.QFrame(self.calc_general_info_frame)
+        self.calc_move_size_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_move_size_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_move_size_frame.setObjectName("calc_move_size_frame")
+        self.calc_move_size_layout = QtWidgets.QVBoxLayout(self.calc_move_size_frame)
+        self.calc_move_size_layout.setContentsMargins(0, 0, 0, 0)
+        self.calc_move_size_layout.setSpacing(5)
+        self.calc_move_size_layout.setObjectName("calc_move_size_layout")
+        self.calc_1_move_size_label = QtWidgets.QLabel(self.calc_move_size_frame)
+        self.calc_1_move_size_label.setStyleSheet("")
+        self.calc_1_move_size_label.setObjectName("calc_1_move_size_label")
+        self.calc_move_size_layout.addWidget(self.calc_1_move_size_label)
+        self.calc_1_move_size_box = QtWidgets.QComboBox(self.calc_move_size_frame)
+        self.calc_1_move_size_box.setMinimumSize(QtCore.QSize(526, 48))
+        self.calc_1_move_size_box.setMaximumSize(QtCore.QSize(526, 48))
+        self.calc_1_move_size_box.setStyleSheet("QComboBox {\n"
+                                                "    background: #FFFFFF;\n"
+                                                "    border-radius: 10px;\n"
+                                                "    border: 1px solid #B5B8C7;\n"
+                                                "    padding-left: 15px;\n"
+                                                "    padding-right: 15px;\n"
+                                                "    font-size: 16px;\n"
+                                                "    color: #757C9F;\n"
+                                                "}\n"
+                                                "\n"
+                                                "QComboBox:hover {\n"
+                                                "    border: 1px solid #0915CC;\n"
+                                                "    background: #F2F3F6;\n"
+                                                "}\n"
+                                                "\n"
+                                                "QComboBox::drop-down {\n"
+                                                "    border-top-right-radius: 3px;\n"
+                                                "    border-bottom-right-radius: 3px;\n"
+                                                "}\n"
+                                                "\n"
+                                                "QComboBox::down-arrow {\n"
+                                                "    padding-right: 20px;\n"
+                                                "    image: url(:/image/arrow_drop_down.svg);\n"
+                                                "}\n"
+                                                "\n"
+                                                "QComboBox QAbstractItemView\n"
+                                                "{\n"
+                                                "    background: #F9FAFB;\n"
+                                                "    padding-left: 7px;\n"
+                                                "    padding-right: 7px;\n"
+                                                "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
+                                                "    border-radius: 8px;\n"
+                                                "    outline: 0;\n"
+                                                "}\n"
+                                                "\n"
+                                                "QComboBox QAbstractItemView::item { \n"
+                                                "    min-height: 35px;\n"
+                                                "    padding-left: 15px;\n"
+                                                "    background: #F9FAFB;\n"
+                                                "    color: #070808;\n"
+                                                "}\n"
+                                                "\n"
+                                                "QListView::item:selected { \n"
+                                                "    color: #0915CC; \n"
+                                                "    background-color: #F2F3F6; \n"
+                                                "    border-radius: 4px;\n"
+                                                "}")
+        self.calc_1_move_size_box.setEditable(False)
+        self.calc_1_move_size_box.setPlaceholderText("")
+        self.calc_1_move_size_box.setDuplicatesEnabled(False)
+        self.calc_1_move_size_box.setObjectName("calc_1_move_size_box")
+        self.calc_move_size_layout.addWidget(self.calc_1_move_size_box)
+        self.calc_general_info_layout.addWidget(self.calc_move_size_frame)
+        self.calc_extra_room_frame = QtWidgets.QFrame(self.calc_general_info_frame)
+        self.calc_extra_room_frame.setStyleSheet("QPushButton {\n"
+                                                 "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
+                                                 "    border-radius: 16px;    \n"
+                                                 "    padding-left: 10px;\n"
+                                                 "    padding-right: 10px;\n"
+                                                 "    padding-top: 8px;\n"
+                                                 "    padding-bottom: 8px;\n"
+                                                 "    color: #757C9F;\n"
+                                                 "    font-size: 14px;\n"
+                                                 "    qproperty-icon: url(:/image/check_icon_default.svg);\n"
+                                                 "    icon-size: 18px, 18px;\n"
+                                                 "    background: #F9FAFB;\n"
+                                                 "}\n"
+                                                 "\n"
+                                                 "QPushButton:hover {\n"
+                                                 "    border: 0.5px solid #0915CC;\n"
+                                                 "    color: #0915CC;\n"
+                                                 "}\n"
+                                                 "\n"
+                                                 "QPushButton:checked {\n"
+                                                 "    border: 0.5px solid #0915CC;\n"
+                                                 "    color: #0915CC;\n"
+                                                 "}")
+        self.calc_extra_room_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_extra_room_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_extra_room_frame.setObjectName("calc_extra_room_frame")
+        self.calc_extra_room_layout = QtWidgets.QVBoxLayout(self.calc_extra_room_frame)
+        self.calc_extra_room_layout.setContentsMargins(0, 0, 0, 0)
+        self.calc_extra_room_layout.setSpacing(5)
+        self.calc_extra_room_layout.setObjectName("calc_extra_room_layout")
+        self.calc_extra_room_label = QtWidgets.QLabel(self.calc_extra_room_frame)
+        self.calc_extra_room_label.setObjectName("calc_extra_room_label")
+        self.calc_extra_room_layout.addWidget(self.calc_extra_room_label)
+        self.calc_extra_room_btn_frame = QtWidgets.QFrame(self.calc_extra_room_frame)
+        self.calc_extra_room_btn_frame.setStyleSheet("QFrame {\n"
+                                                     "    border: none;\n"
+                                                     "}\n"
+                                                     "")
+        self.calc_extra_room_btn_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_extra_room_btn_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_extra_room_btn_frame.setObjectName("calc_extra_room_btn_frame")
+        self.calc_extra_room_btn_layout = QtWidgets.QHBoxLayout(self.calc_extra_room_btn_frame)
+        self.calc_extra_room_btn_layout.setContentsMargins(0, 0, 0, 0)
+        self.calc_extra_room_btn_layout.setSpacing(5)
+        self.calc_extra_room_btn_layout.setObjectName("calc_extra_room_btn_layout")
+        self.inventory_cat_butt_sample_2 = QtWidgets.QPushButton(self.calc_extra_room_btn_frame)
+        self.inventory_cat_butt_sample_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.inventory_cat_butt_sample_2.setCheckable(True)
+        self.inventory_cat_butt_sample_2.setChecked(True)
+        self.inventory_cat_butt_sample_2.setObjectName("inventory_cat_butt_sample_2")
+        self.calc_extra_room_btn_layout.addWidget(self.inventory_cat_butt_sample_2)
+        self.inven_2 = QtWidgets.QPushButton(self.calc_extra_room_btn_frame)
+        self.inven_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.inven_2.setCheckable(True)
+        self.inven_2.setObjectName("inven_2")
+        self.calc_extra_room_btn_layout.addWidget(self.inven_2)
+        self.config_subpeak_butt_3 = QtWidgets.QPushButton(self.calc_extra_room_btn_frame)
+        self.config_subpeak_butt_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.config_subpeak_butt_3.setCheckable(True)
+        self.config_subpeak_butt_3.setObjectName("config_subpeak_butt_3")
+        self.calc_extra_room_btn_layout.addWidget(self.config_subpeak_butt_3)
+        self.config_peak_butt_3 = QtWidgets.QPushButton(self.calc_extra_room_btn_frame)
+        self.config_peak_butt_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.config_peak_butt_3.setCheckable(True)
+        self.config_peak_butt_3.setObjectName("config_peak_butt_3")
+        self.calc_extra_room_btn_layout.addWidget(self.config_peak_butt_3)
+        self.calc_extra_room_layout.addWidget(self.calc_extra_room_btn_frame)
+        self.calc_general_info_layout.addWidget(self.calc_extra_room_frame)
+        self.calc_entrance_type_frame = QtWidgets.QFrame(self.calc_general_info_frame)
+        self.calc_entrance_type_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_entrance_type_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_entrance_type_frame.setObjectName("calc_entrance_type_frame")
+        self.calc_entrance_type_layout = QtWidgets.QGridLayout(self.calc_entrance_type_frame)
+        self.calc_entrance_type_layout.setContentsMargins(0, 0, 0, 0)
+        self.calc_entrance_type_layout.setHorizontalSpacing(10)
+        self.calc_entrance_type_layout.setVerticalSpacing(5)
+        self.calc_entrance_type_layout.setObjectName("calc_entrance_type_layout")
+        self.calc_1_entrance_from_label = QtWidgets.QLabel(self.calc_entrance_type_frame)
+        self.calc_1_entrance_from_label.setObjectName("calc_1_entrance_from_label")
+        self.calc_entrance_type_layout.addWidget(self.calc_1_entrance_from_label, 0, 0, 1, 1)
+        self.calc_1_entrance_to_label = QtWidgets.QLabel(self.calc_entrance_type_frame)
+        self.calc_1_entrance_to_label.setObjectName("calc_1_entrance_to_label")
+        self.calc_entrance_type_layout.addWidget(self.calc_1_entrance_to_label, 0, 1, 1, 1)
+        self.calc_1_entrance_from_box = QtWidgets.QComboBox(self.calc_entrance_type_frame)
+        self.calc_1_entrance_from_box.setMinimumSize(QtCore.QSize(258, 48))
+        self.calc_1_entrance_from_box.setMaximumSize(QtCore.QSize(258, 48))
+        self.calc_1_entrance_from_box.setStyleSheet("QComboBox {\n"
+                                                    "    background: #FFFFFF;\n"
+                                                    "    border-radius: 10px;\n"
+                                                    "    border: 1px solid #B5B8C7;\n"
+                                                    "    padding-left: 15px;\n"
+                                                    "    padding-right: 15px;\n"
+                                                    "    font-size: 16px;\n"
+                                                    "    color: #757C9F;\n"
+                                                    "}\n"
+                                                    "\n"
+                                                    "QComboBox:hover {\n"
+                                                    "    border: 1px solid #0915CC;\n"
+                                                    "    background: #F2F3F6;\n"
+                                                    "}\n"
+                                                    "\n"
+                                                    "QComboBox::drop-down {\n"
+                                                    "    border-top-right-radius: 3px;\n"
+                                                    "    border-bottom-right-radius: 3px;\n"
+                                                    "}\n"
+                                                    "\n"
+                                                    "QComboBox::down-arrow {\n"
+                                                    "    padding-right: 20px;\n"
+                                                    "    image: url(:/image/arrow_drop_down.svg);\n"
+                                                    "}\n"
+                                                    "\n"
+                                                    "QComboBox QAbstractItemView\n"
+                                                    "{\n"
+                                                    "    background: #F9FAFB;\n"
+                                                    "    padding-left: 7px;\n"
+                                                    "    padding-right: 7px;\n"
+                                                    "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
+                                                    "    border-radius: 8px;\n"
+                                                    "    outline: 0;\n"
+                                                    "}\n"
+                                                    "\n"
+                                                    "QComboBox QAbstractItemView::item { \n"
+                                                    "    min-height: 35px;\n"
+                                                    "    padding-left: 15px;\n"
+                                                    "    background: #F9FAFB;\n"
+                                                    "    color: #070808;\n"
+                                                    "}\n"
+                                                    "\n"
+                                                    "QListView::item:selected { \n"
+                                                    "    color: #0915CC; \n"
+                                                    "    background-color: #F2F3F6; \n"
+                                                    "    border-radius: 4px;\n"
+                                                    "}")
+        self.calc_1_entrance_from_box.setEditable(False)
+        self.calc_1_entrance_from_box.setDuplicatesEnabled(True)
+        self.calc_1_entrance_from_box.setObjectName("calc_1_entrance_from_box")
+        self.calc_entrance_type_layout.addWidget(self.calc_1_entrance_from_box, 1, 0, 1, 1)
+        self.calc_1_entrance_to_box = QtWidgets.QComboBox(self.calc_entrance_type_frame)
+        self.calc_1_entrance_to_box.setMinimumSize(QtCore.QSize(258, 48))
+        self.calc_1_entrance_to_box.setMaximumSize(QtCore.QSize(258, 48))
+        self.calc_1_entrance_to_box.setStyleSheet("QComboBox {\n"
+                                                  "    background: #FFFFFF;\n"
+                                                  "    border-radius: 10px;\n"
+                                                  "    border: 1px solid #B5B8C7;\n"
+                                                  "    padding-left: 15px;\n"
+                                                  "    padding-right: 15px;\n"
+                                                  "    font-size: 16px;\n"
+                                                  "    color: #757C9F;\n"
+                                                  "}\n"
+                                                  "\n"
+                                                  "QComboBox:hover {\n"
+                                                  "    border: 1px solid #0915CC;\n"
+                                                  "    background: #F2F3F6;\n"
+                                                  "}\n"
+                                                  "\n"
+                                                  "QComboBox::drop-down {\n"
+                                                  "    border-top-right-radius: 3px;\n"
+                                                  "    border-bottom-right-radius: 3px;\n"
+                                                  "}\n"
+                                                  "\n"
+                                                  "QComboBox::down-arrow {\n"
+                                                  "    padding-right: 20px;\n"
+                                                  "    image: url(:/image/arrow_drop_down.svg);\n"
+                                                  "}\n"
+                                                  "\n"
+                                                  "QComboBox QAbstractItemView\n"
+                                                  "{\n"
+                                                  "    background: #F9FAFB;\n"
+                                                  "    padding-left: 7px;\n"
+                                                  "    padding-right: 7px;\n"
+                                                  "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
+                                                  "    border-radius: 8px;\n"
+                                                  "    outline: 0;\n"
+                                                  "}\n"
+                                                  "\n"
+                                                  "QComboBox QAbstractItemView::item { \n"
+                                                  "    min-height: 35px;\n"
+                                                  "    padding-left: 15px;\n"
+                                                  "    background: #F9FAFB;\n"
+                                                  "    color: #070808;\n"
+                                                  "}\n"
+                                                  "\n"
+                                                  "QListView::item:selected { \n"
+                                                  "    color: #0915CC; \n"
+                                                  "    background-color: #F2F3F6; \n"
+                                                  "    border-radius: 4px;\n"
+                                                  "}")
+        self.calc_1_entrance_to_box.setEditable(False)
+        self.calc_1_entrance_to_box.setDuplicatesEnabled(True)
+        self.calc_1_entrance_to_box.setObjectName("calc_1_entrance_to_box")
+        self.calc_entrance_type_layout.addWidget(self.calc_1_entrance_to_box, 1, 1, 1, 1)
+        self.calc_general_info_layout.addWidget(self.calc_entrance_type_frame)
+        self.calc_move_detail_layout_2.addWidget(self.calc_general_info_frame, 0,
+                                                 QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
+        self.calc_move_detail_layout.addWidget(self.calc_move_detail_frame)
+        self.calc_menu_pages.addWidget(self.calc_move_detail_page)
+        self.calc_invnetory_check_page = QtWidgets.QWidget()
+        self.calc_invnetory_check_page.setObjectName("calc_invnetory_check_page")
+        self.calc_invnetory_check_layout = QtWidgets.QVBoxLayout(self.calc_invnetory_check_page)
+        self.calc_invnetory_check_layout.setContentsMargins(0, 20, 0, 0)
+        self.calc_invnetory_check_layout.setSpacing(20)
+        self.calc_invnetory_check_layout.setObjectName("calc_invnetory_check_layout")
+        self.calc_inv_check_top_frame = QtWidgets.QFrame(self.calc_invnetory_check_page)
+        self.calc_inv_check_top_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_inv_check_top_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_inv_check_top_frame.setObjectName("calc_inv_check_top_frame")
+        self.calc_inv_check_top_layout = QtWidgets.QHBoxLayout(self.calc_inv_check_top_frame)
+        self.calc_inv_check_top_layout.setContentsMargins(0, 0, 0, 0)
+        self.calc_inv_check_top_layout.setSpacing(129)
+        self.calc_inv_check_top_layout.setObjectName("calc_inv_check_top_layout")
+        self.calc_inv_check_header = QtWidgets.QLabel(self.calc_inv_check_top_frame)
+        self.calc_inv_check_header.setStyleSheet("color: #070808;\n"
+                                                 "font-size: 19px;")
+        self.calc_inv_check_header.setObjectName("calc_inv_check_header")
+        self.calc_inv_check_top_layout.addWidget(self.calc_inv_check_header)
+        self.calc_inv_check_menu_frame = QtWidgets.QFrame(self.calc_inv_check_top_frame)
+        self.calc_inv_check_menu_frame.setMinimumSize(QtCore.QSize(0, 40))
+        self.calc_inv_check_menu_frame.setMaximumSize(QtCore.QSize(16777215, 40))
+        self.calc_inv_check_menu_frame.setStyleSheet("QLabel {\n"
+                                                     "    background: #0915CC;\n"
+                                                     "    border-top-left-radius: 3px;\n"
+                                                     "    border-top-right-radius: 3px;\n"
+                                                     "}\n"
+                                                     "\n"
+                                                     "QPushButton {\n"
+                                                     "    background: transparent;\n"
+                                                     "    font-size: 14px;\n"
+                                                     "    color: #757C9F;\n"
+                                                     "    outline: 0;\n"
+                                                     "}\n"
+                                                     "\n"
+                                                     "QPushButton:hover {\n"
+                                                     "    color: #0915CC;\n"
+                                                     "}\n"
+                                                     "\n"
+                                                     "QPushButton[selected=true] {\n"
+                                                     "    color: #0915CC;\n"
+                                                     "}")
+        self.calc_inv_check_menu_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_inv_check_menu_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_inv_check_menu_frame.setObjectName("calc_inv_check_menu_frame")
+        self.calc_inv_check_menu_layout = QtWidgets.QHBoxLayout(self.calc_inv_check_menu_frame)
+        self.calc_inv_check_menu_layout.setContentsMargins(0, 0, 0, 0)
+        self.calc_inv_check_menu_layout.setSpacing(20)
+        self.calc_inv_check_menu_layout.setObjectName("calc_inv_check_menu_layout")
+        self.calc_all_menu_frame = QtWidgets.QFrame(self.calc_inv_check_menu_frame)
+        self.calc_all_menu_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_all_menu_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_all_menu_frame.setMidLineWidth(0)
+        self.calc_all_menu_frame.setObjectName("calc_all_menu_frame")
+        self.calc_all_menu_layout = QtWidgets.QVBoxLayout(self.calc_all_menu_frame)
+        self.calc_all_menu_layout.setContentsMargins(0, 0, 0, 0)
+        self.calc_all_menu_layout.setSpacing(0)
+        self.calc_all_menu_layout.setObjectName("calc_all_menu_layout")
+        self.calc_all_menu_butt = QtWidgets.QPushButton(self.calc_all_menu_frame)
+        self.calc_all_menu_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.calc_all_menu_butt.setStyleSheet("")
+        self.calc_all_menu_butt.setCheckable(True)
+        self.calc_all_menu_butt.setObjectName("calc_all_menu_butt")
+        self.calc_all_menu_layout.addWidget(self.calc_all_menu_butt, 0, QtCore.Qt.AlignTop)
+        self.calc_all_menu_line = QtWidgets.QLabel(self.calc_all_menu_frame)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.calc_all_menu_line.sizePolicy().hasHeightForWidth())
+        self.calc_all_menu_line.setSizePolicy(sizePolicy)
+        self.calc_all_menu_line.setMinimumSize(QtCore.QSize(0, 3))
+        self.calc_all_menu_line.setMaximumSize(QtCore.QSize(16777215, 3))
+        self.calc_all_menu_line.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
+        self.calc_all_menu_line.setStyleSheet("")
+        self.calc_all_menu_line.setText("")
+        self.calc_all_menu_line.setTextInteractionFlags(QtCore.Qt.LinksAccessibleByMouse)
+        self.calc_all_menu_line.setObjectName("calc_all_menu_line")
+        self.calc_all_menu_layout.addWidget(self.calc_all_menu_line)
+        self.calc_all_menu_layout.setStretch(0, 2)
+        self.calc_inv_check_menu_layout.addWidget(self.calc_all_menu_frame)
+        self.calc_preset_choose_frame = QtWidgets.QFrame(self.calc_inv_check_menu_frame)
+        self.calc_preset_choose_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_preset_choose_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_preset_choose_frame.setMidLineWidth(0)
+        self.calc_preset_choose_frame.setObjectName("calc_preset_choose_frame")
+        self.calc_preset_choose_layout = QtWidgets.QVBoxLayout(self.calc_preset_choose_frame)
+        self.calc_preset_choose_layout.setContentsMargins(0, 0, 0, 0)
+        self.calc_preset_choose_layout.setSpacing(0)
+        self.calc_preset_choose_layout.setObjectName("calc_preset_choose_layout")
+        self.calc_preset_choose_butt = QtWidgets.QPushButton(self.calc_preset_choose_frame)
+        self.calc_preset_choose_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.calc_preset_choose_butt.setStyleSheet("")
+        self.calc_preset_choose_butt.setCheckable(True)
+        self.calc_preset_choose_butt.setObjectName("calc_preset_choose_butt")
+        self.calc_preset_choose_layout.addWidget(self.calc_preset_choose_butt, 0, QtCore.Qt.AlignTop)
+        self.calc_preset_choose_line = QtWidgets.QLabel(self.calc_preset_choose_frame)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.calc_preset_choose_line.sizePolicy().hasHeightForWidth())
+        self.calc_preset_choose_line.setSizePolicy(sizePolicy)
+        self.calc_preset_choose_line.setMinimumSize(QtCore.QSize(0, 3))
+        self.calc_preset_choose_line.setMaximumSize(QtCore.QSize(16777215, 3))
+        self.calc_preset_choose_line.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
+        self.calc_preset_choose_line.setStyleSheet("")
+        self.calc_preset_choose_line.setText("")
+        self.calc_preset_choose_line.setTextInteractionFlags(QtCore.Qt.LinksAccessibleByMouse)
+        self.calc_preset_choose_line.setObjectName("calc_preset_choose_line")
+        self.calc_preset_choose_layout.addWidget(self.calc_preset_choose_line)
+        self.calc_preset_choose_layout.setStretch(0, 2)
+        self.calc_inv_check_menu_layout.addWidget(self.calc_preset_choose_frame)
+        self.calc_inv_check_top_layout.addWidget(self.calc_inv_check_menu_frame)
+        self.calc_invnetory_check_layout.addWidget(self.calc_inv_check_top_frame, 0,
+                                                   QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
+        self.calc_inv_bottom_frame = QtWidgets.QFrame(self.calc_invnetory_check_page)
+        self.calc_inv_bottom_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_inv_bottom_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_inv_bottom_frame.setObjectName("calc_inv_bottom_frame")
+        self.calc_inv_bottom_layout = QtWidgets.QHBoxLayout(self.calc_inv_bottom_frame)
+        self.calc_inv_bottom_layout.setContentsMargins(0, 0, 31, 0)
+        self.calc_inv_bottom_layout.setSpacing(50)
+        self.calc_inv_bottom_layout.setObjectName("calc_inv_bottom_layout")
+        self.calc_size_menu = QtWidgets.QStackedWidget(self.calc_inv_bottom_frame)
+        self.calc_size_menu.setStyleSheet("QPushButton {\n"
+                                          "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
+                                          "    border-radius: 4px;\n"
+                                          "    color: #0915CC;\n"
+                                          "    font-size: 14px;\n"
+                                          "    text-align: left;\n"
+                                          "    padding-left: 12px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "QPushButton:hover {\n"
+                                          "    border: 0.5px solid #0915CC;\n"
+                                          "}\n"
+                                          "\n"
+                                          "QPushButton:checked {\n"
+                                          "    border: 0.5px solid #0915CC;\n"
+                                          "    background: #F9FAFB;\n"
+                                          "}")
+        self.calc_size_menu.setObjectName("calc_size_menu")
+        self.calc_room_page = QtWidgets.QWidget()
+        self.calc_room_page.setObjectName("calc_room_page")
+        self.calc_room_layout = QtWidgets.QVBoxLayout(self.calc_room_page)
+        self.calc_room_layout.setContentsMargins(0, 0, 0, 0)
+        self.calc_room_layout.setSpacing(0)
+        self.calc_room_layout.setObjectName("calc_room_layout")
+        self.calc_room_scrollarea = QtWidgets.QScrollArea(self.calc_room_page)
+        self.calc_room_scrollarea.setStyleSheet("QFrame {\n"
+                                                "    border: none;\n"
+                                                "}")
+        self.calc_room_scrollarea.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_room_scrollarea.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
+        self.calc_room_scrollarea.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.calc_room_scrollarea.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
+        self.calc_room_scrollarea.setWidgetResizable(True)
+        self.calc_room_scrollarea.setObjectName("calc_room_scrollarea")
+        self.calc_room_frame = QtWidgets.QWidget()
+        self.calc_room_frame.setGeometry(QtCore.QRect(0, 0, 100, 30))
+        self.calc_room_frame.setMinimumSize(QtCore.QSize(0, 0))
+        self.calc_room_frame.setObjectName("calc_room_frame")
+        self.calc_room_layout_2 = QtWidgets.QVBoxLayout(self.calc_room_frame)
+        self.calc_room_layout_2.setContentsMargins(0, 0, 0, 0)
+        self.calc_room_layout_2.setSpacing(0)
+        self.calc_room_layout_2.setObjectName("calc_room_layout_2")
+        self.calc_room_frame_2 = QtWidgets.QFrame(self.calc_room_frame)
+        self.calc_room_frame_2.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_room_frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_room_frame_2.setObjectName("calc_room_frame_2")
+        self.calc_room_layout_3 = QtWidgets.QVBoxLayout(self.calc_room_frame_2)
+        self.calc_room_layout_3.setContentsMargins(0, 0, 9, 0)
+        self.calc_room_layout_3.setSpacing(0)
+        self.calc_room_layout_3.setObjectName("calc_room_layout_3")
+        self.calc_room_menu_frame = QtWidgets.QFrame(self.calc_room_frame_2)
+        self.calc_room_menu_frame.setStyleSheet("")
+        self.calc_room_menu_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_room_menu_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_room_menu_frame.setObjectName("calc_room_menu_frame")
+        self.calc_room_menu_layout = QtWidgets.QVBoxLayout(self.calc_room_menu_frame)
+        self.calc_room_menu_layout.setContentsMargins(0, 0, 0, 0)
+        self.calc_room_menu_layout.setSpacing(2)
+        self.calc_room_menu_layout.setObjectName("calc_room_menu_layout")
+        self.calc_room_layout_3.addWidget(self.calc_room_menu_frame, 0, QtCore.Qt.AlignTop)
+        self.calc_room_layout_2.addWidget(self.calc_room_frame_2)
+        self.calc_room_scrollarea.setWidget(self.calc_room_frame)
+        self.calc_room_layout.addWidget(self.calc_room_scrollarea)
+        self.calc_size_menu.addWidget(self.calc_room_page)
+        self.calc_preset_page = QtWidgets.QWidget()
+        self.calc_preset_page.setObjectName("calc_preset_page")
+        self.calc_preset_layout = QtWidgets.QVBoxLayout(self.calc_preset_page)
+        self.calc_preset_layout.setContentsMargins(0, 0, 0, 0)
+        self.calc_preset_layout.setSpacing(0)
+        self.calc_preset_layout.setObjectName("calc_preset_layout")
+        self.calc_preset_scrollarea = QtWidgets.QScrollArea(self.calc_preset_page)
+        self.calc_preset_scrollarea.setStyleSheet("QFrame {\n"
+                                                  "    border: none;\n"
+                                                  "}")
+        self.calc_preset_scrollarea.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_preset_scrollarea.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
+        self.calc_preset_scrollarea.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.calc_preset_scrollarea.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
+        self.calc_preset_scrollarea.setWidgetResizable(True)
+        self.calc_preset_scrollarea.setObjectName("calc_preset_scrollarea")
+        self.calc_preset_frame = QtWidgets.QWidget()
+        self.calc_preset_frame.setGeometry(QtCore.QRect(0, 0, 217, 28))
+        self.calc_preset_frame.setObjectName("calc_preset_frame")
+        self.calc_preset_layout_2 = QtWidgets.QVBoxLayout(self.calc_preset_frame)
+        self.calc_preset_layout_2.setContentsMargins(0, 0, 0, 0)
+        self.calc_preset_layout_2.setSpacing(0)
+        self.calc_preset_layout_2.setObjectName("calc_preset_layout_2")
+        self.calc_preset_frame_2 = QtWidgets.QFrame(self.calc_preset_frame)
+        self.calc_preset_frame_2.setMinimumSize(QtCore.QSize(217, 0))
+        self.calc_preset_frame_2.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_preset_frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_preset_frame_2.setObjectName("calc_preset_frame_2")
+        self.calc_preset_layout_3 = QtWidgets.QVBoxLayout(self.calc_preset_frame_2)
+        self.calc_preset_layout_3.setContentsMargins(0, 0, 9, 0)
+        self.calc_preset_layout_3.setSpacing(0)
+        self.calc_preset_layout_3.setObjectName("calc_preset_layout_3")
+        self.calc_preset_menu_frame = QtWidgets.QFrame(self.calc_preset_frame_2)
+        self.calc_preset_menu_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_preset_menu_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_preset_menu_frame.setObjectName("calc_preset_menu_frame")
+        self.calc_preset_menu_layout = QtWidgets.QVBoxLayout(self.calc_preset_menu_frame)
+        self.calc_preset_menu_layout.setContentsMargins(0, 0, 0, 0)
+        self.calc_preset_menu_layout.setSpacing(2)
+        self.calc_preset_menu_layout.setObjectName("calc_preset_menu_layout")
+        self.calc_preset_layout_3.addWidget(self.calc_preset_menu_frame, 0, QtCore.Qt.AlignTop)
+        self.calc_preset_layout_2.addWidget(self.calc_preset_frame_2)
+        self.calc_preset_scrollarea.setWidget(self.calc_preset_frame)
+        self.calc_preset_layout.addWidget(self.calc_preset_scrollarea)
+        self.calc_size_menu.addWidget(self.calc_preset_page)
+        self.calc_inv_bottom_layout.addWidget(self.calc_size_menu)
+        self.calc_inv_content_frame = QtWidgets.QFrame(self.calc_inv_bottom_frame)
+        self.calc_inv_content_frame.setStyleSheet("QComboBox {\n"
+                                                  "    color: #070808;\n"
+                                                  "    font-size: 14px;\n"
+                                                  "    border: 0.5px solid rgba(117, 124, 159, 0.5);\n"
+                                                  "    border-radius: 2px;\n"
+                                                  "    padding-left: 6px;\n"
+                                                  "}\n"
+                                                  "\n"
+                                                  "QComboBox:hover {\n"
+                                                  "    border: 0.5px solid #0915CC;\n"
+                                                  "}\n"
+                                                  "\n"
+                                                  "QComboBox::down-arrow {\n"
+                                                  "    image: url(:/image/arrow_drop_down_inventory_default.svg);\n"
+                                                  "}\n"
+                                                  "\n"
+                                                  "QComboBox::down-arrow:hover{\n"
+                                                  "    image: url(:/image/arrow_drop_down_inventory_hover.svg);\n"
+                                                  "}\n"
+                                                  "\n"
+                                                  "QComboBox::drop-down {\n"
+                                                  "    background: #F2F3F6;\n"
+                                                  "    width: 24px;\n"
+                                                  "}\n"
+                                                  "\n"
+                                                  "\n"
+                                                  "QComboBox QAbstractItemView\n"
+                                                  "{\n"
+                                                  "    background: #F9FAFB;\n"
+                                                  "    padding-left: 7px;\n"
+                                                  "    padding-right: 7px;\n"
+                                                  "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
+                                                  "    border-radius: 8px;\n"
+                                                  "    font-size: 14px;\n"
+                                                  "    outline: 0;\n"
+                                                  "}\n"
+                                                  "\n"
+                                                  "\n"
+                                                  "QComboBox QAbstractItemView::item { \n"
+                                                  "    min-height: 20px;\n"
+                                                  "    padding-left: 15px;\n"
+                                                  "    background: #F9FAFB;\n"
+                                                  "    color: #070808;\n"
+                                                  "}\n"
+                                                  "\n"
+                                                  "QListView::item:selected { \n"
+                                                  "    color: #0915CC; \n"
+                                                  "    background-color: #F2F3F6; \n"
+                                                  "    border-radius: 4px;\n"
+                                                  "}\n"
+                                                  "")
+        self.calc_inv_content_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_inv_content_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_inv_content_frame.setObjectName("calc_inv_content_frame")
+        self.calc_inv_content_layout = QtWidgets.QVBoxLayout(self.calc_inv_content_frame)
+        self.calc_inv_content_layout.setContentsMargins(0, 0, 0, 0)
+        self.calc_inv_content_layout.setSpacing(30)
+        self.calc_inv_content_layout.setObjectName("calc_inv_content_layout")
+        self.calc_inv_categor_frame = QtWidgets.QFrame(self.calc_inv_content_frame)
+        self.calc_inv_categor_frame.setMinimumSize(QtCore.QSize(0, 92))
+        self.calc_inv_categor_frame.setStyleSheet(".QFrame {\n"
+                                                  "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
+                                                  "    border-radius: 4px;\n"
+                                                  "}\n"
+                                                  "\n"
+                                                  "QLabel {\n"
+                                                  "    color: #070808;\n"
+                                                  "    font-size: 14px;\n"
+                                                  "}\n"
+                                                  "\n"
+                                                  "QPushButton {\n"
+                                                  "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
+                                                  "    border-radius: 16px;    \n"
+                                                  "    padding-left: 10px;\n"
+                                                  "    padding-right: 10px;\n"
+                                                  "    padding-top: 8px;\n"
+                                                  "    padding-bottom: 8px;\n"
+                                                  "    color: #757C9F;\n"
+                                                  "    font-size: 14px;\n"
+                                                  "    qproperty-icon: url(:/image/check_icon_default.svg);\n"
+                                                  "    icon-size: 18px, 18px;\n"
+                                                  "    background: #F9FAFB;\n"
+                                                  "}\n"
+                                                  "\n"
+                                                  "QPushButton:hover {\n"
+                                                  "    border: 0.5px solid #0915CC;\n"
+                                                  "    color: #0915CC;\n"
+                                                  "}\n"
+                                                  "\n"
+                                                  "QPushButton:checked {\n"
+                                                  "    border: 0.5px solid #0915CC;\n"
+                                                  "    color: #0915CC;\n"
+                                                  "}")
+        self.calc_inv_categor_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_inv_categor_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_inv_categor_frame.setObjectName("calc_inv_categor_frame")
+        self.calc_inv_categor_layout = QtWidgets.QVBoxLayout(self.calc_inv_categor_frame)
+        self.calc_inv_categor_layout.setContentsMargins(15, 15, 0, 15)
+        self.calc_inv_categor_layout.setSpacing(10)
+        self.calc_inv_categor_layout.setObjectName("calc_inv_categor_layout")
+        self.calc_inv_categor_label = QtWidgets.QLabel(self.calc_inv_categor_frame)
+        self.calc_inv_categor_label.setStyleSheet("")
+        self.calc_inv_categor_label.setObjectName("calc_inv_categor_label")
+        self.calc_inv_categor_layout.addWidget(self.calc_inv_categor_label)
+        self.calc_inv_categor_butt_frame_2 = QtWidgets.QFrame(self.calc_inv_categor_frame)
+        self.calc_inv_categor_butt_frame_2.setStyleSheet("QFrame {\n"
+                                                         "    border: none;\n"
+                                                         "}\n"
+                                                         "")
+        self.calc_inv_categor_butt_frame_2.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_inv_categor_butt_frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_inv_categor_butt_frame_2.setObjectName("calc_inv_categor_butt_frame_2")
+        self.calc_inv_categor_butt_layout_2 = QtWidgets.QHBoxLayout(self.calc_inv_categor_butt_frame_2)
+        self.calc_inv_categor_butt_layout_2.setContentsMargins(0, 0, 0, 0)
+        self.calc_inv_categor_butt_layout_2.setSpacing(5)
+        self.calc_inv_categor_butt_layout_2.setObjectName("calc_inv_categor_butt_layout_2")
+        self.inventory_cat_butt_sample_3 = QtWidgets.QPushButton(self.calc_inv_categor_butt_frame_2)
+        self.inventory_cat_butt_sample_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.inventory_cat_butt_sample_3.setCheckable(True)
+        self.inventory_cat_butt_sample_3.setChecked(True)
+        self.inventory_cat_butt_sample_3.setObjectName("inventory_cat_butt_sample_3")
+        self.calc_inv_categor_butt_layout_2.addWidget(self.inventory_cat_butt_sample_3)
+        self.inven_3 = QtWidgets.QPushButton(self.calc_inv_categor_butt_frame_2)
+        self.inven_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.inven_3.setCheckable(True)
+        self.inven_3.setObjectName("inven_3")
+        self.calc_inv_categor_butt_layout_2.addWidget(self.inven_3)
+        self.config_subpeak_butt_4 = QtWidgets.QPushButton(self.calc_inv_categor_butt_frame_2)
+        self.config_subpeak_butt_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.config_subpeak_butt_4.setCheckable(True)
+        self.config_subpeak_butt_4.setObjectName("config_subpeak_butt_4")
+        self.calc_inv_categor_butt_layout_2.addWidget(self.config_subpeak_butt_4)
+        self.config_peak_butt_4 = QtWidgets.QPushButton(self.calc_inv_categor_butt_frame_2)
+        self.config_peak_butt_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.config_peak_butt_4.setCheckable(True)
+        self.config_peak_butt_4.setObjectName("config_peak_butt_4")
+        self.calc_inv_categor_butt_layout_2.addWidget(self.config_peak_butt_4)
+        self.calc_inv_categor_layout.addWidget(self.calc_inv_categor_butt_frame_2)
+        self.calc_inv_content_layout.addWidget(self.calc_inv_categor_frame, 0, QtCore.Qt.AlignTop)
+        self.calc_inv_content_scrollarea = QtWidgets.QScrollArea(self.calc_inv_content_frame)
+        self.calc_inv_content_scrollarea.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_inv_content_scrollarea.setWidgetResizable(True)
+        self.calc_inv_content_scrollarea.setObjectName("calc_inv_content_scrollarea")
+        self.calc_inv_content_scroll_frame = QtWidgets.QWidget()
+        self.calc_inv_content_scroll_frame.setGeometry(QtCore.QRect(0, 0, 990, 164))
+        self.calc_inv_content_scroll_frame.setObjectName("calc_inv_content_scroll_frame")
+        self.calc_inv_content_scroll_layout = QtWidgets.QVBoxLayout(self.calc_inv_content_scroll_frame)
+        self.calc_inv_content_scroll_layout.setContentsMargins(0, 0, 0, 0)
+        self.calc_inv_content_scroll_layout.setSpacing(0)
+        self.calc_inv_content_scroll_layout.setObjectName("calc_inv_content_scroll_layout")
+        self.calc_inv_content_clear_frame = QtWidgets.QFrame(self.calc_inv_content_scroll_frame)
+        self.calc_inv_content_clear_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_inv_content_clear_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_inv_content_clear_frame.setObjectName("calc_inv_content_clear_frame")
+        self.calc_inv_content_clear_layout = QtWidgets.QHBoxLayout(self.calc_inv_content_clear_frame)
+        self.calc_inv_content_clear_layout.setContentsMargins(0, 0, 0, 0)
+        self.calc_inv_content_clear_layout.setSpacing(8)
+        self.calc_inv_content_clear_layout.setObjectName("calc_inv_content_clear_layout")
+        self.frame_11 = QtWidgets.QFrame(self.calc_inv_content_clear_frame)
+        self.frame_11.setMinimumSize(QtCore.QSize(324, 119))
+        self.frame_11.setMaximumSize(QtCore.QSize(324, 119))
+        self.frame_11.setStyleSheet(".QFrame {\n"
+                                    "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
+                                    "    border-radius: 10px;\n"
+                                    "}\n"
+                                    "\n"
+                                    ".QFrame:hover {\n"
+                                    "    border: 0.5px solid #0915CC;\n"
+                                    "}")
+        self.frame_11.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.frame_11.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_11.setObjectName("frame_11")
+        self.verticalLayout_7 = QtWidgets.QVBoxLayout(self.frame_11)
+        self.verticalLayout_7.setContentsMargins(15, 15, 15, 15)
+        self.verticalLayout_7.setSpacing(15)
+        self.verticalLayout_7.setObjectName("verticalLayout_7")
+        self.frame_12 = QtWidgets.QFrame(self.frame_11)
+        self.frame_12.setStyleSheet("border: none;")
+        self.frame_12.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_12.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_12.setObjectName("frame_12")
+        self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.frame_12)
+        self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_5.setSpacing(0)
+        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
+        self.label_17 = QtWidgets.QLabel(self.frame_12)
+        self.label_17.setMinimumSize(QtCore.QSize(56, 56))
+        self.label_17.setMaximumSize(QtCore.QSize(56, 56))
+        self.label_17.setStyleSheet("image: url(:/image/Login_pic.png);")
+        self.label_17.setText("")
+        self.label_17.setObjectName("label_17")
+        self.horizontalLayout_5.addWidget(self.label_17)
+        self.pushButton_4 = QtWidgets.QPushButton(self.frame_12)
+        self.pushButton_4.setMinimumSize(QtCore.QSize(103, 28))
+        self.pushButton_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.pushButton_4.setLayoutDirection(QtCore.Qt.RightToLeft)
+        self.pushButton_4.setStyleSheet("QPushButton {\n"
+                                        "    background: #F2F3F6;\n"
+                                        "    border-radius: 5px;\n"
+                                        "    color: #757C9F;\n"
+                                        "    qproperty-icon: url(:/image/plus_gray_icon.svg);\n"
+                                        "    font-size: 14px;\n"
+                                        "}\n"
+                                        "\n"
+                                        "QPushButton:hover {\n"
+                                        "    color: #0915CC;\n"
+                                        "}\n"
+                                        "")
+        self.pushButton_4.setIconSize(QtCore.QSize(24, 24))
+        self.pushButton_4.setObjectName("pushButton_4")
+        self.horizontalLayout_5.addWidget(self.pushButton_4, 0, QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
+        self.verticalLayout_7.addWidget(self.frame_12)
+        self.label_18 = QtWidgets.QLabel(self.frame_11)
+        self.label_18.setStyleSheet("color: #070808;\n"
+                                    "font-size: 14px;")
+        self.label_18.setObjectName("label_18")
+        self.verticalLayout_7.addWidget(self.label_18)
+        self.calc_inv_content_clear_layout.addWidget(self.frame_11)
+        self.frame_19 = QtWidgets.QFrame(self.calc_inv_content_clear_frame)
+        self.frame_19.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_19.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_19.setObjectName("frame_19")
+        self.verticalLayout_14 = QtWidgets.QVBoxLayout(self.frame_19)
+        self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_14.setSpacing(0)
+        self.verticalLayout_14.setObjectName("verticalLayout_14")
+        self.frame_25 = QtWidgets.QFrame(self.frame_19)
+        self.frame_25.setMinimumSize(QtCore.QSize(324, 162))
+        self.frame_25.setMaximumSize(QtCore.QSize(324, 162))
+        self.frame_25.setStyleSheet(".QFrame {\n"
+                                    "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
+                                    "    border-radius: 10px;\n"
+                                    "}\n"
+                                    "\n"
+                                    ".QFrame:hover {\n"
+                                    "    border: 0.5px solid #0915CC;\n"
+                                    "}")
+        self.frame_25.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.frame_25.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_25.setObjectName("frame_25")
+        self.verticalLayout_15 = QtWidgets.QVBoxLayout(self.frame_25)
+        self.verticalLayout_15.setContentsMargins(15, 15, 15, 15)
+        self.verticalLayout_15.setSpacing(0)
+        self.verticalLayout_15.setObjectName("verticalLayout_15")
+        self.frame_26 = QtWidgets.QFrame(self.frame_25)
+        self.frame_26.setStyleSheet("border: none;")
+        self.frame_26.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.frame_26.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_26.setObjectName("frame_26")
+        self.horizontalLayout_12 = QtWidgets.QHBoxLayout(self.frame_26)
+        self.horizontalLayout_12.setContentsMargins(0, 0, 0, 15)
+        self.horizontalLayout_12.setSpacing(11)
+        self.horizontalLayout_12.setObjectName("horizontalLayout_12")
+        self.label_19 = QtWidgets.QLabel(self.frame_26)
+        self.label_19.setMinimumSize(QtCore.QSize(56, 56))
+        self.label_19.setMaximumSize(QtCore.QSize(56, 56))
+        self.label_19.setStyleSheet("image: url(:/image/custom_item_icon.svg);")
+        self.label_19.setText("")
+        self.label_19.setObjectName("label_19")
+        self.horizontalLayout_12.addWidget(self.label_19)
+        self.pushButton_6 = QtWidgets.QPushButton(self.frame_26)
+        self.pushButton_6.setMinimumSize(QtCore.QSize(103, 28))
+        self.pushButton_6.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.pushButton_6.setLayoutDirection(QtCore.Qt.RightToLeft)
+        self.pushButton_6.setStyleSheet("QPushButton {\n"
+                                        "    background: #F2F3F6;\n"
+                                        "    border-radius: 5px;\n"
+                                        "    color: #757C9F;\n"
+                                        "    qproperty-icon: url(:/image/plus_gray_icon.svg);\n"
+                                        "    font-size: 14px;\n"
+                                        "}\n"
+                                        "\n"
+                                        "QPushButton:hover {\n"
+                                        "    color: #0915CC;\n"
+                                        "}\n"
+                                        "")
+        self.pushButton_6.setIconSize(QtCore.QSize(24, 24))
+        self.pushButton_6.setObjectName("pushButton_6")
+        self.horizontalLayout_12.addWidget(self.pushButton_6, 0, QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
+        self.verticalLayout_15.addWidget(self.frame_26)
+        self.label_21 = QtWidgets.QLabel(self.frame_25)
+        self.label_21.setStyleSheet("color: #070808;\n"
+                                    "font-size: 14px;")
+        self.label_21.setObjectName("label_21")
+        self.verticalLayout_15.addWidget(self.label_21)
+        self.frame_27 = QtWidgets.QFrame(self.frame_25)
+        self.frame_27.setStyleSheet("QFrame {\n"
+                                    "    border: none;\n"
+                                    "}\n"
+                                    "\n"
+                                    "QLabel {\n"
+                                    "    color: #757C9F;\n"
+                                    "    font-size: 14px;\n"
+                                    "}")
+        self.frame_27.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.frame_27.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_27.setObjectName("frame_27")
+        self.verticalLayout_16 = QtWidgets.QVBoxLayout(self.frame_27)
+        self.verticalLayout_16.setContentsMargins(0, 5, 0, 0)
+        self.verticalLayout_16.setSpacing(2)
+        self.verticalLayout_16.setObjectName("verticalLayout_16")
+        self.frame_28 = QtWidgets.QFrame(self.frame_27)
+        self.frame_28.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.frame_28.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_28.setObjectName("frame_28")
+        self.horizontalLayout_18 = QtWidgets.QHBoxLayout(self.frame_28)
+        self.horizontalLayout_18.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_18.setSpacing(4)
+        self.horizontalLayout_18.setObjectName("horizontalLayout_18")
+        self.label_37 = QtWidgets.QLabel(self.frame_28)
+        self.label_37.setMinimumSize(QtCore.QSize(12, 12))
+        self.label_37.setStyleSheet("image: url(:/image/width_icon.svg);")
+        self.label_37.setText("")
+        self.label_37.setObjectName("label_37")
+        self.horizontalLayout_18.addWidget(self.label_37)
+        self.label_38 = QtWidgets.QLabel(self.frame_28)
+        self.label_38.setStyleSheet("margin-right: 12px;")
+        self.label_38.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.label_38.setObjectName("label_38")
+        self.horizontalLayout_18.addWidget(self.label_38)
+        self.label_39 = QtWidgets.QLabel(self.frame_28)
+        self.label_39.setMinimumSize(QtCore.QSize(12, 12))
+        self.label_39.setStyleSheet("image: url(:/image/length_icon.svg);")
+        self.label_39.setText("")
+        self.label_39.setObjectName("label_39")
+        self.horizontalLayout_18.addWidget(self.label_39)
+        self.label_40 = QtWidgets.QLabel(self.frame_28)
+        self.label_40.setStyleSheet("")
+        self.label_40.setObjectName("label_40")
+        self.horizontalLayout_18.addWidget(self.label_40)
+        self.verticalLayout_16.addWidget(self.frame_28, 0, QtCore.Qt.AlignLeft)
+        self.frame_29 = QtWidgets.QFrame(self.frame_27)
+        self.frame_29.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.frame_29.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_29.setObjectName("frame_29")
+        self.horizontalLayout_19 = QtWidgets.QHBoxLayout(self.frame_29)
+        self.horizontalLayout_19.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_19.setSpacing(4)
+        self.horizontalLayout_19.setObjectName("horizontalLayout_19")
+        self.label_41 = QtWidgets.QLabel(self.frame_29)
+        self.label_41.setMinimumSize(QtCore.QSize(12, 12))
+        self.label_41.setStyleSheet("image: url(:/image/length_icon.svg);")
+        self.label_41.setText("")
+        self.label_41.setObjectName("label_41")
+        self.horizontalLayout_19.addWidget(self.label_41)
+        self.label_42 = QtWidgets.QLabel(self.frame_29)
+        self.label_42.setStyleSheet("")
+        self.label_42.setObjectName("label_42")
+        self.horizontalLayout_19.addWidget(self.label_42)
+        self.verticalLayout_16.addWidget(self.frame_29, 0, QtCore.Qt.AlignLeft)
+        self.verticalLayout_15.addWidget(self.frame_27, 0, QtCore.Qt.AlignLeft)
+        self.verticalLayout_14.addWidget(self.frame_25)
+        self.calc_inv_content_clear_layout.addWidget(self.frame_19)
+        self.frame_30 = QtWidgets.QFrame(self.calc_inv_content_clear_frame)
+        self.frame_30.setMinimumSize(QtCore.QSize(324, 119))
+        self.frame_30.setMaximumSize(QtCore.QSize(324, 119))
+        self.frame_30.setStyleSheet("#frame_21 {\n"
+                                    "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
+                                    "    border-radius: 10px;\n"
+                                    "}\n"
+                                    "\n"
+                                    "#frame_21:hover {\n"
+                                    "    border: 0.5px solid #0915CC;\n"
+                                    "}")
+        self.frame_30.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.frame_30.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_30.setObjectName("frame_30")
+        self.verticalLayout_17 = QtWidgets.QVBoxLayout(self.frame_30)
+        self.verticalLayout_17.setContentsMargins(15, 15, 15, 15)
+        self.verticalLayout_17.setSpacing(15)
+        self.verticalLayout_17.setObjectName("verticalLayout_17")
+        self.frame_31 = QtWidgets.QFrame(self.frame_30)
+        self.frame_31.setStyleSheet("")
+        self.frame_31.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_31.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_31.setObjectName("frame_31")
+        self.horizontalLayout_13 = QtWidgets.QHBoxLayout(self.frame_31)
+        self.horizontalLayout_13.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_13.setSpacing(17)
+        self.horizontalLayout_13.setObjectName("horizontalLayout_13")
+        self.label_22 = QtWidgets.QLabel(self.frame_31)
+        self.label_22.setMinimumSize(QtCore.QSize(56, 56))
+        self.label_22.setMaximumSize(QtCore.QSize(56, 56))
+        self.label_22.setStyleSheet("image: url(:/image/Login_pic.png);")
+        self.label_22.setText("")
+        self.label_22.setObjectName("label_22")
+        self.horizontalLayout_13.addWidget(self.label_22)
+        self.profile_delete_butt_4 = QtWidgets.QPushButton(self.frame_31)
+        self.profile_delete_butt_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.profile_delete_butt_4.setLayoutDirection(QtCore.Qt.RightToLeft)
+        self.profile_delete_butt_4.setStyleSheet("QPushButton {\n"
+                                                 "    border:none;\n"
+                                                 "    background: transparent;\n"
+                                                 "    font-size: 14px;\n"
+                                                 "    color: #757C9F;\n"
+                                                 "    qproperty-icon: url(:/image/inventory_delete_default.svg);\n"
+                                                 "}\n"
+                                                 "\n"
+                                                 "QPushButton:hover {\n"
+                                                 "    color: #FF3C2F;\n"
+                                                 "}")
+        self.profile_delete_butt_4.setIconSize(QtCore.QSize(24, 24))
+        self.profile_delete_butt_4.setObjectName("profile_delete_butt_4")
+        self.horizontalLayout_13.addWidget(self.profile_delete_butt_4, 0, QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
+        self.comboBox_2 = QtWidgets.QComboBox(self.frame_31)
+        self.comboBox_2.setMinimumSize(QtCore.QSize(60, 24))
+        self.comboBox_2.setMaximumSize(QtCore.QSize(60, 24))
+        self.comboBox_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.comboBox_2.setStyleSheet("")
+        self.comboBox_2.setEditable(True)
+        self.comboBox_2.setObjectName("comboBox_2")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.horizontalLayout_13.addWidget(self.comboBox_2, 0, QtCore.Qt.AlignTop)
+        self.verticalLayout_17.addWidget(self.frame_31)
+        self.label_23 = QtWidgets.QLabel(self.frame_30)
+        self.label_23.setStyleSheet("color: #070808;\n"
+                                    "font-size: 14px;")
+        self.label_23.setObjectName("label_23")
+        self.verticalLayout_17.addWidget(self.label_23)
+        self.calc_inv_content_clear_layout.addWidget(self.frame_30)
+        self.calc_inv_content_scroll_layout.addWidget(self.calc_inv_content_clear_frame)
+        self.calc_inv_content_scrollarea.setWidget(self.calc_inv_content_scroll_frame)
+        self.calc_inv_content_layout.addWidget(self.calc_inv_content_scrollarea)
+        self.calc_inv_bottom_layout.addWidget(self.calc_inv_content_frame)
+        self.calc_inv_bottom_layout.setStretch(1, 1)
+        self.calc_invnetory_check_layout.addWidget(self.calc_inv_bottom_frame)
+        self.calc_menu_pages.addWidget(self.calc_invnetory_check_page)
+        self.calc_calculation_result_page = QtWidgets.QWidget()
+        self.calc_calculation_result_page.setObjectName("calc_calculation_result_page")
+        self.calc_calculation_result_layout = QtWidgets.QHBoxLayout(self.calc_calculation_result_page)
+        self.calc_calculation_result_layout.setContentsMargins(0, 0, 0, 30)
+        self.calc_calculation_result_layout.setSpacing(70)
+        self.calc_calculation_result_layout.setObjectName("calc_calculation_result_layout")
+        self.calc_result_frame = QtWidgets.QFrame(self.calc_calculation_result_page)
+        self.calc_result_frame.setMinimumSize(QtCore.QSize(427, 506))
+        self.calc_result_frame.setStyleSheet("QFrame {\n"
+                                             "    background: #F9FAFB;\n"
+                                             "    border-radius: 5px;\n"
+                                             "}")
+        self.calc_result_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_result_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_result_frame.setObjectName("calc_result_frame")
+        self.calc_result_frame_2 = QtWidgets.QVBoxLayout(self.calc_result_frame)
+        self.calc_result_frame_2.setContentsMargins(30, 20, 30, 0)
+        self.calc_result_frame_2.setSpacing(0)
+        self.calc_result_frame_2.setObjectName("calc_result_frame_2")
+        self.calc_result_header = QtWidgets.QLabel(self.calc_result_frame)
+        self.calc_result_header.setStyleSheet("color: #070808;\n"
+                                              "font-size: 19px;\n"
+                                              "margin-bottom: 15px;")
+        self.calc_result_header.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.calc_result_header.setObjectName("calc_result_header")
+        self.calc_result_frame_2.addWidget(self.calc_result_header)
+        self.calc_calc_result_top_line = QtWidgets.QFrame(self.calc_result_frame)
+        self.calc_calc_result_top_line.setStyleSheet("")
+        self.calc_calc_result_top_line.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.calc_calc_result_top_line.setLineWidth(1)
+        self.calc_calc_result_top_line.setFrameShape(QtWidgets.QFrame.HLine)
+        self.calc_calc_result_top_line.setObjectName("calc_calc_result_top_line")
+        self.calc_result_frame_2.addWidget(self.calc_calc_result_top_line)
+        self.calc_result_info_frame = QtWidgets.QFrame(self.calc_result_frame)
+        self.calc_result_info_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_result_info_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_result_info_frame.setObjectName("calc_result_info_frame")
+        self.calc_result_info_layout = QtWidgets.QGridLayout(self.calc_result_info_frame)
+        self.calc_result_info_layout.setContentsMargins(0, 30, 0, 30)
+        self.calc_result_info_layout.setHorizontalSpacing(0)
+        self.calc_result_info_layout.setVerticalSpacing(10)
+        self.calc_result_info_layout.setObjectName("calc_result_info_layout")
+        self.calc_result_crew_size_label = QtWidgets.QLabel(self.calc_result_info_frame)
+        self.calc_result_crew_size_label.setStyleSheet("color: #757C9F;\n"
+                                                       "font-size: 14px;")
+        self.calc_result_crew_size_label.setObjectName("calc_result_crew_size_label")
+        self.calc_result_info_layout.addWidget(self.calc_result_crew_size_label, 0, 0, 1, 1)
+        self.calc_result_hr_label = QtWidgets.QLabel(self.calc_result_info_frame)
+        self.calc_result_hr_label.setStyleSheet("color: #757C9F;\n"
+                                                "font-size: 14px;")
+        self.calc_result_hr_label.setObjectName("calc_result_hr_label")
+        self.calc_result_info_layout.addWidget(self.calc_result_hr_label, 3, 0, 1, 1)
+        self.calc_result_hr_info = QtWidgets.QLabel(self.calc_result_info_frame)
+        self.calc_result_hr_info.setStyleSheet("color: #070808;\n"
+                                               "font-size: 14px;")
+        self.calc_result_hr_info.setObjectName("calc_result_hr_info")
+        self.calc_result_info_layout.addWidget(self.calc_result_hr_info, 3, 1, 1, 1, QtCore.Qt.AlignRight)
+        self.calc_result_travel_time_info = QtWidgets.QLabel(self.calc_result_info_frame)
+        self.calc_result_travel_time_info.setStyleSheet("color: #070808;\n"
+                                                        "font-size: 14px;")
+        self.calc_result_travel_time_info.setObjectName("calc_result_travel_time_info")
+        self.calc_result_info_layout.addWidget(self.calc_result_travel_time_info, 2, 1, 1, 1, QtCore.Qt.AlignRight)
+        self.calc_result_est_info = QtWidgets.QLabel(self.calc_result_info_frame)
+        self.calc_result_est_info.setStyleSheet("color: #070808;\n"
+                                                "font-size: 14px;")
+        self.calc_result_est_info.setObjectName("calc_result_est_info")
+        self.calc_result_info_layout.addWidget(self.calc_result_est_info, 4, 1, 1, 1, QtCore.Qt.AlignRight)
+        self.calc_result_truck_size_info = QtWidgets.QLabel(self.calc_result_info_frame)
+        self.calc_result_truck_size_info.setStyleSheet("color: #070808;\n"
+                                                       "font-size: 14px;")
+        self.calc_result_truck_size_info.setObjectName("calc_result_truck_size_info")
+        self.calc_result_info_layout.addWidget(self.calc_result_truck_size_info, 1, 1, 1, 1, QtCore.Qt.AlignRight)
+        self.calc_result_crew_size_info = QtWidgets.QLabel(self.calc_result_info_frame)
+        self.calc_result_crew_size_info.setStyleSheet("color: #070808;\n"
+                                                      "font-size: 14px;")
+        self.calc_result_crew_size_info.setObjectName("calc_result_crew_size_info")
+        self.calc_result_info_layout.addWidget(self.calc_result_crew_size_info, 0, 1, 1, 1, QtCore.Qt.AlignRight)
+        self.calc_result_travel_time_label = QtWidgets.QLabel(self.calc_result_info_frame)
+        self.calc_result_travel_time_label.setStyleSheet("color: #757C9F;\n"
+                                                         "font-size: 14px;")
+        self.calc_result_travel_time_label.setObjectName("calc_result_travel_time_label")
+        self.calc_result_info_layout.addWidget(self.calc_result_travel_time_label, 2, 0, 1, 1)
+        self.calc_result_est_label = QtWidgets.QLabel(self.calc_result_info_frame)
+        self.calc_result_est_label.setStyleSheet("color: #757C9F;\n"
+                                                 "font-size: 14px;")
+        self.calc_result_est_label.setObjectName("calc_result_est_label")
+        self.calc_result_info_layout.addWidget(self.calc_result_est_label, 4, 0, 1, 1)
+        self.calc_result_truck_size_label = QtWidgets.QLabel(self.calc_result_info_frame)
+        self.calc_result_truck_size_label.setStyleSheet("color: #757C9F;\n"
+                                                        "font-size: 14px;")
+        self.calc_result_truck_size_label.setObjectName("calc_result_truck_size_label")
+        self.calc_result_info_layout.addWidget(self.calc_result_truck_size_label, 1, 0, 1, 1)
+        self.calc_result_frame_2.addWidget(self.calc_result_info_frame)
+        self.calc_result_bottom_line = QtWidgets.QFrame(self.calc_result_frame)
+        self.calc_result_bottom_line.setFrameShape(QtWidgets.QFrame.HLine)
+        self.calc_result_bottom_line.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.calc_result_bottom_line.setObjectName("calc_result_bottom_line")
+        self.calc_result_frame_2.addWidget(self.calc_result_bottom_line)
+        self.cacl_result_quote_frame = QtWidgets.QFrame(self.calc_result_frame)
+        self.cacl_result_quote_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.cacl_result_quote_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.cacl_result_quote_frame.setObjectName("cacl_result_quote_frame")
+        self.cacl_result_quote_layout = QtWidgets.QHBoxLayout(self.cacl_result_quote_frame)
+        self.cacl_result_quote_layout.setContentsMargins(0, 30, 0, 0)
+        self.cacl_result_quote_layout.setSpacing(0)
+        self.cacl_result_quote_layout.setObjectName("cacl_result_quote_layout")
+        self.calc_result_quote_label = QtWidgets.QLabel(self.cacl_result_quote_frame)
+        self.calc_result_quote_label.setStyleSheet("color: #070808;\n"
+                                                   "font-size: 14px;")
+        self.calc_result_quote_label.setObjectName("calc_result_quote_label")
+        self.cacl_result_quote_layout.addWidget(self.calc_result_quote_label)
+        self.calc_result_quote_info = QtWidgets.QLabel(self.cacl_result_quote_frame)
+        self.calc_result_quote_info.setStyleSheet("color: #0915CC;\n"
+                                                  "font-size: 19px;")
+        self.calc_result_quote_info.setObjectName("calc_result_quote_info")
+        self.cacl_result_quote_layout.addWidget(self.calc_result_quote_info, 0, QtCore.Qt.AlignRight)
+        self.calc_result_frame_2.addWidget(self.cacl_result_quote_frame, 0, QtCore.Qt.AlignTop)
+        self.calc_result_frame_2.setStretch(4, 1)
+        self.calc_calculation_result_layout.addWidget(self.calc_result_frame)
+        self.calc_result_pages = QtWidgets.QStackedWidget(self.calc_calculation_result_page)
+        self.calc_result_pages.setObjectName("calc_result_pages")
+        self.calc_result_details_page = QtWidgets.QWidget()
+        self.calc_result_details_page.setObjectName("calc_result_details_page")
+        self.calc_result_details_layout = QtWidgets.QVBoxLayout(self.calc_result_details_page)
+        self.calc_result_details_layout.setContentsMargins(0, 0, 0, 0)
+        self.calc_result_details_layout.setSpacing(0)
+        self.calc_result_details_layout.setObjectName("calc_result_details_layout")
+        self.calc_result_details_frame = QtWidgets.QFrame(self.calc_result_details_page)
+        self.calc_result_details_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_result_details_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_result_details_frame.setObjectName("calc_result_details_frame")
+        self.calc_result_details_layout_2 = QtWidgets.QVBoxLayout(self.calc_result_details_frame)
+        self.calc_result_details_layout_2.setContentsMargins(0, 20, 0, 0)
+        self.calc_result_details_layout_2.setSpacing(30)
+        self.calc_result_details_layout_2.setObjectName("calc_result_details_layout_2")
+        self.calc_result_details_header = QtWidgets.QLabel(self.calc_result_details_frame)
+        self.calc_result_details_header.setStyleSheet("color: #070808;\n"
+                                                      "font-size: 19px;")
+        self.calc_result_details_header.setObjectName("calc_result_details_header")
+        self.calc_result_details_layout_2.addWidget(self.calc_result_details_header)
+        self.calc_result_details_inner_frame = QtWidgets.QFrame(self.calc_result_details_frame)
+        self.calc_result_details_inner_frame.setStyleSheet("QLabel {\n"
+                                                           "    font-size: 14px;\n"
+                                                           "    color: #757C9F;\n"
+                                                           "}")
+        self.calc_result_details_inner_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_result_details_inner_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_result_details_inner_frame.setObjectName("calc_result_details_inner_frame")
+        self.calc_result_details_inner_layout = QtWidgets.QGridLayout(self.calc_result_details_inner_frame)
+        self.calc_result_details_inner_layout.setContentsMargins(0, 0, 0, 0)
+        self.calc_result_details_inner_layout.setHorizontalSpacing(12)
+        self.calc_result_details_inner_layout.setVerticalSpacing(16)
+        self.calc_result_details_inner_layout.setObjectName("calc_result_details_inner_layout")
+        self.calc_result_details_zip_from_info = QtWidgets.QLabel(self.calc_result_details_inner_frame)
+        self.calc_result_details_zip_from_info.setStyleSheet("color: #0915CC;")
+        self.calc_result_details_zip_from_info.setObjectName("calc_result_details_zip_from_info")
+        self.calc_result_details_inner_layout.addWidget(self.calc_result_details_zip_from_info, 2, 2, 1, 1)
+        self.calc_result_details_ent_to_label = QtWidgets.QLabel(self.calc_result_details_inner_frame)
+        self.calc_result_details_ent_to_label.setObjectName("calc_result_details_ent_to_label")
+        self.calc_result_details_inner_layout.addWidget(self.calc_result_details_ent_to_label, 6, 1, 1, 1,
+                                                        QtCore.Qt.AlignLeft)
+        self.calc_result_details_service_label = QtWidgets.QLabel(self.calc_result_details_inner_frame)
+        self.calc_result_details_service_label.setObjectName("calc_result_details_service_label")
+        self.calc_result_details_inner_layout.addWidget(self.calc_result_details_service_label, 1, 1, 1, 1)
+        self.calc_result_details_date_label = QtWidgets.QLabel(self.calc_result_details_inner_frame)
+        self.calc_result_details_date_label.setObjectName("calc_result_details_date_label")
+        self.calc_result_details_inner_layout.addWidget(self.calc_result_details_date_label, 0, 1, 1, 1)
+        self.calc_result_details_zip_icon = QtWidgets.QLabel(self.calc_result_details_inner_frame)
+        self.calc_result_details_zip_icon.setStyleSheet("image: url(:/image/calculator_zip_code_icon.svg);")
+        self.calc_result_details_zip_icon.setText("")
+        self.calc_result_details_zip_icon.setObjectName("calc_result_details_zip_icon")
+        self.calc_result_details_inner_layout.addWidget(self.calc_result_details_zip_icon, 2, 0, 1, 1)
+        self.calc_result_details_ent_from_label = QtWidgets.QLabel(self.calc_result_details_inner_frame)
+        self.calc_result_details_ent_from_label.setObjectName("calc_result_details_ent_from_label")
+        self.calc_result_details_inner_layout.addWidget(self.calc_result_details_ent_from_label, 5, 1, 1, 1)
+        self.calc_result_details_service_info = QtWidgets.QLabel(self.calc_result_details_inner_frame)
+        self.calc_result_details_service_info.setStyleSheet("color: #0915CC;")
+        self.calc_result_details_service_info.setObjectName("calc_result_details_service_info")
+        self.calc_result_details_inner_layout.addWidget(self.calc_result_details_service_info, 1, 2, 1, 1)
+        self.calc_result_details_service_icon = QtWidgets.QLabel(self.calc_result_details_inner_frame)
+        self.calc_result_details_service_icon.setStyleSheet("image: url(:/image/calculator_service_icon.svg);")
+        self.calc_result_details_service_icon.setText("")
+        self.calc_result_details_service_icon.setObjectName("calc_result_details_service_icon")
+        self.calc_result_details_inner_layout.addWidget(self.calc_result_details_service_icon, 1, 0, 1, 1)
+        self.calc_result_details_zip_to_info = QtWidgets.QLabel(self.calc_result_details_inner_frame)
+        self.calc_result_details_zip_to_info.setStyleSheet("color: #0915CC;")
+        self.calc_result_details_zip_to_info.setObjectName("calc_result_details_zip_to_info")
+        self.calc_result_details_inner_layout.addWidget(self.calc_result_details_zip_to_info, 3, 2, 1, 1)
+        self.calc_result_details_ent_to_info = QtWidgets.QLabel(self.calc_result_details_inner_frame)
+        self.calc_result_details_ent_to_info.setStyleSheet("color: #0915CC;")
+        self.calc_result_details_ent_to_info.setObjectName("calc_result_details_ent_to_info")
+        self.calc_result_details_inner_layout.addWidget(self.calc_result_details_ent_to_info, 6, 2, 1, 1)
+        self.calc_result_details_ent_icon_2 = QtWidgets.QLabel(self.calc_result_details_inner_frame)
+        self.calc_result_details_ent_icon_2.setMinimumSize(QtCore.QSize(20, 20))
+        self.calc_result_details_ent_icon_2.setStyleSheet("image: url(:/image/calculator_entrance_icon.svg);")
+        self.calc_result_details_ent_icon_2.setText("")
+        self.calc_result_details_ent_icon_2.setObjectName("calc_result_details_ent_icon_2")
+        self.calc_result_details_inner_layout.addWidget(self.calc_result_details_ent_icon_2, 6, 0, 1, 1,
+                                                        QtCore.Qt.AlignLeft)
+        self.calc_result_details_zip_to_label = QtWidgets.QLabel(self.calc_result_details_inner_frame)
+        self.calc_result_details_zip_to_label.setObjectName("calc_result_details_zip_to_label")
+        self.calc_result_details_inner_layout.addWidget(self.calc_result_details_zip_to_label, 3, 1, 1, 1)
+        self.calc_result_details_zip_icon_2 = QtWidgets.QLabel(self.calc_result_details_inner_frame)
+        self.calc_result_details_zip_icon_2.setStyleSheet("image: url(:/image/calculator_zip_code_icon.svg);")
+        self.calc_result_details_zip_icon_2.setText("")
+        self.calc_result_details_zip_icon_2.setObjectName("calc_result_details_zip_icon_2")
+        self.calc_result_details_inner_layout.addWidget(self.calc_result_details_zip_icon_2, 3, 0, 1, 1)
+        self.calc_result_details_ent_from_info = QtWidgets.QLabel(self.calc_result_details_inner_frame)
+        self.calc_result_details_ent_from_info.setStyleSheet("color: #0915CC;")
+        self.calc_result_details_ent_from_info.setObjectName("calc_result_details_ent_from_info")
+        self.calc_result_details_inner_layout.addWidget(self.calc_result_details_ent_from_info, 5, 2, 1, 1)
+        self.calc_result_details_date_info = QtWidgets.QLabel(self.calc_result_details_inner_frame)
+        self.calc_result_details_date_info.setStyleSheet("color: #0915CC;")
+        self.calc_result_details_date_info.setObjectName("calc_result_details_date_info")
+        self.calc_result_details_inner_layout.addWidget(self.calc_result_details_date_info, 0, 2, 1, 1)
+        self.calc_result_details_zip_from_label = QtWidgets.QLabel(self.calc_result_details_inner_frame)
+        self.calc_result_details_zip_from_label.setObjectName("calc_result_details_zip_from_label")
+        self.calc_result_details_inner_layout.addWidget(self.calc_result_details_zip_from_label, 2, 1, 1, 1)
+        self.calc_result_details_size_icon = QtWidgets.QLabel(self.calc_result_details_inner_frame)
+        self.calc_result_details_size_icon.setStyleSheet("image: url(:/image/calculator_move_size_icon.svg);")
+        self.calc_result_details_size_icon.setText("")
+        self.calc_result_details_size_icon.setObjectName("calc_result_details_size_icon")
+        self.calc_result_details_inner_layout.addWidget(self.calc_result_details_size_icon, 4, 0, 1, 1)
+        self.calc_result_details_date_icon = QtWidgets.QLabel(self.calc_result_details_inner_frame)
+        self.calc_result_details_date_icon.setMinimumSize(QtCore.QSize(20, 20))
+        self.calc_result_details_date_icon.setMaximumSize(QtCore.QSize(20, 20))
+        self.calc_result_details_date_icon.setStyleSheet("image: url(:/image/calculator_calendar_icon.svg);")
+        self.calc_result_details_date_icon.setText("")
+        self.calc_result_details_date_icon.setObjectName("calc_result_details_date_icon")
+        self.calc_result_details_inner_layout.addWidget(self.calc_result_details_date_icon, 0, 0, 1, 1)
+        self.calc_result_details_ent_icon = QtWidgets.QLabel(self.calc_result_details_inner_frame)
+        self.calc_result_details_ent_icon.setStyleSheet("image: url(:/image/calculator_entrance_icon.svg);")
+        self.calc_result_details_ent_icon.setText("")
+        self.calc_result_details_ent_icon.setObjectName("calc_result_details_ent_icon")
+        self.calc_result_details_inner_layout.addWidget(self.calc_result_details_ent_icon, 5, 0, 1, 1)
+        self.calc_result_details_size_label = QtWidgets.QLabel(self.calc_result_details_inner_frame)
+        self.calc_result_details_size_label.setObjectName("calc_result_details_size_label")
+        self.calc_result_details_inner_layout.addWidget(self.calc_result_details_size_label, 4, 1, 1, 1)
+        self.calc_result_details_size_info = QtWidgets.QLabel(self.calc_result_details_inner_frame)
+        self.calc_result_details_size_info.setStyleSheet("color: #0915CC;")
+        self.calc_result_details_size_info.setObjectName("calc_result_details_size_info")
+        self.calc_result_details_inner_layout.addWidget(self.calc_result_details_size_info, 4, 2, 1, 1)
+        self.calc_result_details_layout_2.addWidget(self.calc_result_details_inner_frame)
+        self.calc_result_details_layout.addWidget(self.calc_result_details_frame, 0,
+                                                  QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
+        self.calc_result_pages.addWidget(self.calc_result_details_page)
+        self.calc_result_customer_info_page = QtWidgets.QWidget()
+        self.calc_result_customer_info_page.setObjectName("calc_result_customer_info_page")
+        self.calc_result_customer_info_layout = QtWidgets.QVBoxLayout(self.calc_result_customer_info_page)
+        self.calc_result_customer_info_layout.setContentsMargins(0, 0, 0, 0)
+        self.calc_result_customer_info_layout.setSpacing(0)
+        self.calc_result_customer_info_layout.setObjectName("calc_result_customer_info_layout")
+        self.calc_result_customer_info_scroll = QtWidgets.QScrollArea(self.calc_result_customer_info_page)
+        self.calc_result_customer_info_scroll.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_result_customer_info_scroll.setWidgetResizable(True)
+        self.calc_result_customer_info_scroll.setObjectName("calc_result_customer_info_scroll")
+        self.calc_result_customer_info_scroll_2 = QtWidgets.QWidget()
+        self.calc_result_customer_info_scroll_2.setGeometry(QtCore.QRect(0, 0, 789, 992))
+        self.calc_result_customer_info_scroll_2.setObjectName("calc_result_customer_info_scroll_2")
+        self.calc_result_customer_info_scroll_layout = QtWidgets.QVBoxLayout(self.calc_result_customer_info_scroll_2)
+        self.calc_result_customer_info_scroll_layout.setContentsMargins(0, 0, 0, 0)
+        self.calc_result_customer_info_scroll_layout.setSpacing(0)
+        self.calc_result_customer_info_scroll_layout.setObjectName("calc_result_customer_info_scroll_layout")
+        self.calc_result_cus_info_frame = QtWidgets.QFrame(self.calc_result_customer_info_scroll_2)
+        self.calc_result_cus_info_frame.setStyleSheet("QLabel {\n"
+                                                      "    color: #757C9F;\n"
+                                                      "    font-size: 16px;\n"
+                                                      "}\n"
+                                                      "\n"
+                                                      "QLineEdit {\n"
+                                                      "    border-radius: 10px;\n"
+                                                      "    border: 1px solid #B5B8C7;\n"
+                                                      "    padding-left: 15px;\n"
+                                                      "    padding-right: 15px;\n"
+                                                      "    font-size: 16px;\n"
+                                                      "}\n"
+                                                      "\n"
+                                                      "QLineEdit:hover {\n"
+                                                      "    border: 1px solid #0915CC;\n"
+                                                      "    background-color: #F2F3F6;\n"
+                                                      "}\n"
+                                                      "\n"
+                                                      "QLineEdit:focus {\n"
+                                                      "    border: 1px solid #0915CC;\n"
+                                                      "    background-color: #F2F3F6;\n"
+                                                      "}\n"
+                                                      "\n"
+                                                      "QLineEdit[error=true] {\n"
+                                                      "    border: 1px solid #FF3C2F;\n"
+                                                      "}\n"
+                                                      "\n"
+                                                      "QPushButton {\n"
+                                                      "    border-radius: 10px;\n"
+                                                      "    font-size: 15px;\n"
+                                                      "    color: #FFFFFF;\n"
+                                                      "    background: #0915CC;\n"
+                                                      "    text-decoration: none;\n"
+                                                      "}\n"
+                                                      "\n"
+                                                      "QPushButton:hover {\n"
+                                                      "background: rgba(9, 21, 204, 0.8);\n"
+                                                      "}")
+        self.calc_result_cus_info_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_result_cus_info_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_result_cus_info_frame.setObjectName("calc_result_cus_info_frame")
+        self.calc_result_cus_info_layout = QtWidgets.QVBoxLayout(self.calc_result_cus_info_frame)
+        self.calc_result_cus_info_layout.setContentsMargins(0, 20, 0, 0)
+        self.calc_result_cus_info_layout.setSpacing(5)
+        self.calc_result_cus_info_layout.setObjectName("calc_result_cus_info_layout")
+        self.calc_result_cus_info_header = QtWidgets.QLabel(self.calc_result_cus_info_frame)
+        self.calc_result_cus_info_header.setStyleSheet("color: #070808;\n"
+                                                       "font-size: 19px;\n"
+                                                       "margin-bottom: 25px;")
+        self.calc_result_cus_info_header.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.calc_result_cus_info_header.setObjectName("calc_result_cus_info_header")
+        self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_header)
+        self.calc_result_cus_info_small_header = QtWidgets.QLabel(self.calc_result_cus_info_frame)
+        self.calc_result_cus_info_small_header.setStyleSheet("color: #070808;")
+        self.calc_result_cus_info_small_header.setObjectName("calc_result_cus_info_small_header")
+        self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_small_header)
+        self.calc_result_cus_info_name_frame = QtWidgets.QFrame(self.calc_result_cus_info_frame)
+        self.calc_result_cus_info_name_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_result_cus_info_name_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_result_cus_info_name_frame.setObjectName("calc_result_cus_info_name_frame")
+        self.calc_result_cus_info_name_layout = QtWidgets.QGridLayout(self.calc_result_cus_info_name_frame)
+        self.calc_result_cus_info_name_layout.setContentsMargins(0, 10, 0, 10)
+        self.calc_result_cus_info_name_layout.setHorizontalSpacing(10)
+        self.calc_result_cus_info_name_layout.setVerticalSpacing(5)
+        self.calc_result_cus_info_name_layout.setObjectName("calc_result_cus_info_name_layout")
+        self.calc_result_cus_info_error_f_name = QtWidgets.QLabel(self.calc_result_cus_info_name_frame)
+        self.calc_result_cus_info_error_f_name.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.calc_result_cus_info_error_f_name.setStyleSheet("font-size: 14px;\n"
+                                                             "color: #FF3C2F;")
+        self.calc_result_cus_info_error_f_name.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.calc_result_cus_info_error_f_name.setObjectName("calc_result_cus_info_error_f_name")
+        self.calc_result_cus_info_name_layout.addWidget(self.calc_result_cus_info_error_f_name, 7, 0, 1, 1)
+        self.calc_result_cus_info_f_name_input = QtWidgets.QLineEdit(self.calc_result_cus_info_name_frame)
+        self.calc_result_cus_info_f_name_input.setMinimumSize(QtCore.QSize(255, 48))
+        self.calc_result_cus_info_f_name_input.setObjectName("calc_result_cus_info_f_name_input")
+        self.calc_result_cus_info_name_layout.addWidget(self.calc_result_cus_info_f_name_input, 1, 0, 6, 1)
+        self.calc_result_cus_info_f_name_label = QtWidgets.QLabel(self.calc_result_cus_info_name_frame)
+        self.calc_result_cus_info_f_name_label.setObjectName("calc_result_cus_info_f_name_label")
+        self.calc_result_cus_info_name_layout.addWidget(self.calc_result_cus_info_f_name_label, 0, 0, 1, 1)
+        self.calc_result_cus_info_l_name_label = QtWidgets.QLabel(self.calc_result_cus_info_name_frame)
+        self.calc_result_cus_info_l_name_label.setObjectName("calc_result_cus_info_l_name_label")
+        self.calc_result_cus_info_name_layout.addWidget(self.calc_result_cus_info_l_name_label, 0, 1, 1, 1)
+        self.calc_result_cus_info_error_l_name = QtWidgets.QLabel(self.calc_result_cus_info_name_frame)
+        self.calc_result_cus_info_error_l_name.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.calc_result_cus_info_error_l_name.setStyleSheet("font-size: 14px;\n"
+                                                             "color: #FF3C2F;")
+        self.calc_result_cus_info_error_l_name.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.calc_result_cus_info_error_l_name.setObjectName("calc_result_cus_info_error_l_name")
+        self.calc_result_cus_info_name_layout.addWidget(self.calc_result_cus_info_error_l_name, 7, 1, 1, 1)
+        self.calc_result_cus_info_l_name_input = QtWidgets.QLineEdit(self.calc_result_cus_info_name_frame)
+        self.calc_result_cus_info_l_name_input.setMinimumSize(QtCore.QSize(255, 48))
+        self.calc_result_cus_info_l_name_input.setObjectName("calc_result_cus_info_l_name_input")
+        self.calc_result_cus_info_name_layout.addWidget(self.calc_result_cus_info_l_name_input, 2, 1, 1, 1)
+        self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_name_frame)
+        self.calc_result_cus_info_email_label = QtWidgets.QLabel(self.calc_result_cus_info_frame)
+        self.calc_result_cus_info_email_label.setObjectName("calc_result_cus_info_email_label")
+        self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_email_label)
+        self.calc_result_cus_info_email_input = QtWidgets.QLineEdit(self.calc_result_cus_info_frame)
+        self.calc_result_cus_info_email_input.setMinimumSize(QtCore.QSize(526, 48))
+        self.calc_result_cus_info_email_input.setObjectName("calc_result_cus_info_email_input")
+        self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_email_input)
+        self.calc_result_cus_info_error_email = QtWidgets.QLabel(self.calc_result_cus_info_frame)
+        self.calc_result_cus_info_error_email.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.calc_result_cus_info_error_email.setStyleSheet("font-size: 14px;\n"
+                                                            "color: #FF3C2F;")
+        self.calc_result_cus_info_error_email.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.calc_result_cus_info_error_email.setObjectName("calc_result_cus_info_error_email")
+        self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_error_email)
+        self.calc_result_cus_info_phone_label = QtWidgets.QLabel(self.calc_result_cus_info_frame)
+        self.calc_result_cus_info_phone_label.setStyleSheet("margin-top: 10px;")
+        self.calc_result_cus_info_phone_label.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.calc_result_cus_info_phone_label.setObjectName("calc_result_cus_info_phone_label")
+        self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_phone_label)
+        self.calc_result_cus_info_phone_input = QtWidgets.QLineEdit(self.calc_result_cus_info_frame)
+        self.calc_result_cus_info_phone_input.setMinimumSize(QtCore.QSize(526, 48))
+        self.calc_result_cus_info_phone_input.setText("")
+        self.calc_result_cus_info_phone_input.setObjectName("calc_result_cus_info_phone_input")
+        self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_phone_input)
+        self.calc_result_cus_info_error_phone = QtWidgets.QLabel(self.calc_result_cus_info_frame)
+        self.calc_result_cus_info_error_phone.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.calc_result_cus_info_error_phone.setStyleSheet("font-size: 14px;\n"
+                                                            "color: #FF3C2F;")
+        self.calc_result_cus_info_error_phone.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.calc_result_cus_info_error_phone.setObjectName("calc_result_cus_info_error_phone")
+        self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_error_phone)
+        self.calc_result_cus_info_adr_from_frame = QtWidgets.QFrame(self.calc_result_cus_info_frame)
+        self.calc_result_cus_info_adr_from_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_result_cus_info_adr_from_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_result_cus_info_adr_from_frame.setObjectName("calc_result_cus_info_adr_from_frame")
+        self.calc_result_cus_info_adr_from_layout = QtWidgets.QHBoxLayout(self.calc_result_cus_info_adr_from_frame)
+        self.calc_result_cus_info_adr_from_layout.setContentsMargins(0, 35, 0, 10)
+        self.calc_result_cus_info_adr_from_layout.setSpacing(10)
+        self.calc_result_cus_info_adr_from_layout.setObjectName("calc_result_cus_info_adr_from_layout")
+        self.calc_result_cus_info_adr_from_label = QtWidgets.QLabel(self.calc_result_cus_info_adr_from_frame)
+        self.calc_result_cus_info_adr_from_label.setObjectName("calc_result_cus_info_adr_from_label")
+        self.calc_result_cus_info_adr_from_layout.addWidget(self.calc_result_cus_info_adr_from_label)
+        self.calc_result_cus_info_adr_from_opt = QtWidgets.QLabel(self.calc_result_cus_info_adr_from_frame)
+        self.calc_result_cus_info_adr_from_opt.setMinimumSize(QtCore.QSize(0, 0))
+        self.calc_result_cus_info_adr_from_opt.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.calc_result_cus_info_adr_from_opt.setStyleSheet("background: #F2F3F6;\n"
+                                                             "border-radius: 4px;\n"
+                                                             "color: #757C9F;\n"
+                                                             "font-size: 14px;\n"
+                                                             "padding: 4px 8px 4px 8px;")
+        self.calc_result_cus_info_adr_from_opt.setAlignment(QtCore.Qt.AlignCenter)
+        self.calc_result_cus_info_adr_from_opt.setObjectName("calc_result_cus_info_adr_from_opt")
+        self.calc_result_cus_info_adr_from_layout.addWidget(self.calc_result_cus_info_adr_from_opt)
+        self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_adr_from_frame, 0, QtCore.Qt.AlignLeft)
+        self.calc_result_cus_info_adr_from_1_label = QtWidgets.QLabel(self.calc_result_cus_info_frame)
+        self.calc_result_cus_info_adr_from_1_label.setObjectName("calc_result_cus_info_adr_from_1_label")
+        self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_adr_from_1_label)
+        self.calc_result_cus_info_adr_from_1_input = QtWidgets.QLineEdit(self.calc_result_cus_info_frame)
+        self.calc_result_cus_info_adr_from_1_input.setMinimumSize(QtCore.QSize(526, 48))
+        self.calc_result_cus_info_adr_from_1_input.setText("")
+        self.calc_result_cus_info_adr_from_1_input.setObjectName("calc_result_cus_info_adr_from_1_input")
+        self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_adr_from_1_input)
+        self.calc_result_cus_info_adr_from_2_label = QtWidgets.QLabel(self.calc_result_cus_info_frame)
+        self.calc_result_cus_info_adr_from_2_label.setStyleSheet("margin-top: 10px;")
+        self.calc_result_cus_info_adr_from_2_label.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.calc_result_cus_info_adr_from_2_label.setObjectName("calc_result_cus_info_adr_from_2_label")
+        self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_adr_from_2_label)
+        self.calc_result_cus_info_adr_from_2_input = QtWidgets.QLineEdit(self.calc_result_cus_info_frame)
+        self.calc_result_cus_info_adr_from_2_input.setMinimumSize(QtCore.QSize(526, 48))
+        self.calc_result_cus_info_adr_from_2_input.setText("")
+        self.calc_result_cus_info_adr_from_2_input.setObjectName("calc_result_cus_info_adr_from_2_input")
+        self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_adr_from_2_input)
+        self.calc_result_cus_info_adr_to_frame = QtWidgets.QFrame(self.calc_result_cus_info_frame)
+        self.calc_result_cus_info_adr_to_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.calc_result_cus_info_adr_to_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_result_cus_info_adr_to_frame.setObjectName("calc_result_cus_info_adr_to_frame")
+        self.calc_result_cus_info_adr_to_layout = QtWidgets.QHBoxLayout(self.calc_result_cus_info_adr_to_frame)
+        self.calc_result_cus_info_adr_to_layout.setContentsMargins(0, 35, 0, 10)
+        self.calc_result_cus_info_adr_to_layout.setSpacing(10)
+        self.calc_result_cus_info_adr_to_layout.setObjectName("calc_result_cus_info_adr_to_layout")
+        self.calc_result_cus_info_adr_to_label = QtWidgets.QLabel(self.calc_result_cus_info_adr_to_frame)
+        self.calc_result_cus_info_adr_to_label.setObjectName("calc_result_cus_info_adr_to_label")
+        self.calc_result_cus_info_adr_to_layout.addWidget(self.calc_result_cus_info_adr_to_label)
+        self.calc_result_cus_info_adr_to_opt = QtWidgets.QLabel(self.calc_result_cus_info_adr_to_frame)
+        self.calc_result_cus_info_adr_to_opt.setMinimumSize(QtCore.QSize(0, 0))
+        self.calc_result_cus_info_adr_to_opt.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.calc_result_cus_info_adr_to_opt.setStyleSheet("background: #F2F3F6;\n"
+                                                           "border-radius: 4px;\n"
+                                                           "color: #757C9F;\n"
+                                                           "font-size: 14px;\n"
+                                                           "padding: 4px 8px 4px 8px;")
+        self.calc_result_cus_info_adr_to_opt.setAlignment(QtCore.Qt.AlignCenter)
+        self.calc_result_cus_info_adr_to_opt.setObjectName("calc_result_cus_info_adr_to_opt")
+        self.calc_result_cus_info_adr_to_layout.addWidget(self.calc_result_cus_info_adr_to_opt)
+        self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_adr_to_frame, 0, QtCore.Qt.AlignLeft)
+        self.calc_result_cus_info_adr_to_1_label = QtWidgets.QLabel(self.calc_result_cus_info_frame)
+        self.calc_result_cus_info_adr_to_1_label.setObjectName("calc_result_cus_info_adr_to_1_label")
+        self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_adr_to_1_label)
+        self.calc_result_cus_info_adr_to_1_input = QtWidgets.QLineEdit(self.calc_result_cus_info_frame)
+        self.calc_result_cus_info_adr_to_1_input.setMinimumSize(QtCore.QSize(526, 48))
+        self.calc_result_cus_info_adr_to_1_input.setText("")
+        self.calc_result_cus_info_adr_to_1_input.setObjectName("calc_result_cus_info_adr_to_1_input")
+        self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_adr_to_1_input)
+        self.calc_result_cus_info_adr_to_2_label = QtWidgets.QLabel(self.calc_result_cus_info_frame)
+        self.calc_result_cus_info_adr_to_2_label.setStyleSheet("margin-top: 10px;")
+        self.calc_result_cus_info_adr_to_2_label.setObjectName("calc_result_cus_info_adr_to_2_label")
+        self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_adr_to_2_label)
+        self.calc_result_cus_info_adr_to_2_input = QtWidgets.QLineEdit(self.calc_result_cus_info_frame)
+        self.calc_result_cus_info_adr_to_2_input.setMinimumSize(QtCore.QSize(526, 48))
+        self.calc_result_cus_info_adr_to_2_input.setStyleSheet("")
+        self.calc_result_cus_info_adr_to_2_input.setText("")
+        self.calc_result_cus_info_adr_to_2_input.setObjectName("calc_result_cus_info_adr_to_2_input")
+        self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_adr_to_2_input)
+        spacerItem2 = QtWidgets.QSpacerItem(20, 25, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.calc_result_cus_info_layout.addItem(spacerItem2)
+        self.calc_result_cus_info_submit_btn = QtWidgets.QPushButton(self.calc_result_cus_info_frame)
+        self.calc_result_cus_info_submit_btn.setMinimumSize(QtCore.QSize(164, 47))
+        self.calc_result_cus_info_submit_btn.setMaximumSize(QtCore.QSize(164, 47))
+        self.calc_result_cus_info_submit_btn.setStyleSheet("")
+        self.calc_result_cus_info_submit_btn.setObjectName("calc_result_cus_info_submit_btn")
+        self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_submit_btn)
+        self.calc_result_customer_info_scroll_layout.addWidget(self.calc_result_cus_info_frame)
+        self.calc_result_customer_info_scroll.setWidget(self.calc_result_customer_info_scroll_2)
+        self.calc_result_customer_info_layout.addWidget(self.calc_result_customer_info_scroll)
+        self.calc_result_pages.addWidget(self.calc_result_customer_info_page)
+        self.calc_calculation_result_layout.addWidget(self.calc_result_pages)
+        self.calc_menu_pages.addWidget(self.calc_calculation_result_page)
+        self.calc_main_layout.addWidget(self.calc_menu_pages)
+        self.calculator_layout.addWidget(self.calc_main_frame)
         self.content_pages.addWidget(self.calculator_page)
         self.profile_page = QtWidgets.QWidget()
         self.profile_page.setLayoutDirection(QtCore.Qt.LeftToRight)
@@ -771,7 +2742,7 @@ class Ui_MainWindow(object):
         self.profile_scroll_area.setWidgetResizable(True)
         self.profile_scroll_area.setObjectName("profile_scroll_area")
         self.profile_scroll_widget = QtWidgets.QWidget()
-        self.profile_scroll_widget.setGeometry(QtCore.QRect(0, 0, 979, 931))
+        self.profile_scroll_widget.setGeometry(QtCore.QRect(0, 0, 1301, 931))
         self.profile_scroll_widget.setObjectName("profile_scroll_widget")
         self.profile_scroll_layout = QtWidgets.QVBoxLayout(self.profile_scroll_widget)
         self.profile_scroll_layout.setContentsMargins(0, 0, 0, 0)
@@ -1562,7 +3533,7 @@ class Ui_MainWindow(object):
         self.equip_truck_scrollarea.setWidgetResizable(True)
         self.equip_truck_scrollarea.setObjectName("equip_truck_scrollarea")
         self.equip_truck_scroll_widget = QtWidgets.QWidget()
-        self.equip_truck_scroll_widget.setGeometry(QtCore.QRect(0, 0, 100, 30))
+        self.equip_truck_scroll_widget.setGeometry(QtCore.QRect(0, 0, 1366, 594))
         self.equip_truck_scroll_widget.setObjectName("equip_truck_scroll_widget")
         self.equip_truck_scroll_layout = QtWidgets.QVBoxLayout(self.equip_truck_scroll_widget)
         self.equip_truck_scroll_layout.setContentsMargins(30, 10, 15, 0)
@@ -1940,8 +3911,12 @@ class Ui_MainWindow(object):
         self.config_end_date_frame = QtWidgets.QFrame(self.config_change_date_frame)
         self.config_end_date_frame.setMinimumSize(QtCore.QSize(258, 48))
         self.config_end_date_frame.setMaximumSize(QtCore.QSize(258, 48))
-        self.config_end_date_frame.setStyleSheet(".QFrame {\n"
+        self.config_end_date_frame.setStyleSheet("#config_end_date_frame {\n"
                                                  "    border: 1px solid #B5B8C7;\n"
+                                                 "}\n"
+                                                 "\n"
+                                                 "#config_end_date_frame:hover {\n"
+                                                 "    border: 1px solid #0915CC;\n"
                                                  "}")
         self.config_end_date_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.config_end_date_frame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -1967,10 +3942,13 @@ class Ui_MainWindow(object):
         self.config_start_date_frame = QtWidgets.QFrame(self.config_change_date_frame)
         self.config_start_date_frame.setMinimumSize(QtCore.QSize(258, 48))
         self.config_start_date_frame.setMaximumSize(QtCore.QSize(258, 48))
-        self.config_start_date_frame.setStyleSheet(".QFrame {\n"
+        self.config_start_date_frame.setStyleSheet("#config_start_date_frame {\n"
                                                    "    border: 1px solid #B5B8C7;\n"
                                                    "}\n"
-                                                   "")
+                                                   "\n"
+                                                   "#config_start_date_frame:hover {\n"
+                                                   "    border: 1px solid #0915CC;\n"
+                                                   "}")
         self.config_start_date_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.config_start_date_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.config_start_date_frame.setObjectName("config_start_date_frame")
@@ -2376,6 +4354,22 @@ class Ui_MainWindow(object):
         self.inventory_search_clear.setObjectName("inventory_search_clear")
         self.inventory_search_layout.addWidget(self.inventory_search_clear)
         self.inventory_top_button_layout.addWidget(self.inventory_search_frame, 0, QtCore.Qt.AlignRight)
+        self.inventory_reset_btn = QtWidgets.QPushButton(self.inventory_top_button_frame)
+        self.inventory_reset_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.inventory_reset_btn.setLayoutDirection(QtCore.Qt.RightToLeft)
+        self.inventory_reset_btn.setStyleSheet("QPushButton {\n"
+                                               "    background: transparent;\n"
+                                               "    font-size: 14px;\n"
+                                               "    color: #757C9F;\n"
+                                               "    qproperty-icon: url(:/image/inventory_reset_default.svg);\n"
+                                               "}\n"
+                                               "\n"
+                                               "QPushButton:hover {\n"
+                                               "    color: #FF3C2F;\n"
+                                               "}")
+        self.inventory_reset_btn.setIconSize(QtCore.QSize(16, 20))
+        self.inventory_reset_btn.setObjectName("inventory_reset_btn")
+        self.inventory_top_button_layout.addWidget(self.inventory_reset_btn)
         self.inventory_save_butt = QtWidgets.QPushButton(self.inventory_top_button_frame)
         self.inventory_save_butt.setMinimumSize(QtCore.QSize(150, 36))
         self.inventory_save_butt.setMaximumSize(QtCore.QSize(150, 36))
@@ -2416,6 +4410,7 @@ class Ui_MainWindow(object):
         self.inventory_add_butt.setIconSize(QtCore.QSize(14, 14))
         self.inventory_add_butt.setObjectName("inventory_add_butt")
         self.inventory_top_button_layout.addWidget(self.inventory_add_butt)
+        self.inventory_top_button_layout.setStretch(0, 1)
         self.inventory_top_layout.addWidget(self.inventory_top_button_frame)
         self.inventory_page_layout.addWidget(self.inventory_top_frame, 0, QtCore.Qt.AlignTop)
         self.inventory_bottom_frame = QtWidgets.QFrame(self.inventory_page)
@@ -2544,7 +4539,6 @@ class Ui_MainWindow(object):
                                                    "    border: 0.5px solid rgba(117, 124, 159, 0.5);\n"
                                                    "    border-radius: 2px;\n"
                                                    "    padding-left: 6px;\n"
-                                                   "    padding-right: 15px;\n"
                                                    "}\n"
                                                    "\n"
                                                    "QComboBox:hover {\n"
@@ -2960,10 +4954,11 @@ class Ui_MainWindow(object):
         self.profile_delete_butt_3.setObjectName("profile_delete_butt_3")
         self.horizontalLayout_11.addWidget(self.profile_delete_butt_3, 0, QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
         self.comboBox = QtWidgets.QComboBox(self.frame_22)
-        self.comboBox.setMinimumSize(QtCore.QSize(55, 24))
-        self.comboBox.setMaximumSize(QtCore.QSize(55, 24))
+        self.comboBox.setMinimumSize(QtCore.QSize(60, 24))
+        self.comboBox.setMaximumSize(QtCore.QSize(60, 24))
         self.comboBox.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.comboBox.setStyleSheet("")
+        self.comboBox.setEditable(True)
         self.comboBox.setObjectName("comboBox")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
@@ -2998,7 +4993,10 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         self.window_pages.setCurrentIndex(1)
         self.login_pages.setCurrentIndex(1)
-        self.content_pages.setCurrentIndex(5)
+        self.content_pages.setCurrentIndex(0)
+        self.calc_menu_pages.setCurrentIndex(0)
+        self.calc_size_menu.setCurrentIndex(1)
+        self.calc_result_pages.setCurrentIndex(0)
         self.equip_truck_pages.setCurrentIndex(0)
         self.config_pages.setCurrentIndex(0)
         self.inventory_size_menu.setCurrentIndex(1)
@@ -3048,7 +5046,123 @@ class Ui_MainWindow(object):
         self.acc_create_error_bot_but.setText(_translate("MainWindow", "restore password."))
         self.acc_create_error_butt.setText(_translate("MainWindow", "Sign In"))
         self.logo_text.setText(_translate("MainWindow", "Admin Panel"))
-        self.label.setText(_translate("MainWindow", "Calculator"))
+        self.calc_header.setText(_translate("MainWindow", "Calculator"))
+        self.calc_1_sign.setText(_translate("MainWindow", "1"))
+        self.calc_1_text.setText(_translate("MainWindow", "Move Details"))
+        self.calc_2_sign.setText(_translate("MainWindow", "2"))
+        self.calc_2_text.setText(_translate("MainWindow", "Inventory Check"))
+        self.calc_3_sign.setText(_translate("MainWindow", "3"))
+        self.calc_3_text.setText(_translate("MainWindow", "Calculation Results"))
+        self.calc_4_sign.setText(_translate("MainWindow", "4"))
+        self.calc_4_text.setText(_translate("MainWindow", "Customer Info"))
+        self.calc_reset_btn.setText(_translate("MainWindow", "Reset Preset "))
+        self.calc_back_btn.setText(_translate("MainWindow", "Back"))
+        self.calc_next_btn.setText(_translate("MainWindow", "Continue "))
+        self.calc_price_type.setText(_translate("MainWindow", "Price Types"))
+        self.calc_blue_label.setText(_translate("MainWindow", "Regular"))
+        self.calc_green_label.setText(_translate("MainWindow", "Discount"))
+        self.calc_yellow_label.setText(_translate("MainWindow", "Subpeak"))
+        self.calc_red_label.setText(_translate("MainWindow", "Peak"))
+        self.calc_gen_info_header.setText(_translate("MainWindow", "General Info"))
+        self.calc_1_move_date_label.setText(_translate("MainWindow", "Desired Move Date"))
+        self.calc_1_service_type_label.setText(_translate("MainWindow", "Service Type"))
+        self.calc_start_date_edit.setDisplayFormat(_translate("MainWindow", "MMMM dd, yyyy"))
+        self.calc_sevice_type.setItemText(0, _translate("MainWindow", "Moving"))
+        self.calc_1_zip_from_label.setText(_translate("MainWindow", "Zip Code (From)"))
+        self.calc_1_zip_to_label.setText(_translate("MainWindow", "Zip Code (To)"))
+        self.calc_zip_from_input.setPlaceholderText(_translate("MainWindow", "Enter start zip code"))
+        self.calc_zip_to_input.setPlaceholderText(_translate("MainWindow", "Enter end zip code"))
+        self.error_calc_zip_from.setText(_translate("MainWindow", "Enter start zip code"))
+        self.error_calc_zip_to.setText(_translate("MainWindow", "Enter end zip code"))
+        self.calc_1_move_size_label.setText(_translate("MainWindow", "Move Size"))
+        self.calc_extra_room_label.setText(_translate("MainWindow", "Extra Rooms"))
+        self.inventory_cat_butt_sample_2.setText(_translate("MainWindow", "Office"))
+        self.inven_2.setText(_translate("MainWindow", "Basement / Storage"))
+        self.config_subpeak_butt_3.setText(_translate("MainWindow", "Dining Room"))
+        self.config_peak_butt_3.setText(_translate("MainWindow", "Extra Room"))
+        self.calc_1_entrance_from_label.setText(_translate("MainWindow", "Entrance Type (From)"))
+        self.calc_1_entrance_to_label.setText(_translate("MainWindow", "Entrance Type (To)"))
+        self.calc_inv_check_header.setText(_translate("MainWindow", "Inventory Check"))
+        self.calc_all_menu_butt.setText(_translate("MainWindow", "All Inventory"))
+        self.calc_preset_choose_butt.setText(_translate("MainWindow", "Inventory Presets"))
+        self.calc_inv_categor_label.setText(_translate("MainWindow", "Categories:"))
+        self.inventory_cat_butt_sample_3.setText(_translate("MainWindow", "Boxes, Totes"))
+        self.inven_3.setText(_translate("MainWindow", "Dresser, Mirror"))
+        self.config_subpeak_butt_4.setText(_translate("MainWindow", "Bed, Mattress"))
+        self.config_peak_butt_4.setText(_translate("MainWindow", "Sofa, Chair"))
+        self.pushButton_4.setText(_translate("MainWindow", "Add Item"))
+        self.label_18.setText(_translate("MainWindow", "DISH Box 18x18x27"))
+        self.pushButton_6.setText(_translate("MainWindow", "Add Item"))
+        self.label_21.setText(_translate("MainWindow", "DISH Box 18x18x27"))
+        self.label_38.setText(_translate("MainWindow", "Width: 10 ft"))
+        self.label_40.setText(_translate("MainWindow", "Height: 10 ft"))
+        self.label_42.setText(_translate("MainWindow", "Length: 16 ft"))
+        self.profile_delete_butt_4.setText(_translate("MainWindow", "Delete "))
+        self.comboBox_2.setItemText(0, _translate("MainWindow", "100"))
+        self.comboBox_2.setItemText(1, _translate("MainWindow", "2"))
+        self.comboBox_2.setItemText(2, _translate("MainWindow", "3"))
+        self.comboBox_2.setItemText(3, _translate("MainWindow", "4"))
+        self.comboBox_2.setItemText(4, _translate("MainWindow", "5"))
+        self.comboBox_2.setItemText(5, _translate("MainWindow", "6"))
+        self.comboBox_2.setItemText(6, _translate("MainWindow", "7"))
+        self.comboBox_2.setItemText(7, _translate("MainWindow", "8"))
+        self.comboBox_2.setItemText(8, _translate("MainWindow", "9"))
+        self.label_23.setText(_translate("MainWindow", "DISH Box 18x18x27"))
+        self.calc_result_header.setText(_translate("MainWindow", "Calculation Results"))
+        self.calc_result_crew_size_label.setText(_translate("MainWindow", "Crew Size:"))
+        self.calc_result_hr_label.setText(_translate("MainWindow", "Hourly Rate:"))
+        self.calc_result_hr_info.setText(_translate("MainWindow", "$96.99 / Hr"))
+        self.calc_result_travel_time_info.setText(_translate("MainWindow", "30 minutes"))
+        self.calc_result_est_info.setText(_translate("MainWindow", "2 Hrs 45 Min - 3 Hrs 15 Min"))
+        self.calc_result_truck_size_info.setText(_translate("MainWindow", "20 ft truck"))
+        self.calc_result_crew_size_info.setText(_translate("MainWindow", "3 Movers"))
+        self.calc_result_travel_time_label.setText(_translate("MainWindow", "Travel Time:"))
+        self.calc_result_est_label.setText(_translate("MainWindow", "Estimated Job Time:"))
+        self.calc_result_truck_size_label.setText(_translate("MainWindow", "Truck Size:"))
+        self.calc_result_quote_label.setText(_translate("MainWindow", "Estimated Quote:"))
+        self.calc_result_quote_info.setText(_translate("MainWindow", "$467.50 - $552.50"))
+        self.calc_result_details_header.setText(_translate("MainWindow", "Move Details"))
+        self.calc_result_details_zip_from_info.setText(_translate("MainWindow", "01237"))
+        self.calc_result_details_ent_to_label.setText(_translate("MainWindow", "Entrance Type (To):"))
+        self.calc_result_details_service_label.setText(_translate("MainWindow", "Type of Service:"))
+        self.calc_result_details_date_label.setText(_translate("MainWindow", "Move Date:"))
+        self.calc_result_details_ent_from_label.setText(_translate("MainWindow", "Entrance Type (From):"))
+        self.calc_result_details_service_info.setText(_translate("MainWindow", "Moving"))
+        self.calc_result_details_zip_to_info.setText(_translate("MainWindow", "01237"))
+        self.calc_result_details_ent_to_info.setText(_translate("MainWindow", "Private House"))
+        self.calc_result_details_zip_to_label.setText(_translate("MainWindow", "Zip Code (To):"))
+        self.calc_result_details_ent_from_info.setText(_translate("MainWindow", "No Stairs - Ground Floor"))
+        self.calc_result_details_date_info.setText(_translate("MainWindow", "May 25, 2021"))
+        self.calc_result_details_zip_from_label.setText(_translate("MainWindow", "Zip Code (From):"))
+        self.calc_result_details_size_label.setText(_translate("MainWindow", "Move Size:"))
+        self.calc_result_details_size_info.setText(_translate("MainWindow", "1 bd Apartment; Dining Room"))
+        self.calc_result_cus_info_header.setText(_translate("MainWindow", "Customer Info"))
+        self.calc_result_cus_info_small_header.setText(_translate("MainWindow", "Personal Info"))
+        self.calc_result_cus_info_error_f_name.setText(_translate("MainWindow", "Enter first name"))
+        self.calc_result_cus_info_f_name_input.setPlaceholderText(_translate("MainWindow", "Customer’s First Name"))
+        self.calc_result_cus_info_f_name_label.setText(_translate("MainWindow", "First Name"))
+        self.calc_result_cus_info_l_name_label.setText(_translate("MainWindow", "Last Name"))
+        self.calc_result_cus_info_error_l_name.setText(_translate("MainWindow", "Enter last name"))
+        self.calc_result_cus_info_l_name_input.setPlaceholderText(_translate("MainWindow", "Customer’s Last Name"))
+        self.calc_result_cus_info_email_label.setText(_translate("MainWindow", "Email"))
+        self.calc_result_cus_info_email_input.setPlaceholderText(_translate("MainWindow", "Customer’s Email Address"))
+        self.calc_result_cus_info_error_email.setText(_translate("MainWindow", "Enter email"))
+        self.calc_result_cus_info_phone_label.setText(_translate("MainWindow", "Phone Number"))
+        self.calc_result_cus_info_phone_input.setPlaceholderText(_translate("MainWindow", "Customer’s Phone Number"))
+        self.calc_result_cus_info_error_phone.setText(_translate("MainWindow", "Enter phone number"))
+        self.calc_result_cus_info_adr_from_label.setText(_translate("MainWindow", "Address (From)"))
+        self.calc_result_cus_info_adr_from_opt.setText(_translate("MainWindow", "Optional"))
+        self.calc_result_cus_info_adr_from_1_label.setText(_translate("MainWindow", "Address 1"))
+        self.calc_result_cus_info_adr_from_1_input.setPlaceholderText(_translate("MainWindow", "Type Street Address"))
+        self.calc_result_cus_info_adr_from_2_label.setText(_translate("MainWindow", "Address 2 (Optional)"))
+        self.calc_result_cus_info_adr_from_2_input.setPlaceholderText(_translate("MainWindow", "Type Street Address"))
+        self.calc_result_cus_info_adr_to_label.setText(_translate("MainWindow", "Address (To)"))
+        self.calc_result_cus_info_adr_to_opt.setText(_translate("MainWindow", "Optional"))
+        self.calc_result_cus_info_adr_to_1_label.setText(_translate("MainWindow", "Address 1"))
+        self.calc_result_cus_info_adr_to_1_input.setPlaceholderText(_translate("MainWindow", "Apt, suit, etc."))
+        self.calc_result_cus_info_adr_to_2_label.setText(_translate("MainWindow", "Address 2 (Optional)"))
+        self.calc_result_cus_info_adr_to_2_input.setPlaceholderText(_translate("MainWindow", "Apt, suit, etc."))
+        self.calc_result_cus_info_submit_btn.setText(_translate("MainWindow", "Submit Info"))
         self.profile_user_manage_butt.setText(_translate("MainWindow", "User Management /"))
         self.profile_small_header.setText(_translate("MainWindow", "My Profile"))
         self.profile_user_name.setText(_translate("MainWindow", "Guy Hawkins"))
@@ -3120,6 +5234,7 @@ class Ui_MainWindow(object):
         self.inventory_all_menu_butt.setText(_translate("MainWindow", "All Inventory"))
         self.inventory_preset_choose_butt.setText(_translate("MainWindow", "Inventory Presets"))
         self.inventory_search_input.setPlaceholderText(_translate("MainWindow", "Search..."))
+        self.inventory_reset_btn.setText(_translate("MainWindow", "Reset Preset "))
         self.inventory_save_butt.setText(_translate("MainWindow", "Save Changes "))
         self.inventory_add_butt.setText(_translate("MainWindow", "Add New Item "))
         self.inventory_categor_label.setText(_translate("MainWindow", "Categories:"))
@@ -3136,7 +5251,7 @@ class Ui_MainWindow(object):
         self.label_34.setText(_translate("MainWindow", "Height: 10 ft"))
         self.label_36.setText(_translate("MainWindow", "Length: 16 ft"))
         self.profile_delete_butt_3.setText(_translate("MainWindow", "Delete "))
-        self.comboBox.setItemText(0, _translate("MainWindow", "1"))
+        self.comboBox.setItemText(0, _translate("MainWindow", "100"))
         self.comboBox.setItemText(1, _translate("MainWindow", "2"))
         self.comboBox.setItemText(2, _translate("MainWindow", "3"))
         self.comboBox.setItemText(3, _translate("MainWindow", "4"))
