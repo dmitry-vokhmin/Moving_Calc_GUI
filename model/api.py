@@ -1,6 +1,6 @@
 from urllib.parse import urljoin
 import requests
-from model.user import authorization
+from model import authorization
 
 
 class Api:

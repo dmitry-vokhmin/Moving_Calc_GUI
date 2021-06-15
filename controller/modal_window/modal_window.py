@@ -60,9 +60,13 @@ class ModalWindow(QDialog):
         self.ui.pages.setCurrentWidget(self.ui.invetory_item_page)
         self.show()
 
-    def show_inventory_item_preset_page(self, inventory_id):
+    def show_inventory_item_preset_page(self, inventory, preset_inventory=None):
         self.ui.pages.setCurrentWidget(self.ui.inventory_preset_page)
-        self.inventory_item_preset_page.inventory_id = inventory_id
+        self.inventory_item_preset_page.inventory = inventory
+        if preset_inventory:
+            self.inventory_item_preset_page.calculator_setup(preset_inventory)
+        else:
+            self.inventory_item_preset_page.set_page()
         self.show()
 
     def eventFilter(self, obj, event: QEvent) -> bool:

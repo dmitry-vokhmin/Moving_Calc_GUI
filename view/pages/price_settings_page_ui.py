@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QVBoxLayout, QFrame, QHBoxLayout, QLabel, QLineEdit
 from PyQt5.QtCore import QSize, Qt
-from model.price.price import Price
+from model.price import Price
 
 
 class PriceSettingsPage:

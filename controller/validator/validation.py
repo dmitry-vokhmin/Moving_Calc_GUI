@@ -7,6 +7,7 @@ class Validation(QValidator):
         QValidator.__init__(self)
         self.input_field = input_field
         self.error_field = error_field
+        self.numbers = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"}
 
     @staticmethod
     def change_field_style(input_field, error_field, status: bool):
@@ -73,3 +74,29 @@ class EmailValidation(Validation):
             return QValidator.Acceptable, text, pos
         else:
             return QValidator.Intermediate, text, pos
+
+
+class ZipValidation(Validation):
+    def validate(self, text: str, pos: int):
+        if pos != 0:
+            if text[pos - 1] in self.numbers:
+                self.change_field_style(self.input_field, self.error_field, False)
+                if len(text) == 5:
+                    return QValidator.Acceptable, text, pos
+                return QValidator.Intermediate, text, pos
+            else:
+                return QValidator.Invalid, text, pos
+        return QValidator.Intermediate, text, pos
+
+
+class PhoneValidation(Validation):
+    def validate(self, text: str, pos: int):
+        if pos != 0:
+            if text[pos - 1] in self.numbers:
+                self.change_field_style(self.input_field, self.error_field, False)
+                if len(text) == 10 or len(text) == 11:
+                    return QValidator.Acceptable, text, pos
+                return QValidator.Intermediate, text, pos
+            else:
+                return QValidator.Invalid, text, pos
+        return QValidator.Intermediate, text, pos

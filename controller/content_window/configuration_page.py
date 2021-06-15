@@ -1,14 +1,15 @@
 from PyQt5.QtWidgets import QWidget, QPushButton, QLineEdit
 from PyQt5.QtCore import QEvent
 from PyQt5.QtGui import QIcon
-from model.calendar.calendar import Calendar
-from model.price.price import Price
+from model.calendar import Calendar
+from model.price import Price
 
 
 class ConfigurationPage(QWidget):
     def __init__(self, main_window):
         super().__init__()
         self.main_window = main_window
+        self.set_page = True
         self.price_page = True
         self.update_calendar = True
         self.update_mover_prices = True
@@ -77,12 +78,8 @@ class ConfigurationPage(QWidget):
     def set_movers_price(self):
         self.main_window.price_settings_ui.set_movers_prices()
 
-    def set_calendar(self):
-        self.main_window.get_data(self.main_window.calendar.get)
-        self.main_window.calendar_ui.set_calendar_dates()
-
     def change_inside_page(self, is_date_setting, page):
-        self.main_window.calendar_ui.change_page_selector_style(is_date_setting)
+        self.main_window.calendar_page_ui.change_page_selector_style(is_date_setting)
         self.main_window.ui.config_pages.setCurrentWidget(page)
 
     def set_event_filter(self):
@@ -90,6 +87,11 @@ class ConfigurationPage(QWidget):
         for button in self.buttons:
             button.installEventFilter(self)
             button.clicked.connect(self.change_button_background_mover_table(button))
+
+    def get_price_tags(self):
+        self.main_window.calendar_page_ui.set_price_tag(self.main_window.ui.config_price_type_butt_frame)
+        self.main_window.calendar_page_ui.build_calendars()
+        self.set_event_filter()
 
     def change_button_background_mover_table(self, checked_button):
         def wrap():
@@ -108,8 +110,11 @@ class ConfigurationPage(QWidget):
             if event.type() == QEvent.Show:
                 self.change_inside_page(True, self.main_window.ui.date_page)
                 if self.update_calendar:
-                    self.set_calendar()
+                    self.main_window.set_calendar()
                     self.update_calendar = False
+                if self.set_page:
+                    self.get_price_tags()
+                    self.set_page = False
                 return True
         if obj is self.main_window.ui.price_page:
             if event.type() == QEvent.Show:

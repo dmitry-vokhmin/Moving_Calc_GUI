@@ -2,11 +2,10 @@ import re
 from PyQt5.QtWidgets import QWidget, QFrame, QPushButton, QComboBox
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import QEvent
-from model.inventory_category.inventory_category import InventoryCategory
-from model.inventory.inventory import Inventory
-from model.room_collection.room_collection import RoomCollection
-from model.inventory_collections.inventory_collection import InventoryCollection
-from model.inventory_inventory_collection.inventory_inventory_collection import InventoryInventoryCollection
+from model.inventory.room_collection import RoomCollection
+from model.inventory.inventory_collection import InventoryCollection
+from model.inventory.inventory_inventory_collection import InventoryInventoryCollection
+from controller.content_window.inventory import Inventory
 
 
 class InventoryPage(QWidget):
@@ -14,13 +13,18 @@ class InventoryPage(QWidget):
         super().__init__()
         self.main_window = main_window
         self.set_left_menu = True
-        self.all_menu_buttons = None
-        self.preset_menu_buttons = None
+        self.inventory = Inventory(main_window,
+                                   self.main_window.ui.inventory_categor_butt_frame,
+                                   self.main_window.ui.inventory_content_clear_frame)
         self.main_window.ui.inventory_all_menu_butt.clicked.connect(
-            lambda: self.change_inside_page(True, self.main_window.ui.inventory_room_page)
+            lambda: self.change_inside_page(True,
+                                            self.main_window.ui.inventory_room_page,
+                                            self.inventory.first_butt_all_inv)
         )
         self.main_window.ui.inventory_preset_choose_butt.clicked.connect(
-            lambda: self.change_inside_page(False, self.main_window.ui.inventory_preset_page)
+            lambda: self.change_inside_page(False,
+                                            self.main_window.ui.inventory_preset_page,
+                                            self.inventory.first_butt_preset)
         )
         self.main_window.ui.inventory_page.installEventFilter(self)
         self.main_window.ui.inventory_search_input.installEventFilter(self)
@@ -44,8 +48,8 @@ class InventoryPage(QWidget):
         else:
             self.main_window.modal_window.show_notification_page(response_data, is_error=False)
 
-    def change_inside_page(self, is_all_inventory, page):
-        self.main_window.inventory_ui.change_page_selector_style(is_all_inventory)
+    def change_inside_page(self, is_all_inventory, page, button):
+        self.main_window.inventory_page_ui.change_page_selector_style(is_all_inventory, button)
         self.main_window.ui.inventory_size_menu.setCurrentWidget(page)
 
     def update_preset(self):
@@ -68,53 +72,9 @@ class InventoryPage(QWidget):
             data.append(data_frame)
         return data
 
-    def get_response(self, end_point, room_id=None):
-        if room_id:
-            api_end_point = end_point(**room_id)
-        else:
-            api_end_point = end_point()
-        response_code, response_data = api_end_point.get()
-        if response_code > 399:
-            print(response_data)
-        else:
-            return response_data
-
-    def get_category_inventory(self, room_id, room_collection_id, button):
+    def add_item(self, inventory):
         def wrap():
-            categories = self.get_response(InventoryCategory, {"room_id": room_id})
-            self.main_window.inventory_ui.set_category_menu(categories, self.categorize_inventory, self)
-            self.get_inventory({"room_collection_id": room_collection_id}, button, False)()
-
-        return wrap
-
-    def get_inventory(self, button_attribute, button, is_preset):
-        def wrap():
-            self.select_menu_point(button, is_preset)
-            if is_preset:
-                inventory = self.get_response(InventoryInventoryCollection, button_attribute)
-            else:
-                inventory = self.get_response(Inventory, button_attribute)
-            self.main_window.inventory_ui.set_room_inventory_card(inventory,
-                                                                  self.del_item,
-                                                                  self.add_item,
-                                                                  is_preset,
-                                                                  self)
-        return wrap
-
-    def select_menu_point(self, button, is_preset):
-        if is_preset:
-            menu_buttons = self.preset_menu_buttons
-        else:
-            menu_buttons = self.all_menu_buttons
-        for menu_button in menu_buttons:
-            if menu_button == button:
-                menu_button.setChecked(True)
-            else:
-                menu_button.setChecked(False)
-
-    def add_item(self, inventory_id):
-        def wrap():
-            self.main_window.modal_window.show_inventory_item_preset_page(inventory_id)
+            self.main_window.modal_window.show_inventory_item_preset_page(inventory)
 
         return wrap
 
@@ -146,62 +106,33 @@ class InventoryPage(QWidget):
             else:
                 card.setVisible(False)
 
-    def categorize_inventory(self, button, category_id=None):
-        def wrap():
-            self.main_window.inventory_ui.categorize_inventory(category_id)
-            self.select_category_menu_point(button)
-        return wrap
-
-    def select_category_menu_point(self, button):
-        for menu_button in self.main_window.ui.inventory_categor_butt_frame.findChildren(QPushButton):
-            if menu_button == button:
-                menu_button.setChecked(True)
-            else:
-                menu_button.setChecked(False)
-                menu_button.setIcon(QIcon(":/image/check_icon_default.svg"))
-
     def eventFilter(self, obj, event) -> bool:
         if obj is self.main_window.ui.inventory_page:
             if event.type() == QEvent.Show:
                 if self.set_left_menu:
-                    room_collection = self.get_response(RoomCollection)
-                    self.main_window.inventory_ui.set_left_menu(self.main_window.ui.inventory_room_menu_frame,
-                                                                self.main_window.ui.inventory_room_menu_layout,
-                                                                self.get_category_inventory,
-                                                                room_collection,
-                                                                is_preset_menu=False)
-                    self.all_menu_buttons = self.main_window.ui.inventory_room_menu_frame.findChildren(QPushButton)
-                    inventory_collection = self.get_response(InventoryCollection)
-                    self.main_window.inventory_ui.set_left_menu(self.main_window.ui.inventory_preset_menu_frame,
-                                                                self.main_window.ui.inventory_preset_menu_layout,
-                                                                self.get_inventory,
-                                                                inventory_collection,
-                                                                is_preset_menu=True)
-                    self.preset_menu_buttons = self.main_window.ui.inventory_preset_menu_frame.findChildren(QPushButton)
+                    room_collection = self.inventory.get_response(RoomCollection)
+                    self.inventory.set_left_menu(self.main_window.ui.inventory_room_menu_frame,
+                                                 self.main_window.ui.inventory_room_menu_layout,
+                                                 self.inventory.get_category_inventory,
+                                                 room_collection,
+                                                 self.add_item,
+                                                 is_preset_menu=False,
+                                                 del_funk=self.del_item)
+                    inventory_collection = self.inventory.get_response(InventoryCollection)
+                    self.inventory.set_left_menu(self.main_window.ui.inventory_preset_menu_frame,
+                                                 self.main_window.ui.inventory_preset_menu_layout,
+                                                 self.inventory.get_inventory,
+                                                 inventory_collection,
+                                                 self.add_item,
+                                                 is_preset_menu=True,
+                                                 del_funk=self.del_item)
+                    self.inventory.assign_buttons(self.main_window.ui.inventory_room_menu_frame,
+                                                  self.main_window.ui.inventory_preset_menu_frame)
                     self.set_left_menu = False
-                self.change_inside_page(True, self.main_window.ui.inventory_room_page)
+                self.change_inside_page(True, self.main_window.ui.inventory_room_page, self.inventory.first_butt_all_inv)
                 return True
-        if obj in self.main_window.ui.inventory_categor_butt_frame.findChildren(QPushButton):
-            if event.type() == QEvent.HoverEnter:
-                obj.setIcon(QIcon(":/image/check_icon_hover.svg"))
-                return True
-            if event.type() == QEvent.HoverLeave and not obj.isChecked():
-                obj.setIcon(QIcon(":/image/check_icon_default.svg"))
-                return True
-        if obj in self.main_window.ui.inventory_content_clear_frame.findChildren(QPushButton, "add"):
-            if event.type() == QEvent.HoverEnter:
-                obj.setIcon(QIcon(":/image/plus_blue_icon.svg"))
-                return True
-            if event.type() == QEvent.HoverLeave:
-                obj.setIcon(QIcon(":/image/plus_gray_icon.svg"))
-                return True
-        if obj in self.main_window.ui.inventory_content_clear_frame.findChildren(QPushButton, "delete"):
-            if event.type() == QEvent.HoverEnter:
-                obj.setIcon(QIcon(":/image/inventory_delete_hover.svg"))
-                return True
-            if event.type() == QEvent.HoverLeave:
-                obj.setIcon(QIcon(":/image/inventory_delete_default.svg"))
-                return True
+            if event.type() == QEvent.Hide:
+                self.set_left_menu = True
         if obj is self.main_window.ui.inventory_search_input:
             if event.type() == QEvent.FocusIn:
                 self.main_window.ui.inventory_search_frame.setStyleSheet(

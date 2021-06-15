@@ -2168,7 +2168,7 @@ font-size: 14px;</string>
                           </property>
                           <property name="styleSheet">
                            <string notr="true">QPushButton {
-	margin-left: 5px;
+	margin-left: 40px;
 	background: transparent;
 	font-size: 14px;
 	color: #757C9F;
@@ -2180,7 +2180,7 @@ QPushButton:hover {
 }</string>
                           </property>
                           <property name="text">
-                           <string>Reset Preset </string>
+                           <string>Reset  </string>
                           </property>
                           <property name="iconSize">
                            <size>
@@ -2279,7 +2279,7 @@ QPushButton:hover {
                   <item>
                    <widget class="QStackedWidget" name="calc_menu_pages">
                     <property name="currentIndex">
-                     <number>0</number>
+                     <number>2</number>
                     </property>
                     <widget class="QWidget" name="calc_move_detail_page">
                      <layout class="QVBoxLayout" name="calc_move_detail_layout">
@@ -2957,6 +2957,9 @@ QLineEdit[error=true] {
                                    <height>48</height>
                                   </size>
                                  </property>
+                                 <property name="maxLength">
+                                  <number>5</number>
+                                 </property>
                                  <property name="placeholderText">
                                   <string>Enter start zip code</string>
                                  </property>
@@ -2976,6 +2979,9 @@ QLineEdit[error=true] {
                                    <height>48</height>
                                   </size>
                                  </property>
+                                 <property name="maxLength">
+                                  <number>5</number>
+                                 </property>
                                  <property name="placeholderText">
                                   <string>Enter end zip code</string>
                                  </property>
@@ -2991,7 +2997,7 @@ QLineEdit[error=true] {
 color: #FF3C2F;</string>
                                  </property>
                                  <property name="text">
-                                  <string>Enter start zip code</string>
+                                  <string>Enter valid zip code</string>
                                  </property>
                                  <property name="alignment">
                                   <set>Qt::AlignJustify|Qt::AlignVCenter</set>
@@ -3008,7 +3014,7 @@ color: #FF3C2F;</string>
 color: #FF3C2F;</string>
                                  </property>
                                  <property name="text">
-                                  <string>Enter end zip code</string>
+                                  <string>Enter valid zip code</string>
                                  </property>
                                  <property name="alignment">
                                   <set>Qt::AlignJustify|Qt::AlignVCenter</set>
@@ -3227,7 +3233,7 @@ QPushButton:checked {
                                      <bool>true</bool>
                                     </property>
                                     <property name="checked">
-                                     <bool>true</bool>
+                                     <bool>false</bool>
                                     </property>
                                    </widget>
                                   </item>
@@ -3511,7 +3517,7 @@ QListView::item:selected {
                          <property name="bottomMargin">
                           <number>0</number>
                          </property>
-                         <item>
+                         <item alignment="Qt::AlignTop">
                           <widget class="QLabel" name="calc_inv_check_header">
                            <property name="styleSheet">
                             <string notr="true">color: #070808;
@@ -3972,7 +3978,7 @@ QPushButton:checked {
                                   <x>0</x>
                                   <y>0</y>
                                   <width>217</width>
-                                  <height>28</height>
+                                  <height>548</height>
                                  </rect>
                                 </property>
                                 <layout class="QVBoxLayout" name="calc_preset_layout_2">
@@ -4315,8 +4321,8 @@ QPushButton:checked {
                                 <rect>
                                  <x>0</x>
                                  <y>0</y>
-                                 <width>990</width>
-                                 <height>164</height>
+                                 <width>993</width>
+                                 <height>423</height>
                                 </rect>
                                </property>
                                <layout class="QVBoxLayout" name="calc_inv_content_scroll_layout">
@@ -5118,6 +5124,10 @@ font-size: 14px;</string>
                          <string notr="true">QFrame {
 	background: #F9FAFB;
 	border-radius: 5px;
+}
+
+Line {
+	background-color: #070808;
 }</string>
                         </property>
                         <property name="frameShape">
@@ -5159,6 +5169,12 @@ margin-bottom: 15px;</string>
                          </item>
                          <item>
                           <widget class="Line" name="calc_calc_result_top_line">
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>1</height>
+                            </size>
+                           </property>
                            <property name="styleSheet">
                             <string notr="true"/>
                            </property>
@@ -5315,6 +5331,12 @@ font-size: 14px;</string>
                          </item>
                          <item>
                           <widget class="Line" name="calc_result_bottom_line">
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>1</height>
+                            </size>
+                           </property>
                            <property name="orientation">
                             <enum>Qt::Horizontal</enum>
                            </property>
@@ -5375,7 +5397,7 @@ font-size: 19px;</string>
                       <item>
                        <widget class="QStackedWidget" name="calc_result_pages">
                         <property name="currentIndex">
-                         <number>0</number>
+                         <number>1</number>
                         </property>
                         <widget class="QWidget" name="calc_result_details_page">
                          <layout class="QVBoxLayout" name="calc_result_details_layout">
@@ -5706,9 +5728,9 @@ font-size: 19px;</string>
                              <property name="geometry">
                               <rect>
                                <x>0</x>
-                               <y>0</y>
+                               <y>-248</y>
                                <width>789</width>
-                               <height>992</height>
+                               <height>987</height>
                               </rect>
                              </property>
                              <layout class="QVBoxLayout" name="calc_result_customer_info_scroll_layout">
@@ -5786,7 +5808,7 @@ background: rgba(9, 21, 204, 0.8);
                                   <number>20</number>
                                  </property>
                                  <property name="rightMargin">
-                                  <number>0</number>
+                                  <number>5</number>
                                  </property>
                                  <property name="bottomMargin">
                                   <number>0</number>
@@ -5843,7 +5865,47 @@ margin-bottom: 25px;</string>
                                     <property name="verticalSpacing">
                                      <number>5</number>
                                     </property>
-                                    <item row="7" column="0">
+                                    <item row="0" column="0">
+                                     <widget class="QLabel" name="calc_result_cus_info_f_name_label">
+                                      <property name="text">
+                                       <string>First Name</string>
+                                      </property>
+                                     </widget>
+                                    </item>
+                                    <item row="0" column="1">
+                                     <widget class="QLabel" name="calc_result_cus_info_l_name_label">
+                                      <property name="text">
+                                       <string>Last Name</string>
+                                      </property>
+                                     </widget>
+                                    </item>
+                                    <item row="1" column="0">
+                                     <widget class="QLineEdit" name="calc_result_cus_info_f_name_input">
+                                      <property name="minimumSize">
+                                       <size>
+                                        <width>255</width>
+                                        <height>48</height>
+                                       </size>
+                                      </property>
+                                      <property name="placeholderText">
+                                       <string>Customer’s First Name</string>
+                                      </property>
+                                     </widget>
+                                    </item>
+                                    <item row="1" column="1">
+                                     <widget class="QLineEdit" name="calc_result_cus_info_l_name_input">
+                                      <property name="minimumSize">
+                                       <size>
+                                        <width>255</width>
+                                        <height>48</height>
+                                       </size>
+                                      </property>
+                                      <property name="placeholderText">
+                                       <string>Customer’s Last Name</string>
+                                      </property>
+                                     </widget>
+                                    </item>
+                                    <item row="2" column="0">
                                      <widget class="QLabel" name="calc_result_cus_info_error_f_name">
                                       <property name="focusPolicy">
                                        <enum>Qt::NoFocus</enum>
@@ -5860,34 +5922,7 @@ color: #FF3C2F;</string>
                                       </property>
                                      </widget>
                                     </item>
-                                    <item row="1" column="0" rowspan="6">
-                                     <widget class="QLineEdit" name="calc_result_cus_info_f_name_input">
-                                      <property name="minimumSize">
-                                       <size>
-                                        <width>255</width>
-                                        <height>48</height>
-                                       </size>
-                                      </property>
-                                      <property name="placeholderText">
-                                       <string>Customer’s First Name</string>
-                                      </property>
-                                     </widget>
-                                    </item>
-                                    <item row="0" column="0">
-                                     <widget class="QLabel" name="calc_result_cus_info_f_name_label">
-                                      <property name="text">
-                                       <string>First Name</string>
-                                      </property>
-                                     </widget>
-                                    </item>
-                                    <item row="0" column="1">
-                                     <widget class="QLabel" name="calc_result_cus_info_l_name_label">
-                                      <property name="text">
-                                       <string>Last Name</string>
-                                      </property>
-                                     </widget>
-                                    </item>
-                                    <item row="7" column="1">
+                                    <item row="2" column="1">
                                      <widget class="QLabel" name="calc_result_cus_info_error_l_name">
                                       <property name="focusPolicy">
                                        <enum>Qt::NoFocus</enum>
@@ -5901,19 +5936,6 @@ color: #FF3C2F;</string>
                                       </property>
                                       <property name="alignment">
                                        <set>Qt::AlignJustify|Qt::AlignVCenter</set>
-                                      </property>
-                                     </widget>
-                                    </item>
-                                    <item row="2" column="1">
-                                     <widget class="QLineEdit" name="calc_result_cus_info_l_name_input">
-                                      <property name="minimumSize">
-                                       <size>
-                                        <width>255</width>
-                                        <height>48</height>
-                                       </size>
-                                      </property>
-                                      <property name="placeholderText">
-                                       <string>Customer’s Last Name</string>
                                       </property>
                                      </widget>
                                     </item>
@@ -5950,7 +5972,7 @@ color: #FF3C2F;</string>
 color: #FF3C2F;</string>
                                    </property>
                                    <property name="text">
-                                    <string>Enter email</string>
+                                    <string>Enter valid email</string>
                                    </property>
                                    <property name="alignment">
                                     <set>Qt::AlignJustify|Qt::AlignVCenter</set>
@@ -5981,6 +6003,9 @@ color: #FF3C2F;</string>
                                    <property name="text">
                                     <string/>
                                    </property>
+                                   <property name="maxLength">
+                                    <number>11</number>
+                                   </property>
                                    <property name="placeholderText">
                                     <string>Customer’s Phone Number</string>
                                    </property>
@@ -5996,7 +6021,7 @@ color: #FF3C2F;</string>
 color: #FF3C2F;</string>
                                    </property>
                                    <property name="text">
-                                    <string>Enter phone number</string>
+                                    <string>Enter valid phone number</string>
                                    </property>
                                    <property name="alignment">
                                     <set>Qt::AlignJustify|Qt::AlignVCenter</set>
@@ -6114,7 +6139,7 @@ padding: 4px 8px 4px 8px;</string>
                                     <string/>
                                    </property>
                                    <property name="placeholderText">
-                                    <string>Type Street Address</string>
+                                    <string>Apt, suit, etc.</string>
                                    </property>
                                   </widget>
                                  </item>
@@ -6200,7 +6225,7 @@ padding: 4px 8px 4px 8px;</string>
                                     <string/>
                                    </property>
                                    <property name="placeholderText">
-                                    <string>Apt, suit, etc.</string>
+                                    <string>Type Street Address</string>
                                    </property>
                                   </widget>
                                  </item>
@@ -6324,7 +6349,7 @@ padding: 4px 8px 4px 8px;</string>
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>1301</width>
+                    <width>979</width>
                     <height>931</height>
                    </rect>
                   </property>
@@ -8209,8 +8234,8 @@ QPushButton[selected=true] {
                        <rect>
                         <x>0</x>
                         <y>0</y>
-                        <width>1366</width>
-                        <height>594</height>
+                        <width>100</width>
+                        <height>30</height>
                        </rect>
                       </property>
                       <layout class="QVBoxLayout" name="equip_truck_scroll_layout">
@@ -10539,7 +10564,7 @@ QPushButton:checked {
                            <x>0</x>
                            <y>0</y>
                            <width>217</width>
-                           <height>562</height>
+                           <height>30</height>
                           </rect>
                          </property>
                          <layout class="QVBoxLayout" name="inventory_preset_layout_2">
@@ -10883,7 +10908,7 @@ QPushButton:checked {
                           <x>0</x>
                           <y>0</y>
                           <width>990</width>
-                          <height>437</height>
+                          <height>164</height>
                          </rect>
                         </property>
                         <layout class="QVBoxLayout" name="inventory_content_scroll_layout">

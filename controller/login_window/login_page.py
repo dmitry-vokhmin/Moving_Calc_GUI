@@ -1,5 +1,5 @@
 from model.user.user import User
-from model.user.authorization import Authorization, AuthorizationError
+from model.authorization import Authorization, AuthorizationError
 from config import TOKEN_FILE
 
 

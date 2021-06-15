@@ -13,7 +13,7 @@ class MainMenu(QWidget):
                 lambda: self.main_window.ui.content_pages.setCurrentWidget(self.main_window.ui.user_management_page)
             ),
             "calculator": lambda: self.change_menu_page(
-                lambda: self.main_window.ui.content_pages.setCurrentWidget(self.main_window.ui.user_management_page)
+                lambda: self.main_window.ui.content_pages.setCurrentWidget(self.main_window.ui.calculator_page)
             ),
             "equipment": lambda: self.change_menu_page(
                 lambda: self.main_window.ui.content_pages.setCurrentWidget(self.main_window.ui.equipment_page)

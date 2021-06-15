@@ -10,6 +10,9 @@ from view.pages.equipment_card_ui import EquipmentCard
 from view.pages.price_settings_page_ui import PriceSettingsPage
 from view.pages.calendar_page_ui import CalendarPage
 from view.pages.inventory_page_ui import InventoryPageUi
+from view.pages.inventory_ui import InventoryUi
+from view.pages.calendar_ui import CalendarUi
+from view.pages.calculator_page_ui import CalculatorPageUi
 from controller.login_window.login_page import LoginPage
 from controller.login_window.registration_page import RegistrationPage
 from controller.login_window.acc_created_page import AccCreatedPage
@@ -20,16 +23,18 @@ from controller.content_window.profile_page import ProfilePage
 from controller.content_window.equipment_page import EquipmentPage
 from controller.content_window.configuration_page import ConfigurationPage
 from controller.content_window.inventory_page import InventoryPage
+from controller.content_window.calculator.calculator_main_page import CalculatorPage
 from model.user.user import User
-from model.user_privilege.user_privilege import UserPrivilege
-from model.user.authorization import Authorization, AuthorizationError
+from model.user.user_privilege import UserPrivilege
+from model.authorization import Authorization, AuthorizationError
 from model.user.user_company import UserCompany
-from model.user_role.user_role import UserRole
+from model.user.user_role import UserRole
 from model.truck.truck import Truck
 from model.truck.truck_type import TruckType
-from model.calendar.calendar import Calendar
-from model.mover_amount.mover_amount import MoverAmount
-from model.move_size.move_size import MoveSize
+from model.calendar import Calendar
+from model.mover_amount import MoverAmount
+from model.move_size import MoveSize
+from model.floor_collection import FloorCollection
 
 
 class MainWindow(QMainWindow):
@@ -42,8 +47,11 @@ class MainWindow(QMainWindow):
         self.user_profile_ui = UserProfile(self)
         self.equipment_card = EquipmentCard(self)
         self.price_settings_ui = PriceSettingsPage(self)
-        self.calendar_ui = CalendarPage(self)
-        self.inventory_ui = InventoryPageUi(self)
+        self.calendar_page_ui = CalendarPage(self)
+        self.inventory_page_ui = InventoryPageUi(self)
+        self.inventory_ui = InventoryUi(self)
+        self.calendar_ui = CalendarUi(self)
+        self.calculator_page_ui = CalculatorPageUi(self)
         self.user = User()
         self.company_users = UserCompany()
         self.user_role = UserRole()
@@ -51,6 +59,7 @@ class MainWindow(QMainWindow):
         self.truck_type = TruckType()
         self.calendar = Calendar()
         self.move_size = MoveSize()
+        self.floor_collection = FloorCollection()
         self.mover_amount = MoverAmount()
         self.modal_window = ModalWindow(self)
         self.login_page = LoginPage(self)
@@ -62,18 +71,21 @@ class MainWindow(QMainWindow):
         self.equipment_page = EquipmentPage(self)
         self.configuration_page = ConfigurationPage(self)
         self.inventory_page = InventoryPage(self)
+        self.calculator_page = CalculatorPage(self)
         self.check_authorization()
-        self.get_price_tags()
         self.get_mover_amount()
         self.get_move_size()
+        self.get_floor()
+
+    def get_floor(self):
+        self.get_data(self.floor_collection.get)
+
+    def set_calendar(self):
+        self.get_data(self.calendar.get)
+        self.calendar_ui.set_calendar_dates()
 
     def get_move_size(self):
         self.get_data(self.move_size.get)
-
-    def get_price_tags(self):
-        self.calendar_ui.set_price_tag(self.ui.config_price_type_butt_frame)
-        self.calendar_ui.set_calendars()
-        self.configuration_page.set_event_filter()
 
     def get_mover_amount(self):
         self.get_data(self.mover_amount.get)
