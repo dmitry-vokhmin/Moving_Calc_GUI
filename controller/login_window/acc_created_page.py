@@ -8,5 +8,5 @@ class AccCreatedPage:
             lambda: self.main_window.ui.login_pages.setCurrentWidget(self.main_window.ui.login_page)
         )
 
-    def show_error(self, error):
-        pass
+    def show_error(self, text):
+        self.main_window.ui.acc_create_error_text.setText(str(text))

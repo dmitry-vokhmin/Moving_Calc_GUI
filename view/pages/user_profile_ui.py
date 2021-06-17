@@ -50,7 +50,5 @@ class UserProfile:
         self.main_window.ui.profile_delete_butt.setVisible(False)
         self.main_window.ui.profile_user_manage_butt.setVisible(False)
         self.main_window.ui.role_combobox.addItem(role, role_id)
-        self.main_window.ui.role_combobox.addItem(role, role_id)
-        self.main_window.ui.role_combobox.addItem(role, role_id)
-        self.main_window.ui.role_combobox.setEnabled(True)
+        self.main_window.ui.role_combobox.setEnabled(False)
         return name, role, email

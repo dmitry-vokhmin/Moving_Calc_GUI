@@ -20,7 +20,7 @@ class LoginPage:
         )
         try:
             response_data = Authorization.post(user)
-            if self.main_window.ui.radioButton.isChecked():
+            if self.main_window.ui.log_keep_signed_btn.isChecked():
                 TOKEN_FILE.write_text(response_data["access_token"])
             self.main_window.ui.log_pass_input.setText("")
             self.main_window.get_user()

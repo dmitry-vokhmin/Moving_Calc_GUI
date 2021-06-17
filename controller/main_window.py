@@ -103,8 +103,8 @@ class MainWindow(QMainWindow):
         self.ui.window_pages.setCurrentWidget(self.ui.login_window)
         self.ui.login_pages.setCurrentWidget(self.ui.login_page)
 
-    def registration_error(self, data):
-        self.acc_created_page.show_error(data)
+    def registration_error(self, text):
+        self.acc_created_page.show_error(text)
 
     def get_data(self, api_end_point):
         response_code, response_data = api_end_point()

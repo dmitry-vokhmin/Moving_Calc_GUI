@@ -737,7 +737,7 @@ class Ui_MainWindow(object):
         self.profile_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.profile_butt.setStyleSheet("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/image/account@2x.svg"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        icon.addPixmap(QtGui.QPixmap(":/image/account.svg"), QtGui.QIcon.Normal, QtGui.QIcon.On)
         self.profile_butt.setIcon(icon)
         self.profile_butt.setIconSize(QtCore.QSize(20, 20))
         self.profile_butt.setObjectName("profile_butt")

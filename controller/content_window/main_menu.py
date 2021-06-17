@@ -51,10 +51,10 @@ class MainMenu(QWidget):
 
     def eventFilter(self, obj, event) -> bool:
         if event.type() == QtCore.QEvent.HoverEnter:
-            obj.setIcon(QIcon(":/image/account_active@2x.svg"))
+            obj.setIcon(QIcon(":/image/account_active.svg"))
             return True
         if event.type() == QtCore.QEvent.HoverLeave and \
                 self.main_window.ui.content_pages.currentWidget().objectName() != "profile_page":
-            obj.setIcon(QIcon(":/image/account@2x.svg"))
+            obj.setIcon(QIcon(":/image/account.svg"))
             return True
         return False

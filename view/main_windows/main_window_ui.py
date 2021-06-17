@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'main_window.ui'
+# Form implementation generated from reading ui file 'main_window_copy.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -54,68 +54,160 @@ class Ui_MainWindow(object):
                                         "}")
         self.window_pages.setObjectName("window_pages")
         self.login_window = QtWidgets.QWidget()
+        self.login_window.setStyleSheet("QStackedWidget {\n"
+                                        "background-color: rgb(255, 255, 255);\n"
+                                        "}\n"
+                                        "\n"
+                                        "/* QRadioButton */\n"
+                                        "QRadioButton {\n"
+                                        "    font-size: 14px;\n"
+                                        "    color: #070808;\n"
+                                        "}\n"
+                                        "\n"
+                                        "QRadioButton::indicator\n"
+                                        "{\n"
+                                        "width : 20px;\n"
+                                        "height : 20px;\n"
+                                        "}\n"
+                                        "\n"
+                                        "QRadioButton::indicator::checked {\n"
+                                        "    image: url(:/image/radio_button_checked.svg);\n"
+                                        "}\n"
+                                        "\n"
+                                        "/* QLineEdit */\n"
+                                        "QLineEdit {\n"
+                                        "    min-width: 363px;\n"
+                                        "    min-height: 46px;\n"
+                                        "    max-width: 363px;\n"
+                                        "    max-height: 46px;\n"
+                                        "    border-radius: 10px;\n"
+                                        "    border: 1px solid #B5B8C7;\n"
+                                        "    padding-left: 15px;\n"
+                                        "    padding-right: 15px;\n"
+                                        "    font-size: 16px;\n"
+                                        "}\n"
+                                        "\n"
+                                        "QLineEdit:hover {\n"
+                                        "    border: 1px solid #0915CC;\n"
+                                        "    background-color: #F2F3F6;\n"
+                                        "}\n"
+                                        "\n"
+                                        "QLineEdit:focus {\n"
+                                        "    border: 1px solid #0915CC;\n"
+                                        "    background-color: #F2F3F6;\n"
+                                        "}\n"
+                                        "\n"
+                                        "QLineEdit[error=true] {\n"
+                                        "    border: 1px solid #FF3C2F;\n"
+                                        "}\n"
+                                        "\n"
+                                        "/* QPushButton */\n"
+                                        "QPushButton {\n"
+                                        "    border-radius: 10px;\n"
+                                        "    font-size: 15px;\n"
+                                        "    color: #FFFFFF;\n"
+                                        "    background: #0915CC;\n"
+                                        "}\n"
+                                        "\n"
+                                        "QPushButton:hover {\n"
+                                        "background: rgba(9, 21, 204, 0.8);\n"
+                                        "}\n"
+                                        "\n"
+                                        "#log_create_acc_but, #reg_sign_but, #acc_create_error_bot_but {\n"
+                                        "    background: transparent;\n"
+                                        "    text-decoration: underline;\n"
+                                        "    font-size: 16px;\n"
+                                        "    color: blue;\n"
+                                        "    text-align: left;\n"
+                                        "}\n"
+                                        "\n"
+                                        "#log_fogot_pass_btn {\n"
+                                        "    background: transparent;\n"
+                                        "    color: #7C83A7;\n"
+                                        "    font-size: 14px;\n"
+                                        "}\n"
+                                        "\n"
+                                        "#log_fogot_pass_btn:hover {\n"
+                                        "    color: rgba(9, 21, 204, 0.8);\n"
+                                        "}\n"
+                                        "\n"
+                                        "/* QLabel */\n"
+                                        "#log_header, #reg_header{\n"
+                                        "    font-size: 28px;\n"
+                                        "    color: #070808;\n"
+                                        "    margin-bottom: 10px;\n"
+                                        "}\n"
+                                        "\n"
+                                        "#log_text, #reg_text {\n"
+                                        "    font-size: 16px;\n"
+                                        "    color: #070808;\n"
+                                        "    margin-bottom: 30px;\n"
+                                        "}\n"
+                                        "\n"
+                                        "#log_error_text, #reg_error_name, #reg_error_email, #reg_error_pass, #reg_error_pass2 {\n"
+                                        "    color: #FF3C2F;\n"
+                                        "    font-size: 14px;\n"
+                                        "    margin-top: 5px;\n"
+                                        "}\n"
+                                        "#log_error_text {\n"
+                                        "    margin-bottom: 0px;\n"
+                                        "}\n"
+                                        "\n"
+                                        "#log_bot_text, #log_email_label, #log_pass_label, #reg_email_label, #reg_pass_label, #reg_pass2_label, #reg_name_label, #reg_bot_text  {\n"
+                                        "    font-size: 16px;\n"
+                                        "    color: #7C83A7;\n"
+                                        "    margin-bottom: 5px;\n"
+                                        "    margin-top: 20px;\n"
+                                        "}\n"
+                                        "#reg_name_label  {\n"
+                                        "    margin-top: 0px;\n"
+                                        "}\n"
+                                        "#log_bot_text, #reg_bot_text {\n"
+                                        "    margin-bottom: 0px;\n"
+                                        "    margin-top: 0px;\n"
+                                        "}\n"
+                                        "\n"
+                                        "#acc_created_text {\n"
+                                        "    font-size: 16px;\n"
+                                        "    color: #757C9F;\n"
+                                        "    margin-top: 10px;\n"
+                                        "    margin-bottom: 30px;\n"
+                                        "}\n"
+                                        "\n"
+                                        "#acc_create_error_text_2, #acc_create_error_text {\n"
+                                        "    font-size: 16px;\n"
+                                        "    color: #757C9F;\n"
+                                        "}\n"
+                                        "\n"
+                                        "#acc_created_header, #acc_create_error_header {\n"
+                                        "    font-size: 28px;\n"
+                                        "    color: #070808;\n"
+                                        "}\n"
+                                        "\n"
+                                        "/* QFrame */\n"
+                                        "#log_error_frame {\n"
+                                        "    background: rgba(255, 60, 47, 0.15);\n"
+                                        "    border-radius: 5px;\n"
+                                        "}\n"
+                                        "\n"
+                                        "/* Icon */\n"
+                                        "#log_error_icon {\n"
+                                        "    image: url(:/image/login_error_pic.svg);\n"
+                                        "}\n"
+                                        "\n"
+                                        "#acc_created_icon {\n"
+                                        "    image: url(:/image/acc_created_pic.svg);\n"
+                                        "}\n"
+                                        "\n"
+                                        "#acc_create_error_icon {\n"
+                                        "    image: url(:/image/acc_created_error_pic.svg);\n"
+                                        "}")
         self.login_window.setObjectName("login_window")
         self.login_window_layout = QtWidgets.QHBoxLayout(self.login_window)
         self.login_window_layout.setContentsMargins(0, 0, 0, 0)
         self.login_window_layout.setSpacing(0)
         self.login_window_layout.setObjectName("login_window_layout")
         self.login_pages = QtWidgets.QStackedWidget(self.login_window)
-        self.login_pages.setStyleSheet("QStackedWidget {\n"
-                                       "background-color: rgb(255, 255, 255);\n"
-                                       "}\n"
-                                       "\n"
-                                       "QLineEdit {\n"
-                                       "    min-width: 363px;\n"
-                                       "    min-height: 46px;\n"
-                                       "    max-width: 363px;\n"
-                                       "    max-height: 46px;\n"
-                                       "    border-radius: 10px;\n"
-                                       "    border: 1px solid #B5B8C7;\n"
-                                       "    padding-left: 15px;\n"
-                                       "    padding-right: 15px;\n"
-                                       "    font-size: 16px;\n"
-                                       "}\n"
-                                       "\n"
-                                       "QLineEdit:hover {\n"
-                                       "    border: 1px solid #0915CC;\n"
-                                       "    background-color: #F2F3F6;\n"
-                                       "}\n"
-                                       "\n"
-                                       "QLineEdit:focus {\n"
-                                       "    border: 1px solid #0915CC;\n"
-                                       "    background-color: #F2F3F6;\n"
-                                       "}\n"
-                                       "\n"
-                                       "QPushButton {\n"
-                                       "    border-radius: 10px;\n"
-                                       "    font-size: 15px;\n"
-                                       "    color: #FFFFFF;\n"
-                                       "    background: #0915CC;\n"
-                                       "}\n"
-                                       "\n"
-                                       "QPushButton:hover {\n"
-                                       "background: rgba(9, 21, 204, 0.8);\n"
-                                       "}\n"
-                                       "\n"
-                                       "#log_header, #reg_header{\n"
-                                       "    font-size: 28px;\n"
-                                       "    color: #070808;\n"
-                                       "    margin-bottom: 10px;\n"
-                                       "}\n"
-                                       "\n"
-                                       "#log_text, #reg_text {\n"
-                                       "    font-size: 16px;\n"
-                                       "    color: #070808;\n"
-                                       "    margin-bottom: 30px;\n"
-                                       "}\n"
-                                       "\n"
-                                       "#log_create_acc_but, #reg_sign_but, #acc_create_error_bot_but {\n"
-                                       "    background: transparent;\n"
-                                       "    text-decoration: underline;\n"
-                                       "    font-size: 16px;\n"
-                                       "    color: blue;\n"
-                                       "    text-align: left;\n"
-                                       "}")
         self.login_pages.setObjectName("login_pages")
         self.login_page = QtWidgets.QWidget()
         self.login_page.setObjectName("login_page")
@@ -124,46 +216,22 @@ class Ui_MainWindow(object):
         self.login_layout.setSpacing(0)
         self.login_layout.setObjectName("login_layout")
         self.log_main_frame = QtWidgets.QFrame(self.login_page)
-        self.log_main_frame.setStyleSheet("#log_bot_text, #log_email_label, #log_pass_label  {\n"
-                                          "    font-size: 16px;\n"
-                                          "    color: #7C83A7;\n"
-                                          "}\n"
-                                          "")
-        self.log_main_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.log_main_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.log_main_frame.setObjectName("log_main_frame")
         self.log_main_layout = QtWidgets.QVBoxLayout(self.log_main_frame)
         self.log_main_layout.setContentsMargins(0, 0, 0, 0)
         self.log_main_layout.setSpacing(0)
         self.log_main_layout.setObjectName("log_main_layout")
         self.log_header = QtWidgets.QLabel(self.log_main_frame)
-        self.log_header.setStyleSheet("")
-        self.log_header.setTextFormat(QtCore.Qt.AutoText)
         self.log_header.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
-        self.log_header.setIndent(-1)
         self.log_header.setObjectName("log_header")
         self.log_main_layout.addWidget(self.log_header)
         self.log_text = QtWidgets.QLabel(self.log_main_frame)
-        self.log_text.setStyleSheet("")
         self.log_text.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.log_text.setObjectName("log_text")
         self.log_main_layout.addWidget(self.log_text)
         self.log_error_frame = QtWidgets.QFrame(self.log_main_frame)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.log_error_frame.sizePolicy().hasHeightForWidth())
-        self.log_error_frame.setSizePolicy(sizePolicy)
-        self.log_error_frame.setMinimumSize(QtCore.QSize(395, 60))
-        self.log_error_frame.setMaximumSize(QtCore.QSize(395, 60))
-        self.log_error_frame.setStyleSheet(".QFrame {\n"
-                                           "background: rgba(255, 60, 47, 0.15);\n"
-                                           "border-radius: 5px;\n"
-                                           "margin-bottom: 20px;\n"
-                                           "}\n"
-                                           "")
-        self.log_error_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.log_error_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.log_error_frame.setMinimumSize(QtCore.QSize(395, 40))
+        self.log_error_frame.setMaximumSize(QtCore.QSize(395, 40))
         self.log_error_frame.setObjectName("log_error_frame")
         self.log_error_layout = QtWidgets.QHBoxLayout(self.log_error_frame)
         self.log_error_layout.setContentsMargins(11, 0, 0, 0)
@@ -172,132 +240,64 @@ class Ui_MainWindow(object):
         self.log_error_icon = QtWidgets.QLabel(self.log_error_frame)
         self.log_error_icon.setMinimumSize(QtCore.QSize(17, 17))
         self.log_error_icon.setMaximumSize(QtCore.QSize(17, 17))
-        self.log_error_icon.setStyleSheet("image: url(:/image/login_error_pic.svg);")
-        self.log_error_icon.setText("")
-        self.log_error_icon.setScaledContents(False)
         self.log_error_icon.setObjectName("log_error_icon")
         self.log_error_layout.addWidget(self.log_error_icon)
         self.log_error_text = QtWidgets.QLabel(self.log_error_frame)
-        self.log_error_text.setMinimumSize(QtCore.QSize(0, 0))
-        self.log_error_text.setStyleSheet("color: #FF3C2F;\n"
-                                          "font-size: 14px;")
-        self.log_error_text.setScaledContents(False)
         self.log_error_text.setObjectName("log_error_text")
         self.log_error_layout.addWidget(self.log_error_text)
         self.log_error_layout.setStretch(1, 1)
         self.log_main_layout.addWidget(self.log_error_frame)
         self.log_email_label = QtWidgets.QLabel(self.log_main_frame)
-        self.log_email_label.setStyleSheet("margin-bottom: 5px;")
         self.log_email_label.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.log_email_label.setObjectName("log_email_label")
         self.log_main_layout.addWidget(self.log_email_label)
         self.log_email_input = QtWidgets.QLineEdit(self.log_main_frame)
-        self.log_email_input.setEnabled(True)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.log_email_input.sizePolicy().hasHeightForWidth())
-        self.log_email_input.setSizePolicy(sizePolicy)
         self.log_email_input.setMinimumSize(QtCore.QSize(395, 48))
         self.log_email_input.setMaximumSize(QtCore.QSize(395, 48))
-        self.log_email_input.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.log_email_input.setStyleSheet("")
-        self.log_email_input.setText("")
-        self.log_email_input.setEchoMode(QtWidgets.QLineEdit.Normal)
-        self.log_email_input.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.log_email_input.setObjectName("log_email_input")
         self.log_main_layout.addWidget(self.log_email_input)
         self.log_pass_label = QtWidgets.QLabel(self.log_main_frame)
-        self.log_pass_label.setStyleSheet("margin-bottom: 5px;\n"
-                                          "margin-top: 20px;\n"
-                                          "")
         self.log_pass_label.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.log_pass_label.setObjectName("log_pass_label")
         self.log_main_layout.addWidget(self.log_pass_label)
         self.log_pass_input = QtWidgets.QLineEdit(self.log_main_frame)
         self.log_pass_input.setEnabled(True)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.log_pass_input.sizePolicy().hasHeightForWidth())
-        self.log_pass_input.setSizePolicy(sizePolicy)
         self.log_pass_input.setMinimumSize(QtCore.QSize(395, 48))
         self.log_pass_input.setMaximumSize(QtCore.QSize(395, 48))
-        self.log_pass_input.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.log_pass_input.setStyleSheet("")
-        self.log_pass_input.setText("")
         self.log_pass_input.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.log_pass_input.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.log_pass_input.setObjectName("log_pass_input")
         self.log_main_layout.addWidget(self.log_pass_input)
         self.log_mid_frame = QtWidgets.QFrame(self.log_main_frame)
-        self.log_mid_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.log_mid_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.log_mid_frame.setObjectName("log_mid_frame")
         self.log_mid_frame_2 = QtWidgets.QHBoxLayout(self.log_mid_frame)
         self.log_mid_frame_2.setContentsMargins(0, 18, 0, 43)
         self.log_mid_frame_2.setSpacing(0)
         self.log_mid_frame_2.setObjectName("log_mid_frame_2")
-        self.radioButton = QtWidgets.QRadioButton(self.log_mid_frame)
-        self.radioButton.setStyleSheet("QRadioButton {\n"
-                                       "    font-size: 14px;\n"
-                                       "    color: #070808;\n"
-                                       "}\n"
-                                       "\n"
-                                       "QRadioButton::indicator\n"
-                                       "{\n"
-                                       "width : 20px;\n"
-                                       "height : 20px;\n"
-                                       "}\n"
-                                       "\n"
-                                       "QRadioButton::indicator::checked {\n"
-                                       "    image: url(:/image/radio_button_checked.svg);\n"
-                                       "}\n"
-                                       "")
-        self.radioButton.setObjectName("radioButton")
-        self.log_mid_frame_2.addWidget(self.radioButton)
-        self.pushButton_2 = QtWidgets.QPushButton(self.log_mid_frame)
-        self.pushButton_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_2.setStyleSheet("QPushButton {\n"
-                                        "    background: transparent;\n"
-                                        "    color: #7C83A7;\n"
-                                        "    font-size: 14px;\n"
-                                        "    text-align: right;\n"
-                                        "}\n"
-                                        "\n"
-                                        "QPushButton:hover {\n"
-                                        "color: rgba(9, 21, 204, 0.8);\n"
-                                        "}")
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.log_mid_frame_2.addWidget(self.pushButton_2)
+        self.log_keep_signed_btn = QtWidgets.QRadioButton(self.log_mid_frame)
+        self.log_keep_signed_btn.setObjectName("log_keep_signed_btn")
+        self.log_mid_frame_2.addWidget(self.log_keep_signed_btn)
+        self.log_fogot_pass_btn = QtWidgets.QPushButton(self.log_mid_frame)
+        self.log_fogot_pass_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.log_fogot_pass_btn.setObjectName("log_fogot_pass_btn")
+        self.log_mid_frame_2.addWidget(self.log_fogot_pass_btn, 0, QtCore.Qt.AlignRight)
         self.log_main_layout.addWidget(self.log_mid_frame)
         self.log_sign_butt = QtWidgets.QPushButton(self.log_main_frame)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.log_sign_butt.sizePolicy().hasHeightForWidth())
-        self.log_sign_butt.setSizePolicy(sizePolicy)
         self.log_sign_butt.setMinimumSize(QtCore.QSize(396, 47))
         self.log_sign_butt.setMaximumSize(QtCore.QSize(396, 47))
         self.log_sign_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.log_sign_butt.setStyleSheet("")
         self.log_sign_butt.setObjectName("log_sign_butt")
         self.log_main_layout.addWidget(self.log_sign_butt)
         self.log_bot_frame = QtWidgets.QFrame(self.log_main_frame)
-        self.log_bot_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.log_bot_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.log_bot_frame.setObjectName("log_bot_frame")
         self.log_bot_layout = QtWidgets.QHBoxLayout(self.log_bot_frame)
         self.log_bot_layout.setContentsMargins(0, 30, 0, 0)
         self.log_bot_layout.setSpacing(0)
         self.log_bot_layout.setObjectName("log_bot_layout")
         self.log_bot_text = QtWidgets.QLabel(self.log_bot_frame)
-        self.log_bot_text.setStyleSheet("")
         self.log_bot_text.setObjectName("log_bot_text")
         self.log_bot_layout.addWidget(self.log_bot_text)
         self.log_create_acc_but = QtWidgets.QPushButton(self.log_bot_frame)
         self.log_create_acc_but.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.log_create_acc_but.setStyleSheet("")
         self.log_create_acc_but.setObjectName("log_create_acc_but")
         self.log_bot_layout.addWidget(self.log_create_acc_but)
         self.log_main_layout.addWidget(self.log_bot_frame, 0, QtCore.Qt.AlignLeft)
@@ -310,186 +310,97 @@ class Ui_MainWindow(object):
         self.registration_layout.setSpacing(0)
         self.registration_layout.setObjectName("registration_layout")
         self.reg_main_frame = QtWidgets.QFrame(self.registration_page)
-        self.reg_main_frame.setStyleSheet("QLineEdit[error=true] {\n"
-                                          "    border: 1px solid #FF3C2F;\n"
-                                          "}\n"
-                                          "\n"
-                                          "#reg_error_name, #reg_error_email, #reg_error_pass, #reg_error_pass2 {\n"
-                                          "    margin-top: 5px;\n"
-                                          "    font-size: 14px;\n"
-                                          "    color: #FF3C2F;\n"
-                                          "}\n"
-                                          "\n"
-                                          "#reg_name_label {\n"
-                                          "    font-size: 16px;\n"
-                                          "    color: #7C83A7;\n"
-                                          "    margin-bottom: 5px;\n"
-                                          "}\n"
-                                          "#reg_email_label, #reg_pass_label, #reg_pass2_label {\n"
-                                          "    font-size: 16px;\n"
-                                          "    color: #7C83A7;\n"
-                                          "    margin-bottom: 5px;\n"
-                                          "    margin-top: 20px;\n"
-                                          "}")
-        self.reg_main_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.reg_main_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.reg_main_frame.setObjectName("reg_main_frame")
         self.reg_main_layout = QtWidgets.QVBoxLayout(self.reg_main_frame)
         self.reg_main_layout.setContentsMargins(0, 0, 0, 0)
         self.reg_main_layout.setSpacing(0)
         self.reg_main_layout.setObjectName("reg_main_layout")
         self.reg_header = QtWidgets.QLabel(self.reg_main_frame)
-        self.reg_header.setStyleSheet("")
-        self.reg_header.setTextFormat(QtCore.Qt.AutoText)
         self.reg_header.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
-        self.reg_header.setIndent(-1)
         self.reg_header.setObjectName("reg_header")
         self.reg_main_layout.addWidget(self.reg_header)
         self.reg_text = QtWidgets.QLabel(self.reg_main_frame)
-        self.reg_text.setStyleSheet("")
         self.reg_text.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.reg_text.setObjectName("reg_text")
         self.reg_main_layout.addWidget(self.reg_text)
         self.reg_name_label = QtWidgets.QLabel(self.reg_main_frame)
-        self.reg_name_label.setStyleSheet("")
         self.reg_name_label.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.reg_name_label.setObjectName("reg_name_label")
         self.reg_main_layout.addWidget(self.reg_name_label)
         self.reg_name_input = QtWidgets.QLineEdit(self.reg_main_frame)
         self.reg_name_input.setEnabled(True)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.reg_name_input.sizePolicy().hasHeightForWidth())
-        self.reg_name_input.setSizePolicy(sizePolicy)
         self.reg_name_input.setMinimumSize(QtCore.QSize(395, 48))
         self.reg_name_input.setMaximumSize(QtCore.QSize(395, 48))
-        self.reg_name_input.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.reg_name_input.setStyleSheet("")
-        self.reg_name_input.setText("")
-        self.reg_name_input.setEchoMode(QtWidgets.QLineEdit.Normal)
-        self.reg_name_input.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.reg_name_input.setObjectName("reg_name_input")
         self.reg_main_layout.addWidget(self.reg_name_input)
         self.reg_error_name = QtWidgets.QLabel(self.reg_main_frame)
-        self.reg_error_name.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.reg_error_name.setStyleSheet("")
         self.reg_error_name.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.reg_error_name.setObjectName("reg_error_name")
         self.reg_main_layout.addWidget(self.reg_error_name)
         self.reg_email_label = QtWidgets.QLabel(self.reg_main_frame)
-        self.reg_email_label.setStyleSheet("")
         self.reg_email_label.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.reg_email_label.setObjectName("reg_email_label")
         self.reg_main_layout.addWidget(self.reg_email_label)
         self.reg_email_input = QtWidgets.QLineEdit(self.reg_main_frame)
         self.reg_email_input.setEnabled(True)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.reg_email_input.sizePolicy().hasHeightForWidth())
-        self.reg_email_input.setSizePolicy(sizePolicy)
         self.reg_email_input.setMinimumSize(QtCore.QSize(395, 48))
         self.reg_email_input.setMaximumSize(QtCore.QSize(395, 48))
-        self.reg_email_input.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.reg_email_input.setStyleSheet("")
-        self.reg_email_input.setText("")
-        self.reg_email_input.setEchoMode(QtWidgets.QLineEdit.Normal)
-        self.reg_email_input.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.reg_email_input.setObjectName("reg_email_input")
         self.reg_main_layout.addWidget(self.reg_email_input)
         self.reg_error_email = QtWidgets.QLabel(self.reg_main_frame)
         self.reg_error_email.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.reg_error_email.setStyleSheet("")
         self.reg_error_email.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.reg_error_email.setObjectName("reg_error_email")
         self.reg_main_layout.addWidget(self.reg_error_email)
         self.reg_pass_label = QtWidgets.QLabel(self.reg_main_frame)
-        self.reg_pass_label.setStyleSheet("")
         self.reg_pass_label.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.reg_pass_label.setObjectName("reg_pass_label")
         self.reg_main_layout.addWidget(self.reg_pass_label)
         self.reg_pass_input = QtWidgets.QLineEdit(self.reg_main_frame)
-        self.reg_pass_input.setEnabled(True)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.reg_pass_input.sizePolicy().hasHeightForWidth())
-        self.reg_pass_input.setSizePolicy(sizePolicy)
         self.reg_pass_input.setMinimumSize(QtCore.QSize(395, 48))
         self.reg_pass_input.setMaximumSize(QtCore.QSize(395, 48))
-        self.reg_pass_input.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.reg_pass_input.setStyleSheet("")
-        self.reg_pass_input.setText("")
         self.reg_pass_input.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.reg_pass_input.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.reg_pass_input.setObjectName("reg_pass_input")
         self.reg_main_layout.addWidget(self.reg_pass_input)
         self.reg_error_pass = QtWidgets.QLabel(self.reg_main_frame)
-        self.reg_error_pass.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.reg_error_pass.setStyleSheet("")
         self.reg_error_pass.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.reg_error_pass.setWordWrap(True)
         self.reg_error_pass.setObjectName("reg_error_pass")
         self.reg_main_layout.addWidget(self.reg_error_pass)
         self.reg_pass2_label = QtWidgets.QLabel(self.reg_main_frame)
-        self.reg_pass2_label.setStyleSheet("")
         self.reg_pass2_label.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.reg_pass2_label.setObjectName("reg_pass2_label")
         self.reg_main_layout.addWidget(self.reg_pass2_label)
         self.reg_pass2_input = QtWidgets.QLineEdit(self.reg_main_frame)
         self.reg_pass2_input.setEnabled(True)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.reg_pass2_input.sizePolicy().hasHeightForWidth())
-        self.reg_pass2_input.setSizePolicy(sizePolicy)
         self.reg_pass2_input.setMinimumSize(QtCore.QSize(395, 48))
         self.reg_pass2_input.setMaximumSize(QtCore.QSize(395, 48))
-        self.reg_pass2_input.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.reg_pass2_input.setStyleSheet("")
-        self.reg_pass2_input.setText("")
         self.reg_pass2_input.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.reg_pass2_input.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.reg_pass2_input.setObjectName("reg_pass2_input")
         self.reg_main_layout.addWidget(self.reg_pass2_input)
         self.reg_error_pass2 = QtWidgets.QLabel(self.reg_main_frame)
-        self.reg_error_pass2.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.reg_error_pass2.setStyleSheet("")
         self.reg_error_pass2.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.reg_error_pass2.setObjectName("reg_error_pass2")
         self.reg_main_layout.addWidget(self.reg_error_pass2)
         spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         self.reg_main_layout.addItem(spacerItem)
         self.reg_create_acc_butt = QtWidgets.QPushButton(self.reg_main_frame)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.reg_create_acc_butt.sizePolicy().hasHeightForWidth())
-        self.reg_create_acc_butt.setSizePolicy(sizePolicy)
         self.reg_create_acc_butt.setMinimumSize(QtCore.QSize(396, 47))
         self.reg_create_acc_butt.setMaximumSize(QtCore.QSize(396, 47))
         self.reg_create_acc_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.reg_create_acc_butt.setStyleSheet("")
         self.reg_create_acc_butt.setObjectName("reg_create_acc_butt")
         self.reg_main_layout.addWidget(self.reg_create_acc_butt)
         self.reg_bot_frame = QtWidgets.QFrame(self.reg_main_frame)
-        self.reg_bot_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.reg_bot_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.reg_bot_frame.setObjectName("reg_bot_frame")
         self.reg_bot_layout = QtWidgets.QHBoxLayout(self.reg_bot_frame)
         self.reg_bot_layout.setContentsMargins(0, 30, 0, 0)
         self.reg_bot_layout.setSpacing(0)
         self.reg_bot_layout.setObjectName("reg_bot_layout")
         self.reg_bot_text = QtWidgets.QLabel(self.reg_bot_frame)
-        self.reg_bot_text.setStyleSheet("font-size: 16px;\n"
-                                        "color: #7C83A7;\n"
-                                        "")
         self.reg_bot_text.setObjectName("reg_bot_text")
         self.reg_bot_layout.addWidget(self.reg_bot_text)
         self.reg_sign_but = QtWidgets.QPushButton(self.reg_bot_frame)
         self.reg_sign_but.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.reg_sign_but.setStyleSheet("")
         self.reg_sign_but.setObjectName("reg_sign_but")
         self.reg_bot_layout.addWidget(self.reg_sign_but)
         self.reg_main_layout.addWidget(self.reg_bot_frame, 0, QtCore.Qt.AlignLeft)
@@ -504,8 +415,6 @@ class Ui_MainWindow(object):
         self.acc_created_main_frame = QtWidgets.QFrame(self.acc_created_page)
         self.acc_created_main_frame.setMinimumSize(QtCore.QSize(427, 0))
         self.acc_created_main_frame.setMaximumSize(QtCore.QSize(427, 16777215))
-        self.acc_created_main_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.acc_created_main_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.acc_created_main_frame.setObjectName("acc_created_main_frame")
         self.acc_created_main_layout = QtWidgets.QVBoxLayout(self.acc_created_main_frame)
         self.acc_created_main_layout.setContentsMargins(0, 0, 0, 0)
@@ -514,42 +423,23 @@ class Ui_MainWindow(object):
         self.acc_created_icon = QtWidgets.QLabel(self.acc_created_main_frame)
         self.acc_created_icon.setMinimumSize(QtCore.QSize(69, 60))
         self.acc_created_icon.setMaximumSize(QtCore.QSize(69, 60))
-        self.acc_created_icon.setStyleSheet("image: url(:/image/acc_created_pic.svg);")
-        self.acc_created_icon.setText("")
-        self.acc_created_icon.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.acc_created_icon.setObjectName("acc_created_icon")
         self.acc_created_main_layout.addWidget(self.acc_created_icon)
         spacerItem1 = QtWidgets.QSpacerItem(20, 30, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         self.acc_created_main_layout.addItem(spacerItem1)
         self.acc_created_header = QtWidgets.QLabel(self.acc_created_main_frame)
-        self.acc_created_header.setStyleSheet("font-size: 28px;\n"
-                                              "color: #070808;")
-        self.acc_created_header.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.acc_created_header.setWordWrap(True)
         self.acc_created_header.setObjectName("acc_created_header")
         self.acc_created_main_layout.addWidget(self.acc_created_header)
         self.acc_created_text = QtWidgets.QLabel(self.acc_created_main_frame)
-        self.acc_created_text.setMinimumSize(QtCore.QSize(0, 0))
-        self.acc_created_text.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.acc_created_text.setStyleSheet("font-size: 16px;\n"
-                                            "color: #757C9F;\n"
-                                            "margin-top: 10px;\n"
-                                            "margin-bottom: 30px;\n"
-                                            "")
         self.acc_created_text.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.acc_created_text.setWordWrap(True)
         self.acc_created_text.setObjectName("acc_created_text")
         self.acc_created_main_layout.addWidget(self.acc_created_text)
         self.acc_created_butt = QtWidgets.QPushButton(self.acc_created_main_frame)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.acc_created_butt.sizePolicy().hasHeightForWidth())
-        self.acc_created_butt.setSizePolicy(sizePolicy)
         self.acc_created_butt.setMinimumSize(QtCore.QSize(130, 47))
         self.acc_created_butt.setMaximumSize(QtCore.QSize(130, 47))
         self.acc_created_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.acc_created_butt.setStyleSheet("")
         self.acc_created_butt.setObjectName("acc_created_butt")
         self.acc_created_main_layout.addWidget(self.acc_created_butt)
         self.acc_created_layout.addWidget(self.acc_created_main_frame, 0,
@@ -562,8 +452,6 @@ class Ui_MainWindow(object):
         self.acc_created_error_layout.setSpacing(0)
         self.acc_created_error_layout.setObjectName("acc_created_error_layout")
         self.acc_create_error_main_frame = QtWidgets.QFrame(self.acc_created_error_page)
-        self.acc_create_error_main_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.acc_create_error_main_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.acc_create_error_main_frame.setObjectName("acc_create_error_main_frame")
         self.acc_create_error_main_layout = QtWidgets.QVBoxLayout(self.acc_create_error_main_frame)
         self.acc_create_error_main_layout.setContentsMargins(0, 0, 0, 0)
@@ -572,48 +460,32 @@ class Ui_MainWindow(object):
         self.acc_create_error_icon = QtWidgets.QLabel(self.acc_create_error_main_frame)
         self.acc_create_error_icon.setMinimumSize(QtCore.QSize(69, 60))
         self.acc_create_error_icon.setMaximumSize(QtCore.QSize(69, 60))
-        self.acc_create_error_icon.setStyleSheet("image: url(:/image/acc_created_error_pic.svg);\n"
-                                                 "")
-        self.acc_create_error_icon.setText("")
-        self.acc_create_error_icon.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.acc_create_error_icon.setObjectName("acc_create_error_icon")
         self.acc_create_error_main_layout.addWidget(self.acc_create_error_icon)
+        spacerItem2 = QtWidgets.QSpacerItem(20, 30, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.acc_create_error_main_layout.addItem(spacerItem2)
         self.acc_create_error_header = QtWidgets.QLabel(self.acc_create_error_main_frame)
-        self.acc_create_error_header.setStyleSheet("font-size: 28px;\n"
-                                                   "color: #070808;\n"
-                                                   "margin-top:30px;\n"
-                                                   "margin-bottom: 10px;")
         self.acc_create_error_header.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.acc_create_error_header.setWordWrap(True)
         self.acc_create_error_header.setObjectName("acc_create_error_header")
         self.acc_create_error_main_layout.addWidget(self.acc_create_error_header)
         self.acc_create_error_text = QtWidgets.QLabel(self.acc_create_error_main_frame)
-        self.acc_create_error_text.setStyleSheet("font-family: Inter;\n"
-                                                 "font-size: 16px;\n"
-                                                 "color: #757C9F;\n"
-                                                 "min-width: 427px;\n"
-                                                 "max-width: 427px;")
+        self.acc_create_error_text.setMinimumSize(QtCore.QSize(427, 0))
+        self.acc_create_error_text.setMaximumSize(QtCore.QSize(427, 16777215))
         self.acc_create_error_text.setWordWrap(True)
         self.acc_create_error_text.setObjectName("acc_create_error_text")
         self.acc_create_error_main_layout.addWidget(self.acc_create_error_text)
         self.acc_create_error_bot_frame = QtWidgets.QFrame(self.acc_create_error_main_frame)
-        self.acc_create_error_bot_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.acc_create_error_bot_frame.setFrameShadow(QtWidgets.QFrame.Plain)
         self.acc_create_error_bot_frame.setObjectName("acc_create_error_bot_frame")
         self.acc_create_error_bot_layout = QtWidgets.QHBoxLayout(self.acc_create_error_bot_frame)
         self.acc_create_error_bot_layout.setContentsMargins(0, 20, 0, 30)
         self.acc_create_error_bot_layout.setSpacing(0)
         self.acc_create_error_bot_layout.setObjectName("acc_create_error_bot_layout")
         self.acc_create_error_text_2 = QtWidgets.QLabel(self.acc_create_error_bot_frame)
-        self.acc_create_error_text_2.setStyleSheet("font-family: Inter;\n"
-                                                   "font-size: 16px;\n"
-                                                   "color: #757C9F;")
-        self.acc_create_error_text_2.setWordWrap(True)
         self.acc_create_error_text_2.setObjectName("acc_create_error_text_2")
         self.acc_create_error_bot_layout.addWidget(self.acc_create_error_text_2)
         self.acc_create_error_bot_but = QtWidgets.QPushButton(self.acc_create_error_bot_frame)
         self.acc_create_error_bot_but.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.acc_create_error_bot_but.setStyleSheet("")
         self.acc_create_error_bot_but.setObjectName("acc_create_error_bot_but")
         self.acc_create_error_bot_layout.addWidget(self.acc_create_error_bot_but)
         self.acc_create_error_main_layout.addWidget(self.acc_create_error_bot_frame, 0, QtCore.Qt.AlignLeft)
@@ -621,7 +493,6 @@ class Ui_MainWindow(object):
         self.acc_create_error_butt.setMinimumSize(QtCore.QSize(130, 47))
         self.acc_create_error_butt.setMaximumSize(QtCore.QSize(130, 47))
         self.acc_create_error_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.acc_create_error_butt.setStyleSheet("")
         self.acc_create_error_butt.setObjectName("acc_create_error_butt")
         self.acc_create_error_main_layout.addWidget(self.acc_create_error_butt)
         self.acc_created_error_layout.addWidget(self.acc_create_error_main_frame, 0,
@@ -629,7 +500,6 @@ class Ui_MainWindow(object):
         self.login_pages.addWidget(self.acc_created_error_page)
         self.login_window_layout.addWidget(self.login_pages)
         self.right_pic = QtWidgets.QLabel(self.login_window)
-        self.right_pic.setText("")
         self.right_pic.setPixmap(QtGui.QPixmap(":/image/Login_pic.png"))
         self.right_pic.setScaledContents(True)
         self.right_pic.setObjectName("right_pic")
@@ -638,6 +508,817 @@ class Ui_MainWindow(object):
         self.login_window_layout.setStretch(1, 1)
         self.window_pages.addWidget(self.login_window)
         self.content_window = QtWidgets.QWidget()
+        self.content_window.setStyleSheet("/* ----------------------------Top Menu---------------------------- */\n"
+                                          "#top_menu {\n"
+                                          "    background: #F2F3F6;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#logo_icon {\n"
+                                          "     image: url(:/image/logo.svg);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#profile_butt {\n"
+                                          "     qproperty-icon: url(:/image/account.svg);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#logo_text {\n"
+                                          "    color: #0915CC;\n"
+                                          "    font-size: 14px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "/* ----------------------------Content Pages ----------------------------*/\n"
+                                          "\n"
+                                          "/* Common QLineEdit */\n"
+                                          "QLineEdit {\n"
+                                          "    border-radius: 10px;\n"
+                                          "    border: 1px solid #B5B8C7;\n"
+                                          "    padding-left: 15px;\n"
+                                          "    padding-right: 15px;\n"
+                                          "    font-size: 16px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "QLineEdit:hover {\n"
+                                          "    border: 1px solid #0915CC;\n"
+                                          "    background-color: #F2F3F6;\n"
+                                          "}\n"
+                                          "\n"
+                                          "QLineEdit:focus {\n"
+                                          "    border: 1px solid #0915CC;\n"
+                                          "    background-color: #F2F3F6;\n"
+                                          "}\n"
+                                          "\n"
+                                          "QLineEdit[error=true] {\n"
+                                          "    border: 1px solid #FF3C2F;\n"
+                                          "}\n"
+                                          "\n"
+                                          "/* Common QDateEdit */\n"
+                                          "QDateEdit {\n"
+                                          "    border: none;\n"
+                                          "    font-size: 16px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "QDateEdit::drop-down {\n"
+                                          "    border-top-right-radius: 3px;\n"
+                                          "    border-bottom-right-radius: 3px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "QDateEdit::down-arrow {\n"
+                                          "    image: url(:/image/date_down_arrow.svg);\n"
+                                          "}\n"
+                                          "\n"
+                                          "/* Common QComboBox */\n"
+                                          "\n"
+                                          "#inventory_content_clear_frame .QComboBox, #calc_inv_content_clear_frame .QComboBox{\n"
+                                          "    background: #FFFFFF;\n"
+                                          "    color: #070808;\n"
+                                          "    font-size: 14px;\n"
+                                          "    border: 0.5px solid rgba(117, 124, 159, 0.5);\n"
+                                          "    padding-left: 0px;\n"
+                                          "    padding-right: 0px;\n"
+                                          "    border-radius: 2px;\n"
+                                          "    padding-left: 6px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#inventory_content_clear_frame .QComboBox:hover, #calc_inv_content_clear_frame .QComboBox:hover{\n"
+                                          "    border: 0.5px solid #0915CC;\n"
+                                          "    background: #FFFFFF;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#inventory_content_clear_frame .QComboBox::down-arrow, #calc_inv_content_clear_frame .QComboBox::down-arrow {\n"
+                                          "    padding-right: 0px;\n"
+                                          "    image: url(:/image/arrow_drop_down_inventory_default.svg);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#inventory_content_clear_frame .QComboBox::down-arrow:hover, #calc_inv_content_clear_frame .QComboBox::down-arrow:hover {\n"
+                                          "    image: url(:/image/arrow_drop_down_inventory_hover.svg);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#inventory_content_clear_frame .QComboBox::drop-down, #calc_inv_content_clear_frame .QComboBox::drop-down  {\n"
+                                          "    background: #F2F3F6;\n"
+                                          "    width: 24px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#inventory_content_clear_frame QComboBox QAbstractItemView, #calc_inv_content_clear_frame QComboBox QAbstractItemView\n"
+                                          "{\n"
+                                          "    background: #F9FAFB;\n"
+                                          "    padding-left: 7px;\n"
+                                          "    padding-right: 7px;\n"
+                                          "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
+                                          "    border-radius: 8px;\n"
+                                          "    font-size: 14px;\n"
+                                          "    outline: 0;\n"
+                                          "}\n"
+                                          "\n"
+                                          "\n"
+                                          "#inventory_content_clear_frame QComboBox QAbstractItemView::item, #calc_inv_content_clear_frame QComboBox QAbstractItemView::item { \n"
+                                          "    min-height: 20px;\n"
+                                          "    padding-left: 15px;\n"
+                                          "    background: #F9FAFB;\n"
+                                          "    color: #070808;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#inventory_content_clear_frame QListView::item:selected, #calc_inv_content_clear_frame QListView::item:selected { \n"
+                                          "    color: #0915CC; \n"
+                                          "    background-color: #F2F3F6; \n"
+                                          "    border-radius: 4px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "\n"
+                                          "\n"
+                                          "/* Long QComboBox */\n"
+                                          "#calc_general_info_frame .QComboBox, #profile_role_frame .QComboBox {\n"
+                                          "    background: #FFFFFF;\n"
+                                          "    border-radius: 10px;\n"
+                                          "    border: 1px solid #B5B8C7;\n"
+                                          "    padding-left: 15px;\n"
+                                          "    padding-right: 15px;\n"
+                                          "    font-size: 16px;\n"
+                                          "    color: #757C9F;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_general_info_frame .QComboBox:hover, #profile_role_frame .QComboBox:hover {\n"
+                                          "    border: 1px solid #0915CC;\n"
+                                          "    background: #F2F3F6;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_general_info_frame .QComboBox::drop-down, #profile_role_frame .QComboBox::drop-down {\n"
+                                          "    border-top-right-radius: 3px;\n"
+                                          "    border-bottom-right-radius: 3px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_general_info_frame .QComboBox::down-arrow, #profile_role_frame .QComboBox::down-arrow {\n"
+                                          "    padding-right: 20px;\n"
+                                          "    image: url(:/image/arrow_drop_down.svg);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_general_info_frame QComboBox QAbstractItemView, #profile_role_frame QComboBox QAbstractItemView\n"
+                                          "{\n"
+                                          "    background: #F9FAFB;\n"
+                                          "    padding-left: 7px;\n"
+                                          "    padding-right: 7px;\n"
+                                          "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
+                                          "    border-radius: 8px;\n"
+                                          "    outline: 0;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_general_info_frame QComboBox QAbstractItemView::item, #profile_role_frame QComboBox QAbstractItemView::item { \n"
+                                          "    min-height: 35px;\n"
+                                          "    padding-left: 15px;\n"
+                                          "    background: #F9FAFB;\n"
+                                          "    color: #070808;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_general_info_frame QListView::item:selected, #profile_role_frame QListView::item:selected { \n"
+                                          "    color: #0915CC; \n"
+                                          "    background-color: #F2F3F6; \n"
+                                          "    border-radius: 4px;\n"
+                                          "}\n"
+                                          "/* Common QPushButton */\n"
+                                          "#config_price_update_butt, #config_date_update_butt {\n"
+                                          "    border-radius: 10px;\n"
+                                          "    font-size: 15px;\n"
+                                          "    color: #FFFFFF;\n"
+                                          "    background: #0915CC;\n"
+                                          "    text-decoration: none;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#config_price_update_butt:hover, #config_date_update_butt:hover {\n"
+                                          "    background: rgba(9, 21, 204, 0.8);\n"
+                                          "}\n"
+                                          "\n"
+                                          "\n"
+                                          "/* Common QFrame */\n"
+                                          "#calc_calendar_frame2, #config_calendar_frame2 {\n"
+                                          "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
+                                          "    background: #F9FAFB;\n"
+                                          "    border-radius: 10px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_price_type_frame, #config_price_type_frame {\n"
+                                          "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
+                                          "    border-radius: 10px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_price_type_frame .QLabel, #config_price_type_frame .QLabel  {\n"
+                                          "    font-size: 14px;\n"
+                                          "    color: #000000;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#content_frame {\n"
+                                          "    background: rgb(255, 255, 255);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#top_menu .QPushButton:hover , #calc_inv_check_menu_frame .QPushButton:hover, #equip_bottom_frame .QPushButton:hover, #config_menu_frame .QPushButton:hover, #inventory_menu_frame .QPushButton:hover{\n"
+                                          "    color: #0915CC;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#top_menu .QPushButton[selected=true], #calc_inv_check_menu_frame .QPushButton[selected=true], #equip_bottom_frame .QPushButton[selected=true], #config_menu_frame .QPushButton[selected=true], #inventory_menu_frame .QPushButton[selected=true] {\n"
+                                          "    color: #0915CC;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#top_menu .QPushButton, #calc_inv_check_menu_frame .QPushButton, #equip_bottom_frame .QPushButton, #config_menu_frame .QPushButton, #inventory_menu_frame .QPushButton{\n"
+                                          "    background: transparent;\n"
+                                          "    font-size: 14px;\n"
+                                          "    color: #757C9F;\n"
+                                          "}\n"
+                                          "\n"
+                                          "\n"
+                                          "#menu_frame .QLabel, #calc_inv_check_menu_frame .QLabel,  #equip_bottom_frame .QLabel, #config_menu_frame .QLabel, #inventory_menu_frame .QLabel{\n"
+                                          "    background: #0915CC;\n"
+                                          "    border-top-left-radius: 3px;\n"
+                                          "    border-top-right-radius: 3px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_extra_room_frame .QPushButton, #calc_inv_categor_frame .QPushButton, #config_price_type_butt_frame .QPushButton, #inventory_categor_frame .QPushButton{\n"
+                                          "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
+                                          "    border-radius: 16px;    \n"
+                                          "    padding-left: 10px;\n"
+                                          "    padding-right: 10px;\n"
+                                          "    padding-top: 8px;\n"
+                                          "    padding-bottom: 8px;\n"
+                                          "    color: #757C9F;\n"
+                                          "    font-size: 14px;\n"
+                                          "    qproperty-icon: url(:/image/check_icon_default.svg);\n"
+                                          "    icon-size: 18px, 18px;\n"
+                                          "    background: #F9FAFB;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_extra_room_frame .QPushButton:hover, #calc_inv_categor_frame .QPushButton:hover, #config_price_type_butt_frame .QPushButton:hover, #inventory_categor_frame .QPushButton:hover{\n"
+                                          "    border: 0.5px solid #0915CC;\n"
+                                          "    color: #0915CC;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_extra_room_frame .QPushButton:checked, #calc_inv_categor_frame .QPushButton:checked, \n"
+                                          "#config_price_type_butt_frame .QPushButton:checked, #inventory_categor_frame .QPushButton:checked{\n"
+                                          "    border: 0.5px solid #0915CC;\n"
+                                          "    color: #0915CC;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_size_menu .QPushButton, #inventory_size_menu .QPushButton{\n"
+                                          "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
+                                          "    border-radius: 4px;\n"
+                                          "    color: #0915CC;\n"
+                                          "    font-size: 14px;\n"
+                                          "    text-align: left;\n"
+                                          "    padding-left: 12px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_size_menu .QPushButton:hover, #inventory_size_menu .QPushButton:hover {\n"
+                                          "    border: 0.5px solid #0915CC;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_size_menu .QPushButton:checked, #inventory_size_menu .QPushButton:checked {\n"
+                                          "    border: 0.5px solid #0915CC;\n"
+                                          "    background: #F9FAFB;\n"
+                                          "}\n"
+                                          "\n"
+                                          "/* Common QLabel */\n"
+                                          "#user_manage_small_header, #profile_small_header, #equip_small_header, #config_small_header, #inventory_small_header {\n"
+                                          "    font-size: 14px;\n"
+                                          "    color: #B5B8C7;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#user_manage_header, #profile_user_name,#equip_header, #calc_header, #config_header, #inventory_header  {\n"
+                                          "    font-size: 28px;\n"
+                                          "    color: #070808;\n"
+                                          "}\n"
+                                          "\n"
+                                          "/* Common Error field */\n"
+                                          "#calc_zip_code_frame #error_calc_zip_from,  #calc_zip_code_frame #error_calc_zip_to, #calc_result_cus_info_error_f_name, #calc_result_cus_info_error_l_name, #calc_result_cus_info_error_email, #calc_result_cus_info_error_phone,  #profile_error_name, #profile_error_email, #profile_error_pass, #profile_error_pass2, #profile_error_old_pass {\n"
+                                          "    font-size: 14px;\n"
+                                          "    color: #FF3C2F;\n"
+                                          "}\n"
+                                          "\n"
+                                          "\n"
+                                          "/* Common Icon */\n"
+                                          "#calc_blue_color, #config_blue_color {\n"
+                                          "    background-color: #4E50FF;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_green_color, #config_green_color {\n"
+                                          "    background: #26A95D;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_yellow_color, #config_yellow_color {\n"
+                                          "    background: #FFAC2F;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_red_color, #config_red_color {\n"
+                                          "    background: #FF3C2F;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_result_details_date_icon, #config_end_date_icon, #config_start_date_icon {\n"
+                                          "    image: url(:/image/calculator_calendar_icon.svg);\n"
+                                          "}\n"
+                                          "\n"
+                                          "\n"
+                                          "/* ----------------------------Calculator----------------------------*/\n"
+                                          "\n"
+                                          "/* QLabel */\n"
+                                          "#calc_1_sign {\n"
+                                          "    border: 1px solid #0915CC;\n"
+                                          "    border-radius: 20px;\n"
+                                          "    color: #0915CC;\n"
+                                          "    font-size: 16px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_2_sign, #calc_3_sign, #calc_4_sign {\n"
+                                          "    border: 0.5px solid rgba(9, 21, 204, 0.25);\n"
+                                          "    border-radius: 20px;\n"
+                                          "    color: #0915CC;\n"
+                                          "    font-size: 16px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_1_sign[next=true], #calc_2_sign[next=true], #calc_3_sign[next=true], #calc_4_sign[next=true] {\n"
+                                          "    color: #FFFFFF;\n"
+                                          "    background: #0915CC;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_2_sign[selected=true], #calc_3_sign[selected=true], #calc_4_sign[selected=true] {\n"
+                                          "    border: 1px solid #0915CC;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_1_text, #calc_2_text, #calc_3_text, #calc_4_text, #calc_result_details_date_info, #calc_result_details_service_info, #calc_result_details_zip_from_info, #calc_result_details_zip_to_info, #calc_result_details_size_info, #calc_result_details_ent_from_info, #calc_result_details_ent_to_info {\n"
+                                          "    color: #0915CC;\n"
+                                          "    font-size: 14px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_inv_categor_label, #calc_result_quote_label, #calc_result_crew_size_info, #calc_result_truck_size_info, #calc_result_travel_time_info, #calc_result_hr_info,  #calc_result_est_info, #calc_result_cus_info_small_header{\n"
+                                          "    color: #070808;\n"
+                                          "    font-size: 14px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_result_crew_size_label, #calc_result_truck_size_label, #calc_result_travel_time_label, #calc_result_hr_label, #calc_result_est_label, #calc_result_details_date_label, #calc_result_details_service_label, #calc_result_details_zip_from_label, #calc_result_details_zip_to_label, #calc_result_details_size_label, #calc_result_details_ent_from_label, #calc_result_details_ent_to_label, #calc_result_cus_info_f_name_label, #calc_result_cus_info_l_name_label, #calc_result_cus_info_phone_label,  #calc_result_cus_info_email_label, #calc_result_cus_info_adr_from_label, #calc_result_cus_info_adr_from_1_label, #calc_result_cus_info_adr_from_2_label, #calc_result_cus_info_adr_to_label, #calc_result_cus_info_adr_to_1_label,  #calc_result_cus_info_adr_to_2_label{\n"
+                                          "    color: #757C9F;\n"
+                                          "    font-size: 14px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_inv_check_header, #calc_result_header, #calc_result_details_header, #calc_result_cus_info_header  {\n"
+                                          "    color: #070808;\n"
+                                          "    font-size: 19px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_result_quote_info {\n"
+                                          "    color: #0915CC;\n"
+                                          "    font-size: 19px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_result_cus_info_adr_from_opt, #calc_result_cus_info_adr_to_opt {\n"
+                                          "    background: #F2F3F6;\n"
+                                          "    border-radius: 4px;\n"
+                                          "    color: #757C9F;\n"
+                                          "    font-size: 14px;\n"
+                                          "    padding: 4px 8px 4px 8px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "/* QPushButton */\n"
+                                          "#calc_back_btn {\n"
+                                          "    border-radius: 5px;\n"
+                                          "    border: 1px solid #B5B8C7;\n"
+                                          "    font-size: 14px;\n"
+                                          "    color: #757C9F;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_back_btn:hover {\n"
+                                          "    color: #0915CC;\n"
+                                          "    border: 1px solid #0915CC;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_next_btn {\n"
+                                          "    background: #0915CC;\n"
+                                          "    border-radius: 5px;\n"
+                                          "    color: #F2F3F6;\n"
+                                          "    qproperty-icon: url(:/image/calculator_white_arrow.svg);\n"
+                                          "    font-size: 14px;    \n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_next_btn:hover {\n"
+                                          "    background: rgba(9, 21, 204, 0.8);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_reset_btn {\n"
+                                          "    margin-left: 40px;\n"
+                                          "    background: transparent;\n"
+                                          "    font-size: 14px;\n"
+                                          "    color: #757C9F;\n"
+                                          "    qproperty-icon: url(:/image/inventory_reset_default.svg);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_reset_btn:hover {\n"
+                                          "    color: #FF3C2F;\n"
+                                          "}\n"
+                                          "\n"
+                                          "/* Icon */\n"
+                                          "#calc_1_line, #calc_2_line, #calc_3_line {\n"
+                                          "        image: url(:/image/calculator_menu_line_default.svg);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_1_line[selected=true], #calc_2_line[selected=true], #calc_3_line[selected=true] {\n"
+                                          "        image: url(:/image/calculator_menu_line_selected.svg);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_start_date_icon {\n"
+                                          "    image: url(:/image/calendar_icon.svg);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_result_details_service_icon {\n"
+                                          "    image: url(:/image/calculator_service_icon.svg);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_result_details_zip_icon, #calc_result_details_zip_icon_2 {\n"
+                                          "    image: url(:/image/calculator_zip_code_icon.svg);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_result_details_size_icon {\n"
+                                          "    image: url(:/image/calculator_move_size_icon.svg);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_result_details_ent_icon, #calc_result_details_ent_icon_2 {\n"
+                                          "    image: url(:/image/calculator_entrance_icon.svg);\n"
+                                          "}\n"
+                                          "\n"
+                                          "/* QFrame */\n"
+                                          "#calc_general_info_frame .QLabel {\n"
+                                          "    color: #757C9F;\n"
+                                          "    font-size: 16px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_date_frame {\n"
+                                          "    border: 1px solid #B5B8C7;\n"
+                                          "    border-radius: 10px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_date_frame:hover {\n"
+                                          "    border: 1px solid #0915CC;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_inv_categor_frame {\n"
+                                          "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
+                                          "    border-radius: 4px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_inv_categor_frame {\n"
+                                          "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
+                                          "    border-radius: 4px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_inv_content_scroll_frame {\n"
+                                          "    background: rgb(255, 255, 255);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_room_frame {\n"
+                                          "    background-color: rgb(255, 255, 255);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_preset_frame_2 {\n"
+                                          "    background-color: rgb(255, 255, 255);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_result_frame {\n"
+                                          "    background: #F9FAFB;\n"
+                                          "    border-radius: 5px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_result_frame .Line {\n"
+                                          "    background-color: #070808;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_result_cus_info_frame {\n"
+                                          "    background-color: rgb(255, 255, 255);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_result_cus_info_frame .QPushButton {\n"
+                                          "    border-radius: 10px;\n"
+                                          "    font-size: 15px;\n"
+                                          "    color: #FFFFFF;\n"
+                                          "    background: #0915CC;\n"
+                                          "    text-decoration: none;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#calc_result_cus_info_frame .QPushButton:hover {\n"
+                                          "background: rgba(9, 21, 204, 0.8);\n"
+                                          "}\n"
+                                          "\n"
+                                          "/* ----------------------------Profile----------------------------*/\n"
+                                          "\n"
+                                          "/* QLabel */\n"
+                                          "#profile_person_info, #profile_login_info {\n"
+                                          "    font-size: 19px;\n"
+                                          "    color: #070808;\n"
+                                          "    margin-top: 40px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#profile_name, #profile_role, #profile_pass, #profile_new_pass, #profile_new_pass2, #profile_email, #profile_new_email{\n"
+                                          "    font-size: 16px;\n"
+                                          "    color: #757C9F;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#line {\n"
+                                          "    color: #B5B8C7;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#profile_email_field {\n"
+                                          "    border-radius: 10px;\n"
+                                          "    border: 1px solid #B5B8C7;\n"
+                                          "    padding-left: 15px;\n"
+                                          "    padding-right: 15px;\n"
+                                          "    font-size: 16px;\n"
+                                          "    color: #757C9F;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#profile_role_label {\n"
+                                          "    background: #F2F3F6;\n"
+                                          "    border-radius: 4px;\n"
+                                          "    color: #757C9F;\n"
+                                          "    font-size: 14px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "/* QPushButton */\n"
+                                          "\n"
+                                          "#profile_change_email_butt, #profile_pass_cancel_butt {\n"
+                                          "    margin-top: 26px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#profile_email_cancel_butt, #profile_change_pass_butt {\n"
+                                          "    margin-top: 1px;    \n"
+                                          "}\n"
+                                          "\n"
+                                          "/* QFrame */\n"
+                                          "\n"
+                                          "#profile_frame {\n"
+                                          "    background-color: rgb(255, 255, 255);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#profile_frame .QPushButton {\n"
+                                          "    background: transparent;\n"
+                                          "    text-decoration: underline;\n"
+                                          "    font-size: 14px;\n"
+                                          "    color: #0915CC;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#profile_frame #profile_save_butt {\n"
+                                          "    border-radius: 10px;\n"
+                                          "    font-size: 15px;\n"
+                                          "    color: #FFFFFF;\n"
+                                          "    background: #0915CC;\n"
+                                          "    text-decoration: none;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#profile_frame #profile_save_butt:hover {\n"
+                                          "background: rgba(9, 21, 204, 0.8);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#profile_frame #profile_delete_butt {\n"
+                                          "    background: transparent;\n"
+                                          "    font-size: 14px;\n"
+                                          "    color: #757C9F;\n"
+                                          "    qproperty-icon: url(:/image/delete_acc_icon_default.svg);\n"
+                                          "    text-decoration: none;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#profile_frame #profile_delete_butt:hover, #profile_frame #profile_log_out_butt:hover  {\n"
+                                          "    color: #FF3C2F;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#profile_frame #profile_log_out_butt {\n"
+                                          "    background: transparent;\n"
+                                          "    font-size: 14px;\n"
+                                          "    color: #757C9F;\n"
+                                          "    qproperty-icon: url(:/image/exit_app_default.svg);\n"
+                                          "    text-decoration: none;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#profile_frame #profile_user_manage_butt {\n"
+                                          "    text-decoration: none;\n"
+                                          "}\n"
+                                          "\n"
+                                          "\n"
+                                          "/* ----------------------------user management----------------------------*/\n"
+                                          "\n"
+                                          "/* QLabel */\n"
+                                          "#user_manage_table_user_name, #user_manage_table_email, #user_manage_tabl_role {\n"
+                                          "    color: #757C9F;\n"
+                                          "    font-size: 14px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "/* QPushButton */\n"
+                                          "#user_manage_add_butt {\n"
+                                          "    background: #0915CC;\n"
+                                          "    border-radius: 5px;\n"
+                                          "    color: #F2F3F6;\n"
+                                          "    qproperty-icon: url(:/image/person_add.svg);\n"
+                                          "    font-size: 14px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#user_manage_add_butt:hover {\n"
+                                          "    background: rgba(9, 21, 204, 0.8);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#equip_new_asset_butt {\n"
+                                          "    background: #0915CC;\n"
+                                          "    border-radius: 5px;\n"
+                                          "    color: #F2F3F6;\n"
+                                          "    qproperty-icon: url(:/image/plus_white_icon.svg);\n"
+                                          "    font-size: 14px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#equip_new_asset_butt:hover {\n"
+                                          "    background: rgba(9, 21, 204, 0.8);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#equip_new_asset_type_butt {\n"
+                                          "    border-radius: 5px;\n"
+                                          "    border: 0.5px solid #0915CC;\n"
+                                          "    color: #0915CC;\n"
+                                          "    qproperty-icon: url(:/image/plus_blue_icon.svg);\n"
+                                          "    font-size: 14px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#equip_new_asset_type_butt:hover {\n"
+                                          "    border: 0.5px solid rgba(9, 21, 204, 0.8);\n"
+                                          "    color: rgba(9, 21, 204, 0.8);\n"
+                                          "}\n"
+                                          "\n"
+                                          "/* QFrame */\n"
+                                          "#user_manage_clear_frame .QPushButton {\n"
+                                          "    background: transparent;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#user_manage_clear_frame .QLabel {\n"
+                                          "    font-size: 14px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#equip_truck_pages QWidget{\n"
+                                          "    background-color: rgb(255, 255, 255);\n"
+                                          "}\n"
+                                          "\n"
+                                          "/* ----------------------------Configuration----------------------------*/\n"
+                                          "\n"
+                                          "/* QLabel */\n"
+                                          "#config_price_type_label, #config_price_label, #config_start_date, #config_end_date{\n"
+                                          "    font-size: 16px;\n"
+                                          "    color: #757C9F;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#config_alert_text {\n"
+                                          "    color: #0915CC;\n"
+                                          "    font-size: 14px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#config_price_label {\n"
+                                          "    margin-left: 20px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "/* QFrame */\n"
+                                          "#config_inside_frame {\n"
+                                          "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
+                                          "    border-radius: 10px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#config_alert_top_frame {\n"
+                                          "    background: #F2F3F6;\n"
+                                          "    border-top-left-radius: 10px;\n"
+                                          "    border-top-right-radius: 10px;\n"
+                                          "    border-bottom-right-radius: 0px;\n"
+                                          "    border-bottom-left-radius: 0px;\n"
+                                          "    border: none;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#config_end_date_frame, #config_start_date_frame{\n"
+                                          "    border: 1px solid #B5B8C7;\n"
+                                          "    border-radius: 10px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#config_end_date_frame:hover , #config_start_date_frame:hover{\n"
+                                          "    border: 1px solid #0915CC;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#config_clear_frame .QLabel {\n"
+                                          "    font-size: 14px;\n"
+                                          "    color: #070808;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#config_scroll_frame2 {\n"
+                                          "    background-color: rgb(255, 255, 255);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#config_clear_frame .QLineEdit {\n"
+                                          "    background: transparent;\n"
+                                          "    border: none;\n"
+                                          "    font-size: 14px;\n"
+                                          "    color: #070808;\n"
+                                          "    padding-left: 10px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#config_clear_frame .QLineEdit:enabled {\n"
+                                          "    border: 1px solid #0915CC;\n"
+                                          "    border-radius: 4px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "/* QPushButton */\n"
+                                          "\n"
+                                          "#config_edit_price_butt {\n"
+                                          "    background: transparent;\n"
+                                          "    font-size: 14px;\n"
+                                          "    color: #0915CC;\n"
+                                          "    qproperty-icon: url(:/image/equip_edit_hover.svg);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#config_edit_price_butt:hover {\n"
+                                          "    text-decoration: underline;\n"
+                                          "}\n"
+                                          "\n"
+                                          "/* Icon */\n"
+                                          "\n"
+                                          "#config_alert_icon {\n"
+                                          "    image: url(:/image/alert_icon_blue.svg);\n"
+                                          "}\n"
+                                          "\n"
+                                          "/* ----------------------------Inventory----------------------------*/\n"
+                                          "\n"
+                                          "/* QLineEdit */\n"
+                                          "#inventory_search_input {\n"
+                                          "    border: none;\n"
+                                          "    background: transparent;\n"
+                                          "    font-size: 14px;\n"
+                                          "    color: #757C9F;\n"
+                                          "}\n"
+                                          "\n"
+                                          "/* QLabel */\n"
+                                          "#inventory_categor_label {\n"
+                                          "    color: #070808;\n"
+                                          "    font-size: 14px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "/* QFrame */\n"
+                                          "#inventory_categor_frame {\n"
+                                          "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
+                                          "    border-radius: 4px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#inventory_content_clear_frame {\n"
+                                          "    background-color: rgb(255, 255, 255);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#inventory_room_frame_2 {\n"
+                                          "    background-color: rgb(255, 255, 255);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#inventory_preset_frame_2 {\n"
+                                          "    background-color: rgb(255, 255, 255);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#inventory_search_frame {\n"
+                                          "    background: #F2F3F6;\n"
+                                          "    border-radius: 5px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "/* QPushButton */\n"
+                                          "#inventory_add_butt {\n"
+                                          "    background: #0915CC;\n"
+                                          "    border-radius: 5px;\n"
+                                          "    color: #F2F3F6;\n"
+                                          "    qproperty-icon: url(:/image/plus_white_icon.svg);\n"
+                                          "    font-size: 14px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#inventory_add_butt:hover {\n"
+                                          "    background: rgba(9, 21, 204, 0.8);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#inventory_save_butt {\n"
+                                          "    background: #0915CC;\n"
+                                          "    border-radius: 5px;\n"
+                                          "    color: #F2F3F6;\n"
+                                          "    qproperty-icon: url(:/image/check_icon_white.svg);\n"
+                                          "    font-size: 14px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#inventory_save_butt:hover {\n"
+                                          "    background: rgba(9, 21, 204, 0.8);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#inventory_reset_btn {\n"
+                                          "    background: transparent;\n"
+                                          "    font-size: 14px;\n"
+                                          "    color: #757C9F;\n"
+                                          "    qproperty-icon: url(:/image/inventory_reset_default.svg);\n"
+                                          "}\n"
+                                          "\n"
+                                          "#inventory_reset_btn:hover {\n"
+                                          "    color: #FF3C2F;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#inventory_search_clear {\n"
+                                          "    image: url(:/image/close_icon.svg);\n"
+                                          "    background: transparent;\n"
+                                          "}\n"
+                                          "\n"
+                                          "/* Icon */\n"
+                                          "\n"
+                                          "#inventory_search_label {\n"
+                                          "    image: url(:/image/search_icon_default.svg);\n"
+                                          "}")
         self.content_window.setObjectName("content_window")
         self.content_window_layout = QtWidgets.QVBoxLayout(self.content_window)
         self.content_window_layout.setContentsMargins(0, 0, 0, 0)
@@ -646,34 +1327,12 @@ class Ui_MainWindow(object):
         self.top_menu = QtWidgets.QFrame(self.content_window)
         self.top_menu.setMinimumSize(QtCore.QSize(0, 50))
         self.top_menu.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.top_menu.setStyleSheet("#top_menu {\n"
-                                    "    background: #F2F3F6;\n"
-                                    "}\n"
-                                    "\n"
-                                    "QPushButton {\n"
-                                    "    background: transparent;\n"
-                                    "    font-size: 14px;\n"
-                                    "    color: #757C9F;\n"
-                                    "    outline: 0;\n"
-                                    "}\n"
-                                    "\n"
-                                    "QPushButton:hover {\n"
-                                    "    color: #0915CC;\n"
-                                    "}\n"
-                                    "\n"
-                                    "QPushButton[selected=true] {\n"
-                                    "    color: #0915CC;\n"
-                                    "}")
-        self.top_menu.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.top_menu.setFrameShadow(QtWidgets.QFrame.Raised)
         self.top_menu.setObjectName("top_menu")
         self.top_menu_layout = QtWidgets.QHBoxLayout(self.top_menu)
         self.top_menu_layout.setContentsMargins(30, 0, 30, 0)
         self.top_menu_layout.setSpacing(0)
         self.top_menu_layout.setObjectName("top_menu_layout")
         self.logo_frame = QtWidgets.QFrame(self.top_menu)
-        self.logo_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.logo_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.logo_frame.setObjectName("logo_frame")
         self.logo_layout = QtWidgets.QHBoxLayout(self.logo_frame)
         self.logo_layout.setContentsMargins(0, 0, 0, 0)
@@ -682,25 +1341,13 @@ class Ui_MainWindow(object):
         self.logo_icon = QtWidgets.QLabel(self.logo_frame)
         self.logo_icon.setMinimumSize(QtCore.QSize(27, 32))
         self.logo_icon.setMaximumSize(QtCore.QSize(27, 32))
-        self.logo_icon.setStyleSheet(" image: url(:/image/logo.svg);")
-        self.logo_icon.setText("")
-        self.logo_icon.setScaledContents(False)
         self.logo_icon.setObjectName("logo_icon")
         self.logo_layout.addWidget(self.logo_icon)
         self.logo_text = QtWidgets.QLabel(self.logo_frame)
-        self.logo_text.setStyleSheet("color: #0915CC;\n"
-                                     "font-size: 14px;")
         self.logo_text.setObjectName("logo_text")
         self.logo_layout.addWidget(self.logo_text)
         self.top_menu_layout.addWidget(self.logo_frame)
         self.menu_frame = QtWidgets.QFrame(self.top_menu)
-        self.menu_frame.setStyleSheet("QLabel {\n"
-                                      "    background: #0915CC;\n"
-                                      "    border-top-left-radius: 3px;\n"
-                                      "    border-top-right-radius: 3px;\n"
-                                      "}")
-        self.menu_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.menu_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.menu_frame.setObjectName("menu_frame")
         self.menu_layout = QtWidgets.QHBoxLayout(self.menu_frame)
         self.menu_layout.setContentsMargins(0, 0, 0, 0)
@@ -709,21 +1356,12 @@ class Ui_MainWindow(object):
         self.top_menu_layout.addWidget(self.menu_frame, 0, QtCore.Qt.AlignHCenter)
         self.profile_butt = QtWidgets.QPushButton(self.top_menu)
         self.profile_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.profile_butt.setStyleSheet("")
-        self.profile_butt.setText("")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/image/account@2x.svg"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.profile_butt.setIcon(icon)
         self.profile_butt.setIconSize(QtCore.QSize(20, 20))
         self.profile_butt.setCheckable(True)
         self.profile_butt.setObjectName("profile_butt")
         self.top_menu_layout.addWidget(self.profile_butt, 0, QtCore.Qt.AlignRight)
         self.content_window_layout.addWidget(self.top_menu)
         self.content_frame = QtWidgets.QFrame(self.content_window)
-        self.content_frame.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.content_frame.setStyleSheet("background-color: white;")
-        self.content_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.content_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.content_frame.setObjectName("content_frame")
         self.content_layout = QtWidgets.QHBoxLayout(self.content_frame)
         self.content_layout.setContentsMargins(0, 0, 0, 0)
@@ -732,56 +1370,37 @@ class Ui_MainWindow(object):
         self.content_pages = QtWidgets.QStackedWidget(self.content_frame)
         font = QtGui.QFont()
         font.setFamily("Inter")
-        font.setKerning(True)
-        font.setStyleStrategy(QtGui.QFont.NoAntialias)
         self.content_pages.setFont(font)
-        self.content_pages.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.content_pages.setStyleSheet("#user_manage_small_header, #profile_small_header, #equip_small_header {\n"
-                                         "    font-size: 14px;\n"
-                                         "    color: #B5B8C7;\n"
-                                         "}\n"
-                                         "\n"
-                                         "#user_manage_header, #profile_user_name,#equip_header {\n"
-                                         "    font-size: 28px;\n"
-                                         "    color: #070808;\n"
-                                         "}\n"
-                                         "")
         self.content_pages.setObjectName("content_pages")
         self.calculator_page = QtWidgets.QWidget()
-        self.calculator_page.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.calculator_page.setObjectName("calculator_page")
         self.calculator_layout = QtWidgets.QVBoxLayout(self.calculator_page)
         self.calculator_layout.setContentsMargins(0, 0, 0, 0)
         self.calculator_layout.setSpacing(0)
         self.calculator_layout.setObjectName("calculator_layout")
         self.calc_main_frame = QtWidgets.QFrame(self.calculator_page)
-        self.calc_main_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_main_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.calc_main_frame.setStyleSheet("")
         self.calc_main_frame.setObjectName("calc_main_frame")
         self.calc_main_layout = QtWidgets.QVBoxLayout(self.calc_main_frame)
         self.calc_main_layout.setContentsMargins(30, 50, 45, 0)
         self.calc_main_layout.setSpacing(10)
         self.calc_main_layout.setObjectName("calc_main_layout")
         self.calc_header = QtWidgets.QLabel(self.calc_main_frame)
-        self.calc_header.setStyleSheet("color: #070808;\n"
-                                       "font-size: 28px;")
         self.calc_header.setObjectName("calc_header")
         self.calc_main_layout.addWidget(self.calc_header)
         self.calc_menu_step_frame = QtWidgets.QFrame(self.calc_main_frame)
         self.calc_menu_step_frame.setStyleSheet("QFrame {\n"
                                                 "    background: #F9FAFB;\n"
+                                                "}\n"
+                                                ".QFrame {\n"
                                                 "    border-radius: 5px;\n"
                                                 "}")
-        self.calc_menu_step_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_menu_step_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_menu_step_frame.setObjectName("calc_menu_step_frame")
         self.calc_menu_step_layout = QtWidgets.QHBoxLayout(self.calc_menu_step_frame)
         self.calc_menu_step_layout.setContentsMargins(15, 10, 15, 10)
         self.calc_menu_step_layout.setSpacing(0)
         self.calc_menu_step_layout.setObjectName("calc_menu_step_layout")
         self.cacl_menu_label_frame = QtWidgets.QFrame(self.calc_menu_step_frame)
-        self.cacl_menu_label_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.cacl_menu_label_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.cacl_menu_label_frame.setObjectName("cacl_menu_label_frame")
         self.cacl_menu_label_layout = QtWidgets.QHBoxLayout(self.cacl_menu_label_frame)
         self.cacl_menu_label_layout.setContentsMargins(0, 0, 0, 0)
@@ -790,143 +1409,56 @@ class Ui_MainWindow(object):
         self.calc_1_sign = QtWidgets.QLabel(self.cacl_menu_label_frame)
         self.calc_1_sign.setMinimumSize(QtCore.QSize(40, 40))
         self.calc_1_sign.setMaximumSize(QtCore.QSize(40, 40))
-        self.calc_1_sign.setStyleSheet("QLabel {\n"
-                                       "    border: 1px solid #0915CC;\n"
-                                       "    border-radius: 20px;\n"
-                                       "    color: #0915CC;\n"
-                                       "    font-size: 16px;\n"
-                                       "}\n"
-                                       "\n"
-                                       "QLabel[next=true] {\n"
-                                       "    color: #FFFFFF;\n"
-                                       "    background: #0915CC;\n"
-                                       "}\n"
-                                       "")
         self.calc_1_sign.setAlignment(QtCore.Qt.AlignCenter)
         self.calc_1_sign.setObjectName("calc_1_sign")
         self.cacl_menu_label_layout.addWidget(self.calc_1_sign)
         self.calc_1_text = QtWidgets.QLabel(self.cacl_menu_label_frame)
-        self.calc_1_text.setStyleSheet("color: #0915CC;\n"
-                                       "font-size: 14px;")
         self.calc_1_text.setObjectName("calc_1_text")
         self.cacl_menu_label_layout.addWidget(self.calc_1_text)
         self.calc_1_line = QtWidgets.QLabel(self.cacl_menu_label_frame)
         self.calc_1_line.setMinimumSize(QtCore.QSize(40, 0))
         self.calc_1_line.setMaximumSize(QtCore.QSize(40, 16777215))
-        self.calc_1_line.setStyleSheet("QLabel {\n"
-                                       "    image: url(:/image/calculator_menu_line_default.svg);\n"
-                                       "}\n"
-                                       "\n"
-                                       "QLabel[selected=true] {\n"
-                                       "    image: url(:/image/calculator_menu_line_selected.svg);\n"
-                                       "}\n"
-                                       "")
-        self.calc_1_line.setText("")
         self.calc_1_line.setObjectName("calc_1_line")
         self.cacl_menu_label_layout.addWidget(self.calc_1_line)
         self.calc_2_sign = QtWidgets.QLabel(self.cacl_menu_label_frame)
         self.calc_2_sign.setMinimumSize(QtCore.QSize(40, 40))
         self.calc_2_sign.setMaximumSize(QtCore.QSize(40, 40))
-        self.calc_2_sign.setStyleSheet("QLabel {\n"
-                                       "    border: 0.5px solid rgba(9, 21, 204, 0.25);\n"
-                                       "    border-radius: 20px;\n"
-                                       "    color: #0915CC;\n"
-                                       "    font-size: 16px;\n"
-                                       "}\n"
-                                       "\n"
-                                       "QLabel[next=true] {\n"
-                                       "    color: #FFFFFF;\n"
-                                       "    background: #0915CC;\n"
-                                       "}\n"
-                                       "\n"
-                                       "QLabel[selected=true] {\n"
-                                       "    border: 1px solid #0915CC;\n"
-                                       "}")
         self.calc_2_sign.setAlignment(QtCore.Qt.AlignCenter)
         self.calc_2_sign.setObjectName("calc_2_sign")
         self.cacl_menu_label_layout.addWidget(self.calc_2_sign)
         self.calc_2_text = QtWidgets.QLabel(self.cacl_menu_label_frame)
-        self.calc_2_text.setStyleSheet("color: #0915CC;\n"
-                                       "font-size: 14px;")
         self.calc_2_text.setObjectName("calc_2_text")
         self.cacl_menu_label_layout.addWidget(self.calc_2_text)
         self.calc_2_line = QtWidgets.QLabel(self.cacl_menu_label_frame)
         self.calc_2_line.setMinimumSize(QtCore.QSize(40, 0))
         self.calc_2_line.setMaximumSize(QtCore.QSize(40, 16777215))
-        self.calc_2_line.setStyleSheet("QLabel {\n"
-                                       "    image: url(:/image/calculator_menu_line_default.svg);\n"
-                                       "}\n"
-                                       "\n"
-                                       "QLabel[selected=true] {\n"
-                                       "    image: url(:/image/calculator_menu_line_selected.svg);\n"
-                                       "}")
-        self.calc_2_line.setText("")
         self.calc_2_line.setObjectName("calc_2_line")
         self.cacl_menu_label_layout.addWidget(self.calc_2_line)
         self.calc_3_sign = QtWidgets.QLabel(self.cacl_menu_label_frame)
         self.calc_3_sign.setMinimumSize(QtCore.QSize(40, 40))
         self.calc_3_sign.setMaximumSize(QtCore.QSize(40, 40))
-        self.calc_3_sign.setStyleSheet("QLabel {\n"
-                                       "    border: 0.5px solid rgba(9, 21, 204, 0.25);\n"
-                                       "    border-radius: 20px;\n"
-                                       "    color: #0915CC;\n"
-                                       "    font-size: 16px;\n"
-                                       "}\n"
-                                       "\n"
-                                       "QLabel[next=true] {\n"
-                                       "    color: #FFFFFF;\n"
-                                       "    background: #0915CC;\n"
-                                       "}\n"
-                                       "\n"
-                                       "QLabel[selected=true] {\n"
-                                       "    border: 1px solid #0915CC;\n"
-                                       "}")
         self.calc_3_sign.setAlignment(QtCore.Qt.AlignCenter)
         self.calc_3_sign.setObjectName("calc_3_sign")
         self.cacl_menu_label_layout.addWidget(self.calc_3_sign)
         self.calc_3_text = QtWidgets.QLabel(self.cacl_menu_label_frame)
-        self.calc_3_text.setStyleSheet("color: #0915CC;\n"
-                                       "font-size: 14px;")
         self.calc_3_text.setObjectName("calc_3_text")
         self.cacl_menu_label_layout.addWidget(self.calc_3_text)
         self.calc_3_line = QtWidgets.QLabel(self.cacl_menu_label_frame)
         self.calc_3_line.setMinimumSize(QtCore.QSize(40, 0))
         self.calc_3_line.setMaximumSize(QtCore.QSize(40, 16777215))
-        self.calc_3_line.setStyleSheet("QLabel {\n"
-                                       "    image: url(:/image/calculator_menu_line_default.svg);\n"
-                                       "}\n"
-                                       "\n"
-                                       "QLabel[selected=true] {\n"
-                                       "    image: url(:/image/calculator_menu_line_selected.svg);\n"
-                                       "}")
-        self.calc_3_line.setText("")
         self.calc_3_line.setObjectName("calc_3_line")
         self.cacl_menu_label_layout.addWidget(self.calc_3_line)
         self.calc_4_sign = QtWidgets.QLabel(self.cacl_menu_label_frame)
         self.calc_4_sign.setMinimumSize(QtCore.QSize(40, 40))
         self.calc_4_sign.setMaximumSize(QtCore.QSize(40, 40))
-        self.calc_4_sign.setStyleSheet("QLabel {\n"
-                                       "    border: 0.5px solid rgba(9, 21, 204, 0.25);\n"
-                                       "    border-radius: 20px;\n"
-                                       "    color: #0915CC;\n"
-                                       "    font-size: 16px;\n"
-                                       "}\n"
-                                       "\n"
-                                       "QLabel[selected=true] {\n"
-                                       "    border: 1px solid #0915CC;\n"
-                                       "}")
         self.calc_4_sign.setAlignment(QtCore.Qt.AlignCenter)
         self.calc_4_sign.setObjectName("calc_4_sign")
         self.cacl_menu_label_layout.addWidget(self.calc_4_sign)
         self.calc_4_text = QtWidgets.QLabel(self.cacl_menu_label_frame)
-        self.calc_4_text.setStyleSheet("color: #0915CC;\n"
-                                       "font-size: 14px;")
         self.calc_4_text.setObjectName("calc_4_text")
         self.cacl_menu_label_layout.addWidget(self.calc_4_text)
         self.calc_menu_step_layout.addWidget(self.cacl_menu_label_frame, 0, QtCore.Qt.AlignLeft)
         self.calc_menu_btn_frame = QtWidgets.QFrame(self.calc_menu_step_frame)
-        self.calc_menu_btn_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_menu_btn_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_menu_btn_frame.setObjectName("calc_menu_btn_frame")
         self.calc_menu_btn_layout = QtWidgets.QHBoxLayout(self.calc_menu_btn_frame)
         self.calc_menu_btn_layout.setContentsMargins(0, 0, 0, 0)
@@ -935,17 +1467,6 @@ class Ui_MainWindow(object):
         self.calc_reset_btn = QtWidgets.QPushButton(self.calc_menu_btn_frame)
         self.calc_reset_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.calc_reset_btn.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.calc_reset_btn.setStyleSheet("QPushButton {\n"
-                                          "    margin-left: 40px;\n"
-                                          "    background: transparent;\n"
-                                          "    font-size: 14px;\n"
-                                          "    color: #757C9F;\n"
-                                          "    qproperty-icon: url(:/image/inventory_reset_default.svg);\n"
-                                          "}\n"
-                                          "\n"
-                                          "QPushButton:hover {\n"
-                                          "    color: #FF3C2F;\n"
-                                          "}")
         self.calc_reset_btn.setIconSize(QtCore.QSize(16, 20))
         self.calc_reset_btn.setObjectName("calc_reset_btn")
         self.calc_menu_btn_layout.addWidget(self.calc_reset_btn)
@@ -953,17 +1474,6 @@ class Ui_MainWindow(object):
         self.calc_back_btn.setMinimumSize(QtCore.QSize(64, 36))
         self.calc_back_btn.setMaximumSize(QtCore.QSize(64, 36))
         self.calc_back_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.calc_back_btn.setStyleSheet("QPushButton {\n"
-                                         "    border-radius: 5px;\n"
-                                         "    border: 1px solid #B5B8C7;\n"
-                                         "    font-size: 14px;\n"
-                                         "    color: #757C9F;\n"
-                                         "}\n"
-                                         "\n"
-                                         "QPushButton:hover {\n"
-                                         "    color: #0915CC;\n"
-                                         "    border: 1px solid #0915CC;\n"
-                                         "}")
         self.calc_back_btn.setObjectName("calc_back_btn")
         self.calc_menu_btn_layout.addWidget(self.calc_back_btn)
         self.calc_next_btn = QtWidgets.QPushButton(self.calc_menu_btn_frame)
@@ -971,18 +1481,6 @@ class Ui_MainWindow(object):
         self.calc_next_btn.setMaximumSize(QtCore.QSize(116, 36))
         self.calc_next_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.calc_next_btn.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.calc_next_btn.setStyleSheet("QPushButton {\n"
-                                         "    background: #0915CC;\n"
-                                         "    border-radius: 5px;\n"
-                                         "    color: #F2F3F6;\n"
-                                         "    qproperty-icon: url(:/image/calculator_white_arrow.svg);\n"
-                                         "    font-size: 14px;\n"
-                                         "}\n"
-                                         "\n"
-                                         "QPushButton:hover {\n"
-                                         "    background: rgba(9, 21, 204, 0.8);\n"
-                                         "}\n"
-                                         "")
         self.calc_next_btn.setIconSize(QtCore.QSize(24, 24))
         self.calc_next_btn.setObjectName("calc_next_btn")
         self.calc_menu_btn_layout.addWidget(self.calc_next_btn)
@@ -998,9 +1496,6 @@ class Ui_MainWindow(object):
         self.calc_move_detail_layout.setSpacing(0)
         self.calc_move_detail_layout.setObjectName("calc_move_detail_layout")
         self.calc_move_detail_frame = QtWidgets.QFrame(self.calc_move_detail_page)
-        self.calc_move_detail_frame.setSizeIncrement(QtCore.QSize(0, 0))
-        self.calc_move_detail_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_move_detail_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_move_detail_frame.setObjectName("calc_move_detail_frame")
         self.calc_move_detail_layout_2 = QtWidgets.QHBoxLayout(self.calc_move_detail_frame)
         self.calc_move_detail_layout_2.setContentsMargins(0, 20, 0, 0)
@@ -1008,8 +1503,6 @@ class Ui_MainWindow(object):
         self.calc_move_detail_layout_2.setObjectName("calc_move_detail_layout_2")
         self.calc_calendar_frame = QtWidgets.QFrame(self.calc_move_detail_frame)
         self.calc_calendar_frame.setMaximumSize(QtCore.QSize(500, 16777215))
-        self.calc_calendar_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_calendar_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_calendar_frame.setObjectName("calc_calendar_frame")
         self.cacl_calendar_layout = QtWidgets.QVBoxLayout(self.calc_calendar_frame)
         self.cacl_calendar_layout.setContentsMargins(0, 0, 0, 0)
@@ -1017,14 +1510,6 @@ class Ui_MainWindow(object):
         self.cacl_calendar_layout.setObjectName("cacl_calendar_layout")
         self.calc_calendar_frame2 = QtWidgets.QFrame(self.calc_calendar_frame)
         self.calc_calendar_frame2.setMaximumSize(QtCore.QSize(16777215, 330))
-        self.calc_calendar_frame2.setStyleSheet(".QFrame{\n"
-                                                "border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                                "background: #F9FAFB;\n"
-                                                "border-radius: 10px;\n"
-                                                "}\n"
-                                                "")
-        self.calc_calendar_frame2.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_calendar_frame2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_calendar_frame2.setObjectName("calc_calendar_frame2")
         self.calc_calendar_layout2 = QtWidgets.QVBoxLayout(self.calc_calendar_frame2)
         self.calc_calendar_layout2.setContentsMargins(20, 20, 20, 20)
@@ -1032,17 +1517,6 @@ class Ui_MainWindow(object):
         self.calc_calendar_layout2.setObjectName("calc_calendar_layout2")
         self.cacl_calendar_layout.addWidget(self.calc_calendar_frame2)
         self.calc_price_type_frame = QtWidgets.QFrame(self.calc_calendar_frame)
-        self.calc_price_type_frame.setStyleSheet(".QFrame {\n"
-                                                 "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                                 "    border-radius: 10px;\n"
-                                                 "}\n"
-                                                 "\n"
-                                                 "QLabel {\n"
-                                                 "    font-size: 14px;\n"
-                                                 "    color: #000000;\n"
-                                                 "}")
-        self.calc_price_type_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_price_type_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_price_type_frame.setObjectName("calc_price_type_frame")
         self.calc_price_type_layout = QtWidgets.QVBoxLayout(self.calc_price_type_frame)
         self.calc_price_type_layout.setContentsMargins(15, 15, 25, 15)
@@ -1051,9 +1525,6 @@ class Ui_MainWindow(object):
         self.calc_price_type.setObjectName("calc_price_type")
         self.calc_price_type_layout.addWidget(self.calc_price_type)
         self.calc_price_type_frame_2 = QtWidgets.QFrame(self.calc_price_type_frame)
-        self.calc_price_type_frame_2.setStyleSheet("border: none;")
-        self.calc_price_type_frame_2.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_price_type_frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_price_type_frame_2.setObjectName("calc_price_type_frame_2")
         self.calc_price_type_layout_2 = QtWidgets.QHBoxLayout(self.calc_price_type_frame_2)
         self.calc_price_type_layout_2.setContentsMargins(0, 15, 0, 15)
@@ -1062,19 +1533,14 @@ class Ui_MainWindow(object):
         self.calc_blue_color = QtWidgets.QLabel(self.calc_price_type_frame_2)
         self.calc_blue_color.setMinimumSize(QtCore.QSize(14, 14))
         self.calc_blue_color.setMaximumSize(QtCore.QSize(14, 14))
-        self.calc_blue_color.setStyleSheet("background-color: #4E50FF;")
-        self.calc_blue_color.setText("")
         self.calc_blue_color.setObjectName("calc_blue_color")
         self.calc_price_type_layout_2.addWidget(self.calc_blue_color)
         self.calc_blue_label = QtWidgets.QLabel(self.calc_price_type_frame_2)
-        self.calc_blue_label.setStyleSheet("")
         self.calc_blue_label.setObjectName("calc_blue_label")
         self.calc_price_type_layout_2.addWidget(self.calc_blue_label)
         self.calc_green_color = QtWidgets.QLabel(self.calc_price_type_frame_2)
         self.calc_green_color.setMinimumSize(QtCore.QSize(14, 14))
         self.calc_green_color.setMaximumSize(QtCore.QSize(14, 14))
-        self.calc_green_color.setStyleSheet("background: #26A95D;")
-        self.calc_green_color.setText("")
         self.calc_green_color.setObjectName("calc_green_color")
         self.calc_price_type_layout_2.addWidget(self.calc_green_color)
         self.calc_green_label = QtWidgets.QLabel(self.calc_price_type_frame_2)
@@ -1083,8 +1549,6 @@ class Ui_MainWindow(object):
         self.calc_yellow_color = QtWidgets.QLabel(self.calc_price_type_frame_2)
         self.calc_yellow_color.setMinimumSize(QtCore.QSize(14, 14))
         self.calc_yellow_color.setMaximumSize(QtCore.QSize(14, 14))
-        self.calc_yellow_color.setStyleSheet("background: #FFAC2F;")
-        self.calc_yellow_color.setText("")
         self.calc_yellow_color.setObjectName("calc_yellow_color")
         self.calc_price_type_layout_2.addWidget(self.calc_yellow_color)
         self.calc_yellow_label = QtWidgets.QLabel(self.calc_price_type_frame_2)
@@ -1092,9 +1556,6 @@ class Ui_MainWindow(object):
         self.calc_price_type_layout_2.addWidget(self.calc_yellow_label)
         self.calc_price_type_layout.addWidget(self.calc_price_type_frame_2, 0, QtCore.Qt.AlignLeft)
         self.calc_price_type_frame_3 = QtWidgets.QFrame(self.calc_price_type_frame)
-        self.calc_price_type_frame_3.setStyleSheet("border: none;")
-        self.calc_price_type_frame_3.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_price_type_frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_price_type_frame_3.setObjectName("calc_price_type_frame_3")
         self.calc_price_type_layout_3 = QtWidgets.QHBoxLayout(self.calc_price_type_frame_3)
         self.calc_price_type_layout_3.setContentsMargins(0, 0, 0, 0)
@@ -1103,8 +1564,6 @@ class Ui_MainWindow(object):
         self.calc_red_color = QtWidgets.QLabel(self.calc_price_type_frame_3)
         self.calc_red_color.setMinimumSize(QtCore.QSize(14, 14))
         self.calc_red_color.setMaximumSize(QtCore.QSize(14, 14))
-        self.calc_red_color.setStyleSheet("background: #FF3C2F;")
-        self.calc_red_color.setText("")
         self.calc_red_color.setObjectName("calc_red_color")
         self.calc_price_type_layout_3.addWidget(self.calc_red_color)
         self.calc_red_label = QtWidgets.QLabel(self.calc_price_type_frame_3)
@@ -1114,12 +1573,6 @@ class Ui_MainWindow(object):
         self.cacl_calendar_layout.addWidget(self.calc_price_type_frame, 0, QtCore.Qt.AlignTop)
         self.calc_move_detail_layout_2.addWidget(self.calc_calendar_frame)
         self.calc_general_info_frame = QtWidgets.QFrame(self.calc_move_detail_frame)
-        self.calc_general_info_frame.setStyleSheet("QLabel {\n"
-                                                   "    color: #757C9F;\n"
-                                                   "    font-size: 16px;\n"
-                                                   "}")
-        self.calc_general_info_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_general_info_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_general_info_frame.setObjectName("calc_general_info_frame")
         self.calc_general_info_layout = QtWidgets.QVBoxLayout(self.calc_general_info_frame)
         self.calc_general_info_layout.setContentsMargins(0, 0, 0, 0)
@@ -1131,8 +1584,6 @@ class Ui_MainWindow(object):
         self.calc_gen_info_header.setObjectName("calc_gen_info_header")
         self.calc_general_info_layout.addWidget(self.calc_gen_info_header)
         self.calc_move_date_type_frame = QtWidgets.QFrame(self.calc_general_info_frame)
-        self.calc_move_date_type_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_move_date_type_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_move_date_type_frame.setObjectName("calc_move_date_type_frame")
         self.calc_move_date_type_layout = QtWidgets.QGridLayout(self.calc_move_date_type_frame)
         self.calc_move_date_type_layout.setContentsMargins(0, 0, 0, 0)
@@ -1148,30 +1599,6 @@ class Ui_MainWindow(object):
         self.calc_date_frame = QtWidgets.QFrame(self.calc_move_date_type_frame)
         self.calc_date_frame.setMinimumSize(QtCore.QSize(258, 48))
         self.calc_date_frame.setMaximumSize(QtCore.QSize(258, 48))
-        self.calc_date_frame.setStyleSheet("#calc_date_frame {\n"
-                                           "    border: 1px solid #B5B8C7;\n"
-                                           "    border-radius: 10px;\n"
-                                           "}\n"
-                                           "\n"
-                                           "#calc_date_frame:hover {\n"
-                                           "    border: 1px solid #0915CC;\n"
-                                           "}\n"
-                                           "\n"
-                                           "QDateEdit {\n"
-                                           "    border: none;\n"
-                                           "    font-size: 16px;\n"
-                                           "}\n"
-                                           "\n"
-                                           "QDateEdit::drop-down {\n"
-                                           "    border-top-right-radius: 3px;\n"
-                                           "    border-bottom-right-radius: 3px;\n"
-                                           "}\n"
-                                           "\n"
-                                           "QDateEdit::down-arrow {\n"
-                                           "    image: url(:/image/date_down_arrow.svg);\n"
-                                           "}")
-        self.calc_date_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_date_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_date_frame.setObjectName("calc_date_frame")
         self.config_start_date_layout_2 = QtWidgets.QHBoxLayout(self.calc_date_frame)
         self.config_start_date_layout_2.setContentsMargins(17, 14, 20, 14)
@@ -1179,13 +1606,10 @@ class Ui_MainWindow(object):
         self.config_start_date_layout_2.setObjectName("config_start_date_layout_2")
         self.calc_start_date_icon = QtWidgets.QLabel(self.calc_date_frame)
         self.calc_start_date_icon.setMinimumSize(QtCore.QSize(20, 20))
-        self.calc_start_date_icon.setStyleSheet("image: url(:/image/calendar_icon.svg);")
-        self.calc_start_date_icon.setText("")
         self.calc_start_date_icon.setObjectName("calc_start_date_icon")
         self.config_start_date_layout_2.addWidget(self.calc_start_date_icon, 0, QtCore.Qt.AlignLeft)
         self.calc_start_date_edit = QtWidgets.QDateEdit(self.calc_date_frame)
         self.calc_start_date_edit.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.calc_start_date_edit.setStyleSheet("")
         self.calc_start_date_edit.setCalendarPopup(True)
         self.calc_start_date_edit.setObjectName("calc_start_date_edit")
         self.config_start_date_layout_2.addWidget(self.calc_start_date_edit)
@@ -1194,83 +1618,12 @@ class Ui_MainWindow(object):
         self.calc_sevice_type = QtWidgets.QComboBox(self.calc_move_date_type_frame)
         self.calc_sevice_type.setMinimumSize(QtCore.QSize(258, 48))
         self.calc_sevice_type.setMaximumSize(QtCore.QSize(258, 48))
-        self.calc_sevice_type.setStyleSheet("QComboBox {\n"
-                                            "    background: #FFFFFF;\n"
-                                            "    border-radius: 10px;\n"
-                                            "    border: 1px solid #B5B8C7;\n"
-                                            "    padding-left: 15px;\n"
-                                            "    padding-right: 15px;\n"
-                                            "    font-size: 16px;\n"
-                                            "    color: #757C9F;\n"
-                                            "}\n"
-                                            "\n"
-                                            "QComboBox:hover {\n"
-                                            "    border: 1px solid #0915CC;\n"
-                                            "    background: #F2F3F6;\n"
-                                            "}\n"
-                                            "\n"
-                                            "QComboBox::drop-down {\n"
-                                            "    border-top-right-radius: 3px;\n"
-                                            "    border-bottom-right-radius: 3px;\n"
-                                            "}\n"
-                                            "\n"
-                                            "QComboBox::down-arrow {\n"
-                                            "    padding-right: 20px;\n"
-                                            "    image: url(:/image/arrow_drop_down.svg);\n"
-                                            "}\n"
-                                            "\n"
-                                            "QComboBox QAbstractItemView\n"
-                                            "{\n"
-                                            "    background: #F9FAFB;\n"
-                                            "    padding-left: 7px;\n"
-                                            "    padding-right: 7px;\n"
-                                            "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                            "    border-radius: 8px;\n"
-                                            "    outline: 0;\n"
-                                            "}\n"
-                                            "\n"
-                                            "QComboBox QAbstractItemView::item { \n"
-                                            "    min-height: 35px;\n"
-                                            "    padding-left: 15px;\n"
-                                            "    background: #F9FAFB;\n"
-                                            "    color: #070808;\n"
-                                            "}\n"
-                                            "\n"
-                                            "QListView::item:selected { \n"
-                                            "    color: #0915CC; \n"
-                                            "    background-color: #F2F3F6; \n"
-                                            "    border-radius: 4px;\n"
-                                            "}")
-        self.calc_sevice_type.setEditable(False)
-        self.calc_sevice_type.setDuplicatesEnabled(True)
+        self.calc_sevice_type.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.calc_sevice_type.setObjectName("calc_sevice_type")
         self.calc_sevice_type.addItem("")
         self.calc_move_date_type_layout.addWidget(self.calc_sevice_type, 1, 1, 1, 1)
         self.calc_general_info_layout.addWidget(self.calc_move_date_type_frame)
         self.calc_zip_code_frame = QtWidgets.QFrame(self.calc_general_info_frame)
-        self.calc_zip_code_frame.setStyleSheet("QLineEdit {\n"
-                                               "    border-radius: 10px;\n"
-                                               "    border: 1px solid #B5B8C7;\n"
-                                               "    padding-left: 15px;\n"
-                                               "    padding-right: 15px;\n"
-                                               "    font-size: 16px;\n"
-                                               "}\n"
-                                               "\n"
-                                               "QLineEdit:hover {\n"
-                                               "    border: 1px solid #0915CC;\n"
-                                               "    background-color: #F2F3F6;\n"
-                                               "}\n"
-                                               "\n"
-                                               "QLineEdit:focus {\n"
-                                               "    border: 1px solid #0915CC;\n"
-                                               "    background-color: #F2F3F6;\n"
-                                               "}\n"
-                                               "\n"
-                                               "QLineEdit[error=true] {\n"
-                                               "    border: 1px solid #FF3C2F;\n"
-                                               "}")
-        self.calc_zip_code_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_zip_code_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_zip_code_frame.setObjectName("calc_zip_code_frame")
         self.calc_zip_code_layout = QtWidgets.QGridLayout(self.calc_zip_code_frame)
         self.calc_zip_code_layout.setContentsMargins(0, 0, 0, 0)
@@ -1296,114 +1649,29 @@ class Ui_MainWindow(object):
         self.calc_zip_to_input.setObjectName("calc_zip_to_input")
         self.calc_zip_code_layout.addWidget(self.calc_zip_to_input, 1, 1, 1, 1)
         self.error_calc_zip_from = QtWidgets.QLabel(self.calc_zip_code_frame)
-        self.error_calc_zip_from.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.error_calc_zip_from.setStyleSheet("font-size: 14px;\n"
-                                               "color: #FF3C2F;")
-        self.error_calc_zip_from.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.error_calc_zip_from.setObjectName("error_calc_zip_from")
         self.calc_zip_code_layout.addWidget(self.error_calc_zip_from, 2, 0, 1, 1)
         self.error_calc_zip_to = QtWidgets.QLabel(self.calc_zip_code_frame)
-        self.error_calc_zip_to.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.error_calc_zip_to.setStyleSheet("font-size: 14px;\n"
-                                             "color: #FF3C2F;")
-        self.error_calc_zip_to.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.error_calc_zip_to.setObjectName("error_calc_zip_to")
         self.calc_zip_code_layout.addWidget(self.error_calc_zip_to, 2, 1, 1, 1)
         self.calc_general_info_layout.addWidget(self.calc_zip_code_frame)
         self.calc_move_size_frame = QtWidgets.QFrame(self.calc_general_info_frame)
-        self.calc_move_size_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_move_size_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_move_size_frame.setObjectName("calc_move_size_frame")
         self.calc_move_size_layout = QtWidgets.QVBoxLayout(self.calc_move_size_frame)
         self.calc_move_size_layout.setContentsMargins(0, 0, 0, 0)
         self.calc_move_size_layout.setSpacing(5)
         self.calc_move_size_layout.setObjectName("calc_move_size_layout")
         self.calc_1_move_size_label = QtWidgets.QLabel(self.calc_move_size_frame)
-        self.calc_1_move_size_label.setStyleSheet("")
         self.calc_1_move_size_label.setObjectName("calc_1_move_size_label")
         self.calc_move_size_layout.addWidget(self.calc_1_move_size_label)
         self.calc_1_move_size_box = QtWidgets.QComboBox(self.calc_move_size_frame)
         self.calc_1_move_size_box.setMinimumSize(QtCore.QSize(526, 48))
         self.calc_1_move_size_box.setMaximumSize(QtCore.QSize(526, 48))
-        self.calc_1_move_size_box.setStyleSheet("QComboBox {\n"
-                                                "    background: #FFFFFF;\n"
-                                                "    border-radius: 10px;\n"
-                                                "    border: 1px solid #B5B8C7;\n"
-                                                "    padding-left: 15px;\n"
-                                                "    padding-right: 15px;\n"
-                                                "    font-size: 16px;\n"
-                                                "    color: #757C9F;\n"
-                                                "}\n"
-                                                "\n"
-                                                "QComboBox:hover {\n"
-                                                "    border: 1px solid #0915CC;\n"
-                                                "    background: #F2F3F6;\n"
-                                                "}\n"
-                                                "\n"
-                                                "QComboBox::drop-down {\n"
-                                                "    border-top-right-radius: 3px;\n"
-                                                "    border-bottom-right-radius: 3px;\n"
-                                                "}\n"
-                                                "\n"
-                                                "QComboBox::down-arrow {\n"
-                                                "    padding-right: 20px;\n"
-                                                "    image: url(:/image/arrow_drop_down.svg);\n"
-                                                "}\n"
-                                                "\n"
-                                                "QComboBox QAbstractItemView\n"
-                                                "{\n"
-                                                "    background: #F9FAFB;\n"
-                                                "    padding-left: 7px;\n"
-                                                "    padding-right: 7px;\n"
-                                                "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                                "    border-radius: 8px;\n"
-                                                "    outline: 0;\n"
-                                                "}\n"
-                                                "\n"
-                                                "QComboBox QAbstractItemView::item { \n"
-                                                "    min-height: 35px;\n"
-                                                "    padding-left: 15px;\n"
-                                                "    background: #F9FAFB;\n"
-                                                "    color: #070808;\n"
-                                                "}\n"
-                                                "\n"
-                                                "QListView::item:selected { \n"
-                                                "    color: #0915CC; \n"
-                                                "    background-color: #F2F3F6; \n"
-                                                "    border-radius: 4px;\n"
-                                                "}")
-        self.calc_1_move_size_box.setEditable(False)
-        self.calc_1_move_size_box.setPlaceholderText("")
-        self.calc_1_move_size_box.setDuplicatesEnabled(False)
+        self.calc_1_move_size_box.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.calc_1_move_size_box.setObjectName("calc_1_move_size_box")
         self.calc_move_size_layout.addWidget(self.calc_1_move_size_box)
         self.calc_general_info_layout.addWidget(self.calc_move_size_frame)
         self.calc_extra_room_frame = QtWidgets.QFrame(self.calc_general_info_frame)
-        self.calc_extra_room_frame.setStyleSheet("QPushButton {\n"
-                                                 "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                                 "    border-radius: 16px;    \n"
-                                                 "    padding-left: 10px;\n"
-                                                 "    padding-right: 10px;\n"
-                                                 "    padding-top: 8px;\n"
-                                                 "    padding-bottom: 8px;\n"
-                                                 "    color: #757C9F;\n"
-                                                 "    font-size: 14px;\n"
-                                                 "    qproperty-icon: url(:/image/check_icon_default.svg);\n"
-                                                 "    icon-size: 18px, 18px;\n"
-                                                 "    background: #F9FAFB;\n"
-                                                 "}\n"
-                                                 "\n"
-                                                 "QPushButton:hover {\n"
-                                                 "    border: 0.5px solid #0915CC;\n"
-                                                 "    color: #0915CC;\n"
-                                                 "}\n"
-                                                 "\n"
-                                                 "QPushButton:checked {\n"
-                                                 "    border: 0.5px solid #0915CC;\n"
-                                                 "    color: #0915CC;\n"
-                                                 "}")
-        self.calc_extra_room_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_extra_room_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_extra_room_frame.setObjectName("calc_extra_room_frame")
         self.calc_extra_room_layout = QtWidgets.QVBoxLayout(self.calc_extra_room_frame)
         self.calc_extra_room_layout.setContentsMargins(0, 0, 0, 0)
@@ -1413,43 +1681,14 @@ class Ui_MainWindow(object):
         self.calc_extra_room_label.setObjectName("calc_extra_room_label")
         self.calc_extra_room_layout.addWidget(self.calc_extra_room_label)
         self.calc_extra_room_btn_frame = QtWidgets.QFrame(self.calc_extra_room_frame)
-        self.calc_extra_room_btn_frame.setStyleSheet("QFrame {\n"
-                                                     "    border: none;\n"
-                                                     "}\n"
-                                                     "")
-        self.calc_extra_room_btn_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_extra_room_btn_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_extra_room_btn_frame.setObjectName("calc_extra_room_btn_frame")
         self.calc_extra_room_btn_layout = QtWidgets.QHBoxLayout(self.calc_extra_room_btn_frame)
         self.calc_extra_room_btn_layout.setContentsMargins(0, 0, 0, 0)
         self.calc_extra_room_btn_layout.setSpacing(5)
         self.calc_extra_room_btn_layout.setObjectName("calc_extra_room_btn_layout")
-        self.inventory_cat_butt_sample_2 = QtWidgets.QPushButton(self.calc_extra_room_btn_frame)
-        self.inventory_cat_butt_sample_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.inventory_cat_butt_sample_2.setCheckable(True)
-        self.inventory_cat_butt_sample_2.setChecked(True)
-        self.inventory_cat_butt_sample_2.setObjectName("inventory_cat_butt_sample_2")
-        self.calc_extra_room_btn_layout.addWidget(self.inventory_cat_butt_sample_2)
-        self.inven_2 = QtWidgets.QPushButton(self.calc_extra_room_btn_frame)
-        self.inven_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.inven_2.setCheckable(True)
-        self.inven_2.setObjectName("inven_2")
-        self.calc_extra_room_btn_layout.addWidget(self.inven_2)
-        self.config_subpeak_butt_3 = QtWidgets.QPushButton(self.calc_extra_room_btn_frame)
-        self.config_subpeak_butt_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.config_subpeak_butt_3.setCheckable(True)
-        self.config_subpeak_butt_3.setObjectName("config_subpeak_butt_3")
-        self.calc_extra_room_btn_layout.addWidget(self.config_subpeak_butt_3)
-        self.config_peak_butt_3 = QtWidgets.QPushButton(self.calc_extra_room_btn_frame)
-        self.config_peak_butt_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.config_peak_butt_3.setCheckable(True)
-        self.config_peak_butt_3.setObjectName("config_peak_butt_3")
-        self.calc_extra_room_btn_layout.addWidget(self.config_peak_butt_3)
         self.calc_extra_room_layout.addWidget(self.calc_extra_room_btn_frame)
         self.calc_general_info_layout.addWidget(self.calc_extra_room_frame)
         self.calc_entrance_type_frame = QtWidgets.QFrame(self.calc_general_info_frame)
-        self.calc_entrance_type_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_entrance_type_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_entrance_type_frame.setObjectName("calc_entrance_type_frame")
         self.calc_entrance_type_layout = QtWidgets.QGridLayout(self.calc_entrance_type_frame)
         self.calc_entrance_type_layout.setContentsMargins(0, 0, 0, 0)
@@ -1465,109 +1704,13 @@ class Ui_MainWindow(object):
         self.calc_1_entrance_from_box = QtWidgets.QComboBox(self.calc_entrance_type_frame)
         self.calc_1_entrance_from_box.setMinimumSize(QtCore.QSize(258, 48))
         self.calc_1_entrance_from_box.setMaximumSize(QtCore.QSize(258, 48))
-        self.calc_1_entrance_from_box.setStyleSheet("QComboBox {\n"
-                                                    "    background: #FFFFFF;\n"
-                                                    "    border-radius: 10px;\n"
-                                                    "    border: 1px solid #B5B8C7;\n"
-                                                    "    padding-left: 15px;\n"
-                                                    "    padding-right: 15px;\n"
-                                                    "    font-size: 16px;\n"
-                                                    "    color: #757C9F;\n"
-                                                    "}\n"
-                                                    "\n"
-                                                    "QComboBox:hover {\n"
-                                                    "    border: 1px solid #0915CC;\n"
-                                                    "    background: #F2F3F6;\n"
-                                                    "}\n"
-                                                    "\n"
-                                                    "QComboBox::drop-down {\n"
-                                                    "    border-top-right-radius: 3px;\n"
-                                                    "    border-bottom-right-radius: 3px;\n"
-                                                    "}\n"
-                                                    "\n"
-                                                    "QComboBox::down-arrow {\n"
-                                                    "    padding-right: 20px;\n"
-                                                    "    image: url(:/image/arrow_drop_down.svg);\n"
-                                                    "}\n"
-                                                    "\n"
-                                                    "QComboBox QAbstractItemView\n"
-                                                    "{\n"
-                                                    "    background: #F9FAFB;\n"
-                                                    "    padding-left: 7px;\n"
-                                                    "    padding-right: 7px;\n"
-                                                    "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                                    "    border-radius: 8px;\n"
-                                                    "    outline: 0;\n"
-                                                    "}\n"
-                                                    "\n"
-                                                    "QComboBox QAbstractItemView::item { \n"
-                                                    "    min-height: 35px;\n"
-                                                    "    padding-left: 15px;\n"
-                                                    "    background: #F9FAFB;\n"
-                                                    "    color: #070808;\n"
-                                                    "}\n"
-                                                    "\n"
-                                                    "QListView::item:selected { \n"
-                                                    "    color: #0915CC; \n"
-                                                    "    background-color: #F2F3F6; \n"
-                                                    "    border-radius: 4px;\n"
-                                                    "}")
-        self.calc_1_entrance_from_box.setEditable(False)
-        self.calc_1_entrance_from_box.setDuplicatesEnabled(True)
+        self.calc_1_entrance_from_box.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.calc_1_entrance_from_box.setObjectName("calc_1_entrance_from_box")
         self.calc_entrance_type_layout.addWidget(self.calc_1_entrance_from_box, 1, 0, 1, 1)
         self.calc_1_entrance_to_box = QtWidgets.QComboBox(self.calc_entrance_type_frame)
         self.calc_1_entrance_to_box.setMinimumSize(QtCore.QSize(258, 48))
         self.calc_1_entrance_to_box.setMaximumSize(QtCore.QSize(258, 48))
-        self.calc_1_entrance_to_box.setStyleSheet("QComboBox {\n"
-                                                  "    background: #FFFFFF;\n"
-                                                  "    border-radius: 10px;\n"
-                                                  "    border: 1px solid #B5B8C7;\n"
-                                                  "    padding-left: 15px;\n"
-                                                  "    padding-right: 15px;\n"
-                                                  "    font-size: 16px;\n"
-                                                  "    color: #757C9F;\n"
-                                                  "}\n"
-                                                  "\n"
-                                                  "QComboBox:hover {\n"
-                                                  "    border: 1px solid #0915CC;\n"
-                                                  "    background: #F2F3F6;\n"
-                                                  "}\n"
-                                                  "\n"
-                                                  "QComboBox::drop-down {\n"
-                                                  "    border-top-right-radius: 3px;\n"
-                                                  "    border-bottom-right-radius: 3px;\n"
-                                                  "}\n"
-                                                  "\n"
-                                                  "QComboBox::down-arrow {\n"
-                                                  "    padding-right: 20px;\n"
-                                                  "    image: url(:/image/arrow_drop_down.svg);\n"
-                                                  "}\n"
-                                                  "\n"
-                                                  "QComboBox QAbstractItemView\n"
-                                                  "{\n"
-                                                  "    background: #F9FAFB;\n"
-                                                  "    padding-left: 7px;\n"
-                                                  "    padding-right: 7px;\n"
-                                                  "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                                  "    border-radius: 8px;\n"
-                                                  "    outline: 0;\n"
-                                                  "}\n"
-                                                  "\n"
-                                                  "QComboBox QAbstractItemView::item { \n"
-                                                  "    min-height: 35px;\n"
-                                                  "    padding-left: 15px;\n"
-                                                  "    background: #F9FAFB;\n"
-                                                  "    color: #070808;\n"
-                                                  "}\n"
-                                                  "\n"
-                                                  "QListView::item:selected { \n"
-                                                  "    color: #0915CC; \n"
-                                                  "    background-color: #F2F3F6; \n"
-                                                  "    border-radius: 4px;\n"
-                                                  "}")
-        self.calc_1_entrance_to_box.setEditable(False)
-        self.calc_1_entrance_to_box.setDuplicatesEnabled(True)
+        self.calc_1_entrance_to_box.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.calc_1_entrance_to_box.setObjectName("calc_1_entrance_to_box")
         self.calc_entrance_type_layout.addWidget(self.calc_1_entrance_to_box, 1, 1, 1, 1)
         self.calc_general_info_layout.addWidget(self.calc_entrance_type_frame)
@@ -1582,51 +1725,23 @@ class Ui_MainWindow(object):
         self.calc_invnetory_check_layout.setSpacing(20)
         self.calc_invnetory_check_layout.setObjectName("calc_invnetory_check_layout")
         self.calc_inv_check_top_frame = QtWidgets.QFrame(self.calc_invnetory_check_page)
-        self.calc_inv_check_top_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_inv_check_top_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_inv_check_top_frame.setObjectName("calc_inv_check_top_frame")
         self.calc_inv_check_top_layout = QtWidgets.QHBoxLayout(self.calc_inv_check_top_frame)
         self.calc_inv_check_top_layout.setContentsMargins(0, 0, 0, 0)
         self.calc_inv_check_top_layout.setSpacing(129)
         self.calc_inv_check_top_layout.setObjectName("calc_inv_check_top_layout")
         self.calc_inv_check_header = QtWidgets.QLabel(self.calc_inv_check_top_frame)
-        self.calc_inv_check_header.setStyleSheet("color: #070808;\n"
-                                                 "font-size: 19px;")
         self.calc_inv_check_header.setObjectName("calc_inv_check_header")
         self.calc_inv_check_top_layout.addWidget(self.calc_inv_check_header, 0, QtCore.Qt.AlignTop)
         self.calc_inv_check_menu_frame = QtWidgets.QFrame(self.calc_inv_check_top_frame)
         self.calc_inv_check_menu_frame.setMinimumSize(QtCore.QSize(0, 40))
         self.calc_inv_check_menu_frame.setMaximumSize(QtCore.QSize(16777215, 40))
-        self.calc_inv_check_menu_frame.setStyleSheet("QLabel {\n"
-                                                     "    background: #0915CC;\n"
-                                                     "    border-top-left-radius: 3px;\n"
-                                                     "    border-top-right-radius: 3px;\n"
-                                                     "}\n"
-                                                     "\n"
-                                                     "QPushButton {\n"
-                                                     "    background: transparent;\n"
-                                                     "    font-size: 14px;\n"
-                                                     "    color: #757C9F;\n"
-                                                     "    outline: 0;\n"
-                                                     "}\n"
-                                                     "\n"
-                                                     "QPushButton:hover {\n"
-                                                     "    color: #0915CC;\n"
-                                                     "}\n"
-                                                     "\n"
-                                                     "QPushButton[selected=true] {\n"
-                                                     "    color: #0915CC;\n"
-                                                     "}")
-        self.calc_inv_check_menu_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_inv_check_menu_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_inv_check_menu_frame.setObjectName("calc_inv_check_menu_frame")
         self.calc_inv_check_menu_layout = QtWidgets.QHBoxLayout(self.calc_inv_check_menu_frame)
         self.calc_inv_check_menu_layout.setContentsMargins(0, 0, 0, 0)
         self.calc_inv_check_menu_layout.setSpacing(20)
         self.calc_inv_check_menu_layout.setObjectName("calc_inv_check_menu_layout")
         self.calc_all_menu_frame = QtWidgets.QFrame(self.calc_inv_check_menu_frame)
-        self.calc_all_menu_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_all_menu_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_all_menu_frame.setMidLineWidth(0)
         self.calc_all_menu_frame.setObjectName("calc_all_menu_frame")
         self.calc_all_menu_layout = QtWidgets.QVBoxLayout(self.calc_all_menu_frame)
@@ -1635,29 +1750,17 @@ class Ui_MainWindow(object):
         self.calc_all_menu_layout.setObjectName("calc_all_menu_layout")
         self.calc_all_menu_butt = QtWidgets.QPushButton(self.calc_all_menu_frame)
         self.calc_all_menu_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.calc_all_menu_butt.setStyleSheet("")
         self.calc_all_menu_butt.setCheckable(True)
         self.calc_all_menu_butt.setObjectName("calc_all_menu_butt")
         self.calc_all_menu_layout.addWidget(self.calc_all_menu_butt, 0, QtCore.Qt.AlignTop)
         self.calc_all_menu_line = QtWidgets.QLabel(self.calc_all_menu_frame)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.calc_all_menu_line.sizePolicy().hasHeightForWidth())
-        self.calc_all_menu_line.setSizePolicy(sizePolicy)
         self.calc_all_menu_line.setMinimumSize(QtCore.QSize(0, 3))
         self.calc_all_menu_line.setMaximumSize(QtCore.QSize(16777215, 3))
-        self.calc_all_menu_line.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
-        self.calc_all_menu_line.setStyleSheet("")
-        self.calc_all_menu_line.setText("")
-        self.calc_all_menu_line.setTextInteractionFlags(QtCore.Qt.LinksAccessibleByMouse)
         self.calc_all_menu_line.setObjectName("calc_all_menu_line")
         self.calc_all_menu_layout.addWidget(self.calc_all_menu_line)
         self.calc_all_menu_layout.setStretch(0, 2)
         self.calc_inv_check_menu_layout.addWidget(self.calc_all_menu_frame)
         self.calc_preset_choose_frame = QtWidgets.QFrame(self.calc_inv_check_menu_frame)
-        self.calc_preset_choose_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_preset_choose_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_preset_choose_frame.setMidLineWidth(0)
         self.calc_preset_choose_frame.setObjectName("calc_preset_choose_frame")
         self.calc_preset_choose_layout = QtWidgets.QVBoxLayout(self.calc_preset_choose_frame)
@@ -1666,22 +1769,12 @@ class Ui_MainWindow(object):
         self.calc_preset_choose_layout.setObjectName("calc_preset_choose_layout")
         self.calc_preset_choose_butt = QtWidgets.QPushButton(self.calc_preset_choose_frame)
         self.calc_preset_choose_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.calc_preset_choose_butt.setStyleSheet("")
         self.calc_preset_choose_butt.setCheckable(True)
         self.calc_preset_choose_butt.setObjectName("calc_preset_choose_butt")
         self.calc_preset_choose_layout.addWidget(self.calc_preset_choose_butt, 0, QtCore.Qt.AlignTop)
         self.calc_preset_choose_line = QtWidgets.QLabel(self.calc_preset_choose_frame)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.calc_preset_choose_line.sizePolicy().hasHeightForWidth())
-        self.calc_preset_choose_line.setSizePolicy(sizePolicy)
         self.calc_preset_choose_line.setMinimumSize(QtCore.QSize(0, 3))
         self.calc_preset_choose_line.setMaximumSize(QtCore.QSize(16777215, 3))
-        self.calc_preset_choose_line.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
-        self.calc_preset_choose_line.setStyleSheet("")
-        self.calc_preset_choose_line.setText("")
-        self.calc_preset_choose_line.setTextInteractionFlags(QtCore.Qt.LinksAccessibleByMouse)
         self.calc_preset_choose_line.setObjectName("calc_preset_choose_line")
         self.calc_preset_choose_layout.addWidget(self.calc_preset_choose_line)
         self.calc_preset_choose_layout.setStretch(0, 2)
@@ -1690,31 +1783,12 @@ class Ui_MainWindow(object):
         self.calc_invnetory_check_layout.addWidget(self.calc_inv_check_top_frame, 0,
                                                    QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
         self.calc_inv_bottom_frame = QtWidgets.QFrame(self.calc_invnetory_check_page)
-        self.calc_inv_bottom_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_inv_bottom_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_inv_bottom_frame.setObjectName("calc_inv_bottom_frame")
         self.calc_inv_bottom_layout = QtWidgets.QHBoxLayout(self.calc_inv_bottom_frame)
         self.calc_inv_bottom_layout.setContentsMargins(0, 0, 31, 0)
         self.calc_inv_bottom_layout.setSpacing(50)
         self.calc_inv_bottom_layout.setObjectName("calc_inv_bottom_layout")
         self.calc_size_menu = QtWidgets.QStackedWidget(self.calc_inv_bottom_frame)
-        self.calc_size_menu.setStyleSheet("QPushButton {\n"
-                                          "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                          "    border-radius: 4px;\n"
-                                          "    color: #0915CC;\n"
-                                          "    font-size: 14px;\n"
-                                          "    text-align: left;\n"
-                                          "    padding-left: 12px;\n"
-                                          "}\n"
-                                          "\n"
-                                          "QPushButton:hover {\n"
-                                          "    border: 0.5px solid #0915CC;\n"
-                                          "}\n"
-                                          "\n"
-                                          "QPushButton:checked {\n"
-                                          "    border: 0.5px solid #0915CC;\n"
-                                          "    background: #F9FAFB;\n"
-                                          "}")
         self.calc_size_menu.setObjectName("calc_size_menu")
         self.calc_room_page = QtWidgets.QWidget()
         self.calc_room_page.setObjectName("calc_room_page")
@@ -1734,24 +1808,18 @@ class Ui_MainWindow(object):
         self.calc_room_scrollarea.setObjectName("calc_room_scrollarea")
         self.calc_room_frame = QtWidgets.QWidget()
         self.calc_room_frame.setGeometry(QtCore.QRect(0, 0, 100, 30))
-        self.calc_room_frame.setMinimumSize(QtCore.QSize(0, 0))
         self.calc_room_frame.setObjectName("calc_room_frame")
         self.calc_room_layout_2 = QtWidgets.QVBoxLayout(self.calc_room_frame)
         self.calc_room_layout_2.setContentsMargins(0, 0, 0, 0)
         self.calc_room_layout_2.setSpacing(0)
         self.calc_room_layout_2.setObjectName("calc_room_layout_2")
         self.calc_room_frame_2 = QtWidgets.QFrame(self.calc_room_frame)
-        self.calc_room_frame_2.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_room_frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_room_frame_2.setObjectName("calc_room_frame_2")
         self.calc_room_layout_3 = QtWidgets.QVBoxLayout(self.calc_room_frame_2)
         self.calc_room_layout_3.setContentsMargins(0, 0, 9, 0)
         self.calc_room_layout_3.setSpacing(0)
         self.calc_room_layout_3.setObjectName("calc_room_layout_3")
         self.calc_room_menu_frame = QtWidgets.QFrame(self.calc_room_frame_2)
-        self.calc_room_menu_frame.setStyleSheet("")
-        self.calc_room_menu_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_room_menu_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_room_menu_frame.setObjectName("calc_room_menu_frame")
         self.calc_room_menu_layout = QtWidgets.QVBoxLayout(self.calc_room_menu_frame)
         self.calc_room_menu_layout.setContentsMargins(0, 0, 0, 0)
@@ -1769,9 +1837,6 @@ class Ui_MainWindow(object):
         self.calc_preset_layout.setSpacing(0)
         self.calc_preset_layout.setObjectName("calc_preset_layout")
         self.calc_preset_scrollarea = QtWidgets.QScrollArea(self.calc_preset_page)
-        self.calc_preset_scrollarea.setStyleSheet("QFrame {\n"
-                                                  "    border: none;\n"
-                                                  "}")
         self.calc_preset_scrollarea.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.calc_preset_scrollarea.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
         self.calc_preset_scrollarea.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
@@ -1787,16 +1852,12 @@ class Ui_MainWindow(object):
         self.calc_preset_layout_2.setObjectName("calc_preset_layout_2")
         self.calc_preset_frame_2 = QtWidgets.QFrame(self.calc_preset_frame)
         self.calc_preset_frame_2.setMinimumSize(QtCore.QSize(217, 0))
-        self.calc_preset_frame_2.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_preset_frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_preset_frame_2.setObjectName("calc_preset_frame_2")
         self.calc_preset_layout_3 = QtWidgets.QVBoxLayout(self.calc_preset_frame_2)
         self.calc_preset_layout_3.setContentsMargins(0, 0, 9, 0)
         self.calc_preset_layout_3.setSpacing(0)
         self.calc_preset_layout_3.setObjectName("calc_preset_layout_3")
         self.calc_preset_menu_frame = QtWidgets.QFrame(self.calc_preset_frame_2)
-        self.calc_preset_menu_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_preset_menu_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_preset_menu_frame.setObjectName("calc_preset_menu_frame")
         self.calc_preset_menu_layout = QtWidgets.QVBoxLayout(self.calc_preset_menu_frame)
         self.calc_preset_menu_layout.setContentsMargins(0, 0, 0, 0)
@@ -1809,59 +1870,6 @@ class Ui_MainWindow(object):
         self.calc_size_menu.addWidget(self.calc_preset_page)
         self.calc_inv_bottom_layout.addWidget(self.calc_size_menu)
         self.calc_inv_content_frame = QtWidgets.QFrame(self.calc_inv_bottom_frame)
-        self.calc_inv_content_frame.setStyleSheet("QComboBox {\n"
-                                                  "    color: #070808;\n"
-                                                  "    font-size: 14px;\n"
-                                                  "    border: 0.5px solid rgba(117, 124, 159, 0.5);\n"
-                                                  "    border-radius: 2px;\n"
-                                                  "    padding-left: 6px;\n"
-                                                  "}\n"
-                                                  "\n"
-                                                  "QComboBox:hover {\n"
-                                                  "    border: 0.5px solid #0915CC;\n"
-                                                  "}\n"
-                                                  "\n"
-                                                  "QComboBox::down-arrow {\n"
-                                                  "    image: url(:/image/arrow_drop_down_inventory_default.svg);\n"
-                                                  "}\n"
-                                                  "\n"
-                                                  "QComboBox::down-arrow:hover{\n"
-                                                  "    image: url(:/image/arrow_drop_down_inventory_hover.svg);\n"
-                                                  "}\n"
-                                                  "\n"
-                                                  "QComboBox::drop-down {\n"
-                                                  "    background: #F2F3F6;\n"
-                                                  "    width: 24px;\n"
-                                                  "}\n"
-                                                  "\n"
-                                                  "\n"
-                                                  "QComboBox QAbstractItemView\n"
-                                                  "{\n"
-                                                  "    background: #F9FAFB;\n"
-                                                  "    padding-left: 7px;\n"
-                                                  "    padding-right: 7px;\n"
-                                                  "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                                  "    border-radius: 8px;\n"
-                                                  "    font-size: 14px;\n"
-                                                  "    outline: 0;\n"
-                                                  "}\n"
-                                                  "\n"
-                                                  "\n"
-                                                  "QComboBox QAbstractItemView::item { \n"
-                                                  "    min-height: 20px;\n"
-                                                  "    padding-left: 15px;\n"
-                                                  "    background: #F9FAFB;\n"
-                                                  "    color: #070808;\n"
-                                                  "}\n"
-                                                  "\n"
-                                                  "QListView::item:selected { \n"
-                                                  "    color: #0915CC; \n"
-                                                  "    background-color: #F2F3F6; \n"
-                                                  "    border-radius: 4px;\n"
-                                                  "}\n"
-                                                  "")
-        self.calc_inv_content_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_inv_content_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_inv_content_frame.setObjectName("calc_inv_content_frame")
         self.calc_inv_content_layout = QtWidgets.QVBoxLayout(self.calc_inv_content_frame)
         self.calc_inv_content_layout.setContentsMargins(0, 0, 0, 0)
@@ -1869,83 +1877,20 @@ class Ui_MainWindow(object):
         self.calc_inv_content_layout.setObjectName("calc_inv_content_layout")
         self.calc_inv_categor_frame = QtWidgets.QFrame(self.calc_inv_content_frame)
         self.calc_inv_categor_frame.setMinimumSize(QtCore.QSize(0, 92))
-        self.calc_inv_categor_frame.setStyleSheet(".QFrame {\n"
-                                                  "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                                  "    border-radius: 4px;\n"
-                                                  "}\n"
-                                                  "\n"
-                                                  "QLabel {\n"
-                                                  "    color: #070808;\n"
-                                                  "    font-size: 14px;\n"
-                                                  "}\n"
-                                                  "\n"
-                                                  "QPushButton {\n"
-                                                  "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                                  "    border-radius: 16px;    \n"
-                                                  "    padding-left: 10px;\n"
-                                                  "    padding-right: 10px;\n"
-                                                  "    padding-top: 8px;\n"
-                                                  "    padding-bottom: 8px;\n"
-                                                  "    color: #757C9F;\n"
-                                                  "    font-size: 14px;\n"
-                                                  "    qproperty-icon: url(:/image/check_icon_default.svg);\n"
-                                                  "    icon-size: 18px, 18px;\n"
-                                                  "    background: #F9FAFB;\n"
-                                                  "}\n"
-                                                  "\n"
-                                                  "QPushButton:hover {\n"
-                                                  "    border: 0.5px solid #0915CC;\n"
-                                                  "    color: #0915CC;\n"
-                                                  "}\n"
-                                                  "\n"
-                                                  "QPushButton:checked {\n"
-                                                  "    border: 0.5px solid #0915CC;\n"
-                                                  "    color: #0915CC;\n"
-                                                  "}")
-        self.calc_inv_categor_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_inv_categor_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_inv_categor_frame.setObjectName("calc_inv_categor_frame")
         self.calc_inv_categor_layout = QtWidgets.QVBoxLayout(self.calc_inv_categor_frame)
         self.calc_inv_categor_layout.setContentsMargins(15, 15, 0, 15)
         self.calc_inv_categor_layout.setSpacing(10)
         self.calc_inv_categor_layout.setObjectName("calc_inv_categor_layout")
         self.calc_inv_categor_label = QtWidgets.QLabel(self.calc_inv_categor_frame)
-        self.calc_inv_categor_label.setStyleSheet("")
         self.calc_inv_categor_label.setObjectName("calc_inv_categor_label")
         self.calc_inv_categor_layout.addWidget(self.calc_inv_categor_label)
         self.calc_inv_categor_butt_frame_2 = QtWidgets.QFrame(self.calc_inv_categor_frame)
-        self.calc_inv_categor_butt_frame_2.setStyleSheet("QFrame {\n"
-                                                         "    border: none;\n"
-                                                         "}\n"
-                                                         "")
-        self.calc_inv_categor_butt_frame_2.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_inv_categor_butt_frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_inv_categor_butt_frame_2.setObjectName("calc_inv_categor_butt_frame_2")
         self.calc_inv_categor_butt_layout_2 = QtWidgets.QHBoxLayout(self.calc_inv_categor_butt_frame_2)
         self.calc_inv_categor_butt_layout_2.setContentsMargins(0, 0, 0, 0)
         self.calc_inv_categor_butt_layout_2.setSpacing(5)
         self.calc_inv_categor_butt_layout_2.setObjectName("calc_inv_categor_butt_layout_2")
-        self.inventory_cat_butt_sample_3 = QtWidgets.QPushButton(self.calc_inv_categor_butt_frame_2)
-        self.inventory_cat_butt_sample_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.inventory_cat_butt_sample_3.setCheckable(True)
-        self.inventory_cat_butt_sample_3.setChecked(True)
-        self.inventory_cat_butt_sample_3.setObjectName("inventory_cat_butt_sample_3")
-        self.calc_inv_categor_butt_layout_2.addWidget(self.inventory_cat_butt_sample_3)
-        self.inven_3 = QtWidgets.QPushButton(self.calc_inv_categor_butt_frame_2)
-        self.inven_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.inven_3.setCheckable(True)
-        self.inven_3.setObjectName("inven_3")
-        self.calc_inv_categor_butt_layout_2.addWidget(self.inven_3)
-        self.config_subpeak_butt_4 = QtWidgets.QPushButton(self.calc_inv_categor_butt_frame_2)
-        self.config_subpeak_butt_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.config_subpeak_butt_4.setCheckable(True)
-        self.config_subpeak_butt_4.setObjectName("config_subpeak_butt_4")
-        self.calc_inv_categor_butt_layout_2.addWidget(self.config_subpeak_butt_4)
-        self.config_peak_butt_4 = QtWidgets.QPushButton(self.calc_inv_categor_butt_frame_2)
-        self.config_peak_butt_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.config_peak_butt_4.setCheckable(True)
-        self.config_peak_butt_4.setObjectName("config_peak_butt_4")
-        self.calc_inv_categor_butt_layout_2.addWidget(self.config_peak_butt_4)
         self.calc_inv_categor_layout.addWidget(self.calc_inv_categor_butt_frame_2)
         self.calc_inv_content_layout.addWidget(self.calc_inv_categor_frame, 0, QtCore.Qt.AlignTop)
         self.calc_inv_content_scrollarea = QtWidgets.QScrollArea(self.calc_inv_content_frame)
@@ -1953,290 +1898,18 @@ class Ui_MainWindow(object):
         self.calc_inv_content_scrollarea.setWidgetResizable(True)
         self.calc_inv_content_scrollarea.setObjectName("calc_inv_content_scrollarea")
         self.calc_inv_content_scroll_frame = QtWidgets.QWidget()
-        self.calc_inv_content_scroll_frame.setGeometry(QtCore.QRect(0, 0, 993, 423))
+        self.calc_inv_content_scroll_frame.setGeometry(QtCore.QRect(0, 0, 993, 426))
         self.calc_inv_content_scroll_frame.setObjectName("calc_inv_content_scroll_frame")
         self.calc_inv_content_scroll_layout = QtWidgets.QVBoxLayout(self.calc_inv_content_scroll_frame)
         self.calc_inv_content_scroll_layout.setContentsMargins(0, 0, 0, 0)
         self.calc_inv_content_scroll_layout.setSpacing(0)
         self.calc_inv_content_scroll_layout.setObjectName("calc_inv_content_scroll_layout")
         self.calc_inv_content_clear_frame = QtWidgets.QFrame(self.calc_inv_content_scroll_frame)
-        self.calc_inv_content_clear_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_inv_content_clear_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_inv_content_clear_frame.setObjectName("calc_inv_content_clear_frame")
         self.calc_inv_content_clear_layout = QtWidgets.QHBoxLayout(self.calc_inv_content_clear_frame)
         self.calc_inv_content_clear_layout.setContentsMargins(0, 0, 0, 0)
         self.calc_inv_content_clear_layout.setSpacing(8)
         self.calc_inv_content_clear_layout.setObjectName("calc_inv_content_clear_layout")
-        self.frame_11 = QtWidgets.QFrame(self.calc_inv_content_clear_frame)
-        self.frame_11.setMinimumSize(QtCore.QSize(324, 119))
-        self.frame_11.setMaximumSize(QtCore.QSize(324, 119))
-        self.frame_11.setStyleSheet(".QFrame {\n"
-                                    "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                    "    border-radius: 10px;\n"
-                                    "}\n"
-                                    "\n"
-                                    ".QFrame:hover {\n"
-                                    "    border: 0.5px solid #0915CC;\n"
-                                    "}")
-        self.frame_11.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.frame_11.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_11.setObjectName("frame_11")
-        self.verticalLayout_7 = QtWidgets.QVBoxLayout(self.frame_11)
-        self.verticalLayout_7.setContentsMargins(15, 15, 15, 15)
-        self.verticalLayout_7.setSpacing(15)
-        self.verticalLayout_7.setObjectName("verticalLayout_7")
-        self.frame_12 = QtWidgets.QFrame(self.frame_11)
-        self.frame_12.setStyleSheet("border: none;")
-        self.frame_12.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_12.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_12.setObjectName("frame_12")
-        self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.frame_12)
-        self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_5.setSpacing(0)
-        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
-        self.label_17 = QtWidgets.QLabel(self.frame_12)
-        self.label_17.setMinimumSize(QtCore.QSize(56, 56))
-        self.label_17.setMaximumSize(QtCore.QSize(56, 56))
-        self.label_17.setStyleSheet("image: url(:/image/Login_pic.png);")
-        self.label_17.setText("")
-        self.label_17.setObjectName("label_17")
-        self.horizontalLayout_5.addWidget(self.label_17)
-        self.pushButton_4 = QtWidgets.QPushButton(self.frame_12)
-        self.pushButton_4.setMinimumSize(QtCore.QSize(103, 28))
-        self.pushButton_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_4.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.pushButton_4.setStyleSheet("QPushButton {\n"
-                                        "    background: #F2F3F6;\n"
-                                        "    border-radius: 5px;\n"
-                                        "    color: #757C9F;\n"
-                                        "    qproperty-icon: url(:/image/plus_gray_icon.svg);\n"
-                                        "    font-size: 14px;\n"
-                                        "}\n"
-                                        "\n"
-                                        "QPushButton:hover {\n"
-                                        "    color: #0915CC;\n"
-                                        "}\n"
-                                        "")
-        self.pushButton_4.setIconSize(QtCore.QSize(24, 24))
-        self.pushButton_4.setObjectName("pushButton_4")
-        self.horizontalLayout_5.addWidget(self.pushButton_4, 0, QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
-        self.verticalLayout_7.addWidget(self.frame_12)
-        self.label_18 = QtWidgets.QLabel(self.frame_11)
-        self.label_18.setStyleSheet("color: #070808;\n"
-                                    "font-size: 14px;")
-        self.label_18.setObjectName("label_18")
-        self.verticalLayout_7.addWidget(self.label_18)
-        self.calc_inv_content_clear_layout.addWidget(self.frame_11)
-        self.frame_19 = QtWidgets.QFrame(self.calc_inv_content_clear_frame)
-        self.frame_19.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_19.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_19.setObjectName("frame_19")
-        self.verticalLayout_14 = QtWidgets.QVBoxLayout(self.frame_19)
-        self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_14.setSpacing(0)
-        self.verticalLayout_14.setObjectName("verticalLayout_14")
-        self.frame_25 = QtWidgets.QFrame(self.frame_19)
-        self.frame_25.setMinimumSize(QtCore.QSize(324, 162))
-        self.frame_25.setMaximumSize(QtCore.QSize(324, 162))
-        self.frame_25.setStyleSheet(".QFrame {\n"
-                                    "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                    "    border-radius: 10px;\n"
-                                    "}\n"
-                                    "\n"
-                                    ".QFrame:hover {\n"
-                                    "    border: 0.5px solid #0915CC;\n"
-                                    "}")
-        self.frame_25.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.frame_25.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_25.setObjectName("frame_25")
-        self.verticalLayout_15 = QtWidgets.QVBoxLayout(self.frame_25)
-        self.verticalLayout_15.setContentsMargins(15, 15, 15, 15)
-        self.verticalLayout_15.setSpacing(0)
-        self.verticalLayout_15.setObjectName("verticalLayout_15")
-        self.frame_26 = QtWidgets.QFrame(self.frame_25)
-        self.frame_26.setStyleSheet("border: none;")
-        self.frame_26.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.frame_26.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_26.setObjectName("frame_26")
-        self.horizontalLayout_12 = QtWidgets.QHBoxLayout(self.frame_26)
-        self.horizontalLayout_12.setContentsMargins(0, 0, 0, 15)
-        self.horizontalLayout_12.setSpacing(11)
-        self.horizontalLayout_12.setObjectName("horizontalLayout_12")
-        self.label_19 = QtWidgets.QLabel(self.frame_26)
-        self.label_19.setMinimumSize(QtCore.QSize(56, 56))
-        self.label_19.setMaximumSize(QtCore.QSize(56, 56))
-        self.label_19.setStyleSheet("image: url(:/image/custom_item_icon.svg);")
-        self.label_19.setText("")
-        self.label_19.setObjectName("label_19")
-        self.horizontalLayout_12.addWidget(self.label_19)
-        self.pushButton_6 = QtWidgets.QPushButton(self.frame_26)
-        self.pushButton_6.setMinimumSize(QtCore.QSize(103, 28))
-        self.pushButton_6.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_6.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.pushButton_6.setStyleSheet("QPushButton {\n"
-                                        "    background: #F2F3F6;\n"
-                                        "    border-radius: 5px;\n"
-                                        "    color: #757C9F;\n"
-                                        "    qproperty-icon: url(:/image/plus_gray_icon.svg);\n"
-                                        "    font-size: 14px;\n"
-                                        "}\n"
-                                        "\n"
-                                        "QPushButton:hover {\n"
-                                        "    color: #0915CC;\n"
-                                        "}\n"
-                                        "")
-        self.pushButton_6.setIconSize(QtCore.QSize(24, 24))
-        self.pushButton_6.setObjectName("pushButton_6")
-        self.horizontalLayout_12.addWidget(self.pushButton_6, 0, QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
-        self.verticalLayout_15.addWidget(self.frame_26)
-        self.label_21 = QtWidgets.QLabel(self.frame_25)
-        self.label_21.setStyleSheet("color: #070808;\n"
-                                    "font-size: 14px;")
-        self.label_21.setObjectName("label_21")
-        self.verticalLayout_15.addWidget(self.label_21)
-        self.frame_27 = QtWidgets.QFrame(self.frame_25)
-        self.frame_27.setStyleSheet("QFrame {\n"
-                                    "    border: none;\n"
-                                    "}\n"
-                                    "\n"
-                                    "QLabel {\n"
-                                    "    color: #757C9F;\n"
-                                    "    font-size: 14px;\n"
-                                    "}")
-        self.frame_27.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.frame_27.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_27.setObjectName("frame_27")
-        self.verticalLayout_16 = QtWidgets.QVBoxLayout(self.frame_27)
-        self.verticalLayout_16.setContentsMargins(0, 5, 0, 0)
-        self.verticalLayout_16.setSpacing(2)
-        self.verticalLayout_16.setObjectName("verticalLayout_16")
-        self.frame_28 = QtWidgets.QFrame(self.frame_27)
-        self.frame_28.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.frame_28.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_28.setObjectName("frame_28")
-        self.horizontalLayout_18 = QtWidgets.QHBoxLayout(self.frame_28)
-        self.horizontalLayout_18.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_18.setSpacing(4)
-        self.horizontalLayout_18.setObjectName("horizontalLayout_18")
-        self.label_37 = QtWidgets.QLabel(self.frame_28)
-        self.label_37.setMinimumSize(QtCore.QSize(12, 12))
-        self.label_37.setStyleSheet("image: url(:/image/width_icon.svg);")
-        self.label_37.setText("")
-        self.label_37.setObjectName("label_37")
-        self.horizontalLayout_18.addWidget(self.label_37)
-        self.label_38 = QtWidgets.QLabel(self.frame_28)
-        self.label_38.setStyleSheet("margin-right: 12px;")
-        self.label_38.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
-        self.label_38.setObjectName("label_38")
-        self.horizontalLayout_18.addWidget(self.label_38)
-        self.label_39 = QtWidgets.QLabel(self.frame_28)
-        self.label_39.setMinimumSize(QtCore.QSize(12, 12))
-        self.label_39.setStyleSheet("image: url(:/image/length_icon.svg);")
-        self.label_39.setText("")
-        self.label_39.setObjectName("label_39")
-        self.horizontalLayout_18.addWidget(self.label_39)
-        self.label_40 = QtWidgets.QLabel(self.frame_28)
-        self.label_40.setStyleSheet("")
-        self.label_40.setObjectName("label_40")
-        self.horizontalLayout_18.addWidget(self.label_40)
-        self.verticalLayout_16.addWidget(self.frame_28, 0, QtCore.Qt.AlignLeft)
-        self.frame_29 = QtWidgets.QFrame(self.frame_27)
-        self.frame_29.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.frame_29.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_29.setObjectName("frame_29")
-        self.horizontalLayout_19 = QtWidgets.QHBoxLayout(self.frame_29)
-        self.horizontalLayout_19.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_19.setSpacing(4)
-        self.horizontalLayout_19.setObjectName("horizontalLayout_19")
-        self.label_41 = QtWidgets.QLabel(self.frame_29)
-        self.label_41.setMinimumSize(QtCore.QSize(12, 12))
-        self.label_41.setStyleSheet("image: url(:/image/length_icon.svg);")
-        self.label_41.setText("")
-        self.label_41.setObjectName("label_41")
-        self.horizontalLayout_19.addWidget(self.label_41)
-        self.label_42 = QtWidgets.QLabel(self.frame_29)
-        self.label_42.setStyleSheet("")
-        self.label_42.setObjectName("label_42")
-        self.horizontalLayout_19.addWidget(self.label_42)
-        self.verticalLayout_16.addWidget(self.frame_29, 0, QtCore.Qt.AlignLeft)
-        self.verticalLayout_15.addWidget(self.frame_27, 0, QtCore.Qt.AlignLeft)
-        self.verticalLayout_14.addWidget(self.frame_25)
-        self.calc_inv_content_clear_layout.addWidget(self.frame_19)
-        self.frame_30 = QtWidgets.QFrame(self.calc_inv_content_clear_frame)
-        self.frame_30.setMinimumSize(QtCore.QSize(324, 119))
-        self.frame_30.setMaximumSize(QtCore.QSize(324, 119))
-        self.frame_30.setStyleSheet("#frame_21 {\n"
-                                    "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                    "    border-radius: 10px;\n"
-                                    "}\n"
-                                    "\n"
-                                    "#frame_21:hover {\n"
-                                    "    border: 0.5px solid #0915CC;\n"
-                                    "}")
-        self.frame_30.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.frame_30.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_30.setObjectName("frame_30")
-        self.verticalLayout_17 = QtWidgets.QVBoxLayout(self.frame_30)
-        self.verticalLayout_17.setContentsMargins(15, 15, 15, 15)
-        self.verticalLayout_17.setSpacing(15)
-        self.verticalLayout_17.setObjectName("verticalLayout_17")
-        self.frame_31 = QtWidgets.QFrame(self.frame_30)
-        self.frame_31.setStyleSheet("")
-        self.frame_31.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_31.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_31.setObjectName("frame_31")
-        self.horizontalLayout_13 = QtWidgets.QHBoxLayout(self.frame_31)
-        self.horizontalLayout_13.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_13.setSpacing(17)
-        self.horizontalLayout_13.setObjectName("horizontalLayout_13")
-        self.label_22 = QtWidgets.QLabel(self.frame_31)
-        self.label_22.setMinimumSize(QtCore.QSize(56, 56))
-        self.label_22.setMaximumSize(QtCore.QSize(56, 56))
-        self.label_22.setStyleSheet("image: url(:/image/Login_pic.png);")
-        self.label_22.setText("")
-        self.label_22.setObjectName("label_22")
-        self.horizontalLayout_13.addWidget(self.label_22)
-        self.profile_delete_butt_4 = QtWidgets.QPushButton(self.frame_31)
-        self.profile_delete_butt_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.profile_delete_butt_4.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.profile_delete_butt_4.setStyleSheet("QPushButton {\n"
-                                                 "    border:none;\n"
-                                                 "    background: transparent;\n"
-                                                 "    font-size: 14px;\n"
-                                                 "    color: #757C9F;\n"
-                                                 "    qproperty-icon: url(:/image/inventory_delete_default.svg);\n"
-                                                 "}\n"
-                                                 "\n"
-                                                 "QPushButton:hover {\n"
-                                                 "    color: #FF3C2F;\n"
-                                                 "}")
-        self.profile_delete_butt_4.setIconSize(QtCore.QSize(24, 24))
-        self.profile_delete_butt_4.setObjectName("profile_delete_butt_4")
-        self.horizontalLayout_13.addWidget(self.profile_delete_butt_4, 0, QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
-        self.comboBox_2 = QtWidgets.QComboBox(self.frame_31)
-        self.comboBox_2.setMinimumSize(QtCore.QSize(60, 24))
-        self.comboBox_2.setMaximumSize(QtCore.QSize(60, 24))
-        self.comboBox_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.comboBox_2.setStyleSheet("")
-        self.comboBox_2.setEditable(True)
-        self.comboBox_2.setObjectName("comboBox_2")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.horizontalLayout_13.addWidget(self.comboBox_2, 0, QtCore.Qt.AlignTop)
-        self.verticalLayout_17.addWidget(self.frame_31)
-        self.label_23 = QtWidgets.QLabel(self.frame_30)
-        self.label_23.setStyleSheet("color: #070808;\n"
-                                    "font-size: 14px;")
-        self.label_23.setObjectName("label_23")
-        self.verticalLayout_17.addWidget(self.label_23)
-        self.calc_inv_content_clear_layout.addWidget(self.frame_30)
         self.calc_inv_content_scroll_layout.addWidget(self.calc_inv_content_clear_frame)
         self.calc_inv_content_scrollarea.setWidget(self.calc_inv_content_scroll_frame)
         self.calc_inv_content_layout.addWidget(self.calc_inv_content_scrollarea)
@@ -2252,28 +1925,16 @@ class Ui_MainWindow(object):
         self.calc_calculation_result_layout.setObjectName("calc_calculation_result_layout")
         self.calc_result_frame = QtWidgets.QFrame(self.calc_calculation_result_page)
         self.calc_result_frame.setMinimumSize(QtCore.QSize(427, 506))
-        self.calc_result_frame.setStyleSheet("QFrame {\n"
-                                             "    background: #F9FAFB;\n"
-                                             "    border-radius: 5px;\n"
-                                             "}\n"
-                                             "\n"
-                                             "Line {\n"
-                                             "    background-color: #070808;\n"
-                                             "}")
-        self.calc_result_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_result_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_result_frame.setObjectName("calc_result_frame")
         self.calc_result_frame_2 = QtWidgets.QVBoxLayout(self.calc_result_frame)
         self.calc_result_frame_2.setContentsMargins(30, 20, 30, 0)
         self.calc_result_frame_2.setSpacing(0)
         self.calc_result_frame_2.setObjectName("calc_result_frame_2")
         self.calc_result_header = QtWidgets.QLabel(self.calc_result_frame)
-        self.calc_result_header.setStyleSheet("color: #070808;\n"
-                                              "font-size: 19px;\n"
-                                              "margin-bottom: 15px;")
-        self.calc_result_header.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.calc_result_header.setObjectName("calc_result_header")
         self.calc_result_frame_2.addWidget(self.calc_result_header)
+        spacerItem3 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.calc_result_frame_2.addItem(spacerItem3)
         self.calc_calc_result_top_line = QtWidgets.QFrame(self.calc_result_frame)
         self.calc_calc_result_top_line.setMaximumSize(QtCore.QSize(16777215, 1))
         self.calc_calc_result_top_line.setStyleSheet("")
@@ -2283,8 +1944,6 @@ class Ui_MainWindow(object):
         self.calc_calc_result_top_line.setObjectName("calc_calc_result_top_line")
         self.calc_result_frame_2.addWidget(self.calc_calc_result_top_line)
         self.calc_result_info_frame = QtWidgets.QFrame(self.calc_result_frame)
-        self.calc_result_info_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_result_info_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_result_info_frame.setObjectName("calc_result_info_frame")
         self.calc_result_info_layout = QtWidgets.QGridLayout(self.calc_result_info_frame)
         self.calc_result_info_layout.setContentsMargins(0, 30, 0, 30)
@@ -2292,53 +1951,33 @@ class Ui_MainWindow(object):
         self.calc_result_info_layout.setVerticalSpacing(10)
         self.calc_result_info_layout.setObjectName("calc_result_info_layout")
         self.calc_result_crew_size_label = QtWidgets.QLabel(self.calc_result_info_frame)
-        self.calc_result_crew_size_label.setStyleSheet("color: #757C9F;\n"
-                                                       "font-size: 14px;")
         self.calc_result_crew_size_label.setObjectName("calc_result_crew_size_label")
         self.calc_result_info_layout.addWidget(self.calc_result_crew_size_label, 0, 0, 1, 1)
         self.calc_result_hr_label = QtWidgets.QLabel(self.calc_result_info_frame)
-        self.calc_result_hr_label.setStyleSheet("color: #757C9F;\n"
-                                                "font-size: 14px;")
         self.calc_result_hr_label.setObjectName("calc_result_hr_label")
         self.calc_result_info_layout.addWidget(self.calc_result_hr_label, 3, 0, 1, 1)
         self.calc_result_hr_info = QtWidgets.QLabel(self.calc_result_info_frame)
-        self.calc_result_hr_info.setStyleSheet("color: #070808;\n"
-                                               "font-size: 14px;")
         self.calc_result_hr_info.setObjectName("calc_result_hr_info")
         self.calc_result_info_layout.addWidget(self.calc_result_hr_info, 3, 1, 1, 1, QtCore.Qt.AlignRight)
         self.calc_result_travel_time_info = QtWidgets.QLabel(self.calc_result_info_frame)
-        self.calc_result_travel_time_info.setStyleSheet("color: #070808;\n"
-                                                        "font-size: 14px;")
         self.calc_result_travel_time_info.setObjectName("calc_result_travel_time_info")
         self.calc_result_info_layout.addWidget(self.calc_result_travel_time_info, 2, 1, 1, 1, QtCore.Qt.AlignRight)
         self.calc_result_est_info = QtWidgets.QLabel(self.calc_result_info_frame)
-        self.calc_result_est_info.setStyleSheet("color: #070808;\n"
-                                                "font-size: 14px;")
         self.calc_result_est_info.setObjectName("calc_result_est_info")
         self.calc_result_info_layout.addWidget(self.calc_result_est_info, 4, 1, 1, 1, QtCore.Qt.AlignRight)
         self.calc_result_truck_size_info = QtWidgets.QLabel(self.calc_result_info_frame)
-        self.calc_result_truck_size_info.setStyleSheet("color: #070808;\n"
-                                                       "font-size: 14px;")
         self.calc_result_truck_size_info.setObjectName("calc_result_truck_size_info")
         self.calc_result_info_layout.addWidget(self.calc_result_truck_size_info, 1, 1, 1, 1, QtCore.Qt.AlignRight)
         self.calc_result_crew_size_info = QtWidgets.QLabel(self.calc_result_info_frame)
-        self.calc_result_crew_size_info.setStyleSheet("color: #070808;\n"
-                                                      "font-size: 14px;")
         self.calc_result_crew_size_info.setObjectName("calc_result_crew_size_info")
         self.calc_result_info_layout.addWidget(self.calc_result_crew_size_info, 0, 1, 1, 1, QtCore.Qt.AlignRight)
         self.calc_result_travel_time_label = QtWidgets.QLabel(self.calc_result_info_frame)
-        self.calc_result_travel_time_label.setStyleSheet("color: #757C9F;\n"
-                                                         "font-size: 14px;")
         self.calc_result_travel_time_label.setObjectName("calc_result_travel_time_label")
         self.calc_result_info_layout.addWidget(self.calc_result_travel_time_label, 2, 0, 1, 1)
         self.calc_result_est_label = QtWidgets.QLabel(self.calc_result_info_frame)
-        self.calc_result_est_label.setStyleSheet("color: #757C9F;\n"
-                                                 "font-size: 14px;")
         self.calc_result_est_label.setObjectName("calc_result_est_label")
         self.calc_result_info_layout.addWidget(self.calc_result_est_label, 4, 0, 1, 1)
         self.calc_result_truck_size_label = QtWidgets.QLabel(self.calc_result_info_frame)
-        self.calc_result_truck_size_label.setStyleSheet("color: #757C9F;\n"
-                                                        "font-size: 14px;")
         self.calc_result_truck_size_label.setObjectName("calc_result_truck_size_label")
         self.calc_result_info_layout.addWidget(self.calc_result_truck_size_label, 1, 0, 1, 1)
         self.calc_result_frame_2.addWidget(self.calc_result_info_frame)
@@ -2349,25 +1988,19 @@ class Ui_MainWindow(object):
         self.calc_result_bottom_line.setObjectName("calc_result_bottom_line")
         self.calc_result_frame_2.addWidget(self.calc_result_bottom_line)
         self.cacl_result_quote_frame = QtWidgets.QFrame(self.calc_result_frame)
-        self.cacl_result_quote_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.cacl_result_quote_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.cacl_result_quote_frame.setObjectName("cacl_result_quote_frame")
         self.cacl_result_quote_layout = QtWidgets.QHBoxLayout(self.cacl_result_quote_frame)
         self.cacl_result_quote_layout.setContentsMargins(0, 30, 0, 0)
         self.cacl_result_quote_layout.setSpacing(0)
         self.cacl_result_quote_layout.setObjectName("cacl_result_quote_layout")
         self.calc_result_quote_label = QtWidgets.QLabel(self.cacl_result_quote_frame)
-        self.calc_result_quote_label.setStyleSheet("color: #070808;\n"
-                                                   "font-size: 14px;")
         self.calc_result_quote_label.setObjectName("calc_result_quote_label")
         self.cacl_result_quote_layout.addWidget(self.calc_result_quote_label)
         self.calc_result_quote_info = QtWidgets.QLabel(self.cacl_result_quote_frame)
-        self.calc_result_quote_info.setStyleSheet("color: #0915CC;\n"
-                                                  "font-size: 19px;")
         self.calc_result_quote_info.setObjectName("calc_result_quote_info")
         self.cacl_result_quote_layout.addWidget(self.calc_result_quote_info, 0, QtCore.Qt.AlignRight)
         self.calc_result_frame_2.addWidget(self.cacl_result_quote_frame, 0, QtCore.Qt.AlignTop)
-        self.calc_result_frame_2.setStretch(4, 1)
+        self.calc_result_frame_2.setStretch(5, 1)
         self.calc_calculation_result_layout.addWidget(self.calc_result_frame)
         self.calc_result_pages = QtWidgets.QStackedWidget(self.calc_calculation_result_page)
         self.calc_result_pages.setObjectName("calc_result_pages")
@@ -2378,25 +2011,15 @@ class Ui_MainWindow(object):
         self.calc_result_details_layout.setSpacing(0)
         self.calc_result_details_layout.setObjectName("calc_result_details_layout")
         self.calc_result_details_frame = QtWidgets.QFrame(self.calc_result_details_page)
-        self.calc_result_details_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_result_details_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_result_details_frame.setObjectName("calc_result_details_frame")
         self.calc_result_details_layout_2 = QtWidgets.QVBoxLayout(self.calc_result_details_frame)
         self.calc_result_details_layout_2.setContentsMargins(0, 20, 0, 0)
         self.calc_result_details_layout_2.setSpacing(30)
         self.calc_result_details_layout_2.setObjectName("calc_result_details_layout_2")
         self.calc_result_details_header = QtWidgets.QLabel(self.calc_result_details_frame)
-        self.calc_result_details_header.setStyleSheet("color: #070808;\n"
-                                                      "font-size: 19px;")
         self.calc_result_details_header.setObjectName("calc_result_details_header")
         self.calc_result_details_layout_2.addWidget(self.calc_result_details_header)
         self.calc_result_details_inner_frame = QtWidgets.QFrame(self.calc_result_details_frame)
-        self.calc_result_details_inner_frame.setStyleSheet("QLabel {\n"
-                                                           "    font-size: 14px;\n"
-                                                           "    color: #757C9F;\n"
-                                                           "}")
-        self.calc_result_details_inner_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_result_details_inner_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_result_details_inner_frame.setObjectName("calc_result_details_inner_frame")
         self.calc_result_details_inner_layout = QtWidgets.QGridLayout(self.calc_result_details_inner_frame)
         self.calc_result_details_inner_layout.setContentsMargins(0, 0, 0, 0)
@@ -2404,7 +2027,6 @@ class Ui_MainWindow(object):
         self.calc_result_details_inner_layout.setVerticalSpacing(16)
         self.calc_result_details_inner_layout.setObjectName("calc_result_details_inner_layout")
         self.calc_result_details_zip_from_info = QtWidgets.QLabel(self.calc_result_details_inner_frame)
-        self.calc_result_details_zip_from_info.setStyleSheet("color: #0915CC;")
         self.calc_result_details_zip_from_info.setObjectName("calc_result_details_zip_from_info")
         self.calc_result_details_inner_layout.addWidget(self.calc_result_details_zip_from_info, 2, 2, 1, 1)
         self.calc_result_details_ent_to_label = QtWidgets.QLabel(self.calc_result_details_inner_frame)
@@ -2418,34 +2040,25 @@ class Ui_MainWindow(object):
         self.calc_result_details_date_label.setObjectName("calc_result_details_date_label")
         self.calc_result_details_inner_layout.addWidget(self.calc_result_details_date_label, 0, 1, 1, 1)
         self.calc_result_details_zip_icon = QtWidgets.QLabel(self.calc_result_details_inner_frame)
-        self.calc_result_details_zip_icon.setStyleSheet("image: url(:/image/calculator_zip_code_icon.svg);")
-        self.calc_result_details_zip_icon.setText("")
         self.calc_result_details_zip_icon.setObjectName("calc_result_details_zip_icon")
         self.calc_result_details_inner_layout.addWidget(self.calc_result_details_zip_icon, 2, 0, 1, 1)
         self.calc_result_details_ent_from_label = QtWidgets.QLabel(self.calc_result_details_inner_frame)
         self.calc_result_details_ent_from_label.setObjectName("calc_result_details_ent_from_label")
         self.calc_result_details_inner_layout.addWidget(self.calc_result_details_ent_from_label, 5, 1, 1, 1)
         self.calc_result_details_service_info = QtWidgets.QLabel(self.calc_result_details_inner_frame)
-        self.calc_result_details_service_info.setStyleSheet("color: #0915CC;")
         self.calc_result_details_service_info.setObjectName("calc_result_details_service_info")
         self.calc_result_details_inner_layout.addWidget(self.calc_result_details_service_info, 1, 2, 1, 1)
         self.calc_result_details_service_icon = QtWidgets.QLabel(self.calc_result_details_inner_frame)
-        self.calc_result_details_service_icon.setStyleSheet("image: url(:/image/calculator_service_icon.svg);")
-        self.calc_result_details_service_icon.setText("")
         self.calc_result_details_service_icon.setObjectName("calc_result_details_service_icon")
         self.calc_result_details_inner_layout.addWidget(self.calc_result_details_service_icon, 1, 0, 1, 1)
         self.calc_result_details_zip_to_info = QtWidgets.QLabel(self.calc_result_details_inner_frame)
-        self.calc_result_details_zip_to_info.setStyleSheet("color: #0915CC;")
         self.calc_result_details_zip_to_info.setObjectName("calc_result_details_zip_to_info")
         self.calc_result_details_inner_layout.addWidget(self.calc_result_details_zip_to_info, 3, 2, 1, 1)
         self.calc_result_details_ent_to_info = QtWidgets.QLabel(self.calc_result_details_inner_frame)
-        self.calc_result_details_ent_to_info.setStyleSheet("color: #0915CC;")
         self.calc_result_details_ent_to_info.setObjectName("calc_result_details_ent_to_info")
         self.calc_result_details_inner_layout.addWidget(self.calc_result_details_ent_to_info, 6, 2, 1, 1)
         self.calc_result_details_ent_icon_2 = QtWidgets.QLabel(self.calc_result_details_inner_frame)
         self.calc_result_details_ent_icon_2.setMinimumSize(QtCore.QSize(20, 20))
-        self.calc_result_details_ent_icon_2.setStyleSheet("image: url(:/image/calculator_entrance_icon.svg);")
-        self.calc_result_details_ent_icon_2.setText("")
         self.calc_result_details_ent_icon_2.setObjectName("calc_result_details_ent_icon_2")
         self.calc_result_details_inner_layout.addWidget(self.calc_result_details_ent_icon_2, 6, 0, 1, 1,
                                                         QtCore.Qt.AlignLeft)
@@ -2453,43 +2066,32 @@ class Ui_MainWindow(object):
         self.calc_result_details_zip_to_label.setObjectName("calc_result_details_zip_to_label")
         self.calc_result_details_inner_layout.addWidget(self.calc_result_details_zip_to_label, 3, 1, 1, 1)
         self.calc_result_details_zip_icon_2 = QtWidgets.QLabel(self.calc_result_details_inner_frame)
-        self.calc_result_details_zip_icon_2.setStyleSheet("image: url(:/image/calculator_zip_code_icon.svg);")
-        self.calc_result_details_zip_icon_2.setText("")
         self.calc_result_details_zip_icon_2.setObjectName("calc_result_details_zip_icon_2")
         self.calc_result_details_inner_layout.addWidget(self.calc_result_details_zip_icon_2, 3, 0, 1, 1)
         self.calc_result_details_ent_from_info = QtWidgets.QLabel(self.calc_result_details_inner_frame)
-        self.calc_result_details_ent_from_info.setStyleSheet("color: #0915CC;")
         self.calc_result_details_ent_from_info.setObjectName("calc_result_details_ent_from_info")
         self.calc_result_details_inner_layout.addWidget(self.calc_result_details_ent_from_info, 5, 2, 1, 1)
         self.calc_result_details_date_info = QtWidgets.QLabel(self.calc_result_details_inner_frame)
-        self.calc_result_details_date_info.setStyleSheet("color: #0915CC;")
         self.calc_result_details_date_info.setObjectName("calc_result_details_date_info")
         self.calc_result_details_inner_layout.addWidget(self.calc_result_details_date_info, 0, 2, 1, 1)
         self.calc_result_details_zip_from_label = QtWidgets.QLabel(self.calc_result_details_inner_frame)
         self.calc_result_details_zip_from_label.setObjectName("calc_result_details_zip_from_label")
         self.calc_result_details_inner_layout.addWidget(self.calc_result_details_zip_from_label, 2, 1, 1, 1)
         self.calc_result_details_size_icon = QtWidgets.QLabel(self.calc_result_details_inner_frame)
-        self.calc_result_details_size_icon.setStyleSheet("image: url(:/image/calculator_move_size_icon.svg);")
-        self.calc_result_details_size_icon.setText("")
         self.calc_result_details_size_icon.setObjectName("calc_result_details_size_icon")
         self.calc_result_details_inner_layout.addWidget(self.calc_result_details_size_icon, 4, 0, 1, 1)
         self.calc_result_details_date_icon = QtWidgets.QLabel(self.calc_result_details_inner_frame)
         self.calc_result_details_date_icon.setMinimumSize(QtCore.QSize(20, 20))
         self.calc_result_details_date_icon.setMaximumSize(QtCore.QSize(20, 20))
-        self.calc_result_details_date_icon.setStyleSheet("image: url(:/image/calculator_calendar_icon.svg);")
-        self.calc_result_details_date_icon.setText("")
         self.calc_result_details_date_icon.setObjectName("calc_result_details_date_icon")
         self.calc_result_details_inner_layout.addWidget(self.calc_result_details_date_icon, 0, 0, 1, 1)
         self.calc_result_details_ent_icon = QtWidgets.QLabel(self.calc_result_details_inner_frame)
-        self.calc_result_details_ent_icon.setStyleSheet("image: url(:/image/calculator_entrance_icon.svg);")
-        self.calc_result_details_ent_icon.setText("")
         self.calc_result_details_ent_icon.setObjectName("calc_result_details_ent_icon")
         self.calc_result_details_inner_layout.addWidget(self.calc_result_details_ent_icon, 5, 0, 1, 1)
         self.calc_result_details_size_label = QtWidgets.QLabel(self.calc_result_details_inner_frame)
         self.calc_result_details_size_label.setObjectName("calc_result_details_size_label")
         self.calc_result_details_inner_layout.addWidget(self.calc_result_details_size_label, 4, 1, 1, 1)
         self.calc_result_details_size_info = QtWidgets.QLabel(self.calc_result_details_inner_frame)
-        self.calc_result_details_size_info.setStyleSheet("color: #0915CC;")
         self.calc_result_details_size_info.setObjectName("calc_result_details_size_info")
         self.calc_result_details_inner_layout.addWidget(self.calc_result_details_size_info, 4, 2, 1, 1)
         self.calc_result_details_layout_2.addWidget(self.calc_result_details_inner_frame)
@@ -2507,72 +2109,28 @@ class Ui_MainWindow(object):
         self.calc_result_customer_info_scroll.setWidgetResizable(True)
         self.calc_result_customer_info_scroll.setObjectName("calc_result_customer_info_scroll")
         self.calc_result_customer_info_scroll_2 = QtWidgets.QWidget()
-        self.calc_result_customer_info_scroll_2.setGeometry(QtCore.QRect(0, 0, 789, 987))
+        self.calc_result_customer_info_scroll_2.setGeometry(QtCore.QRect(0, 0, 789, 983))
         self.calc_result_customer_info_scroll_2.setObjectName("calc_result_customer_info_scroll_2")
         self.calc_result_customer_info_scroll_layout = QtWidgets.QVBoxLayout(self.calc_result_customer_info_scroll_2)
         self.calc_result_customer_info_scroll_layout.setContentsMargins(0, 0, 0, 0)
         self.calc_result_customer_info_scroll_layout.setSpacing(0)
         self.calc_result_customer_info_scroll_layout.setObjectName("calc_result_customer_info_scroll_layout")
         self.calc_result_cus_info_frame = QtWidgets.QFrame(self.calc_result_customer_info_scroll_2)
-        self.calc_result_cus_info_frame.setStyleSheet("QLabel {\n"
-                                                      "    color: #757C9F;\n"
-                                                      "    font-size: 16px;\n"
-                                                      "}\n"
-                                                      "\n"
-                                                      "QLineEdit {\n"
-                                                      "    border-radius: 10px;\n"
-                                                      "    border: 1px solid #B5B8C7;\n"
-                                                      "    padding-left: 15px;\n"
-                                                      "    padding-right: 15px;\n"
-                                                      "    font-size: 16px;\n"
-                                                      "}\n"
-                                                      "\n"
-                                                      "QLineEdit:hover {\n"
-                                                      "    border: 1px solid #0915CC;\n"
-                                                      "    background-color: #F2F3F6;\n"
-                                                      "}\n"
-                                                      "\n"
-                                                      "QLineEdit:focus {\n"
-                                                      "    border: 1px solid #0915CC;\n"
-                                                      "    background-color: #F2F3F6;\n"
-                                                      "}\n"
-                                                      "\n"
-                                                      "QLineEdit[error=true] {\n"
-                                                      "    border: 1px solid #FF3C2F;\n"
-                                                      "}\n"
-                                                      "\n"
-                                                      "QPushButton {\n"
-                                                      "    border-radius: 10px;\n"
-                                                      "    font-size: 15px;\n"
-                                                      "    color: #FFFFFF;\n"
-                                                      "    background: #0915CC;\n"
-                                                      "    text-decoration: none;\n"
-                                                      "}\n"
-                                                      "\n"
-                                                      "QPushButton:hover {\n"
-                                                      "background: rgba(9, 21, 204, 0.8);\n"
-                                                      "}")
-        self.calc_result_cus_info_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_result_cus_info_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_result_cus_info_frame.setObjectName("calc_result_cus_info_frame")
         self.calc_result_cus_info_layout = QtWidgets.QVBoxLayout(self.calc_result_cus_info_frame)
         self.calc_result_cus_info_layout.setContentsMargins(0, 20, 5, 0)
         self.calc_result_cus_info_layout.setSpacing(5)
         self.calc_result_cus_info_layout.setObjectName("calc_result_cus_info_layout")
         self.calc_result_cus_info_header = QtWidgets.QLabel(self.calc_result_cus_info_frame)
-        self.calc_result_cus_info_header.setStyleSheet("color: #070808;\n"
-                                                       "font-size: 19px;\n"
-                                                       "margin-bottom: 25px;")
         self.calc_result_cus_info_header.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.calc_result_cus_info_header.setObjectName("calc_result_cus_info_header")
         self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_header)
+        spacerItem4 = QtWidgets.QSpacerItem(20, 25, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.calc_result_cus_info_layout.addItem(spacerItem4)
         self.calc_result_cus_info_small_header = QtWidgets.QLabel(self.calc_result_cus_info_frame)
-        self.calc_result_cus_info_small_header.setStyleSheet("color: #070808;")
         self.calc_result_cus_info_small_header.setObjectName("calc_result_cus_info_small_header")
         self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_small_header)
         self.calc_result_cus_info_name_frame = QtWidgets.QFrame(self.calc_result_cus_info_frame)
-        self.calc_result_cus_info_name_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_result_cus_info_name_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_result_cus_info_name_frame.setObjectName("calc_result_cus_info_name_frame")
         self.calc_result_cus_info_name_layout = QtWidgets.QGridLayout(self.calc_result_cus_info_name_frame)
         self.calc_result_cus_info_name_layout.setContentsMargins(0, 10, 0, 10)
@@ -2594,16 +2152,10 @@ class Ui_MainWindow(object):
         self.calc_result_cus_info_l_name_input.setObjectName("calc_result_cus_info_l_name_input")
         self.calc_result_cus_info_name_layout.addWidget(self.calc_result_cus_info_l_name_input, 1, 1, 1, 1)
         self.calc_result_cus_info_error_f_name = QtWidgets.QLabel(self.calc_result_cus_info_name_frame)
-        self.calc_result_cus_info_error_f_name.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.calc_result_cus_info_error_f_name.setStyleSheet("font-size: 14px;\n"
-                                                             "color: #FF3C2F;")
         self.calc_result_cus_info_error_f_name.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.calc_result_cus_info_error_f_name.setObjectName("calc_result_cus_info_error_f_name")
         self.calc_result_cus_info_name_layout.addWidget(self.calc_result_cus_info_error_f_name, 2, 0, 1, 1)
         self.calc_result_cus_info_error_l_name = QtWidgets.QLabel(self.calc_result_cus_info_name_frame)
-        self.calc_result_cus_info_error_l_name.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.calc_result_cus_info_error_l_name.setStyleSheet("font-size: 14px;\n"
-                                                             "color: #FF3C2F;")
         self.calc_result_cus_info_error_l_name.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.calc_result_cus_info_error_l_name.setObjectName("calc_result_cus_info_error_l_name")
         self.calc_result_cus_info_name_layout.addWidget(self.calc_result_cus_info_error_l_name, 2, 1, 1, 1)
@@ -2616,32 +2168,28 @@ class Ui_MainWindow(object):
         self.calc_result_cus_info_email_input.setObjectName("calc_result_cus_info_email_input")
         self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_email_input)
         self.calc_result_cus_info_error_email = QtWidgets.QLabel(self.calc_result_cus_info_frame)
-        self.calc_result_cus_info_error_email.setFocusPolicy(QtCore.Qt.NoFocus)
         self.calc_result_cus_info_error_email.setStyleSheet("font-size: 14px;\n"
                                                             "color: #FF3C2F;")
         self.calc_result_cus_info_error_email.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.calc_result_cus_info_error_email.setObjectName("calc_result_cus_info_error_email")
         self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_error_email)
+        spacerItem5 = QtWidgets.QSpacerItem(20, 10, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.calc_result_cus_info_layout.addItem(spacerItem5)
         self.calc_result_cus_info_phone_label = QtWidgets.QLabel(self.calc_result_cus_info_frame)
-        self.calc_result_cus_info_phone_label.setStyleSheet("margin-top: 10px;")
-        self.calc_result_cus_info_phone_label.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.calc_result_cus_info_phone_label.setObjectName("calc_result_cus_info_phone_label")
         self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_phone_label)
         self.calc_result_cus_info_phone_input = QtWidgets.QLineEdit(self.calc_result_cus_info_frame)
         self.calc_result_cus_info_phone_input.setMinimumSize(QtCore.QSize(526, 48))
-        self.calc_result_cus_info_phone_input.setText("")
+        self.calc_result_cus_info_phone_input.setMaxLength(11)
         self.calc_result_cus_info_phone_input.setObjectName("calc_result_cus_info_phone_input")
         self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_phone_input)
         self.calc_result_cus_info_error_phone = QtWidgets.QLabel(self.calc_result_cus_info_frame)
-        self.calc_result_cus_info_error_phone.setFocusPolicy(QtCore.Qt.NoFocus)
         self.calc_result_cus_info_error_phone.setStyleSheet("font-size: 14px;\n"
                                                             "color: #FF3C2F;")
         self.calc_result_cus_info_error_phone.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.calc_result_cus_info_error_phone.setObjectName("calc_result_cus_info_error_phone")
         self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_error_phone)
         self.calc_result_cus_info_adr_from_frame = QtWidgets.QFrame(self.calc_result_cus_info_frame)
-        self.calc_result_cus_info_adr_from_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_result_cus_info_adr_from_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_result_cus_info_adr_from_frame.setObjectName("calc_result_cus_info_adr_from_frame")
         self.calc_result_cus_info_adr_from_layout = QtWidgets.QHBoxLayout(self.calc_result_cus_info_adr_from_frame)
         self.calc_result_cus_info_adr_from_layout.setContentsMargins(0, 35, 0, 10)
@@ -2653,11 +2201,6 @@ class Ui_MainWindow(object):
         self.calc_result_cus_info_adr_from_opt = QtWidgets.QLabel(self.calc_result_cus_info_adr_from_frame)
         self.calc_result_cus_info_adr_from_opt.setMinimumSize(QtCore.QSize(0, 0))
         self.calc_result_cus_info_adr_from_opt.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.calc_result_cus_info_adr_from_opt.setStyleSheet("background: #F2F3F6;\n"
-                                                             "border-radius: 4px;\n"
-                                                             "color: #757C9F;\n"
-                                                             "font-size: 14px;\n"
-                                                             "padding: 4px 8px 4px 8px;")
         self.calc_result_cus_info_adr_from_opt.setAlignment(QtCore.Qt.AlignCenter)
         self.calc_result_cus_info_adr_from_opt.setObjectName("calc_result_cus_info_adr_from_opt")
         self.calc_result_cus_info_adr_from_layout.addWidget(self.calc_result_cus_info_adr_from_opt)
@@ -2667,22 +2210,18 @@ class Ui_MainWindow(object):
         self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_adr_from_1_label)
         self.calc_result_cus_info_adr_from_1_input = QtWidgets.QLineEdit(self.calc_result_cus_info_frame)
         self.calc_result_cus_info_adr_from_1_input.setMinimumSize(QtCore.QSize(526, 48))
-        self.calc_result_cus_info_adr_from_1_input.setText("")
         self.calc_result_cus_info_adr_from_1_input.setObjectName("calc_result_cus_info_adr_from_1_input")
         self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_adr_from_1_input)
+        spacerItem6 = QtWidgets.QSpacerItem(20, 10, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.calc_result_cus_info_layout.addItem(spacerItem6)
         self.calc_result_cus_info_adr_from_2_label = QtWidgets.QLabel(self.calc_result_cus_info_frame)
-        self.calc_result_cus_info_adr_from_2_label.setStyleSheet("margin-top: 10px;")
-        self.calc_result_cus_info_adr_from_2_label.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.calc_result_cus_info_adr_from_2_label.setObjectName("calc_result_cus_info_adr_from_2_label")
         self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_adr_from_2_label)
         self.calc_result_cus_info_adr_from_2_input = QtWidgets.QLineEdit(self.calc_result_cus_info_frame)
         self.calc_result_cus_info_adr_from_2_input.setMinimumSize(QtCore.QSize(526, 48))
-        self.calc_result_cus_info_adr_from_2_input.setText("")
         self.calc_result_cus_info_adr_from_2_input.setObjectName("calc_result_cus_info_adr_from_2_input")
         self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_adr_from_2_input)
         self.calc_result_cus_info_adr_to_frame = QtWidgets.QFrame(self.calc_result_cus_info_frame)
-        self.calc_result_cus_info_adr_to_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.calc_result_cus_info_adr_to_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.calc_result_cus_info_adr_to_frame.setObjectName("calc_result_cus_info_adr_to_frame")
         self.calc_result_cus_info_adr_to_layout = QtWidgets.QHBoxLayout(self.calc_result_cus_info_adr_to_frame)
         self.calc_result_cus_info_adr_to_layout.setContentsMargins(0, 35, 0, 10)
@@ -2694,11 +2233,6 @@ class Ui_MainWindow(object):
         self.calc_result_cus_info_adr_to_opt = QtWidgets.QLabel(self.calc_result_cus_info_adr_to_frame)
         self.calc_result_cus_info_adr_to_opt.setMinimumSize(QtCore.QSize(0, 0))
         self.calc_result_cus_info_adr_to_opt.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.calc_result_cus_info_adr_to_opt.setStyleSheet("background: #F2F3F6;\n"
-                                                           "border-radius: 4px;\n"
-                                                           "color: #757C9F;\n"
-                                                           "font-size: 14px;\n"
-                                                           "padding: 4px 8px 4px 8px;")
         self.calc_result_cus_info_adr_to_opt.setAlignment(QtCore.Qt.AlignCenter)
         self.calc_result_cus_info_adr_to_opt.setObjectName("calc_result_cus_info_adr_to_opt")
         self.calc_result_cus_info_adr_to_layout.addWidget(self.calc_result_cus_info_adr_to_opt)
@@ -2708,25 +2242,28 @@ class Ui_MainWindow(object):
         self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_adr_to_1_label)
         self.calc_result_cus_info_adr_to_1_input = QtWidgets.QLineEdit(self.calc_result_cus_info_frame)
         self.calc_result_cus_info_adr_to_1_input.setMinimumSize(QtCore.QSize(526, 48))
-        self.calc_result_cus_info_adr_to_1_input.setText("")
         self.calc_result_cus_info_adr_to_1_input.setObjectName("calc_result_cus_info_adr_to_1_input")
         self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_adr_to_1_input)
+        spacerItem7 = QtWidgets.QSpacerItem(20, 10, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.calc_result_cus_info_layout.addItem(spacerItem7)
         self.calc_result_cus_info_adr_to_2_label = QtWidgets.QLabel(self.calc_result_cus_info_frame)
-        self.calc_result_cus_info_adr_to_2_label.setStyleSheet("margin-top: 10px;")
         self.calc_result_cus_info_adr_to_2_label.setObjectName("calc_result_cus_info_adr_to_2_label")
         self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_adr_to_2_label)
         self.calc_result_cus_info_adr_to_2_input = QtWidgets.QLineEdit(self.calc_result_cus_info_frame)
         self.calc_result_cus_info_adr_to_2_input.setMinimumSize(QtCore.QSize(526, 48))
-        self.calc_result_cus_info_adr_to_2_input.setStyleSheet("")
-        self.calc_result_cus_info_adr_to_2_input.setText("")
         self.calc_result_cus_info_adr_to_2_input.setObjectName("calc_result_cus_info_adr_to_2_input")
         self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_adr_to_2_input)
-        spacerItem2 = QtWidgets.QSpacerItem(20, 25, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        self.calc_result_cus_info_layout.addItem(spacerItem2)
+        spacerItem8 = QtWidgets.QSpacerItem(20, 25, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.calc_result_cus_info_layout.addItem(spacerItem8)
         self.calc_result_cus_info_submit_btn = QtWidgets.QPushButton(self.calc_result_cus_info_frame)
         self.calc_result_cus_info_submit_btn.setMinimumSize(QtCore.QSize(164, 47))
         self.calc_result_cus_info_submit_btn.setMaximumSize(QtCore.QSize(164, 47))
-        self.calc_result_cus_info_submit_btn.setStyleSheet("")
+        font = QtGui.QFont()
+        font.setFamily("Inter")
+        font.setPointSize(-1)
+        font.setUnderline(False)
+        font.setStrikeOut(False)
+        self.calc_result_cus_info_submit_btn.setFont(font)
         self.calc_result_cus_info_submit_btn.setObjectName("calc_result_cus_info_submit_btn")
         self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_submit_btn)
         self.calc_result_customer_info_scroll_layout.addWidget(self.calc_result_cus_info_frame)
@@ -2739,7 +2276,6 @@ class Ui_MainWindow(object):
         self.calculator_layout.addWidget(self.calc_main_frame)
         self.content_pages.addWidget(self.calculator_page)
         self.profile_page = QtWidgets.QWidget()
-        self.profile_page.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.profile_page.setObjectName("profile_page")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.profile_page)
         self.verticalLayout.setContentsMargins(30, 25, 30, 30)
@@ -2757,57 +2293,6 @@ class Ui_MainWindow(object):
         self.profile_scroll_layout.setSpacing(0)
         self.profile_scroll_layout.setObjectName("profile_scroll_layout")
         self.profile_frame = QtWidgets.QFrame(self.profile_scroll_widget)
-        self.profile_frame.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
-        self.profile_frame.setStyleSheet("#profile_person_info, #profile_login_info {\n"
-                                         "    font-size: 19px;\n"
-                                         "    color: #070808;\n"
-                                         "    margin-top: 40px;\n"
-                                         "}\n"
-                                         "\n"
-                                         "#profile_name, #profile_role, #profile_pass, #profile_new_pass, #profile_new_pass2, #profile_email, #profile_new_email{\n"
-                                         "    font-size: 16px;\n"
-                                         "    color: #757C9F;\n"
-                                         "}\n"
-                                         "\n"
-                                         "QLineEdit {\n"
-                                         "    min-width: 363px;\n"
-                                         "    min-height: 46px;\n"
-                                         "    max-width: 363px;\n"
-                                         "    max-height: 46px;\n"
-                                         "    border-radius: 10px;\n"
-                                         "    border: 1px solid #B5B8C7;\n"
-                                         "    padding-left: 15px;\n"
-                                         "    padding-right: 15px;\n"
-                                         "    font-size: 16px;\n"
-                                         "}\n"
-                                         "\n"
-                                         "QLineEdit:hover {\n"
-                                         "    border: 1px solid #0915CC;\n"
-                                         "    background-color: #F2F3F6;\n"
-                                         "}\n"
-                                         "\n"
-                                         "QLineEdit:focus {\n"
-                                         "    border: 1px solid #0915CC;\n"
-                                         "    background-color: #F2F3F6;\n"
-                                         "}\n"
-                                         "\n"
-                                         "QLineEdit[error=true] {\n"
-                                         "    border: 1px solid #FF3C2F;\n"
-                                         "}\n"
-                                         "\n"
-                                         "QPushButton {\n"
-                                         "    background: transparent;\n"
-                                         "    text-decoration: underline;\n"
-                                         "    font-size: 14px;\n"
-                                         "    color: #0915CC;\n"
-                                         "}\n"
-                                         "\n"
-                                         "#profile_error_name, #profile_error_email, #profile_error_pass, #profile_error_pass2, #profile_error_old_pass {\n"
-                                         "    font-size: 14px;\n"
-                                         "    color: #FF3C2F;\n"
-                                         "}")
-        self.profile_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.profile_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.profile_frame.setObjectName("profile_frame")
         self.profile_layout = QtWidgets.QVBoxLayout(self.profile_frame)
         self.profile_layout.setContentsMargins(0, 0, 0, 0)
@@ -2815,8 +2300,6 @@ class Ui_MainWindow(object):
         self.profile_layout.setObjectName("profile_layout")
         self.profile_user_manage_frame = QtWidgets.QFrame(self.profile_frame)
         self.profile_user_manage_frame.setMinimumSize(QtCore.QSize(0, 50))
-        self.profile_user_manage_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.profile_user_manage_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.profile_user_manage_frame.setObjectName("profile_user_manage_frame")
         self.profile_user_manage_layout = QtWidgets.QHBoxLayout(self.profile_user_manage_frame)
         self.profile_user_manage_layout.setContentsMargins(0, 0, 0, 0)
@@ -2824,7 +2307,6 @@ class Ui_MainWindow(object):
         self.profile_user_manage_layout.setObjectName("profile_user_manage_layout")
         self.profile_user_manage_butt = QtWidgets.QPushButton(self.profile_user_manage_frame)
         self.profile_user_manage_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.profile_user_manage_butt.setStyleSheet("text-decoration: none;")
         self.profile_user_manage_butt.setObjectName("profile_user_manage_butt")
         self.profile_user_manage_layout.addWidget(self.profile_user_manage_butt)
         self.profile_small_header = QtWidgets.QLabel(self.profile_user_manage_frame)
@@ -2832,16 +2314,12 @@ class Ui_MainWindow(object):
         self.profile_user_manage_layout.addWidget(self.profile_small_header)
         self.profile_layout.addWidget(self.profile_user_manage_frame, 0, QtCore.Qt.AlignLeft)
         self.profile_top_frame = QtWidgets.QFrame(self.profile_frame)
-        self.profile_top_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.profile_top_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.profile_top_frame.setObjectName("profile_top_frame")
         self.profile_top_layout = QtWidgets.QHBoxLayout(self.profile_top_frame)
         self.profile_top_layout.setContentsMargins(0, 50, 15, 30)
         self.profile_top_layout.setSpacing(0)
         self.profile_top_layout.setObjectName("profile_top_layout")
         self.profile_top_name_frame = QtWidgets.QFrame(self.profile_top_frame)
-        self.profile_top_name_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.profile_top_name_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.profile_top_name_frame.setObjectName("profile_top_name_frame")
         self.profile_top_name_layout = QtWidgets.QHBoxLayout(self.profile_top_name_frame)
         self.profile_top_name_layout.setContentsMargins(0, 0, 0, 0)
@@ -2853,18 +2331,11 @@ class Ui_MainWindow(object):
         self.profile_role_label = QtWidgets.QLabel(self.profile_top_name_frame)
         self.profile_role_label.setMinimumSize(QtCore.QSize(58, 26))
         self.profile_role_label.setMaximumSize(QtCore.QSize(58, 26))
-        self.profile_role_label.setStyleSheet("background: #F2F3F6;\n"
-                                              "border-radius: 4px;\n"
-                                              "color: #757C9F;\n"
-                                              "font-size: 14px;")
         self.profile_role_label.setAlignment(QtCore.Qt.AlignCenter)
         self.profile_role_label.setObjectName("profile_role_label")
         self.profile_top_name_layout.addWidget(self.profile_role_label)
         self.profile_top_layout.addWidget(self.profile_top_name_frame, 0, QtCore.Qt.AlignLeft)
         self.profile_icon_frame = QtWidgets.QFrame(self.profile_top_frame)
-        self.profile_icon_frame.setStyleSheet("text-decoration: none;")
-        self.profile_icon_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.profile_icon_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.profile_icon_frame.setObjectName("profile_icon_frame")
         self.profile_icon_layout = QtWidgets.QHBoxLayout(self.profile_icon_frame)
         self.profile_icon_layout.setContentsMargins(0, 0, 0, 0)
@@ -2873,63 +2344,34 @@ class Ui_MainWindow(object):
         self.profile_delete_butt = QtWidgets.QPushButton(self.profile_icon_frame)
         self.profile_delete_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.profile_delete_butt.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.profile_delete_butt.setStyleSheet("QPushButton {\n"
-                                               "    background: transparent;\n"
-                                               "    font-size: 14px;\n"
-                                               "    color: #757C9F;\n"
-                                               "    qproperty-icon: url(:/image/delete_acc_icon_default.svg);\n"
-                                               "}\n"
-                                               "\n"
-                                               "QPushButton:hover {\n"
-                                               "    color: #FF3C2F;\n"
-                                               "}")
         self.profile_delete_butt.setIconSize(QtCore.QSize(24, 24))
         self.profile_delete_butt.setObjectName("profile_delete_butt")
         self.profile_icon_layout.addWidget(self.profile_delete_butt)
         self.profile_log_out_butt = QtWidgets.QPushButton(self.profile_icon_frame)
         self.profile_log_out_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.profile_log_out_butt.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.profile_log_out_butt.setStyleSheet("QPushButton {\n"
-                                                "    background: transparent;\n"
-                                                "    font-size: 14px;\n"
-                                                "    color: #757C9F;\n"
-                                                "    qproperty-icon: url(:/image/exit_app_default.svg);\n"
-                                                "}\n"
-                                                "\n"
-                                                "QPushButton:hover {\n"
-                                                "    color: #FF3C2F;\n"
-                                                "}")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(":/image/exit_app_default@2x.svg"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.profile_log_out_butt.setIcon(icon1)
         self.profile_log_out_butt.setIconSize(QtCore.QSize(16, 16))
         self.profile_log_out_butt.setObjectName("profile_log_out_butt")
         self.profile_icon_layout.addWidget(self.profile_log_out_butt)
         self.profile_top_layout.addWidget(self.profile_icon_frame, 0, QtCore.Qt.AlignRight)
         self.profile_layout.addWidget(self.profile_top_frame)
         self.line = QtWidgets.QFrame(self.profile_frame)
-        self.line.setStyleSheet("color: #B5B8C7;")
         self.line.setFrameShadow(QtWidgets.QFrame.Raised)
         self.line.setFrameShape(QtWidgets.QFrame.HLine)
         self.line.setObjectName("line")
         self.profile_layout.addWidget(self.line)
         self.profile_person_info = QtWidgets.QLabel(self.profile_frame)
         self.profile_person_info.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.profile_person_info.setStyleSheet("")
         self.profile_person_info.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.profile_person_info.setObjectName("profile_person_info")
         self.profile_layout.addWidget(self.profile_person_info)
         self.profile_name_frame_2 = QtWidgets.QFrame(self.profile_frame)
-        self.profile_name_frame_2.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.profile_name_frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.profile_name_frame_2.setObjectName("profile_name_frame_2")
         self.profile_name_role_layout = QtWidgets.QHBoxLayout(self.profile_name_frame_2)
         self.profile_name_role_layout.setContentsMargins(0, 15, 0, 0)
         self.profile_name_role_layout.setSpacing(20)
         self.profile_name_role_layout.setObjectName("profile_name_role_layout")
         self.profile_name_frame = QtWidgets.QFrame(self.profile_name_frame_2)
-        self.profile_name_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.profile_name_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.profile_name_frame.setObjectName("profile_name_frame")
         self.profile_name_layout = QtWidgets.QVBoxLayout(self.profile_name_frame)
         self.profile_name_layout.setContentsMargins(0, 0, 0, 0)
@@ -2939,19 +2381,15 @@ class Ui_MainWindow(object):
         self.profile_name.setObjectName("profile_name")
         self.profile_name_layout.addWidget(self.profile_name)
         self.profile_name_input = QtWidgets.QLineEdit(self.profile_name_frame)
+        self.profile_name_input.setMinimumSize(QtCore.QSize(395, 48))
         self.profile_name_input.setObjectName("profile_name_input")
         self.profile_name_layout.addWidget(self.profile_name_input)
         self.profile_error_name = QtWidgets.QLabel(self.profile_name_frame)
-        self.profile_error_name.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.profile_error_name.setStyleSheet("")
-        self.profile_error_name.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.profile_error_name.setObjectName("profile_error_name")
         self.profile_name_layout.addWidget(self.profile_error_name)
         self.profile_name_role_layout.addWidget(self.profile_name_frame)
         self.profile_layout.addWidget(self.profile_name_frame_2, 0, QtCore.Qt.AlignLeft)
         self.profile_role_frame = QtWidgets.QFrame(self.profile_frame)
-        self.profile_role_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.profile_role_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.profile_role_frame.setObjectName("profile_role_frame")
         self.profile_role_layout = QtWidgets.QVBoxLayout(self.profile_role_frame)
         self.profile_role_layout.setContentsMargins(0, 20, 0, 0)
@@ -2963,58 +2401,7 @@ class Ui_MainWindow(object):
         self.role_combobox = QtWidgets.QComboBox(self.profile_role_frame)
         self.role_combobox.setMinimumSize(QtCore.QSize(0, 48))
         self.role_combobox.setMaximumSize(QtCore.QSize(395, 48))
-        self.role_combobox.setStyleSheet("QComboBox {\n"
-                                         "    border-radius: 10px;\n"
-                                         "    border: 1px solid #B5B8C7;\n"
-                                         "    padding-left: 15px;\n"
-                                         "    padding-right: 15px;\n"
-                                         "    font-size: 16px;\n"
-                                         "    color: #757C9F;\n"
-                                         "}\n"
-                                         "\n"
-                                         "QComboBox:hover {\n"
-                                         "    border: 1px solid #0915CC;\n"
-                                         "    background: #F2F3F6;\n"
-                                         "}\n"
-                                         "\n"
-                                         "QComboBox::drop-down {\n"
-                                         "    border-top-right-radius: 3px;\n"
-                                         "    border-bottom-right-radius: 3px;\n"
-                                         "}\n"
-                                         "\n"
-                                         "QComboBox::down-arrow {\n"
-                                         "    padding-right: 20px;\n"
-                                         "    image: url(:/image/arrow_drop_down.svg);\n"
-                                         "}\n"
-                                         "\n"
-                                         "QComboBox QAbstractItemView\n"
-                                         "{\n"
-                                         "    background: #F9FAFB;\n"
-                                         "    padding-left: 7px;\n"
-                                         "    padding-right: 7px;\n"
-                                         "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                         "    border-radius: 8px;\n"
-                                         "    outline: 0;\n"
-                                         "}\n"
-                                         "\n"
-                                         "QComboBox QAbstractItemView::item { \n"
-                                         "    min-height: 35px;\n"
-                                         "    padding-left: 15px;\n"
-                                         "    background: #F9FAFB;\n"
-                                         "    color: #070808;\n"
-                                         "}\n"
-                                         "\n"
-                                         "QListView::item:selected { \n"
-                                         "    color: #0915CC; \n"
-                                         "    background-color: #F2F3F6; \n"
-                                         "    border-radius: 4px;\n"
-                                         "}\n"
-                                         "\n"
-                                         "")
-        self.role_combobox.setCurrentText("")
-        self.role_combobox.setPlaceholderText("")
-        self.role_combobox.setDuplicatesEnabled(True)
-        self.role_combobox.setFrame(True)
+        self.role_combobox.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.role_combobox.setObjectName("role_combobox")
         self.profile_role_layout.addWidget(self.role_combobox)
         self.profile_layout.addWidget(self.profile_role_frame)
@@ -3022,48 +2409,40 @@ class Ui_MainWindow(object):
         self.profile_login_info.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.profile_login_info.setObjectName("profile_login_info")
         self.profile_layout.addWidget(self.profile_login_info)
+        spacerItem9 = QtWidgets.QSpacerItem(20, 15, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.profile_layout.addItem(spacerItem9)
         self.profile_pass = QtWidgets.QLabel(self.profile_frame)
-        self.profile_pass.setStyleSheet("margin-top: 15px;")
-        self.profile_pass.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.profile_pass.setObjectName("profile_pass")
         self.profile_layout.addWidget(self.profile_pass)
         self.profile_pass_frame = QtWidgets.QFrame(self.profile_frame)
-        self.profile_pass_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.profile_pass_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.profile_pass_frame.setObjectName("profile_pass_frame")
         self.profile_pass_layout = QtWidgets.QHBoxLayout(self.profile_pass_frame)
         self.profile_pass_layout.setContentsMargins(0, 5, 0, 0)
         self.profile_pass_layout.setSpacing(20)
         self.profile_pass_layout.setObjectName("profile_pass_layout")
         self.profile_pass_input = QtWidgets.QLineEdit(self.profile_pass_frame)
-        self.profile_pass_input.setText("")
+        self.profile_pass_input.setMinimumSize(QtCore.QSize(395, 48))
         self.profile_pass_input.setEchoMode(QtWidgets.QLineEdit.Password)
         self.profile_pass_input.setObjectName("profile_pass_input")
         self.profile_pass_layout.addWidget(self.profile_pass_input)
         self.profile_change_pass_butt = QtWidgets.QPushButton(self.profile_pass_frame)
         self.profile_change_pass_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.profile_change_pass_butt.setStyleSheet("margin-top: 1px;")
         self.profile_change_pass_butt.setObjectName("profile_change_pass_butt")
         self.profile_pass_layout.addWidget(self.profile_change_pass_butt)
         self.profile_layout.addWidget(self.profile_pass_frame, 0, QtCore.Qt.AlignLeft)
+        spacerItem10 = QtWidgets.QSpacerItem(20, 5, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.profile_layout.addItem(spacerItem10)
         self.profile_error_old_pass = QtWidgets.QLabel(self.profile_frame)
-        self.profile_error_old_pass.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.profile_error_old_pass.setStyleSheet("margin-top: 5px;")
-        self.profile_error_old_pass.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.profile_error_old_pass.setObjectName("profile_error_old_pass")
         self.profile_layout.addWidget(self.profile_error_old_pass)
         self.profile_new_pass_frame = QtWidgets.QFrame(self.profile_frame)
         self.profile_new_pass_frame.setMinimumSize(QtCore.QSize(0, 100))
-        self.profile_new_pass_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.profile_new_pass_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.profile_new_pass_frame.setObjectName("profile_new_pass_frame")
         self.profile_new_pass_layout = QtWidgets.QHBoxLayout(self.profile_new_pass_frame)
         self.profile_new_pass_layout.setContentsMargins(0, 15, 0, 0)
         self.profile_new_pass_layout.setSpacing(20)
         self.profile_new_pass_layout.setObjectName("profile_new_pass_layout")
         self.profile_new_pass_inframe = QtWidgets.QFrame(self.profile_new_pass_frame)
-        self.profile_new_pass_inframe.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.profile_new_pass_inframe.setFrameShadow(QtWidgets.QFrame.Raised)
         self.profile_new_pass_inframe.setObjectName("profile_new_pass_inframe")
         self.profile_new_pass_inlayout = QtWidgets.QVBoxLayout(self.profile_new_pass_inframe)
         self.profile_new_pass_inlayout.setContentsMargins(0, 0, 0, 0)
@@ -3073,23 +2452,19 @@ class Ui_MainWindow(object):
         self.profile_new_pass.setObjectName("profile_new_pass")
         self.profile_new_pass_inlayout.addWidget(self.profile_new_pass)
         self.profile_new_pass_input = QtWidgets.QLineEdit(self.profile_new_pass_inframe)
+        self.profile_new_pass_input.setMinimumSize(QtCore.QSize(395, 48))
         self.profile_new_pass_input.setEchoMode(QtWidgets.QLineEdit.Password)
         self.profile_new_pass_input.setObjectName("profile_new_pass_input")
         self.profile_new_pass_inlayout.addWidget(self.profile_new_pass_input)
         self.profile_error_pass = QtWidgets.QLabel(self.profile_new_pass_inframe)
         self.profile_error_pass.setMinimumSize(QtCore.QSize(0, 35))
         self.profile_error_pass.setMaximumSize(QtCore.QSize(395, 16777215))
-        self.profile_error_pass.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.profile_error_pass.setStyleSheet("")
-        self.profile_error_pass.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.profile_error_pass.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
         self.profile_error_pass.setWordWrap(True)
         self.profile_error_pass.setObjectName("profile_error_pass")
         self.profile_new_pass_inlayout.addWidget(self.profile_error_pass)
         self.profile_new_pass_layout.addWidget(self.profile_new_pass_inframe, 0, QtCore.Qt.AlignTop)
         self.profile_new_pass2_inframe = QtWidgets.QFrame(self.profile_new_pass_frame)
-        self.profile_new_pass2_inframe.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.profile_new_pass2_inframe.setFrameShadow(QtWidgets.QFrame.Raised)
         self.profile_new_pass2_inframe.setObjectName("profile_new_pass2_inframe")
         self.profile_new_pass2_inlayout = QtWidgets.QVBoxLayout(self.profile_new_pass2_inframe)
         self.profile_new_pass2_inlayout.setContentsMargins(0, 0, 0, 0)
@@ -3099,25 +2474,20 @@ class Ui_MainWindow(object):
         self.profile_new_pass2.setObjectName("profile_new_pass2")
         self.profile_new_pass2_inlayout.addWidget(self.profile_new_pass2)
         self.profile_new_pass2_input = QtWidgets.QLineEdit(self.profile_new_pass2_inframe)
+        self.profile_new_pass2_input.setMinimumSize(QtCore.QSize(395, 48))
         self.profile_new_pass2_input.setEchoMode(QtWidgets.QLineEdit.Password)
         self.profile_new_pass2_input.setObjectName("profile_new_pass2_input")
         self.profile_new_pass2_inlayout.addWidget(self.profile_new_pass2_input)
         self.profile_error_pass2 = QtWidgets.QLabel(self.profile_new_pass2_inframe)
-        self.profile_error_pass2.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.profile_error_pass2.setStyleSheet("")
-        self.profile_error_pass2.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.profile_error_pass2.setObjectName("profile_error_pass2")
         self.profile_new_pass2_inlayout.addWidget(self.profile_error_pass2)
         self.profile_new_pass_layout.addWidget(self.profile_new_pass2_inframe, 0, QtCore.Qt.AlignTop)
         self.profile_pass_cancel_butt = QtWidgets.QPushButton(self.profile_new_pass_frame)
         self.profile_pass_cancel_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.profile_pass_cancel_butt.setStyleSheet("margin-top: 25px;")
         self.profile_pass_cancel_butt.setObjectName("profile_pass_cancel_butt")
         self.profile_new_pass_layout.addWidget(self.profile_pass_cancel_butt, 0, QtCore.Qt.AlignVCenter)
         self.profile_layout.addWidget(self.profile_new_pass_frame, 0, QtCore.Qt.AlignLeft)
         self.profile_email_frame = QtWidgets.QFrame(self.profile_frame)
-        self.profile_email_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.profile_email_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.profile_email_frame.setObjectName("profile_email_frame")
         self.profile_email_layout = QtWidgets.QHBoxLayout(self.profile_email_frame)
         self.profile_email_layout.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
@@ -3125,81 +2495,49 @@ class Ui_MainWindow(object):
         self.profile_email_layout.setSpacing(20)
         self.profile_email_layout.setObjectName("profile_email_layout")
         self.profile_old_email_frame = QtWidgets.QFrame(self.profile_email_frame)
-        self.profile_old_email_frame.setMinimumSize(QtCore.QSize(0, 0))
-        self.profile_old_email_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.profile_old_email_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.profile_old_email_frame.setObjectName("profile_old_email_frame")
         self.profile_old_email_layout = QtWidgets.QVBoxLayout(self.profile_old_email_frame)
         self.profile_old_email_layout.setContentsMargins(0, 0, 0, 0)
         self.profile_old_email_layout.setSpacing(5)
         self.profile_old_email_layout.setObjectName("profile_old_email_layout")
         self.profile_email = QtWidgets.QLabel(self.profile_old_email_frame)
-        self.profile_email.setStyleSheet("")
-        self.profile_email.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.profile_email.setObjectName("profile_email")
         self.profile_old_email_layout.addWidget(self.profile_email)
         self.profile_email_field = QtWidgets.QLabel(self.profile_old_email_frame)
-        self.profile_email_field.setStyleSheet("min-width: 363px;\n"
-                                               "min-height: 46px;\n"
-                                               "max-width: 363px;\n"
-                                               "max-height: 46px;\n"
-                                               "border-radius: 10px;\n"
-                                               "border: 1px solid #B5B8C7;\n"
-                                               "padding-left: 15px;\n"
-                                               "padding-right: 15px;\n"
-                                               "font-size: 16px;\n"
-                                               "color: #757C9F;")
-        self.profile_email_field.setText("")
+        self.profile_email_field.setMinimumSize(QtCore.QSize(395, 48))
         self.profile_email_field.setObjectName("profile_email_field")
         self.profile_old_email_layout.addWidget(self.profile_email_field)
         self.profile_email_layout.addWidget(self.profile_old_email_frame, 0, QtCore.Qt.AlignTop)
         self.profile_new_email_frame = QtWidgets.QFrame(self.profile_email_frame)
-        self.profile_new_email_frame.setMinimumSize(QtCore.QSize(0, 0))
-        self.profile_new_email_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.profile_new_email_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.profile_new_email_frame.setObjectName("profile_new_email_frame")
         self.profile_new_email_layout = QtWidgets.QVBoxLayout(self.profile_new_email_frame)
         self.profile_new_email_layout.setContentsMargins(0, 0, 0, 0)
         self.profile_new_email_layout.setSpacing(5)
         self.profile_new_email_layout.setObjectName("profile_new_email_layout")
         self.profile_new_email = QtWidgets.QLabel(self.profile_new_email_frame)
-        self.profile_new_email.setStyleSheet("")
-        self.profile_new_email.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.profile_new_email.setObjectName("profile_new_email")
         self.profile_new_email_layout.addWidget(self.profile_new_email)
         self.profile_new_email2_frame = QtWidgets.QFrame(self.profile_new_email_frame)
-        self.profile_new_email2_frame.setMinimumSize(QtCore.QSize(0, 0))
-        self.profile_new_email2_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.profile_new_email2_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.profile_new_email2_frame.setObjectName("profile_new_email2_frame")
         self.profile_new_email2_layout = QtWidgets.QHBoxLayout(self.profile_new_email2_frame)
         self.profile_new_email2_layout.setContentsMargins(0, 0, 0, 0)
         self.profile_new_email2_layout.setSpacing(20)
         self.profile_new_email2_layout.setObjectName("profile_new_email2_layout")
         self.profile_new_email_input = QtWidgets.QLineEdit(self.profile_new_email2_frame)
+        self.profile_new_email_input.setMinimumSize(QtCore.QSize(395, 48))
         self.profile_new_email_input.setObjectName("profile_new_email_input")
         self.profile_new_email2_layout.addWidget(self.profile_new_email_input)
         self.profile_email_cancel_butt = QtWidgets.QPushButton(self.profile_new_email2_frame)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.profile_email_cancel_butt.sizePolicy().hasHeightForWidth())
-        self.profile_email_cancel_butt.setSizePolicy(sizePolicy)
         self.profile_email_cancel_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.profile_email_cancel_butt.setStyleSheet("margin-top: 1px;")
         self.profile_email_cancel_butt.setObjectName("profile_email_cancel_butt")
         self.profile_new_email2_layout.addWidget(self.profile_email_cancel_butt)
         self.profile_new_email_layout.addWidget(self.profile_new_email2_frame)
         self.profile_error_email = QtWidgets.QLabel(self.profile_new_email_frame)
-        self.profile_error_email.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.profile_error_email.setStyleSheet("")
-        self.profile_error_email.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.profile_error_email.setObjectName("profile_error_email")
         self.profile_new_email_layout.addWidget(self.profile_error_email)
         self.profile_email_layout.addWidget(self.profile_new_email_frame)
         self.profile_change_email_butt = QtWidgets.QPushButton(self.profile_email_frame)
         self.profile_change_email_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.profile_change_email_butt.setStyleSheet("margin-top: 26px;")
         self.profile_change_email_butt.setObjectName("profile_change_email_butt")
         self.profile_email_layout.addWidget(self.profile_change_email_butt)
         self.profile_layout.addWidget(self.profile_email_frame, 0, QtCore.Qt.AlignLeft)
@@ -3207,17 +2545,6 @@ class Ui_MainWindow(object):
         self.profile_save_butt.setMinimumSize(QtCore.QSize(116, 47))
         self.profile_save_butt.setMaximumSize(QtCore.QSize(116, 47))
         self.profile_save_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.profile_save_butt.setStyleSheet("QPushButton {\n"
-                                             "    border-radius: 10px;\n"
-                                             "    font-size: 15px;\n"
-                                             "    color: #FFFFFF;\n"
-                                             "    background: #0915CC;\n"
-                                             "    text-decoration: none;\n"
-                                             "}\n"
-                                             "\n"
-                                             "QPushButton:hover {\n"
-                                             "background: rgba(9, 21, 204, 0.8);\n"
-                                             "}")
         self.profile_save_butt.setObjectName("profile_save_butt")
         self.profile_layout.addWidget(self.profile_save_butt)
         self.profile_scroll_layout.addWidget(self.profile_frame, 0, QtCore.Qt.AlignTop)
@@ -3225,15 +2552,12 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.profile_scroll_area)
         self.content_pages.addWidget(self.profile_page)
         self.user_management_page = QtWidgets.QWidget()
-        self.user_management_page.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.user_management_page.setObjectName("user_management_page")
         self.user_management_layout = QtWidgets.QVBoxLayout(self.user_management_page)
         self.user_management_layout.setContentsMargins(30, 25, 30, 33)
         self.user_management_layout.setSpacing(0)
         self.user_management_layout.setObjectName("user_management_layout")
         self.user_manage_main_frame = QtWidgets.QFrame(self.user_management_page)
-        self.user_manage_main_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.user_manage_main_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.user_manage_main_frame.setObjectName("user_manage_main_frame")
         self.user_manage_main_layout = QtWidgets.QVBoxLayout(self.user_manage_main_frame)
         self.user_manage_main_layout.setContentsMargins(0, 0, 0, 0)
@@ -3244,13 +2568,9 @@ class Ui_MainWindow(object):
         font.setFamily("Inter")
         font.setPointSize(-1)
         self.user_manage_small_header.setFont(font)
-        self.user_manage_small_header.setStyleSheet("")
-        self.user_manage_small_header.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
         self.user_manage_small_header.setObjectName("user_manage_small_header")
         self.user_manage_main_layout.addWidget(self.user_manage_small_header)
         self.user_manage_middle_frame = QtWidgets.QFrame(self.user_manage_main_frame)
-        self.user_manage_middle_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.user_manage_middle_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.user_manage_middle_frame.setObjectName("user_manage_middle_frame")
         self.user_manage_middle_layout = QtWidgets.QHBoxLayout(self.user_manage_middle_frame)
         self.user_manage_middle_layout.setContentsMargins(0, 50, 0, 50)
@@ -3263,8 +2583,6 @@ class Ui_MainWindow(object):
         font.setBold(False)
         font.setWeight(50)
         self.user_manage_header.setFont(font)
-        self.user_manage_header.setStyleSheet("")
-        self.user_manage_header.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.user_manage_header.setObjectName("user_manage_header")
         self.user_manage_middle_layout.addWidget(self.user_manage_header)
         self.user_manage_add_butt = QtWidgets.QPushButton(self.user_manage_middle_frame)
@@ -3277,29 +2595,12 @@ class Ui_MainWindow(object):
         self.user_manage_add_butt.setFont(font)
         self.user_manage_add_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.user_manage_add_butt.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.user_manage_add_butt.setStyleSheet("QPushButton {\n"
-                                                "    background: #0915CC;\n"
-                                                "    border-radius: 5px;\n"
-                                                "    color: #F2F3F6;\n"
-                                                "    qproperty-icon: url(:/image/person_add.svg);\n"
-                                                "    font-size: 14px;\n"
-                                                "}\n"
-                                                "\n"
-                                                "QPushButton:hover {\n"
-                                                "    background: rgba(9, 21, 204, 0.8);\n"
-                                                "}\n"
-                                                "")
         self.user_manage_add_butt.setIconSize(QtCore.QSize(20, 15))
-        self.user_manage_add_butt.setCheckable(False)
         self.user_manage_add_butt.setChecked(False)
         self.user_manage_add_butt.setObjectName("user_manage_add_butt")
         self.user_manage_middle_layout.addWidget(self.user_manage_add_butt)
         self.user_manage_main_layout.addWidget(self.user_manage_middle_frame)
         self.user_manage_table_head_frame = QtWidgets.QFrame(self.user_manage_main_frame)
-        self.user_manage_table_head_frame.setStyleSheet("color: #757C9F;\n"
-                                                        "font-size: 14px;")
-        self.user_manage_table_head_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.user_manage_table_head_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.user_manage_table_head_frame.setObjectName("user_manage_table_head_frame")
         self.user_manage_table_head_layout = QtWidgets.QHBoxLayout(self.user_manage_table_head_frame)
         self.user_manage_table_head_layout.setContentsMargins(0, 0, 0, 10)
@@ -3326,31 +2627,19 @@ class Ui_MainWindow(object):
         self.user_manage_scroll_area.setWidgetResizable(True)
         self.user_manage_scroll_area.setObjectName("user_manage_scroll_area")
         self.user_manage_scroll_widget = QtWidgets.QWidget()
-        self.user_manage_scroll_widget.setGeometry(QtCore.QRect(0, 0, 40, 16))
+        self.user_manage_scroll_widget.setGeometry(QtCore.QRect(0, 0, 100, 30))
         self.user_manage_scroll_widget.setObjectName("user_manage_scroll_widget")
         self.user_manage_scroll_layout = QtWidgets.QVBoxLayout(self.user_manage_scroll_widget)
         self.user_manage_scroll_layout.setContentsMargins(0, 0, 0, 0)
         self.user_manage_scroll_layout.setSpacing(0)
         self.user_manage_scroll_layout.setObjectName("user_manage_scroll_layout")
         self.user_manage_scroll_frame2 = QtWidgets.QFrame(self.user_manage_scroll_widget)
-        self.user_manage_scroll_frame2.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.user_manage_scroll_frame2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.user_manage_scroll_frame2.setObjectName("user_manage_scroll_frame2")
         self.user_manage_scroll_layout2 = QtWidgets.QVBoxLayout(self.user_manage_scroll_frame2)
         self.user_manage_scroll_layout2.setContentsMargins(0, 0, 0, 0)
         self.user_manage_scroll_layout2.setSpacing(0)
         self.user_manage_scroll_layout2.setObjectName("user_manage_scroll_layout2")
         self.user_manage_clear_frame = QtWidgets.QFrame(self.user_manage_scroll_frame2)
-        self.user_manage_clear_frame.setMinimumSize(QtCore.QSize(0, 0))
-        self.user_manage_clear_frame.setStyleSheet("QPushButton {\n"
-                                                   "    background: transparent;\n"
-                                                   "}\n"
-                                                   "\n"
-                                                   "QLabel {\n"
-                                                   "    font-size: 14px;\n"
-                                                   "}")
-        self.user_manage_clear_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.user_manage_clear_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.user_manage_clear_frame.setObjectName("user_manage_clear_frame")
         self.user_manage_clear_layout = QtWidgets.QVBoxLayout(self.user_manage_clear_frame)
         self.user_manage_clear_layout.setContentsMargins(0, 0, 0, 0)
@@ -3368,10 +2657,6 @@ class Ui_MainWindow(object):
         self.equipment_layout.setSpacing(0)
         self.equipment_layout.setObjectName("equipment_layout")
         self.Equip_top_frame = QtWidgets.QFrame(self.equipment_page)
-        self.Equip_top_frame.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.Equip_top_frame.setStyleSheet("")
-        self.Equip_top_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.Equip_top_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.Equip_top_frame.setObjectName("Equip_top_frame")
         self.Equip_top_layout = QtWidgets.QVBoxLayout(self.Equip_top_frame)
         self.Equip_top_layout.setContentsMargins(30, 25, 15, 0)
@@ -3381,8 +2666,6 @@ class Ui_MainWindow(object):
         self.equip_small_header.setObjectName("equip_small_header")
         self.Equip_top_layout.addWidget(self.equip_small_header)
         self.equip_middle_frame = QtWidgets.QFrame(self.Equip_top_frame)
-        self.equip_middle_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.equip_middle_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.equip_middle_frame.setObjectName("equip_middle_frame")
         self.equip_middle_layout = QtWidgets.QHBoxLayout(self.equip_middle_frame)
         self.equip_middle_layout.setContentsMargins(0, 50, 15, 30)
@@ -3396,19 +2679,6 @@ class Ui_MainWindow(object):
         self.equip_new_asset_type_butt.setMaximumSize(QtCore.QSize(165, 36))
         self.equip_new_asset_type_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.equip_new_asset_type_butt.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.equip_new_asset_type_butt.setStyleSheet("QPushButton {\n"
-                                                     "    border-radius: 5px;\n"
-                                                     "    border: 0.5px solid #0915CC;\n"
-                                                     "    color: #0915CC;\n"
-                                                     "    qproperty-icon: url(:/image/plus_blue_icon.svg);\n"
-                                                     "    font-size: 14px;\n"
-                                                     "}\n"
-                                                     "\n"
-                                                     "QPushButton:hover {\n"
-                                                     "    border: 0.5px solid rgba(9, 21, 204, 0.8);\n"
-                                                     "    color: rgba(9, 21, 204, 0.8);\n"
-                                                     "}\n"
-                                                     "")
         self.equip_new_asset_type_butt.setIconSize(QtCore.QSize(24, 24))
         self.equip_new_asset_type_butt.setObjectName("equip_new_asset_type_butt")
         self.equip_middle_layout.addWidget(self.equip_new_asset_type_butt, 0, QtCore.Qt.AlignRight)
@@ -3417,18 +2687,6 @@ class Ui_MainWindow(object):
         self.equip_new_asset_butt.setMaximumSize(QtCore.QSize(128, 36))
         self.equip_new_asset_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.equip_new_asset_butt.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.equip_new_asset_butt.setStyleSheet("QPushButton {\n"
-                                                "    background: #0915CC;\n"
-                                                "    border-radius: 5px;\n"
-                                                "    color: #F2F3F6;\n"
-                                                "    qproperty-icon: url(:/image/plus_white_icon.svg);\n"
-                                                "    font-size: 14px;\n"
-                                                "}\n"
-                                                "\n"
-                                                "QPushButton:hover {\n"
-                                                "    background: rgba(9, 21, 204, 0.8);\n"
-                                                "}\n"
-                                                "")
         self.equip_new_asset_butt.setIconSize(QtCore.QSize(14, 14))
         self.equip_new_asset_butt.setObjectName("equip_new_asset_butt")
         self.equip_middle_layout.addWidget(self.equip_new_asset_butt, 0, QtCore.Qt.AlignRight)
@@ -3437,36 +2695,12 @@ class Ui_MainWindow(object):
         self.equip_bottom_frame = QtWidgets.QFrame(self.Equip_top_frame)
         self.equip_bottom_frame.setMinimumSize(QtCore.QSize(0, 40))
         self.equip_bottom_frame.setMaximumSize(QtCore.QSize(16777215, 40))
-        self.equip_bottom_frame.setStyleSheet("QLabel {\n"
-                                              "    background: #0915CC;\n"
-                                              "    border-top-left-radius: 3px;\n"
-                                              "    border-top-right-radius: 3px;\n"
-                                              "}\n"
-                                              "\n"
-                                              "QPushButton {\n"
-                                              "    background: transparent;\n"
-                                              "    font-size: 14px;\n"
-                                              "    color: #757C9F;\n"
-                                              "    outline: 0;\n"
-                                              "}\n"
-                                              "\n"
-                                              "QPushButton:hover {\n"
-                                              "    color: #0915CC;\n"
-                                              "}\n"
-                                              "\n"
-                                              "QPushButton[selected=true] {\n"
-                                              "    color: #0915CC;\n"
-                                              "}")
-        self.equip_bottom_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.equip_bottom_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.equip_bottom_frame.setObjectName("equip_bottom_frame")
         self.equip_bottom_layout = QtWidgets.QHBoxLayout(self.equip_bottom_frame)
         self.equip_bottom_layout.setContentsMargins(0, 0, 0, 0)
         self.equip_bottom_layout.setSpacing(20)
         self.equip_bottom_layout.setObjectName("equip_bottom_layout")
         self.equip_asset_frame = QtWidgets.QFrame(self.equip_bottom_frame)
-        self.equip_asset_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.equip_asset_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.equip_asset_frame.setMidLineWidth(0)
         self.equip_asset_frame.setObjectName("equip_asset_frame")
         self.equip_asset_layout = QtWidgets.QVBoxLayout(self.equip_asset_frame)
@@ -3475,7 +2709,6 @@ class Ui_MainWindow(object):
         self.equip_asset_layout.setObjectName("equip_asset_layout")
         self.equip_asset_butt = QtWidgets.QPushButton(self.equip_asset_frame)
         self.equip_asset_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.equip_asset_butt.setStyleSheet("")
         self.equip_asset_butt.setCheckable(True)
         self.equip_asset_butt.setObjectName("equip_asset_butt")
         self.equip_asset_layout.addWidget(self.equip_asset_butt, 0, QtCore.Qt.AlignTop)
@@ -3487,17 +2720,11 @@ class Ui_MainWindow(object):
         self.equip_asset_line.setSizePolicy(sizePolicy)
         self.equip_asset_line.setMinimumSize(QtCore.QSize(0, 3))
         self.equip_asset_line.setMaximumSize(QtCore.QSize(16777215, 3))
-        self.equip_asset_line.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
-        self.equip_asset_line.setStyleSheet("")
-        self.equip_asset_line.setText("")
-        self.equip_asset_line.setTextInteractionFlags(QtCore.Qt.LinksAccessibleByMouse)
         self.equip_asset_line.setObjectName("equip_asset_line")
         self.equip_asset_layout.addWidget(self.equip_asset_line)
         self.equip_asset_layout.setStretch(0, 2)
         self.equip_bottom_layout.addWidget(self.equip_asset_frame)
         self.equip_asset_type_frame = QtWidgets.QFrame(self.equip_bottom_frame)
-        self.equip_asset_type_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.equip_asset_type_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.equip_asset_type_frame.setMidLineWidth(0)
         self.equip_asset_type_frame.setObjectName("equip_asset_type_frame")
         self.equip_asset_type_layout = QtWidgets.QVBoxLayout(self.equip_asset_type_frame)
@@ -3506,7 +2733,6 @@ class Ui_MainWindow(object):
         self.equip_asset_type_layout.setObjectName("equip_asset_type_layout")
         self.equip_asset_type_butt = QtWidgets.QPushButton(self.equip_asset_type_frame)
         self.equip_asset_type_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.equip_asset_type_butt.setStyleSheet("")
         self.equip_asset_type_butt.setCheckable(True)
         self.equip_asset_type_butt.setObjectName("equip_asset_type_butt")
         self.equip_asset_type_layout.addWidget(self.equip_asset_type_butt, 0, QtCore.Qt.AlignTop)
@@ -3518,10 +2744,6 @@ class Ui_MainWindow(object):
         self.equip_asset_type_line.setSizePolicy(sizePolicy)
         self.equip_asset_type_line.setMinimumSize(QtCore.QSize(0, 3))
         self.equip_asset_type_line.setMaximumSize(QtCore.QSize(16777215, 3))
-        self.equip_asset_type_line.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
-        self.equip_asset_type_line.setStyleSheet("")
-        self.equip_asset_type_line.setText("")
-        self.equip_asset_type_line.setTextInteractionFlags(QtCore.Qt.LinksAccessibleByMouse)
         self.equip_asset_type_line.setObjectName("equip_asset_type_line")
         self.equip_asset_type_layout.addWidget(self.equip_asset_type_line)
         self.equip_asset_type_layout.setStretch(0, 2)
@@ -3541,15 +2763,13 @@ class Ui_MainWindow(object):
         self.equip_truck_scrollarea.setWidgetResizable(True)
         self.equip_truck_scrollarea.setObjectName("equip_truck_scrollarea")
         self.equip_truck_scroll_widget = QtWidgets.QWidget()
-        self.equip_truck_scroll_widget.setGeometry(QtCore.QRect(0, 0, 1366, 594))
+        self.equip_truck_scroll_widget.setGeometry(QtCore.QRect(0, 0, 100, 30))
         self.equip_truck_scroll_widget.setObjectName("equip_truck_scroll_widget")
         self.equip_truck_scroll_layout = QtWidgets.QVBoxLayout(self.equip_truck_scroll_widget)
         self.equip_truck_scroll_layout.setContentsMargins(30, 10, 15, 0)
         self.equip_truck_scroll_layout.setSpacing(0)
         self.equip_truck_scroll_layout.setObjectName("equip_truck_scroll_layout")
         self.equip_truck_main_frame = QtWidgets.QFrame(self.equip_truck_scroll_widget)
-        self.equip_truck_main_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.equip_truck_main_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.equip_truck_main_frame.setObjectName("equip_truck_main_frame")
         self.equip_truck_scroll_layout.addWidget(self.equip_truck_main_frame)
         self.equip_truck_scrollarea.setWidget(self.equip_truck_scroll_widget)
@@ -3573,8 +2793,6 @@ class Ui_MainWindow(object):
         self.equip_truck_type_scroll_layout.setSpacing(0)
         self.equip_truck_type_scroll_layout.setObjectName("equip_truck_type_scroll_layout")
         self.equip_truck_type_main_frame = QtWidgets.QFrame(self.equip_truck_type_scroll_widget)
-        self.equip_truck_type_main_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.equip_truck_type_main_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.equip_truck_type_main_frame.setObjectName("equip_truck_type_main_frame")
         self.equip_truck_type_scroll_layout.addWidget(self.equip_truck_type_main_frame)
         self.equip_truck_type_scrollarea.setWidget(self.equip_truck_type_scroll_widget)
@@ -3589,17 +2807,6 @@ class Ui_MainWindow(object):
         self.config_page_layout.setSpacing(0)
         self.config_page_layout.setObjectName("config_page_layout")
         self.config_top_main_frame = QtWidgets.QFrame(self.config_page)
-        self.config_top_main_frame.setStyleSheet("#config_small_header{\n"
-                                                 "    font-size: 14px;\n"
-                                                 "    color: #B5B8C7;\n"
-                                                 "}\n"
-                                                 "\n"
-                                                 "#config_header {\n"
-                                                 "    font-size: 28px;\n"
-                                                 "    color: #070808;\n"
-                                                 "}")
-        self.config_top_main_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.config_top_main_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.config_top_main_frame.setObjectName("config_top_main_frame")
         self.config_top_main_layout = QtWidgets.QVBoxLayout(self.config_top_main_frame)
         self.config_top_main_layout.setContentsMargins(30, 25, 30, 0)
@@ -3608,45 +2815,22 @@ class Ui_MainWindow(object):
         self.config_small_header = QtWidgets.QLabel(self.config_top_main_frame)
         self.config_small_header.setObjectName("config_small_header")
         self.config_top_main_layout.addWidget(self.config_small_header)
+        spacerItem11 = QtWidgets.QSpacerItem(20, 50, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.config_top_main_layout.addItem(spacerItem11)
         self.config_header = QtWidgets.QLabel(self.config_top_main_frame)
-        self.config_header.setStyleSheet("margin-top: 50px;\n"
-                                         "margin-bottom: 30px;")
-        self.config_header.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.config_header.setObjectName("config_header")
         self.config_top_main_layout.addWidget(self.config_header)
+        spacerItem12 = QtWidgets.QSpacerItem(20, 30, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.config_top_main_layout.addItem(spacerItem12)
         self.config_menu_frame = QtWidgets.QFrame(self.config_top_main_frame)
         self.config_menu_frame.setMinimumSize(QtCore.QSize(0, 40))
         self.config_menu_frame.setMaximumSize(QtCore.QSize(16777215, 40))
-        self.config_menu_frame.setStyleSheet("QLabel {\n"
-                                             "    background: #0915CC;\n"
-                                             "    border-top-left-radius: 3px;\n"
-                                             "    border-top-right-radius: 3px;\n"
-                                             "}\n"
-                                             "\n"
-                                             "QPushButton {\n"
-                                             "    background: transparent;\n"
-                                             "    font-size: 14px;\n"
-                                             "    color: #757C9F;\n"
-                                             "    outline: 0;\n"
-                                             "}\n"
-                                             "\n"
-                                             "QPushButton:hover {\n"
-                                             "    color: #0915CC;\n"
-                                             "}\n"
-                                             "\n"
-                                             "QPushButton[selected=true] {\n"
-                                             "    color: #0915CC;\n"
-                                             "}")
-        self.config_menu_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.config_menu_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.config_menu_frame.setObjectName("config_menu_frame")
         self.config_menu_layout = QtWidgets.QHBoxLayout(self.config_menu_frame)
         self.config_menu_layout.setContentsMargins(0, 0, 0, 0)
         self.config_menu_layout.setSpacing(20)
         self.config_menu_layout.setObjectName("config_menu_layout")
         self.config_date_frame = QtWidgets.QFrame(self.config_menu_frame)
-        self.config_date_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.config_date_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.config_date_frame.setMidLineWidth(0)
         self.config_date_frame.setObjectName("config_date_frame")
         self.config_date_layout = QtWidgets.QVBoxLayout(self.config_date_frame)
@@ -3655,29 +2839,17 @@ class Ui_MainWindow(object):
         self.config_date_layout.setObjectName("config_date_layout")
         self.config_date_butt = QtWidgets.QPushButton(self.config_date_frame)
         self.config_date_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.config_date_butt.setStyleSheet("")
         self.config_date_butt.setCheckable(True)
         self.config_date_butt.setObjectName("config_date_butt")
         self.config_date_layout.addWidget(self.config_date_butt, 0, QtCore.Qt.AlignTop)
         self.config_date_line = QtWidgets.QLabel(self.config_date_frame)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.config_date_line.sizePolicy().hasHeightForWidth())
-        self.config_date_line.setSizePolicy(sizePolicy)
         self.config_date_line.setMinimumSize(QtCore.QSize(0, 3))
         self.config_date_line.setMaximumSize(QtCore.QSize(16777215, 3))
-        self.config_date_line.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
-        self.config_date_line.setStyleSheet("")
-        self.config_date_line.setText("")
-        self.config_date_line.setTextInteractionFlags(QtCore.Qt.LinksAccessibleByMouse)
         self.config_date_line.setObjectName("config_date_line")
         self.config_date_layout.addWidget(self.config_date_line)
         self.config_date_layout.setStretch(0, 2)
         self.config_menu_layout.addWidget(self.config_date_frame)
         self.config_price_frame = QtWidgets.QFrame(self.config_menu_frame)
-        self.config_price_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.config_price_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.config_price_frame.setMidLineWidth(0)
         self.config_price_frame.setObjectName("config_price_frame")
         self.config_price_layout = QtWidgets.QVBoxLayout(self.config_price_frame)
@@ -3686,22 +2858,12 @@ class Ui_MainWindow(object):
         self.config_price_layout.setObjectName("config_price_layout")
         self.config_price_butt = QtWidgets.QPushButton(self.config_price_frame)
         self.config_price_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.config_price_butt.setStyleSheet("")
         self.config_price_butt.setCheckable(True)
         self.config_price_butt.setObjectName("config_price_butt")
         self.config_price_layout.addWidget(self.config_price_butt, 0, QtCore.Qt.AlignTop)
         self.config_price_line = QtWidgets.QLabel(self.config_price_frame)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.config_price_line.sizePolicy().hasHeightForWidth())
-        self.config_price_line.setSizePolicy(sizePolicy)
         self.config_price_line.setMinimumSize(QtCore.QSize(0, 3))
         self.config_price_line.setMaximumSize(QtCore.QSize(16777215, 3))
-        self.config_price_line.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
-        self.config_price_line.setStyleSheet("")
-        self.config_price_line.setText("")
-        self.config_price_line.setTextInteractionFlags(QtCore.Qt.LinksAccessibleByMouse)
         self.config_price_line.setObjectName("config_price_line")
         self.config_price_layout.addWidget(self.config_price_line)
         self.config_price_layout.setStretch(0, 2)
@@ -3710,65 +2872,32 @@ class Ui_MainWindow(object):
         self.config_page_layout.addWidget(self.config_top_main_frame, 0, QtCore.Qt.AlignTop)
         self.config_bottom_main_frame = QtWidgets.QFrame(self.config_page)
         self.config_bottom_main_frame.setMinimumSize(QtCore.QSize(0, 400))
-        self.config_bottom_main_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.config_bottom_main_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.config_bottom_main_frame.setObjectName("config_bottom_main_frame")
         self.config_bottom_main_layout = QtWidgets.QHBoxLayout(self.config_bottom_main_frame)
         self.config_bottom_main_layout.setContentsMargins(30, 30, 30, 0)
         self.config_bottom_main_layout.setSpacing(185)
         self.config_bottom_main_layout.setObjectName("config_bottom_main_layout")
         self.config_settings_frame = QtWidgets.QFrame(self.config_bottom_main_frame)
-        self.config_settings_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.config_settings_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.config_settings_frame.setObjectName("config_settings_frame")
         self.config_settings_layout = QtWidgets.QVBoxLayout(self.config_settings_frame)
         self.config_settings_layout.setContentsMargins(0, 0, 0, 30)
         self.config_settings_layout.setSpacing(20)
         self.config_settings_layout.setObjectName("config_settings_layout")
         self.config_inside_frame = QtWidgets.QFrame(self.config_settings_frame)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.MinimumExpanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.config_inside_frame.sizePolicy().hasHeightForWidth())
-        self.config_inside_frame.setSizePolicy(sizePolicy)
         self.config_inside_frame.setMinimumSize(QtCore.QSize(804, 0))
         self.config_inside_frame.setMaximumSize(QtCore.QSize(1000, 16777215))
-        self.config_inside_frame.setStyleSheet(".QFrame {\n"
-                                               "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                               "    border-radius: 10px;\n"
-                                               "}\n"
-                                               "\n"
-                                               "#config_price_type_label, #config_price_label, #config_start_date, #config_end_date{\n"
-                                               "    font-size: 16px;\n"
-                                               "    color: #757C9F;\n"
-                                               "}")
-        self.config_inside_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.config_inside_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.config_inside_frame.setObjectName("config_inside_frame")
         self.config_inside_layout = QtWidgets.QVBoxLayout(self.config_inside_frame)
         self.config_inside_layout.setContentsMargins(0, 0, 0, 20)
         self.config_inside_layout.setSpacing(0)
         self.config_inside_layout.setObjectName("config_inside_layout")
         self.config_inside_top_frame = QtWidgets.QFrame(self.config_inside_frame)
-        self.config_inside_top_frame.setStyleSheet("QFrame {\n"
-                                                   "    border: none;\n"
-                                                   "}")
-        self.config_inside_top_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.config_inside_top_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.config_inside_top_frame.setObjectName("config_inside_top_frame")
         self.config_inside_top_layout = QtWidgets.QVBoxLayout(self.config_inside_top_frame)
         self.config_inside_top_layout.setContentsMargins(0, 0, 0, 0)
         self.config_inside_top_layout.setSpacing(0)
         self.config_inside_top_layout.setObjectName("config_inside_top_layout")
         self.config_alert_top_frame = QtWidgets.QFrame(self.config_inside_top_frame)
-        self.config_alert_top_frame.setStyleSheet("background: #F2F3F6;\n"
-                                                  "border-top-left-radius: 10px;\n"
-                                                  "border-top-right-radius: 10px;\n"
-                                                  "border-bottom-right-radius: 0px;\n"
-                                                  "border-bottom-left-radius: 0px;\n"
-                                                  "border: none;")
-        self.config_alert_top_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.config_alert_top_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.config_alert_top_frame.setObjectName("config_alert_top_frame")
         self.config_alert_top_layout = QtWidgets.QHBoxLayout(self.config_alert_top_frame)
         self.config_alert_top_layout.setContentsMargins(11, 11, 0, 11)
@@ -3776,104 +2905,34 @@ class Ui_MainWindow(object):
         self.config_alert_top_layout.setObjectName("config_alert_top_layout")
         self.config_alert_icon = QtWidgets.QLabel(self.config_alert_top_frame)
         self.config_alert_icon.setMinimumSize(QtCore.QSize(16, 16))
-        self.config_alert_icon.setStyleSheet("image: url(:/image/alert_icon_blue.svg);")
-        self.config_alert_icon.setText("")
         self.config_alert_icon.setObjectName("config_alert_icon")
         self.config_alert_top_layout.addWidget(self.config_alert_icon, 0, QtCore.Qt.AlignLeft)
         self.config_alert_text = QtWidgets.QLabel(self.config_alert_top_frame)
-        self.config_alert_text.setStyleSheet("color: #0915CC;\n"
-                                             "font-size: 14px;")
         self.config_alert_text.setObjectName("config_alert_text")
         self.config_alert_top_layout.addWidget(self.config_alert_text, 0, QtCore.Qt.AlignLeft)
         self.config_alert_top_layout.setStretch(1, 1)
         self.config_inside_top_layout.addWidget(self.config_alert_top_frame)
         self.config_price_type_edit_frame = QtWidgets.QFrame(self.config_inside_top_frame)
-        self.config_price_type_edit_frame.setStyleSheet("QFrame {\n"
-                                                        "    border: none;\n"
-                                                        "}")
-        self.config_price_type_edit_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.config_price_type_edit_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.config_price_type_edit_frame.setObjectName("config_price_type_edit_frame")
         self.config_price_type_edit_layout = QtWidgets.QHBoxLayout(self.config_price_type_edit_frame)
         self.config_price_type_edit_layout.setContentsMargins(20, 30, 20, 0)
         self.config_price_type_edit_layout.setSpacing(0)
         self.config_price_type_edit_layout.setObjectName("config_price_type_edit_layout")
         self.config_price_type_label = QtWidgets.QLabel(self.config_price_type_edit_frame)
-        self.config_price_type_label.setStyleSheet("")
         self.config_price_type_label.setObjectName("config_price_type_label")
         self.config_price_type_edit_layout.addWidget(self.config_price_type_label)
         self.config_edit_price_butt = QtWidgets.QPushButton(self.config_price_type_edit_frame)
         self.config_edit_price_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.config_edit_price_butt.setStyleSheet("QPushButton {\n"
-                                                  "    background: transparent;\n"
-                                                  "    font-size: 14px;\n"
-                                                  "    color: #0915CC;\n"
-                                                  "    qproperty-icon: url(:/image/equip_edit_hover.svg);\n"
-                                                  "}\n"
-                                                  "\n"
-                                                  "QPushButton:hover {\n"
-                                                  "    text-decoration: underline;\n"
-                                                  "}")
         self.config_edit_price_butt.setIconSize(QtCore.QSize(20, 20))
         self.config_edit_price_butt.setObjectName("config_edit_price_butt")
         self.config_price_type_edit_layout.addWidget(self.config_edit_price_butt, 0, QtCore.Qt.AlignRight)
         self.config_inside_top_layout.addWidget(self.config_price_type_edit_frame)
         self.config_price_type_butt_frame = QtWidgets.QFrame(self.config_inside_top_frame)
-        self.config_price_type_butt_frame.setStyleSheet("QFrame {\n"
-                                                        "    border: none;\n"
-                                                        "}\n"
-                                                        "\n"
-                                                        "QPushButton {\n"
-                                                        "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                                        "    border-radius: 18px;    \n"
-                                                        "    padding-left: 10px;\n"
-                                                        "    padding-right: 10px;\n"
-                                                        "    padding-top: 8px;\n"
-                                                        "    padding-bottom: 8px;\n"
-                                                        "    color: #757C9F;\n"
-                                                        "    font-size: 14px;\n"
-                                                        "    qproperty-icon: url(:/image/check_icon_default.svg);\n"
-                                                        "    icon-size: 18px, 18px;\n"
-                                                        "    background: #F9FAFB;\n"
-                                                        "}\n"
-                                                        "\n"
-                                                        "QPushButton:hover {\n"
-                                                        "    border: 0.5px solid #0915CC;\n"
-                                                        "    color: #0915CC;\n"
-                                                        "}\n"
-                                                        "\n"
-                                                        "QPushButton:checked {\n"
-                                                        "    border: 0.5px solid #0915CC;\n"
-                                                        "    color: #0915CC;\n"
-                                                        "}")
-        self.config_price_type_butt_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.config_price_type_butt_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.config_price_type_butt_frame.setObjectName("config_price_type_butt_frame")
         self.config_price_type_button_layout = QtWidgets.QHBoxLayout(self.config_price_type_butt_frame)
         self.config_price_type_button_layout.setContentsMargins(20, 10, 0, 30)
         self.config_price_type_button_layout.setSpacing(5)
         self.config_price_type_button_layout.setObjectName("config_price_type_button_layout")
-        self.config_reg_butt = QtWidgets.QPushButton(self.config_price_type_butt_frame)
-        self.config_reg_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.config_reg_butt.setCheckable(True)
-        self.config_reg_butt.setChecked(True)
-        self.config_reg_butt.setObjectName("config_reg_butt")
-        self.config_price_type_button_layout.addWidget(self.config_reg_butt)
-        self.config_disc_butt = QtWidgets.QPushButton(self.config_price_type_butt_frame)
-        self.config_disc_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.config_disc_butt.setCheckable(True)
-        self.config_disc_butt.setObjectName("config_disc_butt")
-        self.config_price_type_button_layout.addWidget(self.config_disc_butt)
-        self.config_subpeak_butt = QtWidgets.QPushButton(self.config_price_type_butt_frame)
-        self.config_subpeak_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.config_subpeak_butt.setCheckable(True)
-        self.config_subpeak_butt.setObjectName("config_subpeak_butt")
-        self.config_price_type_button_layout.addWidget(self.config_subpeak_butt)
-        self.config_peak_butt = QtWidgets.QPushButton(self.config_price_type_butt_frame)
-        self.config_peak_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.config_peak_butt.setCheckable(True)
-        self.config_peak_butt.setObjectName("config_peak_butt")
-        self.config_price_type_button_layout.addWidget(self.config_peak_butt)
         self.config_inside_top_layout.addWidget(self.config_price_type_butt_frame, 0, QtCore.Qt.AlignLeft)
         self.config_inside_layout.addWidget(self.config_inside_top_frame, 0, QtCore.Qt.AlignTop)
         self.config_pages = QtWidgets.QStackedWidget(self.config_inside_frame)
@@ -3885,25 +2944,6 @@ class Ui_MainWindow(object):
         self.date_page_layout.setSpacing(0)
         self.date_page_layout.setObjectName("date_page_layout")
         self.config_change_date_frame = QtWidgets.QFrame(self.date_page)
-        self.config_change_date_frame.setStyleSheet(".QFrame{\n"
-                                                    "    border: none;\n"
-                                                    "}\n"
-                                                    "\n"
-                                                    "QDateEdit {\n"
-                                                    "    border: none;\n"
-                                                    "    font-size: 16px;\n"
-                                                    "}\n"
-                                                    "\n"
-                                                    "QDateEdit::drop-down {\n"
-                                                    "    border-top-right-radius: 3px;\n"
-                                                    "    border-bottom-right-radius: 3px;\n"
-                                                    "}\n"
-                                                    "\n"
-                                                    "QDateEdit::down-arrow {\n"
-                                                    "    image: url(:/image/date_down_arrow.svg);\n"
-                                                    "}")
-        self.config_change_date_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.config_change_date_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.config_change_date_frame.setObjectName("config_change_date_frame")
         self.config_change_date_layout = QtWidgets.QGridLayout(self.config_change_date_frame)
         self.config_change_date_layout.setContentsMargins(20, 0, 0, 20)
@@ -3919,15 +2959,6 @@ class Ui_MainWindow(object):
         self.config_end_date_frame = QtWidgets.QFrame(self.config_change_date_frame)
         self.config_end_date_frame.setMinimumSize(QtCore.QSize(258, 48))
         self.config_end_date_frame.setMaximumSize(QtCore.QSize(258, 48))
-        self.config_end_date_frame.setStyleSheet("#config_end_date_frame {\n"
-                                                 "    border: 1px solid #B5B8C7;\n"
-                                                 "}\n"
-                                                 "\n"
-                                                 "#config_end_date_frame:hover {\n"
-                                                 "    border: 1px solid #0915CC;\n"
-                                                 "}")
-        self.config_end_date_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.config_end_date_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.config_end_date_frame.setObjectName("config_end_date_frame")
         self.config_end_date_frame_2 = QtWidgets.QHBoxLayout(self.config_end_date_frame)
         self.config_end_date_frame_2.setContentsMargins(17, 14, 20, 14)
@@ -3935,13 +2966,10 @@ class Ui_MainWindow(object):
         self.config_end_date_frame_2.setObjectName("config_end_date_frame_2")
         self.config_end_date_icon = QtWidgets.QLabel(self.config_end_date_frame)
         self.config_end_date_icon.setMinimumSize(QtCore.QSize(20, 20))
-        self.config_end_date_icon.setStyleSheet("image: url(:/image/calendar_icon.svg);")
-        self.config_end_date_icon.setText("")
         self.config_end_date_icon.setObjectName("config_end_date_icon")
         self.config_end_date_frame_2.addWidget(self.config_end_date_icon, 0, QtCore.Qt.AlignLeft)
         self.config_end_date_edit = QtWidgets.QDateEdit(self.config_end_date_frame)
         self.config_end_date_edit.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.config_end_date_edit.setStyleSheet("")
         self.config_end_date_edit.setCalendarPopup(True)
         self.config_end_date_edit.setObjectName("config_end_date_edit")
         self.config_end_date_frame_2.addWidget(self.config_end_date_edit)
@@ -3950,15 +2978,6 @@ class Ui_MainWindow(object):
         self.config_start_date_frame = QtWidgets.QFrame(self.config_change_date_frame)
         self.config_start_date_frame.setMinimumSize(QtCore.QSize(258, 48))
         self.config_start_date_frame.setMaximumSize(QtCore.QSize(258, 48))
-        self.config_start_date_frame.setStyleSheet("#config_start_date_frame {\n"
-                                                   "    border: 1px solid #B5B8C7;\n"
-                                                   "}\n"
-                                                   "\n"
-                                                   "#config_start_date_frame:hover {\n"
-                                                   "    border: 1px solid #0915CC;\n"
-                                                   "}")
-        self.config_start_date_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.config_start_date_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.config_start_date_frame.setObjectName("config_start_date_frame")
         self.config_start_date_layout = QtWidgets.QHBoxLayout(self.config_start_date_frame)
         self.config_start_date_layout.setContentsMargins(17, 14, 20, 14)
@@ -3966,13 +2985,10 @@ class Ui_MainWindow(object):
         self.config_start_date_layout.setObjectName("config_start_date_layout")
         self.config_start_date_icon = QtWidgets.QLabel(self.config_start_date_frame)
         self.config_start_date_icon.setMinimumSize(QtCore.QSize(20, 20))
-        self.config_start_date_icon.setStyleSheet("image: url(:/image/calendar_icon.svg);")
-        self.config_start_date_icon.setText("")
         self.config_start_date_icon.setObjectName("config_start_date_icon")
         self.config_start_date_layout.addWidget(self.config_start_date_icon, 0, QtCore.Qt.AlignLeft)
         self.config_start_date_edit = QtWidgets.QDateEdit(self.config_start_date_frame)
         self.config_start_date_edit.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.config_start_date_edit.setStyleSheet("")
         self.config_start_date_edit.setCalendarPopup(True)
         self.config_start_date_edit.setObjectName("config_start_date_edit")
         self.config_start_date_layout.addWidget(self.config_start_date_edit)
@@ -3987,54 +3003,28 @@ class Ui_MainWindow(object):
         self.price_page_layout.setSpacing(10)
         self.price_page_layout.setObjectName("price_page_layout")
         self.config_price_label = QtWidgets.QLabel(self.price_page)
-        self.config_price_label.setStyleSheet("margin-left: 20px;")
         self.config_price_label.setObjectName("config_price_label")
         self.price_page_layout.addWidget(self.config_price_label)
         self.config_scroll_area = QtWidgets.QScrollArea(self.price_page)
-        self.config_scroll_area.setStyleSheet("QFrame {\n"
-                                              "    border: none;\n"
-                                              "}")
         self.config_scroll_area.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.config_scroll_area.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
         self.config_scroll_area.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
         self.config_scroll_area.setWidgetResizable(True)
         self.config_scroll_area.setObjectName("config_scroll_area")
         self.config_scroll_widget = QtWidgets.QWidget()
-        self.config_scroll_widget.setGeometry(QtCore.QRect(0, 0, 100, 16))
+        self.config_scroll_widget.setGeometry(QtCore.QRect(0, 0, 95, 16))
         self.config_scroll_widget.setObjectName("config_scroll_widget")
         self.config_scroll_layout = QtWidgets.QVBoxLayout(self.config_scroll_widget)
         self.config_scroll_layout.setContentsMargins(0, 0, 0, 0)
         self.config_scroll_layout.setSpacing(0)
         self.config_scroll_layout.setObjectName("config_scroll_layout")
         self.config_scroll_frame2 = QtWidgets.QFrame(self.config_scroll_widget)
-        self.config_scroll_frame2.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.config_scroll_frame2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.config_scroll_frame2.setObjectName("config_scroll_frame2")
         self.config_scroll_layout2 = QtWidgets.QVBoxLayout(self.config_scroll_frame2)
         self.config_scroll_layout2.setContentsMargins(20, 0, 20, 0)
         self.config_scroll_layout2.setSpacing(0)
         self.config_scroll_layout2.setObjectName("config_scroll_layout2")
         self.config_clear_frame = QtWidgets.QFrame(self.config_scroll_frame2)
-        self.config_clear_frame.setMinimumSize(QtCore.QSize(0, 0))
-        self.config_clear_frame.setStyleSheet("QLabel {\n"
-                                              "    font-size: 14px;\n"
-                                              "    color: #070808;\n"
-                                              "}\n"
-                                              "\n"
-                                              "QLineEdit {\n"
-                                              "    background: transparent;\n"
-                                              "    border: none;\n"
-                                              "    font-size: 14px;\n"
-                                              "    color: #070808;\n"
-                                              "    padding-left: 10px;\n"
-                                              "}\n"
-                                              "\n"
-                                              "QLineEdit:enabled {\n"
-                                              "    border: 1px solid #0915CC;\n"
-                                              "    border-radius: 4px;\n"
-                                              "}")
-        self.config_clear_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.config_clear_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.config_clear_frame.setObjectName("config_clear_frame")
         self.config_clear_layout = QtWidgets.QVBoxLayout(self.config_clear_frame)
         self.config_clear_layout.setContentsMargins(0, 0, 0, 0)
@@ -4049,41 +3039,23 @@ class Ui_MainWindow(object):
         self.config_settings_layout.addWidget(self.config_inside_frame)
         self.config_price_update_butt = QtWidgets.QPushButton(self.config_settings_frame)
         self.config_price_update_butt.setMinimumSize(QtCore.QSize(134, 47))
-        self.config_price_update_butt.setStyleSheet("QPushButton {\n"
-                                                    "    border-radius: 10px;\n"
-                                                    "    font-size: 15px;\n"
-                                                    "    color: #FFFFFF;\n"
-                                                    "    background: #0915CC;\n"
-                                                    "    text-decoration: none;\n"
-                                                    "}\n"
-                                                    "\n"
-                                                    "QPushButton:hover {\n"
-                                                    "background: rgba(9, 21, 204, 0.8);\n"
-                                                    "}")
         self.config_price_update_butt.setObjectName("config_price_update_butt")
         self.config_settings_layout.addWidget(self.config_price_update_butt, 0, QtCore.Qt.AlignLeft)
         self.config_date_update_butt = QtWidgets.QPushButton(self.config_settings_frame)
         self.config_date_update_butt.setMinimumSize(QtCore.QSize(134, 47))
+        font = QtGui.QFont()
+        font.setFamily("Inter")
+        font.setPointSize(-1)
+        font.setUnderline(False)
+        font.setStrikeOut(False)
+        self.config_date_update_butt.setFont(font)
         self.config_date_update_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.config_date_update_butt.setStyleSheet("QPushButton {\n"
-                                                   "    border-radius: 10px;\n"
-                                                   "    font-size: 15px;\n"
-                                                   "    color: #FFFFFF;\n"
-                                                   "    background: #0915CC;\n"
-                                                   "    text-decoration: none;\n"
-                                                   "}\n"
-                                                   "\n"
-                                                   "QPushButton:hover {\n"
-                                                   "background: rgba(9, 21, 204, 0.8);\n"
-                                                   "}")
         self.config_date_update_butt.setObjectName("config_date_update_butt")
         self.config_settings_layout.addWidget(self.config_date_update_butt, 0, QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
         self.config_settings_layout.setStretch(2, 1)
         self.config_bottom_main_layout.addWidget(self.config_settings_frame)
         self.config_calendar_frame = QtWidgets.QFrame(self.config_bottom_main_frame)
         self.config_calendar_frame.setMaximumSize(QtCore.QSize(500, 16777215))
-        self.config_calendar_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.config_calendar_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.config_calendar_frame.setObjectName("config_calendar_frame")
         self.config_calendar_layout = QtWidgets.QVBoxLayout(self.config_calendar_frame)
         self.config_calendar_layout.setContentsMargins(0, 0, 0, 0)
@@ -4091,14 +3063,6 @@ class Ui_MainWindow(object):
         self.config_calendar_layout.setObjectName("config_calendar_layout")
         self.config_calendar_frame2 = QtWidgets.QFrame(self.config_calendar_frame)
         self.config_calendar_frame2.setMaximumSize(QtCore.QSize(16777215, 330))
-        self.config_calendar_frame2.setStyleSheet(".QFrame{\n"
-                                                  "border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                                  "background: #F9FAFB;\n"
-                                                  "border-radius: 10px;\n"
-                                                  "}\n"
-                                                  "")
-        self.config_calendar_frame2.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.config_calendar_frame2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.config_calendar_frame2.setObjectName("config_calendar_frame2")
         self.config_calendar_layout2 = QtWidgets.QVBoxLayout(self.config_calendar_frame2)
         self.config_calendar_layout2.setContentsMargins(20, 20, 20, 20)
@@ -4106,17 +3070,6 @@ class Ui_MainWindow(object):
         self.config_calendar_layout2.setObjectName("config_calendar_layout2")
         self.config_calendar_layout.addWidget(self.config_calendar_frame2)
         self.config_price_type_frame = QtWidgets.QFrame(self.config_calendar_frame)
-        self.config_price_type_frame.setStyleSheet(".QFrame {\n"
-                                                   "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                                   "    border-radius: 10px;\n"
-                                                   "}\n"
-                                                   "\n"
-                                                   "QLabel {\n"
-                                                   "    font-size: 14px;\n"
-                                                   "    color: #000000;\n"
-                                                   "}")
-        self.config_price_type_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.config_price_type_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.config_price_type_frame.setObjectName("config_price_type_frame")
         self.config_price_type_layout = QtWidgets.QVBoxLayout(self.config_price_type_frame)
         self.config_price_type_layout.setContentsMargins(15, 15, 25, 15)
@@ -4125,9 +3078,6 @@ class Ui_MainWindow(object):
         self.config_price_type.setObjectName("config_price_type")
         self.config_price_type_layout.addWidget(self.config_price_type)
         self.config_price_type_frame_2 = QtWidgets.QFrame(self.config_price_type_frame)
-        self.config_price_type_frame_2.setStyleSheet("border: none;")
-        self.config_price_type_frame_2.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.config_price_type_frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.config_price_type_frame_2.setObjectName("config_price_type_frame_2")
         self.config_price_type_layout_2 = QtWidgets.QHBoxLayout(self.config_price_type_frame_2)
         self.config_price_type_layout_2.setContentsMargins(0, 15, 0, 15)
@@ -4136,19 +3086,14 @@ class Ui_MainWindow(object):
         self.config_blue_color = QtWidgets.QLabel(self.config_price_type_frame_2)
         self.config_blue_color.setMinimumSize(QtCore.QSize(14, 14))
         self.config_blue_color.setMaximumSize(QtCore.QSize(14, 14))
-        self.config_blue_color.setStyleSheet("background-color: #4E50FF;")
-        self.config_blue_color.setText("")
         self.config_blue_color.setObjectName("config_blue_color")
         self.config_price_type_layout_2.addWidget(self.config_blue_color)
         self.config_blue_label = QtWidgets.QLabel(self.config_price_type_frame_2)
-        self.config_blue_label.setStyleSheet("")
         self.config_blue_label.setObjectName("config_blue_label")
         self.config_price_type_layout_2.addWidget(self.config_blue_label)
         self.config_green_color = QtWidgets.QLabel(self.config_price_type_frame_2)
         self.config_green_color.setMinimumSize(QtCore.QSize(14, 14))
         self.config_green_color.setMaximumSize(QtCore.QSize(14, 14))
-        self.config_green_color.setStyleSheet("background: #26A95D;")
-        self.config_green_color.setText("")
         self.config_green_color.setObjectName("config_green_color")
         self.config_price_type_layout_2.addWidget(self.config_green_color)
         self.config_green_label = QtWidgets.QLabel(self.config_price_type_frame_2)
@@ -4157,8 +3102,6 @@ class Ui_MainWindow(object):
         self.config_yellow_color = QtWidgets.QLabel(self.config_price_type_frame_2)
         self.config_yellow_color.setMinimumSize(QtCore.QSize(14, 14))
         self.config_yellow_color.setMaximumSize(QtCore.QSize(14, 14))
-        self.config_yellow_color.setStyleSheet("background: #FFAC2F;")
-        self.config_yellow_color.setText("")
         self.config_yellow_color.setObjectName("config_yellow_color")
         self.config_price_type_layout_2.addWidget(self.config_yellow_color)
         self.config_yellow_label = QtWidgets.QLabel(self.config_price_type_frame_2)
@@ -4166,9 +3109,6 @@ class Ui_MainWindow(object):
         self.config_price_type_layout_2.addWidget(self.config_yellow_label)
         self.config_price_type_layout.addWidget(self.config_price_type_frame_2, 0, QtCore.Qt.AlignLeft)
         self.config_price_type_frame_3 = QtWidgets.QFrame(self.config_price_type_frame)
-        self.config_price_type_frame_3.setStyleSheet("border: none;")
-        self.config_price_type_frame_3.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.config_price_type_frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
         self.config_price_type_frame_3.setObjectName("config_price_type_frame_3")
         self.config_price_type_layout_3 = QtWidgets.QHBoxLayout(self.config_price_type_frame_3)
         self.config_price_type_layout_3.setContentsMargins(0, 0, 0, 0)
@@ -4177,8 +3117,6 @@ class Ui_MainWindow(object):
         self.config_red_color = QtWidgets.QLabel(self.config_price_type_frame_3)
         self.config_red_color.setMinimumSize(QtCore.QSize(14, 14))
         self.config_red_color.setMaximumSize(QtCore.QSize(14, 14))
-        self.config_red_color.setStyleSheet("background: #FF3C2F;")
-        self.config_red_color.setText("")
         self.config_red_color.setObjectName("config_red_color")
         self.config_price_type_layout_3.addWidget(self.config_red_color)
         self.config_red_label = QtWidgets.QLabel(self.config_price_type_frame_3)
@@ -4196,17 +3134,6 @@ class Ui_MainWindow(object):
         self.inventory_page_layout.setSpacing(30)
         self.inventory_page_layout.setObjectName("inventory_page_layout")
         self.inventory_top_frame = QtWidgets.QFrame(self.inventory_page)
-        self.inventory_top_frame.setStyleSheet("#inventory_small_header{\n"
-                                               "    font-size: 14px;\n"
-                                               "    color: #B5B8C7;\n"
-                                               "}\n"
-                                               "\n"
-                                               "#inventory_header{\n"
-                                               "    font-size: 28px;\n"
-                                               "    color: #070808;\n"
-                                               "}")
-        self.inventory_top_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.inventory_top_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.inventory_top_frame.setObjectName("inventory_top_frame")
         self.inventory_top_layout = QtWidgets.QVBoxLayout(self.inventory_top_frame)
         self.inventory_top_layout.setContentsMargins(0, 0, 0, 0)
@@ -4215,14 +3142,12 @@ class Ui_MainWindow(object):
         self.inventory_small_header = QtWidgets.QLabel(self.inventory_top_frame)
         self.inventory_small_header.setObjectName("inventory_small_header")
         self.inventory_top_layout.addWidget(self.inventory_small_header)
+        spacerItem13 = QtWidgets.QSpacerItem(20, 50, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.inventory_top_layout.addItem(spacerItem13)
         self.inventory_header = QtWidgets.QLabel(self.inventory_top_frame)
-        self.inventory_header.setStyleSheet("margin-top: 50px;")
-        self.inventory_header.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.inventory_header.setObjectName("inventory_header")
         self.inventory_top_layout.addWidget(self.inventory_header)
         self.inventory_top_button_frame = QtWidgets.QFrame(self.inventory_top_frame)
-        self.inventory_top_button_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.inventory_top_button_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.inventory_top_button_frame.setObjectName("inventory_top_button_frame")
         self.inventory_top_button_layout = QtWidgets.QHBoxLayout(self.inventory_top_button_frame)
         self.inventory_top_button_layout.setContentsMargins(0, 30, 0, 0)
@@ -4231,36 +3156,12 @@ class Ui_MainWindow(object):
         self.inventory_menu_frame = QtWidgets.QFrame(self.inventory_top_button_frame)
         self.inventory_menu_frame.setMinimumSize(QtCore.QSize(0, 40))
         self.inventory_menu_frame.setMaximumSize(QtCore.QSize(16777215, 40))
-        self.inventory_menu_frame.setStyleSheet("QLabel {\n"
-                                                "    background: #0915CC;\n"
-                                                "    border-top-left-radius: 3px;\n"
-                                                "    border-top-right-radius: 3px;\n"
-                                                "}\n"
-                                                "\n"
-                                                "QPushButton {\n"
-                                                "    background: transparent;\n"
-                                                "    font-size: 14px;\n"
-                                                "    color: #757C9F;\n"
-                                                "    outline: 0;\n"
-                                                "}\n"
-                                                "\n"
-                                                "QPushButton:hover {\n"
-                                                "    color: #0915CC;\n"
-                                                "}\n"
-                                                "\n"
-                                                "QPushButton[selected=true] {\n"
-                                                "    color: #0915CC;\n"
-                                                "}")
-        self.inventory_menu_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.inventory_menu_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.inventory_menu_frame.setObjectName("inventory_menu_frame")
         self.inventory_menu_layout = QtWidgets.QHBoxLayout(self.inventory_menu_frame)
         self.inventory_menu_layout.setContentsMargins(0, 0, 0, 0)
         self.inventory_menu_layout.setSpacing(20)
         self.inventory_menu_layout.setObjectName("inventory_menu_layout")
         self.inventory_all_menu_frame = QtWidgets.QFrame(self.inventory_menu_frame)
-        self.inventory_all_menu_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.inventory_all_menu_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.inventory_all_menu_frame.setMidLineWidth(0)
         self.inventory_all_menu_frame.setObjectName("inventory_all_menu_frame")
         self.inventory_all_menu_layout = QtWidgets.QVBoxLayout(self.inventory_all_menu_frame)
@@ -4269,30 +3170,17 @@ class Ui_MainWindow(object):
         self.inventory_all_menu_layout.setObjectName("inventory_all_menu_layout")
         self.inventory_all_menu_butt = QtWidgets.QPushButton(self.inventory_all_menu_frame)
         self.inventory_all_menu_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.inventory_all_menu_butt.setStyleSheet("")
         self.inventory_all_menu_butt.setCheckable(True)
         self.inventory_all_menu_butt.setObjectName("inventory_all_menu_butt")
         self.inventory_all_menu_layout.addWidget(self.inventory_all_menu_butt, 0, QtCore.Qt.AlignTop)
         self.inventory_all_menu_line = QtWidgets.QLabel(self.inventory_all_menu_frame)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.inventory_all_menu_line.sizePolicy().hasHeightForWidth())
-        self.inventory_all_menu_line.setSizePolicy(sizePolicy)
         self.inventory_all_menu_line.setMinimumSize(QtCore.QSize(0, 3))
         self.inventory_all_menu_line.setMaximumSize(QtCore.QSize(16777215, 3))
-        self.inventory_all_menu_line.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
-        self.inventory_all_menu_line.setStyleSheet("")
-        self.inventory_all_menu_line.setText("")
-        self.inventory_all_menu_line.setTextInteractionFlags(QtCore.Qt.LinksAccessibleByMouse)
         self.inventory_all_menu_line.setObjectName("inventory_all_menu_line")
         self.inventory_all_menu_layout.addWidget(self.inventory_all_menu_line)
         self.inventory_all_menu_layout.setStretch(0, 2)
         self.inventory_menu_layout.addWidget(self.inventory_all_menu_frame)
         self.inventory_preset_choose_frame = QtWidgets.QFrame(self.inventory_menu_frame)
-        self.inventory_preset_choose_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.inventory_preset_choose_frame.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.inventory_preset_choose_frame.setMidLineWidth(0)
         self.inventory_preset_choose_frame.setObjectName("inventory_preset_choose_frame")
         self.inventory_preset_choose_layout = QtWidgets.QVBoxLayout(self.inventory_preset_choose_frame)
         self.inventory_preset_choose_layout.setContentsMargins(0, 0, 0, 0)
@@ -4300,22 +3188,12 @@ class Ui_MainWindow(object):
         self.inventory_preset_choose_layout.setObjectName("inventory_preset_choose_layout")
         self.inventory_preset_choose_butt = QtWidgets.QPushButton(self.inventory_preset_choose_frame)
         self.inventory_preset_choose_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.inventory_preset_choose_butt.setStyleSheet("")
         self.inventory_preset_choose_butt.setCheckable(True)
         self.inventory_preset_choose_butt.setObjectName("inventory_preset_choose_butt")
         self.inventory_preset_choose_layout.addWidget(self.inventory_preset_choose_butt, 0, QtCore.Qt.AlignTop)
         self.inventory_preset_choose_line = QtWidgets.QLabel(self.inventory_preset_choose_frame)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.inventory_preset_choose_line.sizePolicy().hasHeightForWidth())
-        self.inventory_preset_choose_line.setSizePolicy(sizePolicy)
         self.inventory_preset_choose_line.setMinimumSize(QtCore.QSize(0, 3))
         self.inventory_preset_choose_line.setMaximumSize(QtCore.QSize(16777215, 3))
-        self.inventory_preset_choose_line.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
-        self.inventory_preset_choose_line.setStyleSheet("")
-        self.inventory_preset_choose_line.setText("")
-        self.inventory_preset_choose_line.setTextInteractionFlags(QtCore.Qt.LinksAccessibleByMouse)
         self.inventory_preset_choose_line.setObjectName("inventory_preset_choose_line")
         self.inventory_preset_choose_layout.addWidget(self.inventory_preset_choose_line)
         self.inventory_preset_choose_layout.setStretch(0, 2)
@@ -4324,12 +3202,6 @@ class Ui_MainWindow(object):
         self.inventory_search_frame = QtWidgets.QFrame(self.inventory_top_button_frame)
         self.inventory_search_frame.setMinimumSize(QtCore.QSize(314, 44))
         self.inventory_search_frame.setMaximumSize(QtCore.QSize(314, 44))
-        self.inventory_search_frame.setStyleSheet(".QFrame {\n"
-                                                  "    background: #F2F3F6;\n"
-                                                  "    border-radius: 5px;\n"
-                                                  "}")
-        self.inventory_search_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.inventory_search_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.inventory_search_frame.setObjectName("inventory_search_frame")
         self.inventory_search_layout = QtWidgets.QHBoxLayout(self.inventory_search_frame)
         self.inventory_search_layout.setContentsMargins(13, 0, 13, 0)
@@ -4338,43 +3210,21 @@ class Ui_MainWindow(object):
         self.inventory_search_label = QtWidgets.QLabel(self.inventory_search_frame)
         self.inventory_search_label.setMinimumSize(QtCore.QSize(24, 24))
         self.inventory_search_label.setMaximumSize(QtCore.QSize(24, 24))
-        self.inventory_search_label.setStyleSheet("image: url(:/image/search_icon_default.svg);\n"
-                                                  "background: #F2F3F6;")
-        self.inventory_search_label.setText("")
         self.inventory_search_label.setObjectName("inventory_search_label")
         self.inventory_search_layout.addWidget(self.inventory_search_label)
         self.inventory_search_input = QtWidgets.QLineEdit(self.inventory_search_frame)
-        self.inventory_search_input.setStyleSheet("border: none;\n"
-                                                  "background: transparent;\n"
-                                                  "font-size: 14px;\n"
-                                                  "color: #757C9F;")
         self.inventory_search_input.setObjectName("inventory_search_input")
         self.inventory_search_layout.addWidget(self.inventory_search_input)
         self.inventory_search_clear = QtWidgets.QPushButton(self.inventory_search_frame)
         self.inventory_search_clear.setMinimumSize(QtCore.QSize(12, 12))
         self.inventory_search_clear.setMaximumSize(QtCore.QSize(12, 12))
         self.inventory_search_clear.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.inventory_search_clear.setStyleSheet("QPushButton {\n"
-                                                  "    image: url(:/image/close_icon.svg);\n"
-                                                  "    background: transparent;\n"
-                                                  "}")
-        self.inventory_search_clear.setText("")
         self.inventory_search_clear.setObjectName("inventory_search_clear")
         self.inventory_search_layout.addWidget(self.inventory_search_clear)
         self.inventory_top_button_layout.addWidget(self.inventory_search_frame, 0, QtCore.Qt.AlignRight)
         self.inventory_reset_btn = QtWidgets.QPushButton(self.inventory_top_button_frame)
         self.inventory_reset_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.inventory_reset_btn.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.inventory_reset_btn.setStyleSheet("QPushButton {\n"
-                                               "    background: transparent;\n"
-                                               "    font-size: 14px;\n"
-                                               "    color: #757C9F;\n"
-                                               "    qproperty-icon: url(:/image/inventory_reset_default.svg);\n"
-                                               "}\n"
-                                               "\n"
-                                               "QPushButton:hover {\n"
-                                               "    color: #FF3C2F;\n"
-                                               "}")
         self.inventory_reset_btn.setIconSize(QtCore.QSize(16, 20))
         self.inventory_reset_btn.setObjectName("inventory_reset_btn")
         self.inventory_top_button_layout.addWidget(self.inventory_reset_btn)
@@ -4383,18 +3233,6 @@ class Ui_MainWindow(object):
         self.inventory_save_butt.setMaximumSize(QtCore.QSize(150, 36))
         self.inventory_save_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.inventory_save_butt.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.inventory_save_butt.setStyleSheet("QPushButton {\n"
-                                               "    background: #0915CC;\n"
-                                               "    border-radius: 5px;\n"
-                                               "    color: #F2F3F6;\n"
-                                               "    qproperty-icon: url(:/image/check_icon_white.svg);\n"
-                                               "    font-size: 14px;\n"
-                                               "}\n"
-                                               "\n"
-                                               "QPushButton:hover {\n"
-                                               "    background: rgba(9, 21, 204, 0.8);\n"
-                                               "}\n"
-                                               "")
         self.inventory_save_butt.setIconSize(QtCore.QSize(14, 14))
         self.inventory_save_butt.setObjectName("inventory_save_butt")
         self.inventory_top_button_layout.addWidget(self.inventory_save_butt)
@@ -4403,18 +3241,6 @@ class Ui_MainWindow(object):
         self.inventory_add_butt.setMaximumSize(QtCore.QSize(150, 36))
         self.inventory_add_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.inventory_add_butt.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.inventory_add_butt.setStyleSheet("QPushButton {\n"
-                                              "    background: #0915CC;\n"
-                                              "    border-radius: 5px;\n"
-                                              "    color: #F2F3F6;\n"
-                                              "    qproperty-icon: url(:/image/plus_white_icon.svg);\n"
-                                              "    font-size: 14px;\n"
-                                              "}\n"
-                                              "\n"
-                                              "QPushButton:hover {\n"
-                                              "    background: rgba(9, 21, 204, 0.8);\n"
-                                              "}\n"
-                                              "")
         self.inventory_add_butt.setIconSize(QtCore.QSize(14, 14))
         self.inventory_add_butt.setObjectName("inventory_add_butt")
         self.inventory_top_button_layout.addWidget(self.inventory_add_butt)
@@ -4422,31 +3248,12 @@ class Ui_MainWindow(object):
         self.inventory_top_layout.addWidget(self.inventory_top_button_frame)
         self.inventory_page_layout.addWidget(self.inventory_top_frame, 0, QtCore.Qt.AlignTop)
         self.inventory_bottom_frame = QtWidgets.QFrame(self.inventory_page)
-        self.inventory_bottom_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.inventory_bottom_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.inventory_bottom_frame.setObjectName("inventory_bottom_frame")
         self.inventory_bottom_layout = QtWidgets.QHBoxLayout(self.inventory_bottom_frame)
         self.inventory_bottom_layout.setContentsMargins(0, 0, 49, 0)
         self.inventory_bottom_layout.setSpacing(50)
         self.inventory_bottom_layout.setObjectName("inventory_bottom_layout")
         self.inventory_size_menu = QtWidgets.QStackedWidget(self.inventory_bottom_frame)
-        self.inventory_size_menu.setStyleSheet("QPushButton {\n"
-                                               "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                               "    border-radius: 4px;\n"
-                                               "    color: #0915CC;\n"
-                                               "    font-size: 14px;\n"
-                                               "    text-align: left;\n"
-                                               "    padding-left: 12px;\n"
-                                               "}\n"
-                                               "\n"
-                                               "QPushButton:hover {\n"
-                                               "    border: 0.5px solid #0915CC;\n"
-                                               "}\n"
-                                               "\n"
-                                               "QPushButton:checked {\n"
-                                               "    border: 0.5px solid #0915CC;\n"
-                                               "    background: #F9FAFB;\n"
-                                               "}")
         self.inventory_size_menu.setObjectName("inventory_size_menu")
         self.inventory_room_page = QtWidgets.QWidget()
         self.inventory_room_page.setObjectName("inventory_room_page")
@@ -4455,9 +3262,6 @@ class Ui_MainWindow(object):
         self.inventory_room_layout.setSpacing(0)
         self.inventory_room_layout.setObjectName("inventory_room_layout")
         self.inventory_room_scrollarea = QtWidgets.QScrollArea(self.inventory_room_page)
-        self.inventory_room_scrollarea.setStyleSheet("QFrame {\n"
-                                                     "    border: none;\n"
-                                                     "}")
         self.inventory_room_scrollarea.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.inventory_room_scrollarea.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
         self.inventory_room_scrollarea.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
@@ -4466,15 +3270,12 @@ class Ui_MainWindow(object):
         self.inventory_room_scrollarea.setObjectName("inventory_room_scrollarea")
         self.inventory_room_frame = QtWidgets.QWidget()
         self.inventory_room_frame.setGeometry(QtCore.QRect(0, 0, 100, 30))
-        self.inventory_room_frame.setMinimumSize(QtCore.QSize(0, 0))
         self.inventory_room_frame.setObjectName("inventory_room_frame")
         self.inventory_room_layout_2 = QtWidgets.QVBoxLayout(self.inventory_room_frame)
         self.inventory_room_layout_2.setContentsMargins(0, 0, 0, 0)
         self.inventory_room_layout_2.setSpacing(0)
         self.inventory_room_layout_2.setObjectName("inventory_room_layout_2")
         self.inventory_room_frame_2 = QtWidgets.QFrame(self.inventory_room_frame)
-        self.inventory_room_frame_2.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.inventory_room_frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.inventory_room_frame_2.setObjectName("inventory_room_frame_2")
         self.inventory_room_layout_3 = QtWidgets.QVBoxLayout(self.inventory_room_frame_2)
         self.inventory_room_layout_3.setContentsMargins(0, 0, 9, 0)
@@ -4501,9 +3302,6 @@ class Ui_MainWindow(object):
         self.inventory_preset_layout.setSpacing(0)
         self.inventory_preset_layout.setObjectName("inventory_preset_layout")
         self.inventory_preset_scrollarea = QtWidgets.QScrollArea(self.inventory_preset_page)
-        self.inventory_preset_scrollarea.setStyleSheet("QFrame {\n"
-                                                       "    border: none;\n"
-                                                       "}")
         self.inventory_preset_scrollarea.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.inventory_preset_scrollarea.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
         self.inventory_preset_scrollarea.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
@@ -4519,16 +3317,12 @@ class Ui_MainWindow(object):
         self.inventory_preset_layout_2.setObjectName("inventory_preset_layout_2")
         self.inventory_preset_frame_2 = QtWidgets.QFrame(self.inventory_preset_frame)
         self.inventory_preset_frame_2.setMinimumSize(QtCore.QSize(217, 0))
-        self.inventory_preset_frame_2.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.inventory_preset_frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.inventory_preset_frame_2.setObjectName("inventory_preset_frame_2")
         self.inventory_preset_layout_3 = QtWidgets.QVBoxLayout(self.inventory_preset_frame_2)
         self.inventory_preset_layout_3.setContentsMargins(0, 0, 9, 0)
         self.inventory_preset_layout_3.setSpacing(0)
         self.inventory_preset_layout_3.setObjectName("inventory_preset_layout_3")
         self.inventory_preset_menu_frame = QtWidgets.QFrame(self.inventory_preset_frame_2)
-        self.inventory_preset_menu_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.inventory_preset_menu_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.inventory_preset_menu_frame.setObjectName("inventory_preset_menu_frame")
         self.inventory_preset_menu_layout = QtWidgets.QVBoxLayout(self.inventory_preset_menu_frame)
         self.inventory_preset_menu_layout.setContentsMargins(0, 0, 0, 0)
@@ -4541,59 +3335,6 @@ class Ui_MainWindow(object):
         self.inventory_size_menu.addWidget(self.inventory_preset_page)
         self.inventory_bottom_layout.addWidget(self.inventory_size_menu)
         self.inventory_content_frame = QtWidgets.QFrame(self.inventory_bottom_frame)
-        self.inventory_content_frame.setStyleSheet("QComboBox {\n"
-                                                   "    color: #070808;\n"
-                                                   "    font-size: 14px;\n"
-                                                   "    border: 0.5px solid rgba(117, 124, 159, 0.5);\n"
-                                                   "    border-radius: 2px;\n"
-                                                   "    padding-left: 6px;\n"
-                                                   "}\n"
-                                                   "\n"
-                                                   "QComboBox:hover {\n"
-                                                   "    border: 0.5px solid #0915CC;\n"
-                                                   "}\n"
-                                                   "\n"
-                                                   "QComboBox::down-arrow {\n"
-                                                   "    image: url(:/image/arrow_drop_down_inventory_default.svg);\n"
-                                                   "}\n"
-                                                   "\n"
-                                                   "QComboBox::down-arrow:hover{\n"
-                                                   "    image: url(:/image/arrow_drop_down_inventory_hover.svg);\n"
-                                                   "}\n"
-                                                   "\n"
-                                                   "QComboBox::drop-down {\n"
-                                                   "    background: #F2F3F6;\n"
-                                                   "    width: 24px;\n"
-                                                   "}\n"
-                                                   "\n"
-                                                   "\n"
-                                                   "QComboBox QAbstractItemView\n"
-                                                   "{\n"
-                                                   "    background: #F9FAFB;\n"
-                                                   "    padding-left: 7px;\n"
-                                                   "    padding-right: 7px;\n"
-                                                   "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                                   "    border-radius: 8px;\n"
-                                                   "    font-size: 14px;\n"
-                                                   "    outline: 0;\n"
-                                                   "}\n"
-                                                   "\n"
-                                                   "\n"
-                                                   "QComboBox QAbstractItemView::item { \n"
-                                                   "    min-height: 20px;\n"
-                                                   "    padding-left: 15px;\n"
-                                                   "    background: #F9FAFB;\n"
-                                                   "    color: #070808;\n"
-                                                   "}\n"
-                                                   "\n"
-                                                   "QListView::item:selected { \n"
-                                                   "    color: #0915CC; \n"
-                                                   "    background-color: #F2F3F6; \n"
-                                                   "    border-radius: 4px;\n"
-                                                   "}\n"
-                                                   "")
-        self.inventory_content_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.inventory_content_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.inventory_content_frame.setObjectName("inventory_content_frame")
         self.inventory_content_layout = QtWidgets.QVBoxLayout(self.inventory_content_frame)
         self.inventory_content_layout.setContentsMargins(0, 0, 0, 0)
@@ -4601,83 +3342,20 @@ class Ui_MainWindow(object):
         self.inventory_content_layout.setObjectName("inventory_content_layout")
         self.inventory_categor_frame = QtWidgets.QFrame(self.inventory_content_frame)
         self.inventory_categor_frame.setMinimumSize(QtCore.QSize(0, 92))
-        self.inventory_categor_frame.setStyleSheet(".QFrame {\n"
-                                                   "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                                   "    border-radius: 4px;\n"
-                                                   "}\n"
-                                                   "\n"
-                                                   "QLabel {\n"
-                                                   "    color: #070808;\n"
-                                                   "    font-size: 14px;\n"
-                                                   "}\n"
-                                                   "\n"
-                                                   "QPushButton {\n"
-                                                   "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                                   "    border-radius: 16px;    \n"
-                                                   "    padding-left: 10px;\n"
-                                                   "    padding-right: 10px;\n"
-                                                   "    padding-top: 8px;\n"
-                                                   "    padding-bottom: 8px;\n"
-                                                   "    color: #757C9F;\n"
-                                                   "    font-size: 14px;\n"
-                                                   "    qproperty-icon: url(:/image/check_icon_default.svg);\n"
-                                                   "    icon-size: 18px, 18px;\n"
-                                                   "    background: #F9FAFB;\n"
-                                                   "}\n"
-                                                   "\n"
-                                                   "QPushButton:hover {\n"
-                                                   "    border: 0.5px solid #0915CC;\n"
-                                                   "    color: #0915CC;\n"
-                                                   "}\n"
-                                                   "\n"
-                                                   "QPushButton:checked {\n"
-                                                   "    border: 0.5px solid #0915CC;\n"
-                                                   "    color: #0915CC;\n"
-                                                   "}")
-        self.inventory_categor_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.inventory_categor_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.inventory_categor_frame.setObjectName("inventory_categor_frame")
         self.inventory_categor_layout = QtWidgets.QVBoxLayout(self.inventory_categor_frame)
         self.inventory_categor_layout.setContentsMargins(15, 15, 0, 15)
         self.inventory_categor_layout.setSpacing(10)
         self.inventory_categor_layout.setObjectName("inventory_categor_layout")
         self.inventory_categor_label = QtWidgets.QLabel(self.inventory_categor_frame)
-        self.inventory_categor_label.setStyleSheet("")
         self.inventory_categor_label.setObjectName("inventory_categor_label")
         self.inventory_categor_layout.addWidget(self.inventory_categor_label)
         self.inventory_categor_butt_frame = QtWidgets.QFrame(self.inventory_categor_frame)
-        self.inventory_categor_butt_frame.setStyleSheet("QFrame {\n"
-                                                        "    border: none;\n"
-                                                        "}\n"
-                                                        "")
-        self.inventory_categor_butt_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.inventory_categor_butt_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.inventory_categor_butt_frame.setObjectName("inventory_categor_butt_frame")
         self.inventory_categor_butt_layout = QtWidgets.QHBoxLayout(self.inventory_categor_butt_frame)
         self.inventory_categor_butt_layout.setContentsMargins(0, 0, 0, 0)
         self.inventory_categor_butt_layout.setSpacing(5)
         self.inventory_categor_butt_layout.setObjectName("inventory_categor_butt_layout")
-        self.inventory_cat_butt_sample = QtWidgets.QPushButton(self.inventory_categor_butt_frame)
-        self.inventory_cat_butt_sample.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.inventory_cat_butt_sample.setCheckable(True)
-        self.inventory_cat_butt_sample.setChecked(True)
-        self.inventory_cat_butt_sample.setObjectName("inventory_cat_butt_sample")
-        self.inventory_categor_butt_layout.addWidget(self.inventory_cat_butt_sample)
-        self.inven = QtWidgets.QPushButton(self.inventory_categor_butt_frame)
-        self.inven.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.inven.setCheckable(True)
-        self.inven.setObjectName("inven")
-        self.inventory_categor_butt_layout.addWidget(self.inven)
-        self.config_subpeak_butt_2 = QtWidgets.QPushButton(self.inventory_categor_butt_frame)
-        self.config_subpeak_butt_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.config_subpeak_butt_2.setCheckable(True)
-        self.config_subpeak_butt_2.setObjectName("config_subpeak_butt_2")
-        self.inventory_categor_butt_layout.addWidget(self.config_subpeak_butt_2)
-        self.config_peak_butt_2 = QtWidgets.QPushButton(self.inventory_categor_butt_frame)
-        self.config_peak_butt_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.config_peak_butt_2.setCheckable(True)
-        self.config_peak_butt_2.setObjectName("config_peak_butt_2")
-        self.inventory_categor_butt_layout.addWidget(self.config_peak_butt_2)
         self.inventory_categor_layout.addWidget(self.inventory_categor_butt_frame)
         self.inventory_content_layout.addWidget(self.inventory_categor_frame, 0, QtCore.Qt.AlignTop)
         self.inventory_content_scrollarea = QtWidgets.QScrollArea(self.inventory_content_frame)
@@ -4685,306 +3363,18 @@ class Ui_MainWindow(object):
         self.inventory_content_scrollarea.setWidgetResizable(True)
         self.inventory_content_scrollarea.setObjectName("inventory_content_scrollarea")
         self.inventory_content_scroll_frame = QtWidgets.QWidget()
-        self.inventory_content_scroll_frame.setGeometry(QtCore.QRect(0, 0, 990, 437))
+        self.inventory_content_scroll_frame.setGeometry(QtCore.QRect(0, 0, 990, 440))
         self.inventory_content_scroll_frame.setObjectName("inventory_content_scroll_frame")
         self.inventory_content_scroll_layout = QtWidgets.QVBoxLayout(self.inventory_content_scroll_frame)
         self.inventory_content_scroll_layout.setContentsMargins(0, 0, 0, 0)
         self.inventory_content_scroll_layout.setSpacing(0)
         self.inventory_content_scroll_layout.setObjectName("inventory_content_scroll_layout")
         self.inventory_content_clear_frame = QtWidgets.QFrame(self.inventory_content_scroll_frame)
-        self.inventory_content_clear_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.inventory_content_clear_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.inventory_content_clear_frame.setObjectName("inventory_content_clear_frame")
         self.inventory_content_clear_layout = QtWidgets.QHBoxLayout(self.inventory_content_clear_frame)
         self.inventory_content_clear_layout.setContentsMargins(0, 0, 0, 0)
         self.inventory_content_clear_layout.setSpacing(8)
         self.inventory_content_clear_layout.setObjectName("inventory_content_clear_layout")
-        self.frame_8 = QtWidgets.QFrame(self.inventory_content_clear_frame)
-        self.frame_8.setMinimumSize(QtCore.QSize(324, 119))
-        self.frame_8.setMaximumSize(QtCore.QSize(324, 119))
-        self.frame_8.setStyleSheet(".QFrame {\n"
-                                   "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                   "    border-radius: 10px;\n"
-                                   "}\n"
-                                   "\n"
-                                   ".QFrame:hover {\n"
-                                   "    border: 0.5px solid #0915CC;\n"
-                                   "}")
-        self.frame_8.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.frame_8.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_8.setObjectName("frame_8")
-        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.frame_8)
-        self.verticalLayout_4.setContentsMargins(15, 15, 15, 15)
-        self.verticalLayout_4.setSpacing(15)
-        self.verticalLayout_4.setObjectName("verticalLayout_4")
-        self.frame_9 = QtWidgets.QFrame(self.frame_8)
-        self.frame_9.setStyleSheet("border: none;")
-        self.frame_9.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_9.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_9.setObjectName("frame_9")
-        self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.frame_9)
-        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_4.setSpacing(0)
-        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
-        self.label_4 = QtWidgets.QLabel(self.frame_9)
-        self.label_4.setMinimumSize(QtCore.QSize(56, 56))
-        self.label_4.setMaximumSize(QtCore.QSize(56, 56))
-        self.label_4.setStyleSheet("image: url(:/image/Login_pic.png);")
-        self.label_4.setText("")
-        self.label_4.setObjectName("label_4")
-        self.horizontalLayout_4.addWidget(self.label_4)
-        self.pushButton_3 = QtWidgets.QPushButton(self.frame_9)
-        self.pushButton_3.setMinimumSize(QtCore.QSize(103, 28))
-        self.pushButton_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_3.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.pushButton_3.setStyleSheet("QPushButton {\n"
-                                        "    background: #F2F3F6;\n"
-                                        "    border-radius: 5px;\n"
-                                        "    color: #757C9F;\n"
-                                        "    qproperty-icon: url(:/image/plus_gray_icon.svg);\n"
-                                        "    font-size: 14px;\n"
-                                        "}\n"
-                                        "\n"
-                                        "QPushButton:hover {\n"
-                                        "    color: #0915CC;\n"
-                                        "}\n"
-                                        "")
-        self.pushButton_3.setIconSize(QtCore.QSize(24, 24))
-        self.pushButton_3.setObjectName("pushButton_3")
-        self.horizontalLayout_4.addWidget(self.pushButton_3, 0, QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
-        self.verticalLayout_4.addWidget(self.frame_9)
-        self.label_2 = QtWidgets.QLabel(self.frame_8)
-        self.label_2.setStyleSheet("color: #070808;\n"
-                                   "font-size: 14px;")
-        self.label_2.setObjectName("label_2")
-        self.verticalLayout_4.addWidget(self.label_2)
-        self.inventory_content_clear_layout.addWidget(self.frame_8)
-        self.frame_16 = QtWidgets.QFrame(self.inventory_content_clear_frame)
-        self.frame_16.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_16.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_16.setObjectName("frame_16")
-        self.verticalLayout_11 = QtWidgets.QVBoxLayout(self.frame_16)
-        self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_11.setSpacing(0)
-        self.verticalLayout_11.setObjectName("verticalLayout_11")
-        self.frame_17 = QtWidgets.QFrame(self.frame_16)
-        self.frame_17.setMinimumSize(QtCore.QSize(324, 162))
-        self.frame_17.setMaximumSize(QtCore.QSize(324, 162))
-        self.frame_17.setStyleSheet(".QFrame {\n"
-                                    "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                    "    border-radius: 10px;\n"
-                                    "}\n"
-                                    "\n"
-                                    ".QFrame:hover {\n"
-                                    "    border: 0.5px solid #0915CC;\n"
-                                    "}")
-        self.frame_17.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.frame_17.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_17.setObjectName("frame_17")
-        self.verticalLayout_10 = QtWidgets.QVBoxLayout(self.frame_17)
-        self.verticalLayout_10.setContentsMargins(15, 15, 15, 15)
-        self.verticalLayout_10.setSpacing(0)
-        self.verticalLayout_10.setObjectName("verticalLayout_10")
-        self.frame_18 = QtWidgets.QFrame(self.frame_17)
-        self.frame_18.setStyleSheet("border: none;")
-        self.frame_18.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.frame_18.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_18.setObjectName("frame_18")
-        self.horizontalLayout_10 = QtWidgets.QHBoxLayout(self.frame_18)
-        self.horizontalLayout_10.setContentsMargins(0, 0, 0, 15)
-        self.horizontalLayout_10.setSpacing(11)
-        self.horizontalLayout_10.setObjectName("horizontalLayout_10")
-        self.label_13 = QtWidgets.QLabel(self.frame_18)
-        self.label_13.setMinimumSize(QtCore.QSize(56, 56))
-        self.label_13.setMaximumSize(QtCore.QSize(56, 56))
-        self.label_13.setStyleSheet("image: url(:/image/custom_item_icon.svg);")
-        self.label_13.setText("")
-        self.label_13.setObjectName("label_13")
-        self.horizontalLayout_10.addWidget(self.label_13)
-        self.profile_delete_butt_2 = QtWidgets.QPushButton(self.frame_18)
-        self.profile_delete_butt_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.profile_delete_butt_2.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.profile_delete_butt_2.setStyleSheet("QPushButton {\n"
-                                                 "    background: transparent;\n"
-                                                 "    font-size: 14px;\n"
-                                                 "    color: #757C9F;\n"
-                                                 "    qproperty-icon: url(:/image/inventory_delete_default.svg);\n"
-                                                 "}\n"
-                                                 "\n"
-                                                 "QPushButton:hover {\n"
-                                                 "    color: #FF3C2F;\n"
-                                                 "}")
-        self.profile_delete_butt_2.setIconSize(QtCore.QSize(24, 24))
-        self.profile_delete_butt_2.setObjectName("profile_delete_butt_2")
-        self.horizontalLayout_10.addWidget(self.profile_delete_butt_2, 0, QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
-        self.pushButton_5 = QtWidgets.QPushButton(self.frame_18)
-        self.pushButton_5.setMinimumSize(QtCore.QSize(103, 28))
-        self.pushButton_5.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_5.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.pushButton_5.setStyleSheet("QPushButton {\n"
-                                        "    background: #F2F3F6;\n"
-                                        "    border-radius: 5px;\n"
-                                        "    color: #757C9F;\n"
-                                        "    qproperty-icon: url(:/image/plus_gray_icon.svg);\n"
-                                        "    font-size: 14px;\n"
-                                        "}\n"
-                                        "\n"
-                                        "QPushButton:hover {\n"
-                                        "    color: #0915CC;\n"
-                                        "}\n"
-                                        "")
-        self.pushButton_5.setIconSize(QtCore.QSize(24, 24))
-        self.pushButton_5.setObjectName("pushButton_5")
-        self.horizontalLayout_10.addWidget(self.pushButton_5, 0, QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
-        self.verticalLayout_10.addWidget(self.frame_18)
-        self.label_14 = QtWidgets.QLabel(self.frame_17)
-        self.label_14.setStyleSheet("color: #070808;\n"
-                                    "font-size: 14px;")
-        self.label_14.setObjectName("label_14")
-        self.verticalLayout_10.addWidget(self.label_14)
-        self.frame_20 = QtWidgets.QFrame(self.frame_17)
-        self.frame_20.setStyleSheet("QFrame {\n"
-                                    "    border: none;\n"
-                                    "}\n"
-                                    "\n"
-                                    "QLabel {\n"
-                                    "    color: #757C9F;\n"
-                                    "    font-size: 14px;\n"
-                                    "}")
-        self.frame_20.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.frame_20.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_20.setObjectName("frame_20")
-        self.verticalLayout_12 = QtWidgets.QVBoxLayout(self.frame_20)
-        self.verticalLayout_12.setContentsMargins(0, 5, 0, 0)
-        self.verticalLayout_12.setSpacing(2)
-        self.verticalLayout_12.setObjectName("verticalLayout_12")
-        self.frame_23 = QtWidgets.QFrame(self.frame_20)
-        self.frame_23.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.frame_23.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_23.setObjectName("frame_23")
-        self.horizontalLayout_16 = QtWidgets.QHBoxLayout(self.frame_23)
-        self.horizontalLayout_16.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_16.setSpacing(4)
-        self.horizontalLayout_16.setObjectName("horizontalLayout_16")
-        self.label_31 = QtWidgets.QLabel(self.frame_23)
-        self.label_31.setMinimumSize(QtCore.QSize(12, 12))
-        self.label_31.setStyleSheet("image: url(:/image/width_icon.svg);")
-        self.label_31.setText("")
-        self.label_31.setObjectName("label_31")
-        self.horizontalLayout_16.addWidget(self.label_31)
-        self.label_32 = QtWidgets.QLabel(self.frame_23)
-        self.label_32.setStyleSheet("margin-right: 12px;")
-        self.label_32.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
-        self.label_32.setObjectName("label_32")
-        self.horizontalLayout_16.addWidget(self.label_32)
-        self.label_33 = QtWidgets.QLabel(self.frame_23)
-        self.label_33.setMinimumSize(QtCore.QSize(12, 12))
-        self.label_33.setStyleSheet("image: url(:/image/length_icon.svg);")
-        self.label_33.setText("")
-        self.label_33.setObjectName("label_33")
-        self.horizontalLayout_16.addWidget(self.label_33)
-        self.label_34 = QtWidgets.QLabel(self.frame_23)
-        self.label_34.setStyleSheet("")
-        self.label_34.setObjectName("label_34")
-        self.horizontalLayout_16.addWidget(self.label_34)
-        self.verticalLayout_12.addWidget(self.frame_23, 0, QtCore.Qt.AlignLeft)
-        self.frame_24 = QtWidgets.QFrame(self.frame_20)
-        self.frame_24.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.frame_24.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_24.setObjectName("frame_24")
-        self.horizontalLayout_17 = QtWidgets.QHBoxLayout(self.frame_24)
-        self.horizontalLayout_17.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_17.setSpacing(4)
-        self.horizontalLayout_17.setObjectName("horizontalLayout_17")
-        self.label_35 = QtWidgets.QLabel(self.frame_24)
-        self.label_35.setMinimumSize(QtCore.QSize(12, 12))
-        self.label_35.setStyleSheet("image: url(:/image/length_icon.svg);")
-        self.label_35.setText("")
-        self.label_35.setObjectName("label_35")
-        self.horizontalLayout_17.addWidget(self.label_35)
-        self.label_36 = QtWidgets.QLabel(self.frame_24)
-        self.label_36.setStyleSheet("")
-        self.label_36.setObjectName("label_36")
-        self.horizontalLayout_17.addWidget(self.label_36)
-        self.verticalLayout_12.addWidget(self.frame_24, 0, QtCore.Qt.AlignLeft)
-        self.verticalLayout_10.addWidget(self.frame_20, 0, QtCore.Qt.AlignLeft)
-        self.verticalLayout_11.addWidget(self.frame_17)
-        self.inventory_content_clear_layout.addWidget(self.frame_16)
-        self.frame_21 = QtWidgets.QFrame(self.inventory_content_clear_frame)
-        self.frame_21.setMinimumSize(QtCore.QSize(324, 119))
-        self.frame_21.setMaximumSize(QtCore.QSize(324, 119))
-        self.frame_21.setStyleSheet("#frame_21 {\n"
-                                    "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
-                                    "    border-radius: 10px;\n"
-                                    "}\n"
-                                    "\n"
-                                    "#frame_21:hover {\n"
-                                    "    border: 0.5px solid #0915CC;\n"
-                                    "}")
-        self.frame_21.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.frame_21.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_21.setObjectName("frame_21")
-        self.verticalLayout_13 = QtWidgets.QVBoxLayout(self.frame_21)
-        self.verticalLayout_13.setContentsMargins(15, 15, 15, 15)
-        self.verticalLayout_13.setSpacing(15)
-        self.verticalLayout_13.setObjectName("verticalLayout_13")
-        self.frame_22 = QtWidgets.QFrame(self.frame_21)
-        self.frame_22.setStyleSheet("")
-        self.frame_22.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_22.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_22.setObjectName("frame_22")
-        self.horizontalLayout_11 = QtWidgets.QHBoxLayout(self.frame_22)
-        self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_11.setSpacing(17)
-        self.horizontalLayout_11.setObjectName("horizontalLayout_11")
-        self.label_15 = QtWidgets.QLabel(self.frame_22)
-        self.label_15.setMinimumSize(QtCore.QSize(56, 56))
-        self.label_15.setMaximumSize(QtCore.QSize(56, 56))
-        self.label_15.setStyleSheet("image: url(:/image/Login_pic.png);")
-        self.label_15.setText("")
-        self.label_15.setObjectName("label_15")
-        self.horizontalLayout_11.addWidget(self.label_15)
-        self.profile_delete_butt_3 = QtWidgets.QPushButton(self.frame_22)
-        self.profile_delete_butt_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.profile_delete_butt_3.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.profile_delete_butt_3.setStyleSheet("QPushButton {\n"
-                                                 "    border:none;\n"
-                                                 "    background: transparent;\n"
-                                                 "    font-size: 14px;\n"
-                                                 "    color: #757C9F;\n"
-                                                 "    qproperty-icon: url(:/image/inventory_delete_default.svg);\n"
-                                                 "}\n"
-                                                 "\n"
-                                                 "QPushButton:hover {\n"
-                                                 "    color: #FF3C2F;\n"
-                                                 "}")
-        self.profile_delete_butt_3.setIconSize(QtCore.QSize(24, 24))
-        self.profile_delete_butt_3.setObjectName("profile_delete_butt_3")
-        self.horizontalLayout_11.addWidget(self.profile_delete_butt_3, 0, QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
-        self.comboBox = QtWidgets.QComboBox(self.frame_22)
-        self.comboBox.setMinimumSize(QtCore.QSize(60, 24))
-        self.comboBox.setMaximumSize(QtCore.QSize(60, 24))
-        self.comboBox.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.comboBox.setStyleSheet("")
-        self.comboBox.setEditable(True)
-        self.comboBox.setObjectName("comboBox")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.horizontalLayout_11.addWidget(self.comboBox, 0, QtCore.Qt.AlignTop)
-        self.verticalLayout_13.addWidget(self.frame_22)
-        self.label_16 = QtWidgets.QLabel(self.frame_21)
-        self.label_16.setStyleSheet("color: #070808;\n"
-                                    "font-size: 14px;")
-        self.label_16.setObjectName("label_16")
-        self.verticalLayout_13.addWidget(self.label_16)
-        self.inventory_content_clear_layout.addWidget(self.frame_21)
         self.inventory_content_scroll_layout.addWidget(self.inventory_content_clear_frame)
         self.inventory_content_scrollarea.setWidget(self.inventory_content_scroll_frame)
         self.inventory_content_layout.addWidget(self.inventory_content_scrollarea)
@@ -5000,13 +3390,13 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.window_pages.setCurrentIndex(1)
-        self.login_pages.setCurrentIndex(1)
+        self.login_pages.setCurrentIndex(3)
         self.content_pages.setCurrentIndex(0)
         self.calc_menu_pages.setCurrentIndex(0)
         self.calc_size_menu.setCurrentIndex(1)
         self.calc_result_pages.setCurrentIndex(1)
-        self.equip_truck_pages.setCurrentIndex(0)
-        self.config_pages.setCurrentIndex(0)
+        self.equip_truck_pages.setCurrentIndex(1)
+        self.config_pages.setCurrentIndex(1)
         self.inventory_size_menu.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
@@ -5020,8 +3410,8 @@ class Ui_MainWindow(object):
         self.log_email_input.setPlaceholderText(_translate("MainWindow", "Enter your email"))
         self.log_pass_label.setText(_translate("MainWindow", "Password"))
         self.log_pass_input.setPlaceholderText(_translate("MainWindow", "Enter your password"))
-        self.radioButton.setText(_translate("MainWindow", "Keep me signed in"))
-        self.pushButton_2.setText(_translate("MainWindow", "Forgot Password?"))
+        self.log_keep_signed_btn.setText(_translate("MainWindow", "Keep me signed in"))
+        self.log_fogot_pass_btn.setText(_translate("MainWindow", "Forgot Password?"))
         self.log_sign_butt.setText(_translate("MainWindow", "Sign in"))
         self.log_bot_text.setText(_translate("MainWindow", "Do not have an account?"))
         self.log_create_acc_but.setText(_translate("MainWindow", "Create Account"))
@@ -5084,66 +3474,28 @@ class Ui_MainWindow(object):
         self.error_calc_zip_to.setText(_translate("MainWindow", "Enter valid zip code"))
         self.calc_1_move_size_label.setText(_translate("MainWindow", "Move Size"))
         self.calc_extra_room_label.setText(_translate("MainWindow", "Extra Rooms"))
-        self.inventory_cat_butt_sample_2.setText(_translate("MainWindow", "Office"))
-        self.inven_2.setText(_translate("MainWindow", "Basement / Storage"))
-        self.config_subpeak_butt_3.setText(_translate("MainWindow", "Dining Room"))
-        self.config_peak_butt_3.setText(_translate("MainWindow", "Extra Room"))
         self.calc_1_entrance_from_label.setText(_translate("MainWindow", "Entrance Type (From)"))
         self.calc_1_entrance_to_label.setText(_translate("MainWindow", "Entrance Type (To)"))
         self.calc_inv_check_header.setText(_translate("MainWindow", "Inventory Check"))
         self.calc_all_menu_butt.setText(_translate("MainWindow", "All Inventory"))
         self.calc_preset_choose_butt.setText(_translate("MainWindow", "Inventory Presets"))
         self.calc_inv_categor_label.setText(_translate("MainWindow", "Categories:"))
-        self.inventory_cat_butt_sample_3.setText(_translate("MainWindow", "Boxes, Totes"))
-        self.inven_3.setText(_translate("MainWindow", "Dresser, Mirror"))
-        self.config_subpeak_butt_4.setText(_translate("MainWindow", "Bed, Mattress"))
-        self.config_peak_butt_4.setText(_translate("MainWindow", "Sofa, Chair"))
-        self.pushButton_4.setText(_translate("MainWindow", "Add Item"))
-        self.label_18.setText(_translate("MainWindow", "DISH Box 18x18x27"))
-        self.pushButton_6.setText(_translate("MainWindow", "Add Item"))
-        self.label_21.setText(_translate("MainWindow", "DISH Box 18x18x27"))
-        self.label_38.setText(_translate("MainWindow", "Width: 10 ft"))
-        self.label_40.setText(_translate("MainWindow", "Height: 10 ft"))
-        self.label_42.setText(_translate("MainWindow", "Length: 16 ft"))
-        self.profile_delete_butt_4.setText(_translate("MainWindow", "Delete "))
-        self.comboBox_2.setItemText(0, _translate("MainWindow", "100"))
-        self.comboBox_2.setItemText(1, _translate("MainWindow", "2"))
-        self.comboBox_2.setItemText(2, _translate("MainWindow", "3"))
-        self.comboBox_2.setItemText(3, _translate("MainWindow", "4"))
-        self.comboBox_2.setItemText(4, _translate("MainWindow", "5"))
-        self.comboBox_2.setItemText(5, _translate("MainWindow", "6"))
-        self.comboBox_2.setItemText(6, _translate("MainWindow", "7"))
-        self.comboBox_2.setItemText(7, _translate("MainWindow", "8"))
-        self.comboBox_2.setItemText(8, _translate("MainWindow", "9"))
-        self.label_23.setText(_translate("MainWindow", "DISH Box 18x18x27"))
         self.calc_result_header.setText(_translate("MainWindow", "Calculation Results"))
         self.calc_result_crew_size_label.setText(_translate("MainWindow", "Crew Size:"))
         self.calc_result_hr_label.setText(_translate("MainWindow", "Hourly Rate:"))
-        self.calc_result_hr_info.setText(_translate("MainWindow", "$96.99 / Hr"))
-        self.calc_result_travel_time_info.setText(_translate("MainWindow", "30 minutes"))
-        self.calc_result_est_info.setText(_translate("MainWindow", "2 Hrs 45 Min - 3 Hrs 15 Min"))
-        self.calc_result_truck_size_info.setText(_translate("MainWindow", "20 ft truck"))
-        self.calc_result_crew_size_info.setText(_translate("MainWindow", "3 Movers"))
         self.calc_result_travel_time_label.setText(_translate("MainWindow", "Travel Time:"))
         self.calc_result_est_label.setText(_translate("MainWindow", "Estimated Job Time:"))
         self.calc_result_truck_size_label.setText(_translate("MainWindow", "Truck Size:"))
         self.calc_result_quote_label.setText(_translate("MainWindow", "Estimated Quote:"))
-        self.calc_result_quote_info.setText(_translate("MainWindow", "$467.50 - $552.50"))
         self.calc_result_details_header.setText(_translate("MainWindow", "Move Details"))
-        self.calc_result_details_zip_from_info.setText(_translate("MainWindow", "01237"))
         self.calc_result_details_ent_to_label.setText(_translate("MainWindow", "Entrance Type (To):"))
         self.calc_result_details_service_label.setText(_translate("MainWindow", "Type of Service:"))
         self.calc_result_details_date_label.setText(_translate("MainWindow", "Move Date:"))
         self.calc_result_details_ent_from_label.setText(_translate("MainWindow", "Entrance Type (From):"))
         self.calc_result_details_service_info.setText(_translate("MainWindow", "Moving"))
-        self.calc_result_details_zip_to_info.setText(_translate("MainWindow", "01237"))
-        self.calc_result_details_ent_to_info.setText(_translate("MainWindow", "Private House"))
         self.calc_result_details_zip_to_label.setText(_translate("MainWindow", "Zip Code (To):"))
-        self.calc_result_details_ent_from_info.setText(_translate("MainWindow", "No Stairs - Ground Floor"))
-        self.calc_result_details_date_info.setText(_translate("MainWindow", "May 25, 2021"))
         self.calc_result_details_zip_from_label.setText(_translate("MainWindow", "Zip Code (From):"))
         self.calc_result_details_size_label.setText(_translate("MainWindow", "Move Size:"))
-        self.calc_result_details_size_info.setText(_translate("MainWindow", "1 bd Apartment; Dining Room"))
         self.calc_result_cus_info_header.setText(_translate("MainWindow", "Customer Info"))
         self.calc_result_cus_info_small_header.setText(_translate("MainWindow", "Personal Info"))
         self.calc_result_cus_info_f_name_label.setText(_translate("MainWindow", "First Name"))
@@ -5163,11 +3515,11 @@ class Ui_MainWindow(object):
         self.calc_result_cus_info_adr_from_1_label.setText(_translate("MainWindow", "Address 1"))
         self.calc_result_cus_info_adr_from_1_input.setPlaceholderText(_translate("MainWindow", "Type Street Address"))
         self.calc_result_cus_info_adr_from_2_label.setText(_translate("MainWindow", "Address 2 (Optional)"))
-        self.calc_result_cus_info_adr_from_2_input.setPlaceholderText(_translate("MainWindow", "Type Street Address"))
+        self.calc_result_cus_info_adr_from_2_input.setPlaceholderText(_translate("MainWindow", "Apt, suit, etc."))
         self.calc_result_cus_info_adr_to_label.setText(_translate("MainWindow", "Address (To)"))
         self.calc_result_cus_info_adr_to_opt.setText(_translate("MainWindow", "Optional"))
         self.calc_result_cus_info_adr_to_1_label.setText(_translate("MainWindow", "Address 1"))
-        self.calc_result_cus_info_adr_to_1_input.setPlaceholderText(_translate("MainWindow", "Apt, suit, etc."))
+        self.calc_result_cus_info_adr_to_1_input.setPlaceholderText(_translate("MainWindow", "Type Street Address"))
         self.calc_result_cus_info_adr_to_2_label.setText(_translate("MainWindow", "Address 2 (Optional)"))
         self.calc_result_cus_info_adr_to_2_input.setPlaceholderText(_translate("MainWindow", "Apt, suit, etc."))
         self.calc_result_cus_info_submit_btn.setText(_translate("MainWindow", "Submit Info"))
@@ -5221,10 +3573,6 @@ class Ui_MainWindow(object):
             _translate("MainWindow", "Manage prices for a certain number of movers for each price type."))
         self.config_price_type_label.setText(_translate("MainWindow", "Price Types"))
         self.config_edit_price_butt.setText(_translate("MainWindow", "Edit Prices"))
-        self.config_reg_butt.setText(_translate("MainWindow", "Regular"))
-        self.config_disc_butt.setText(_translate("MainWindow", "Discount"))
-        self.config_subpeak_butt.setText(_translate("MainWindow", "Subpeak"))
-        self.config_peak_butt.setText(_translate("MainWindow", "Peak"))
         self.config_start_date.setText(_translate("MainWindow", "Start Date"))
         self.config_end_date.setText(_translate("MainWindow", "End Date"))
         self.config_end_date_edit.setDisplayFormat(_translate("MainWindow", "MMMM dd, yyyy"))
@@ -5246,29 +3594,6 @@ class Ui_MainWindow(object):
         self.inventory_save_butt.setText(_translate("MainWindow", "Save Changes "))
         self.inventory_add_butt.setText(_translate("MainWindow", "Add New Item "))
         self.inventory_categor_label.setText(_translate("MainWindow", "Categories:"))
-        self.inventory_cat_butt_sample.setText(_translate("MainWindow", "Boxes, Totes"))
-        self.inven.setText(_translate("MainWindow", "Dresser, Mirror"))
-        self.config_subpeak_butt_2.setText(_translate("MainWindow", "Bed, Mattress"))
-        self.config_peak_butt_2.setText(_translate("MainWindow", "Sofa, Chair"))
-        self.pushButton_3.setText(_translate("MainWindow", "Add Item"))
-        self.label_2.setText(_translate("MainWindow", "DISH Box 18x18x27"))
-        self.profile_delete_butt_2.setText(_translate("MainWindow", "Delete "))
-        self.pushButton_5.setText(_translate("MainWindow", "Add Item"))
-        self.label_14.setText(_translate("MainWindow", "DISH Box 18x18x27"))
-        self.label_32.setText(_translate("MainWindow", "Width: 10 ft"))
-        self.label_34.setText(_translate("MainWindow", "Height: 10 ft"))
-        self.label_36.setText(_translate("MainWindow", "Length: 16 ft"))
-        self.profile_delete_butt_3.setText(_translate("MainWindow", "Delete "))
-        self.comboBox.setItemText(0, _translate("MainWindow", "100"))
-        self.comboBox.setItemText(1, _translate("MainWindow", "2"))
-        self.comboBox.setItemText(2, _translate("MainWindow", "3"))
-        self.comboBox.setItemText(3, _translate("MainWindow", "4"))
-        self.comboBox.setItemText(4, _translate("MainWindow", "5"))
-        self.comboBox.setItemText(5, _translate("MainWindow", "6"))
-        self.comboBox.setItemText(6, _translate("MainWindow", "7"))
-        self.comboBox.setItemText(7, _translate("MainWindow", "8"))
-        self.comboBox.setItemText(8, _translate("MainWindow", "9"))
-        self.label_16.setText(_translate("MainWindow", "DISH Box 18x18x27"))
 
 
 from resources import resources_rc

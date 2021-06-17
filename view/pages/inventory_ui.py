@@ -1,5 +1,6 @@
+from urllib.request import urlopen
 from PyQt5.QtCore import Qt, QSize
-from PyQt5.QtGui import QIcon, QCursor, QIntValidator
+from PyQt5.QtGui import QIcon, QCursor, QIntValidator, QPixmap
 from PyQt5.QtWidgets import QPushButton, QFrame, QVBoxLayout, QHBoxLayout, QLabel, QComboBox, QStyledItemDelegate
 from view.custom_widgets.flow_layout import FlowLayout
 
@@ -25,7 +26,10 @@ class InventoryUi:
                                                     del_funk, add_funk, True))
             else:
                 room_menu_butt.setText(room["rooms"]["name"].title().replace("_", " "))
-                room_menu_butt.setIcon(QIcon(":/image/custom_item_icon.svg"))
+                data = urlopen(room["rooms"]["image"]).read()
+                pixmap = QPixmap()
+                pixmap.loadFromData(data)
+                room_menu_butt.setIcon(QIcon(pixmap))
                 room_menu_butt.clicked.connect(funk(room["room_id"], room["id"], room_menu_butt, del_funk, add_funk))
                 self.main_window.ui.inventory_search_clear.setVisible(False)
 

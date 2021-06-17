@@ -19,16 +19,13 @@ class MenuUI:
             menu[menu_point] = {}
             frame = QFrame(self.main_window.ui.menu_frame)
             frame.setFrameShape(QFrame.NoFrame)
-            frame.setObjectName(f"frame_{menu_point}")
             layout = QVBoxLayout(frame)
             layout.setContentsMargins(0, 0, 0, 3)
             layout.setSpacing(0)
-            layout.setObjectName(f"layout_{menu_point}")
             menu[menu_point]["layout"] = layout
             button = QPushButton(menu_point.replace("_", " ").title(), frame)
             button.setCursor(QCursor(Qt.PointingHandCursor))
             button.setCheckable(True)
-            button.setObjectName(f"button_{menu_point}")
             menu[menu_point]["button"] = button
             layout.addWidget(button, 0, Qt.AlignVCenter)
             label = QLabel(frame)
@@ -36,7 +33,6 @@ class MenuUI:
             label.setMaximumSize(QSize(16777215, 3))
             label.setText("")
             label.setVisible(False)
-            label.setObjectName(f"label_{menu_point}")
             menu[menu_point]["label"] = label
             layout.addWidget(label)
             button.clicked.connect(page_mapper[menu_point])
@@ -66,6 +62,6 @@ class MenuUI:
         button.setProperty("selected", is_selected)
         button.setStyle(button.style())
         if is_selected:
-            button.setIcon(QIcon(":/image/account_active@2x.svg"))
+            button.setIcon(QIcon(":/image/account_active.svg"))
         else:
-            button.setIcon(QIcon(":/image/account@2x.svg"))
+            button.setIcon(QIcon(":/image/account.svg"))
