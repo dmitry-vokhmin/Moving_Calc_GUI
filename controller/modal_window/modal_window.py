@@ -37,14 +37,16 @@ class ModalWindow(QDialog):
         self.ui.pages.setCurrentWidget(self.ui.add_user_page)
         self.open()
 
-    def show_notification_page(self, data, is_error, previous_page=None):
+    def show_notification_page(self, is_error, title=None, description=None, previous_page=None, next_page=None, btn_text=None):
         if is_error:
-            self.notification_page.show_error_page(data)
+            self.notification_page.show_error_page(title, description)
             self.notification_page.error_button(previous_page)
         else:
-            self.notification_page.show_success_page(data)
+            self.notification_page.show_success_page(title, description)
+            self.notification_page.success_button(next_page, btn_text)
 
-    def show_confirm_dialog(self, funk):
+    def show_confirm_dialog(self, action_text, funk):
+        self.confirm_page.change_text(action_text)
         self.confirm_page.confirm_changes(funk)
         self.ui.pages.setCurrentWidget(self.ui.confirm_page)
 

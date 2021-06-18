@@ -51,7 +51,10 @@ class Ui_MainWindow(object):
         self.window_pages = QtWidgets.QStackedWidget(self.centralwidget)
         self.window_pages.setStyleSheet("QPushButton {\n"
                                         "    outline: 0;\n"
-                                        "}")
+                                        "}\n"
+                                        "#window_pages .QWidget {\n"
+                                        "    background-color: rgb(255, 255, 255);\n"
+                                        "}\n")
         self.window_pages.setObjectName("window_pages")
         self.login_window = QtWidgets.QWidget()
         self.login_window.setStyleSheet("QStackedWidget {\n"
@@ -1044,10 +1047,6 @@ class Ui_MainWindow(object):
                                           "}\n"
                                           "\n"
                                           "/* QFrame */\n"
-                                          "\n"
-                                          "#profile_frame {\n"
-                                          "    background-color: rgb(255, 255, 255);\n"
-                                          "}\n"
                                           "\n"
                                           "#profile_frame .QPushButton {\n"
                                           "    background: transparent;\n"

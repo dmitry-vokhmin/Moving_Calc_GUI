@@ -12,7 +12,7 @@ class UserProfile:
 
     def set_profile(self, staff_profile=None):
         self.main_window.ui.role_combobox.clear()
-        if staff_profile and staff_profile["id"] != self.main_window.user.id:
+        if staff_profile:
             name, role, email = self.set_staff_profile(staff_profile)
         else:
             name, role, email = self.set_main_user_profile()
@@ -20,10 +20,14 @@ class UserProfile:
         self.main_window.ui.profile_change_email_butt.setVisible(True)
         self.main_window.ui.profile_new_pass_frame.setVisible(False)
         self.main_window.ui.profile_new_email_frame.setVisible(False)
+        self.main_window.ui.profile_pass_input.setText("")
+        self.main_window.ui.profile_new_pass_input.setText("")
+        self.main_window.ui.profile_new_pass2_input.setText("")
         self.main_window.ui.profile_user_name.setText(name)
         self.main_window.ui.profile_role_label.setText(role)
         self.main_window.ui.profile_name_input.setText(name)
         self.main_window.ui.profile_email_field.setText(email)
+        self.main_window.ui.profile_new_email_input.setText("")
 
     def set_staff_profile(self, staff_profile):
         name = staff_profile["fullname"]

@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QDialog, QRadioButton
+from PyQt5.QtWidgets import QDialog, QRadioButton, QLineEdit
 from PyQt5.QtCore import QEvent
 from model.user.add_new_user import AddNewUser
 from controller.validator import validation
@@ -51,29 +51,39 @@ class AddUserPage(QDialog):
             self.main_modal_window.ui.add_user_radio_butt_layout.addWidget(radio_button)
 
     def add_user(self):
-        if self.main_modal_window.main_window.is_registration_fields_valid(self.fields):
+        if self.validation.check_validation(self.fields):
             radio_button_id = self.get_selected_radio_button_id()
-            data = {
-                "fullname": self.fields["name"]["fields"][0].text().title().strip(),
-                "email": self.fields["email"]["fields"][0].text().lower(),
-                "password": self.fields["password"]["fields"][0].text(),
-                "company_id": self.main_modal_window.main_window.user.company_id,
-                "user_role_id": radio_button_id
-            }
+            data = self.get_data(radio_button_id)
             new_user = AddNewUser(**data)
             response_code, response_data = new_user.post()
             if response_code > 399:
                 self.main_modal_window.show_notification_page(
-                    response_data,
                     is_error=True,
                     previous_page=lambda: self.main_modal_window.ui.pages.setCurrentWidget(
                         self.main_modal_window.ui.add_user_page)
                 )
             else:
-                self.main_modal_window.main_window.user_management.update_flag = True
                 self.main_modal_window.main_window.ui.user_management_page.setVisible(False)
                 self.main_modal_window.main_window.ui.user_management_page.setVisible(True)
-                self.main_modal_window.show_notification_page(response_data, is_error=False)
+                self.main_modal_window.show_notification_page(
+                    title="New user added",
+                    description="New user account was added successfully, "
+                                "a new user will receive an email with the login instructions shortly.",
+                    is_error=False)
+                self.clear_page()
+
+    def clear_page(self):
+        for input_field in self.main_modal_window.ui.main_frame.findChildren(QLineEdit):
+            input_field.setText("")
+
+    def get_data(self, radio_button_id):
+        return {
+            "fullname": self.fields["name"]["fields"][0].text().title().strip(),
+            "email": self.fields["email"]["fields"][0].text().lower(),
+            "password": self.fields["password"]["fields"][0].text(),
+            "company_id": self.main_modal_window.main_window.user.company_id,
+            "user_role_id": radio_button_id
+        }
 
     def get_selected_radio_button_id(self):
         for button in self.radio_buttons.values():

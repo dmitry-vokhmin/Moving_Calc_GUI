@@ -5,6 +5,9 @@ from model.models import Model
 class User(Model):
     _end_point = "/user/"
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
     def get(self):
         api = Api()
         response_code, response_data = api.get(self)

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1366</width>
-    <height>842</height>
+    <height>838</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -1743,7 +1743,7 @@ font-size: 14px;</string>
 </string>
              </property>
              <property name="currentIndex">
-              <number>0</number>
+              <number>1</number>
              </property>
              <widget class="QWidget" name="calculator_page">
               <property name="layoutDirection">
@@ -2279,7 +2279,7 @@ QPushButton:hover {
                   <item>
                    <widget class="QStackedWidget" name="calc_menu_pages">
                     <property name="currentIndex">
-                     <number>2</number>
+                     <number>1</number>
                     </property>
                     <widget class="QWidget" name="calc_move_detail_page">
                      <layout class="QVBoxLayout" name="calc_move_detail_layout">
@@ -3978,7 +3978,7 @@ QPushButton:checked {
                                   <x>0</x>
                                   <y>0</y>
                                   <width>217</width>
-                                  <height>548</height>
+                                  <height>544</height>
                                  </rect>
                                 </property>
                                 <layout class="QVBoxLayout" name="calc_preset_layout_2">
@@ -4322,7 +4322,7 @@ QPushButton:checked {
                                  <x>0</x>
                                  <y>0</y>
                                  <width>993</width>
-                                 <height>423</height>
+                                 <height>419</height>
                                 </rect>
                                </property>
                                <layout class="QVBoxLayout" name="calc_inv_content_scroll_layout">
@@ -5728,7 +5728,7 @@ font-size: 19px;</string>
                              <property name="geometry">
                               <rect>
                                <x>0</x>
-                               <y>-248</y>
+                               <y>0</y>
                                <width>789</width>
                                <height>987</height>
                               </rect>
@@ -6348,8 +6348,8 @@ padding: 4px 8px 4px 8px;</string>
                   <property name="geometry">
                    <rect>
                     <x>0</x>
-                    <y>0</y>
-                    <width>979</width>
+                    <y>-198</y>
+                    <width>1301</width>
                     <height>931</height>
                    </rect>
                   </property>
@@ -7701,8 +7701,8 @@ font-size: 14px;</string>
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>100</width>
-                    <height>30</height>
+                    <width>1306</width>
+                    <height>548</height>
                    </rect>
                   </property>
                   <layout class="QVBoxLayout" name="user_manage_scroll_layout">
@@ -8234,8 +8234,8 @@ QPushButton[selected=true] {
                        <rect>
                         <x>0</x>
                         <y>0</y>
-                        <width>100</width>
-                        <height>30</height>
+                        <width>1366</width>
+                        <height>590</height>
                        </rect>
                       </property>
                       <layout class="QVBoxLayout" name="equip_truck_scroll_layout">
@@ -10564,7 +10564,7 @@ QPushButton:checked {
                            <x>0</x>
                            <y>0</y>
                            <width>217</width>
-                           <height>30</height>
+                           <height>558</height>
                           </rect>
                          </property>
                          <layout class="QVBoxLayout" name="inventory_preset_layout_2">
@@ -10908,7 +10908,7 @@ QPushButton:checked {
                           <x>0</x>
                           <y>0</y>
                           <width>990</width>
-                          <height>164</height>
+                          <height>433</height>
                          </rect>
                         </property>
                         <layout class="QVBoxLayout" name="inventory_content_scroll_layout">

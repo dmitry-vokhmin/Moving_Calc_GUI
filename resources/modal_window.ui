@@ -101,7 +101,7 @@ QRadioButton {
       <item>
        <widget class="QStackedWidget" name="pages">
         <property name="currentIndex">
-         <number>7</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="add_user_page">
          <layout class="QVBoxLayout" name="add_user_layout">
@@ -1228,6 +1228,12 @@ QPushButton:hover {
                 </item>
                 <item>
                  <widget class="QPushButton" name="confirm_accept_butt">
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>47</height>
+                   </size>
+                  </property>
                   <property name="cursor">
                    <cursorShape>PointingHandCursor</cursorShape>
                   </property>

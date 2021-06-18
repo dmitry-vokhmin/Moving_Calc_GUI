@@ -8,6 +8,7 @@ class UserManagementTable:
         self.main_window = main_window
 
     def set_table(self, edit_funk, delete_funk):
+        profile_role_privilege = {allowed_role["role"] for allowed_role in self.main_window.user_role.children_roles}
         self.main_window.delete_layout(self.main_window.ui.user_manage_clear_frame.layout())
         user_manage_clear_layout = QVBoxLayout(self.main_window.ui.user_manage_clear_frame)
         user_manage_clear_layout.setContentsMargins(0, 0, 0, 0)
@@ -93,22 +94,15 @@ class UserManagementTable:
             horizontal_layout.setStretch(2, 1)
             horizontal_layout.setStretch(3, 1)
             user_manage_clear_layout.addWidget(frame)
-            self.disable_button(user, edit_button, delete_button)
+            self.disable_button(user, edit_button, delete_button, profile_role_privilege)
 
-    def disable_button(self, user, edit_button, delete_button):
+    def disable_button(self, user, edit_button, delete_button, profile_role_privilege):
         user_role = user["user_role"]["role"]
-        profile_role_privilege = self.main_window.user_role.children_roles
         if user["id"] == self.main_window.user.id:
             delete_button.setEnabled(False)
-            delete_button.setStyleSheet("QPushButton {\n"
-                                        " image: url(:/image/delete_acc_icon_locked.svg);\n"
-                                        "}")
-        elif user_role not in [allowed_role["role"] for allowed_role in profile_role_privilege]:
+            delete_button.setStyleSheet("image: url(:/image/delete_acc_icon_locked.svg);")
+        elif user_role not in profile_role_privilege:
             delete_button.setEnabled(False)
-            delete_button.setStyleSheet("QPushButton {\n"
-                                        " image: url(:/image/delete_acc_icon_locked.svg);\n"
-                                        "}")
+            delete_button.setStyleSheet("image: url(:/image/delete_acc_icon_locked.svg);")
             edit_button.setEnabled(False)
-            delete_button.setStyleSheet("QPushButton {\n"
-                                        " image: url(:/image/edit_icon_locked.svg);\n"
-                                        "}")
+            edit_button.setStyleSheet("image: url(:/image/edit_icon_locked.svg);")

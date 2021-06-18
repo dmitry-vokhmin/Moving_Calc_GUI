@@ -39,6 +39,8 @@ class MenuUI:
             menu_layout.addWidget(frame)
         self.main_window.ui.profile_butt.setText(f" {self.main_window.user.fullname}")
         self.start_menu_point(menu)
+        if len(menu) == 1:
+            self.main_window.ui.logo_text.setText("")
         return menu
 
     @staticmethod

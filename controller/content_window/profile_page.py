@@ -10,8 +10,6 @@ class ProfilePage(QWidget):
     def __init__(self, main_window, *args, **kwargs):
         QWidget.__init__(self, main_window, *args, **kwargs)
         self.main_window = main_window
-        self.update_content = False
-        self.set_main_user_content = True
         self.staff_profile = None
         self.validator = Validation()
         self.fields = {
@@ -43,16 +41,17 @@ class ProfilePage(QWidget):
         self.main_window.ui.profile_change_email_butt.clicked.connect(lambda: self.change_email(True))
         self.main_window.ui.profile_email_cancel_butt.clicked.connect(lambda: self.change_email(False))
         self.main_window.ui.profile_log_out_butt.clicked.connect(
-            lambda: self.main_window.modal_window.show_confirm_dialog(self.main_window.log_out)
+            lambda: self.main_window.modal_window.show_confirm_dialog("Log Out", self.main_window.log_out)
         )
         self.main_window.ui.profile_delete_butt.clicked.connect(
-            lambda: self.main_window.modal_window.show_confirm_dialog(self.delete_user)
+            lambda: self.main_window.modal_window.show_confirm_dialog(f"Delete {self.staff_profile['fullname']}",
+                                                                      self.delete_user)
         )
         self.main_window.ui.profile_user_manage_butt.clicked.connect(
             lambda: self.main_window.ui.content_pages.setCurrentWidget(self.main_window.ui.user_management_page)
         )
         self.main_window.ui.profile_save_butt.clicked.connect(
-            lambda: self.main_window.modal_window.show_confirm_dialog(self.save_changes)
+            lambda: self.main_window.modal_window.show_confirm_dialog("Save Changes", self.save_changes)
         )
         self.main_window.ui.profile_log_out_butt.installEventFilter(self)
         self.main_window.ui.profile_delete_butt.installEventFilter(self)
@@ -63,26 +62,26 @@ class ProfilePage(QWidget):
         for field in self.fields.values():
             field["fields"][0].setValidator(field["validator"](*field["fields"]))
 
+    def assign_staff_profile(self, profile):
+        if profile["id"] != self.main_window.user.id:
+            self.staff_profile = profile
+
     def set_user_profile(self):
         if self.staff_profile:
             self.main_window.user_profile_ui.set_profile(self.staff_profile)
-            self.set_main_user_content = True
         else:
-            if self.update_content:
-                self.main_window.get_data(self.main_window.user.get)
             self.main_window.user_profile_ui.set_profile()
-            self.set_main_user_content = False
 
     def validate_page(self):
         new_fields = {
-            "name": self.fields["name"]["fields"]
+            "name": {"fields": self.fields["name"]["fields"]}
         }
         if not self.main_window.ui.profile_new_pass_frame.isHidden():
-            new_fields["old_password"]["fields"] = self.fields["old_password"]["fields"]
-            new_fields["password"]["fields"] = self.fields["password"]["fields"]
-            new_fields["password2"]["fields"] = self.fields["password2"]["fields"]
+            new_fields["old_password"] = {"fields": self.fields["old_password"]["fields"]}
+            new_fields["password"] = {"fields": self.fields["password"]["fields"]}
+            new_fields["password2"] = {"fields": self.fields["password2"]["fields"]}
         if not self.main_window.ui.profile_new_email_frame.isHidden():
-            new_fields["email"]["fields"] = self.fields["email"]["fields"]
+            new_fields["email"] = {"fields": self.fields["email"]["fields"]}
         return self.validator.check_validation(new_fields)
 
     def get_data_from_page(self):
@@ -108,15 +107,14 @@ class ProfilePage(QWidget):
             user_update = User(**data)
             response_code, response_data = user_update.put()
             if response_code > 399:
-                self.main_window.modal_window.show_notification_page(response_data, is_error=True)
+                self.main_window.modal_window.show_notification_page(description=response_data, is_error=True)
             else:
                 if self.staff_profile:
                     self.staff_profile = response_data
-                    self.main_window.user_management.update_flag = True
                 else:
                     self.main_window.user.set_attr(response_data)
                 self.set_user_profile()
-                self.main_window.modal_window.show_notification_page(response_data, is_error=False)
+                self.validator.reset_error_fields(self.fields)
                 self.main_window.ui.profile_butt.setText(f" {self.main_window.user.fullname}")
 
     def change_password(self, is_change_password):
@@ -129,9 +127,11 @@ class ProfilePage(QWidget):
 
     def delete_user(self):
         user_del = User(**self.staff_profile)
-        user_del.delete()
-        self.main_window.ui.user_management.update_flag = True
-        self.main_window.ui.content_pages.setCurrentWidget(self.main_window.ui.user_management_page)
+        response_code, response_data = user_del.delete()
+        if response_code > 399:
+            self.main_window.modal_window.show_notification_page(is_error=True)
+        else:
+            self.main_window.ui.content_pages.setCurrentWidget(self.main_window.ui.user_management_page)
 
     def eventFilter(self, obj, event) -> bool:
         if obj is self.main_window.ui.profile_log_out_butt:
@@ -151,8 +151,7 @@ class ProfilePage(QWidget):
         elif obj is self.main_window.ui.profile_page:
             if event.type() == QEvent.Show:
                 self.validator.reset_error_fields(self.fields)
-                if self.staff_profile or self.set_main_user_content:
-                    self.set_user_profile()
+                self.set_user_profile()
                 return True
             if event.type() == QEvent.Hide:
                 self.staff_profile = None

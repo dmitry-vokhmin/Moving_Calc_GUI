@@ -42,8 +42,11 @@ class Api:
         if model.query_param:
             response = requests.delete(url,
                                        params=model.query_param,
+                                       json=model.to_json,
                                        headers={"Authorization": f"Bearer {authorization.Authorization()._token}"}
                                        )
         else:
-            response = requests.delete(url, headers={"Authorization": f"Bearer {authorization.Authorization()._token}"})
+            response = requests.delete(url,
+                                       json=model.to_json,
+                                       headers={"Authorization": f"Bearer {authorization.Authorization()._token}"})
         return response.status_code, response.json()
