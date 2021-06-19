@@ -10,7 +10,7 @@ class CalendarPage:
         self.price_tag = PriceTag()
 
     def set_price_tag(self, frame):
-        self.main_window.get_data(self.price_tag.get)
+        self.main_window.save_data(self.price_tag)
         self.main_window.delete_layout(frame.layout())
         config_price_type_button_layout = QHBoxLayout(frame)
         config_price_type_button_layout.setContentsMargins(20, 10, 0, 30)
@@ -35,6 +35,7 @@ class CalendarPage:
         self.main_window.ui.config_start_date_edit.setDate(QDate.currentDate())
         self.main_window.ui.config_end_date_edit.setCalendarWidget(end_calendar)
         self.main_window.ui.config_end_date_edit.setDate(QDate.currentDate())
+        return calendar
 
     def change_page_selector_style(self, is_date_setting):
         self.main_window.ui.config_date_butt.setProperty("selected", is_date_setting)

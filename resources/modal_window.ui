@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>948</width>
-    <height>775</height>
+    <width>950</width>
+    <height>779</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -101,7 +101,7 @@ QRadioButton {
       <item>
        <widget class="QStackedWidget" name="pages">
         <property name="currentIndex">
-         <number>1</number>
+         <number>5</number>
         </property>
         <widget class="QWidget" name="add_user_page">
          <layout class="QVBoxLayout" name="add_user_layout">
@@ -1230,7 +1230,7 @@ QPushButton:hover {
                  <widget class="QPushButton" name="confirm_accept_butt">
                   <property name="maximumSize">
                    <size>
-                    <width>16777215</width>
+                    <width>107</width>
                     <height>47</height>
                    </size>
                   </property>
@@ -2224,6 +2224,9 @@ QLabel {
                 </property>
                 <item alignment="Qt::AlignLeft">
                  <widget class="QPushButton" name="asset_type_delete">
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
                   <property name="styleSheet">
                    <string notr="true">QPushButton {
 	background: transparent;

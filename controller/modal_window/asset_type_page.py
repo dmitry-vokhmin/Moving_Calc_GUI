@@ -9,6 +9,7 @@ class AssetTypePage(QDialog):
     def __init__(self, main_modal_window):
         QDialog.__init__(self, main_modal_window)
         self.main_modal_window = main_modal_window
+        self.dimension_fields = self.main_modal_window.ui.asset_type_dimension_frame.findChildren(QLineEdit)
         self.fields = {
             "name": {
                 "fields": (self.main_modal_window.ui.asset_type_name_input,
@@ -47,7 +48,10 @@ class AssetTypePage(QDialog):
                 data = self.get_data()
                 truck_type_api = TruckType(**data)
                 response_code, response_data = truck_type_api.post()
-                self.show_notification(response_code, response_data)
+                self.show_notification(response_code,
+                                       response_data,
+                                       title="Asset type was added",
+                                       description=f"Asset type {data['name']} was added to the pipeline")
 
     def update_asset(self, asset_data):
         if self.validator.check_validation(self.fields):
@@ -56,43 +60,47 @@ class AssetTypePage(QDialog):
                 data.update(self.get_data())
                 truck_type_api = TruckType(**data)
                 response_code, response_data = truck_type_api.put()
-                self.show_notification(response_code, response_data)
+                self.show_notification(response_code,
+                                       response_data,
+                                       title="Asset type was updated",
+                                       description=f"Asset type {asset_data['name']} was updated successfully")
 
     def delete_asset(self, asset_data):
         truck_type_api = TruckType(**asset_data)
         response_code, response_data = truck_type_api.delete()
-        self.show_notification(response_code, response_data)
+        self.show_notification(response_code,
+                               response_data,
+                               title="Asset type was deleted",
+                               description=f"Asset type {asset_data['name']} was deleted successfully")
 
     def get_data(self):
-        data = {
-            "name": self.main_modal_window.ui.asset_name_input.text()
+        return {
+            "name": self.main_modal_window.ui.asset_type_name_input.text(),
+            "dimension": self.main_modal_window.ui.sq_feet_input.text(),
+            "length": self.main_modal_window.ui.length_input.text() or None,
+            "width": self.main_modal_window.ui.width_input.text() or None,
+            "height": self.main_modal_window.ui.height_input.text() or None
         }
-        if self.main_modal_window.ui.sq_feet_input.text():
-            data["dimension"] = self.main_modal_window.ui.sq_feet_input.text()
-        else:
-            data["length"] = self.main_modal_window.ui.length_input.text()
-            data["weight"] = self.main_modal_window.ui.weight_input.text()
-            data["height"] = self.main_modal_window.ui.height_input.text()
-        return data
 
-    def show_notification(self, response_code, response_data):
+    def show_notification(self, response_code, response_data, title, description):
         if response_code > 399:
             self.main_modal_window.show_notification_page(
-                response_data,
+                description=response_data,
                 is_error=True,
                 previous_page=lambda: self.main_modal_window.ui.pages.setCurrentWidget(
                     self.main_modal_window.ui.asset_type_page
                 )
             )
         else:
-            self.main_modal_window.main_window.equipment_page.truck_type_update = True
-            self.main_modal_window.main_window.ui.equipment_page.setVisible(False)
-            self.main_modal_window.main_window.ui.equipment_page.setVisible(True)
-            self.main_modal_window.show_notification_page(response_data, is_error=False)
+            self.main_modal_window.main_window.ui.equip_truck_type_page.setVisible(False)
+            self.main_modal_window.main_window.ui.equip_truck_type_page.setVisible(True)
+            self.main_modal_window.show_notification_page(title=title,
+                                                          description=description,
+                                                          is_error=False)
 
     def sq_feet_calculator(self):
         total_sq_feet = 1
-        for line_input in self.main_modal_window.ui.asset_type_dimension_frame.findChildren(QLineEdit):
+        for line_input in self.dimension_fields:
             try:
                 total_sq_feet *= float(line_input.text())
             except ValueError:
@@ -102,10 +110,10 @@ class AssetTypePage(QDialog):
     def check_dimension_fields(self):
         all_fields_filled = True
         one_field_filled = True
-        dimension_sum = 0
+        dimension_sum = 1
         error_fields = []
         self.main_modal_window.ui.error_dimension.setText("Enter asset dimensions or sq. feet size")
-        for line_input in self.main_modal_window.ui.asset_type_dimension_frame.findChildren(QLineEdit):
+        for line_input in self.dimension_fields:
             if line_input.text():
                 dimension_sum *= float(line_input.text())
                 all_fields_filled = False

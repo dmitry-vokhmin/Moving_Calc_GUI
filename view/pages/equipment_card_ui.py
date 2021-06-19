@@ -7,11 +7,11 @@ class EquipmentCard:
     def __init__(self, main_window):
         self.main_window = main_window
 
-    def set_truck_cards(self, update_funk, add_new_funk):
+    def set_truck_cards(self, truck_data, update_funk, add_new_funk):
         self.main_window.delete_layout(self.main_window.ui.equip_truck_main_frame.layout())
         flow_layout = FlowLayout(self.main_window.ui.equip_truck_main_frame)
         flow_layout.setContentsMargins(0, 0, 0, 0)
-        for truck in self.main_window.truck.trucks:
+        for truck in truck_data:
             card_frame = QFrame(self.main_window.ui.equip_truck_main_frame)
             card_frame.setMinimumSize(QSize(324, 108))
             card_frame.setMaximumSize(QSize(324, 108))
@@ -102,11 +102,11 @@ class EquipmentCard:
         add_truck_butt.clicked.connect(add_new_funk)
         flow_layout.addWidget(add_truck_butt)
 
-    def set_truck_type_cards(self, update_funk, add_new_funk):
+    def set_truck_type_cards(self, truck_type_data, update_funk, add_new_funk):
         self.main_window.delete_layout(self.main_window.ui.equip_truck_type_main_frame.layout())
         flow_layout = FlowLayout(self.main_window.ui.equip_truck_type_main_frame)
         flow_layout.setContentsMargins(0, 0, 0, 0)
-        for truck_type in self.main_window.truck_type.truck_types:
+        for truck_type in truck_type_data:
             equip_truck_type_main_frame = QFrame(self.main_window.ui.equip_truck_type_main_frame)
             equip_truck_type_main_frame.setMinimumSize(QSize(324, 128))
             equip_truck_type_main_frame.setMaximumSize(QSize(324, 128))
@@ -151,8 +151,8 @@ class EquipmentCard:
             inside_top_layout.setSpacing(4)
             truck_type_label = QLabel(inside_top_frame)
             truck_type_label.setStyleSheet("color: #070808;\n"
-                                     "font-size: 16px;\n"
-                                     "margin-bottom: 4px;")
+                                           "font-size: 16px;\n"
+                                           "margin-bottom: 4px;")
             truck_type_label.setAlignment(Qt.AlignJustify | Qt.AlignVCenter)
             truck_type_label.setText(truck_type["name"].capitalize())
             inside_top_layout.addWidget(truck_type_label)
@@ -214,7 +214,7 @@ class EquipmentCard:
             width = QLabel(width_height_frame)
             width.setStyleSheet("margin-right: 12px;")
             width.setAlignment(Qt.AlignJustify | Qt.AlignVCenter)
-            width.setText(f"Width: {truck_type['width']}")
+            width.setText(f"Width: {truck_type['width'] or ''}")
             width_heigth_layout.addWidget(width)
             height_icon = QLabel(width_height_frame)
             height_icon.setMinimumSize(QSize(12, 12))
@@ -222,13 +222,12 @@ class EquipmentCard:
             height_icon.setText("")
             width_heigth_layout.addWidget(height_icon)
             height = QLabel(width_height_frame)
-            height.setText(f"Height: {truck_type['height']}")
+            height.setText(f"Height: {truck_type['height'] or ''}")
             width_heigth_layout.addWidget(height)
             inside_bottom_layout.addWidget(width_height_frame, 0, Qt.AlignLeft)
             length_frame = QFrame(inside_bottom_frame)
             length_frame.setFrameShape(QFrame.NoFrame)
             length_frame.setFrameShadow(QFrame.Raised)
-            length_frame.setObjectName("length_frame")
             length_layout = QHBoxLayout(length_frame)
             length_layout.setContentsMargins(0, 0, 0, 0)
             length_layout.setSpacing(4)
@@ -238,7 +237,7 @@ class EquipmentCard:
             length_icon.setText("")
             length_layout.addWidget(length_icon)
             length = QLabel(length_frame)
-            length.setText(f"Length: {truck_type['length']}")
+            length.setText(f"Length: {truck_type['length'] or ''}")
             length_layout.addWidget(length)
             inside_bottom_layout.addWidget(length_frame, 0, Qt.AlignLeft)
             equip_truck_type_main_layout.addWidget(inside_bottom_frame)

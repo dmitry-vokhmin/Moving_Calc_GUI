@@ -18,6 +18,7 @@ class CalculatorPage(QWidget):
         self.current_page = 0
         self.calc_result = None
         self.extra_room_btn = set()
+        self.calendar = None
         self.validation = validation.Validation()
         self.inner_pages = [
             self.main_window.ui.calc_move_detail_page,
@@ -201,7 +202,7 @@ class CalculatorPage(QWidget):
         self.main_window.ui.calc_next_btn.clicked.connect(funk)
 
     def build_calendar(self):
-        self.main_window.calculator_page_ui.build_calendars()
+        self.calendar = self.main_window.calculator_page_ui.build_calendars()
 
     def eventFilter(self, obj, event) -> bool:
         if obj is self.main_window.ui.calculator_page:
@@ -214,7 +215,7 @@ class CalculatorPage(QWidget):
                 self.validation.reset_error_fields(self.move_details_fields)
                 self.main_window.ui.calc_menu_pages.setCurrentWidget(self.main_window.ui.calc_move_detail_page)
                 self.main_window.calculator_page_ui.back_btn_visible(False)
-                self.main_window.set_calendar()
+                self.main_window.set_calendar(self.calendar)
                 return True
             if event.type() == QEvent.Hide:
                 self.inventory_check_page.set_all_inventory = True

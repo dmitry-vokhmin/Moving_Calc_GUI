@@ -59,6 +59,7 @@ class CalculatorPageUi:
                                                                       True)
         self.main_window.ui.calc_start_date_edit.setCalendarWidget(pop_up_calendar)
         self.main_window.ui.calc_start_date_edit.setDate(QDate.currentDate())
+        return calendar
 
     def set_top_menu(self, sign_1, line, sing_2, is_current_page):
         sign_1.setProperty("next", is_current_page)

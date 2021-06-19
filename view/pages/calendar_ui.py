@@ -8,28 +8,27 @@ from view.custom_widgets.calendar import CalendarWidget
 class CalendarUi:
     def __init__(self, main_window):
         self.main_window = main_window
-        self.calendar = CalendarWidget()
 
-    def set_calendar_dates(self):
-        self.calendar.regular.clear()
-        self.calendar.discount.clear()
-        self.calendar.subpeak.clear()
-        self.calendar.peak.clear()
+    def set_calendar_dates(self, calendar):
+        calendar.regular.clear()
+        calendar.discount.clear()
+        calendar.subpeak.clear()
+        calendar.peak.clear()
         for date in self.main_window.calendar.dates:
-            self.add_dates(date)
+            self.add_dates(date, calendar)
 
-    def add_dates(self, date):
+    def add_dates(self, date, calendar):
         start_date = dt.datetime.strptime(date["start_date"], "%Y-%m-%d")
         end_date = dt.datetime.strptime(date["end_date"], "%Y-%m-%d")
         delta = end_date - start_date
         if date["price_tag"]["name"] == "regular":
-            self.calendar.regular.update(self.update_calendar(start_date, delta))
+            calendar.regular.update(self.update_calendar(start_date, delta))
         elif date["price_tag"]["name"] == "discount":
-            self.calendar.discount.update(self.update_calendar(start_date, delta))
+            calendar.discount.update(self.update_calendar(start_date, delta))
         elif date["price_tag"]["name"] == "subpeak":
-            self.calendar.subpeak.update(self.update_calendar(start_date, delta))
+            calendar.subpeak.update(self.update_calendar(start_date, delta))
         elif date["price_tag"]["name"] == "peak":
-            self.calendar.peak.update(self.update_calendar(start_date, delta))
+            calendar.peak.update(self.update_calendar(start_date, delta))
 
     @staticmethod
     def update_calendar(start_date, delta):
@@ -41,7 +40,7 @@ class CalendarUi:
             calendar = CalendarWidget()
             calendar.findChildren(QWidget)[0].setCursor(Qt.PointingHandCursor)
         else:
-            calendar = self.calendar
+            calendar = CalendarWidget()
             calendar.setSelectionMode(QCalendarWidget.NoSelection)
         calendar.setStyleSheet(self.set_stylesheet_calendar(background_color, color, font_size))
         calendar.setHorizontalHeaderFormat(QCalendarWidget.SingleLetterDayNames)

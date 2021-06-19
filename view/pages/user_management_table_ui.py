@@ -7,7 +7,7 @@ class UserManagementTable:
     def __init__(self, main_window):
         self.main_window = main_window
 
-    def set_table(self, edit_funk, delete_funk):
+    def set_table(self, edit_funk, delete_funk, user_company_data):
         profile_role_privilege = {allowed_role["role"] for allowed_role in self.main_window.user_role.children_roles}
         self.main_window.delete_layout(self.main_window.ui.user_manage_clear_frame.layout())
         user_manage_clear_layout = QVBoxLayout(self.main_window.ui.user_manage_clear_frame)
@@ -15,7 +15,7 @@ class UserManagementTable:
         user_manage_clear_layout.setSpacing(0)
         user_manage_clear_layout.setObjectName("user_manage_clear_layout")
         background_gray = True
-        for user in self.main_window.company_users.users:
+        for user in user_company_data:
             frame = QFrame(self.main_window.ui.user_manage_clear_frame)
             if background_gray:
                 frame.setStyleSheet("QFrame {\n"

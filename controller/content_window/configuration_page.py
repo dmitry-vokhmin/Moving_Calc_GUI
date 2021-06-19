@@ -11,8 +11,7 @@ class ConfigurationPage(QWidget):
         self.main_window = main_window
         self.set_page = True
         self.price_page = True
-        self.update_calendar = True
-        self.update_mover_prices = True
+        self.calendar = None
         self.main_window.ui.config_date_butt.clicked.connect(
             lambda: self.change_inside_page(True, self.main_window.ui.date_page)
         )
@@ -40,20 +39,26 @@ class ConfigurationPage(QWidget):
             price = Price(*data)
             response_code, response_data = price.put()
             if response_code > 399:
-                self.main_window.modal_window.show_notification_page(response_data, is_error=True)
+                self.main_window.modal_window.show_notification_page(description=response_data, is_error=True)
             else:
-                self.main_window.price_settings_ui.set_movers_prices(price_tag_id, True)
-                self.main_window.modal_window.show_notification_page(response_data, is_error=False)
+                self.main_window.price_settings_ui.set_movers_prices(price_tag_id)
+                self.main_window.modal_window.show_notification_page(
+                    title="Mover prices were updated",
+                    description="Mover prices were updated successfully",
+                    is_error=False
+                )
 
     def update_date(self):
         data = self.get_date_data()
         calendar = Calendar(**data)
         response_code, response_data = calendar.put()
         if response_code > 399:
-            self.main_window.modal_window.show_notification_page(response_data, is_error=True)
+            self.main_window.modal_window.show_notification_page(description=response_data, is_error=True)
         else:
-            self.set_calendar()
-            self.main_window.modal_window.show_notification_page(response_data, is_error=False)
+            self.main_window.set_calendar(self.calendar)
+            self.main_window.modal_window.show_notification_page(title="Calendar was updated",
+                                                                 description="Calendar was updated successfully",
+                                                                 is_error=False)
 
     @staticmethod
     def get_price_data(field, price_tag_id):
@@ -79,6 +84,8 @@ class ConfigurationPage(QWidget):
         self.main_window.price_settings_ui.set_movers_prices()
 
     def change_inside_page(self, is_date_setting, page):
+        if is_date_setting:
+            self.main_window.set_calendar(self.calendar)
         self.main_window.calendar_page_ui.change_page_selector_style(is_date_setting)
         self.main_window.ui.config_pages.setCurrentWidget(page)
 
@@ -88,9 +95,9 @@ class ConfigurationPage(QWidget):
             button.installEventFilter(self)
             button.clicked.connect(self.change_button_background_mover_table(button))
 
-    def get_price_tags(self):
+    def set_price_tags_and_calendar(self):
         self.main_window.calendar_page_ui.set_price_tag(self.main_window.ui.config_price_type_butt_frame)
-        self.main_window.calendar_page_ui.build_calendars()
+        self.calendar = self.main_window.calendar_page_ui.build_calendars()
         self.set_event_filter()
 
     def change_button_background_mover_table(self, checked_button):
@@ -103,25 +110,20 @@ class ConfigurationPage(QWidget):
                     checked_button.setChecked(True)
             if self.price_page:
                 self.main_window.price_settings_ui.set_movers_prices(checked_button.__getattribute__("id"))
+
         return wrap
 
     def eventFilter(self, obj, event) -> bool:
         if obj is self.main_window.ui.config_page:
             if event.type() == QEvent.Show:
-                self.change_inside_page(True, self.main_window.ui.date_page)
-                if self.update_calendar:
-                    self.main_window.set_calendar()
-                    self.update_calendar = False
                 if self.set_page:
-                    self.get_price_tags()
+                    self.set_price_tags_and_calendar()
                     self.set_page = False
+                self.change_inside_page(True, self.main_window.ui.date_page)
                 return True
         if obj is self.main_window.ui.price_page:
             if event.type() == QEvent.Show:
-                if self.update_mover_prices:
-                    self.main_window.price_settings_ui.set_movers_prices(
-                        self.get_price_tag_id(), self.update_mover_prices)
-                    self.update_mover_prices = False
+                self.main_window.price_settings_ui.set_movers_prices(self.get_price_tag_id())
                 self.price_page = True
                 return True
             if event.type() == QEvent.Hide:

@@ -53,10 +53,7 @@ class MainWindow(QMainWindow):
         self.calendar_ui = CalendarUi(self)
         self.calculator_page_ui = CalculatorPageUi(self)
         self.user = User()
-        self.company_users = UserCompany()
         self.user_role = UserRole()
-        self.truck = Truck()
-        self.truck_type = TruckType()
         self.calendar = Calendar()
         self.move_size = MoveSize()
         self.floor_collection = FloorCollection()
@@ -78,17 +75,17 @@ class MainWindow(QMainWindow):
         self.get_floor()
 
     def get_floor(self):
-        self.get_data(self.floor_collection.get)
+        self.save_data(self.floor_collection)
 
-    def set_calendar(self):
-        self.get_data(self.calendar.get)
-        self.calendar_ui.set_calendar_dates()
+    def set_calendar(self, calendar):
+        self.save_data(self.calendar)
+        self.calendar_ui.set_calendar_dates(calendar)
 
     def get_move_size(self):
-        self.get_data(self.move_size.get)
+        self.save_data(self.move_size)
 
     def get_mover_amount(self):
-        self.get_data(self.mover_amount.get)
+        self.save_data(self.mover_amount)
 
     def check_authorization(self):
         try:
@@ -106,15 +103,23 @@ class MainWindow(QMainWindow):
     def registration_error(self, text):
         self.acc_created_page.show_error(text)
 
-    def get_data(self, api_end_point):
-        response_code, response_data = api_end_point()
+    def get_data(self, end_point):
+        api_end_point = end_point()
+        response_code, response_data = api_end_point.get()
         if response_code > 399:
-            print(response_data)
+            self.main_window.modal_window.show_notification_page(description=response_data, is_error=True)
         else:
             return response_data
 
+    def save_data(self, end_point):
+        response_code, response_data = end_point.get()
+        if response_code > 399:
+            self.modal_window.show_notification_page(description=response_data, is_error=True)
+        else:
+            return response_code, response_data
+
     def get_user(self):
-        response_code, response_data = self.user.get()
+        response_code, response_data = self.save_data(self.user)
         if response_code > 399:
             print(response_data)
             raise Exception
@@ -130,7 +135,7 @@ class MainWindow(QMainWindow):
             self.main_menu.set_menu(response_data)
             self.ui.window_pages.setCurrentWidget(self.ui.content_window)
             self.ui.content_pages.setCurrentWidget(self.ui.calculator_page)
-            self.get_data(self.user_role.get)
+            self.save_data(self.user_role)
 
     def delete_layout(self, layout):
         if layout is not None:

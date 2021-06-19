@@ -6,11 +6,9 @@ from model.price import Price
 class PriceSettingsPage:
     def __init__(self, main_window):
         self.main_window = main_window
-        self.price = Price()
 
-    def set_movers_prices(self, price_tag_id, is_update_price=False):
-        if is_update_price:
-            self.main_window.get_data(self.price.get)
+    def set_movers_prices(self, price_tag_id):
+        price_data = self.main_window.get_data(Price)
         self.main_window.delete_layout(self.main_window.ui.config_clear_frame.layout())
         config_clear_layout = QVBoxLayout(self.main_window.ui.config_clear_frame)
         config_clear_layout.setContentsMargins(0, 0, 0, 0)
@@ -53,7 +51,7 @@ class PriceSettingsPage:
             price = QLineEdit(main_frame)
             price.setMinimumSize(QSize(96, 38))
             price.setMaximumSize(QSize(96, 38))
-            price_db = self.price_id(mover, price_tag_id)
+            price_db = self.price_id(mover, price_tag_id, price_data)
             if not price_db or price_db["price"] == 0.0:
                 price.setText("0.00")
                 price.__setattr__("mover_amount_id", mover["id"])
@@ -67,7 +65,8 @@ class PriceSettingsPage:
             main_layout.setStretch(0, 1)
             config_clear_layout.addWidget(main_frame)
 
-    def price_id(self, mover, price_tag_id):
-        for price in self.price.prices:
+    @staticmethod
+    def price_id(mover, price_tag_id, price_data):
+        for price in price_data:
             if price["mover_amount_id"] == mover["id"] and price["price_tag_id"] == price_tag_id:
                 return price
