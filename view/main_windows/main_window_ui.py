@@ -52,9 +52,10 @@ class Ui_MainWindow(object):
         self.window_pages.setStyleSheet("QPushButton {\n"
                                         "    outline: 0;\n"
                                         "}\n"
+                                        "\n"
                                         "#window_pages .QWidget {\n"
                                         "    background-color: rgb(255, 255, 255);\n"
-                                        "}\n")
+                                        "}")
         self.window_pages.setObjectName("window_pages")
         self.login_window = QtWidgets.QWidget()
         self.login_window.setStyleSheet("QStackedWidget {\n"
@@ -277,6 +278,7 @@ class Ui_MainWindow(object):
         self.log_mid_frame_2.setSpacing(0)
         self.log_mid_frame_2.setObjectName("log_mid_frame_2")
         self.log_keep_signed_btn = QtWidgets.QRadioButton(self.log_mid_frame)
+        self.log_keep_signed_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.log_keep_signed_btn.setObjectName("log_keep_signed_btn")
         self.log_mid_frame_2.addWidget(self.log_keep_signed_btn)
         self.log_fogot_pass_btn = QtWidgets.QPushButton(self.log_mid_frame)
@@ -819,6 +821,7 @@ class Ui_MainWindow(object):
                                           "\n"
                                           "/* QLabel */\n"
                                           "#calc_1_sign {\n"
+                                          "background: #0915CC;\n"
                                           "    border: 1px solid #0915CC;\n"
                                           "    border-radius: 20px;\n"
                                           "    color: #0915CC;\n"
@@ -832,6 +835,7 @@ class Ui_MainWindow(object):
                                           "    font-size: 16px;\n"
                                           "}\n"
                                           "\n"
+                                          "/* Does not work here and applied in labels stylesheets */\n"
                                           "#calc_1_sign[next=true], #calc_2_sign[next=true], #calc_3_sign[next=true], #calc_4_sign[next=true] {\n"
                                           "    color: #FFFFFF;\n"
                                           "    background: #0915CC;\n"
@@ -1408,6 +1412,10 @@ class Ui_MainWindow(object):
         self.calc_1_sign = QtWidgets.QLabel(self.cacl_menu_label_frame)
         self.calc_1_sign.setMinimumSize(QtCore.QSize(40, 40))
         self.calc_1_sign.setMaximumSize(QtCore.QSize(40, 40))
+        self.calc_1_sign.setStyleSheet("QLabel[next=true] {\n"
+                                       "    color: #FFFFFF;\n"
+                                       "    background: #0915CC;\n"
+                                       "}")
         self.calc_1_sign.setAlignment(QtCore.Qt.AlignCenter)
         self.calc_1_sign.setObjectName("calc_1_sign")
         self.cacl_menu_label_layout.addWidget(self.calc_1_sign)
@@ -1422,6 +1430,10 @@ class Ui_MainWindow(object):
         self.calc_2_sign = QtWidgets.QLabel(self.cacl_menu_label_frame)
         self.calc_2_sign.setMinimumSize(QtCore.QSize(40, 40))
         self.calc_2_sign.setMaximumSize(QtCore.QSize(40, 40))
+        self.calc_2_sign.setStyleSheet("QLabel[next=true] {\n"
+                                       "    color: #FFFFFF;\n"
+                                       "    background: #0915CC;\n"
+                                       "}")
         self.calc_2_sign.setAlignment(QtCore.Qt.AlignCenter)
         self.calc_2_sign.setObjectName("calc_2_sign")
         self.cacl_menu_label_layout.addWidget(self.calc_2_sign)
@@ -1436,6 +1448,10 @@ class Ui_MainWindow(object):
         self.calc_3_sign = QtWidgets.QLabel(self.cacl_menu_label_frame)
         self.calc_3_sign.setMinimumSize(QtCore.QSize(40, 40))
         self.calc_3_sign.setMaximumSize(QtCore.QSize(40, 40))
+        self.calc_3_sign.setStyleSheet("QLabel[next=true] {\n"
+                                       "    color: #FFFFFF;\n"
+                                       "    background: #0915CC;\n"
+                                       "}")
         self.calc_3_sign.setAlignment(QtCore.Qt.AlignCenter)
         self.calc_3_sign.setObjectName("calc_3_sign")
         self.cacl_menu_label_layout.addWidget(self.calc_3_sign)
@@ -1450,6 +1466,10 @@ class Ui_MainWindow(object):
         self.calc_4_sign = QtWidgets.QLabel(self.cacl_menu_label_frame)
         self.calc_4_sign.setMinimumSize(QtCore.QSize(40, 40))
         self.calc_4_sign.setMaximumSize(QtCore.QSize(40, 40))
+        self.calc_4_sign.setStyleSheet("QLabel[next=true] {\n"
+                                       "    color: #FFFFFF;\n"
+                                       "    background: #0915CC;\n"
+                                       "}")
         self.calc_4_sign.setAlignment(QtCore.Qt.AlignCenter)
         self.calc_4_sign.setObjectName("calc_4_sign")
         self.cacl_menu_label_layout.addWidget(self.calc_4_sign)
@@ -1501,7 +1521,7 @@ class Ui_MainWindow(object):
         self.calc_move_detail_layout_2.setSpacing(90)
         self.calc_move_detail_layout_2.setObjectName("calc_move_detail_layout_2")
         self.calc_calendar_frame = QtWidgets.QFrame(self.calc_move_detail_frame)
-        self.calc_calendar_frame.setMaximumSize(QtCore.QSize(500, 16777215))
+        self.calc_calendar_frame.setMaximumSize(QtCore.QSize(317, 16777215))
         self.calc_calendar_frame.setObjectName("calc_calendar_frame")
         self.cacl_calendar_layout = QtWidgets.QVBoxLayout(self.calc_calendar_frame)
         self.cacl_calendar_layout.setContentsMargins(0, 0, 0, 0)
@@ -1629,30 +1649,30 @@ class Ui_MainWindow(object):
         self.calc_zip_code_layout.setHorizontalSpacing(10)
         self.calc_zip_code_layout.setVerticalSpacing(5)
         self.calc_zip_code_layout.setObjectName("calc_zip_code_layout")
-        self.calc_1_zip_from_label = QtWidgets.QLabel(self.calc_zip_code_frame)
-        self.calc_1_zip_from_label.setObjectName("calc_1_zip_from_label")
-        self.calc_zip_code_layout.addWidget(self.calc_1_zip_from_label, 0, 0, 1, 1)
         self.calc_1_zip_to_label = QtWidgets.QLabel(self.calc_zip_code_frame)
         self.calc_1_zip_to_label.setObjectName("calc_1_zip_to_label")
         self.calc_zip_code_layout.addWidget(self.calc_1_zip_to_label, 0, 1, 1, 1)
+        self.error_calc_zip_to = QtWidgets.QLabel(self.calc_zip_code_frame)
+        self.error_calc_zip_to.setObjectName("error_calc_zip_to")
+        self.calc_zip_code_layout.addWidget(self.error_calc_zip_to, 2, 1, 1, 1)
         self.calc_zip_from_input = QtWidgets.QLineEdit(self.calc_zip_code_frame)
         self.calc_zip_from_input.setMinimumSize(QtCore.QSize(258, 48))
         self.calc_zip_from_input.setMaximumSize(QtCore.QSize(258, 48))
         self.calc_zip_from_input.setMaxLength(5)
         self.calc_zip_from_input.setObjectName("calc_zip_from_input")
         self.calc_zip_code_layout.addWidget(self.calc_zip_from_input, 1, 0, 1, 1)
+        self.error_calc_zip_from = QtWidgets.QLabel(self.calc_zip_code_frame)
+        self.error_calc_zip_from.setObjectName("error_calc_zip_from")
+        self.calc_zip_code_layout.addWidget(self.error_calc_zip_from, 2, 0, 1, 1)
         self.calc_zip_to_input = QtWidgets.QLineEdit(self.calc_zip_code_frame)
         self.calc_zip_to_input.setMinimumSize(QtCore.QSize(258, 48))
         self.calc_zip_to_input.setMaximumSize(QtCore.QSize(258, 48))
         self.calc_zip_to_input.setMaxLength(5)
         self.calc_zip_to_input.setObjectName("calc_zip_to_input")
         self.calc_zip_code_layout.addWidget(self.calc_zip_to_input, 1, 1, 1, 1)
-        self.error_calc_zip_from = QtWidgets.QLabel(self.calc_zip_code_frame)
-        self.error_calc_zip_from.setObjectName("error_calc_zip_from")
-        self.calc_zip_code_layout.addWidget(self.error_calc_zip_from, 2, 0, 1, 1)
-        self.error_calc_zip_to = QtWidgets.QLabel(self.calc_zip_code_frame)
-        self.error_calc_zip_to.setObjectName("error_calc_zip_to")
-        self.calc_zip_code_layout.addWidget(self.error_calc_zip_to, 2, 1, 1, 1)
+        self.calc_1_zip_from_label = QtWidgets.QLabel(self.calc_zip_code_frame)
+        self.calc_1_zip_from_label.setObjectName("calc_1_zip_from_label")
+        self.calc_zip_code_layout.addWidget(self.calc_1_zip_from_label, 0, 0, 1, 1)
         self.calc_general_info_layout.addWidget(self.calc_zip_code_frame)
         self.calc_move_size_frame = QtWidgets.QFrame(self.calc_general_info_frame)
         self.calc_move_size_frame.setObjectName("calc_move_size_frame")
@@ -1694,18 +1714,18 @@ class Ui_MainWindow(object):
         self.calc_entrance_type_layout.setHorizontalSpacing(10)
         self.calc_entrance_type_layout.setVerticalSpacing(5)
         self.calc_entrance_type_layout.setObjectName("calc_entrance_type_layout")
-        self.calc_1_entrance_from_label = QtWidgets.QLabel(self.calc_entrance_type_frame)
-        self.calc_1_entrance_from_label.setObjectName("calc_1_entrance_from_label")
-        self.calc_entrance_type_layout.addWidget(self.calc_1_entrance_from_label, 0, 0, 1, 1)
-        self.calc_1_entrance_to_label = QtWidgets.QLabel(self.calc_entrance_type_frame)
-        self.calc_1_entrance_to_label.setObjectName("calc_1_entrance_to_label")
-        self.calc_entrance_type_layout.addWidget(self.calc_1_entrance_to_label, 0, 1, 1, 1)
         self.calc_1_entrance_from_box = QtWidgets.QComboBox(self.calc_entrance_type_frame)
         self.calc_1_entrance_from_box.setMinimumSize(QtCore.QSize(258, 48))
         self.calc_1_entrance_from_box.setMaximumSize(QtCore.QSize(258, 48))
         self.calc_1_entrance_from_box.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.calc_1_entrance_from_box.setObjectName("calc_1_entrance_from_box")
         self.calc_entrance_type_layout.addWidget(self.calc_1_entrance_from_box, 1, 0, 1, 1)
+        self.calc_1_entrance_from_label = QtWidgets.QLabel(self.calc_entrance_type_frame)
+        self.calc_1_entrance_from_label.setObjectName("calc_1_entrance_from_label")
+        self.calc_entrance_type_layout.addWidget(self.calc_1_entrance_from_label, 0, 0, 1, 1)
+        self.calc_1_entrance_to_label = QtWidgets.QLabel(self.calc_entrance_type_frame)
+        self.calc_1_entrance_to_label.setObjectName("calc_1_entrance_to_label")
+        self.calc_entrance_type_layout.addWidget(self.calc_1_entrance_to_label, 0, 1, 1, 1)
         self.calc_1_entrance_to_box = QtWidgets.QComboBox(self.calc_entrance_type_frame)
         self.calc_1_entrance_to_box.setMinimumSize(QtCore.QSize(258, 48))
         self.calc_1_entrance_to_box.setMaximumSize(QtCore.QSize(258, 48))
@@ -1924,6 +1944,7 @@ class Ui_MainWindow(object):
         self.calc_calculation_result_layout.setObjectName("calc_calculation_result_layout")
         self.calc_result_frame = QtWidgets.QFrame(self.calc_calculation_result_page)
         self.calc_result_frame.setMinimumSize(QtCore.QSize(427, 506))
+        self.calc_result_frame.setMaximumSize(QtCore.QSize(16777215, 506))
         self.calc_result_frame.setObjectName("calc_result_frame")
         self.calc_result_frame_2 = QtWidgets.QVBoxLayout(self.calc_result_frame)
         self.calc_result_frame_2.setContentsMargins(30, 20, 30, 0)
@@ -2000,7 +2021,7 @@ class Ui_MainWindow(object):
         self.cacl_result_quote_layout.addWidget(self.calc_result_quote_info, 0, QtCore.Qt.AlignRight)
         self.calc_result_frame_2.addWidget(self.cacl_result_quote_frame, 0, QtCore.Qt.AlignTop)
         self.calc_result_frame_2.setStretch(5, 1)
-        self.calc_calculation_result_layout.addWidget(self.calc_result_frame)
+        self.calc_calculation_result_layout.addWidget(self.calc_result_frame, 0, QtCore.Qt.AlignTop)
         self.calc_result_pages = QtWidgets.QStackedWidget(self.calc_calculation_result_page)
         self.calc_result_pages.setObjectName("calc_result_pages")
         self.calc_result_details_page = QtWidgets.QWidget()
@@ -2265,7 +2286,7 @@ class Ui_MainWindow(object):
         self.calc_result_cus_info_submit_btn.setFont(font)
         self.calc_result_cus_info_submit_btn.setObjectName("calc_result_cus_info_submit_btn")
         self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_submit_btn)
-        self.calc_result_customer_info_scroll_layout.addWidget(self.calc_result_cus_info_frame)
+        self.calc_result_customer_info_scroll_layout.addWidget(self.calc_result_cus_info_frame, 0, QtCore.Qt.AlignLeft)
         self.calc_result_customer_info_scroll.setWidget(self.calc_result_customer_info_scroll_2)
         self.calc_result_customer_info_layout.addWidget(self.calc_result_customer_info_scroll)
         self.calc_result_pages.addWidget(self.calc_result_customer_info_page)
@@ -2626,7 +2647,7 @@ class Ui_MainWindow(object):
         self.user_manage_scroll_area.setWidgetResizable(True)
         self.user_manage_scroll_area.setObjectName("user_manage_scroll_area")
         self.user_manage_scroll_widget = QtWidgets.QWidget()
-        self.user_manage_scroll_widget.setGeometry(QtCore.QRect(0, 0, 100, 30))
+        self.user_manage_scroll_widget.setGeometry(QtCore.QRect(0, 0, 1306, 554))
         self.user_manage_scroll_widget.setObjectName("user_manage_scroll_widget")
         self.user_manage_scroll_layout = QtWidgets.QVBoxLayout(self.user_manage_scroll_widget)
         self.user_manage_scroll_layout.setContentsMargins(0, 0, 0, 0)
@@ -2785,7 +2806,7 @@ class Ui_MainWindow(object):
         self.equip_truck_type_scrollarea.setWidgetResizable(True)
         self.equip_truck_type_scrollarea.setObjectName("equip_truck_type_scrollarea")
         self.equip_truck_type_scroll_widget = QtWidgets.QWidget()
-        self.equip_truck_type_scroll_widget.setGeometry(QtCore.QRect(0, 0, 100, 30))
+        self.equip_truck_type_scroll_widget.setGeometry(QtCore.QRect(0, 0, 1366, 594))
         self.equip_truck_type_scroll_widget.setObjectName("equip_truck_type_scroll_widget")
         self.equip_truck_type_scroll_layout = QtWidgets.QVBoxLayout(self.equip_truck_type_scroll_widget)
         self.equip_truck_type_scroll_layout.setContentsMargins(30, 10, 15, 0)
@@ -3011,7 +3032,7 @@ class Ui_MainWindow(object):
         self.config_scroll_area.setWidgetResizable(True)
         self.config_scroll_area.setObjectName("config_scroll_area")
         self.config_scroll_widget = QtWidgets.QWidget()
-        self.config_scroll_widget.setGeometry(QtCore.QRect(0, 0, 95, 16))
+        self.config_scroll_widget.setGeometry(QtCore.QRect(0, 0, 834, 63))
         self.config_scroll_widget.setObjectName("config_scroll_widget")
         self.config_scroll_layout = QtWidgets.QVBoxLayout(self.config_scroll_widget)
         self.config_scroll_layout.setContentsMargins(0, 0, 0, 0)
@@ -3268,7 +3289,7 @@ class Ui_MainWindow(object):
         self.inventory_room_scrollarea.setWidgetResizable(True)
         self.inventory_room_scrollarea.setObjectName("inventory_room_scrollarea")
         self.inventory_room_frame = QtWidgets.QWidget()
-        self.inventory_room_frame.setGeometry(QtCore.QRect(0, 0, 100, 30))
+        self.inventory_room_frame.setGeometry(QtCore.QRect(0, 0, 217, 562))
         self.inventory_room_frame.setObjectName("inventory_room_frame")
         self.inventory_room_layout_2 = QtWidgets.QVBoxLayout(self.inventory_room_frame)
         self.inventory_room_layout_2.setContentsMargins(0, 0, 0, 0)
@@ -3389,14 +3410,14 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.window_pages.setCurrentIndex(1)
-        self.login_pages.setCurrentIndex(3)
+        self.login_pages.setCurrentIndex(0)
         self.content_pages.setCurrentIndex(0)
         self.calc_menu_pages.setCurrentIndex(0)
         self.calc_size_menu.setCurrentIndex(1)
         self.calc_result_pages.setCurrentIndex(1)
         self.equip_truck_pages.setCurrentIndex(1)
         self.config_pages.setCurrentIndex(1)
-        self.inventory_size_menu.setCurrentIndex(1)
+        self.inventory_size_menu.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -3465,12 +3486,12 @@ class Ui_MainWindow(object):
         self.calc_1_service_type_label.setText(_translate("MainWindow", "Service Type"))
         self.calc_start_date_edit.setDisplayFormat(_translate("MainWindow", "MMMM dd, yyyy"))
         self.calc_sevice_type.setItemText(0, _translate("MainWindow", "Moving"))
-        self.calc_1_zip_from_label.setText(_translate("MainWindow", "Zip Code (From)"))
         self.calc_1_zip_to_label.setText(_translate("MainWindow", "Zip Code (To)"))
-        self.calc_zip_from_input.setPlaceholderText(_translate("MainWindow", "Enter start zip code"))
-        self.calc_zip_to_input.setPlaceholderText(_translate("MainWindow", "Enter end zip code"))
-        self.error_calc_zip_from.setText(_translate("MainWindow", "Enter valid zip code"))
         self.error_calc_zip_to.setText(_translate("MainWindow", "Enter valid zip code"))
+        self.calc_zip_from_input.setPlaceholderText(_translate("MainWindow", "Enter start zip code"))
+        self.error_calc_zip_from.setText(_translate("MainWindow", "Enter valid zip code"))
+        self.calc_zip_to_input.setPlaceholderText(_translate("MainWindow", "Enter end zip code"))
+        self.calc_1_zip_from_label.setText(_translate("MainWindow", "Zip Code (From)"))
         self.calc_1_move_size_label.setText(_translate("MainWindow", "Move Size"))
         self.calc_extra_room_label.setText(_translate("MainWindow", "Extra Rooms"))
         self.calc_1_entrance_from_label.setText(_translate("MainWindow", "Entrance Type (From)"))

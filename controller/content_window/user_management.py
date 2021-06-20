@@ -27,7 +27,8 @@ class UserManagement(QWidget):
 
     def show_notification_window(self, user):
         def wrap():
-            self.main_window.modal_window.show_confirm_dialog(f"Delete {user['fullname']}",
+            self.main_window.modal_window.show_confirm_dialog(f"delete {user['fullname']}?",
+                                                              "delete",
                                                               self.delete_user(user))
         return wrap
 

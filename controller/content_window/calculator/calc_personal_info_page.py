@@ -48,8 +48,13 @@ class CalcPersonalInfoPage(QWidget):
             personal_data = self.get_personal_info()
             customer = self.get_or_post_data(UserClient, personal_data, is_get=False)
             zip_code_to = self.get_or_post_data(ZipCode, {"zip_code": move_details["zip_code_to"]}, is_get=True)
-            zip_code_from = self.get_or_post_data(ZipCode, {"zip_code": move_details["zip_code_from"]},
+            zip_code_from = self.get_or_post_data(ZipCode,
+                                                  {"zip_code": move_details["zip_code_from"]},
                                                   is_get=True)
+            if not zip_code_from or not zip_code_to:
+                self.main_window.modal_window.show_notification_page(description="zip codes are not correct",
+                                                                     is_error=True)
+                return
             address_from_data = self.get_address_info(self.main_window.ui.calc_result_cus_info_adr_from_1_input,
                                                       self.main_window.ui.calc_result_cus_info_adr_from_2_input,
                                                       zip_code_from["id"])
@@ -65,12 +70,16 @@ class CalcPersonalInfoPage(QWidget):
             inventory_order = InventoryOrder(**inventory_order_data)
             response_code, response_data = inventory_order.post()
             if response_code > 399:
-                self.main_window.modal_window.show_notification_page(response_data, is_error=True)
+                self.main_window.modal_window.show_notification_page(description=response_data, is_error=True)
             else:
                 self.calc_main_page.reset_pages()
-                self.main_window.modal_window.show_notification_page(response_data, is_error=False)
+                self.main_window.modal_window.show_notification_page(
+                    title="Calculation results were submitted successfully",
+                    description="Calculation results were submitted successfully. Request was sent to CRM.",
+                    is_error=False)
 
-    def get_inventory_for_order(self, order_id, preset_inventory):
+    @staticmethod
+    def get_inventory_for_order(order_id, preset_inventory):
         return {
             "inventory": {
                 move_size: [
@@ -80,7 +89,8 @@ class CalcPersonalInfoPage(QWidget):
             "order_id": order_id
         }
 
-    def get_order_data(self, user_id, address_from_id, address_to_id, move_details, calc_result):
+    @staticmethod
+    def get_order_data(user_id, address_from_id, address_to_id, move_details, calc_result):
         return {
             "move_date": move_details["move_date"].isoformat(),
             "hourly_rate": calc_result["hourly_rate"],
@@ -105,7 +115,7 @@ class CalcPersonalInfoPage(QWidget):
         else:
             response_code, response_data = api_endpoint.post()
         if response_code > 399:
-            print(response_data)
+            self.main_window.modal_window.show_notification_page(description=response_data, is_error=True)
         else:
             return response_data
 
@@ -117,7 +127,8 @@ class CalcPersonalInfoPage(QWidget):
             "phone_number": self.main_window.ui.calc_result_cus_info_phone_input.text().lower(),
         }
 
-    def get_address_info(self, address_1, address_2, zip_code_id):
+    @staticmethod
+    def get_address_info(address_1, address_2, zip_code_id):
         return {
             "street": address_1.text().lower(),
             "apartment": address_2.text().lower(),

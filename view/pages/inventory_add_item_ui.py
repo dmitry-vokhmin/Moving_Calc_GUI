@@ -10,9 +10,12 @@ class InventoryAddItemUi:
         )
         self.main_modal_window.ui.inventory_preset_combobox.setItemDelegate(QStyledItemDelegate())
 
-    def set_move_size_list(self, move_sizes):
-        for move_size in move_sizes:
-            self.main_modal_window.ui.inventory_preset_combobox.addItem(move_size["name"].title(), move_size["id"])
+    def set_move_size_list(self, inventory_collection_data):
+        for inventory_collection in inventory_collection_data:
+            self.main_modal_window.ui.inventory_preset_combobox.addItem(
+                inventory_collection["move_size"]["name"].title().replace("_", " "),
+                inventory_collection["id"]
+            )
 
     def set_calculator_move_size_list(self, preset_inventory):
         for key, value in preset_inventory.items():

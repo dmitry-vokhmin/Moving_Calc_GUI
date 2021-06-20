@@ -43,7 +43,13 @@ class CalculatorPage(QWidget):
         self.main_window.ui.calc_1_move_size_box.currentTextChanged.connect(self.show_extra_rooms)
         self.main_window.ui.calc_next_btn.clicked.connect(lambda: self.change_inner_page(self.current_page + 1))
         self.main_window.ui.calc_back_btn.clicked.connect(lambda: self.change_inner_page(self.current_page - 1))
-        self.main_window.ui.calc_reset_btn.clicked.connect(self.reset_pages)
+        self.main_window.ui.calc_reset_btn.clicked.connect(
+            lambda: self.main_window.modal_window.show_confirm_dialog(
+                self.reset_pages,
+                desc_text="reset? "
+                          "The changes you made have not been submitted yet. All data will be lost when you reset.",
+                btn_text="reset")
+        )
         self.main_window.ui.calc_result_cus_info_submit_btn.clicked.connect(
             lambda: self.personal_info_page.submit_form(self.move_details,
                                                         self.inventory_check_page.preset_inventory,
@@ -89,7 +95,8 @@ class CalculatorPage(QWidget):
             "floor_collection_to": self.get_floor_collection(self.main_window.ui.calc_1_entrance_to_box)
         }
 
-    def get_floor_collection(self, field):
+    @staticmethod
+    def get_floor_collection(field):
         return field.currentText(), field.currentData()
 
     def get_move_size(self):
@@ -107,7 +114,7 @@ class CalculatorPage(QWidget):
         calculator_api = Calculator(**new_preset_inventory)
         response_code, response_data = calculator_api.post()
         if response_code > 399:
-            print(response_data)
+            self.main_window.modal_window.show_notification_page(description=response_data, is_error=True)
         else:
             return response_data
 

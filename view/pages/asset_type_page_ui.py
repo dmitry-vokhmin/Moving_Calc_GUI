@@ -1,4 +1,3 @@
-
 class AssetTypePageUi:
     def __init__(self, main_modal_window):
         self.main_modal_window = main_modal_window
@@ -7,7 +6,8 @@ class AssetTypePageUi:
 
     def set_add_asset(self, add_asset_funk):
         self.main_modal_window.ui.asset_type_header.setText("Add asset type")
-        self.main_modal_window.ui.asset_type_text.setText("Add a new asset type to your equipment by filling out a form below.")
+        self.main_modal_window.ui.asset_type_text.setText(
+            "Add a new asset type to your equipment by filling out a form below.")
         self.main_modal_window.ui.asset_type_name_input.setText("")
         self.main_modal_window.ui.length_input.setText("")
         self.main_modal_window.ui.width_input.setText("")
@@ -33,4 +33,11 @@ class AssetTypePageUi:
         self.main_modal_window.ui.add_asset_type_butt.disconnect()
         self.main_modal_window.ui.asset_type_delete.disconnect()
         self.main_modal_window.ui.add_asset_type_butt.clicked.connect(lambda: update_funk(asset_data))
-        self.main_modal_window.ui.asset_type_delete.clicked.connect(lambda: delete_funk(asset_data))
+        self.main_modal_window.ui.asset_type_delete.clicked.connect(
+            lambda: self.main_modal_window.show_confirm_dialog(
+                lambda: delete_funk(asset_data),
+                desc_text=f"delete {asset_data['name']}? "
+                          f"If you delete {asset_data['name']}, all connected assets will be deleted as well",
+                btn_text="delete(all connected assets)"
+            )
+        )

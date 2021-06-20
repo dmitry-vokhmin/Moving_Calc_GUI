@@ -82,10 +82,11 @@ class CalculatorPageUi:
             if move_size["is_extra"]:
                 self.set_extra_rooms(move_size, self.main_window.ui.calc_extra_room_btn_frame, layout, funk)
             else:
-                self.main_window.ui.calc_1_move_size_box.addItem(move_size["name"].title(), move_size["id"])
+                self.main_window.ui.calc_1_move_size_box.addItem(move_size["name"].title().replace("_", " "),
+                                                                 move_size["id"])
         for floor in self.main_window.floor_collection.floor_collections:
-            self.main_window.ui.calc_1_entrance_from_box.addItem(floor["name"].title(), floor["id"])
-            self.main_window.ui.calc_1_entrance_to_box.addItem(floor["name"].title(), floor["id"])
+            self.main_window.ui.calc_1_entrance_from_box.addItem(floor["name"].title().replace("_", " "), floor["id"])
+            self.main_window.ui.calc_1_entrance_to_box.addItem(floor["name"].title().replace("_", " "), floor["id"])
 
     def set_extra_rooms(self, extra_room, frame, layout, funk):
         btn = QPushButton(frame)

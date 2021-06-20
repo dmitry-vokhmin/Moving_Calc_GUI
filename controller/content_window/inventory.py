@@ -50,11 +50,11 @@ class Inventory(QWidget):
             categories = self.get_response(InventoryCategory, {"room_id": room_id})
             self.main_window.inventory_ui.set_category_menu(categories, self.categorize_inventory, self.category_frame,
                                                             self)
-            self.get_inventory({"room_collection_id": room_collection_id}, button, False, del_funk, add_funk)()
+            self.get_inventory({"room_collection_id": room_collection_id}, button, del_funk, add_funk, False)()
             self.category_btn = {btn for btn in self.category_frame.findChildren(QPushButton)}
         return wrap
 
-    def get_inventory(self, button_attribute, button, is_preset, del_funk, add_funk):
+    def get_inventory(self, button_attribute, button, del_funk, add_funk, is_preset):
         def wrap():
             self.select_menu_point(button, is_preset)
             if is_preset:

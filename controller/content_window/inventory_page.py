@@ -28,25 +28,41 @@ class InventoryPage(QWidget):
         )
         self.main_window.ui.inventory_page.installEventFilter(self)
         self.main_window.ui.inventory_search_input.installEventFilter(self)
-        self.main_window.ui.inventory_save_butt.clicked.connect(self.update_preset)
+        self.main_window.ui.inventory_save_butt.clicked.connect(
+            lambda: self.main_window.modal_window.show_confirm_dialog(self.update_preset,
+                                                                      desc_text="save changes?",
+                                                                      btn_text="save")
+        )
         self.main_window.ui.inventory_add_butt.clicked.connect(self.main_window.modal_window.show_inventory_item_page)
         self.main_window.ui.inventory_search_input.textChanged.connect(self.search)
         self.main_window.ui.inventory_search_clear.clicked.connect(
             lambda: self.main_window.ui.inventory_search_input.clear()
         )
-        self.main_window.ui.inventory_reset_btn.clicked.connect(self.reset)
+        self.main_window.ui.inventory_reset_btn.clicked.connect(self.notification_reset_btn)
         self.main_window.ui.inventory_reset_btn.installEventFilter(self)
 
-    def reset(self):
+    def notification_reset_btn(self):
         for button in self.main_window.ui.inventory_preset_menu_frame.findChildren(QPushButton):
             if button.isChecked():
                 inventory_collection_id = button.__getattribute__("inventory_collection_id")
-        inventory_collection = InventoryCollection(inventory_collection_id=inventory_collection_id)
-        response_code, response_data = inventory_collection.delete()
-        if response_code > 399:
-            self.main_window.modal_window.show_notification_page(response_data, is_error=True)
-        else:
-            self.main_window.modal_window.show_notification_page(response_data, is_error=False)
+                btn_text = button.text()
+        self.main_window.modal_window.show_confirm_dialog(funk=self.reset(inventory_collection_id, btn_text),
+                                                          desc_text=f"reset {btn_text} to its default settings?",
+                                                          btn_text="reset")
+
+    def reset(self, inventory_collection_id, btn_text):
+        def wrap():
+            inventory_collection = InventoryCollection(inventory_collection_id=inventory_collection_id)
+            response_code, response_data = inventory_collection.delete()
+            if response_code > 399:
+                self.main_window.modal_window.show_notification_page(description=response_data, is_error=True)
+            else:
+                self.main_window.modal_window.show_notification_page(
+                    title=f"{btn_text} restored",
+                    description=f"{btn_text} was successfully restored",
+                    is_error=False)
+                self.reset_inventory(self.main_window.ui.inventory_preset_menu_frame)
+        return wrap
 
     def change_inside_page(self, is_all_inventory, page, button):
         self.main_window.inventory_page_ui.change_page_selector_style(is_all_inventory, button)
@@ -57,9 +73,11 @@ class InventoryPage(QWidget):
         inventory_collection_api = InventoryInventoryCollection(*data)
         response_code, response_data = inventory_collection_api.put()
         if response_code > 399:
-            self.main_window.modal_window.show_notification_page(response_data, is_error=True)
+            self.main_window.modal_window.show_notification_page(description=response_data, is_error=True)
         else:
-            self.main_window.modal_window.show_notification_page(response_data, is_error=False)
+            self.main_window.modal_window.show_notification_page(title="All changes saved",
+                                                                 description="All changes were saved",
+                                                                 is_error=False)
 
     def get_update_data(self):
         data = []
@@ -86,11 +104,19 @@ class InventoryPage(QWidget):
                     inventory_collection_id=inventory_collection_id
                 )
                 inventory_collection_api.delete()
+                self.reset_inventory(self.main_window.ui.inventory_preset_menu_frame)
             else:
                 room_collection = RoomCollection(inventory_id)
                 room_collection.delete()
+                self.reset_inventory(self.main_window.ui.inventory_room_menu_frame)
 
         return wrap
+
+    @staticmethod
+    def reset_inventory(frame):
+        for btn in frame.findChildren(QPushButton):
+            if btn.isChecked():
+                btn.click()
 
     def search(self, text):
         text = text.lower()
@@ -115,7 +141,7 @@ class InventoryPage(QWidget):
                                                  self.main_window.ui.inventory_room_menu_layout,
                                                  self.inventory.get_category_inventory,
                                                  room_collection,
-                                                 self.add_item,
+                                                 add_funk=self.add_item,
                                                  is_preset_menu=False,
                                                  del_funk=self.del_item)
                     inventory_collection = self.inventory.get_response(InventoryCollection)
@@ -123,27 +149,31 @@ class InventoryPage(QWidget):
                                                  self.main_window.ui.inventory_preset_menu_layout,
                                                  self.inventory.get_inventory,
                                                  inventory_collection,
-                                                 self.add_item,
+                                                 add_funk=self.add_item,
                                                  is_preset_menu=True,
                                                  del_funk=self.del_item)
                     self.inventory.assign_buttons(self.main_window.ui.inventory_room_menu_frame,
                                                   self.main_window.ui.inventory_preset_menu_frame)
                     self.set_left_menu = False
-                self.change_inside_page(True, self.main_window.ui.inventory_room_page, self.inventory.first_butt_all_inv)
+                self.change_inside_page(True, self.main_window.ui.inventory_room_page,
+                                        self.inventory.first_butt_all_inv)
                 return True
             if event.type() == QEvent.Hide:
                 self.set_left_menu = True
+                return True
         if obj is self.main_window.ui.inventory_search_input:
             if event.type() == QEvent.FocusIn:
                 self.main_window.ui.inventory_search_frame.setStyleSheet(
                     "#inventory_search_frame{border: 0.5px solid #0915CC;background: #F2F3F6;border-radius: 5px;}")
                 self.main_window.ui.inventory_search_label.setStyleSheet(
                     "image: url(:/image/search_icon_hover.svg);background: #F2F3F6;")
+                return True
             if event.type() == QEvent.FocusOut:
                 self.main_window.ui.inventory_search_frame.setStyleSheet(
                     "background: #F2F3F6;border-radius: 5px;")
                 self.main_window.ui.inventory_search_label.setStyleSheet(
                     "image: url(:/image/search_icon_default.svg);background: #F2F3F6;")
+                return True
         if obj is self.main_window.ui.inventory_reset_btn:
             if event.type() == QEvent.HoverEnter:
                 obj.setIcon(QIcon(":/image/inventory_reset_hover.svg"))

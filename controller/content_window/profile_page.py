@@ -41,17 +41,18 @@ class ProfilePage(QWidget):
         self.main_window.ui.profile_change_email_butt.clicked.connect(lambda: self.change_email(True))
         self.main_window.ui.profile_email_cancel_butt.clicked.connect(lambda: self.change_email(False))
         self.main_window.ui.profile_log_out_butt.clicked.connect(
-            lambda: self.main_window.modal_window.show_confirm_dialog("Log Out", self.main_window.log_out)
+            lambda: self.main_window.modal_window.show_confirm_dialog("Log Out?", "log out", self.main_window.log_out)
         )
         self.main_window.ui.profile_delete_butt.clicked.connect(
-            lambda: self.main_window.modal_window.show_confirm_dialog(f"Delete {self.staff_profile['fullname']}",
+            lambda: self.main_window.modal_window.show_confirm_dialog(f"delete {self.staff_profile['fullname']}?",
+                                                                      "delete",
                                                                       self.delete_user)
         )
         self.main_window.ui.profile_user_manage_butt.clicked.connect(
             lambda: self.main_window.ui.content_pages.setCurrentWidget(self.main_window.ui.user_management_page)
         )
         self.main_window.ui.profile_save_butt.clicked.connect(
-            lambda: self.main_window.modal_window.show_confirm_dialog("Save Changes", self.save_changes)
+            lambda: self.main_window.modal_window.show_confirm_dialog("save changes?", "save", self.save_changes)
         )
         self.main_window.ui.profile_log_out_butt.installEventFilter(self)
         self.main_window.ui.profile_delete_butt.installEventFilter(self)

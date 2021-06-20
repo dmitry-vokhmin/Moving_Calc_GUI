@@ -1,4 +1,5 @@
-from PyQt5.QtWidgets import QDialog, QLineEdit
+import re
+from PyQt5.QtWidgets import QDialog, QLineEdit, QPushButton
 from PyQt5.QtCore import QEvent
 from PyQt5.QtGui import QDoubleValidator
 from controller.validator import validation
@@ -19,9 +20,9 @@ class InventoryItemPage(QDialog):
         self.main_modal_window.ui.add_inventor_item_butt.clicked.connect(self.add_item)
         self.validator = validation.Validation()
         self.main_modal_window.ui.invetory_item_page.installEventFilter(self)
-        self.set_input_fields()
+        self.set_field_validation()
 
-    def set_input_fields(self):
+    def set_field_validation(self):
         float_validator = QDoubleValidator()
         float_validator.setNotation(QDoubleValidator.Notation(0))
         for input_field in self.main_modal_window.ui.inventor_item_dimension_frame.findChildren(QLineEdit):
@@ -38,14 +39,25 @@ class InventoryItemPage(QDialog):
                 response_code, response_data = api_inventory.post()
                 if response_code > 399:
                     self.main_modal_window.show_notification_page(
-                        response_data,
+                        description=response_data,
                         is_error=True,
                         previous_page=lambda: self.main_modal_window.ui.pages.setCurrentWidget(
                             self.main_modal_window.ui.invetory_item_page
                         )
                     )
                 else:
-                    self.main_modal_window.show_notification_page(response_data, is_error=False)
+                    self.main_modal_window.show_notification_page(
+                        title="New item added",
+                        description="New inventory item was added successfully to the Custom Room bucket.",
+                        next_page=self.go_to_custom_room,
+                        btn_text="Go to Custom Room",
+                        is_error=False)
+
+    def go_to_custom_room(self):
+        for btn in self.main_modal_window.main_window.ui.inventory_room_menu_frame.findChildren(QPushButton):
+            if re.search("Custom", btn.text()):
+                btn.click()
+        self.main_modal_window.close()
 
     def get_data(self):
         return {
@@ -72,17 +84,15 @@ class InventoryItemPage(QDialog):
                 )
         return all_fields_filled
 
-    # def set_categories(self):
-    #     api_category = InventoryCategory()
-    #     response_code, response_data = api_category.get()
-    #     if response_code > 399:
-    #         print(response_data)
-    #     self.main_modal_window.inventory_new_item_ui.set_categories(response_data)
+    def reset_fields(self):
+        for input_field in self.main_modal_window.ui.inventor_item_main_frame.findChildren(QLineEdit):
+            input_field.setText("")
 
     def eventFilter(self, obj, event: QEvent) -> bool:
         if obj is self.main_modal_window.ui.invetory_item_page:
             if event.type() == QEvent.Show:
                 self.validator.reset_error_fields(self.fields)
+                self.reset_fields()
                 self.main_modal_window.ui.error_inventory_item_dimension.setVisible(False)
                 return True
         return False

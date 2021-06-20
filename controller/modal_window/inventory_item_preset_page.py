@@ -3,6 +3,7 @@ from PyQt5.QtCore import QEvent
 from PyQt5.QtGui import QDoubleValidator
 from controller.validator import validation
 from model.inventory.inventory_collection import InventoryCollection
+from model.inventory.inventory_inventory_collection import InventoryInventoryCollection
 
 
 class InventoryItemPresetPage(QDialog):
@@ -21,9 +22,9 @@ class InventoryItemPresetPage(QDialog):
         self.main_modal_window.ui.add_inventory_preset_butt.clicked.connect(self.add_item_to_db)
         self.validator = validation.Validation()
         self.main_modal_window.ui.inventory_preset_page.installEventFilter(self)
-        self.set_input_fields()
+        self.set_field_validation()
 
-    def set_input_fields(self):
+    def set_field_validation(self):
         float_validator = QDoubleValidator()
         float_validator.setNotation(QDoubleValidator.Notation(0))
         self.main_modal_window.ui.inventory_preset_qty_input.setValidator(float_validator)
@@ -44,24 +45,28 @@ class InventoryItemPresetPage(QDialog):
     def add_item_to_db(self):
         if self.validator.check_validation(self.fields):
             data = self.get_data()
-            inventory_collection = InventoryCollection(**data)
+            inventory_collection = InventoryInventoryCollection(**data)
             response_code, response_data = inventory_collection.post()
             if response_code > 399:
                 self.main_modal_window.show_notification_page(
-                    response_data,
+                    description=response_data,
                     is_error=True,
                     previous_page=lambda: self.main_modal_window.ui.pages.setCurrentWidget(
                         self.main_modal_window.ui.inventory_preset_page
                     )
                 )
             else:
-                self.main_modal_window.show_notification_page(response_data, is_error=False)
+                self.main_modal_window.show_notification_page(
+                    title="New item added",
+                    description=f"New item was added to "
+                                f"{self.main_modal_window.ui.inventory_preset_combobox.currentText()}",
+                    is_error=False)
 
     def get_data(self):
         return {
             "count": self.main_modal_window.ui.inventory_preset_qty_input.text(),
             "inventory_id": self.inventory["id"],
-            "move_size_id": self.main_modal_window.ui.inventory_preset_combobox.currentData()
+            "inventory_collection_id": self.main_modal_window.ui.inventory_preset_combobox.currentData()
         }
 
     def calculator_setup(self, preset_inventory):
@@ -70,8 +75,8 @@ class InventoryItemPresetPage(QDialog):
         self.main_modal_window.ui.add_inventory_preset_butt.clicked.connect(self.add_item_to_calc_preset)
 
     def set_page(self):
-        move_size_data = self.main_modal_window.main_window.move_size.move_sizes
-        self.main_modal_window.inventory_add_item_ui.set_move_size_list(move_size_data)
+        inventory_collection_data = self.main_modal_window.main_window.get_data(InventoryCollection)
+        self.main_modal_window.inventory_add_item_ui.set_move_size_list(inventory_collection_data)
         self.main_modal_window.ui.add_inventory_preset_butt.disconnect()
         self.main_modal_window.ui.add_inventory_preset_butt.clicked.connect(self.add_item_to_db)
 

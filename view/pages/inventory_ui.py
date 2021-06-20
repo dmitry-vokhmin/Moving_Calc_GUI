@@ -1,4 +1,5 @@
 from urllib.request import urlopen
+from urllib.error import HTTPError
 from PyQt5.QtCore import Qt, QSize
 from PyQt5.QtGui import QIcon, QCursor, QIntValidator, QPixmap
 from PyQt5.QtWidgets import QPushButton, QFrame, QVBoxLayout, QHBoxLayout, QLabel, QComboBox, QStyledItemDelegate
@@ -30,7 +31,7 @@ class InventoryUi:
                 pixmap = QPixmap()
                 pixmap.loadFromData(data)
                 room_menu_butt.setIcon(QIcon(pixmap))
-                room_menu_butt.clicked.connect(funk(room["room_id"], room["id"], room_menu_butt, del_funk, add_funk))
+                room_menu_butt.clicked.connect(funk(room["room_id"], room["id"], room_menu_butt, del_funk,  add_funk))
                 self.main_window.ui.inventory_search_clear.setVisible(False)
 
     def set_category_menu(self, categories, funk, frame, instance):
@@ -150,8 +151,13 @@ class InventoryUi:
         item_image = QLabel(inner_frame)
         item_image.setMinimumSize(QSize(56, 56))
         item_image.setMaximumSize(QSize(56, 56))
-        item_image.setStyleSheet("image: url(:/image/Login_pic.png);")
-        item_image.setText("")
+        try:
+            data = urlopen(inventory["inventories"]["image"]).read()
+            pixmap = QPixmap()
+            pixmap.loadFromData(data)
+            item_image.setPixmap(pixmap)
+        except HTTPError:
+            item_image.setStyleSheet("image: url(:/image/custom_item_icon.svg);")
         inner_layout.addWidget(item_image)
         delete_item_butt = QPushButton(inner_frame)
         delete_item_butt.setMinimumSize(QSize(103, 28))
@@ -201,13 +207,17 @@ class InventoryUi:
             card_main_frame.__setattr__("inventory_collection_id", inventory["inventory_collection_id"])
             delete_item_butt.clicked.connect(
                 lambda: self.main_window.modal_window.show_confirm_dialog(
-                    del_funk(inventory["inventory_id"],
-                             inventory["inventory_collection_id"]))
+                    funk=del_funk(inventory["inventory_id"],
+                                  inventory["inventory_collection_id"]),
+                    desc_text=f"delete {inventory['inventories']['name'].title()}?",
+                    btn_text="delete",
+                )
             )
         delete_item_butt.installEventFilter(instance)
         layout.addWidget(card_main_frame)
 
-    def set_room_card(self, inventory, layout, frame, add_funk, instance):
+    @staticmethod
+    def set_room_card(inventory, layout, frame, add_funk, instance):
         card_main_frame = QFrame(frame)
         card_main_frame.setMinimumSize(QSize(324, 119))
         card_main_frame.setMaximumSize(QSize(324, 119))
@@ -237,8 +247,13 @@ class InventoryUi:
         item_image = QLabel(inner_frame)
         item_image.setMinimumSize(QSize(56, 56))
         item_image.setMaximumSize(QSize(56, 56))
-        item_image.setStyleSheet("image: url(:/image/Login_pic.png);")
-        item_image.setText("")
+        try:
+            data = urlopen(inventory["image"]).read()
+            pixmap = QPixmap()
+            pixmap.loadFromData(data)
+            item_image.setPixmap(pixmap)
+        except HTTPError:
+            item_image.setStyleSheet("image: url(:/image/custom_item_icon.svg);")
         inner_layout.addWidget(item_image)
         add_item_butt = QPushButton(inner_frame)
         add_item_butt.setMinimumSize(QSize(103, 28))
@@ -319,7 +334,9 @@ class InventoryUi:
             delete_butt.setIconSize(QSize(24, 24))
             delete_butt.setText("Delete ")
             delete_butt.clicked.connect(
-                lambda: self.main_window.modal_window.show_confirm_dialog(del_funk(inventory["id"]))
+                lambda: self.main_window.modal_window.show_confirm_dialog(funk=del_funk(inventory["id"]),
+                                                                          desc_text=f"delete {inventory['name']}?",
+                                                                          btn_text="delete")
             )
             delete_butt.installEventFilter(instance)
             delete_butt.setObjectName("delete")
@@ -413,7 +430,8 @@ class InventoryUi:
         main_layout.addWidget(bottom_inner_frame, 0, Qt.AlignLeft)
         layout.addWidget(main_frame)
 
-    def categorize_inventory(self, frame, category_id):
+    @staticmethod
+    def categorize_inventory(frame, category_id):
         cards = frame.findChildren(QFrame, "card_main_frame")
         for card in cards:
             if category_id:

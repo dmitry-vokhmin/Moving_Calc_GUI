@@ -16,6 +16,6 @@ class ConfirmPage:
         else:
             self.main_modal_window.close()
 
-    def change_text(self, text):
-        self.main_modal_window.ui.confirm_text.setText(f"Are you sure you want to {text}?")
-        self.main_modal_window.ui.confirm_accept_butt.setText(f"Yes, {text}")
+    def change_text(self, desc_text, btn_text):
+        self.main_modal_window.ui.confirm_text.setText(f"Are you sure you want to {desc_text}")
+        self.main_modal_window.ui.confirm_accept_butt.setText(f"Yes, {btn_text}")
