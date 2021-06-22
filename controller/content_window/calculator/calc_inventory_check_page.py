@@ -91,7 +91,6 @@ class CalcInventoryCheckPage(QWidget):
         if self.set_all_inventory:
             room_collection = self.inventory.get_response(RoomCollection)
             self.inventory.set_left_menu(self.main_window.ui.calc_room_menu_frame,
-                                         self.main_window.ui.calc_room_menu_layout,
                                          self.inventory.get_category_inventory,
                                          room_collection,
                                          self.add_item,
@@ -106,7 +105,7 @@ class CalcInventoryCheckPage(QWidget):
 
     def eventFilter(self, obj, event) -> bool:
         if obj is self.main_window.ui.calc_invnetory_check_page:
-            if event.type() == QEvent.Show:
+            if event.type() == QEvent.Show and self.main_window.change_page_data:
                 self.change_inside_page(False, self.main_window.ui.calc_preset_page, self.inventory.first_butt_preset)
                 return True
         return False

@@ -137,7 +137,7 @@ class CalcPersonalInfoPage(QWidget):
 
     def eventFilter(self, obj, event) -> bool:
         if obj is self.main_window.ui.calc_result_customer_info_page:
-            if event.type() == QEvent.Show:
+            if event.type() == QEvent.Show and self.main_window.change_page_data:
                 self.validation.reset_error_fields(self.personal_info_fields)
                 return True
         return False

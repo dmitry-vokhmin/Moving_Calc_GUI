@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>950</width>
-    <height>779</height>
+    <width>952</width>
+    <height>783</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -62,89 +62,73 @@
       <bool>true</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">#background_frame {
-	background: rgba(7, 8, 8, 0.2);
+      <string notr="true">QPushButton {
+	outline: 0;
 }
 
-QPushButton {
+QComboBox {
+	border-radius: 10px;
+	border: 1px solid #B5B8C7;
+	padding-left: 15px;
+	padding-right: 15px;
+	font-size: 16px;
+	color: #757C9F;
+}
+
+QComboBox:hover {
+	border: 1px solid #0915CC;
+	background: #F2F3F6;
+}
+
+QComboBox::drop-down {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+QComboBox::down-arrow {
+	padding-right: 20px;
+    image: url(:/image/arrow_drop_down.svg);
+}
+
+QComboBox QAbstractItemView
+{
+	background: #F9FAFB;
+	padding-left: 7px;
+	padding-right: 7px;
+    border: 0.5px solid rgba(181, 184, 199, 0.5);
+	border-radius: 8px;
 	outline: 0;
+}
+
+QComboBox QAbstractItemView::item { 
+	min-height: 35px;
+	padding-left: 15px;
+	background: #F9FAFB;
+	color: #070808;
+}
+
+QListView::item:selected { 
+	color: #0915CC; 
+	background-color: #F2F3F6; 
+	border-radius: 4px;
 }
 
 QRadioButton {
+	font-size: 14px;
+	color: #070808;
 	outline: 0;
 }
 
-</string>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::NoFrame</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <layout class="QVBoxLayout" name="background_layout">
-      <property name="spacing">
-       <number>0</number>
-      </property>
-      <property name="leftMargin">
-       <number>0</number>
-      </property>
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <property name="rightMargin">
-       <number>0</number>
-      </property>
-      <property name="bottomMargin">
-       <number>0</number>
-      </property>
-      <item>
-       <widget class="QStackedWidget" name="pages">
-        <property name="currentIndex">
-         <number>5</number>
-        </property>
-        <widget class="QWidget" name="add_user_page">
-         <layout class="QVBoxLayout" name="add_user_layout">
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-           <widget class="QFrame" name="main_frame">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QFrame {
-	border-radius: 20px;
-	background-color: rgb(255, 255, 255);
+QRadioButton::indicator {
+	width : 20px;
+	height : 20px;
+}
+
+QRadioButton::indicator::checked {
+    image: url(:/image/radio_button_checked.svg);
 }
 
 QLineEdit {
-	min-width: 508px;
-	min-height: 46px;
-	max-width: 508px;
-	max-height: 46px;
 	border-radius: 10px;
 	border: 1px solid #B5B8C7;
 	padding-left: 15px;
@@ -166,41 +150,178 @@ QLineEdit[error=true] {
 	border: 1px solid #FF3C2F;
 }
 
-#header{
+/* QFrame */
+
+#main_frame, #success_frame, #error_frame, #confirm_frame, #asset_main_frame, #asset_type_main_frame, #inventor_item_main_frame, #inventory_preset_main_frame {
+	border-radius: 20px;
+	background-color: rgb(255, 255, 255);
+}
+
+#background_frame {
+	background: rgba(7, 8, 8, 0.2);
+}
+
+/* QPushButton */
+
+#add_user_butt, #success_butt, #confirm_accept_butt, #add_asset_butt, #add_asset_type_butt, #add_inventor_item_butt, #add_inventory_preset_butt {
+	border-radius: 10px;
+	font-size: 15px;
+	color: #FFFFFF;
+	background: #0915CC;
+}
+
+#add_user_butt:hover, #success_butt:hover, #confirm_accept_butt:hover, #add_asset_butt:hover, #add_asset_type_butt:hover, #add_inventor_item_butt:hover, #add_inventory_preset_butt:hover{
+background: rgba(9, 21, 204, 0.8);
+}
+
+#error_butt {
+	border-radius: 10px;
+	font-size: 15px;
+	color: #FFFFFF;
+	background: #FF3C2F;
+}
+
+#error_butt:hover {
+background: rgba(255, 60, 47, 0.8);
+}
+
+#add_user_cancel_butt, #error_cancel_butt, #confirm_cancel_butt, #cancel_asset_butt, #cancel_asset_type_butt, #cancel_inventor_item_butt, #cancel_inventory_preset_butt {
+	border-radius: 10px;
+	border: 1px solid #B5B8C7;
+	font-size: 15px;
+	color: #FFFFFF;
+	color: #757C9F;
+}
+
+#add_user_cancel_butt:hover, #error_cancel_butt:hover, #confirm_cancel_butt:hover, #cancel_asset_butt:hover, #cancel_asset_type_butt:hover, #cancel_inventor_item_butt:hover, #cancel_inventory_preset_butt:hover {
+	color: #0915CC;
+	border: 1px solid #0915CC;
+}
+
+#asset_add_asset_type {
+	background: transparent;
+	font-size: 14px;
+	color: #0915CC;
+	qproperty-icon: url(:/image/round_plus_icon_default.svg);
+	margin-top: 5px;
+}
+
+#asset_add_asset_type:hover, #asset_delete:hover, #asset_type_delete:hover {
+	text-decoration: underline;
+}
+
+#asset_delete, #asset_type_delete {
+	background: transparent;
+	font-size: 14px;
+	color: #FF3C2F;
+	qproperty-icon: url(:/image/delete_acc_icon_hover_red.svg);
+}
+
+/* QLabel */
+
+#header, #success_header, #error_header, #confirm_header, #asset_header, #asset_type_header, #inventory_item_header, #inventory_preset_header{
 	font-size: 28px;
 	color: #070808;
 	margin-bottom: 5px;
 }
 
-#add_user_text {
+#success_header, #error_header, #confirm_header {
+	margin-bottom: 10px;
+	margin-top: 30px;
+}
+
+#add_user_text, #asset_text, #asset_type_text, #asset_type_text_2, #inventory_item_text, #inventory_item_text_2, #inventory_preset_text {
 	font-size: 16px;
 	color: #070808;
 	margin-bottom: 25px;
 }
 
-#error_name, #error_email, #error_pass, #error_pass2 {
+#error_name, #error_email, #error_pass, #error_pass2, #error_asset_name, #error_asset_type, #error_asset_type_name, #error_dimension, #error_inventory_item_name, #error_inventory_item_dimension, #error_inventory_preset_qty  {
 	margin-top: 5px;
 	font-size: 14px;
 	color: #FF3C2F;
 }
 
-#name_label, #add_user_role_text {
+#name_label, #add_user_role_text, #success__text, #error_text, #confirm_text, #asset_name_label, #asset_type_name_label, #sq_feet_label, #length_label, #width_label, #heigth_label, #inventory_item_name_label, #inventory_length_label, #inventory_width_label, #inventory_heigth_label, #inventory_preset_qty_label  {
 	font-size: 16px;
 	color: #7C83A7;
 }
-#email_label, #pass_label, #pass2_label {
+
+#success__text, #error_text, #confirm_text  {
+	margin-bottom: 30px;
+}
+
+#name_label, #asset_name_label, #asset_name_label, #asset_type_name_label, #sq_feet_label, #inventory_item_name_label, #inventory_preset_qty_label {
+	margin-bottom: 5px;
+}
+
+#email_label, #pass_label, #pass2_label, #asset_type_label, #inventory_preset_list_label {
 	font-size: 16px;
 	color: #7C83A7;
 	margin-bottom: 5px;
 	margin-top: 20px;
-}</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
+}
+
+#asset_type_text_2, #inventory_item_text_2 {
+	margin-bottom: 0px;
+	margin-top: 25px;
+}
+
+/* Icons */
+
+#success_icon {
+	image: url(:/image/acc_created_pic.svg);
+}
+
+#error_icon {
+	image: url(:/image/error_notification_icon.svg);
+}
+
+#confirm_icon {
+	image: url(:/image/question_icon.svg);
+}
+</string>
+     </property>
+     <layout class="QVBoxLayout" name="background_layout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QStackedWidget" name="pages">
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="add_user_page">
+         <layout class="QVBoxLayout" name="add_user_layout">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+           <widget class="QFrame" name="main_frame">
             <layout class="QVBoxLayout" name="main_layout">
              <property name="spacing">
               <number>0</number>
@@ -219,31 +340,16 @@ QLineEdit[error=true] {
              </property>
              <item>
               <widget class="QLabel" name="header">
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>Add new user</string>
                </property>
-               <property name="textFormat">
-                <enum>Qt::AutoText</enum>
-               </property>
                <property name="alignment">
                 <set>Qt::AlignJustify|Qt::AlignVCenter</set>
-               </property>
-               <property name="margin">
-                <number>0</number>
-               </property>
-               <property name="indent">
-                <number>-1</number>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QLabel" name="add_user_text">
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>Add a new user to your account by filling out a form below.</string>
                </property>
@@ -257,38 +363,10 @@ QLineEdit[error=true] {
                <property name="text">
                 <string>Assign role to new user:</string>
                </property>
-               <property name="textFormat">
-                <enum>Qt::AutoText</enum>
-               </property>
-               <property name="indent">
-                <number>-1</number>
-               </property>
               </widget>
              </item>
              <item alignment="Qt::AlignLeft">
               <widget class="QFrame" name="add_user_radio_butt_frame">
-               <property name="styleSheet">
-                <string notr="true">QRadioButton {
-	font-size: 14px;
-	color: #070808;
-}
-
-QRadioButton::indicator
-{
-width : 20px;
-height : 20px;
-}
-
-QRadioButton::indicator::checked {
-    image: url(:/image/radio_button_checked.svg);
-}</string>
-               </property>
-               <property name="frameShape">
-                <enum>QFrame::NoFrame</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
                <layout class="QHBoxLayout" name="add_user_radio_butt_layout">
                 <property name="spacing">
                  <number>34</number>
@@ -310,9 +388,6 @@ QRadioButton::indicator::checked {
              </item>
              <item>
               <widget class="QLabel" name="name_label">
-               <property name="styleSheet">
-                <string notr="true">margin-bottom: 5px;</string>
-               </property>
                <property name="text">
                 <string>User Full Name</string>
                </property>
@@ -326,38 +401,11 @@ QRadioButton::indicator::checked {
                <property name="enabled">
                 <bool>true</bool>
                </property>
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
                <property name="minimumSize">
                 <size>
                  <width>540</width>
                  <height>48</height>
                 </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>540</width>
-                 <height>48</height>
-                </size>
-               </property>
-               <property name="layoutDirection">
-                <enum>Qt::LeftToRight</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="echoMode">
-                <enum>QLineEdit::Normal</enum>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                </property>
                <property name="placeholderText">
                 <string>Enter user full name</string>
@@ -366,12 +414,6 @@ QRadioButton::indicator::checked {
              </item>
              <item>
               <widget class="QLabel" name="error_name">
-               <property name="focusPolicy">
-                <enum>Qt::NoFocus</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>Enter user full name</string>
                </property>
@@ -382,9 +424,6 @@ QRadioButton::indicator::checked {
              </item>
              <item>
               <widget class="QLabel" name="email_label">
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>Email</string>
                </property>
@@ -398,38 +437,11 @@ QRadioButton::indicator::checked {
                <property name="enabled">
                 <bool>true</bool>
                </property>
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
                <property name="minimumSize">
                 <size>
                  <width>540</width>
                  <height>48</height>
                 </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>540</width>
-                 <height>48</height>
-                </size>
-               </property>
-               <property name="layoutDirection">
-                <enum>Qt::LeftToRight</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="echoMode">
-                <enum>QLineEdit::Normal</enum>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                </property>
                <property name="placeholderText">
                 <string>Enter user email</string>
@@ -441,9 +453,6 @@ QRadioButton::indicator::checked {
                <property name="focusPolicy">
                 <enum>Qt::NoFocus</enum>
                </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>Invalid email address</string>
                </property>
@@ -454,9 +463,6 @@ QRadioButton::indicator::checked {
              </item>
              <item>
               <widget class="QLabel" name="pass_label">
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>Password</string>
                </property>
@@ -470,38 +476,14 @@ QRadioButton::indicator::checked {
                <property name="enabled">
                 <bool>true</bool>
                </property>
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
                <property name="minimumSize">
                 <size>
                  <width>540</width>
                  <height>48</height>
                 </size>
                </property>
-               <property name="maximumSize">
-                <size>
-                 <width>540</width>
-                 <height>48</height>
-                </size>
-               </property>
-               <property name="layoutDirection">
-                <enum>Qt::LeftToRight</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
                <property name="echoMode">
                 <enum>QLineEdit::Password</enum>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                </property>
                <property name="placeholderText">
                 <string>Enter user password</string>
@@ -510,12 +492,6 @@ QRadioButton::indicator::checked {
              </item>
              <item>
               <widget class="QLabel" name="error_pass">
-               <property name="focusPolicy">
-                <enum>Qt::NoFocus</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>Password must be at least 8 characters long contain a number and an uppercase letter</string>
                </property>
@@ -529,9 +505,6 @@ QRadioButton::indicator::checked {
              </item>
              <item>
               <widget class="QLabel" name="pass2_label">
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>Confirm Password</string>
                </property>
@@ -545,38 +518,14 @@ QRadioButton::indicator::checked {
                <property name="enabled">
                 <bool>true</bool>
                </property>
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
                <property name="minimumSize">
                 <size>
                  <width>540</width>
                  <height>48</height>
                 </size>
                </property>
-               <property name="maximumSize">
-                <size>
-                 <width>540</width>
-                 <height>48</height>
-                </size>
-               </property>
-               <property name="layoutDirection">
-                <enum>Qt::LeftToRight</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
                <property name="echoMode">
                 <enum>QLineEdit::Password</enum>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                </property>
                <property name="placeholderText">
                 <string>Enter user password</string>
@@ -585,12 +534,6 @@ QRadioButton::indicator::checked {
              </item>
              <item>
               <widget class="QLabel" name="error_pass2">
-               <property name="focusPolicy">
-                <enum>Qt::NoFocus</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>Passwords do not match</string>
                </property>
@@ -601,12 +544,6 @@ QRadioButton::indicator::checked {
              </item>
              <item alignment="Qt::AlignRight">
               <widget class="QFrame" name="add_user_bottom_frame">
-               <property name="frameShape">
-                <enum>QFrame::NoFrame</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
                <layout class="QHBoxLayout" name="add_user_bottom_layout">
                 <property name="spacing">
                  <number>5</number>
@@ -625,26 +562,17 @@ QRadioButton::indicator::checked {
                 </property>
                 <item>
                  <widget class="QPushButton" name="add_user_cancel_butt">
+                  <property name="minimumSize">
+                   <size>
+                    <width>131</width>
+                    <height>47</height>
+                   </size>
+                  </property>
                   <property name="cursor">
                    <cursorShape>PointingHandCursor</cursorShape>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">QPushButton {
-	min-width: 146px;
-	min-height: 45px;
-	max-width: 146px;
-	max-height: 45px;
-	border-radius: 10px;
-	border: 1px solid #B5B8C7;
-	font-size: 15px;
-	color: #FFFFFF;
-	color: #757C9F;
-}
-
-QPushButton:hover {
-	color: #0915CC;
-	border: 1px solid #0915CC;
-}</string>
+                   <string notr="true"/>
                   </property>
                   <property name="text">
                    <string>Cancel</string>
@@ -653,24 +581,14 @@ QPushButton:hover {
                 </item>
                 <item>
                  <widget class="QPushButton" name="add_user_butt">
+                  <property name="minimumSize">
+                   <size>
+                    <width>148</width>
+                    <height>47</height>
+                   </size>
+                  </property>
                   <property name="cursor">
                    <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton {
-	min-width: 148px;
-	min-height: 47px;
-	max-width: 148px;
-	max-height: 47px;
-	border-radius: 10px;
-	font-size: 15px;
-	color: #FFFFFF;
-	background: #0915CC;
-}
-
-QPushButton:hover {
-background: rgba(9, 21, 204, 0.8);
-}</string>
                   </property>
                   <property name="text">
                    <string>Add User</string>
@@ -716,18 +634,6 @@ background: rgba(9, 21, 204, 0.8);
               <height>314</height>
              </size>
             </property>
-            <property name="styleSheet">
-             <string notr="true">QFrame {
-	border-radius: 20px;
-	background-color: rgb(255, 255, 255);
-}</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
             <layout class="QVBoxLayout" name="success_layout_2">
              <property name="spacing">
               <number>0</number>
@@ -752,18 +658,6 @@ background: rgba(9, 21, 204, 0.8);
                  <height>49</height>
                 </size>
                </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(:/image/acc_created_pic.svg);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -771,12 +665,6 @@ background: rgba(9, 21, 204, 0.8);
              </item>
              <item>
               <widget class="QLabel" name="success_header">
-               <property name="styleSheet">
-                <string notr="true">font-size: 28px;
-color: #070808;
-margin-bottom: 10px;
-margin-top: 30px;</string>
-               </property>
                <property name="text">
                 <string>New user added</string>
                </property>
@@ -793,11 +681,6 @@ margin-top: 30px;</string>
                  <height>0</height>
                 </size>
                </property>
-               <property name="styleSheet">
-                <string notr="true">font-size: 16px;
-color: #7C83A7;
-margin-bottom: 30px;</string>
-               </property>
                <property name="text">
                 <string>New user account was added seccessfully, a new user will receive an email with the login instructions shortly.</string>
                </property>
@@ -811,24 +694,14 @@ margin-bottom: 30px;</string>
              </item>
              <item alignment="Qt::AlignHCenter">
               <widget class="QPushButton" name="success_butt">
+               <property name="minimumSize">
+                <size>
+                 <width>121</width>
+                 <height>47</height>
+                </size>
+               </property>
                <property name="cursor">
                 <cursorShape>PointingHandCursor</cursorShape>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QPushButton {
-	min-width: 121px;
-	min-height: 47px;
-	max-width: 121px;
-	max-height: 47px;
-	border-radius: 10px;
-	font-size: 15px;
-	color: #FFFFFF;
-	background: #0915CC;
-}
-
-QPushButton:hover {
-background: rgba(9, 21, 204, 0.8);
-}</string>
                </property>
                <property name="text">
                 <string>Got It</string>
@@ -871,18 +744,6 @@ background: rgba(9, 21, 204, 0.8);
               <height>314</height>
              </size>
             </property>
-            <property name="styleSheet">
-             <string notr="true">QFrame {
-	border-radius: 20px;
-	background-color: rgb(255, 255, 255);
-}</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
             <layout class="QVBoxLayout" name="error_layout">
              <property name="spacing">
               <number>0</number>
@@ -913,12 +774,6 @@ background: rgba(9, 21, 204, 0.8);
                  <height>16777215</height>
                 </size>
                </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(:/image/error_notification_icon.svg);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -926,12 +781,6 @@ background: rgba(9, 21, 204, 0.8);
              </item>
              <item>
               <widget class="QLabel" name="error_header">
-               <property name="styleSheet">
-                <string notr="true">font-size: 28px;
-color: #070808;
-margin-bottom: 10px;
-margin-top: 30px;</string>
-               </property>
                <property name="text">
                 <string>Looks like something went wrong..</string>
                </property>
@@ -948,30 +797,16 @@ margin-top: 30px;</string>
                  <height>0</height>
                 </size>
                </property>
-               <property name="styleSheet">
-                <string notr="true">font-size: 16px;
-color: #7C83A7;
-margin-bottom: 30px;</string>
-               </property>
                <property name="text">
                 <string>Your request cannot be completed, please try again.</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
-               <property name="wordWrap">
-                <bool>true</bool>
-               </property>
               </widget>
              </item>
              <item alignment="Qt::AlignHCenter">
               <widget class="QFrame" name="error_bottom_frame">
-               <property name="frameShape">
-                <enum>QFrame::NoFrame</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
                <layout class="QHBoxLayout" name="error_bottom_layout">
                 <property name="spacing">
                  <number>5</number>
@@ -990,26 +825,14 @@ margin-bottom: 30px;</string>
                 </property>
                 <item>
                  <widget class="QPushButton" name="error_cancel_butt">
+                  <property name="minimumSize">
+                   <size>
+                    <width>131</width>
+                    <height>47</height>
+                   </size>
+                  </property>
                   <property name="cursor">
                    <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton {
-	min-width: 129px;
-	min-height: 45px;
-	max-width: 129px;
-	max-height: 45px;
-	border-radius: 10px;
-	border: 1px solid #B5B8C7;
-	font-size: 15px;
-	color: #FFFFFF;
-	color: #757C9F;
-}
-
-QPushButton:hover {
-	color: #0915CC;
-	border: 1px solid #0915CC;
-}</string>
                   </property>
                   <property name="text">
                    <string>Cancel</string>
@@ -1018,24 +841,14 @@ QPushButton:hover {
                 </item>
                 <item>
                  <widget class="QPushButton" name="error_butt">
+                  <property name="minimumSize">
+                   <size>
+                    <width>150</width>
+                    <height>47</height>
+                   </size>
+                  </property>
                   <property name="cursor">
                    <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton {
-	min-width: 150px;
-	min-height: 47px;
-	max-width: 150px;
-	max-height: 47px;
-	border-radius: 10px;
-	font-size: 15px;
-	color: #FFFFFF;
-	background: #FF3C2F;
-}
-
-QPushButton:hover {
-background: rgba(255, 60, 47, 0.8);
-}</string>
                   </property>
                   <property name="text">
                    <string>Try Again</string>
@@ -1081,18 +894,6 @@ background: rgba(255, 60, 47, 0.8);
               <height>314</height>
              </size>
             </property>
-            <property name="styleSheet">
-             <string notr="true">QFrame {
-	border-radius: 20px;
-	background-color: rgb(255, 255, 255);
-}</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
             <layout class="QVBoxLayout" name="confirm_layout_2">
              <property name="spacing">
               <number>0</number>
@@ -1117,18 +918,6 @@ background: rgba(255, 60, 47, 0.8);
                  <height>49</height>
                 </size>
                </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(:/image/question_icon.svg);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -1136,12 +925,6 @@ background: rgba(255, 60, 47, 0.8);
              </item>
              <item>
               <widget class="QLabel" name="confirm_header">
-               <property name="styleSheet">
-                <string notr="true">font-size: 28px;
-color: #070808;
-margin-bottom: 10px;
-margin-top: 30px;</string>
-               </property>
                <property name="text">
                 <string>Please Confirm</string>
                </property>
@@ -1158,11 +941,6 @@ margin-top: 30px;</string>
                  <height>0</height>
                 </size>
                </property>
-               <property name="styleSheet">
-                <string notr="true">font-size: 16px;
-color: #7C83A7;
-margin-bottom: 30px;</string>
-               </property>
                <property name="text">
                 <string>Are you sure you want to &lt;user action&gt;?</string>
                </property>
@@ -1176,12 +954,6 @@ margin-bottom: 30px;</string>
              </item>
              <item alignment="Qt::AlignHCenter">
               <widget class="QFrame" name="confirm_bottom_frame">
-               <property name="frameShape">
-                <enum>QFrame::NoFrame</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
                <layout class="QHBoxLayout" name="confirm_bottom_layout">
                 <property name="spacing">
                  <number>5</number>
@@ -1200,26 +972,14 @@ margin-bottom: 30px;</string>
                 </property>
                 <item>
                  <widget class="QPushButton" name="confirm_cancel_butt">
+                  <property name="minimumSize">
+                   <size>
+                    <width>101</width>
+                    <height>47</height>
+                   </size>
+                  </property>
                   <property name="cursor">
                    <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton {
-	min-width: 99px;
-	min-height: 45px;
-	max-width: 99px;
-	max-height: 45px;
-	border-radius: 10px;
-	border: 1px solid #B5B8C7;
-	font-size: 15px;
-	color: #FFFFFF;
-	color: #757C9F;
-}
-
-QPushButton:hover {
-	color: #0915CC;
-	border: 1px solid #0915CC;
-}</string>
                   </property>
                   <property name="text">
                    <string>No</string>
@@ -1228,33 +988,14 @@ QPushButton:hover {
                 </item>
                 <item>
                  <widget class="QPushButton" name="confirm_accept_butt">
-                  <property name="maximumSize">
+                  <property name="minimumSize">
                    <size>
-                    <width>107</width>
+                    <width>181</width>
                     <height>47</height>
                    </size>
                   </property>
                   <property name="cursor">
                    <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton {
-	min-width: 107px;
-	min-height: 47px;
-	max-width: 107px;
-	max-height: 47px;
-	border-radius: 10px;
-	font-size: 15px;
-	color: #FFFFFF;
-	background: #0915CC;
-}
-
-QPushButton:hover {
-background: rgba(9, 21, 204, 0.8);
-}</string>
-                  </property>
-                  <property name="text">
-                   <string>Yes, &lt;action&gt;</string>
                   </property>
                  </widget>
                 </item>
@@ -1285,133 +1026,6 @@ background: rgba(9, 21, 204, 0.8);
           </property>
           <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
            <widget class="QFrame" name="asset_main_frame">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QFrame {
-	border-radius: 20px;
-	background-color: rgb(255, 255, 255);
-}
-
-QLineEdit {
-	min-width: 508px;
-	min-height: 46px;
-	max-width: 508px;
-	max-height: 46px;
-	border-radius: 10px;
-	border: 1px solid #B5B8C7;
-	padding-left: 15px;
-	padding-right: 15px;
-	font-size: 16px;
-}
-
-QLineEdit:hover {
-	border: 1px solid #0915CC;
-	background-color: #F2F3F6;
-}
-
-QLineEdit:focus {
-	border: 1px solid #0915CC;
-	background-color: #F2F3F6;
-}
-
-QLineEdit[error=true] {
-	border: 1px solid #FF3C2F;
-}
-
-QComboBox {
-	border-radius: 10px;
-	border: 1px solid #B5B8C7;
-	padding-left: 15px;
-	padding-right: 15px;
-	font-size: 16px;
-	color: #757C9F;
-}
-
-QComboBox:hover {
-	border: 1px solid #0915CC;
-	background: #F2F3F6;
-}
-
-QComboBox::drop-down {
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
-}
-
-QComboBox::down-arrow {
-	padding-right: 20px;
-    image: url(:/image/arrow_drop_down.svg);
-}
-
-QComboBox QAbstractItemView
-{
-	background: #F9FAFB;
-	padding-left: 7px;
-	padding-right: 7px;
-    border: 0.5px solid rgba(181, 184, 199, 0.5);
-	border-radius: 8px;
-	outline: 0;
-}
-
-QComboBox QAbstractItemView::item { 
-	min-height: 35px;
-	padding-left: 15px;
-	background: #F9FAFB;
-	color: #070808;
-}
-
-QListView::item:selected { 
-	color: #0915CC; 
-	background-color: #F2F3F6; 
-	border-radius: 4px;
-}
-
-#asset_header{
-	font-size: 28px;
-	color: #070808;
-	margin-bottom: 5px;
-}
-
-#asset_text {
-	font-size: 16px;
-	color: #070808;
-	margin-bottom: 25px;
-}
-
-#error_asset_name, #error_asset_type {
-	margin-top: 5px;
-	font-size: 14px;
-	color: #FF3C2F;
-}
-
-#asset_name_label {
-	font-size: 16px;
-	color: #7C83A7;
-	margin-bottom: 5px;
-}
-#asset_type_label {
-	font-size: 16px;
-	color: #7C83A7;
-	margin-bottom: 5px;
-	margin-top: 20px;
-}</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
             <layout class="QVBoxLayout" name="asset_main_layout">
              <property name="spacing">
               <number>0</number>
@@ -1430,31 +1044,16 @@ QListView::item:selected {
              </property>
              <item>
               <widget class="QLabel" name="asset_header">
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>Add new asset</string>
                </property>
-               <property name="textFormat">
-                <enum>Qt::AutoText</enum>
-               </property>
                <property name="alignment">
                 <set>Qt::AlignJustify|Qt::AlignVCenter</set>
-               </property>
-               <property name="margin">
-                <number>0</number>
-               </property>
-               <property name="indent">
-                <number>-1</number>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QLabel" name="asset_text">
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>Add a new asset to your equipment by filling out a form below.</string>
                </property>
@@ -1465,9 +1064,6 @@ QListView::item:selected {
              </item>
              <item>
               <widget class="QLabel" name="asset_name_label">
-               <property name="styleSheet">
-                <string notr="true">margin-bottom: 5px;</string>
-               </property>
                <property name="text">
                 <string>Asset Name</string>
                </property>
@@ -1481,38 +1077,11 @@ QListView::item:selected {
                <property name="enabled">
                 <bool>true</bool>
                </property>
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
                <property name="minimumSize">
                 <size>
                  <width>540</width>
                  <height>48</height>
                 </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>540</width>
-                 <height>48</height>
-                </size>
-               </property>
-               <property name="layoutDirection">
-                <enum>Qt::LeftToRight</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="echoMode">
-                <enum>QLineEdit::Normal</enum>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                </property>
                <property name="placeholderText">
                 <string>Enter asset name</string>
@@ -1521,12 +1090,6 @@ QListView::item:selected {
              </item>
              <item>
               <widget class="QLabel" name="error_asset_name">
-               <property name="focusPolicy">
-                <enum>Qt::NoFocus</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>Enter asset name</string>
                </property>
@@ -1537,9 +1100,6 @@ QListView::item:selected {
              </item>
              <item>
               <widget class="QLabel" name="asset_type_label">
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>Asset Type</string>
                </property>
@@ -1552,7 +1112,7 @@ QListView::item:selected {
               <widget class="QComboBox" name="asset_type_combobox">
                <property name="minimumSize">
                 <size>
-                 <width>0</width>
+                 <width>540</width>
                  <height>48</height>
                 </size>
                </property>
@@ -1562,28 +1122,12 @@ QListView::item:selected {
                  <height>48</height>
                 </size>
                </property>
-               <property name="duplicatesEnabled">
-                <bool>true</bool>
-               </property>
               </widget>
              </item>
              <item alignment="Qt::AlignRight">
               <widget class="QPushButton" name="asset_add_asset_type">
                <property name="cursor">
                 <cursorShape>PointingHandCursor</cursorShape>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QPushButton {
-	background: transparent;
-	font-size: 14px;
-	color: #0915CC;
-	qproperty-icon: url(:/image/round_plus_icon_default.svg);
-	margin-top: 5px;
-}
-
-QPushButton:hover {
-	text-decoration: underline;
-}</string>
                </property>
                <property name="text">
                 <string> Add Asset Type</string>
@@ -1598,12 +1142,6 @@ QPushButton:hover {
              </item>
              <item>
               <widget class="QFrame" name="asset_bottom_frame">
-               <property name="frameShape">
-                <enum>QFrame::NoFrame</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
                <layout class="QHBoxLayout" name="asset_bottom_layout" stretch="0,0">
                 <property name="spacing">
                  <number>0</number>
@@ -1622,18 +1160,6 @@ QPushButton:hover {
                 </property>
                 <item alignment="Qt::AlignLeft">
                  <widget class="QPushButton" name="asset_delete">
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton {
-	background: transparent;
-	font-size: 14px;
-	color: #FF3C2F;
-	qproperty-icon: url(:/image/delete_acc_icon_hover_red.svg);
-}
-
-QPushButton:hover {
-	text-decoration: underline;
-}</string>
-                  </property>
                   <property name="text">
                    <string>Delete Asset</string>
                   </property>
@@ -1647,12 +1173,6 @@ QPushButton:hover {
                 </item>
                 <item alignment="Qt::AlignRight">
                  <widget class="QFrame" name="asset_button_frame">
-                  <property name="frameShape">
-                   <enum>QFrame::NoFrame</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
                   <layout class="QHBoxLayout" name="asset_button_layout">
                    <property name="spacing">
                     <number>5</number>
@@ -1671,26 +1191,14 @@ QPushButton:hover {
                    </property>
                    <item>
                     <widget class="QPushButton" name="cancel_asset_butt">
+                     <property name="minimumSize">
+                      <size>
+                       <width>131</width>
+                       <height>47</height>
+                      </size>
+                     </property>
                      <property name="cursor">
                       <cursorShape>PointingHandCursor</cursorShape>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">QPushButton {
-	min-width: 146px;
-	min-height: 45px;
-	max-width: 146px;
-	max-height: 45px;
-	border-radius: 10px;
-	border: 1px solid #B5B8C7;
-	font-size: 15px;
-	color: #FFFFFF;
-	color: #757C9F;
-}
-
-QPushButton:hover {
-	color: #0915CC;
-	border: 1px solid #0915CC;
-}</string>
                      </property>
                      <property name="text">
                       <string>Cancel</string>
@@ -1707,18 +1215,6 @@ QPushButton:hover {
                      </property>
                      <property name="cursor">
                       <cursorShape>PointingHandCursor</cursorShape>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">QPushButton {
-	border-radius: 10px;
-	font-size: 15px;
-	color: #FFFFFF;
-	background: #0915CC;
-}
-
-QPushButton:hover {
-background: rgba(9, 21, 204, 0.8);
-}</string>
                      </property>
                      <property name="text">
                       <string>Add Asset</string>
@@ -1755,80 +1251,6 @@ background: rgba(9, 21, 204, 0.8);
           </property>
           <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
            <widget class="QFrame" name="asset_type_main_frame">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QFrame {
-	border-radius: 20px;
-	background-color: rgb(255, 255, 255);
-}
-
-QLineEdit {
-	min-width: 508px;
-	min-height: 46px;
-	max-width: 508px;
-	max-height: 46px;
-	border-radius: 10px;
-	border: 1px solid #B5B8C7;
-	padding-left: 15px;
-	padding-right: 15px;
-	font-size: 16px;
-}
-
-QLineEdit:hover {
-	border: 1px solid #0915CC;
-	background-color: #F2F3F6;
-}
-
-QLineEdit:focus {
-	border: 1px solid #0915CC;
-	background-color: #F2F3F6;
-}
-
-QLineEdit[error=true] {
-	border: 1px solid #FF3C2F;
-}
-
-#asset_type_header{
-	font-size: 28px;
-	color: #070808;
-	margin-bottom: 5px;
-}
-
-#asset_type_text, #asset_type_text_2 {
-	font-size: 16px;
-	color: #070808;
-	margin-bottom: 25px;
-}
-
-#error_asset_type_name, #error_dimension {
-	margin-top: 5px;
-	font-size: 14px;
-	color: #FF3C2F;
-}
-
-#asset_type_name_label, #sq_feet_label {
-	font-size: 16px;
-	color: #7C83A7;
-	margin-bottom: 5px;
-}</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
             <layout class="QVBoxLayout" name="asset_type_main_layout">
              <property name="spacing">
               <number>0</number>
@@ -1869,9 +1291,6 @@ QLineEdit[error=true] {
              </item>
              <item>
               <widget class="QLabel" name="asset_type_text">
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>Add a new asset type to your equipment by filling out a form below.</string>
                </property>
@@ -1882,9 +1301,6 @@ QLineEdit[error=true] {
              </item>
              <item>
               <widget class="QLabel" name="asset_type_name_label">
-               <property name="styleSheet">
-                <string notr="true">margin-bottom: 5px;</string>
-               </property>
                <property name="text">
                 <string>Asset type name</string>
                </property>
@@ -1895,38 +1311,11 @@ QLineEdit[error=true] {
              </item>
              <item>
               <widget class="QLineEdit" name="asset_type_name_input">
-               <property name="enabled">
-                <bool>true</bool>
-               </property>
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
                <property name="minimumSize">
                 <size>
                  <width>540</width>
                  <height>48</height>
                 </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>540</width>
-                 <height>48</height>
-                </size>
-               </property>
-               <property name="layoutDirection">
-                <enum>Qt::LeftToRight</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                </property>
                <property name="placeholderText">
                 <string>Enter asset type name</string>
@@ -1935,12 +1324,6 @@ QLineEdit[error=true] {
              </item>
              <item>
               <widget class="QLabel" name="error_asset_type_name">
-               <property name="focusPolicy">
-                <enum>Qt::NoFocus</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>Enter asset type name</string>
                </property>
@@ -1951,10 +1334,6 @@ QLineEdit[error=true] {
              </item>
              <item>
               <widget class="QLabel" name="asset_type_text_2">
-               <property name="styleSheet">
-                <string notr="true">margin-bottom: 0px;
-margin-top: 25px;</string>
-               </property>
                <property name="text">
                 <string>Enter asset dimensions or sq. feet size</string>
                </property>
@@ -1965,28 +1344,9 @@ margin-top: 25px;</string>
              </item>
              <item>
               <widget class="QFrame" name="asset_type_dimension_frame">
-               <property name="styleSheet">
-                <string notr="true">QLineEdit {
-	min-width: 144px;
-	min-height: 46px;
-	max-width: 144px;
-	max-height: 46px;
-}
-
-QLabel {
-	font-size: 16px;
-	color: #7C83A7;
-}</string>
-               </property>
-               <property name="frameShape">
-                <enum>QFrame::NoFrame</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
                <layout class="QHBoxLayout" name="asset_type_dimension_layout">
                 <property name="spacing">
-                 <number>0</number>
+                 <number>5</number>
                 </property>
                 <property name="leftMargin">
                  <number>0</number>
@@ -2002,12 +1362,6 @@ QLabel {
                 </property>
                 <item>
                  <widget class="QFrame" name="length_frame">
-                  <property name="frameShape">
-                   <enum>QFrame::NoFrame</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
                   <layout class="QVBoxLayout" name="length_layout">
                    <property name="spacing">
                     <number>5</number>
@@ -2033,6 +1387,12 @@ QLabel {
                    </item>
                    <item>
                     <widget class="QLineEdit" name="length_input">
+                     <property name="minimumSize">
+                      <size>
+                       <width>177</width>
+                       <height>48</height>
+                      </size>
+                     </property>
                      <property name="placeholderText">
                       <string>e.g. 24</string>
                      </property>
@@ -2043,12 +1403,6 @@ QLabel {
                 </item>
                 <item>
                  <widget class="QFrame" name="width_frame">
-                  <property name="frameShape">
-                   <enum>QFrame::NoFrame</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
                   <layout class="QVBoxLayout" name="width_layout">
                    <property name="spacing">
                     <number>5</number>
@@ -2074,6 +1428,12 @@ QLabel {
                    </item>
                    <item>
                     <widget class="QLineEdit" name="width_input">
+                     <property name="minimumSize">
+                      <size>
+                       <width>177</width>
+                       <height>48</height>
+                      </size>
+                     </property>
                      <property name="placeholderText">
                       <string>e.g. 10</string>
                      </property>
@@ -2084,12 +1444,6 @@ QLabel {
                 </item>
                 <item>
                  <widget class="QFrame" name="height_frame">
-                  <property name="frameShape">
-                   <enum>QFrame::NoFrame</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
                   <layout class="QVBoxLayout" name="height_layout">
                    <property name="spacing">
                     <number>5</number>
@@ -2115,6 +1469,12 @@ QLabel {
                    </item>
                    <item>
                     <widget class="QLineEdit" name="height_input">
+                     <property name="minimumSize">
+                      <size>
+                       <width>177</width>
+                       <height>48</height>
+                      </size>
+                     </property>
                      <property name="placeholderText">
                       <string>e.g. 10</string>
                      </property>
@@ -2128,9 +1488,6 @@ QLabel {
              </item>
              <item>
               <widget class="QLabel" name="sq_feet_label">
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>Sq. Feet</string>
                </property>
@@ -2141,41 +1498,11 @@ QLabel {
              </item>
              <item>
               <widget class="QLineEdit" name="sq_feet_input">
-               <property name="enabled">
-                <bool>true</bool>
-               </property>
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
                <property name="minimumSize">
                 <size>
                  <width>540</width>
                  <height>48</height>
                 </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>540</width>
-                 <height>48</height>
-                </size>
-               </property>
-               <property name="layoutDirection">
-                <enum>Qt::LeftToRight</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="echoMode">
-                <enum>QLineEdit::Normal</enum>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                </property>
                <property name="placeholderText">
                 <string>e.g. 1000</string>
@@ -2184,12 +1511,6 @@ QLabel {
              </item>
              <item>
               <widget class="QLabel" name="error_dimension">
-               <property name="focusPolicy">
-                <enum>Qt::NoFocus</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>Enter asset dimensions or sq. feet size</string>
                </property>
@@ -2200,12 +1521,6 @@ QLabel {
              </item>
              <item>
               <widget class="QFrame" name="asset_type_bottom_frame">
-               <property name="frameShape">
-                <enum>QFrame::NoFrame</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
                <layout class="QHBoxLayout" name="asset_type_bottom_layout" stretch="0,0">
                 <property name="spacing">
                  <number>0</number>
@@ -2227,18 +1542,6 @@ QLabel {
                   <property name="cursor">
                    <cursorShape>PointingHandCursor</cursorShape>
                   </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton {
-	background: transparent;
-	font-size: 14px;
-	color: #FF3C2F;
-	qproperty-icon: url(:/image/delete_acc_icon_hover_red.svg);
-}
-
-QPushButton:hover {
-	text-decoration: underline;
-}</string>
-                  </property>
                   <property name="text">
                    <string>Delete Asset Type</string>
                   </property>
@@ -2252,12 +1555,6 @@ QPushButton:hover {
                 </item>
                 <item alignment="Qt::AlignRight">
                  <widget class="QFrame" name="asset_type_button_frame">
-                  <property name="frameShape">
-                   <enum>QFrame::NoFrame</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
                   <layout class="QHBoxLayout" name="asset_type_button_layout">
                    <property name="spacing">
                     <number>5</number>
@@ -2276,26 +1573,14 @@ QPushButton:hover {
                    </property>
                    <item>
                     <widget class="QPushButton" name="cancel_asset_type_butt">
+                     <property name="minimumSize">
+                      <size>
+                       <width>131</width>
+                       <height>47</height>
+                      </size>
+                     </property>
                      <property name="cursor">
                       <cursorShape>PointingHandCursor</cursorShape>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">QPushButton {
-	min-width: 129px;
-	min-height: 45px;
-	max-width: 129px;
-	max-height: 45px;
-	border-radius: 10px;
-	border: 1px solid #B5B8C7;
-	font-size: 15px;
-	color: #FFFFFF;
-	color: #757C9F;
-}
-
-QPushButton:hover {
-	color: #0915CC;
-	border: 1px solid #0915CC;
-}</string>
                      </property>
                      <property name="text">
                       <string>Cancel</string>
@@ -2304,24 +1589,14 @@ QPushButton:hover {
                    </item>
                    <item>
                     <widget class="QPushButton" name="add_asset_type_butt">
+                     <property name="minimumSize">
+                      <size>
+                       <width>116</width>
+                       <height>47</height>
+                      </size>
+                     </property>
                      <property name="cursor">
                       <cursorShape>PointingHandCursor</cursorShape>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">QPushButton {
-	min-width: 116px;
-	min-height: 47px;
-	max-width: 116px;
-	max-height: 47px;
-	border-radius: 10px;
-	font-size: 15px;
-	color: #FFFFFF;
-	background: #0915CC;
-}
-
-QPushButton:hover {
-background: rgba(9, 21, 204, 0.8);
-}</string>
                      </property>
                      <property name="text">
                       <string>Save</string>
@@ -2358,81 +1633,6 @@ background: rgba(9, 21, 204, 0.8);
           </property>
           <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
            <widget class="QFrame" name="inventor_item_main_frame">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QFrame {
-	border-radius: 20px;
-	background-color: rgb(255, 255, 255);
-}
-
-QLineEdit {
-	min-width: 508px;
-	min-height: 46px;
-	max-width: 508px;
-	max-height: 46px;
-	border-radius: 10px;
-	border: 1px solid #B5B8C7;
-	padding-left: 15px;
-	padding-right: 15px;
-	font-size: 16px;
-}
-
-QLineEdit:hover {
-	border: 1px solid #0915CC;
-	background-color: #F2F3F6;
-}
-
-QLineEdit:focus {
-	border: 1px solid #0915CC;
-	background-color: #F2F3F6;
-}
-
-QLineEdit[error=true] {
-	border: 1px solid #FF3C2F;
-}
-
-
-#inventory_item_header{
-	font-size: 28px;
-	color: #070808;
-	margin-bottom: 5px;
-}
-
-#inventory_item_text, #inventory_item_text_2 {
-	font-size: 16px;
-	color: #070808;
-	margin-bottom: 25px;
-}
-
-#error_inventory_item_name, #error_inventory_item_dimension {
-	margin-top: 5px;
-	font-size: 14px;
-	color: #FF3C2F;
-}
-
-#inventory_item_name_label{
-	font-size: 16px;
-	color: #7C83A7;
-	margin-bottom: 5px;
-}</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
             <layout class="QVBoxLayout" name="inventor_item_main_layout">
              <property name="spacing">
               <number>0</number>
@@ -2451,31 +1651,16 @@ QLineEdit[error=true] {
              </property>
              <item>
               <widget class="QLabel" name="inventory_item_header">
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>Add new item</string>
                </property>
-               <property name="textFormat">
-                <enum>Qt::AutoText</enum>
-               </property>
                <property name="alignment">
                 <set>Qt::AlignJustify|Qt::AlignVCenter</set>
-               </property>
-               <property name="margin">
-                <number>0</number>
-               </property>
-               <property name="indent">
-                <number>-1</number>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QLabel" name="inventory_item_text">
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>Create new item for the inventory list.</string>
                </property>
@@ -2486,9 +1671,6 @@ QLineEdit[error=true] {
              </item>
              <item>
               <widget class="QLabel" name="inventory_item_name_label">
-               <property name="styleSheet">
-                <string notr="true">margin-bottom: 5px;</string>
-               </property>
                <property name="text">
                 <string>Item Name</string>
                </property>
@@ -2499,38 +1681,11 @@ QLineEdit[error=true] {
              </item>
              <item>
               <widget class="QLineEdit" name="inventory_item_name_input">
-               <property name="enabled">
-                <bool>true</bool>
-               </property>
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
                <property name="minimumSize">
                 <size>
                  <width>540</width>
                  <height>48</height>
                 </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>540</width>
-                 <height>48</height>
-                </size>
-               </property>
-               <property name="layoutDirection">
-                <enum>Qt::LeftToRight</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                </property>
                <property name="placeholderText">
                 <string>Enter item name</string>
@@ -2539,12 +1694,6 @@ QLineEdit[error=true] {
              </item>
              <item>
               <widget class="QLabel" name="error_inventory_item_name">
-               <property name="focusPolicy">
-                <enum>Qt::NoFocus</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>Enter asset type name</string>
                </property>
@@ -2555,10 +1704,6 @@ QLineEdit[error=true] {
              </item>
              <item>
               <widget class="QLabel" name="inventory_item_text_2">
-               <property name="styleSheet">
-                <string notr="true">margin-bottom: 0px;
-margin-top: 25px;</string>
-               </property>
                <property name="text">
                 <string>Enter item dimensions</string>
                </property>
@@ -2569,28 +1714,9 @@ margin-top: 25px;</string>
              </item>
              <item>
               <widget class="QFrame" name="inventor_item_dimension_frame">
-               <property name="styleSheet">
-                <string notr="true">QLineEdit {
-	min-width: 144px;
-	min-height: 46px;
-	max-width: 144px;
-	max-height: 46px;
-}
-
-QLabel {
-	font-size: 16px;
-	color: #7C83A7;
-}</string>
-               </property>
-               <property name="frameShape">
-                <enum>QFrame::NoFrame</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
                <layout class="QHBoxLayout" name="inventor_item_dimension_layout">
                 <property name="spacing">
-                 <number>0</number>
+                 <number>5</number>
                 </property>
                 <property name="leftMargin">
                  <number>0</number>
@@ -2606,12 +1732,6 @@ QLabel {
                 </property>
                 <item>
                  <widget class="QFrame" name="inventory_length_frame">
-                  <property name="frameShape">
-                   <enum>QFrame::NoFrame</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
                   <layout class="QVBoxLayout" name="inventory_length_layout">
                    <property name="spacing">
                     <number>5</number>
@@ -2637,6 +1757,12 @@ QLabel {
                    </item>
                    <item>
                     <widget class="QLineEdit" name="inventory_length_input">
+                     <property name="minimumSize">
+                      <size>
+                       <width>177</width>
+                       <height>48</height>
+                      </size>
+                     </property>
                      <property name="placeholderText">
                       <string>e.g. 24</string>
                      </property>
@@ -2647,12 +1773,6 @@ QLabel {
                 </item>
                 <item>
                  <widget class="QFrame" name="inventory_width_frame">
-                  <property name="frameShape">
-                   <enum>QFrame::NoFrame</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
                   <layout class="QVBoxLayout" name="inventory_width_layout">
                    <property name="spacing">
                     <number>5</number>
@@ -2678,6 +1798,12 @@ QLabel {
                    </item>
                    <item>
                     <widget class="QLineEdit" name="inventory_width_input">
+                     <property name="minimumSize">
+                      <size>
+                       <width>177</width>
+                       <height>48</height>
+                      </size>
+                     </property>
                      <property name="placeholderText">
                       <string>e.g. 10</string>
                      </property>
@@ -2688,12 +1814,6 @@ QLabel {
                 </item>
                 <item>
                  <widget class="QFrame" name="inventory_height_frame">
-                  <property name="frameShape">
-                   <enum>QFrame::NoFrame</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
                   <layout class="QVBoxLayout" name="inventory_height_layout">
                    <property name="spacing">
                     <number>5</number>
@@ -2719,6 +1839,12 @@ QLabel {
                    </item>
                    <item>
                     <widget class="QLineEdit" name="inventory_height_input">
+                     <property name="minimumSize">
+                      <size>
+                       <width>177</width>
+                       <height>48</height>
+                      </size>
+                     </property>
                      <property name="placeholderText">
                       <string>e.g. 10</string>
                      </property>
@@ -2732,12 +1858,6 @@ QLabel {
              </item>
              <item>
               <widget class="QLabel" name="error_inventory_item_dimension">
-               <property name="focusPolicy">
-                <enum>Qt::NoFocus</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>Enter item dimensions</string>
                </property>
@@ -2748,12 +1868,6 @@ QLabel {
              </item>
              <item alignment="Qt::AlignRight">
               <widget class="QFrame" name="inventor_item_bottom_frame">
-               <property name="frameShape">
-                <enum>QFrame::NoFrame</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
                <layout class="QHBoxLayout" name="inventor_item_bottom_layout" stretch="0,0">
                 <property name="spacing">
                  <number>5</number>
@@ -2778,28 +1892,8 @@ QLabel {
                     <height>47</height>
                    </size>
                   </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>131</width>
-                    <height>47</height>
-                   </size>
-                  </property>
                   <property name="cursor">
                    <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton {
-	border-radius: 10px;
-	border: 1px solid #B5B8C7;
-	font-size: 15px;
-	color: #FFFFFF;
-	color: #757C9F;
-}
-
-QPushButton:hover {
-	color: #0915CC;
-	border: 1px solid #0915CC;
-}</string>
                   </property>
                   <property name="text">
                    <string>Cancel</string>
@@ -2814,26 +1908,8 @@ QPushButton:hover {
                     <height>47</height>
                    </size>
                   </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>146</width>
-                    <height>47</height>
-                   </size>
-                  </property>
                   <property name="cursor">
                    <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton {
-	border-radius: 10px;
-	font-size: 15px;
-	color: #FFFFFF;
-	background: #0915CC;
-}
-
-QPushButton:hover {
-	background: rgba(9, 21, 204, 0.8);
-}</string>
                   </property>
                   <property name="text">
                    <string>Add Item</string>
@@ -2867,134 +1943,6 @@ QPushButton:hover {
           </property>
           <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
            <widget class="QFrame" name="inventory_preset_main_frame">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QFrame {
-	border-radius: 20px;
-	background-color: rgb(255, 255, 255);
-}
-
-QLineEdit {
-	min-width: 508px;
-	min-height: 46px;
-	max-width: 508px;
-	max-height: 46px;
-	border-radius: 10px;
-	border: 1px solid #B5B8C7;
-	padding-left: 15px;
-	padding-right: 15px;
-	font-size: 16px;
-}
-
-QLineEdit:hover {
-	border: 1px solid #0915CC;
-	background-color: #F2F3F6;
-}
-
-QLineEdit:focus {
-	border: 1px solid #0915CC;
-	background-color: #F2F3F6;
-}
-
-QLineEdit[error=true] {
-	border: 1px solid #FF3C2F;
-}
-
-QComboBox {
-	background: #FFFFFF;
-	border-radius: 10px;
-	border: 1px solid #B5B8C7;
-	padding-left: 15px;
-	padding-right: 15px;
-	font-size: 16px;
-	color: #757C9F;
-}
-
-QComboBox:hover {
-	border: 1px solid #0915CC;
-	background: #F2F3F6;
-}
-
-QComboBox::drop-down {
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
-}
-
-QComboBox::down-arrow {
-	padding-right: 20px;
-    image: url(:/image/arrow_drop_down.svg);
-}
-
-QComboBox QAbstractItemView
-{
-	background: #F9FAFB;
-	padding-left: 7px;
-	padding-right: 7px;
-    border: 0.5px solid rgba(181, 184, 199, 0.5);
-	border-radius: 8px;
-	outline: 0;
-}
-
-QComboBox QAbstractItemView::item { 
-	min-height: 35px;
-	padding-left: 15px;
-	background: #F9FAFB;
-	color: #070808;
-}
-
-QListView::item:selected { 
-	color: #0915CC; 
-	background-color: #F2F3F6; 
-	border-radius: 4px;
-}
-
-#inventory_preset_header{
-	font-size: 28px;
-	color: #070808;
-	margin-bottom: 5px;
-}
-
-#inventory_preset_text {
-	font-size: 16px;
-	color: #070808;
-	margin-bottom: 25px;
-}
-
-#error_inventory_preset_qty {
-	margin-top: 5px;
-	font-size: 14px;
-	color: #FF3C2F;
-}
-
-#inventory_preset_qty_label {
-	font-size: 16px;
-	color: #7C83A7;
-	margin-bottom: 5px;
-}
-#inventory_preset_list_label {
-	font-size: 16px;
-	color: #7C83A7;
-	margin-bottom: 5px;
-	margin-top: 20px;
-}</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
             <layout class="QVBoxLayout" name="inventory_preset_main_layout">
              <property name="spacing">
               <number>0</number>
@@ -3013,31 +1961,16 @@ QListView::item:selected {
              </property>
              <item>
               <widget class="QLabel" name="inventory_preset_header">
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>Add item to the preset</string>
                </property>
-               <property name="textFormat">
-                <enum>Qt::AutoText</enum>
-               </property>
                <property name="alignment">
                 <set>Qt::AlignJustify|Qt::AlignVCenter</set>
-               </property>
-               <property name="margin">
-                <number>0</number>
-               </property>
-               <property name="indent">
-                <number>-1</number>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QLabel" name="inventory_preset_text">
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>Add item to the preset list</string>
                </property>
@@ -3048,9 +1981,6 @@ QListView::item:selected {
              </item>
              <item>
               <widget class="QLabel" name="inventory_preset_qty_label">
-               <property name="styleSheet">
-                <string notr="true">margin-bottom: 5px;</string>
-               </property>
                <property name="text">
                 <string>Item Quantity</string>
                </property>
@@ -3061,41 +1991,11 @@ QListView::item:selected {
              </item>
              <item>
               <widget class="QLineEdit" name="inventory_preset_qty_input">
-               <property name="enabled">
-                <bool>true</bool>
-               </property>
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
                <property name="minimumSize">
                 <size>
                  <width>540</width>
                  <height>48</height>
                 </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>540</width>
-                 <height>48</height>
-                </size>
-               </property>
-               <property name="layoutDirection">
-                <enum>Qt::LeftToRight</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="echoMode">
-                <enum>QLineEdit::Normal</enum>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                </property>
                <property name="placeholderText">
                 <string>Enter item quantity</string>
@@ -3104,12 +2004,6 @@ QListView::item:selected {
              </item>
              <item>
               <widget class="QLabel" name="error_inventory_preset_qty">
-               <property name="focusPolicy">
-                <enum>Qt::NoFocus</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>Enter item quantity</string>
                </property>
@@ -3120,9 +2014,6 @@ QListView::item:selected {
              </item>
              <item>
               <widget class="QLabel" name="inventory_preset_list_label">
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>List</string>
                </property>
@@ -3135,7 +2026,7 @@ QListView::item:selected {
               <widget class="QComboBox" name="inventory_preset_combobox">
                <property name="minimumSize">
                 <size>
-                 <width>0</width>
+                 <width>540</width>
                  <height>48</height>
                 </size>
                </property>
@@ -3145,19 +2036,10 @@ QListView::item:selected {
                  <height>48</height>
                 </size>
                </property>
-               <property name="duplicatesEnabled">
-                <bool>true</bool>
-               </property>
               </widget>
              </item>
              <item alignment="Qt::AlignRight">
               <widget class="QFrame" name="inventory_preset_bottom_frame">
-               <property name="frameShape">
-                <enum>QFrame::NoFrame</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
                <layout class="QHBoxLayout" name="inventory_preset_bottom_layout" stretch="0,0">
                 <property name="spacing">
                  <number>5</number>
@@ -3182,28 +2064,8 @@ QListView::item:selected {
                     <height>47</height>
                    </size>
                   </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>131</width>
-                    <height>47</height>
-                   </size>
-                  </property>
                   <property name="cursor">
                    <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton {
-	border-radius: 10px;
-	border: 1px solid #B5B8C7;
-	font-size: 15px;
-	color: #FFFFFF;
-	color: #757C9F;
-}
-
-QPushButton:hover {
-	color: #0915CC;
-	border: 1px solid #0915CC;
-}</string>
                   </property>
                   <property name="text">
                    <string>Cancel</string>
@@ -3220,18 +2082,6 @@ QPushButton:hover {
                   </property>
                   <property name="cursor">
                    <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton {
-	border-radius: 10px;
-	font-size: 15px;
-	color: #FFFFFF;
-	background: #0915CC;
-}
-
-QPushButton:hover {
-background: rgba(9, 21, 204, 0.8);
-}</string>
                   </property>
                   <property name="text">
                    <string>Add Item</string>

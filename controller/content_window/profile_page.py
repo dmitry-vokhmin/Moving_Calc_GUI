@@ -2,6 +2,7 @@ from PyQt5.QtWidgets import QWidget
 from PyQt5.QtCore import QEvent
 from PyQt5.QtGui import QIcon
 from model.user.user import User
+from model.company import Company
 from controller.validator.validation import Validation
 from controller.validator import validation
 
@@ -16,6 +17,28 @@ class ProfilePage(QWidget):
             "name": {
                 "fields": (self.main_window.ui.profile_name_input, self.main_window.ui.profile_error_name),
                 "validator": validation.EmptyStrValidation
+            },
+            "company_name": {
+                "fields": (self.main_window.ui.profile_comp_name_input, self.main_window.ui.profile_comp_name_error),
+                "validator": validation.EmptyStrValidation
+            },
+            "address": {
+                "fields": (self.main_window.ui.profile_comp_address_1_input,
+                           self.main_window.ui.profile_comp_address_1_error),
+                "validator": validation.EmptyStrValidation
+            },
+            "city": {
+                "fields": (self.main_window.ui.profile_comp_city_input, self.main_window.ui.profile_comp_city_error),
+                "validator": validation.EmptyStrValidation
+            },
+            "state": {
+                "fields": (self.main_window.ui.profile_comp_state_input, self.main_window.ui.profile_comp_state_error),
+                "validator": validation.EmptyStrValidation
+            },
+            "zip_code": {
+                "fields": (self.main_window.ui.profile_comp_zip_code_input,
+                           self.main_window.ui.profile_comp_zip_code_error),
+                "validator": validation.ZipValidation
             },
             "email": {
                 "fields": (self.main_window.ui.profile_new_email_input, self.main_window.ui.profile_error_email),
@@ -41,18 +64,18 @@ class ProfilePage(QWidget):
         self.main_window.ui.profile_change_email_butt.clicked.connect(lambda: self.change_email(True))
         self.main_window.ui.profile_email_cancel_butt.clicked.connect(lambda: self.change_email(False))
         self.main_window.ui.profile_log_out_butt.clicked.connect(
-            lambda: self.main_window.modal_window.show_confirm_dialog("Log Out?", "log out", self.main_window.log_out)
+            lambda: self.main_window.modal_window.show_confirm_dialog(self.main_window.log_out, "Log Out?", "log out")
         )
         self.main_window.ui.profile_delete_butt.clicked.connect(
-            lambda: self.main_window.modal_window.show_confirm_dialog(f"delete {self.staff_profile['fullname']}?",
-                                                                      "delete",
-                                                                      self.delete_user)
+            lambda: self.main_window.modal_window.show_confirm_dialog(self.delete_user,
+                                                                      f"delete {self.staff_profile['fullname']}?",
+                                                                      "delete")
         )
         self.main_window.ui.profile_user_manage_butt.clicked.connect(
             lambda: self.main_window.ui.content_pages.setCurrentWidget(self.main_window.ui.user_management_page)
         )
         self.main_window.ui.profile_save_butt.clicked.connect(
-            lambda: self.main_window.modal_window.show_confirm_dialog("save changes?", "save", self.save_changes)
+            lambda: self.main_window.modal_window.show_confirm_dialog(self.save_changes, "save changes?", "save", )
         )
         self.main_window.ui.profile_log_out_butt.installEventFilter(self)
         self.main_window.ui.profile_delete_butt.installEventFilter(self)
@@ -73,6 +96,16 @@ class ProfilePage(QWidget):
         else:
             self.main_window.user_profile_ui.set_profile()
 
+    def validate_company_data(self):
+        if self.main_window.ui.profile_comp_name_input.isEnabled():
+            return {
+                "company_name": {"fields": self.fields["company_name"]["fields"]},
+                "address": {"fields": self.fields["address"]["fields"]},
+                "city": {"fields": self.fields["city"]["fields"]},
+                "state": {"fields": self.fields["state"]["fields"]},
+                "zip_code": {"fields": self.fields["zip_code"]["fields"]},
+            }
+
     def validate_page(self):
         new_fields = {
             "name": {"fields": self.fields["name"]["fields"]}
@@ -83,6 +116,9 @@ class ProfilePage(QWidget):
             new_fields["password2"] = {"fields": self.fields["password2"]["fields"]}
         if not self.main_window.ui.profile_new_email_frame.isHidden():
             new_fields["email"] = {"fields": self.fields["email"]["fields"]}
+        company_data = self.validate_company_data()
+        if company_data:
+            new_fields.update(company_data)
         return self.validator.check_validation(new_fields)
 
     def get_data_from_page(self):
@@ -104,6 +140,7 @@ class ProfilePage(QWidget):
 
     def save_changes(self):
         if self.validate_page():
+            self.save_company_data()
             data = self.get_data_from_page()
             user_update = User(**data)
             response_code, response_data = user_update.put()
@@ -117,6 +154,24 @@ class ProfilePage(QWidget):
                 self.set_user_profile()
                 self.validator.reset_error_fields(self.fields)
                 self.main_window.ui.profile_butt.setText(f" {self.main_window.user.fullname}")
+
+    def save_company_data(self):
+        if self.main_window.ui.profile_comp_name_input.isEnabled():
+            data = self.get_company_data()
+            company_api = Company(**data)
+            response_code, response_data = company_api.put()
+            if response_code > 399:
+                self.main_window.modal_window.show_notification_page(description=response_data, is_error=True)
+
+    def get_company_data(self):
+        return {
+            "name": self.main_window.ui.profile_comp_name_input.text(),
+            "street": self.main_window.ui.profile_comp_address_1_input.text(),
+            "apartment": self.main_window.ui.profile_comp_address_2_input.text(),
+            "city": self.main_window.ui.profile_comp_city_input.text(),
+            "state": self.main_window.ui.profile_comp_state_input.text(),
+            "zip_code": self.main_window.ui.profile_comp_zip_code_input.text()
+        }
 
     def change_password(self, is_change_password):
         self.main_window.ui.profile_new_pass_frame.setVisible(is_change_password)
@@ -150,7 +205,7 @@ class ProfilePage(QWidget):
                 obj.setIcon(QIcon(":/image/delete_acc_icon_default.svg"))
                 return True
         elif obj is self.main_window.ui.profile_page:
-            if event.type() == QEvent.Show:
+            if event.type() == QEvent.Show and self.main_window.change_page_data:
                 self.validator.reset_error_fields(self.fields)
                 self.set_user_profile()
                 return True

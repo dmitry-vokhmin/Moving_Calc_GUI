@@ -61,16 +61,16 @@ class EquipmentPage(QWidget):
 
     def eventFilter(self, obj, event) -> bool:
         if obj is self.main_window.ui.equipment_page:
-            if event.type() == QEvent.Show:
+            if event.type() == QEvent.Show and self.main_window.change_page_data:
                 self.change_inside_page(True, self.main_window.ui.equip_truck_page)
                 self.truck_type_table_update()
                 return True
         if obj is self.main_window.ui.equip_truck_page:
-            if event.type() == QEvent.Show:
+            if event.type() == QEvent.Show and self.main_window.change_page_data:
                 self.truck_table_update()
                 return True
         elif obj is self.main_window.ui.equip_truck_type_page:
-            if event.type() == QEvent.Show:
+            if event.type() == QEvent.Show and self.main_window.change_page_data:
                 self.truck_type_table_update()
                 return True
         return False

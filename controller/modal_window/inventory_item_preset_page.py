@@ -34,13 +34,15 @@ class InventoryItemPresetPage(QDialog):
             "inventory_id": self.inventory["id"],
             "count": self.main_modal_window.ui.inventory_preset_qty_input.text(),
             "inventories": {
-                "name": self.inventory["name"]
+                "name": self.inventory["name"],
+                "image": self.inventory["image"]
             }
         }
         selected_move_size = self.main_modal_window.ui.inventory_preset_combobox.currentData()
         self.main_modal_window.main_window.calculator_page.inventory_check_page.update_preset_inventory(
             data, selected_move_size
         )
+        self.main_modal_window.close()
 
     def add_item_to_db(self):
         if self.validator.check_validation(self.fields):

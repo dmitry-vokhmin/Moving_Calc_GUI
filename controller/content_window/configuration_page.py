@@ -115,14 +115,14 @@ class ConfigurationPage(QWidget):
 
     def eventFilter(self, obj, event) -> bool:
         if obj is self.main_window.ui.config_page:
-            if event.type() == QEvent.Show:
+            if event.type() == QEvent.Show and self.main_window.change_page_data:
                 if self.set_page:
                     self.set_price_tags_and_calendar()
                     self.set_page = False
                 self.change_inside_page(True, self.main_window.ui.date_page)
                 return True
         if obj is self.main_window.ui.price_page:
-            if event.type() == QEvent.Show:
+            if event.type() == QEvent.Show and self.main_window.change_page_data:
                 self.main_window.price_settings_ui.set_movers_prices(self.get_price_tag_id())
                 self.price_page = True
                 return True

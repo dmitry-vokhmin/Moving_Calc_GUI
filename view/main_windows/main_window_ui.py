@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'main_window_copy.ui'
+# Form implementation generated from reading ui file 'main_window.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1366, 842)
+        MainWindow.resize(1368, 846)
         MainWindow.setMinimumSize(QtCore.QSize(1366, 768))
         MainWindow.setStyleSheet("/* VERTICAL SCROLLBAR */\n"
                                  " QScrollBar:vertical {\n"
@@ -105,6 +105,11 @@ class Ui_MainWindow(object):
                                         "    border: 1px solid #FF3C2F;\n"
                                         "}\n"
                                         "\n"
+                                        "#reg_comp_state_input, #reg_comp_zipcode_input {\n"
+                                        "    min-width: 156px;\n"
+                                        "    max-width: 156px;\n"
+                                        "}\n"
+                                        "\n"
                                         "/* QPushButton */\n"
                                         "QPushButton {\n"
                                         "    border-radius: 10px;\n"
@@ -117,7 +122,7 @@ class Ui_MainWindow(object):
                                         "background: rgba(9, 21, 204, 0.8);\n"
                                         "}\n"
                                         "\n"
-                                        "#log_create_acc_but, #reg_sign_but, #acc_create_error_bot_but {\n"
+                                        "#log_create_acc_but, #reg_sign_but, #reg_comp_sign_but, #acc_create_error_bot_but, #reset_pass_email_back_btn {\n"
                                         "    background: transparent;\n"
                                         "    text-decoration: underline;\n"
                                         "    font-size: 16px;\n"
@@ -136,37 +141,37 @@ class Ui_MainWindow(object):
                                         "}\n"
                                         "\n"
                                         "/* QLabel */\n"
-                                        "#log_header, #reg_header{\n"
+                                        "#log_header, #reg_header, #reg_comp_header, #reset_pass_email_header, #reset_pass_pass_header, #reset_pass_new_pass_header {\n"
                                         "    font-size: 28px;\n"
                                         "    color: #070808;\n"
                                         "    margin-bottom: 10px;\n"
                                         "}\n"
                                         "\n"
-                                        "#log_text, #reg_text {\n"
+                                        "#log_text, #reg_text , #reg_comp_text, #reset_pass_email_text, #reset_pass_pass_text, #reset_pass_new_pass_text {\n"
                                         "    font-size: 16px;\n"
                                         "    color: #070808;\n"
                                         "    margin-bottom: 30px;\n"
                                         "}\n"
                                         "\n"
-                                        "#log_error_text, #reg_error_name, #reg_error_email, #reg_error_pass, #reg_error_pass2 {\n"
+                                        "#log_error_text, #reg_error_name, #reg_error_email, #reg_error_pass, #reg_error_pass2, #reg_comp_address1_error, #reg_comp_city_error, #reg_comp_state_error, #reg_comp_zipcode_error, #reg_comp_error_name, #reset_pass_emai_error, #reset_pass_error_text, #reset_pass_new_pass_error_1, #reset_pass_new_pass_error_2 {\n"
                                         "    color: #FF3C2F;\n"
                                         "    font-size: 14px;\n"
                                         "    margin-top: 5px;\n"
                                         "}\n"
-                                        "#log_error_text {\n"
-                                        "    margin-bottom: 0px;\n"
+                                        "#log_error_text, #reset_pass_error_text {\n"
+                                        "    margin-top: 0px;\n"
                                         "}\n"
                                         "\n"
-                                        "#log_bot_text, #log_email_label, #log_pass_label, #reg_email_label, #reg_pass_label, #reg_pass2_label, #reg_name_label, #reg_bot_text  {\n"
+                                        "#log_bot_text, #log_email_label, #log_pass_label, #reg_email_label, #reg_pass_label, #reg_pass2_label, #reg_name_label, #reg_bot_text, #reg_comp_name_label, #reg_comp_address1_label, #reg_comp_address2_label, #reg_comp_city_label, #reg_comp_state_label, #reg_comp_zipcode_label, #reg_comp_bot_text, #reset_pass_email_label, #reset_pass_pass_label, #reset_pass_new_pass_label, #reset_pass_new_pass_label_2{\n"
                                         "    font-size: 16px;\n"
                                         "    color: #7C83A7;\n"
                                         "    margin-bottom: 5px;\n"
                                         "    margin-top: 20px;\n"
                                         "}\n"
-                                        "#reg_name_label  {\n"
+                                        "#reg_name_label, #reg_comp_name_label, #reset_pass_email_label, #reset_pass_new_pass_label, #log_email_label, #reset_pass_pass_label {\n"
                                         "    margin-top: 0px;\n"
                                         "}\n"
-                                        "#log_bot_text, #reg_bot_text {\n"
+                                        "#log_bot_text, #reg_bot_text, #reg_comp_bot_text {\n"
                                         "    margin-bottom: 0px;\n"
                                         "    margin-top: 0px;\n"
                                         "}\n"
@@ -189,13 +194,13 @@ class Ui_MainWindow(object):
                                         "}\n"
                                         "\n"
                                         "/* QFrame */\n"
-                                        "#log_error_frame {\n"
+                                        "#log_error_frame, #reset_pass_error_frame {\n"
                                         "    background: rgba(255, 60, 47, 0.15);\n"
                                         "    border-radius: 5px;\n"
                                         "}\n"
                                         "\n"
                                         "/* Icon */\n"
-                                        "#log_error_icon {\n"
+                                        "#log_error_icon, #reset_pass_error_icon {\n"
                                         "    image: url(:/image/login_error_pic.svg);\n"
                                         "}\n"
                                         "\n"
@@ -308,6 +313,138 @@ class Ui_MainWindow(object):
         self.log_main_layout.addWidget(self.log_bot_frame, 0, QtCore.Qt.AlignLeft)
         self.login_layout.addWidget(self.log_main_frame, 0, QtCore.Qt.AlignHCenter | QtCore.Qt.AlignVCenter)
         self.login_pages.addWidget(self.login_page)
+        self.registration_company_page = QtWidgets.QWidget()
+        self.registration_company_page.setObjectName("registration_company_page")
+        self.registration_company_layout = QtWidgets.QVBoxLayout(self.registration_company_page)
+        self.registration_company_layout.setContentsMargins(0, 0, 0, 0)
+        self.registration_company_layout.setSpacing(0)
+        self.registration_company_layout.setObjectName("registration_company_layout")
+        self.reg_comp_main_frame = QtWidgets.QFrame(self.registration_company_page)
+        self.reg_comp_main_frame.setObjectName("reg_comp_main_frame")
+        self.reg_comp_main_layout = QtWidgets.QVBoxLayout(self.reg_comp_main_frame)
+        self.reg_comp_main_layout.setContentsMargins(0, 0, 0, 0)
+        self.reg_comp_main_layout.setSpacing(0)
+        self.reg_comp_main_layout.setObjectName("reg_comp_main_layout")
+        self.reg_comp_header = QtWidgets.QLabel(self.reg_comp_main_frame)
+        self.reg_comp_header.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.reg_comp_header.setObjectName("reg_comp_header")
+        self.reg_comp_main_layout.addWidget(self.reg_comp_header)
+        self.reg_comp_text = QtWidgets.QLabel(self.reg_comp_main_frame)
+        self.reg_comp_text.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.reg_comp_text.setObjectName("reg_comp_text")
+        self.reg_comp_main_layout.addWidget(self.reg_comp_text)
+        self.reg_comp_name_label = QtWidgets.QLabel(self.reg_comp_main_frame)
+        self.reg_comp_name_label.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.reg_comp_name_label.setObjectName("reg_comp_name_label")
+        self.reg_comp_main_layout.addWidget(self.reg_comp_name_label)
+        self.reg_comp_name_input = QtWidgets.QLineEdit(self.reg_comp_main_frame)
+        self.reg_comp_name_input.setEnabled(True)
+        self.reg_comp_name_input.setMinimumSize(QtCore.QSize(395, 48))
+        self.reg_comp_name_input.setMaximumSize(QtCore.QSize(395, 48))
+        self.reg_comp_name_input.setObjectName("reg_comp_name_input")
+        self.reg_comp_main_layout.addWidget(self.reg_comp_name_input)
+        self.reg_comp_error_name = QtWidgets.QLabel(self.reg_comp_main_frame)
+        self.reg_comp_error_name.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.reg_comp_error_name.setObjectName("reg_comp_error_name")
+        self.reg_comp_main_layout.addWidget(self.reg_comp_error_name)
+        self.reg_comp_address1_label = QtWidgets.QLabel(self.reg_comp_main_frame)
+        self.reg_comp_address1_label.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.reg_comp_address1_label.setObjectName("reg_comp_address1_label")
+        self.reg_comp_main_layout.addWidget(self.reg_comp_address1_label)
+        self.reg_comp_address1_input = QtWidgets.QLineEdit(self.reg_comp_main_frame)
+        self.reg_comp_address1_input.setEnabled(True)
+        self.reg_comp_address1_input.setMinimumSize(QtCore.QSize(395, 48))
+        self.reg_comp_address1_input.setMaximumSize(QtCore.QSize(395, 48))
+        self.reg_comp_address1_input.setObjectName("reg_comp_address1_input")
+        self.reg_comp_main_layout.addWidget(self.reg_comp_address1_input)
+        self.reg_comp_address1_error = QtWidgets.QLabel(self.reg_comp_main_frame)
+        self.reg_comp_address1_error.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.reg_comp_address1_error.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.reg_comp_address1_error.setObjectName("reg_comp_address1_error")
+        self.reg_comp_main_layout.addWidget(self.reg_comp_address1_error)
+        self.reg_comp_address2_label = QtWidgets.QLabel(self.reg_comp_main_frame)
+        self.reg_comp_address2_label.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.reg_comp_address2_label.setObjectName("reg_comp_address2_label")
+        self.reg_comp_main_layout.addWidget(self.reg_comp_address2_label)
+        self.reg_comp_address2_input = QtWidgets.QLineEdit(self.reg_comp_main_frame)
+        self.reg_comp_address2_input.setMinimumSize(QtCore.QSize(395, 48))
+        self.reg_comp_address2_input.setMaximumSize(QtCore.QSize(395, 48))
+        self.reg_comp_address2_input.setObjectName("reg_comp_address2_input")
+        self.reg_comp_main_layout.addWidget(self.reg_comp_address2_input)
+        self.reg_comp_city_label = QtWidgets.QLabel(self.reg_comp_main_frame)
+        self.reg_comp_city_label.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.reg_comp_city_label.setObjectName("reg_comp_city_label")
+        self.reg_comp_main_layout.addWidget(self.reg_comp_city_label)
+        self.reg_comp_city_input = QtWidgets.QLineEdit(self.reg_comp_main_frame)
+        self.reg_comp_city_input.setEnabled(True)
+        self.reg_comp_city_input.setMinimumSize(QtCore.QSize(395, 48))
+        self.reg_comp_city_input.setMaximumSize(QtCore.QSize(395, 48))
+        self.reg_comp_city_input.setObjectName("reg_comp_city_input")
+        self.reg_comp_main_layout.addWidget(self.reg_comp_city_input)
+        self.reg_comp_city_error = QtWidgets.QLabel(self.reg_comp_main_frame)
+        self.reg_comp_city_error.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.reg_comp_city_error.setObjectName("reg_comp_city_error")
+        self.reg_comp_main_layout.addWidget(self.reg_comp_city_error)
+        self.reg_comp_zip_code_frame = QtWidgets.QFrame(self.reg_comp_main_frame)
+        self.reg_comp_zip_code_frame.setObjectName("reg_comp_zip_code_frame")
+        self.reg_comp_zip_code_layout = QtWidgets.QGridLayout(self.reg_comp_zip_code_frame)
+        self.reg_comp_zip_code_layout.setContentsMargins(0, 0, 0, 0)
+        self.reg_comp_zip_code_layout.setHorizontalSpacing(20)
+        self.reg_comp_zip_code_layout.setVerticalSpacing(5)
+        self.reg_comp_zip_code_layout.setObjectName("reg_comp_zip_code_layout")
+        self.reg_comp_zipcode_label = QtWidgets.QLabel(self.reg_comp_zip_code_frame)
+        self.reg_comp_zipcode_label.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.reg_comp_zipcode_label.setObjectName("reg_comp_zipcode_label")
+        self.reg_comp_zip_code_layout.addWidget(self.reg_comp_zipcode_label, 0, 1, 1, 1)
+        self.reg_comp_zipcode_error = QtWidgets.QLabel(self.reg_comp_zip_code_frame)
+        self.reg_comp_zipcode_error.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.reg_comp_zipcode_error.setObjectName("reg_comp_zipcode_error")
+        self.reg_comp_zip_code_layout.addWidget(self.reg_comp_zipcode_error, 2, 1, 1, 1)
+        self.reg_comp_state_input = QtWidgets.QLineEdit(self.reg_comp_zip_code_frame)
+        self.reg_comp_state_input.setMinimumSize(QtCore.QSize(188, 48))
+        self.reg_comp_state_input.setMaximumSize(QtCore.QSize(188, 48))
+        self.reg_comp_state_input.setObjectName("reg_comp_state_input")
+        self.reg_comp_zip_code_layout.addWidget(self.reg_comp_state_input, 1, 0, 1, 1)
+        self.reg_comp_state_error = QtWidgets.QLabel(self.reg_comp_zip_code_frame)
+        self.reg_comp_state_error.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.reg_comp_state_error.setObjectName("reg_comp_state_error")
+        self.reg_comp_zip_code_layout.addWidget(self.reg_comp_state_error, 2, 0, 1, 1)
+        self.reg_comp_zipcode_input = QtWidgets.QLineEdit(self.reg_comp_zip_code_frame)
+        self.reg_comp_zipcode_input.setMinimumSize(QtCore.QSize(188, 48))
+        self.reg_comp_zipcode_input.setMaximumSize(QtCore.QSize(188, 48))
+        self.reg_comp_zipcode_input.setMaxLength(5)
+        self.reg_comp_zipcode_input.setObjectName("reg_comp_zipcode_input")
+        self.reg_comp_zip_code_layout.addWidget(self.reg_comp_zipcode_input, 1, 1, 1, 1)
+        self.reg_comp_state_label = QtWidgets.QLabel(self.reg_comp_zip_code_frame)
+        self.reg_comp_state_label.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.reg_comp_state_label.setObjectName("reg_comp_state_label")
+        self.reg_comp_zip_code_layout.addWidget(self.reg_comp_state_label, 0, 0, 1, 1)
+        self.reg_comp_main_layout.addWidget(self.reg_comp_zip_code_frame, 0, QtCore.Qt.AlignLeft)
+        spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.reg_comp_main_layout.addItem(spacerItem)
+        self.reg_comp_next_butt = QtWidgets.QPushButton(self.reg_comp_main_frame)
+        self.reg_comp_next_butt.setMinimumSize(QtCore.QSize(396, 47))
+        self.reg_comp_next_butt.setMaximumSize(QtCore.QSize(396, 47))
+        self.reg_comp_next_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.reg_comp_next_butt.setObjectName("reg_comp_next_butt")
+        self.reg_comp_main_layout.addWidget(self.reg_comp_next_butt)
+        self.reg_comp_bot_frame = QtWidgets.QFrame(self.reg_comp_main_frame)
+        self.reg_comp_bot_frame.setObjectName("reg_comp_bot_frame")
+        self.reg_comp_bot_layout = QtWidgets.QHBoxLayout(self.reg_comp_bot_frame)
+        self.reg_comp_bot_layout.setContentsMargins(0, 30, 0, 0)
+        self.reg_comp_bot_layout.setSpacing(0)
+        self.reg_comp_bot_layout.setObjectName("reg_comp_bot_layout")
+        self.reg_comp_bot_text = QtWidgets.QLabel(self.reg_comp_bot_frame)
+        self.reg_comp_bot_text.setObjectName("reg_comp_bot_text")
+        self.reg_comp_bot_layout.addWidget(self.reg_comp_bot_text)
+        self.reg_comp_sign_but = QtWidgets.QPushButton(self.reg_comp_bot_frame)
+        self.reg_comp_sign_but.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.reg_comp_sign_but.setObjectName("reg_comp_sign_but")
+        self.reg_comp_bot_layout.addWidget(self.reg_comp_sign_but)
+        self.reg_comp_main_layout.addWidget(self.reg_comp_bot_frame, 0, QtCore.Qt.AlignLeft)
+        self.registration_company_layout.addWidget(self.reg_comp_main_frame, 0,
+                                                   QtCore.Qt.AlignHCenter | QtCore.Qt.AlignVCenter)
+        self.login_pages.addWidget(self.registration_company_page)
         self.registration_page = QtWidgets.QWidget()
         self.registration_page.setObjectName("registration_page")
         self.registration_layout = QtWidgets.QVBoxLayout(self.registration_page)
@@ -387,8 +524,8 @@ class Ui_MainWindow(object):
         self.reg_error_pass2.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.reg_error_pass2.setObjectName("reg_error_pass2")
         self.reg_main_layout.addWidget(self.reg_error_pass2)
-        spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        self.reg_main_layout.addItem(spacerItem)
+        spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.reg_main_layout.addItem(spacerItem1)
         self.reg_create_acc_butt = QtWidgets.QPushButton(self.reg_main_frame)
         self.reg_create_acc_butt.setMinimumSize(QtCore.QSize(396, 47))
         self.reg_create_acc_butt.setMaximumSize(QtCore.QSize(396, 47))
@@ -430,8 +567,8 @@ class Ui_MainWindow(object):
         self.acc_created_icon.setMaximumSize(QtCore.QSize(69, 60))
         self.acc_created_icon.setObjectName("acc_created_icon")
         self.acc_created_main_layout.addWidget(self.acc_created_icon)
-        spacerItem1 = QtWidgets.QSpacerItem(20, 30, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        self.acc_created_main_layout.addItem(spacerItem1)
+        spacerItem2 = QtWidgets.QSpacerItem(20, 30, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.acc_created_main_layout.addItem(spacerItem2)
         self.acc_created_header = QtWidgets.QLabel(self.acc_created_main_frame)
         self.acc_created_header.setWordWrap(True)
         self.acc_created_header.setObjectName("acc_created_header")
@@ -467,8 +604,8 @@ class Ui_MainWindow(object):
         self.acc_create_error_icon.setMaximumSize(QtCore.QSize(69, 60))
         self.acc_create_error_icon.setObjectName("acc_create_error_icon")
         self.acc_create_error_main_layout.addWidget(self.acc_create_error_icon)
-        spacerItem2 = QtWidgets.QSpacerItem(20, 30, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.acc_create_error_main_layout.addItem(spacerItem2)
+        spacerItem3 = QtWidgets.QSpacerItem(20, 30, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.acc_create_error_main_layout.addItem(spacerItem3)
         self.acc_create_error_header = QtWidgets.QLabel(self.acc_create_error_main_frame)
         self.acc_create_error_header.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.acc_create_error_header.setWordWrap(True)
@@ -503,6 +640,178 @@ class Ui_MainWindow(object):
         self.acc_created_error_layout.addWidget(self.acc_create_error_main_frame, 0,
                                                 QtCore.Qt.AlignHCenter | QtCore.Qt.AlignVCenter)
         self.login_pages.addWidget(self.acc_created_error_page)
+        self.reset_pass_email_page = QtWidgets.QWidget()
+        self.reset_pass_email_page.setObjectName("reset_pass_email_page")
+        self.reset_pass_email_layout_2 = QtWidgets.QVBoxLayout(self.reset_pass_email_page)
+        self.reset_pass_email_layout_2.setContentsMargins(0, 0, 0, 0)
+        self.reset_pass_email_layout_2.setSpacing(0)
+        self.reset_pass_email_layout_2.setObjectName("reset_pass_email_layout_2")
+        self.reset_pass_email_frame = QtWidgets.QFrame(self.reset_pass_email_page)
+        self.reset_pass_email_frame.setObjectName("reset_pass_email_frame")
+        self.reset_pass_email_layout = QtWidgets.QVBoxLayout(self.reset_pass_email_frame)
+        self.reset_pass_email_layout.setContentsMargins(0, 0, 0, 0)
+        self.reset_pass_email_layout.setSpacing(0)
+        self.reset_pass_email_layout.setObjectName("reset_pass_email_layout")
+        self.reset_pass_email_header = QtWidgets.QLabel(self.reset_pass_email_frame)
+        self.reset_pass_email_header.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.reset_pass_email_header.setObjectName("reset_pass_email_header")
+        self.reset_pass_email_layout.addWidget(self.reset_pass_email_header)
+        self.reset_pass_email_text = QtWidgets.QLabel(self.reset_pass_email_frame)
+        self.reset_pass_email_text.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.reset_pass_email_text.setWordWrap(True)
+        self.reset_pass_email_text.setObjectName("reset_pass_email_text")
+        self.reset_pass_email_layout.addWidget(self.reset_pass_email_text)
+        self.reset_pass_email_label = QtWidgets.QLabel(self.reset_pass_email_frame)
+        self.reset_pass_email_label.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.reset_pass_email_label.setObjectName("reset_pass_email_label")
+        self.reset_pass_email_layout.addWidget(self.reset_pass_email_label)
+        self.reset_pass_email_input = QtWidgets.QLineEdit(self.reset_pass_email_frame)
+        self.reset_pass_email_input.setMinimumSize(QtCore.QSize(395, 48))
+        self.reset_pass_email_input.setMaximumSize(QtCore.QSize(395, 48))
+        self.reset_pass_email_input.setObjectName("reset_pass_email_input")
+        self.reset_pass_email_layout.addWidget(self.reset_pass_email_input)
+        self.reset_pass_emai_error = QtWidgets.QLabel(self.reset_pass_email_frame)
+        self.reset_pass_emai_error.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.reset_pass_emai_error.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.reset_pass_emai_error.setObjectName("reset_pass_emai_error")
+        self.reset_pass_email_layout.addWidget(self.reset_pass_emai_error)
+        spacerItem4 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.reset_pass_email_layout.addItem(spacerItem4)
+        self.reset_pass_email_send_btn = QtWidgets.QPushButton(self.reset_pass_email_frame)
+        self.reset_pass_email_send_btn.setMinimumSize(QtCore.QSize(396, 47))
+        self.reset_pass_email_send_btn.setMaximumSize(QtCore.QSize(396, 47))
+        self.reset_pass_email_send_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.reset_pass_email_send_btn.setObjectName("reset_pass_email_send_btn")
+        self.reset_pass_email_layout.addWidget(self.reset_pass_email_send_btn)
+        spacerItem5 = QtWidgets.QSpacerItem(20, 30, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.reset_pass_email_layout.addItem(spacerItem5)
+        self.reset_pass_email_back_btn = QtWidgets.QPushButton(self.reset_pass_email_frame)
+        self.reset_pass_email_back_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.reset_pass_email_back_btn.setObjectName("reset_pass_email_back_btn")
+        self.reset_pass_email_layout.addWidget(self.reset_pass_email_back_btn)
+        self.reset_pass_email_layout_2.addWidget(self.reset_pass_email_frame, 0,
+                                                 QtCore.Qt.AlignHCenter | QtCore.Qt.AlignVCenter)
+        self.login_pages.addWidget(self.reset_pass_email_page)
+        self.reset_pass_pass_page = QtWidgets.QWidget()
+        self.reset_pass_pass_page.setObjectName("reset_pass_pass_page")
+        self.reset_pass_pass_layout = QtWidgets.QVBoxLayout(self.reset_pass_pass_page)
+        self.reset_pass_pass_layout.setContentsMargins(0, 0, 0, 0)
+        self.reset_pass_pass_layout.setSpacing(0)
+        self.reset_pass_pass_layout.setObjectName("reset_pass_pass_layout")
+        self.reset_pass_pass_frame = QtWidgets.QFrame(self.reset_pass_pass_page)
+        self.reset_pass_pass_frame.setObjectName("reset_pass_pass_frame")
+        self.reset_pass_pass_layout_2 = QtWidgets.QVBoxLayout(self.reset_pass_pass_frame)
+        self.reset_pass_pass_layout_2.setContentsMargins(0, 0, 0, 0)
+        self.reset_pass_pass_layout_2.setSpacing(0)
+        self.reset_pass_pass_layout_2.setObjectName("reset_pass_pass_layout_2")
+        self.reset_pass_pass_header = QtWidgets.QLabel(self.reset_pass_pass_frame)
+        self.reset_pass_pass_header.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.reset_pass_pass_header.setObjectName("reset_pass_pass_header")
+        self.reset_pass_pass_layout_2.addWidget(self.reset_pass_pass_header)
+        self.reset_pass_pass_text = QtWidgets.QLabel(self.reset_pass_pass_frame)
+        self.reset_pass_pass_text.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.reset_pass_pass_text.setObjectName("reset_pass_pass_text")
+        self.reset_pass_pass_layout_2.addWidget(self.reset_pass_pass_text)
+        self.reset_pass_error_frame = QtWidgets.QFrame(self.reset_pass_pass_frame)
+        self.reset_pass_error_frame.setMinimumSize(QtCore.QSize(395, 40))
+        self.reset_pass_error_frame.setMaximumSize(QtCore.QSize(395, 40))
+        self.reset_pass_error_frame.setObjectName("reset_pass_error_frame")
+        self.reset_pass_error_layout = QtWidgets.QHBoxLayout(self.reset_pass_error_frame)
+        self.reset_pass_error_layout.setContentsMargins(11, 0, 0, 0)
+        self.reset_pass_error_layout.setSpacing(11)
+        self.reset_pass_error_layout.setObjectName("reset_pass_error_layout")
+        self.reset_pass_error_icon = QtWidgets.QLabel(self.reset_pass_error_frame)
+        self.reset_pass_error_icon.setMinimumSize(QtCore.QSize(17, 17))
+        self.reset_pass_error_icon.setMaximumSize(QtCore.QSize(17, 17))
+        self.reset_pass_error_icon.setObjectName("reset_pass_error_icon")
+        self.reset_pass_error_layout.addWidget(self.reset_pass_error_icon)
+        self.reset_pass_error_text = QtWidgets.QLabel(self.reset_pass_error_frame)
+        self.reset_pass_error_text.setObjectName("reset_pass_error_text")
+        self.reset_pass_error_layout.addWidget(self.reset_pass_error_text)
+        self.reset_pass_error_layout.setStretch(1, 1)
+        self.reset_pass_pass_layout_2.addWidget(self.reset_pass_error_frame)
+        self.reset_pass_pass_label = QtWidgets.QLabel(self.reset_pass_pass_frame)
+        self.reset_pass_pass_label.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.reset_pass_pass_label.setObjectName("reset_pass_pass_label")
+        self.reset_pass_pass_layout_2.addWidget(self.reset_pass_pass_label)
+        self.reset_pass_pass_input = QtWidgets.QLineEdit(self.reset_pass_pass_frame)
+        self.reset_pass_pass_input.setMinimumSize(QtCore.QSize(395, 48))
+        self.reset_pass_pass_input.setMaximumSize(QtCore.QSize(395, 48))
+        self.reset_pass_pass_input.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.reset_pass_pass_input.setObjectName("reset_pass_pass_input")
+        self.reset_pass_pass_layout_2.addWidget(self.reset_pass_pass_input)
+        spacerItem6 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.reset_pass_pass_layout_2.addItem(spacerItem6)
+        self.reset_pass_pass_next_btn = QtWidgets.QPushButton(self.reset_pass_pass_frame)
+        self.reset_pass_pass_next_btn.setMinimumSize(QtCore.QSize(396, 47))
+        self.reset_pass_pass_next_btn.setMaximumSize(QtCore.QSize(396, 47))
+        self.reset_pass_pass_next_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.reset_pass_pass_next_btn.setObjectName("reset_pass_pass_next_btn")
+        self.reset_pass_pass_layout_2.addWidget(self.reset_pass_pass_next_btn)
+        self.reset_pass_pass_layout.addWidget(self.reset_pass_pass_frame, 0,
+                                              QtCore.Qt.AlignHCenter | QtCore.Qt.AlignVCenter)
+        self.login_pages.addWidget(self.reset_pass_pass_page)
+        self.reset_pass_new_pass_page = QtWidgets.QWidget()
+        self.reset_pass_new_pass_page.setObjectName("reset_pass_new_pass_page")
+        self.reset_pass_new_pass_layout = QtWidgets.QVBoxLayout(self.reset_pass_new_pass_page)
+        self.reset_pass_new_pass_layout.setContentsMargins(0, 0, 0, 0)
+        self.reset_pass_new_pass_layout.setSpacing(0)
+        self.reset_pass_new_pass_layout.setObjectName("reset_pass_new_pass_layout")
+        self.reset_pass_new_pass_frame = QtWidgets.QFrame(self.reset_pass_new_pass_page)
+        self.reset_pass_new_pass_frame.setObjectName("reset_pass_new_pass_frame")
+        self.reset_pass_new_pass_layout_2 = QtWidgets.QVBoxLayout(self.reset_pass_new_pass_frame)
+        self.reset_pass_new_pass_layout_2.setContentsMargins(0, 0, 0, 0)
+        self.reset_pass_new_pass_layout_2.setSpacing(0)
+        self.reset_pass_new_pass_layout_2.setObjectName("reset_pass_new_pass_layout_2")
+        self.reset_pass_new_pass_header = QtWidgets.QLabel(self.reset_pass_new_pass_frame)
+        self.reset_pass_new_pass_header.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.reset_pass_new_pass_header.setObjectName("reset_pass_new_pass_header")
+        self.reset_pass_new_pass_layout_2.addWidget(self.reset_pass_new_pass_header)
+        self.reset_pass_new_pass_text = QtWidgets.QLabel(self.reset_pass_new_pass_frame)
+        self.reset_pass_new_pass_text.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.reset_pass_new_pass_text.setWordWrap(True)
+        self.reset_pass_new_pass_text.setObjectName("reset_pass_new_pass_text")
+        self.reset_pass_new_pass_layout_2.addWidget(self.reset_pass_new_pass_text)
+        self.reset_pass_new_pass_label = QtWidgets.QLabel(self.reset_pass_new_pass_frame)
+        self.reset_pass_new_pass_label.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.reset_pass_new_pass_label.setObjectName("reset_pass_new_pass_label")
+        self.reset_pass_new_pass_layout_2.addWidget(self.reset_pass_new_pass_label)
+        self.reset_pass_new_pass_input_1 = QtWidgets.QLineEdit(self.reset_pass_new_pass_frame)
+        self.reset_pass_new_pass_input_1.setMinimumSize(QtCore.QSize(395, 48))
+        self.reset_pass_new_pass_input_1.setMaximumSize(QtCore.QSize(395, 48))
+        self.reset_pass_new_pass_input_1.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.reset_pass_new_pass_input_1.setObjectName("reset_pass_new_pass_input_1")
+        self.reset_pass_new_pass_layout_2.addWidget(self.reset_pass_new_pass_input_1)
+        self.reset_pass_new_pass_error_1 = QtWidgets.QLabel(self.reset_pass_new_pass_frame)
+        self.reset_pass_new_pass_error_1.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.reset_pass_new_pass_error_1.setWordWrap(True)
+        self.reset_pass_new_pass_error_1.setObjectName("reset_pass_new_pass_error_1")
+        self.reset_pass_new_pass_layout_2.addWidget(self.reset_pass_new_pass_error_1)
+        self.reset_pass_new_pass_label_2 = QtWidgets.QLabel(self.reset_pass_new_pass_frame)
+        self.reset_pass_new_pass_label_2.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.reset_pass_new_pass_label_2.setObjectName("reset_pass_new_pass_label_2")
+        self.reset_pass_new_pass_layout_2.addWidget(self.reset_pass_new_pass_label_2)
+        self.reset_pass_new_pass_input_2 = QtWidgets.QLineEdit(self.reset_pass_new_pass_frame)
+        self.reset_pass_new_pass_input_2.setMinimumSize(QtCore.QSize(395, 48))
+        self.reset_pass_new_pass_input_2.setMaximumSize(QtCore.QSize(395, 48))
+        self.reset_pass_new_pass_input_2.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.reset_pass_new_pass_input_2.setObjectName("reset_pass_new_pass_input_2")
+        self.reset_pass_new_pass_layout_2.addWidget(self.reset_pass_new_pass_input_2)
+        self.reset_pass_new_pass_error_2 = QtWidgets.QLabel(self.reset_pass_new_pass_frame)
+        self.reset_pass_new_pass_error_2.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
+        self.reset_pass_new_pass_error_2.setObjectName("reset_pass_new_pass_error_2")
+        self.reset_pass_new_pass_layout_2.addWidget(self.reset_pass_new_pass_error_2)
+        spacerItem7 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.reset_pass_new_pass_layout_2.addItem(spacerItem7)
+        self.reset_pass_new_pass_save_btn = QtWidgets.QPushButton(self.reset_pass_new_pass_frame)
+        self.reset_pass_new_pass_save_btn.setMinimumSize(QtCore.QSize(396, 47))
+        self.reset_pass_new_pass_save_btn.setMaximumSize(QtCore.QSize(396, 47))
+        self.reset_pass_new_pass_save_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.reset_pass_new_pass_save_btn.setObjectName("reset_pass_new_pass_save_btn")
+        self.reset_pass_new_pass_layout_2.addWidget(self.reset_pass_new_pass_save_btn)
+        self.reset_pass_new_pass_layout.addWidget(self.reset_pass_new_pass_frame, 0,
+                                                  QtCore.Qt.AlignHCenter | QtCore.Qt.AlignVCenter)
+        self.login_pages.addWidget(self.reset_pass_new_pass_page)
         self.login_window_layout.addWidget(self.login_pages)
         self.right_pic = QtWidgets.QLabel(self.login_window)
         self.right_pic.setPixmap(QtGui.QPixmap(":/image/Login_pic.png"))
@@ -631,7 +940,7 @@ class Ui_MainWindow(object):
                                           "\n"
                                           "\n"
                                           "/* Long QComboBox */\n"
-                                          "#calc_general_info_frame .QComboBox, #profile_role_frame .QComboBox {\n"
+                                          "#calc_general_info_frame .QComboBox, #profile_name_frame .QComboBox {\n"
                                           "    background: #FFFFFF;\n"
                                           "    border-radius: 10px;\n"
                                           "    border: 1px solid #B5B8C7;\n"
@@ -641,22 +950,22 @@ class Ui_MainWindow(object):
                                           "    color: #757C9F;\n"
                                           "}\n"
                                           "\n"
-                                          "#calc_general_info_frame .QComboBox:hover, #profile_role_frame .QComboBox:hover {\n"
+                                          "#calc_general_info_frame .QComboBox:hover, #profile_name_frame .QComboBox:hover {\n"
                                           "    border: 1px solid #0915CC;\n"
                                           "    background: #F2F3F6;\n"
                                           "}\n"
                                           "\n"
-                                          "#calc_general_info_frame .QComboBox::drop-down, #profile_role_frame .QComboBox::drop-down {\n"
+                                          "#calc_general_info_frame .QComboBox::drop-down, #profile_name_frame .QComboBox::drop-down {\n"
                                           "    border-top-right-radius: 3px;\n"
                                           "    border-bottom-right-radius: 3px;\n"
                                           "}\n"
                                           "\n"
-                                          "#calc_general_info_frame .QComboBox::down-arrow, #profile_role_frame .QComboBox::down-arrow {\n"
+                                          "#calc_general_info_frame .QComboBox::down-arrow, #profile_name_frame .QComboBox::down-arrow {\n"
                                           "    padding-right: 20px;\n"
                                           "    image: url(:/image/arrow_drop_down.svg);\n"
                                           "}\n"
                                           "\n"
-                                          "#calc_general_info_frame QComboBox QAbstractItemView, #profile_role_frame QComboBox QAbstractItemView\n"
+                                          "#calc_general_info_frame QComboBox QAbstractItemView, #profile_name_frame QComboBox QAbstractItemView\n"
                                           "{\n"
                                           "    background: #F9FAFB;\n"
                                           "    padding-left: 7px;\n"
@@ -666,14 +975,14 @@ class Ui_MainWindow(object):
                                           "    outline: 0;\n"
                                           "}\n"
                                           "\n"
-                                          "#calc_general_info_frame QComboBox QAbstractItemView::item, #profile_role_frame QComboBox QAbstractItemView::item { \n"
+                                          "#calc_general_info_frame QComboBox QAbstractItemView::item, #profile_name_frame QComboBox QAbstractItemView::item { \n"
                                           "    min-height: 35px;\n"
                                           "    padding-left: 15px;\n"
                                           "    background: #F9FAFB;\n"
                                           "    color: #070808;\n"
                                           "}\n"
                                           "\n"
-                                          "#calc_general_info_frame QListView::item:selected, #profile_role_frame QListView::item:selected { \n"
+                                          "#calc_general_info_frame QListView::item:selected, #profile_name_frame QListView::item:selected { \n"
                                           "    color: #0915CC; \n"
                                           "    background-color: #F2F3F6; \n"
                                           "    border-radius: 4px;\n"
@@ -789,7 +1098,7 @@ class Ui_MainWindow(object):
                                           "}\n"
                                           "\n"
                                           "/* Common Error field */\n"
-                                          "#calc_zip_code_frame #error_calc_zip_from,  #calc_zip_code_frame #error_calc_zip_to, #calc_result_cus_info_error_f_name, #calc_result_cus_info_error_l_name, #calc_result_cus_info_error_email, #calc_result_cus_info_error_phone,  #profile_error_name, #profile_error_email, #profile_error_pass, #profile_error_pass2, #profile_error_old_pass {\n"
+                                          "#calc_zip_code_frame #error_calc_zip_from,  #calc_zip_code_frame #error_calc_zip_to, #calc_result_cus_info_error_f_name, #calc_result_cus_info_error_l_name, #calc_result_cus_info_error_email, #calc_result_cus_info_error_phone,  #profile_error_name, #profile_error_email, #profile_error_pass, #profile_error_pass2, #profile_error_old_pass, #profile_comp_name_error, #profile_comp_address_1_error, #profile_comp_city_error, #profile_comp_state_error, #profile_comp_zip_code_error{\n"
                                           "    font-size: 14px;\n"
                                           "    color: #FF3C2F;\n"
                                           "}\n"
@@ -1009,13 +1318,17 @@ class Ui_MainWindow(object):
                                           "/* ----------------------------Profile----------------------------*/\n"
                                           "\n"
                                           "/* QLabel */\n"
-                                          "#profile_person_info, #profile_login_info {\n"
+                                          "#profile_person_info, #profile_login_info, #profile_company_info {\n"
                                           "    font-size: 19px;\n"
                                           "    color: #070808;\n"
                                           "    margin-top: 40px;\n"
                                           "}\n"
                                           "\n"
-                                          "#profile_name, #profile_role, #profile_pass, #profile_new_pass, #profile_new_pass2, #profile_email, #profile_new_email{\n"
+                                          "#profile_company_info  {\n"
+                                          "    margin-top: 0px;\n"
+                                          "}\n"
+                                          "\n"
+                                          "#profile_name, #profile_role, #profile_pass, #profile_new_pass, #profile_new_pass2, #profile_email, #profile_new_email, #profile_comp_name, #profile_comp_address, #profile_comp_address_2, #profile_comp_city, #profile_comp_state, #profile_comp_zip_code{\n"
                                           "    font-size: 16px;\n"
                                           "    color: #757C9F;\n"
                                           "}\n"
@@ -1863,7 +2176,7 @@ class Ui_MainWindow(object):
         self.calc_preset_scrollarea.setWidgetResizable(True)
         self.calc_preset_scrollarea.setObjectName("calc_preset_scrollarea")
         self.calc_preset_frame = QtWidgets.QWidget()
-        self.calc_preset_frame.setGeometry(QtCore.QRect(0, 0, 217, 548))
+        self.calc_preset_frame.setGeometry(QtCore.QRect(0, 0, 217, 30))
         self.calc_preset_frame.setObjectName("calc_preset_frame")
         self.calc_preset_layout_2 = QtWidgets.QVBoxLayout(self.calc_preset_frame)
         self.calc_preset_layout_2.setContentsMargins(0, 0, 0, 0)
@@ -1917,7 +2230,7 @@ class Ui_MainWindow(object):
         self.calc_inv_content_scrollarea.setWidgetResizable(True)
         self.calc_inv_content_scrollarea.setObjectName("calc_inv_content_scrollarea")
         self.calc_inv_content_scroll_frame = QtWidgets.QWidget()
-        self.calc_inv_content_scroll_frame.setGeometry(QtCore.QRect(0, 0, 993, 426))
+        self.calc_inv_content_scroll_frame.setGeometry(QtCore.QRect(0, 0, 100, 30))
         self.calc_inv_content_scroll_frame.setObjectName("calc_inv_content_scroll_frame")
         self.calc_inv_content_scroll_layout = QtWidgets.QVBoxLayout(self.calc_inv_content_scroll_frame)
         self.calc_inv_content_scroll_layout.setContentsMargins(0, 0, 0, 0)
@@ -1953,8 +2266,8 @@ class Ui_MainWindow(object):
         self.calc_result_header = QtWidgets.QLabel(self.calc_result_frame)
         self.calc_result_header.setObjectName("calc_result_header")
         self.calc_result_frame_2.addWidget(self.calc_result_header)
-        spacerItem3 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.calc_result_frame_2.addItem(spacerItem3)
+        spacerItem8 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.calc_result_frame_2.addItem(spacerItem8)
         self.calc_calc_result_top_line = QtWidgets.QFrame(self.calc_result_frame)
         self.calc_calc_result_top_line.setMaximumSize(QtCore.QSize(16777215, 1))
         self.calc_calc_result_top_line.setStyleSheet("")
@@ -2129,7 +2442,7 @@ class Ui_MainWindow(object):
         self.calc_result_customer_info_scroll.setWidgetResizable(True)
         self.calc_result_customer_info_scroll.setObjectName("calc_result_customer_info_scroll")
         self.calc_result_customer_info_scroll_2 = QtWidgets.QWidget()
-        self.calc_result_customer_info_scroll_2.setGeometry(QtCore.QRect(0, 0, 789, 983))
+        self.calc_result_customer_info_scroll_2.setGeometry(QtCore.QRect(0, 0, 531, 983))
         self.calc_result_customer_info_scroll_2.setObjectName("calc_result_customer_info_scroll_2")
         self.calc_result_customer_info_scroll_layout = QtWidgets.QVBoxLayout(self.calc_result_customer_info_scroll_2)
         self.calc_result_customer_info_scroll_layout.setContentsMargins(0, 0, 0, 0)
@@ -2145,8 +2458,8 @@ class Ui_MainWindow(object):
         self.calc_result_cus_info_header.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.calc_result_cus_info_header.setObjectName("calc_result_cus_info_header")
         self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_header)
-        spacerItem4 = QtWidgets.QSpacerItem(20, 25, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        self.calc_result_cus_info_layout.addItem(spacerItem4)
+        spacerItem9 = QtWidgets.QSpacerItem(20, 25, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.calc_result_cus_info_layout.addItem(spacerItem9)
         self.calc_result_cus_info_small_header = QtWidgets.QLabel(self.calc_result_cus_info_frame)
         self.calc_result_cus_info_small_header.setObjectName("calc_result_cus_info_small_header")
         self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_small_header)
@@ -2193,8 +2506,8 @@ class Ui_MainWindow(object):
         self.calc_result_cus_info_error_email.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.calc_result_cus_info_error_email.setObjectName("calc_result_cus_info_error_email")
         self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_error_email)
-        spacerItem5 = QtWidgets.QSpacerItem(20, 10, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        self.calc_result_cus_info_layout.addItem(spacerItem5)
+        spacerItem10 = QtWidgets.QSpacerItem(20, 10, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.calc_result_cus_info_layout.addItem(spacerItem10)
         self.calc_result_cus_info_phone_label = QtWidgets.QLabel(self.calc_result_cus_info_frame)
         self.calc_result_cus_info_phone_label.setObjectName("calc_result_cus_info_phone_label")
         self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_phone_label)
@@ -2232,8 +2545,8 @@ class Ui_MainWindow(object):
         self.calc_result_cus_info_adr_from_1_input.setMinimumSize(QtCore.QSize(526, 48))
         self.calc_result_cus_info_adr_from_1_input.setObjectName("calc_result_cus_info_adr_from_1_input")
         self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_adr_from_1_input)
-        spacerItem6 = QtWidgets.QSpacerItem(20, 10, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        self.calc_result_cus_info_layout.addItem(spacerItem6)
+        spacerItem11 = QtWidgets.QSpacerItem(20, 10, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.calc_result_cus_info_layout.addItem(spacerItem11)
         self.calc_result_cus_info_adr_from_2_label = QtWidgets.QLabel(self.calc_result_cus_info_frame)
         self.calc_result_cus_info_adr_from_2_label.setObjectName("calc_result_cus_info_adr_from_2_label")
         self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_adr_from_2_label)
@@ -2264,8 +2577,8 @@ class Ui_MainWindow(object):
         self.calc_result_cus_info_adr_to_1_input.setMinimumSize(QtCore.QSize(526, 48))
         self.calc_result_cus_info_adr_to_1_input.setObjectName("calc_result_cus_info_adr_to_1_input")
         self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_adr_to_1_input)
-        spacerItem7 = QtWidgets.QSpacerItem(20, 10, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        self.calc_result_cus_info_layout.addItem(spacerItem7)
+        spacerItem12 = QtWidgets.QSpacerItem(20, 10, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.calc_result_cus_info_layout.addItem(spacerItem12)
         self.calc_result_cus_info_adr_to_2_label = QtWidgets.QLabel(self.calc_result_cus_info_frame)
         self.calc_result_cus_info_adr_to_2_label.setObjectName("calc_result_cus_info_adr_to_2_label")
         self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_adr_to_2_label)
@@ -2273,8 +2586,8 @@ class Ui_MainWindow(object):
         self.calc_result_cus_info_adr_to_2_input.setMinimumSize(QtCore.QSize(526, 48))
         self.calc_result_cus_info_adr_to_2_input.setObjectName("calc_result_cus_info_adr_to_2_input")
         self.calc_result_cus_info_layout.addWidget(self.calc_result_cus_info_adr_to_2_input)
-        spacerItem8 = QtWidgets.QSpacerItem(20, 25, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        self.calc_result_cus_info_layout.addItem(spacerItem8)
+        spacerItem13 = QtWidgets.QSpacerItem(20, 25, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.calc_result_cus_info_layout.addItem(spacerItem13)
         self.calc_result_cus_info_submit_btn = QtWidgets.QPushButton(self.calc_result_cus_info_frame)
         self.calc_result_cus_info_submit_btn.setMinimumSize(QtCore.QSize(164, 47))
         self.calc_result_cus_info_submit_btn.setMaximumSize(QtCore.QSize(164, 47))
@@ -2306,7 +2619,7 @@ class Ui_MainWindow(object):
         self.profile_scroll_area.setWidgetResizable(True)
         self.profile_scroll_area.setObjectName("profile_scroll_area")
         self.profile_scroll_widget = QtWidgets.QWidget()
-        self.profile_scroll_widget.setGeometry(QtCore.QRect(0, 0, 1301, 931))
+        self.profile_scroll_widget.setGeometry(QtCore.QRect(0, 0, 1303, 1231))
         self.profile_scroll_widget.setObjectName("profile_scroll_widget")
         self.profile_scroll_layout = QtWidgets.QVBoxLayout(self.profile_scroll_widget)
         self.profile_scroll_layout.setContentsMargins(0, 0, 0, 0)
@@ -2386,6 +2699,7 @@ class Ui_MainWindow(object):
         self.profile_person_info.setObjectName("profile_person_info")
         self.profile_layout.addWidget(self.profile_person_info)
         self.profile_name_frame_2 = QtWidgets.QFrame(self.profile_frame)
+        self.profile_name_frame_2.setMinimumSize(QtCore.QSize(1000, 0))
         self.profile_name_frame_2.setObjectName("profile_name_frame_2")
         self.profile_name_role_layout = QtWidgets.QHBoxLayout(self.profile_name_frame_2)
         self.profile_name_role_layout.setContentsMargins(0, 15, 0, 0)
@@ -2393,44 +2707,135 @@ class Ui_MainWindow(object):
         self.profile_name_role_layout.setObjectName("profile_name_role_layout")
         self.profile_name_frame = QtWidgets.QFrame(self.profile_name_frame_2)
         self.profile_name_frame.setObjectName("profile_name_frame")
-        self.profile_name_layout = QtWidgets.QVBoxLayout(self.profile_name_frame)
-        self.profile_name_layout.setContentsMargins(0, 0, 0, 0)
-        self.profile_name_layout.setSpacing(5)
+        self.profile_name_layout = QtWidgets.QGridLayout(self.profile_name_frame)
+        self.profile_name_layout.setContentsMargins(0, 0, 0, 40)
+        self.profile_name_layout.setHorizontalSpacing(20)
+        self.profile_name_layout.setVerticalSpacing(5)
         self.profile_name_layout.setObjectName("profile_name_layout")
         self.profile_name = QtWidgets.QLabel(self.profile_name_frame)
         self.profile_name.setObjectName("profile_name")
-        self.profile_name_layout.addWidget(self.profile_name)
+        self.profile_name_layout.addWidget(self.profile_name, 0, 0, 1, 1)
+        self.profile_role = QtWidgets.QLabel(self.profile_name_frame)
+        self.profile_role.setObjectName("profile_role")
+        self.profile_name_layout.addWidget(self.profile_role, 0, 1, 1, 1)
         self.profile_name_input = QtWidgets.QLineEdit(self.profile_name_frame)
         self.profile_name_input.setMinimumSize(QtCore.QSize(395, 48))
+        self.profile_name_input.setMaximumSize(QtCore.QSize(395, 48))
         self.profile_name_input.setObjectName("profile_name_input")
-        self.profile_name_layout.addWidget(self.profile_name_input)
-        self.profile_error_name = QtWidgets.QLabel(self.profile_name_frame)
-        self.profile_error_name.setObjectName("profile_error_name")
-        self.profile_name_layout.addWidget(self.profile_error_name)
-        self.profile_name_role_layout.addWidget(self.profile_name_frame)
-        self.profile_layout.addWidget(self.profile_name_frame_2, 0, QtCore.Qt.AlignLeft)
-        self.profile_role_frame = QtWidgets.QFrame(self.profile_frame)
-        self.profile_role_frame.setObjectName("profile_role_frame")
-        self.profile_role_layout = QtWidgets.QVBoxLayout(self.profile_role_frame)
-        self.profile_role_layout.setContentsMargins(0, 20, 0, 0)
-        self.profile_role_layout.setSpacing(5)
-        self.profile_role_layout.setObjectName("profile_role_layout")
-        self.profile_role = QtWidgets.QLabel(self.profile_role_frame)
-        self.profile_role.setObjectName("profile_role")
-        self.profile_role_layout.addWidget(self.profile_role)
-        self.role_combobox = QtWidgets.QComboBox(self.profile_role_frame)
-        self.role_combobox.setMinimumSize(QtCore.QSize(0, 48))
+        self.profile_name_layout.addWidget(self.profile_name_input, 1, 0, 1, 1)
+        self.role_combobox = QtWidgets.QComboBox(self.profile_name_frame)
+        self.role_combobox.setMinimumSize(QtCore.QSize(395, 48))
         self.role_combobox.setMaximumSize(QtCore.QSize(395, 48))
         self.role_combobox.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.role_combobox.setObjectName("role_combobox")
-        self.profile_role_layout.addWidget(self.role_combobox)
-        self.profile_layout.addWidget(self.profile_role_frame)
+        self.profile_name_layout.addWidget(self.role_combobox, 1, 1, 1, 1)
+        self.profile_error_name = QtWidgets.QLabel(self.profile_name_frame)
+        self.profile_error_name.setObjectName("profile_error_name")
+        self.profile_name_layout.addWidget(self.profile_error_name, 2, 0, 1, 1)
+        self.profile_name_role_layout.addWidget(self.profile_name_frame, 0, QtCore.Qt.AlignLeft)
+        self.profile_layout.addWidget(self.profile_name_frame_2, 0, QtCore.Qt.AlignLeft)
+        self.profile_company_info = QtWidgets.QLabel(self.profile_frame)
+        self.profile_company_info.setObjectName("profile_company_info")
+        self.profile_layout.addWidget(self.profile_company_info)
+        self.profile_comp_name_frame = QtWidgets.QFrame(self.profile_frame)
+        self.profile_comp_name_frame.setObjectName("profile_comp_name_frame")
+        self.profile_comp_name_layout = QtWidgets.QVBoxLayout(self.profile_comp_name_frame)
+        self.profile_comp_name_layout.setContentsMargins(0, 15, 0, 0)
+        self.profile_comp_name_layout.setSpacing(5)
+        self.profile_comp_name_layout.setObjectName("profile_comp_name_layout")
+        self.profile_comp_name = QtWidgets.QLabel(self.profile_comp_name_frame)
+        self.profile_comp_name.setObjectName("profile_comp_name")
+        self.profile_comp_name_layout.addWidget(self.profile_comp_name)
+        self.profile_comp_name_input = QtWidgets.QLineEdit(self.profile_comp_name_frame)
+        self.profile_comp_name_input.setEnabled(False)
+        self.profile_comp_name_input.setMinimumSize(QtCore.QSize(395, 48))
+        self.profile_comp_name_input.setMaximumSize(QtCore.QSize(395, 48))
+        self.profile_comp_name_input.setObjectName("profile_comp_name_input")
+        self.profile_comp_name_layout.addWidget(self.profile_comp_name_input)
+        self.profile_comp_name_error = QtWidgets.QLabel(self.profile_comp_name_frame)
+        self.profile_comp_name_error.setObjectName("profile_comp_name_error")
+        self.profile_comp_name_layout.addWidget(self.profile_comp_name_error)
+        self.profile_layout.addWidget(self.profile_comp_name_frame)
+        self.profile_comp_address_frame = QtWidgets.QFrame(self.profile_frame)
+        self.profile_comp_address_frame.setObjectName("profile_comp_address_frame")
+        self.profile_comp_address_layout = QtWidgets.QGridLayout(self.profile_comp_address_frame)
+        self.profile_comp_address_layout.setContentsMargins(0, 15, 0, 0)
+        self.profile_comp_address_layout.setHorizontalSpacing(20)
+        self.profile_comp_address_layout.setVerticalSpacing(5)
+        self.profile_comp_address_layout.setObjectName("profile_comp_address_layout")
+        self.profile_comp_address_2 = QtWidgets.QLabel(self.profile_comp_address_frame)
+        self.profile_comp_address_2.setObjectName("profile_comp_address_2")
+        self.profile_comp_address_layout.addWidget(self.profile_comp_address_2, 1, 1, 1, 1)
+        self.profile_comp_address_1_input = QtWidgets.QLineEdit(self.profile_comp_address_frame)
+        self.profile_comp_address_1_input.setEnabled(False)
+        self.profile_comp_address_1_input.setMinimumSize(QtCore.QSize(395, 48))
+        self.profile_comp_address_1_input.setMaximumSize(QtCore.QSize(395, 48))
+        self.profile_comp_address_1_input.setObjectName("profile_comp_address_1_input")
+        self.profile_comp_address_layout.addWidget(self.profile_comp_address_1_input, 2, 0, 1, 1)
+        self.profile_comp_address_2_input = QtWidgets.QLineEdit(self.profile_comp_address_frame)
+        self.profile_comp_address_2_input.setEnabled(False)
+        self.profile_comp_address_2_input.setMinimumSize(QtCore.QSize(395, 48))
+        self.profile_comp_address_2_input.setMaximumSize(QtCore.QSize(395, 48))
+        self.profile_comp_address_2_input.setObjectName("profile_comp_address_2_input")
+        self.profile_comp_address_layout.addWidget(self.profile_comp_address_2_input, 2, 1, 1, 1)
+        self.profile_comp_address_1_error = QtWidgets.QLabel(self.profile_comp_address_frame)
+        self.profile_comp_address_1_error.setObjectName("profile_comp_address_1_error")
+        self.profile_comp_address_layout.addWidget(self.profile_comp_address_1_error, 3, 0, 1, 1)
+        self.profile_comp_address = QtWidgets.QLabel(self.profile_comp_address_frame)
+        self.profile_comp_address.setObjectName("profile_comp_address")
+        self.profile_comp_address_layout.addWidget(self.profile_comp_address, 1, 0, 1, 1)
+        self.profile_layout.addWidget(self.profile_comp_address_frame, 0, QtCore.Qt.AlignLeft)
+        self.profile_comp_zip_code_frame = QtWidgets.QFrame(self.profile_frame)
+        self.profile_comp_zip_code_frame.setObjectName("profile_comp_zip_code_frame")
+        self.profile_comp_zip_code_layout = QtWidgets.QGridLayout(self.profile_comp_zip_code_frame)
+        self.profile_comp_zip_code_layout.setContentsMargins(0, 15, 0, 0)
+        self.profile_comp_zip_code_layout.setHorizontalSpacing(20)
+        self.profile_comp_zip_code_layout.setVerticalSpacing(5)
+        self.profile_comp_zip_code_layout.setObjectName("profile_comp_zip_code_layout")
+        self.profile_comp_state_input = QtWidgets.QLineEdit(self.profile_comp_zip_code_frame)
+        self.profile_comp_state_input.setEnabled(False)
+        self.profile_comp_state_input.setMinimumSize(QtCore.QSize(187, 48))
+        self.profile_comp_state_input.setMaximumSize(QtCore.QSize(187, 48))
+        self.profile_comp_state_input.setObjectName("profile_comp_state_input")
+        self.profile_comp_zip_code_layout.addWidget(self.profile_comp_state_input, 1, 1, 1, 1)
+        self.profile_comp_city = QtWidgets.QLabel(self.profile_comp_zip_code_frame)
+        self.profile_comp_city.setObjectName("profile_comp_city")
+        self.profile_comp_zip_code_layout.addWidget(self.profile_comp_city, 0, 0, 1, 1)
+        self.profile_comp_city_input = QtWidgets.QLineEdit(self.profile_comp_zip_code_frame)
+        self.profile_comp_city_input.setEnabled(False)
+        self.profile_comp_city_input.setMinimumSize(QtCore.QSize(395, 48))
+        self.profile_comp_city_input.setMaximumSize(QtCore.QSize(395, 48))
+        self.profile_comp_city_input.setObjectName("profile_comp_city_input")
+        self.profile_comp_zip_code_layout.addWidget(self.profile_comp_city_input, 1, 0, 1, 1)
+        self.profile_comp_zip_code = QtWidgets.QLabel(self.profile_comp_zip_code_frame)
+        self.profile_comp_zip_code.setObjectName("profile_comp_zip_code")
+        self.profile_comp_zip_code_layout.addWidget(self.profile_comp_zip_code, 0, 2, 1, 1)
+        self.profile_comp_state = QtWidgets.QLabel(self.profile_comp_zip_code_frame)
+        self.profile_comp_state.setObjectName("profile_comp_state")
+        self.profile_comp_zip_code_layout.addWidget(self.profile_comp_state, 0, 1, 1, 1)
+        self.profile_comp_zip_code_input = QtWidgets.QLineEdit(self.profile_comp_zip_code_frame)
+        self.profile_comp_zip_code_input.setEnabled(False)
+        self.profile_comp_zip_code_input.setMinimumSize(QtCore.QSize(187, 48))
+        self.profile_comp_zip_code_input.setMaximumSize(QtCore.QSize(187, 48))
+        self.profile_comp_zip_code_input.setMaxLength(5)
+        self.profile_comp_zip_code_input.setObjectName("profile_comp_zip_code_input")
+        self.profile_comp_zip_code_layout.addWidget(self.profile_comp_zip_code_input, 1, 2, 1, 1)
+        self.profile_comp_city_error = QtWidgets.QLabel(self.profile_comp_zip_code_frame)
+        self.profile_comp_city_error.setObjectName("profile_comp_city_error")
+        self.profile_comp_zip_code_layout.addWidget(self.profile_comp_city_error, 2, 0, 1, 1)
+        self.profile_comp_state_error = QtWidgets.QLabel(self.profile_comp_zip_code_frame)
+        self.profile_comp_state_error.setObjectName("profile_comp_state_error")
+        self.profile_comp_zip_code_layout.addWidget(self.profile_comp_state_error, 2, 1, 1, 1)
+        self.profile_comp_zip_code_error = QtWidgets.QLabel(self.profile_comp_zip_code_frame)
+        self.profile_comp_zip_code_error.setObjectName("profile_comp_zip_code_error")
+        self.profile_comp_zip_code_layout.addWidget(self.profile_comp_zip_code_error, 2, 2, 1, 1)
+        self.profile_layout.addWidget(self.profile_comp_zip_code_frame, 0, QtCore.Qt.AlignLeft)
         self.profile_login_info = QtWidgets.QLabel(self.profile_frame)
         self.profile_login_info.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.profile_login_info.setObjectName("profile_login_info")
         self.profile_layout.addWidget(self.profile_login_info)
-        spacerItem9 = QtWidgets.QSpacerItem(20, 15, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        self.profile_layout.addItem(spacerItem9)
+        spacerItem14 = QtWidgets.QSpacerItem(20, 15, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.profile_layout.addItem(spacerItem14)
         self.profile_pass = QtWidgets.QLabel(self.profile_frame)
         self.profile_pass.setObjectName("profile_pass")
         self.profile_layout.addWidget(self.profile_pass)
@@ -2450,8 +2855,8 @@ class Ui_MainWindow(object):
         self.profile_change_pass_butt.setObjectName("profile_change_pass_butt")
         self.profile_pass_layout.addWidget(self.profile_change_pass_butt)
         self.profile_layout.addWidget(self.profile_pass_frame, 0, QtCore.Qt.AlignLeft)
-        spacerItem10 = QtWidgets.QSpacerItem(20, 5, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        self.profile_layout.addItem(spacerItem10)
+        spacerItem15 = QtWidgets.QSpacerItem(20, 5, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.profile_layout.addItem(spacerItem15)
         self.profile_error_old_pass = QtWidgets.QLabel(self.profile_frame)
         self.profile_error_old_pass.setObjectName("profile_error_old_pass")
         self.profile_layout.addWidget(self.profile_error_old_pass)
@@ -2647,7 +3052,7 @@ class Ui_MainWindow(object):
         self.user_manage_scroll_area.setWidgetResizable(True)
         self.user_manage_scroll_area.setObjectName("user_manage_scroll_area")
         self.user_manage_scroll_widget = QtWidgets.QWidget()
-        self.user_manage_scroll_widget.setGeometry(QtCore.QRect(0, 0, 1306, 554))
+        self.user_manage_scroll_widget.setGeometry(QtCore.QRect(0, 0, 100, 30))
         self.user_manage_scroll_widget.setObjectName("user_manage_scroll_widget")
         self.user_manage_scroll_layout = QtWidgets.QVBoxLayout(self.user_manage_scroll_widget)
         self.user_manage_scroll_layout.setContentsMargins(0, 0, 0, 0)
@@ -2806,7 +3211,7 @@ class Ui_MainWindow(object):
         self.equip_truck_type_scrollarea.setWidgetResizable(True)
         self.equip_truck_type_scrollarea.setObjectName("equip_truck_type_scrollarea")
         self.equip_truck_type_scroll_widget = QtWidgets.QWidget()
-        self.equip_truck_type_scroll_widget.setGeometry(QtCore.QRect(0, 0, 1366, 594))
+        self.equip_truck_type_scroll_widget.setGeometry(QtCore.QRect(0, 0, 100, 30))
         self.equip_truck_type_scroll_widget.setObjectName("equip_truck_type_scroll_widget")
         self.equip_truck_type_scroll_layout = QtWidgets.QVBoxLayout(self.equip_truck_type_scroll_widget)
         self.equip_truck_type_scroll_layout.setContentsMargins(30, 10, 15, 0)
@@ -2835,13 +3240,13 @@ class Ui_MainWindow(object):
         self.config_small_header = QtWidgets.QLabel(self.config_top_main_frame)
         self.config_small_header.setObjectName("config_small_header")
         self.config_top_main_layout.addWidget(self.config_small_header)
-        spacerItem11 = QtWidgets.QSpacerItem(20, 50, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        self.config_top_main_layout.addItem(spacerItem11)
+        spacerItem16 = QtWidgets.QSpacerItem(20, 50, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.config_top_main_layout.addItem(spacerItem16)
         self.config_header = QtWidgets.QLabel(self.config_top_main_frame)
         self.config_header.setObjectName("config_header")
         self.config_top_main_layout.addWidget(self.config_header)
-        spacerItem12 = QtWidgets.QSpacerItem(20, 30, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        self.config_top_main_layout.addItem(spacerItem12)
+        spacerItem17 = QtWidgets.QSpacerItem(20, 30, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.config_top_main_layout.addItem(spacerItem17)
         self.config_menu_frame = QtWidgets.QFrame(self.config_top_main_frame)
         self.config_menu_frame.setMinimumSize(QtCore.QSize(0, 40))
         self.config_menu_frame.setMaximumSize(QtCore.QSize(16777215, 40))
@@ -3032,7 +3437,7 @@ class Ui_MainWindow(object):
         self.config_scroll_area.setWidgetResizable(True)
         self.config_scroll_area.setObjectName("config_scroll_area")
         self.config_scroll_widget = QtWidgets.QWidget()
-        self.config_scroll_widget.setGeometry(QtCore.QRect(0, 0, 834, 63))
+        self.config_scroll_widget.setGeometry(QtCore.QRect(0, 0, 95, 16))
         self.config_scroll_widget.setObjectName("config_scroll_widget")
         self.config_scroll_layout = QtWidgets.QVBoxLayout(self.config_scroll_widget)
         self.config_scroll_layout.setContentsMargins(0, 0, 0, 0)
@@ -3162,8 +3567,8 @@ class Ui_MainWindow(object):
         self.inventory_small_header = QtWidgets.QLabel(self.inventory_top_frame)
         self.inventory_small_header.setObjectName("inventory_small_header")
         self.inventory_top_layout.addWidget(self.inventory_small_header)
-        spacerItem13 = QtWidgets.QSpacerItem(20, 50, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        self.inventory_top_layout.addItem(spacerItem13)
+        spacerItem18 = QtWidgets.QSpacerItem(20, 50, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.inventory_top_layout.addItem(spacerItem18)
         self.inventory_header = QtWidgets.QLabel(self.inventory_top_frame)
         self.inventory_header.setObjectName("inventory_header")
         self.inventory_top_layout.addWidget(self.inventory_header)
@@ -3289,7 +3694,7 @@ class Ui_MainWindow(object):
         self.inventory_room_scrollarea.setWidgetResizable(True)
         self.inventory_room_scrollarea.setObjectName("inventory_room_scrollarea")
         self.inventory_room_frame = QtWidgets.QWidget()
-        self.inventory_room_frame.setGeometry(QtCore.QRect(0, 0, 217, 562))
+        self.inventory_room_frame.setGeometry(QtCore.QRect(0, 0, 100, 30))
         self.inventory_room_frame.setObjectName("inventory_room_frame")
         self.inventory_room_layout_2 = QtWidgets.QVBoxLayout(self.inventory_room_frame)
         self.inventory_room_layout_2.setContentsMargins(0, 0, 0, 0)
@@ -3302,9 +3707,6 @@ class Ui_MainWindow(object):
         self.inventory_room_layout_3.setSpacing(0)
         self.inventory_room_layout_3.setObjectName("inventory_room_layout_3")
         self.inventory_room_menu_frame = QtWidgets.QFrame(self.inventory_room_frame_2)
-        self.inventory_room_menu_frame.setStyleSheet("")
-        self.inventory_room_menu_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.inventory_room_menu_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.inventory_room_menu_frame.setObjectName("inventory_room_menu_frame")
         self.inventory_room_menu_layout = QtWidgets.QVBoxLayout(self.inventory_room_menu_frame)
         self.inventory_room_menu_layout.setContentsMargins(0, 0, 0, 0)
@@ -3329,7 +3731,7 @@ class Ui_MainWindow(object):
         self.inventory_preset_scrollarea.setWidgetResizable(True)
         self.inventory_preset_scrollarea.setObjectName("inventory_preset_scrollarea")
         self.inventory_preset_frame = QtWidgets.QWidget()
-        self.inventory_preset_frame.setGeometry(QtCore.QRect(0, 0, 217, 562))
+        self.inventory_preset_frame.setGeometry(QtCore.QRect(0, 0, 217, 30))
         self.inventory_preset_frame.setObjectName("inventory_preset_frame")
         self.inventory_preset_layout_2 = QtWidgets.QVBoxLayout(self.inventory_preset_frame)
         self.inventory_preset_layout_2.setContentsMargins(0, 0, 0, 0)
@@ -3383,7 +3785,7 @@ class Ui_MainWindow(object):
         self.inventory_content_scrollarea.setWidgetResizable(True)
         self.inventory_content_scrollarea.setObjectName("inventory_content_scrollarea")
         self.inventory_content_scroll_frame = QtWidgets.QWidget()
-        self.inventory_content_scroll_frame.setGeometry(QtCore.QRect(0, 0, 990, 440))
+        self.inventory_content_scroll_frame.setGeometry(QtCore.QRect(0, 0, 100, 30))
         self.inventory_content_scroll_frame.setObjectName("inventory_content_scroll_frame")
         self.inventory_content_scroll_layout = QtWidgets.QVBoxLayout(self.inventory_content_scroll_frame)
         self.inventory_content_scroll_layout.setContentsMargins(0, 0, 0, 0)
@@ -3409,14 +3811,14 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.window_pages.setCurrentIndex(1)
+        self.window_pages.setCurrentIndex(0)
         self.login_pages.setCurrentIndex(0)
         self.content_pages.setCurrentIndex(0)
         self.calc_menu_pages.setCurrentIndex(0)
-        self.calc_size_menu.setCurrentIndex(1)
-        self.calc_result_pages.setCurrentIndex(1)
-        self.equip_truck_pages.setCurrentIndex(1)
-        self.config_pages.setCurrentIndex(1)
+        self.calc_size_menu.setCurrentIndex(0)
+        self.calc_result_pages.setCurrentIndex(0)
+        self.equip_truck_pages.setCurrentIndex(0)
+        self.config_pages.setCurrentIndex(0)
         self.inventory_size_menu.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
@@ -3435,8 +3837,30 @@ class Ui_MainWindow(object):
         self.log_sign_butt.setText(_translate("MainWindow", "Sign in"))
         self.log_bot_text.setText(_translate("MainWindow", "Do not have an account?"))
         self.log_create_acc_but.setText(_translate("MainWindow", "Create Account"))
+        self.reg_comp_header.setText(_translate("MainWindow", "Create account"))
+        self.reg_comp_text.setText(_translate("MainWindow", "Step 1 of 2: Enter company information."))
+        self.reg_comp_name_label.setText(_translate("MainWindow", "Company Title"))
+        self.reg_comp_name_input.setPlaceholderText(_translate("MainWindow", "Enter company name"))
+        self.reg_comp_error_name.setText(_translate("MainWindow", "Enter company name"))
+        self.reg_comp_address1_label.setText(_translate("MainWindow", "Address 1"))
+        self.reg_comp_address1_input.setPlaceholderText(_translate("MainWindow", "Enter street address"))
+        self.reg_comp_address1_error.setText(_translate("MainWindow", "Enter address"))
+        self.reg_comp_address2_label.setText(_translate("MainWindow", "Address 2 (optional)"))
+        self.reg_comp_address2_input.setPlaceholderText(_translate("MainWindow", "Enter suit, unit number etc."))
+        self.reg_comp_city_label.setText(_translate("MainWindow", "City"))
+        self.reg_comp_city_input.setPlaceholderText(_translate("MainWindow", "Enter city"))
+        self.reg_comp_city_error.setText(_translate("MainWindow", "Enter city"))
+        self.reg_comp_zipcode_label.setText(_translate("MainWindow", "Zip Code"))
+        self.reg_comp_zipcode_error.setText(_translate("MainWindow", "Enter zip code"))
+        self.reg_comp_state_input.setPlaceholderText(_translate("MainWindow", "Enter state"))
+        self.reg_comp_state_error.setText(_translate("MainWindow", "Enter state"))
+        self.reg_comp_zipcode_input.setPlaceholderText(_translate("MainWindow", "Enter zip code"))
+        self.reg_comp_state_label.setText(_translate("MainWindow", "State"))
+        self.reg_comp_next_butt.setText(_translate("MainWindow", "Next"))
+        self.reg_comp_bot_text.setText(_translate("MainWindow", "Already have an account?"))
+        self.reg_comp_sign_but.setText(_translate("MainWindow", "Sign In"))
         self.reg_header.setText(_translate("MainWindow", "Create account"))
-        self.reg_text.setText(_translate("MainWindow", "Enhance and smooth your sales performance"))
+        self.reg_text.setText(_translate("MainWindow", "Step 2 of 2: Enter personal information."))
         self.reg_name_label.setText(_translate("MainWindow", "Full Name"))
         self.reg_name_input.setPlaceholderText(_translate("MainWindow", "Enter your full name"))
         self.reg_error_name.setText(_translate("MainWindow", "Enter your full name"))
@@ -3463,6 +3887,31 @@ class Ui_MainWindow(object):
         self.acc_create_error_text_2.setText(_translate("MainWindow", "Try to sign in or "))
         self.acc_create_error_bot_but.setText(_translate("MainWindow", "restore password."))
         self.acc_create_error_butt.setText(_translate("MainWindow", "Sign In"))
+        self.reset_pass_email_header.setText(_translate("MainWindow", "Reset Password"))
+        self.reset_pass_email_text.setText(_translate("MainWindow",
+                                                      "Eneter the email associated with your account, and we’ll send an email with instructions to reset your password."))
+        self.reset_pass_email_label.setText(_translate("MainWindow", "Email"))
+        self.reset_pass_email_input.setPlaceholderText(_translate("MainWindow", "Enter your email"))
+        self.reset_pass_emai_error.setText(_translate("MainWindow", "Invalid email address"))
+        self.reset_pass_email_send_btn.setText(_translate("MainWindow", "Send Instructions"))
+        self.reset_pass_email_back_btn.setText(_translate("MainWindow", "Go back to Sign In"))
+        self.reset_pass_pass_header.setText(_translate("MainWindow", "Reset Password"))
+        self.reset_pass_pass_text.setText(_translate("MainWindow", "Enter a one-time password from the email."))
+        self.reset_pass_error_text.setText(_translate("MainWindow", "Invalid password. Please, try again."))
+        self.reset_pass_pass_label.setText(_translate("MainWindow", "Password"))
+        self.reset_pass_pass_input.setPlaceholderText(_translate("MainWindow", "Enter one-time password"))
+        self.reset_pass_pass_next_btn.setText(_translate("MainWindow", "Continue"))
+        self.reset_pass_new_pass_header.setText(_translate("MainWindow", "Create new password"))
+        self.reset_pass_new_pass_text.setText(_translate("MainWindow",
+                                                         "Create new password to protect your account. Your new password must be different from the previously used passwords."))
+        self.reset_pass_new_pass_label.setText(_translate("MainWindow", "New Password"))
+        self.reset_pass_new_pass_input_1.setPlaceholderText(_translate("MainWindow", "Enter new password"))
+        self.reset_pass_new_pass_error_1.setText(_translate("MainWindow",
+                                                            "Password must be at least 8 characters long contain a number and an uppercase letter"))
+        self.reset_pass_new_pass_label_2.setText(_translate("MainWindow", "Confirm Password"))
+        self.reset_pass_new_pass_input_2.setPlaceholderText(_translate("MainWindow", "Confirm password"))
+        self.reset_pass_new_pass_error_2.setText(_translate("MainWindow", "Passwords do not match"))
+        self.reset_pass_new_pass_save_btn.setText(_translate("MainWindow", "Save Password"))
         self.logo_text.setText(_translate("MainWindow", "Admin Panel"))
         self.calc_header.setText(_translate("MainWindow", "Calculator"))
         self.calc_1_sign.setText(_translate("MainWindow", "1"))
@@ -3551,8 +4000,20 @@ class Ui_MainWindow(object):
         self.profile_log_out_butt.setText(_translate("MainWindow", "Log Out  "))
         self.profile_person_info.setText(_translate("MainWindow", "Personal Info"))
         self.profile_name.setText(_translate("MainWindow", "Full Name"))
-        self.profile_error_name.setText(_translate("MainWindow", "Enter your full name"))
         self.profile_role.setText(_translate("MainWindow", "Role"))
+        self.profile_error_name.setText(_translate("MainWindow", "Enter your full name"))
+        self.profile_company_info.setText(_translate("MainWindow", "Company Info"))
+        self.profile_comp_name.setText(_translate("MainWindow", "Company Title"))
+        self.profile_comp_name_error.setText(_translate("MainWindow", "Enter company name"))
+        self.profile_comp_address_2.setText(_translate("MainWindow", "Address 2 (optional)"))
+        self.profile_comp_address_1_error.setText(_translate("MainWindow", "Enter address"))
+        self.profile_comp_address.setText(_translate("MainWindow", "Address 1"))
+        self.profile_comp_city.setText(_translate("MainWindow", "City"))
+        self.profile_comp_zip_code.setText(_translate("MainWindow", "ZIp Code"))
+        self.profile_comp_state.setText(_translate("MainWindow", "State"))
+        self.profile_comp_city_error.setText(_translate("MainWindow", "Enter city"))
+        self.profile_comp_state_error.setText(_translate("MainWindow", "Enter state"))
+        self.profile_comp_zip_code_error.setText(_translate("MainWindow", "Enter zip code"))
         self.profile_login_info.setText(_translate("MainWindow", "Login Info"))
         self.profile_pass.setText(_translate("MainWindow", "Password"))
         self.profile_pass_input.setPlaceholderText(_translate("MainWindow", "Enter your current password"))

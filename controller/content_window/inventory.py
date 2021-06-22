@@ -20,8 +20,8 @@ class Inventory(QWidget):
         self.add_item_btn = set()
         self.del_item_btn = set()
 
-    def set_left_menu(self, frame, layout, menu_funk, data, add_funk, is_preset_menu, del_funk=None):
-        self.main_window.inventory_ui.set_left_menu(frame, layout, menu_funk, data, add_funk, del_funk, is_preset_menu)
+    def set_left_menu(self, frame, menu_funk, data, add_funk, is_preset_menu, del_funk=None):
+        self.main_window.inventory_ui.set_left_menu(frame, menu_funk, data, add_funk, del_funk, is_preset_menu)
 
     def set_calc_preset_menu(self, frame, preset_inventory, menu_funk):
         self.main_window.inventory_ui.set_preset_menu(frame, preset_inventory, menu_funk)

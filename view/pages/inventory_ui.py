@@ -10,7 +10,11 @@ class InventoryUi:
     def __init__(self, main_window):
         self.main_window = main_window
 
-    def set_left_menu(self, frame, layout, funk, data, add_funk, del_funk, is_preset_menu):
+    def set_left_menu(self, frame,funk, data, add_funk, del_funk, is_preset_menu):
+        self.main_window.delete_layout(frame.layout())
+        layout = QVBoxLayout(frame)
+        layout.setContentsMargins(0, 0, 0, 0)
+        layout.setSpacing(2)
         for room in data:
             room_menu_butt = QPushButton(frame)
             room_menu_butt.setMinimumSize(QSize(208, 54))

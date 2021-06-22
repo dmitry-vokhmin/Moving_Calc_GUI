@@ -134,11 +134,10 @@ class InventoryPage(QWidget):
 
     def eventFilter(self, obj, event) -> bool:
         if obj is self.main_window.ui.inventory_page:
-            if event.type() == QEvent.Show:
+            if event.type() == QEvent.Show and self.main_window.change_page_data:
                 if self.set_left_menu:
                     room_collection = self.inventory.get_response(RoomCollection)
                     self.inventory.set_left_menu(self.main_window.ui.inventory_room_menu_frame,
-                                                 self.main_window.ui.inventory_room_menu_layout,
                                                  self.inventory.get_category_inventory,
                                                  room_collection,
                                                  add_funk=self.add_item,
@@ -146,7 +145,6 @@ class InventoryPage(QWidget):
                                                  del_funk=self.del_item)
                     inventory_collection = self.inventory.get_response(InventoryCollection)
                     self.inventory.set_left_menu(self.main_window.ui.inventory_preset_menu_frame,
-                                                 self.main_window.ui.inventory_preset_menu_layout,
                                                  self.inventory.get_inventory,
                                                  inventory_collection,
                                                  add_funk=self.add_item,

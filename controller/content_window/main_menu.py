@@ -26,8 +26,8 @@ class MainMenu(QWidget):
             ),
         }
         self.main_window.ui.profile_butt.clicked.connect(lambda: self.change_menu_page(
-                lambda: self.main_window.ui.content_pages.setCurrentWidget(self.main_window.ui.profile_page)
-            ))
+            lambda: self.main_window.ui.content_pages.setCurrentWidget(self.main_window.ui.profile_page)
+        ))
         self.main_window.ui.profile_butt.installEventFilter(self)
 
     def set_menu(self, data):
@@ -54,7 +54,8 @@ class MainMenu(QWidget):
             obj.setIcon(QIcon(":/image/account_active.svg"))
             return True
         if event.type() == QtCore.QEvent.HoverLeave and \
-                self.main_window.ui.content_pages.currentWidget().objectName() != "profile_page":
+                (self.main_window.ui.content_pages.currentWidget().objectName() != "profile_page"
+                 or self.main_window.profile.staff_profile):
             obj.setIcon(QIcon(":/image/account.svg"))
             return True
         return False

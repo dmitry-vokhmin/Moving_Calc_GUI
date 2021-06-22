@@ -1,7 +1,7 @@
 from PyQt5 import sip
-from PyQt5.QtWidgets import QMainWindow
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QKeyEvent
+from PyQt5.QtWidgets import QMainWindow, QMessageBox, qApp
+from PyQt5.QtCore import Qt, QEvent
+from PyQt5.QtGui import QKeyEvent, QIcon
 from view.main_windows.main_window_ui import Ui_MainWindow
 from view.pages.menu_ui import MenuUI
 from view.pages.user_management_table_ui import UserManagementTable
@@ -14,7 +14,9 @@ from view.pages.inventory_ui import InventoryUi
 from view.pages.calendar_ui import CalendarUi
 from view.pages.calculator_page_ui import CalculatorPageUi
 from controller.login_window.login_page import LoginPage
-from controller.login_window.registration_page import RegistrationPage
+from controller.login_window.reset_pass_page import ResetPassPage
+from controller.login_window.registration_user_page import RegistrationPage
+from controller.login_window.registration_company_page import RegistrationCompanyPage
 from controller.login_window.acc_created_page import AccCreatedPage
 from controller.content_window.main_menu import MainMenu
 from controller.content_window.user_management import UserManagement
@@ -27,10 +29,7 @@ from controller.content_window.calculator.calculator_main_page import Calculator
 from model.user.user import User
 from model.user.user_privilege import UserPrivilege
 from model.authorization import Authorization, AuthorizationError
-from model.user.user_company import UserCompany
 from model.user.user_role import UserRole
-from model.truck.truck import Truck
-from model.truck.truck_type import TruckType
 from model.calendar import Calendar
 from model.mover_amount import MoverAmount
 from model.move_size import MoveSize
@@ -38,10 +37,14 @@ from model.floor_collection import FloorCollection
 
 
 class MainWindow(QMainWindow):
+    EXIT_CODE_REBOOT = -12345678
+
     def __init__(self):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.setWindowIcon(QIcon(":/image/logo.svg"))
+        self.setWindowTitle(" Moving Calculator")
         self.menu_ui = MenuUI(self)
         self.user_management_table_ui = UserManagementTable(self)
         self.user_profile_ui = UserProfile(self)
@@ -52,6 +55,7 @@ class MainWindow(QMainWindow):
         self.inventory_ui = InventoryUi(self)
         self.calendar_ui = CalendarUi(self)
         self.calculator_page_ui = CalculatorPageUi(self)
+        self.change_page_data = True
         self.user = User()
         self.user_role = UserRole()
         self.calendar = Calendar()
@@ -60,7 +64,9 @@ class MainWindow(QMainWindow):
         self.mover_amount = MoverAmount()
         self.modal_window = ModalWindow(self)
         self.login_page = LoginPage(self)
+        self.reset_pass_page = ResetPassPage(self)
         self.reg_page = RegistrationPage(self)
+        self.reg_comp_page = RegistrationCompanyPage(self)
         self.acc_created_page = AccCreatedPage(self)
         self.main_menu = MainMenu(self)
         self.user_management = UserManagement(self)
@@ -73,6 +79,7 @@ class MainWindow(QMainWindow):
         self.get_mover_amount()
         self.get_move_size()
         self.get_floor()
+        self.ui.window_pages.installEventFilter(self)
 
     def get_floor(self):
         self.save_data(self.floor_collection)
@@ -97,8 +104,7 @@ class MainWindow(QMainWindow):
 
     def log_out(self):
         Authorization.delete_token()
-        self.ui.window_pages.setCurrentWidget(self.ui.login_window)
-        self.ui.login_pages.setCurrentWidget(self.ui.login_page)
+        qApp.exit(self.EXIT_CODE_REBOOT)
 
     def registration_error(self, text):
         self.acc_created_page.show_error(text)
@@ -124,7 +130,16 @@ class MainWindow(QMainWindow):
             print(response_data)
             raise Exception
         else:
-            self.get_privilege()
+            try:
+                self.company_is_active(response_data)
+                self.get_privilege()
+            except AuthorizationError:
+                self.modal_window.show_notification_page(description="account is not active", is_error=True)
+
+    @staticmethod
+    def company_is_active(user):
+        if not user["company"]["is_active"]:
+            raise AuthorizationError
 
     def get_privilege(self):
         user_privilege = UserPrivilege()
@@ -149,6 +164,15 @@ class MainWindow(QMainWindow):
                     self.delete_layout(item.layout())
             sip.delete(layout)
 
+    def closeEvent(self, event):
+        reply = QMessageBox.question(self, 'Close Application', 'Are you sure you want to close the application?',
+                                     QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+
+        if reply == QMessageBox.Yes:
+            event.accept()
+        else:
+            event.ignore()
+
     def keyPressEvent(self, event: QKeyEvent) -> None:
         current_window = self.ui.window_pages.currentWidget().objectName()
         current_page = self.ui.login_pages.currentWidget().objectName()
@@ -156,3 +180,13 @@ class MainWindow(QMainWindow):
             self.login_page.login()
         elif event.key() == Qt.Key_Return and current_page == "registration_page" and current_window == "login_window":
             self.reg_page.registration()
+
+    def eventFilter(self, obj, event) -> bool:
+        if obj is self.ui.window_pages:
+            if event.type() == QEvent.Show:
+                self.change_page_data = True
+                return True
+            if event.type() == QEvent.Hide:
+                self.change_page_data = False
+                return True
+        return False

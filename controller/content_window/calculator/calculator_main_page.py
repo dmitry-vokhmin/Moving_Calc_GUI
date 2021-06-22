@@ -69,6 +69,7 @@ class CalculatorPage(QWidget):
     def reset_pages(self):
         self.main_window.calculator_page_ui.reset_pages()
         self.change_next_btn(lambda: self.change_inner_page(self.current_page + 1), "Continue ")
+        self.validation.reset_error_fields(self.move_details_fields)
         self.change_inner_page(0)
 
     def show_extra_rooms(self, text):
@@ -213,15 +214,14 @@ class CalculatorPage(QWidget):
 
     def eventFilter(self, obj, event) -> bool:
         if obj is self.main_window.ui.calculator_page:
-            if event.type() == QEvent.Show:
+            if event.type() == QEvent.Show and self.main_window.change_page_data:
                 if self.set_page:
                     self.main_window.calculator_page_ui.set_move_details_page(self.extra_room_inventory)
                     self.build_calendar()
                     self.set_event_filter()
                     self.set_page = False
                 self.validation.reset_error_fields(self.move_details_fields)
-                self.main_window.ui.calc_menu_pages.setCurrentWidget(self.main_window.ui.calc_move_detail_page)
-                self.main_window.calculator_page_ui.back_btn_visible(False)
+                self.reset_pages()
                 self.main_window.set_calendar(self.calendar)
                 return True
             if event.type() == QEvent.Hide:

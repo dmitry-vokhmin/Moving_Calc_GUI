@@ -20,6 +20,22 @@ class UserProfile:
         self.main_window.ui.profile_change_email_butt.setVisible(True)
         self.main_window.ui.profile_new_pass_frame.setVisible(False)
         self.main_window.ui.profile_new_email_frame.setVisible(False)
+        self.main_window.ui.profile_comp_name_input.setText(self.main_window.user.company["name"].capitalize())
+        self.main_window.ui.profile_comp_address_1_input.setText(
+            self.main_window.user.company["address"]["street"].title()
+        )
+        self.main_window.ui.profile_comp_address_2_input.setText(
+            self.main_window.user.company["address"]["apartment"].title()
+        )
+        self.main_window.ui.profile_comp_city_input.setText(
+            self.main_window.user.company["address"]["zip_code"]["city"].title()
+        )
+        self.main_window.ui.profile_comp_state_input.setText(
+            self.main_window.user.company["address"]["zip_code"]["state"].title()
+        )
+        self.main_window.ui.profile_comp_zip_code_input.setText(
+            self.main_window.user.company["address"]["zip_code"]["zip_code"]
+        )
         self.main_window.ui.profile_pass_input.setText("")
         self.main_window.ui.profile_new_pass_input.setText("")
         self.main_window.ui.profile_new_pass2_input.setText("")
@@ -33,6 +49,12 @@ class UserProfile:
         name = staff_profile["fullname"]
         role = staff_profile["user_role"]["role"].capitalize()
         email = staff_profile["email"]
+        self.main_window.ui.profile_comp_name_input.setEnabled(False)
+        self.main_window.ui.profile_comp_address_1_input.setEnabled(False)
+        self.main_window.ui.profile_comp_address_2_input.setEnabled(False)
+        self.main_window.ui.profile_comp_city_input.setEnabled(False)
+        self.main_window.ui.profile_comp_state_input.setEnabled(False)
+        self.main_window.ui.profile_comp_zip_code_input.setEnabled(False)
         self.main_window.ui.profile_small_header.setText(name)
         self.main_window.ui.profile_log_out_butt.setVisible(False)
         self.main_window.ui.profile_delete_butt.setVisible(True)
@@ -55,4 +77,11 @@ class UserProfile:
         self.main_window.ui.profile_user_manage_butt.setVisible(False)
         self.main_window.ui.role_combobox.addItem(role, role_id)
         self.main_window.ui.role_combobox.setEnabled(False)
+        if self.main_window.user.user_role["role"] == "owner":
+            self.main_window.ui.profile_comp_name_input.setEnabled(True)
+            self.main_window.ui.profile_comp_address_1_input.setEnabled(True)
+            self.main_window.ui.profile_comp_address_2_input.setEnabled(True)
+            self.main_window.ui.profile_comp_city_input.setEnabled(True)
+            self.main_window.ui.profile_comp_state_input.setEnabled(True)
+            self.main_window.ui.profile_comp_zip_code_input.setEnabled(True)
         return name, role, email

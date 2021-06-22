@@ -27,9 +27,9 @@ class UserManagement(QWidget):
 
     def show_notification_window(self, user):
         def wrap():
-            self.main_window.modal_window.show_confirm_dialog(f"delete {user['fullname']}?",
-                                                              "delete",
-                                                              self.delete_user(user))
+            self.main_window.modal_window.show_confirm_dialog(self.delete_user(user),
+                                                              f"delete {user['fullname']}?",
+                                                              "delete")
         return wrap
 
     def delete_user(self, user):
@@ -49,7 +49,8 @@ class UserManagement(QWidget):
         return wrap
 
     def eventFilter(self, obj, event) -> bool:
-        if event.type() == QEvent.Show:
-            self.set_user_table()
-            return True
+        if obj is self.main_window.ui.user_management_page:
+            if event.type() == QEvent.Show and self.main_window.change_page_data:
+                self.set_user_table()
+                return True
         return False
