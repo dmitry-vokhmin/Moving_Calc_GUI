@@ -26,7 +26,7 @@ class CalculatorPage(QWidget):
             self.main_window.ui.calc_calculation_result_page,
             self.main_window.ui.calc_result_customer_info_page,
         ]
-        self.extra_rooms = {"1 bedroom apartment", "room", "studio", "2 bedroom apartment"}
+        self.extra_rooms = {"1 bedroom apartment", "room or less", "studio apartment", "2 bedroom apartment"}
         self.move_details = None
         self.move_details_fields = {
             "zip_from": {
@@ -105,7 +105,7 @@ class CalculatorPage(QWidget):
                  self.main_window.ui.calc_1_move_size_box.currentData())]
         for btn in self.main_window.ui.calc_extra_room_btn_frame.findChildren(QPushButton):
             if btn.isChecked():
-                data.append((btn.text(), btn.__getattribute__("id")))
+                data.append((btn.text(), getattr(btn, "id")))
         return data
 
     def get_calculation_result(self):

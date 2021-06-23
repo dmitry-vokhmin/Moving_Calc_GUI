@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1368, 846)
+        MainWindow.resize(1370, 850)
         MainWindow.setMinimumSize(QtCore.QSize(1366, 768))
         MainWindow.setStyleSheet("/* VERTICAL SCROLLBAR */\n"
                                  " QScrollBar:vertical {\n"
@@ -38,6 +38,32 @@ class Ui_MainWindow(object):
                                  "\n"
                                  "/* BTN BOTTOM - SCROLLBAR */\n"
                                  "QScrollBar::add-line:vertical {\n"
+                                 "    border: none;\n"
+                                 "    background-color: transparent;\n"
+                                 "}\n"
+                                 "\n"
+                                 "/* horizontal SCROLLBAR */\n"
+                                 " QScrollBar:horizontal {\n"
+                                 "    border: none;\n"
+                                 "    height: 10px;\n"
+                                 "    border-radius: 0px;\n"
+                                 " }\n"
+                                 "\n"
+                                 "/*  HANDLE BAR horizontal */\n"
+                                 "QScrollBar::handle:horizontal {    \n"
+                                 "    background: rgba(181, 184, 199, 0.5);\n"
+                                 "    min-width: 30px;\n"
+                                 "    border-radius: 2px;\n"
+                                 "}\n"
+                                 "\n"
+                                 "/* BTN TOP - SCROLLBAR */\n"
+                                 "QScrollBar::sub-line:horizontal {\n"
+                                 "    border: none;\n"
+                                 "    background-color: transparent;\n"
+                                 "}\n"
+                                 "\n"
+                                 "/* BTN BOTTOM - SCROLLBAR */\n"
+                                 "QScrollBar::add-line:horizontal {\n"
                                  "    border: none;\n"
                                  "    background-color: transparent;\n"
                                  "}")
@@ -1567,6 +1593,14 @@ class Ui_MainWindow(object):
                                           "}\n"
                                           "\n"
                                           "/* QFrame */\n"
+                                          "\n"
+                                          "\n"
+                                          "#inventory_search_frame[selected=true] {\n"
+                                          "    border: 0.5px solid #0915CC;\n"
+                                          "    background: #F2F3F6;\n"
+                                          "    border-radius: 5px;\n"
+                                          "}\n"
+                                          "\n"
                                           "#inventory_categor_frame {\n"
                                           "    border: 0.5px solid rgba(181, 184, 199, 0.5);\n"
                                           "    border-radius: 4px;\n"
@@ -2619,7 +2653,7 @@ class Ui_MainWindow(object):
         self.profile_scroll_area.setWidgetResizable(True)
         self.profile_scroll_area.setObjectName("profile_scroll_area")
         self.profile_scroll_widget = QtWidgets.QWidget()
-        self.profile_scroll_widget.setGeometry(QtCore.QRect(0, 0, 1303, 1231))
+        self.profile_scroll_widget.setGeometry(QtCore.QRect(0, 0, 1305, 1231))
         self.profile_scroll_widget.setObjectName("profile_scroll_widget")
         self.profile_scroll_layout = QtWidgets.QVBoxLayout(self.profile_scroll_widget)
         self.profile_scroll_layout.setContentsMargins(0, 0, 0, 0)
@@ -3052,7 +3086,7 @@ class Ui_MainWindow(object):
         self.user_manage_scroll_area.setWidgetResizable(True)
         self.user_manage_scroll_area.setObjectName("user_manage_scroll_area")
         self.user_manage_scroll_widget = QtWidgets.QWidget()
-        self.user_manage_scroll_widget.setGeometry(QtCore.QRect(0, 0, 100, 30))
+        self.user_manage_scroll_widget.setGeometry(QtCore.QRect(0, 0, 1310, 562))
         self.user_manage_scroll_widget.setObjectName("user_manage_scroll_widget")
         self.user_manage_scroll_layout = QtWidgets.QVBoxLayout(self.user_manage_scroll_widget)
         self.user_manage_scroll_layout.setContentsMargins(0, 0, 0, 0)
@@ -3211,7 +3245,7 @@ class Ui_MainWindow(object):
         self.equip_truck_type_scrollarea.setWidgetResizable(True)
         self.equip_truck_type_scrollarea.setObjectName("equip_truck_type_scrollarea")
         self.equip_truck_type_scroll_widget = QtWidgets.QWidget()
-        self.equip_truck_type_scroll_widget.setGeometry(QtCore.QRect(0, 0, 100, 30))
+        self.equip_truck_type_scroll_widget.setGeometry(QtCore.QRect(0, 0, 1370, 602))
         self.equip_truck_type_scroll_widget.setObjectName("equip_truck_type_scroll_widget")
         self.equip_truck_type_scroll_layout = QtWidgets.QVBoxLayout(self.equip_truck_type_scroll_widget)
         self.equip_truck_type_scroll_layout.setContentsMargins(30, 10, 15, 0)
@@ -3437,7 +3471,7 @@ class Ui_MainWindow(object):
         self.config_scroll_area.setWidgetResizable(True)
         self.config_scroll_area.setObjectName("config_scroll_area")
         self.config_scroll_widget = QtWidgets.QWidget()
-        self.config_scroll_widget.setGeometry(QtCore.QRect(0, 0, 95, 16))
+        self.config_scroll_widget.setGeometry(QtCore.QRect(0, 0, 838, 63))
         self.config_scroll_widget.setObjectName("config_scroll_widget")
         self.config_scroll_layout = QtWidgets.QVBoxLayout(self.config_scroll_widget)
         self.config_scroll_layout.setContentsMargins(0, 0, 0, 0)
@@ -3675,7 +3709,7 @@ class Ui_MainWindow(object):
         self.inventory_bottom_frame = QtWidgets.QFrame(self.inventory_page)
         self.inventory_bottom_frame.setObjectName("inventory_bottom_frame")
         self.inventory_bottom_layout = QtWidgets.QHBoxLayout(self.inventory_bottom_frame)
-        self.inventory_bottom_layout.setContentsMargins(0, 0, 49, 0)
+        self.inventory_bottom_layout.setContentsMargins(0, 0, 46, 0)
         self.inventory_bottom_layout.setSpacing(50)
         self.inventory_bottom_layout.setObjectName("inventory_bottom_layout")
         self.inventory_size_menu = QtWidgets.QStackedWidget(self.inventory_bottom_frame)
@@ -3694,7 +3728,7 @@ class Ui_MainWindow(object):
         self.inventory_room_scrollarea.setWidgetResizable(True)
         self.inventory_room_scrollarea.setObjectName("inventory_room_scrollarea")
         self.inventory_room_frame = QtWidgets.QWidget()
-        self.inventory_room_frame.setGeometry(QtCore.QRect(0, 0, 100, 30))
+        self.inventory_room_frame.setGeometry(QtCore.QRect(0, 0, 217, 570))
         self.inventory_room_frame.setObjectName("inventory_room_frame")
         self.inventory_room_layout_2 = QtWidgets.QVBoxLayout(self.inventory_room_frame)
         self.inventory_room_layout_2.setContentsMargins(0, 0, 0, 0)
@@ -3785,7 +3819,7 @@ class Ui_MainWindow(object):
         self.inventory_content_scrollarea.setWidgetResizable(True)
         self.inventory_content_scrollarea.setObjectName("inventory_content_scrollarea")
         self.inventory_content_scroll_frame = QtWidgets.QWidget()
-        self.inventory_content_scroll_frame.setGeometry(QtCore.QRect(0, 0, 100, 30))
+        self.inventory_content_scroll_frame.setGeometry(QtCore.QRect(0, 0, 994, 448))
         self.inventory_content_scroll_frame.setObjectName("inventory_content_scroll_frame")
         self.inventory_content_scroll_layout = QtWidgets.QVBoxLayout(self.inventory_content_scroll_frame)
         self.inventory_content_scroll_layout.setContentsMargins(0, 0, 0, 0)
@@ -3811,14 +3845,14 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.window_pages.setCurrentIndex(0)
-        self.login_pages.setCurrentIndex(0)
-        self.content_pages.setCurrentIndex(0)
+        self.window_pages.setCurrentIndex(1)
+        self.login_pages.setCurrentIndex(1)
+        self.content_pages.setCurrentIndex(5)
         self.calc_menu_pages.setCurrentIndex(0)
-        self.calc_size_menu.setCurrentIndex(0)
-        self.calc_result_pages.setCurrentIndex(0)
-        self.equip_truck_pages.setCurrentIndex(0)
-        self.config_pages.setCurrentIndex(0)
+        self.calc_size_menu.setCurrentIndex(1)
+        self.calc_result_pages.setCurrentIndex(1)
+        self.equip_truck_pages.setCurrentIndex(1)
+        self.config_pages.setCurrentIndex(1)
         self.inventory_size_menu.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
@@ -4009,7 +4043,7 @@ class Ui_MainWindow(object):
         self.profile_comp_address_1_error.setText(_translate("MainWindow", "Enter address"))
         self.profile_comp_address.setText(_translate("MainWindow", "Address 1"))
         self.profile_comp_city.setText(_translate("MainWindow", "City"))
-        self.profile_comp_zip_code.setText(_translate("MainWindow", "ZIp Code"))
+        self.profile_comp_zip_code.setText(_translate("MainWindow", "Zip Code"))
         self.profile_comp_state.setText(_translate("MainWindow", "State"))
         self.profile_comp_city_error.setText(_translate("MainWindow", "Enter city"))
         self.profile_comp_state_error.setText(_translate("MainWindow", "Enter state"))

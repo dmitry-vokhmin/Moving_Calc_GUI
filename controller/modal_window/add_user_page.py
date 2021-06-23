@@ -46,7 +46,7 @@ class AddUserPage(QDialog):
             if role["role"] == "sales":
                 radio_button.setChecked(True)
             radio_button.setText(role["role"].capitalize())
-            radio_button.__setattr__("role_id", role["id"])
+            setattr(radio_button, "role_id", role["id"])
             self.radio_buttons[role["role"]] = radio_button
             self.main_modal_window.ui.add_user_radio_butt_layout.addWidget(radio_button)
 
@@ -88,7 +88,7 @@ class AddUserPage(QDialog):
     def get_selected_radio_button_id(self):
         for button in self.radio_buttons.values():
             if button.isChecked():
-                return button.__getattribute__("role_id")
+                return getattr(button, "role_id")
 
     def eventFilter(self, obj, event: QEvent) -> bool:
         if obj is self.main_modal_window.ui.add_user_page:

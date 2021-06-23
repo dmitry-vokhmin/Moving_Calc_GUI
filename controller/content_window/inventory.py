@@ -49,14 +49,15 @@ class Inventory(QWidget):
         def wrap():
             categories = self.get_response(InventoryCategory, {"room_id": room_id})
             self.main_window.inventory_ui.set_category_menu(categories, self.categorize_inventory, self.category_frame,
-                                                            self)
+                                                            room_collection_id, del_funk, add_funk, self)
             self.get_inventory({"room_collection_id": room_collection_id}, button, del_funk, add_funk, False)()
             self.category_btn = {btn for btn in self.category_frame.findChildren(QPushButton)}
         return wrap
 
     def get_inventory(self, button_attribute, button, del_funk, add_funk, is_preset):
         def wrap():
-            self.select_menu_point(button, is_preset)
+            if button:
+                self.select_menu_point(button, is_preset)
             if is_preset:
                 inventory = self.get_response(InventoryInventoryCollection, button_attribute)
             else:
@@ -82,11 +83,12 @@ class Inventory(QWidget):
             else:
                 menu_button.setChecked(False)
 
-    def categorize_inventory(self, button, category_id=None):
+    def categorize_inventory(self, button, del_funk, add_funk, category_id=None,):
         def wrap():
-            self.main_window.inventory_ui.categorize_inventory(self.content_frame, category_id)
+            room_collection_id = getattr(button, "room_collection_id")
+            self.get_inventory({"room_collection_id": room_collection_id, "category_id": category_id}, None,
+                               del_funk, add_funk, is_preset=False)()
             self.select_category_menu_point(button)
-
         return wrap
 
     def select_category_menu_point(self, button):

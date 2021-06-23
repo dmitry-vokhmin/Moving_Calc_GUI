@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1368</width>
-    <height>846</height>
+    <width>1370</width>
+    <height>850</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -42,6 +42,32 @@ QScrollBar::sub-line:vertical {
 
 /* BTN BOTTOM - SCROLLBAR */
 QScrollBar::add-line:vertical {
+	border: none;
+	background-color: transparent;
+}
+
+/* horizontal SCROLLBAR */
+ QScrollBar:horizontal {
+	border: none;
+    height: 10px;
+	border-radius: 0px;
+ }
+
+/*  HANDLE BAR horizontal */
+QScrollBar::handle:horizontal {	
+	background: rgba(181, 184, 199, 0.5);
+	min-width: 30px;
+	border-radius: 2px;
+}
+
+/* BTN TOP - SCROLLBAR */
+QScrollBar::sub-line:horizontal {
+	border: none;
+	background-color: transparent;
+}
+
+/* BTN BOTTOM - SCROLLBAR */
+QScrollBar::add-line:horizontal {
 	border: none;
 	background-color: transparent;
 }</string>
@@ -2847,6 +2873,14 @@ background: rgba(9, 21, 204, 0.8);
 }
 
 /* QFrame */
+
+
+#inventory_search_frame[selected=true] {
+	border: 0.5px solid #0915CC;
+	background: #F2F3F6;
+	border-radius: 5px;
+}
+
 #inventory_categor_frame {
 	border: 0.5px solid rgba(181, 184, 199, 0.5);
 	border-radius: 4px;
@@ -3072,7 +3106,7 @@ background: rgba(9, 21, 204, 0.8);
               </font>
              </property>
              <property name="currentIndex">
-              <number>1</number>
+              <number>5</number>
              </property>
              <widget class="QWidget" name="calculator_page">
               <layout class="QVBoxLayout" name="calculator_layout">
@@ -3453,7 +3487,7 @@ background: rgba(9, 21, 204, 0.8);
                   <item>
                    <widget class="QStackedWidget" name="calc_menu_pages">
                     <property name="currentIndex">
-                     <number>0</number>
+                     <number>1</number>
                     </property>
                     <widget class="QWidget" name="calc_move_detail_page">
                      <layout class="QVBoxLayout" name="calc_move_detail_layout">
@@ -4485,7 +4519,7 @@ color: #070808;</string>
                                   <x>0</x>
                                   <y>0</y>
                                   <width>217</width>
-                                  <height>30</height>
+                                  <height>556</height>
                                  </rect>
                                 </property>
                                 <layout class="QVBoxLayout" name="calc_preset_layout_2">
@@ -4646,8 +4680,8 @@ color: #070808;</string>
                                 <rect>
                                  <x>0</x>
                                  <y>0</y>
-                                 <width>100</width>
-                                 <height>30</height>
+                                 <width>997</width>
+                                 <height>434</height>
                                 </rect>
                                </property>
                                <layout class="QVBoxLayout" name="calc_inv_content_scroll_layout">
@@ -5677,7 +5711,7 @@ color: #FF3C2F;</string>
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>1303</width>
+                    <width>1305</width>
                     <height>1231</height>
                    </rect>
                   </property>
@@ -6920,8 +6954,8 @@ color: #FF3C2F;</string>
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>100</width>
-                    <height>30</height>
+                    <width>1310</width>
+                    <height>562</height>
                    </rect>
                   </property>
                   <layout class="QVBoxLayout" name="user_manage_scroll_layout">
@@ -7368,8 +7402,8 @@ color: #FF3C2F;</string>
                        <rect>
                         <x>0</x>
                         <y>0</y>
-                        <width>100</width>
-                        <height>30</height>
+                        <width>1370</width>
+                        <height>602</height>
                        </rect>
                       </property>
                       <layout class="QVBoxLayout" name="equip_truck_type_scroll_layout">
@@ -8037,8 +8071,8 @@ color: #FF3C2F;</string>
                                 <rect>
                                  <x>0</x>
                                  <y>0</y>
-                                 <width>95</width>
-                                 <height>16</height>
+                                 <width>838</width>
+                                 <height>63</height>
                                 </rect>
                                </property>
                                <layout class="QVBoxLayout" name="config_scroll_layout">
@@ -8811,8 +8845,8 @@ color: #FF3C2F;</string>
                           <rect>
                            <x>0</x>
                            <y>0</y>
-                           <width>100</width>
-                           <height>30</height>
+                           <width>217</width>
+                           <height>570</height>
                           </rect>
                          </property>
                          <layout class="QVBoxLayout" name="inventory_room_layout_2">
@@ -9080,8 +9114,8 @@ color: #FF3C2F;</string>
                          <rect>
                           <x>0</x>
                           <y>0</y>
-                          <width>100</width>
-                          <height>30</height>
+                          <width>994</width>
+                          <height>448</height>
                          </rect>
                         </property>
                         <layout class="QVBoxLayout" name="inventory_content_scroll_layout">

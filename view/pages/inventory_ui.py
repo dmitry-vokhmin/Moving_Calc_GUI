@@ -1,16 +1,20 @@
+import re
 from urllib.request import urlopen
 from urllib.error import HTTPError
+from pathlib import Path
 from PyQt5.QtCore import Qt, QSize
 from PyQt5.QtGui import QIcon, QCursor, QIntValidator, QPixmap
-from PyQt5.QtWidgets import QPushButton, QFrame, QVBoxLayout, QHBoxLayout, QLabel, QComboBox, QStyledItemDelegate
+from PyQt5.QtWidgets import QPushButton, QFrame, QVBoxLayout, QHBoxLayout, QLabel, QComboBox, QStyledItemDelegate, \
+    QGridLayout
 from view.custom_widgets.flow_layout import FlowLayout
 
 
 class InventoryUi:
     def __init__(self, main_window):
         self.main_window = main_window
+        self.image_dict = {}
 
-    def set_left_menu(self, frame,funk, data, add_funk, del_funk, is_preset_menu):
+    def set_left_menu(self, frame, funk, data, add_funk, del_funk, is_preset_menu):
         self.main_window.delete_layout(frame.layout())
         layout = QVBoxLayout(frame)
         layout.setContentsMargins(0, 0, 0, 0)
@@ -26,7 +30,7 @@ class InventoryUi:
             if is_preset_menu:
                 room_menu_butt.setText(room["move_size"]["name"].title().replace("_", " "))
                 room_menu_butt.setIcon(QIcon(":/image/inventory_preset_image.svg"))
-                room_menu_butt.__setattr__("inventory_collection_id", room["id"])
+                setattr(room_menu_butt, "inventory_collection_id", room["id"])
                 room_menu_butt.clicked.connect(funk({"inventory_collection_id": room["id"]}, room_menu_butt,
                                                     del_funk, add_funk, True))
             else:
@@ -35,10 +39,10 @@ class InventoryUi:
                 pixmap = QPixmap()
                 pixmap.loadFromData(data)
                 room_menu_butt.setIcon(QIcon(pixmap))
-                room_menu_butt.clicked.connect(funk(room["room_id"], room["id"], room_menu_butt, del_funk,  add_funk))
+                room_menu_butt.clicked.connect(funk(room["room_id"], room["id"], room_menu_butt, del_funk, add_funk))
                 self.main_window.ui.inventory_search_clear.setVisible(False)
 
-    def set_category_menu(self, categories, funk, frame, instance):
+    def set_category_menu(self, categories, funk, frame, room_collection_id, del_funk, add_dunk, instance):
         self.main_window.delete_layout(frame.layout())
         inventory_categor_butt_layout = FlowLayout(frame)
         inventory_categor_butt_layout.setContentsMargins(0, 0, 0, 0)
@@ -48,8 +52,9 @@ class InventoryUi:
         button_all.setCheckable(True)
         button_all.setChecked(True)
         button_all.setText("All")
+        setattr(button_all, "room_collection_id", room_collection_id)
         button_all.setStyleSheet("qproperty-icon: url(:/image/check_icon_hover.svg);")
-        button_all.clicked.connect(funk(button_all))
+        button_all.clicked.connect(funk(button_all, del_funk, add_dunk))
         button_all.installEventFilter(instance)
         inventory_categor_butt_layout.addWidget(button_all)
         for category in categories:
@@ -57,7 +62,8 @@ class InventoryUi:
             button.setCursor(QCursor(Qt.PointingHandCursor))
             button.setCheckable(True)
             button.setText(category["name"].title())
-            button.clicked.connect(funk(button, category["id"]))
+            setattr(button, "room_collection_id", room_collection_id)
+            button.clicked.connect(funk(button, del_funk, add_dunk, category["id"]))
             button.installEventFilter(instance)
             inventory_categor_butt_layout.addWidget(button)
 
@@ -87,21 +93,29 @@ class InventoryUi:
             frame,
             instance,
     ):
-        for button in frame.findChildren(QPushButton):
-            button.removeEventFilter(instance)
         self.main_window.delete_layout(frame.layout())
-        inventory_content_clear_layout = FlowLayout(frame)
+        inventory_content_clear_layout = QGridLayout(frame)
         inventory_content_clear_layout.setContentsMargins(0, 0, 0, 0)
         inventory_content_clear_layout.setSpacing(8)
+        inventory_content_clear_layout.setAlignment(Qt.AlignLeft)
+        row = 0
+        colm = -1
         for inventory in inventories:
+            if colm % 3 == 0 and colm != 0:
+                row += 1
+            colm = colm + 1 if colm % 3 != 0 or colm == 0 else 0
             if is_preset_menu:
                 self.set_preset_card(inventory,
+                                     colm,
+                                     row,
                                      inventory_content_clear_layout,
                                      frame,
                                      del_funk,
                                      instance=instance)
             elif inventory["company_id"]:
                 self.set_custom_room_card(inventory,
+                                          colm,
+                                          row,
                                           inventory_content_clear_layout,
                                           frame,
                                           del_funk,
@@ -109,6 +123,8 @@ class InventoryUi:
                                           instance)
             else:
                 self.set_room_card(inventory,
+                                   colm,
+                                   row,
                                    inventory_content_clear_layout,
                                    frame,
                                    add_funk,
@@ -116,11 +132,18 @@ class InventoryUi:
 
     def create_preset_inventory_cards(self, move_size_id, preset_inventory, del_funk, count_funk, instance):
         self.main_window.delete_layout(self.main_window.ui.calc_inv_content_clear_frame.layout())
-        inventory_content_clear_layout = FlowLayout(self.main_window.ui.calc_inv_content_clear_frame)
+        inventory_content_clear_layout = QGridLayout(self.main_window.ui.calc_inv_content_clear_frame)
         inventory_content_clear_layout.setContentsMargins(0, 0, 0, 0)
         inventory_content_clear_layout.setSpacing(8)
+        row = 0
+        colm = -1
         for inventory in preset_inventory[move_size_id]["inventory"]:
+            if colm % 3 == 0 and colm != 0:
+                row += 1
+            colm = colm + 1 if colm % 3 != 0 or colm == 0 else 0
             self.set_preset_card(inventory,
+                                 colm,
+                                 row,
                                  inventory_content_clear_layout,
                                  self.main_window.ui.calc_inv_content_clear_frame,
                                  del_funk,
@@ -128,7 +151,8 @@ class InventoryUi:
                                  count_funk=count_funk,
                                  instance=instance)
 
-    def set_preset_card(self, inventory, layout, frame, del_funk, move_size_id=None, count_funk=None, instance=None):
+    def set_preset_card(self, inventory, colm, row, layout, frame, del_funk,
+                        move_size_id=None, count_funk=None, instance=None):
         card_main_frame = QFrame(frame)
         card_main_frame.setMinimumSize(QSize(324, 119))
         card_main_frame.setMaximumSize(QSize(324, 119))
@@ -153,15 +177,11 @@ class InventoryUi:
         inner_layout.setContentsMargins(0, 0, 0, 0)
         inner_layout.setSpacing(0)
         item_image = QLabel(inner_frame)
-        item_image.setMinimumSize(QSize(56, 56))
-        item_image.setMaximumSize(QSize(56, 56))
-        try:
-            data = urlopen(inventory["inventories"]["image"]).read()
-            pixmap = QPixmap()
-            pixmap.loadFromData(data)
-            item_image.setPixmap(pixmap)
-        except HTTPError:
-            item_image.setStyleSheet("image: url(:/image/custom_item_icon.svg);")
+        item_image.setMinimumSize(QSize(50, 50))
+        item_image.setMaximumSize(QSize(50, 50))
+        inv_image = self.get_inv_image(inventory["image"])
+        item_image.setStyleSheet(f"image: url({inv_image});")
+        item_image.setScaledContents(True)
         inner_layout.addWidget(item_image)
         delete_item_butt = QPushButton(inner_frame)
         delete_item_butt.setMinimumSize(QSize(103, 28))
@@ -203,12 +223,12 @@ class InventoryUi:
         item_description.setText(inventory["inventories"]["name"].title())
         card_main_layout.addWidget(item_description)
         if move_size_id:
-            card_main_frame.__setattr__("move_size_id", move_size_id)
+            setattr(card_main_frame, "move_size_id", move_size_id)
             delete_item_butt.clicked.connect(del_funk(move_size_id, inventory["inventory_id"]))
             combobox.currentTextChanged.connect(lambda x: count_funk(x, move_size_id, inventory["inventory_id"]))
         else:
-            card_main_frame.__setattr__("inventory_id", inventory["inventory_id"])
-            card_main_frame.__setattr__("inventory_collection_id", inventory["inventory_collection_id"])
+            setattr(card_main_frame, "inventory_id", inventory["inventory_id"])
+            setattr(card_main_frame, "inventory_collection_id", inventory["inventory_collection_id"])
             delete_item_butt.clicked.connect(
                 lambda: self.main_window.modal_window.show_confirm_dialog(
                     funk=del_funk(inventory["inventory_id"],
@@ -218,10 +238,9 @@ class InventoryUi:
                 )
             )
         delete_item_butt.installEventFilter(instance)
-        layout.addWidget(card_main_frame)
+        layout.addWidget(card_main_frame, row, colm)
 
-    @staticmethod
-    def set_room_card(inventory, layout, frame, add_funk, instance):
+    def set_room_card(self, inventory, colm, row, layout, frame, add_funk, instance):
         card_main_frame = QFrame(frame)
         card_main_frame.setMinimumSize(QSize(324, 119))
         card_main_frame.setMaximumSize(QSize(324, 119))
@@ -235,8 +254,8 @@ class InventoryUi:
                                       "}")
         card_main_frame.setFrameShape(QFrame.NoFrame)
         card_main_frame.setFrameShadow(QFrame.Raised)
-        card_main_frame.__setattr__("category_id", inventory["inventory_category_id"])
-        card_main_frame.__setattr__("item_name", inventory["name"])
+        setattr(card_main_frame, "category_id", inventory["inventory_category_id"])
+        setattr(card_main_frame, "item_name", inventory["name"])
         card_main_frame.setObjectName("card_main_frame")
         card_main_layout = QVBoxLayout(card_main_frame)
         card_main_layout.setContentsMargins(15, 15, 15, 15)
@@ -249,15 +268,11 @@ class InventoryUi:
         inner_layout.setContentsMargins(0, 0, 0, 0)
         inner_layout.setSpacing(0)
         item_image = QLabel(inner_frame)
-        item_image.setMinimumSize(QSize(56, 56))
-        item_image.setMaximumSize(QSize(56, 56))
-        try:
-            data = urlopen(inventory["image"]).read()
-            pixmap = QPixmap()
-            pixmap.loadFromData(data)
-            item_image.setPixmap(pixmap)
-        except HTTPError:
-            item_image.setStyleSheet("image: url(:/image/custom_item_icon.svg);")
+        item_image.setMinimumSize(QSize(50, 50))
+        item_image.setMaximumSize(QSize(50, 50))
+        inv_image = self.get_inv_image(inventory["image"])
+        item_image.setStyleSheet(f"image: url({inv_image});")
+        item_image.setScaledContents(True)
         inner_layout.addWidget(item_image)
         add_item_butt = QPushButton(inner_frame)
         add_item_butt.setMinimumSize(QSize(103, 28))
@@ -287,9 +302,9 @@ class InventoryUi:
                                        "font-size: 14px;")
         item_description.setText(inventory["name"].title())
         card_main_layout.addWidget(item_description)
-        layout.addWidget(card_main_frame)
+        layout.addWidget(card_main_frame, row, colm)
 
-    def set_custom_room_card(self, inventory, layout, frame, del_funk, add_funk, instance):
+    def set_custom_room_card(self, inventory, colm, row, layout, frame, del_funk, add_funk, instance):
         main_frame = QFrame(frame)
         main_frame.setMinimumSize(QSize(324, 162))
         main_frame.setMaximumSize(QSize(324, 162))
@@ -303,7 +318,7 @@ class InventoryUi:
                                  "}")
         main_frame.setFrameShape(QFrame.NoFrame)
         main_frame.setFrameShadow(QFrame.Raised)
-        main_frame.__setattr__("item_name", inventory["name"])
+        setattr(main_frame, "item_name", inventory["name"])
         main_frame.setObjectName("card_main_frame")
         main_layout = QVBoxLayout(main_frame)
         main_layout.setContentsMargins(15, 15, 15, 15)
@@ -316,8 +331,8 @@ class InventoryUi:
         top_inner_layout.setContentsMargins(0, 0, 0, 15)
         top_inner_layout.setSpacing(11)
         item_image = QLabel(top_inner_frame)
-        item_image.setMinimumSize(QSize(56, 56))
-        item_image.setMaximumSize(QSize(56, 56))
+        item_image.setMinimumSize(QSize(50, 50))
+        item_image.setMaximumSize(QSize(50, 50))
         item_image.setStyleSheet("image: url(:/image/custom_item_icon.svg);")
         item_image.setText("")
         top_inner_layout.addWidget(item_image)
@@ -432,16 +447,20 @@ class InventoryUi:
         length_layout.addWidget(length_text)
         bottom_inner_layout.addWidget(length_frame, 0, Qt.AlignLeft)
         main_layout.addWidget(bottom_inner_frame, 0, Qt.AlignLeft)
-        layout.addWidget(main_frame)
+        layout.addWidget(main_frame, row, colm)
 
-    @staticmethod
-    def categorize_inventory(frame, category_id):
-        cards = frame.findChildren(QFrame, "card_main_frame")
-        for card in cards:
-            if category_id:
-                if card.__getattribute__("category_id") != category_id:
-                    card.setVisible(False)
-                else:
-                    card.setVisible(True)
-            else:
-                card.setVisible(True)
+    def get_inv_image(self, image_url):
+        image = self.image_dict.get(image_url[image_url.find("/images/"):])
+        if not image:
+            try:
+                image_data = urlopen(image_url).read()
+                regex = re.compile("(?<=.inventory.)(.*)")
+                image_path = re.findall(regex, image_url)[0]
+                image_file_path = Path(__file__).parent.parent.joinpath("resources/inv_images")
+                image_file_path_save = image_file_path.joinpath(image_path)
+                image_file_path_save.write_bytes(image_data)
+                image = f"resources/inv_images/{image_path}"
+                self.image_dict[image_url[image_url.find("/images/"):]] = image
+            except HTTPError:
+                image = ":/image/custom_item_icon.svg"
+        return image

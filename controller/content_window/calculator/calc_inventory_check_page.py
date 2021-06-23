@@ -75,7 +75,7 @@ class CalcInventoryCheckPage(QWidget):
             self.inventory.select_menu_point(button, is_preset=True)
             self.update_preset_inventory_cards(move_size_id)
             for frame in self.main_window.ui.calc_inv_content_clear_frame.findChildren(QFrame, "card_main_frame"):
-                frame_id = frame.__getattribute__("move_size_id")
+                frame_id = getattr(frame, "move_size_id")
                 if move_size_id != frame_id:
                     frame.setVisible(False)
                 else:

@@ -36,7 +36,7 @@ class InventoryPage(QWidget):
         self.main_window.ui.inventory_add_butt.clicked.connect(self.main_window.modal_window.show_inventory_item_page)
         self.main_window.ui.inventory_search_input.textChanged.connect(self.search)
         self.main_window.ui.inventory_search_clear.clicked.connect(
-            lambda: self.main_window.ui.inventory_search_input.clear()
+            lambda: self.main_window.ui.inventory_search_input.setText("")
         )
         self.main_window.ui.inventory_reset_btn.clicked.connect(self.notification_reset_btn)
         self.main_window.ui.inventory_reset_btn.installEventFilter(self)
@@ -44,7 +44,7 @@ class InventoryPage(QWidget):
     def notification_reset_btn(self):
         for button in self.main_window.ui.inventory_preset_menu_frame.findChildren(QPushButton):
             if button.isChecked():
-                inventory_collection_id = button.__getattribute__("inventory_collection_id")
+                inventory_collection_id = getattr(button, "inventory_collection_id")
                 btn_text = button.text()
         self.main_window.modal_window.show_confirm_dialog(funk=self.reset(inventory_collection_id, btn_text),
                                                           desc_text=f"reset {btn_text} to its default settings?",
@@ -83,8 +83,8 @@ class InventoryPage(QWidget):
         data = []
         for frame in self.main_window.ui.inventory_content_clear_frame.findChildren(QFrame, "card_main_frame"):
             data_frame = {
-                "inventory_id": frame.__getattribute__("inventory_id"),
-                "inventory_collection_id": frame.__getattribute__("inventory_collection_id"),
+                "inventory_id": getattr(frame, "inventory_id"),
+                "inventory_collection_id": getattr(frame, "inventory_collection_id"),
                 "count": frame.findChild(QComboBox).currentText()
             }
             data.append(data_frame)
@@ -122,11 +122,17 @@ class InventoryPage(QWidget):
         text = text.lower()
         if text:
             self.main_window.ui.inventory_search_clear.setVisible(True)
+            self.main_window.ui.inventory_search_frame.setProperty("selected", True)
+            self.main_window.ui.inventory_search_frame.setStyle(self.main_window.ui.inventory_search_frame.style())
+            self.main_window.ui.inventory_search_label.setStyleSheet("image: url(:/image/search_icon_hover.svg)")
         else:
             self.main_window.ui.inventory_search_clear.setVisible(False)
+            self.main_window.ui.inventory_search_frame.setProperty("selected", False)
+            self.main_window.ui.inventory_search_frame.setStyle(self.main_window.ui.inventory_search_frame.style())
+            self.main_window.ui.inventory_search_label.setStyleSheet("image: url(:/image/search_icon_default.svg);")
         cards = self.main_window.ui.inventory_content_clear_frame.findChildren(QFrame, "card_main_frame")
         for card in cards:
-            item_text = card.__getattribute__("item_name")
+            item_text = getattr(card, "item_name")
             if re.search(fr"\b{text}", item_text.lower()):
                 card.setVisible(True)
             else:
@@ -160,17 +166,17 @@ class InventoryPage(QWidget):
                 self.set_left_menu = True
                 return True
         if obj is self.main_window.ui.inventory_search_input:
-            if event.type() == QEvent.FocusIn:
-                self.main_window.ui.inventory_search_frame.setStyleSheet(
-                    "#inventory_search_frame{border: 0.5px solid #0915CC;background: #F2F3F6;border-radius: 5px;}")
+            if event.type() == QEvent.HoverEnter:
+                self.main_window.ui.inventory_search_frame.setProperty("selected", True)
+                self.main_window.ui.inventory_search_frame.setStyle(self.main_window.ui.inventory_search_frame.style())
                 self.main_window.ui.inventory_search_label.setStyleSheet(
-                    "image: url(:/image/search_icon_hover.svg);background: #F2F3F6;")
+                    "image: url(:/image/search_icon_hover.svg)")
                 return True
-            if event.type() == QEvent.FocusOut:
-                self.main_window.ui.inventory_search_frame.setStyleSheet(
-                    "background: #F2F3F6;border-radius: 5px;")
+            if event.type() == QEvent.HoverLeave and not self.main_window.ui.inventory_search_input.text():
+                self.main_window.ui.inventory_search_frame.setProperty("selected", False)
+                self.main_window.ui.inventory_search_frame.setStyle(self.main_window.ui.inventory_search_frame.style())
                 self.main_window.ui.inventory_search_label.setStyleSheet(
-                    "image: url(:/image/search_icon_default.svg);background: #F2F3F6;")
+                    "image: url(:/image/search_icon_default.svg);")
                 return True
         if obj is self.main_window.ui.inventory_reset_btn:
             if event.type() == QEvent.HoverEnter:

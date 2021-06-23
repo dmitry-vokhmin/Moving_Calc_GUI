@@ -54,12 +54,12 @@ class PriceSettingsPage:
             price_db = self.price_id(mover, price_tag_id, price_data)
             if not price_db or price_db["price"] == 0.0:
                 price.setText("0.00")
-                price.__setattr__("mover_amount_id", mover["id"])
+                setattr(price, "mover_amount_id", mover["id"])
                 price.setStyleSheet("color: #B5B8C7;")
                 currency_icon.setStyleSheet(" image: url(:/image/currency_icon_disabled.svg);")
             elif price_db:
                 price.setText(f'{price_db["price"]:.2f}')
-                price.__setattr__("mover_amount_id", price_db["mover_amount_id"])
+                setattr(price, "mover_amount_id", price_db["mover_amount_id"])
             price.setEnabled(False)
             main_layout.addWidget(price, 0, Qt.AlignRight)
             main_layout.setStretch(0, 1)

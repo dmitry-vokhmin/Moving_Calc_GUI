@@ -1,3 +1,5 @@
+from pathlib import Path
+import json
 from PyQt5 import sip
 from PyQt5.QtWidgets import QMainWindow, QMessageBox, qApp
 from PyQt5.QtCore import Qt, QEvent
@@ -80,6 +82,7 @@ class MainWindow(QMainWindow):
         self.get_move_size()
         self.get_floor()
         self.ui.window_pages.installEventFilter(self)
+        self.read_inv_images()
 
     def get_floor(self):
         self.save_data(self.floor_collection)
@@ -169,6 +172,7 @@ class MainWindow(QMainWindow):
                                      QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
 
         if reply == QMessageBox.Yes:
+            self.write_inv_images()
             event.accept()
         else:
             event.ignore()
@@ -190,3 +194,13 @@ class MainWindow(QMainWindow):
                 self.change_page_data = False
                 return True
         return False
+
+    def read_inv_images(self):
+        json_path = Path(__file__).parent.parent.joinpath("resources/images.json")
+        with open(json_path, "r") as json_images:
+            self.inventory_ui.image_dict = json.load(json_images)
+
+    def write_inv_images(self):
+        json_path = Path(__file__).parent.parent.joinpath("resources/images.json")
+        with open(json_path, "w") as json_images:
+            json.dump(self.inventory_ui.image_dict, json_images)

@@ -64,7 +64,7 @@ class ConfigurationPage(QWidget):
     def get_price_data(field, price_tag_id):
         return {
             "price": field.text(),
-            "mover_amount_id": field.__getattribute__("mover_amount_id"),
+            "mover_amount_id": getattr(field, "mover_amount_id"),
             "price_tag_id": price_tag_id
         }
 
@@ -78,7 +78,7 @@ class ConfigurationPage(QWidget):
     def get_price_tag_id(self):
         for button in self.buttons:
             if button.isChecked():
-                return button.__getattribute__("id")
+                return getattr(button, "id")
 
     def set_movers_price(self):
         self.main_window.price_settings_ui.set_movers_prices()
@@ -109,7 +109,7 @@ class ConfigurationPage(QWidget):
                 elif checked_button == button:
                     checked_button.setChecked(True)
             if self.price_page:
-                self.main_window.price_settings_ui.set_movers_prices(checked_button.__getattribute__("id"))
+                self.main_window.price_settings_ui.set_movers_prices(getattr(checked_button, "id"))
 
         return wrap
 

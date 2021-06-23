@@ -23,7 +23,7 @@ class CalendarPage:
                 config_butt.setChecked(True)
                 config_butt.setStyleSheet("qproperty-icon: url(:/image/check_icon_hover.svg);")
             config_butt.setText(price_tag["name"].title())
-            config_butt.__setattr__("id", price_tag["id"])
+            setattr(config_butt, "id", price_tag["id"])
             config_price_type_button_layout.addWidget(config_butt)
 
     def build_calendars(self):
