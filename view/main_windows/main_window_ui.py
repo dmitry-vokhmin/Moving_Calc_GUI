@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from view.custom_widgets.combo_box import QComboBox
 
 
 class Ui_MainWindow(object):
@@ -1981,7 +1982,7 @@ class Ui_MainWindow(object):
         self.config_start_date_layout_2.addWidget(self.calc_start_date_edit)
         self.config_start_date_layout_2.setStretch(1, 1)
         self.calc_move_date_type_layout.addWidget(self.calc_date_frame, 1, 0, 1, 1)
-        self.calc_sevice_type = QtWidgets.QComboBox(self.calc_move_date_type_frame)
+        self.calc_sevice_type = QComboBox(self.calc_move_date_type_frame)
         self.calc_sevice_type.setMinimumSize(QtCore.QSize(258, 48))
         self.calc_sevice_type.setMaximumSize(QtCore.QSize(258, 48))
         self.calc_sevice_type.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -2030,7 +2031,7 @@ class Ui_MainWindow(object):
         self.calc_1_move_size_label = QtWidgets.QLabel(self.calc_move_size_frame)
         self.calc_1_move_size_label.setObjectName("calc_1_move_size_label")
         self.calc_move_size_layout.addWidget(self.calc_1_move_size_label)
-        self.calc_1_move_size_box = QtWidgets.QComboBox(self.calc_move_size_frame)
+        self.calc_1_move_size_box = QComboBox(self.calc_move_size_frame)
         self.calc_1_move_size_box.setMinimumSize(QtCore.QSize(526, 48))
         self.calc_1_move_size_box.setMaximumSize(QtCore.QSize(526, 48))
         self.calc_1_move_size_box.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -2061,7 +2062,7 @@ class Ui_MainWindow(object):
         self.calc_entrance_type_layout.setHorizontalSpacing(10)
         self.calc_entrance_type_layout.setVerticalSpacing(5)
         self.calc_entrance_type_layout.setObjectName("calc_entrance_type_layout")
-        self.calc_1_entrance_from_box = QtWidgets.QComboBox(self.calc_entrance_type_frame)
+        self.calc_1_entrance_from_box = QComboBox(self.calc_entrance_type_frame)
         self.calc_1_entrance_from_box.setMinimumSize(QtCore.QSize(258, 48))
         self.calc_1_entrance_from_box.setMaximumSize(QtCore.QSize(258, 48))
         self.calc_1_entrance_from_box.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -2073,7 +2074,7 @@ class Ui_MainWindow(object):
         self.calc_1_entrance_to_label = QtWidgets.QLabel(self.calc_entrance_type_frame)
         self.calc_1_entrance_to_label.setObjectName("calc_1_entrance_to_label")
         self.calc_entrance_type_layout.addWidget(self.calc_1_entrance_to_label, 0, 1, 1, 1)
-        self.calc_1_entrance_to_box = QtWidgets.QComboBox(self.calc_entrance_type_frame)
+        self.calc_1_entrance_to_box = QComboBox(self.calc_entrance_type_frame)
         self.calc_1_entrance_to_box.setMinimumSize(QtCore.QSize(258, 48))
         self.calc_1_entrance_to_box.setMaximumSize(QtCore.QSize(258, 48))
         self.calc_1_entrance_to_box.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -2757,7 +2758,7 @@ class Ui_MainWindow(object):
         self.profile_name_input.setMaximumSize(QtCore.QSize(395, 48))
         self.profile_name_input.setObjectName("profile_name_input")
         self.profile_name_layout.addWidget(self.profile_name_input, 1, 0, 1, 1)
-        self.role_combobox = QtWidgets.QComboBox(self.profile_name_frame)
+        self.role_combobox = QComboBox(self.profile_name_frame)
         self.role_combobox.setMinimumSize(QtCore.QSize(395, 48))
         self.role_combobox.setMaximumSize(QtCore.QSize(395, 48))
         self.role_combobox.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
