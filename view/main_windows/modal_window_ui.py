@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from view.custom_widgets.combo_box import QComboBox
 
 
 class Ui_dialog(object):
@@ -529,7 +530,7 @@ class Ui_dialog(object):
         self.asset_type_label.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.asset_type_label.setObjectName("asset_type_label")
         self.asset_main_layout.addWidget(self.asset_type_label)
-        self.asset_type_combobox = QtWidgets.QComboBox(self.asset_main_frame)
+        self.asset_type_combobox = QComboBox(self.asset_main_frame)
         self.asset_type_combobox.setMinimumSize(QtCore.QSize(540, 48))
         self.asset_type_combobox.setMaximumSize(QtCore.QSize(540, 48))
         self.asset_type_combobox.setObjectName("asset_type_combobox")
@@ -845,7 +846,7 @@ class Ui_dialog(object):
         self.inventory_preset_list_label.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignVCenter)
         self.inventory_preset_list_label.setObjectName("inventory_preset_list_label")
         self.inventory_preset_main_layout.addWidget(self.inventory_preset_list_label)
-        self.inventory_preset_combobox = QtWidgets.QComboBox(self.inventory_preset_main_frame)
+        self.inventory_preset_combobox = QComboBox(self.inventory_preset_main_frame)
         self.inventory_preset_combobox.setMinimumSize(QtCore.QSize(540, 48))
         self.inventory_preset_combobox.setMaximumSize(QtCore.QSize(540, 48))
         self.inventory_preset_combobox.setObjectName("inventory_preset_combobox")
