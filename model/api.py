@@ -4,7 +4,7 @@ from model import authorization
 
 
 class Api:
-    _domain = "http://127.0.0.1:8080/"
+    _domain = "https://moving-calculator.herokuapp.com/"
     __instance = None
 
     def __new__(cls, *args, **kwargs):

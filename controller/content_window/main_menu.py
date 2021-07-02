@@ -9,7 +9,7 @@ class MainMenu(QWidget):
         self.main_window = main_window
         self.privilege = {}
         self._page_mapper = {
-            "user_management": lambda: self.change_menu_page(
+            "user management": lambda: self.change_menu_page(
                 lambda: self.main_window.ui.content_pages.setCurrentWidget(self.main_window.ui.user_management_page)
             ),
             "calculator": lambda: self.change_menu_page(
@@ -18,7 +18,7 @@ class MainMenu(QWidget):
             "equipment": lambda: self.change_menu_page(
                 lambda: self.main_window.ui.content_pages.setCurrentWidget(self.main_window.ui.equipment_page)
             ),
-            "configuration": lambda: self.change_menu_page(
+            "configurations": lambda: self.change_menu_page(
                 lambda: self.main_window.ui.content_pages.setCurrentWidget(self.main_window.ui.config_page)
             ),
             "inventory": lambda: self.change_menu_page(

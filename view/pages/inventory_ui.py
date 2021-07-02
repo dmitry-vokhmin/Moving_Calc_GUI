@@ -13,6 +13,22 @@ class InventoryUi:
     def __init__(self, main_window):
         self.main_window = main_window
         self.image_dict = {}
+        self.room_images = {
+            "All": ":/image/box.svg",
+            "Bedroom": ":/image/bed.svg",
+            "Kitchen": ":/image/kitchen.svg",
+            "Studio": ":/image/studio.svg",
+            "Living Room": ":/image/living_room.svg",
+            "Dining Room": ":/image/dining_room.svg",
+            "Office": ":/image/office.svg",
+            "Extra Rooms": ":/image/extra.svg",
+            "Basement": ":/image/basement.svg",
+            "Garage": ":/image/garage.svg",
+            "Patio": ":/image/grill.svg",
+            "Play Room": ":/image/playroom.svg",
+            "Other": ":/image/other.svg",
+            "Custom Room": ":/image/custom.svg",
+        }
 
     def set_left_menu(self, frame, funk, data, add_funk, del_funk, is_preset_menu):
         self.main_window.delete_layout(frame.layout())
@@ -35,10 +51,9 @@ class InventoryUi:
                                                     del_funk, add_funk, True))
             else:
                 room_menu_butt.setText(room["rooms"]["name"].title().replace("_", " "))
-                data = urlopen(room["rooms"]["image"]).read()
-                pixmap = QPixmap()
-                pixmap.loadFromData(data)
-                room_menu_butt.setIcon(QIcon(pixmap))
+                room_menu_butt.setIcon(QIcon(self.room_images.get(room["rooms"]["name"],
+                                                                  ":/image/inventory_preset_image.svg"))
+                                       )
                 room_menu_butt.clicked.connect(funk(room["room_id"], room["id"], room_menu_butt, del_funk, add_funk))
                 self.main_window.ui.inventory_search_clear.setVisible(False)
 
@@ -94,10 +109,16 @@ class InventoryUi:
             instance,
     ):
         self.main_window.delete_layout(frame.layout())
-        inventory_content_clear_layout = QGridLayout(frame)
-        inventory_content_clear_layout.setContentsMargins(0, 0, 0, 0)
-        inventory_content_clear_layout.setSpacing(8)
-        inventory_content_clear_layout.setAlignment(Qt.AlignLeft)
+        if is_preset_menu:
+            inventory_content_clear_layout = FlowLayout(frame)
+            inventory_content_clear_layout.setContentsMargins(0, 0, 0, 0)
+            inventory_content_clear_layout.setSpacing(8)
+            inventory_content_clear_layout.setAlignment(Qt.AlignLeft | Qt.AlignTop)
+        else:
+            inventory_content_clear_layout = QGridLayout(frame)
+            inventory_content_clear_layout.setContentsMargins(0, 0, 0, 0)
+            inventory_content_clear_layout.setSpacing(8)
+            inventory_content_clear_layout.setAlignment(Qt.AlignLeft | Qt.AlignTop)
         row = 0
         colm = -1
         for inventory in inventories:
@@ -132,9 +153,10 @@ class InventoryUi:
 
     def create_preset_inventory_cards(self, move_size_id, preset_inventory, del_funk, count_funk, instance):
         self.main_window.delete_layout(self.main_window.ui.calc_inv_content_clear_frame.layout())
-        inventory_content_clear_layout = QGridLayout(self.main_window.ui.calc_inv_content_clear_frame)
+        inventory_content_clear_layout = FlowLayout(self.main_window.ui.calc_inv_content_clear_frame)
         inventory_content_clear_layout.setContentsMargins(0, 0, 0, 0)
         inventory_content_clear_layout.setSpacing(8)
+        inventory_content_clear_layout.setAlignment(Qt.AlignLeft | Qt.AlignTop)
         row = 0
         colm = -1
         for inventory in preset_inventory[move_size_id]["inventory"]:
@@ -166,6 +188,7 @@ class InventoryUi:
                                       "}")
         card_main_frame.setFrameShape(QFrame.NoFrame)
         card_main_frame.setFrameShadow(QFrame.Raised)
+        setattr(card_main_frame, "item_name", inventory["inventories"]["name"])
         card_main_frame.setObjectName("card_main_frame")
         card_main_layout = QVBoxLayout(card_main_frame)
         card_main_layout.setContentsMargins(15, 15, 15, 15)
@@ -179,7 +202,7 @@ class InventoryUi:
         item_image = QLabel(inner_frame)
         item_image.setMinimumSize(QSize(50, 50))
         item_image.setMaximumSize(QSize(50, 50))
-        inv_image = self.get_inv_image(inventory["image"])
+        inv_image = self.get_inv_image(inventory["inventories"]["image"])
         item_image.setStyleSheet(f"image: url({inv_image});")
         item_image.setScaledContents(True)
         inner_layout.addWidget(item_image)
@@ -238,7 +261,7 @@ class InventoryUi:
                 )
             )
         delete_item_butt.installEventFilter(instance)
-        layout.addWidget(card_main_frame, row, colm)
+        layout.addWidget(card_main_frame)
 
     def set_room_card(self, inventory, colm, row, layout, frame, add_funk, instance):
         card_main_frame = QFrame(frame)
@@ -456,10 +479,10 @@ class InventoryUi:
                 image_data = urlopen(image_url).read()
                 regex = re.compile("(?<=.inventory.)(.*)")
                 image_path = re.findall(regex, image_url)[0]
-                image_file_path = Path(__file__).parent.parent.joinpath("resources/inv_images")
+                image_file_path = Path(__file__).parent.parent.joinpath("lib/inv_images")
                 image_file_path_save = image_file_path.joinpath(image_path)
                 image_file_path_save.write_bytes(image_data)
-                image = f"resources/inv_images/{image_path}"
+                image = f"lib/inv_images/{image_path}"
                 self.image_dict[image_url[image_url.find("/images/"):]] = image
             except HTTPError:
                 image = ":/image/custom_item_icon.svg"

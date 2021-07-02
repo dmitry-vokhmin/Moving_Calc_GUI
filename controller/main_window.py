@@ -116,7 +116,7 @@ class MainWindow(QMainWindow):
         api_end_point = end_point()
         response_code, response_data = api_end_point.get()
         if response_code > 399:
-            self.main_window.modal_window.show_notification_page(description=response_data, is_error=True)
+            self.modal_window.show_notification_page(description=response_data, is_error=True)
         else:
             return response_data
 
@@ -196,11 +196,11 @@ class MainWindow(QMainWindow):
         return False
 
     def read_inv_images(self):
-        json_path = Path(__file__).parent.parent.joinpath("resources/images.json")
+        json_path = Path(__file__).parent.parent.joinpath("inv_images/images.json")
         with open(json_path, "r") as json_images:
             self.inventory_ui.image_dict = json.load(json_images)
 
     def write_inv_images(self):
-        json_path = Path(__file__).parent.parent.joinpath("resources/images.json")
+        json_path = Path(__file__).parent.parent.joinpath("inv_images/images.json")
         with open(json_path, "w") as json_images:
             json.dump(self.inventory_ui.image_dict, json_images)

@@ -9,13 +9,12 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from view.custom_widgets.combo_box import QComboBox
 
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1370, 850)
+        MainWindow.resize(1372, 854)
         MainWindow.setMinimumSize(QtCore.QSize(1366, 768))
         MainWindow.setStyleSheet("/* VERTICAL SCROLLBAR */\n"
                                  " QScrollBar:vertical {\n"
@@ -46,8 +45,10 @@ class Ui_MainWindow(object):
                                  "/* horizontal SCROLLBAR */\n"
                                  " QScrollBar:horizontal {\n"
                                  "    border: none;\n"
-                                 "    height: 10px;\n"
+                                 "    height: 25px;\n"
                                  "    border-radius: 0px;\n"
+                                 "    margin-top: 10px;"
+                                 "    margin-bottom: 5px;"
                                  " }\n"
                                  "\n"
                                  "/*  HANDLE BAR horizontal */\n"
@@ -1580,7 +1581,7 @@ class Ui_MainWindow(object):
                                           "/* ----------------------------Inventory----------------------------*/\n"
                                           "\n"
                                           "/* QLineEdit */\n"
-                                          "#inventory_search_input {\n"
+                                          "#inventory_search_input, #inventory_search_input_2 {\n"
                                           "    border: none;\n"
                                           "    background: transparent;\n"
                                           "    font-size: 14px;\n"
@@ -1596,7 +1597,7 @@ class Ui_MainWindow(object):
                                           "/* QFrame */\n"
                                           "\n"
                                           "\n"
-                                          "#inventory_search_frame[selected=true] {\n"
+                                          "#inventory_search_frame[selected=true], #inventory_search_frame_2[selected=true] {\n"
                                           "    border: 0.5px solid #0915CC;\n"
                                           "    background: #F2F3F6;\n"
                                           "    border-radius: 5px;\n"
@@ -1619,7 +1620,7 @@ class Ui_MainWindow(object):
                                           "    background-color: rgb(255, 255, 255);\n"
                                           "}\n"
                                           "\n"
-                                          "#inventory_search_frame {\n"
+                                          "#inventory_search_frame, #inventory_search_frame_2 {\n"
                                           "    background: #F2F3F6;\n"
                                           "    border-radius: 5px;\n"
                                           "}\n"
@@ -1660,14 +1661,14 @@ class Ui_MainWindow(object):
                                           "    color: #FF3C2F;\n"
                                           "}\n"
                                           "\n"
-                                          "#inventory_search_clear {\n"
+                                          "#inventory_search_clear, #inventory_search_clear_2 {\n"
                                           "    image: url(:/image/close_icon.svg);\n"
                                           "    background: transparent;\n"
                                           "}\n"
                                           "\n"
                                           "/* Icon */\n"
                                           "\n"
-                                          "#inventory_search_label {\n"
+                                          "#inventory_search_label, #inventory_search_label_2 {\n"
                                           "    image: url(:/image/search_icon_default.svg);\n"
                                           "}")
         self.content_window.setObjectName("content_window")
@@ -1982,7 +1983,7 @@ class Ui_MainWindow(object):
         self.config_start_date_layout_2.addWidget(self.calc_start_date_edit)
         self.config_start_date_layout_2.setStretch(1, 1)
         self.calc_move_date_type_layout.addWidget(self.calc_date_frame, 1, 0, 1, 1)
-        self.calc_sevice_type = QComboBox(self.calc_move_date_type_frame)
+        self.calc_sevice_type = QtWidgets.QComboBox(self.calc_move_date_type_frame)
         self.calc_sevice_type.setMinimumSize(QtCore.QSize(258, 48))
         self.calc_sevice_type.setMaximumSize(QtCore.QSize(258, 48))
         self.calc_sevice_type.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -2031,7 +2032,7 @@ class Ui_MainWindow(object):
         self.calc_1_move_size_label = QtWidgets.QLabel(self.calc_move_size_frame)
         self.calc_1_move_size_label.setObjectName("calc_1_move_size_label")
         self.calc_move_size_layout.addWidget(self.calc_1_move_size_label)
-        self.calc_1_move_size_box = QComboBox(self.calc_move_size_frame)
+        self.calc_1_move_size_box = QtWidgets.QComboBox(self.calc_move_size_frame)
         self.calc_1_move_size_box.setMinimumSize(QtCore.QSize(526, 48))
         self.calc_1_move_size_box.setMaximumSize(QtCore.QSize(526, 48))
         self.calc_1_move_size_box.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -2062,7 +2063,7 @@ class Ui_MainWindow(object):
         self.calc_entrance_type_layout.setHorizontalSpacing(10)
         self.calc_entrance_type_layout.setVerticalSpacing(5)
         self.calc_entrance_type_layout.setObjectName("calc_entrance_type_layout")
-        self.calc_1_entrance_from_box = QComboBox(self.calc_entrance_type_frame)
+        self.calc_1_entrance_from_box = QtWidgets.QComboBox(self.calc_entrance_type_frame)
         self.calc_1_entrance_from_box.setMinimumSize(QtCore.QSize(258, 48))
         self.calc_1_entrance_from_box.setMaximumSize(QtCore.QSize(258, 48))
         self.calc_1_entrance_from_box.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -2074,7 +2075,7 @@ class Ui_MainWindow(object):
         self.calc_1_entrance_to_label = QtWidgets.QLabel(self.calc_entrance_type_frame)
         self.calc_1_entrance_to_label.setObjectName("calc_1_entrance_to_label")
         self.calc_entrance_type_layout.addWidget(self.calc_1_entrance_to_label, 0, 1, 1, 1)
-        self.calc_1_entrance_to_box = QComboBox(self.calc_entrance_type_frame)
+        self.calc_1_entrance_to_box = QtWidgets.QComboBox(self.calc_entrance_type_frame)
         self.calc_1_entrance_to_box.setMinimumSize(QtCore.QSize(258, 48))
         self.calc_1_entrance_to_box.setMaximumSize(QtCore.QSize(258, 48))
         self.calc_1_entrance_to_box.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -2094,7 +2095,7 @@ class Ui_MainWindow(object):
         self.calc_inv_check_top_frame = QtWidgets.QFrame(self.calc_invnetory_check_page)
         self.calc_inv_check_top_frame.setObjectName("calc_inv_check_top_frame")
         self.calc_inv_check_top_layout = QtWidgets.QHBoxLayout(self.calc_inv_check_top_frame)
-        self.calc_inv_check_top_layout.setContentsMargins(0, 0, 0, 0)
+        self.calc_inv_check_top_layout.setContentsMargins(0, 0, 31, 0)
         self.calc_inv_check_top_layout.setSpacing(129)
         self.calc_inv_check_top_layout.setObjectName("calc_inv_check_top_layout")
         self.calc_inv_check_header = QtWidgets.QLabel(self.calc_inv_check_top_frame)
@@ -2146,9 +2147,32 @@ class Ui_MainWindow(object):
         self.calc_preset_choose_layout.addWidget(self.calc_preset_choose_line)
         self.calc_preset_choose_layout.setStretch(0, 2)
         self.calc_inv_check_menu_layout.addWidget(self.calc_preset_choose_frame)
-        self.calc_inv_check_top_layout.addWidget(self.calc_inv_check_menu_frame)
-        self.calc_invnetory_check_layout.addWidget(self.calc_inv_check_top_frame, 0,
-                                                   QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
+        self.calc_inv_check_top_layout.addWidget(self.calc_inv_check_menu_frame, 0, QtCore.Qt.AlignLeft)
+        self.inventory_search_frame_2 = QtWidgets.QFrame(self.calc_inv_check_top_frame)
+        self.inventory_search_frame_2.setMinimumSize(QtCore.QSize(314, 44))
+        self.inventory_search_frame_2.setMaximumSize(QtCore.QSize(314, 44))
+        self.inventory_search_frame_2.setObjectName("inventory_search_frame_2")
+        self.inventory_search_layout_2 = QtWidgets.QHBoxLayout(self.inventory_search_frame_2)
+        self.inventory_search_layout_2.setContentsMargins(13, 0, 13, 0)
+        self.inventory_search_layout_2.setSpacing(12)
+        self.inventory_search_layout_2.setObjectName("inventory_search_layout_2")
+        self.inventory_search_label_2 = QtWidgets.QLabel(self.inventory_search_frame_2)
+        self.inventory_search_label_2.setMinimumSize(QtCore.QSize(24, 24))
+        self.inventory_search_label_2.setMaximumSize(QtCore.QSize(24, 24))
+        self.inventory_search_label_2.setObjectName("inventory_search_label_2")
+        self.inventory_search_layout_2.addWidget(self.inventory_search_label_2)
+        self.inventory_search_input_2 = QtWidgets.QLineEdit(self.inventory_search_frame_2)
+        self.inventory_search_input_2.setObjectName("inventory_search_input_2")
+        self.inventory_search_layout_2.addWidget(self.inventory_search_input_2)
+        self.inventory_search_clear_2 = QtWidgets.QPushButton(self.inventory_search_frame_2)
+        self.inventory_search_clear_2.setMinimumSize(QtCore.QSize(12, 12))
+        self.inventory_search_clear_2.setMaximumSize(QtCore.QSize(12, 12))
+        self.inventory_search_clear_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.inventory_search_clear_2.setObjectName("inventory_search_clear_2")
+        self.inventory_search_layout_2.addWidget(self.inventory_search_clear_2)
+        self.calc_inv_check_top_layout.addWidget(self.inventory_search_frame_2)
+        self.calc_inv_check_top_layout.setStretch(1, 1)
+        self.calc_invnetory_check_layout.addWidget(self.calc_inv_check_top_frame, 0, QtCore.Qt.AlignTop)
         self.calc_inv_bottom_frame = QtWidgets.QFrame(self.calc_invnetory_check_page)
         self.calc_inv_bottom_frame.setObjectName("calc_inv_bottom_frame")
         self.calc_inv_bottom_layout = QtWidgets.QHBoxLayout(self.calc_inv_bottom_frame)
@@ -2211,7 +2235,7 @@ class Ui_MainWindow(object):
         self.calc_preset_scrollarea.setWidgetResizable(True)
         self.calc_preset_scrollarea.setObjectName("calc_preset_scrollarea")
         self.calc_preset_frame = QtWidgets.QWidget()
-        self.calc_preset_frame.setGeometry(QtCore.QRect(0, 0, 217, 30))
+        self.calc_preset_frame.setGeometry(QtCore.QRect(0, 0, 217, 556))
         self.calc_preset_frame.setObjectName("calc_preset_frame")
         self.calc_preset_layout_2 = QtWidgets.QVBoxLayout(self.calc_preset_frame)
         self.calc_preset_layout_2.setContentsMargins(0, 0, 0, 0)
@@ -2265,7 +2289,7 @@ class Ui_MainWindow(object):
         self.calc_inv_content_scrollarea.setWidgetResizable(True)
         self.calc_inv_content_scrollarea.setObjectName("calc_inv_content_scrollarea")
         self.calc_inv_content_scroll_frame = QtWidgets.QWidget()
-        self.calc_inv_content_scroll_frame.setGeometry(QtCore.QRect(0, 0, 100, 30))
+        self.calc_inv_content_scroll_frame.setGeometry(QtCore.QRect(0, 0, 999, 434))
         self.calc_inv_content_scroll_frame.setObjectName("calc_inv_content_scroll_frame")
         self.calc_inv_content_scroll_layout = QtWidgets.QVBoxLayout(self.calc_inv_content_scroll_frame)
         self.calc_inv_content_scroll_layout.setContentsMargins(0, 0, 0, 0)
@@ -2698,7 +2722,7 @@ class Ui_MainWindow(object):
         self.profile_top_name_layout.addWidget(self.profile_user_name)
         self.profile_role_label = QtWidgets.QLabel(self.profile_top_name_frame)
         self.profile_role_label.setMinimumSize(QtCore.QSize(58, 26))
-        self.profile_role_label.setMaximumSize(QtCore.QSize(58, 26))
+        self.profile_role_label.setMaximumSize(QtCore.QSize(200, 26))
         self.profile_role_label.setAlignment(QtCore.Qt.AlignCenter)
         self.profile_role_label.setObjectName("profile_role_label")
         self.profile_top_name_layout.addWidget(self.profile_role_label)
@@ -2758,7 +2782,7 @@ class Ui_MainWindow(object):
         self.profile_name_input.setMaximumSize(QtCore.QSize(395, 48))
         self.profile_name_input.setObjectName("profile_name_input")
         self.profile_name_layout.addWidget(self.profile_name_input, 1, 0, 1, 1)
-        self.role_combobox = QComboBox(self.profile_name_frame)
+        self.role_combobox = QtWidgets.QComboBox(self.profile_name_frame)
         self.role_combobox.setMinimumSize(QtCore.QSize(395, 48))
         self.role_combobox.setMaximumSize(QtCore.QSize(395, 48))
         self.role_combobox.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -3087,7 +3111,7 @@ class Ui_MainWindow(object):
         self.user_manage_scroll_area.setWidgetResizable(True)
         self.user_manage_scroll_area.setObjectName("user_manage_scroll_area")
         self.user_manage_scroll_widget = QtWidgets.QWidget()
-        self.user_manage_scroll_widget.setGeometry(QtCore.QRect(0, 0, 1310, 562))
+        self.user_manage_scroll_widget.setGeometry(QtCore.QRect(0, 0, 1312, 566))
         self.user_manage_scroll_widget.setObjectName("user_manage_scroll_widget")
         self.user_manage_scroll_layout = QtWidgets.QVBoxLayout(self.user_manage_scroll_widget)
         self.user_manage_scroll_layout.setContentsMargins(0, 0, 0, 0)
@@ -3246,7 +3270,7 @@ class Ui_MainWindow(object):
         self.equip_truck_type_scrollarea.setWidgetResizable(True)
         self.equip_truck_type_scrollarea.setObjectName("equip_truck_type_scrollarea")
         self.equip_truck_type_scroll_widget = QtWidgets.QWidget()
-        self.equip_truck_type_scroll_widget.setGeometry(QtCore.QRect(0, 0, 1370, 602))
+        self.equip_truck_type_scroll_widget.setGeometry(QtCore.QRect(0, 0, 1372, 606))
         self.equip_truck_type_scroll_widget.setObjectName("equip_truck_type_scroll_widget")
         self.equip_truck_type_scroll_layout = QtWidgets.QVBoxLayout(self.equip_truck_type_scroll_widget)
         self.equip_truck_type_scroll_layout.setContentsMargins(30, 10, 15, 0)
@@ -3472,7 +3496,7 @@ class Ui_MainWindow(object):
         self.config_scroll_area.setWidgetResizable(True)
         self.config_scroll_area.setObjectName("config_scroll_area")
         self.config_scroll_widget = QtWidgets.QWidget()
-        self.config_scroll_widget.setGeometry(QtCore.QRect(0, 0, 838, 63))
+        self.config_scroll_widget.setGeometry(QtCore.QRect(0, 0, 840, 63))
         self.config_scroll_widget.setObjectName("config_scroll_widget")
         self.config_scroll_layout = QtWidgets.QVBoxLayout(self.config_scroll_widget)
         self.config_scroll_layout.setContentsMargins(0, 0, 0, 0)
@@ -3710,7 +3734,7 @@ class Ui_MainWindow(object):
         self.inventory_bottom_frame = QtWidgets.QFrame(self.inventory_page)
         self.inventory_bottom_frame.setObjectName("inventory_bottom_frame")
         self.inventory_bottom_layout = QtWidgets.QHBoxLayout(self.inventory_bottom_frame)
-        self.inventory_bottom_layout.setContentsMargins(0, 0, 46, 0)
+        self.inventory_bottom_layout.setContentsMargins(0, 0, 49, 0)
         self.inventory_bottom_layout.setSpacing(50)
         self.inventory_bottom_layout.setObjectName("inventory_bottom_layout")
         self.inventory_size_menu = QtWidgets.QStackedWidget(self.inventory_bottom_frame)
@@ -3729,7 +3753,7 @@ class Ui_MainWindow(object):
         self.inventory_room_scrollarea.setWidgetResizable(True)
         self.inventory_room_scrollarea.setObjectName("inventory_room_scrollarea")
         self.inventory_room_frame = QtWidgets.QWidget()
-        self.inventory_room_frame.setGeometry(QtCore.QRect(0, 0, 217, 570))
+        self.inventory_room_frame.setGeometry(QtCore.QRect(0, 0, 217, 574))
         self.inventory_room_frame.setObjectName("inventory_room_frame")
         self.inventory_room_layout_2 = QtWidgets.QVBoxLayout(self.inventory_room_frame)
         self.inventory_room_layout_2.setContentsMargins(0, 0, 0, 0)
@@ -3820,7 +3844,7 @@ class Ui_MainWindow(object):
         self.inventory_content_scrollarea.setWidgetResizable(True)
         self.inventory_content_scrollarea.setObjectName("inventory_content_scrollarea")
         self.inventory_content_scroll_frame = QtWidgets.QWidget()
-        self.inventory_content_scroll_frame.setGeometry(QtCore.QRect(0, 0, 994, 448))
+        self.inventory_content_scroll_frame.setGeometry(QtCore.QRect(0, 0, 996, 452))
         self.inventory_content_scroll_frame.setObjectName("inventory_content_scroll_frame")
         self.inventory_content_scroll_layout = QtWidgets.QVBoxLayout(self.inventory_content_scroll_frame)
         self.inventory_content_scroll_layout.setContentsMargins(0, 0, 0, 0)
@@ -3846,14 +3870,14 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.window_pages.setCurrentIndex(1)
-        self.login_pages.setCurrentIndex(1)
-        self.content_pages.setCurrentIndex(5)
+        self.window_pages.setCurrentIndex(0)
+        self.login_pages.setCurrentIndex(0)
+        self.content_pages.setCurrentIndex(0)
         self.calc_menu_pages.setCurrentIndex(0)
-        self.calc_size_menu.setCurrentIndex(1)
-        self.calc_result_pages.setCurrentIndex(1)
-        self.equip_truck_pages.setCurrentIndex(1)
-        self.config_pages.setCurrentIndex(1)
+        self.calc_size_menu.setCurrentIndex(0)
+        self.calc_result_pages.setCurrentIndex(0)
+        self.equip_truck_pages.setCurrentIndex(0)
+        self.config_pages.setCurrentIndex(0)
         self.inventory_size_menu.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
@@ -3983,6 +4007,7 @@ class Ui_MainWindow(object):
         self.calc_inv_check_header.setText(_translate("MainWindow", "Inventory Check"))
         self.calc_all_menu_butt.setText(_translate("MainWindow", "All Inventory"))
         self.calc_preset_choose_butt.setText(_translate("MainWindow", "Inventory Presets"))
+        self.inventory_search_input_2.setPlaceholderText(_translate("MainWindow", "Search..."))
         self.calc_inv_categor_label.setText(_translate("MainWindow", "Categories:"))
         self.calc_result_header.setText(_translate("MainWindow", "Calculation Results"))
         self.calc_result_crew_size_label.setText(_translate("MainWindow", "Crew Size:"))
