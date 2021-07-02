@@ -69,5 +69,19 @@
     <file alias="calculator_move_size_icon.svg">image/calculator_move_size_icon.svg</file>
     <file alias="calculator_entrance_icon.svg">image/calculator_entrance_icon.svg</file>
     <file alias="calculator_calendar_icon.svg">image/calculator_calendar_icon.svg</file>
+    <file alias="box.svg">image/box.svg</file>
+    <file alias="bed.svg">image/bed.svg</file>
+    <file alias="basement.svg">image/basement.svg</file>
+    <file alias="custom.svg">image/custom.svg</file>
+    <file alias="dining_room.svg">image/dining_room.svg</file>
+    <file alias="extra.svg">image/extra.svg</file>
+    <file alias="garage.svg">image/garage.svg</file>
+    <file alias="grill.svg">image/grill.svg</file>
+    <file alias="kitchen.svg">image/kitchen.svg</file>
+    <file alias="living_room.svg">image/living_room.svg</file>
+    <file alias="office.svg">image/office.svg</file>
+    <file alias="other.svg">image/other.svg</file>
+    <file alias="playroom.svg">image/playroom.svg</file>
+    <file alias="studio.svg">image/studio.svg</file>
   </qresource>
 </RCC>

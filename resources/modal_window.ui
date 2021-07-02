@@ -301,7 +301,7 @@ background: rgba(255, 60, 47, 0.8);
       <item>
        <widget class="QStackedWidget" name="pages">
         <property name="currentIndex">
-         <number>0</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="add_user_page">
          <layout class="QVBoxLayout" name="add_user_layout">
@@ -802,6 +802,9 @@ background: rgba(255, 60, 47, 0.8);
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
                </property>
               </widget>
              </item>

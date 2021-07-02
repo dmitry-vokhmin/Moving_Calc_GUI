@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1370</width>
-    <height>850</height>
+    <width>1372</width>
+    <height>854</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -49,8 +49,10 @@ QScrollBar::add-line:vertical {
 /* horizontal SCROLLBAR */
  QScrollBar:horizontal {
 	border: none;
-    height: 10px;
+    height: 25px;
 	border-radius: 0px;
+	margin-top: 10px;
+	margin-bottom: 5px;
  }
 
 /*  HANDLE BAR horizontal */
@@ -2859,7 +2861,7 @@ background: rgba(9, 21, 204, 0.8);
 /* ----------------------------Inventory----------------------------*/
 
 /* QLineEdit */
-#inventory_search_input {
+#inventory_search_input, #inventory_search_input_2 {
 	border: none;
 	background: transparent;
 	font-size: 14px;
@@ -2875,7 +2877,7 @@ background: rgba(9, 21, 204, 0.8);
 /* QFrame */
 
 
-#inventory_search_frame[selected=true] {
+#inventory_search_frame[selected=true], #inventory_search_frame_2[selected=true] {
 	border: 0.5px solid #0915CC;
 	background: #F2F3F6;
 	border-radius: 5px;
@@ -2898,7 +2900,7 @@ background: rgba(9, 21, 204, 0.8);
 	background-color: rgb(255, 255, 255);
 }
 
-#inventory_search_frame {
+#inventory_search_frame, #inventory_search_frame_2 {
 	background: #F2F3F6;
 	border-radius: 5px;
 }
@@ -2939,14 +2941,14 @@ background: rgba(9, 21, 204, 0.8);
 	color: #FF3C2F;
 }
 
-#inventory_search_clear {
+#inventory_search_clear, #inventory_search_clear_2 {
 	image: url(:/image/close_icon.svg);
 	background: transparent;
 }
 
 /* Icon */
 
-#inventory_search_label {
+#inventory_search_label, #inventory_search_label_2 {
 	image: url(:/image/search_icon_default.svg);
 }</string>
        </property>
@@ -3106,7 +3108,7 @@ background: rgba(9, 21, 204, 0.8);
               </font>
              </property>
              <property name="currentIndex">
-              <number>5</number>
+              <number>0</number>
              </property>
              <widget class="QWidget" name="calculator_page">
               <layout class="QVBoxLayout" name="calculator_layout">
@@ -4177,9 +4179,9 @@ color: #070808;</string>
                       <property name="bottomMargin">
                        <number>0</number>
                       </property>
-                      <item alignment="Qt::AlignLeft|Qt::AlignTop">
+                      <item alignment="Qt::AlignTop">
                        <widget class="QFrame" name="calc_inv_check_top_frame">
-                        <layout class="QHBoxLayout" name="calc_inv_check_top_layout">
+                        <layout class="QHBoxLayout" name="calc_inv_check_top_layout" stretch="0,1,0">
                          <property name="spacing">
                           <number>129</number>
                          </property>
@@ -4190,7 +4192,7 @@ color: #070808;</string>
                           <number>0</number>
                          </property>
                          <property name="rightMargin">
-                          <number>0</number>
+                          <number>31</number>
                          </property>
                          <property name="bottomMargin">
                           <number>0</number>
@@ -4202,7 +4204,7 @@ color: #070808;</string>
                            </property>
                           </widget>
                          </item>
-                         <item>
+                         <item alignment="Qt::AlignLeft">
                           <widget class="QFrame" name="calc_inv_check_menu_frame">
                            <property name="minimumSize">
                             <size>
@@ -4341,6 +4343,81 @@ color: #070808;</string>
                            </layout>
                           </widget>
                          </item>
+                         <item>
+                          <widget class="QFrame" name="inventory_search_frame_2">
+                           <property name="minimumSize">
+                            <size>
+                             <width>314</width>
+                             <height>44</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>314</width>
+                             <height>44</height>
+                            </size>
+                           </property>
+                           <layout class="QHBoxLayout" name="inventory_search_layout_2">
+                            <property name="spacing">
+                             <number>12</number>
+                            </property>
+                            <property name="leftMargin">
+                             <number>13</number>
+                            </property>
+                            <property name="topMargin">
+                             <number>0</number>
+                            </property>
+                            <property name="rightMargin">
+                             <number>13</number>
+                            </property>
+                            <property name="bottomMargin">
+                             <number>0</number>
+                            </property>
+                            <item>
+                             <widget class="QLabel" name="inventory_search_label_2">
+                              <property name="minimumSize">
+                               <size>
+                                <width>24</width>
+                                <height>24</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>24</width>
+                                <height>24</height>
+                               </size>
+                              </property>
+                             </widget>
+                            </item>
+                            <item>
+                             <widget class="QLineEdit" name="inventory_search_input_2">
+                              <property name="placeholderText">
+                               <string>Search...</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item>
+                             <widget class="QPushButton" name="inventory_search_clear_2">
+                              <property name="minimumSize">
+                               <size>
+                                <width>12</width>
+                                <height>12</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>12</width>
+                                <height>12</height>
+                               </size>
+                              </property>
+                              <property name="cursor">
+                               <cursorShape>PointingHandCursor</cursorShape>
+                              </property>
+                             </widget>
+                            </item>
+                           </layout>
+                          </widget>
+                         </item>
                         </layout>
                        </widget>
                       </item>
@@ -4365,7 +4442,7 @@ color: #070808;</string>
                          <item>
                           <widget class="QStackedWidget" name="calc_size_menu">
                            <property name="currentIndex">
-                            <number>1</number>
+                            <number>0</number>
                            </property>
                            <widget class="QWidget" name="calc_room_page">
                             <layout class="QVBoxLayout" name="calc_room_layout">
@@ -4411,8 +4488,8 @@ color: #070808;</string>
                                  <rect>
                                   <x>0</x>
                                   <y>0</y>
-                                  <width>100</width>
-                                  <height>30</height>
+                                  <width>217</width>
+                                  <height>556</height>
                                  </rect>
                                 </property>
                                 <layout class="QVBoxLayout" name="calc_room_layout_2">
@@ -4680,7 +4757,7 @@ color: #070808;</string>
                                 <rect>
                                  <x>0</x>
                                  <y>0</y>
-                                 <width>997</width>
+                                 <width>999</width>
                                  <height>434</height>
                                 </rect>
                                </property>
@@ -5711,7 +5788,7 @@ color: #FF3C2F;</string>
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>1305</width>
+                    <width>1000</width>
                     <height>1231</height>
                    </rect>
                   </property>
@@ -5846,7 +5923,7 @@ color: #FF3C2F;</string>
                               </property>
                               <property name="maximumSize">
                                <size>
-                                <width>58</width>
+                                <width>200</width>
                                 <height>26</height>
                                </size>
                               </property>
@@ -6954,8 +7031,8 @@ color: #FF3C2F;</string>
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>1310</width>
-                    <height>562</height>
+                    <width>100</width>
+                    <height>30</height>
                    </rect>
                   </property>
                   <layout class="QVBoxLayout" name="user_manage_scroll_layout">
@@ -7402,8 +7479,8 @@ color: #FF3C2F;</string>
                        <rect>
                         <x>0</x>
                         <y>0</y>
-                        <width>1370</width>
-                        <height>602</height>
+                        <width>100</width>
+                        <height>30</height>
                        </rect>
                       </property>
                       <layout class="QVBoxLayout" name="equip_truck_type_scroll_layout">
@@ -8071,8 +8148,8 @@ color: #FF3C2F;</string>
                                 <rect>
                                  <x>0</x>
                                  <y>0</y>
-                                 <width>838</width>
-                                 <height>63</height>
+                                 <width>95</width>
+                                 <height>16</height>
                                 </rect>
                                </property>
                                <layout class="QVBoxLayout" name="config_scroll_layout">
@@ -8845,8 +8922,8 @@ color: #FF3C2F;</string>
                           <rect>
                            <x>0</x>
                            <y>0</y>
-                           <width>217</width>
-                           <height>570</height>
+                           <width>100</width>
+                           <height>30</height>
                           </rect>
                          </property>
                          <layout class="QVBoxLayout" name="inventory_room_layout_2">
@@ -9114,8 +9191,8 @@ color: #FF3C2F;</string>
                          <rect>
                           <x>0</x>
                           <y>0</y>
-                          <width>994</width>
-                          <height>448</height>
+                          <width>100</width>
+                          <height>30</height>
                          </rect>
                         </property>
                         <layout class="QVBoxLayout" name="inventory_content_scroll_layout">

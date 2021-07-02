@@ -424,6 +424,7 @@ class Ui_dialog(object):
         self.error_text = QtWidgets.QLabel(self.error_frame)
         self.error_text.setMinimumSize(QtCore.QSize(540, 0))
         self.error_text.setAlignment(QtCore.Qt.AlignCenter)
+        self.error_text.setWordWrap(True)
         self.error_text.setObjectName("error_text")
         self.error_layout.addWidget(self.error_text)
         self.error_bottom_frame = QtWidgets.QFrame(self.error_frame)

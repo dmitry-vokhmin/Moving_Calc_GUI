@@ -1,3 +1,4 @@
+import re
 from PyQt5.QtWidgets import QWidget, QPushButton, QFrame
 from PyQt5.QtCore import QEvent
 from controller.content_window.inventory import Inventory
@@ -22,6 +23,11 @@ class CalcInventoryCheckPage(QWidget):
             lambda: self.change_inside_page(False, self.main_window.ui.calc_preset_page,
                                             self.inventory.first_butt_preset)
         )
+        self.main_window.ui.inventory_search_input_2.textChanged.connect(self.search)
+        self.main_window.ui.inventory_search_clear_2.clicked.connect(
+            lambda: self.main_window.ui.inventory_search_input_2.setText("")
+        )
+        self.main_window.ui.inventory_search_input_2.installEventFilter(self)
 
     def add_item(self, inventory):
         def wrap():
@@ -103,9 +109,46 @@ class CalcInventoryCheckPage(QWidget):
         self.inventory.assign_buttons(self.main_window.ui.calc_room_menu_frame,
                                       self.main_window.ui.calc_preset_menu_frame)
 
+    def search(self, text):
+        text = text.lower()
+        if text:
+            self.main_window.ui.inventory_search_clear_2.setVisible(True)
+            self.main_window.ui.inventory_search_frame_2.setProperty("selected", True)
+            self.main_window.ui.inventory_search_frame_2.setStyle(self.main_window.ui.inventory_search_frame_2.style())
+            self.main_window.ui.inventory_search_label_2.setStyleSheet("image: url(:/image/search_icon_hover.svg)")
+        else:
+            self.main_window.ui.inventory_search_clear_2.setVisible(False)
+            self.main_window.ui.inventory_search_frame_2.setProperty("selected", False)
+            self.main_window.ui.inventory_search_frame_2.setStyle(self.main_window.ui.inventory_search_frame_2.style())
+            self.main_window.ui.inventory_search_label_2.setStyleSheet("image: url(:/image/search_icon_default.svg);")
+        cards = self.main_window.ui.calc_inv_content_clear_frame.findChildren(QFrame, "card_main_frame")
+        for card in cards:
+            item_text = getattr(card, "item_name")
+            if re.search(fr"\b{text}", item_text.lower()):
+                card.setVisible(True)
+            else:
+                card.setVisible(False)
+
     def eventFilter(self, obj, event) -> bool:
         if obj is self.main_window.ui.calc_invnetory_check_page:
             if event.type() == QEvent.Show and self.main_window.change_page_data:
                 self.change_inside_page(False, self.main_window.ui.calc_preset_page, self.inventory.first_butt_preset)
+                return True
+        if obj is self.main_window.ui.inventory_search_input_2:
+            if event.type() == QEvent.HoverEnter:
+                self.main_window.ui.inventory_search_frame_2.setProperty("selected", True)
+                self.main_window.ui.inventory_search_frame_2.setStyle(
+                    self.main_window.ui.inventory_search_frame_2.style()
+                )
+                self.main_window.ui.inventory_search_label_2.setStyleSheet(
+                    "image: url(:/image/search_icon_hover.svg)")
+                return True
+            if event.type() == QEvent.HoverLeave and not self.main_window.ui.inventory_search_input_2.text():
+                self.main_window.ui.inventory_search_frame_2.setProperty("selected", False)
+                self.main_window.ui.inventory_search_frame_2.setStyle(
+                    self.main_window.ui.inventory_search_frame_2.style()
+                )
+                self.main_window.ui.inventory_search_label_2.setStyleSheet(
+                    "image: url(:/image/search_icon_default.svg);")
                 return True
         return False
