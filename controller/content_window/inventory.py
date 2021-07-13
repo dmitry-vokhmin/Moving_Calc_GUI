@@ -12,6 +12,7 @@ class Inventory(QWidget):
         self.main_window = main_window
         self.category_frame = category_frame
         self.content_frame = content_frame
+        self.inventory = None
         self.all_menu_buttons = None
         self.preset_menu_buttons = None
         self.first_butt_all_inv = None
@@ -52,6 +53,7 @@ class Inventory(QWidget):
                                                             room_collection_id, del_funk, add_funk, self)
             self.get_inventory({"room_collection_id": room_collection_id}, button, del_funk, add_funk, False)()
             self.category_btn = {btn for btn in self.category_frame.findChildren(QPushButton)}
+
         return wrap
 
     def get_inventory(self, button_attribute, button, del_funk, add_funk, is_preset):
@@ -59,10 +61,10 @@ class Inventory(QWidget):
             if button:
                 self.select_menu_point(button, is_preset)
             if is_preset:
-                inventory = self.get_response(InventoryInventoryCollection, button_attribute)
+                self.inventory = self.get_response(InventoryInventoryCollection, button_attribute)
             else:
-                inventory = self.get_response(InventoryApi, button_attribute)
-            self.main_window.inventory_ui.set_room_inventory_card(inventory,
+                self.inventory = self.get_response(InventoryApi, button_attribute)
+            self.main_window.inventory_ui.set_room_inventory_card(self.inventory,
                                                                   del_funk,
                                                                   add_funk,
                                                                   is_preset,
@@ -70,6 +72,7 @@ class Inventory(QWidget):
                                                                   self)
             self.del_item_btn = {btn for btn in self.content_frame.findChildren(QPushButton, "delete")}
             self.add_item_btn = {btn for btn in self.content_frame.findChildren(QPushButton, "add")}
+
         return wrap
 
     def select_menu_point(self, button, is_preset):
@@ -83,12 +86,13 @@ class Inventory(QWidget):
             else:
                 menu_button.setChecked(False)
 
-    def categorize_inventory(self, button, del_funk, add_funk, category_id=None,):
+    def categorize_inventory(self, button, del_funk, add_funk, category_id=None, ):
         def wrap():
             room_collection_id = getattr(button, "room_collection_id")
             self.get_inventory({"room_collection_id": room_collection_id, "category_id": category_id}, None,
                                del_funk, add_funk, is_preset=False)()
             self.select_category_menu_point(button)
+
         return wrap
 
     def select_category_menu_point(self, button):
@@ -98,6 +102,15 @@ class Inventory(QWidget):
             else:
                 menu_button.setChecked(False)
                 menu_button.setIcon(QIcon(":/image/check_icon_default.svg"))
+
+    def sort_inventory(self, text, add_funk, del_funk=None):
+        sorted_inv = filter(lambda x: text in x["name"].lower(), self.inventory)
+        self.main_window.inventory_ui.set_room_inventory_card(sorted_inv,
+                                                              del_funk,
+                                                              add_funk,
+                                                              False,
+                                                              self.content_frame,
+                                                              self)
 
     def eventFilter(self, obj, event) -> bool:
         if obj in self.category_btn:

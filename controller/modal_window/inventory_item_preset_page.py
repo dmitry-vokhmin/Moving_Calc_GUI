@@ -32,7 +32,7 @@ class InventoryItemPresetPage(QDialog):
     def add_item_to_calc_preset(self):
         data = {
             "inventory_id": self.inventory["id"],
-            "count": self.main_modal_window.ui.inventory_preset_qty_input.text(),
+            "count": int(self.main_modal_window.ui.inventory_preset_qty_input.text()),
             "inventories": {
                 "name": self.inventory["name"],
                 "image": self.inventory["image"]

@@ -1,5 +1,5 @@
 import re
-from PyQt5.QtWidgets import QWidget, QFrame, QPushButton, QComboBox
+from PyQt5.QtWidgets import QWidget, QFrame, QPushButton, QComboBox, QGridLayout
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import QEvent
 from model.inventory.room_collection import RoomCollection
@@ -65,6 +65,7 @@ class InventoryPage(QWidget):
         return wrap
 
     def change_inside_page(self, is_all_inventory, page, button):
+        self.main_window.ui.inventory_search_input.setText("")
         self.main_window.inventory_page_ui.change_page_selector_style(is_all_inventory, button)
         self.main_window.ui.inventory_size_menu.setCurrentWidget(page)
 
@@ -130,13 +131,16 @@ class InventoryPage(QWidget):
             self.main_window.ui.inventory_search_frame.setProperty("selected", False)
             self.main_window.ui.inventory_search_frame.setStyle(self.main_window.ui.inventory_search_frame.style())
             self.main_window.ui.inventory_search_label.setStyleSheet("image: url(:/image/search_icon_default.svg);")
-        cards = self.main_window.ui.inventory_content_clear_frame.findChildren(QFrame, "card_main_frame")
-        for card in cards:
-            item_text = getattr(card, "item_name")
-            if re.search(fr"\b{text}", item_text.lower()):
-                card.setVisible(True)
-            else:
-                card.setVisible(False)
+        if self.main_window.ui.inventory_size_menu.currentWidget().objectName() == "inventory_preset_page":
+            cards = self.main_window.ui.inventory_content_clear_frame.findChildren(QFrame, "card_main_frame")
+            for card in cards:
+                item_text = getattr(card, "item_name")
+                if re.search(fr"\b{text}", item_text.lower()):
+                    card.setVisible(True)
+                else:
+                    card.setVisible(False)
+        else:
+            self.inventory.sort_inventory(text, self.add_item, self.del_item)
 
     def eventFilter(self, obj, event) -> bool:
         if obj is self.main_window.ui.inventory_page:

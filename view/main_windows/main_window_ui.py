@@ -47,8 +47,8 @@ class Ui_MainWindow(object):
                                  "    border: none;\n"
                                  "    height: 25px;\n"
                                  "    border-radius: 0px;\n"
-                                 "    margin-top: 10px;"
-                                 "    margin-bottom: 5px;"
+                                 "    margin-top: 10px;\n"
+                                 "    margin-bottom: 5px;\n"
                                  " }\n"
                                  "\n"
                                  "/*  HANDLE BAR horizontal */\n"
@@ -2198,7 +2198,7 @@ class Ui_MainWindow(object):
         self.calc_room_scrollarea.setWidgetResizable(True)
         self.calc_room_scrollarea.setObjectName("calc_room_scrollarea")
         self.calc_room_frame = QtWidgets.QWidget()
-        self.calc_room_frame.setGeometry(QtCore.QRect(0, 0, 100, 30))
+        self.calc_room_frame.setGeometry(QtCore.QRect(0, 0, 217, 556))
         self.calc_room_frame.setObjectName("calc_room_frame")
         self.calc_room_layout_2 = QtWidgets.QVBoxLayout(self.calc_room_frame)
         self.calc_room_layout_2.setContentsMargins(0, 0, 0, 0)
@@ -2678,7 +2678,7 @@ class Ui_MainWindow(object):
         self.profile_scroll_area.setWidgetResizable(True)
         self.profile_scroll_area.setObjectName("profile_scroll_area")
         self.profile_scroll_widget = QtWidgets.QWidget()
-        self.profile_scroll_widget.setGeometry(QtCore.QRect(0, 0, 1305, 1231))
+        self.profile_scroll_widget.setGeometry(QtCore.QRect(0, 0, 1000, 1231))
         self.profile_scroll_widget.setObjectName("profile_scroll_widget")
         self.profile_scroll_layout = QtWidgets.QVBoxLayout(self.profile_scroll_widget)
         self.profile_scroll_layout.setContentsMargins(0, 0, 0, 0)
@@ -3111,7 +3111,7 @@ class Ui_MainWindow(object):
         self.user_manage_scroll_area.setWidgetResizable(True)
         self.user_manage_scroll_area.setObjectName("user_manage_scroll_area")
         self.user_manage_scroll_widget = QtWidgets.QWidget()
-        self.user_manage_scroll_widget.setGeometry(QtCore.QRect(0, 0, 1312, 566))
+        self.user_manage_scroll_widget.setGeometry(QtCore.QRect(0, 0, 100, 30))
         self.user_manage_scroll_widget.setObjectName("user_manage_scroll_widget")
         self.user_manage_scroll_layout = QtWidgets.QVBoxLayout(self.user_manage_scroll_widget)
         self.user_manage_scroll_layout.setContentsMargins(0, 0, 0, 0)
@@ -3270,7 +3270,7 @@ class Ui_MainWindow(object):
         self.equip_truck_type_scrollarea.setWidgetResizable(True)
         self.equip_truck_type_scrollarea.setObjectName("equip_truck_type_scrollarea")
         self.equip_truck_type_scroll_widget = QtWidgets.QWidget()
-        self.equip_truck_type_scroll_widget.setGeometry(QtCore.QRect(0, 0, 1372, 606))
+        self.equip_truck_type_scroll_widget.setGeometry(QtCore.QRect(0, 0, 100, 30))
         self.equip_truck_type_scroll_widget.setObjectName("equip_truck_type_scroll_widget")
         self.equip_truck_type_scroll_layout = QtWidgets.QVBoxLayout(self.equip_truck_type_scroll_widget)
         self.equip_truck_type_scroll_layout.setContentsMargins(30, 10, 15, 0)
@@ -3496,7 +3496,7 @@ class Ui_MainWindow(object):
         self.config_scroll_area.setWidgetResizable(True)
         self.config_scroll_area.setObjectName("config_scroll_area")
         self.config_scroll_widget = QtWidgets.QWidget()
-        self.config_scroll_widget.setGeometry(QtCore.QRect(0, 0, 840, 63))
+        self.config_scroll_widget.setGeometry(QtCore.QRect(0, 0, 95, 16))
         self.config_scroll_widget.setObjectName("config_scroll_widget")
         self.config_scroll_layout = QtWidgets.QVBoxLayout(self.config_scroll_widget)
         self.config_scroll_layout.setContentsMargins(0, 0, 0, 0)
@@ -3753,7 +3753,7 @@ class Ui_MainWindow(object):
         self.inventory_room_scrollarea.setWidgetResizable(True)
         self.inventory_room_scrollarea.setObjectName("inventory_room_scrollarea")
         self.inventory_room_frame = QtWidgets.QWidget()
-        self.inventory_room_frame.setGeometry(QtCore.QRect(0, 0, 217, 574))
+        self.inventory_room_frame.setGeometry(QtCore.QRect(0, 0, 100, 30))
         self.inventory_room_frame.setObjectName("inventory_room_frame")
         self.inventory_room_layout_2 = QtWidgets.QVBoxLayout(self.inventory_room_frame)
         self.inventory_room_layout_2.setContentsMargins(0, 0, 0, 0)
@@ -3844,7 +3844,7 @@ class Ui_MainWindow(object):
         self.inventory_content_scrollarea.setWidgetResizable(True)
         self.inventory_content_scrollarea.setObjectName("inventory_content_scrollarea")
         self.inventory_content_scroll_frame = QtWidgets.QWidget()
-        self.inventory_content_scroll_frame.setGeometry(QtCore.QRect(0, 0, 996, 452))
+        self.inventory_content_scroll_frame.setGeometry(QtCore.QRect(0, 0, 100, 30))
         self.inventory_content_scroll_frame.setObjectName("inventory_content_scroll_frame")
         self.inventory_content_scroll_layout = QtWidgets.QVBoxLayout(self.inventory_content_scroll_frame)
         self.inventory_content_scroll_layout.setContentsMargins(0, 0, 0, 0)

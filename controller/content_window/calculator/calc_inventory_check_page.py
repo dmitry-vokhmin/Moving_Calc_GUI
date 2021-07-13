@@ -64,7 +64,7 @@ class CalcInventoryCheckPage(QWidget):
     def update_preset_inventory(self, data, move_size_id):
         for inventory in self.preset_inventory[move_size_id]["inventory"]:
             if inventory["inventory_id"] == data["inventory_id"]:
-                inventory["count"] += int(data["count"])
+                inventory["count"] += data["count"]
                 return
         self.preset_inventory[move_size_id]["inventory"].append(data)
 
@@ -90,6 +90,7 @@ class CalcInventoryCheckPage(QWidget):
         return wrap
 
     def change_inside_page(self, is_all_inventory, page, button):
+        self.main_window.ui.inventory_search_input_2.setText("")
         self.main_window.calculator_page_ui.change_inside_page(is_all_inventory, button)
         self.main_window.ui.calc_size_menu.setCurrentWidget(page)
 
@@ -121,13 +122,16 @@ class CalcInventoryCheckPage(QWidget):
             self.main_window.ui.inventory_search_frame_2.setProperty("selected", False)
             self.main_window.ui.inventory_search_frame_2.setStyle(self.main_window.ui.inventory_search_frame_2.style())
             self.main_window.ui.inventory_search_label_2.setStyleSheet("image: url(:/image/search_icon_default.svg);")
-        cards = self.main_window.ui.calc_inv_content_clear_frame.findChildren(QFrame, "card_main_frame")
-        for card in cards:
-            item_text = getattr(card, "item_name")
-            if re.search(fr"\b{text}", item_text.lower()):
-                card.setVisible(True)
-            else:
-                card.setVisible(False)
+        if self.main_window.ui.calc_size_menu.currentWidget().objectName() == "calc_preset_page":
+            cards = self.main_window.ui.calc_inv_content_clear_frame.findChildren(QFrame, "card_main_frame")
+            for card in cards:
+                item_text = getattr(card, "item_name")
+                if re.search(fr"\b{text}", item_text.lower()):
+                    card.setVisible(True)
+                else:
+                    card.setVisible(False)
+        else:
+            self.inventory.sort_inventory(text, self.add_item)
 
     def eventFilter(self, obj, event) -> bool:
         if obj is self.main_window.ui.calc_invnetory_check_page:
