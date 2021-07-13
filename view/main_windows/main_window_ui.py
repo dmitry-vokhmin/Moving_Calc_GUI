@@ -80,6 +80,10 @@ class Ui_MainWindow(object):
         self.window_pages.setStyleSheet("QPushButton {\n"
                                         "    outline: 0;\n"
                                         "}\n"
+                                        "QLineEdit {"
+                                        "background-color: white;"
+                                        "color: #070808;"
+                                        "}"
                                         "\n"
                                         "#window_pages .QWidget {\n"
                                         "    background-color: rgb(255, 255, 255);\n"
@@ -897,6 +901,8 @@ class Ui_MainWindow(object):
                                           "QDateEdit {\n"
                                           "    border: none;\n"
                                           "    font-size: 16px;\n"
+                                          "background-color: white;"
+                                          "color: black;"
                                           "}\n"
                                           "\n"
                                           "QDateEdit::drop-down {\n"
@@ -2652,7 +2658,7 @@ class Ui_MainWindow(object):
         self.calc_result_cus_info_submit_btn.setMaximumSize(QtCore.QSize(164, 47))
         font = QtGui.QFont()
         font.setFamily("Inter")
-        font.setPointSize(-1)
+        font.setPointSize(1)
         font.setUnderline(False)
         font.setStrikeOut(False)
         self.calc_result_cus_info_submit_btn.setFont(font)
@@ -3050,7 +3056,7 @@ class Ui_MainWindow(object):
         self.user_manage_small_header = QtWidgets.QLabel(self.user_manage_main_frame)
         font = QtGui.QFont()
         font.setFamily("Inter")
-        font.setPointSize(-1)
+        font.setPointSize(1)
         self.user_manage_small_header.setFont(font)
         self.user_manage_small_header.setObjectName("user_manage_small_header")
         self.user_manage_main_layout.addWidget(self.user_manage_small_header)
@@ -3063,7 +3069,7 @@ class Ui_MainWindow(object):
         self.user_manage_header = QtWidgets.QLabel(self.user_manage_middle_frame)
         font = QtGui.QFont()
         font.setFamily("Inter")
-        font.setPointSize(-1)
+        font.setPointSize(1)
         font.setBold(False)
         font.setWeight(50)
         self.user_manage_header.setFont(font)
@@ -3074,7 +3080,7 @@ class Ui_MainWindow(object):
         self.user_manage_add_butt.setMaximumSize(QtCore.QSize(121, 36))
         font = QtGui.QFont()
         font.setFamily("Inter")
-        font.setPointSize(-1)
+        font.setPointSize(1)
         font.setStyleStrategy(QtGui.QFont.PreferDefault)
         self.user_manage_add_butt.setFont(font)
         self.user_manage_add_butt.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -3529,7 +3535,7 @@ class Ui_MainWindow(object):
         self.config_date_update_butt.setMinimumSize(QtCore.QSize(134, 47))
         font = QtGui.QFont()
         font.setFamily("Inter")
-        font.setPointSize(-1)
+        font.setPointSize(1)
         font.setUnderline(False)
         font.setStrikeOut(False)
         self.config_date_update_butt.setFont(font)

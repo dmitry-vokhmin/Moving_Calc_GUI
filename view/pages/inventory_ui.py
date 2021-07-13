@@ -3,7 +3,7 @@ from urllib.request import urlopen
 from urllib.error import HTTPError
 from pathlib import Path
 from PyQt5.QtCore import Qt, QSize
-from PyQt5.QtGui import QIcon, QCursor, QIntValidator
+from PyQt5.QtGui import QIcon, QCursor, QIntValidator, QPixmap
 from PyQt5.QtWidgets import QPushButton, QFrame, QVBoxLayout, QHBoxLayout, QLabel, QComboBox, QStyledItemDelegate, \
     QGridLayout
 from view.custom_widgets.flow_layout import FlowLayout
@@ -127,6 +127,8 @@ class InventoryUi:
             colm = colm + 1 if colm % 3 != 0 or colm == 0 else 0
             if is_preset_menu:
                 self.set_preset_card(inventory,
+                                     colm,
+                                     row,
                                      inventory_content_clear_layout,
                                      frame,
                                      del_funk,
@@ -155,8 +157,15 @@ class InventoryUi:
         inventory_content_clear_layout.setContentsMargins(0, 0, 0, 0)
         inventory_content_clear_layout.setSpacing(8)
         inventory_content_clear_layout.setAlignment(Qt.AlignLeft | Qt.AlignTop)
+        row = 0
+        colm = -1
         for inventory in preset_inventory[move_size_id]["inventory"]:
+            if colm % 3 == 0 and colm != 0:
+                row += 1
+            colm = colm + 1 if colm % 3 != 0 or colm == 0 else 0
             self.set_preset_card(inventory,
+                                 colm,
+                                 row,
                                  inventory_content_clear_layout,
                                  self.main_window.ui.calc_inv_content_clear_frame,
                                  del_funk,
@@ -164,7 +173,7 @@ class InventoryUi:
                                  count_funk=count_funk,
                                  instance=instance)
 
-    def set_preset_card(self, inventory, layout, frame, del_funk,
+    def set_preset_card(self, inventory, colm, row, layout, frame, del_funk,
                         move_size_id=None, count_funk=None, instance=None):
         card_main_frame = QFrame(frame)
         card_main_frame.setMinimumSize(QSize(324, 119))

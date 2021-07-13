@@ -51,6 +51,7 @@ class UserManagementTable:
             horizontal_layout.addWidget(email)
             role = QLabel(frame)
             role.setText(user["user_role"]["role"].title())
+            role.setStyleSheet("color: #070808;")
             horizontal_layout.addWidget(role)
             frame_3 = QFrame(frame)
             frame_3.setFrameShape(QFrame.NoFrame)
