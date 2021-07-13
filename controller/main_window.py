@@ -1,7 +1,8 @@
 from pathlib import Path
+import sys
 import json
 from PyQt5 import sip
-from PyQt5.QtWidgets import QMainWindow, QMessageBox, qApp
+from PyQt5.QtWidgets import QMainWindow, QMessageBox, qApp, QLineEdit
 from PyQt5.QtCore import Qt, QEvent
 from PyQt5.QtGui import QKeyEvent, QIcon
 from view.main_windows.main_window_ui import Ui_MainWindow
@@ -83,6 +84,7 @@ class MainWindow(QMainWindow):
         self.get_floor()
         self.ui.window_pages.installEventFilter(self)
         self.read_inv_images()
+        self.mac_input_field_fix()
 
     def get_floor(self):
         self.save_data(self.floor_collection)
@@ -204,3 +206,10 @@ class MainWindow(QMainWindow):
         json_path = Path(__file__).parent.parent.joinpath("inv_images/images.json")
         with open(json_path, "w") as json_images:
             json.dump(self.inventory_ui.image_dict, json_images)
+
+    def mac_input_field_fix(self):
+        if sys.platform == "darwin":
+            for input_field in self.ui.centralwidget.findChildren(QLineEdit):
+                input_field.setAttribute(Qt.WA_MacShowFocusRect, 0)
+            for input_field in self.modal_window.ui.background_frame.findChildren(QLineEdit):
+                input_field.setAttribute(Qt.WA_MacShowFocusRect, 0)

@@ -465,16 +465,19 @@ class InventoryUi:
 
     def get_inv_image(self, image_url):
         image = self.image_dict.get(image_url[image_url.find("/images/"):])
+        image_path = Path(__file__).parent.parent.parent.joinpath(image)
         if not image:
             try:
                 image_data = urlopen(image_url).read()
                 regex = re.compile("(?<=.inventory.)(.*)")
-                image_path = re.findall(regex, image_url)[0]
-                image_file_path = Path(__file__).parent.parent.joinpath("lib/inv_images")
-                image_file_path_save = image_file_path.joinpath(image_path)
+                new_image = re.findall(regex, image_url)[0]
+                image_file_path = Path(__file__).parent.parent.parent.joinpath("inv_images")
+                image_file_path_save = image_file_path.joinpath(new_image)
                 image_file_path_save.write_bytes(image_data)
-                image = f"lib/inv_images/{image_path}"
+                image = f"inv_images/{new_image}"
                 self.image_dict[image_url[image_url.find("/images/"):]] = image
+                image_path = image_file_path_save
             except HTTPError:
-                image = ":/image/custom_item_icon.svg"
-        return image
+                image_path = ":/image/custom_item_icon.svg"
+        return str(image_path).replace('\\', '/')
+

@@ -2,6 +2,7 @@ from cx_Freeze import setup, Executable
 
 # Dependencies are automatically detected, but it might need
 # fine tuning.
+# For Mac: codesign --remove-signature Moving_Calculator-1.0.app/Contents/MacOS/lib/Python
 
 build_options = {'packages': ["os"], 'excludes': ["tkinter"],
                  "include_files": [("inv_images", "lib/inv_images")]}
