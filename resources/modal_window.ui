@@ -66,6 +66,11 @@
 	outline: 0;
 }
 
+QLineEdit {
+	background-color: white;
+	color: black;
+}
+
 QComboBox {
 	border-radius: 10px;
 	border: 1px solid #B5B8C7;
@@ -73,6 +78,7 @@ QComboBox {
 	padding-right: 15px;
 	font-size: 16px;
 	color: #757C9F;
+	background-color: white;
 }
 
 QComboBox:hover {

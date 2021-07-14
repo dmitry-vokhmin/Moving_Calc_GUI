@@ -85,6 +85,7 @@ class InventoryItemPresetPage(QDialog):
     def eventFilter(self, obj, event: QEvent) -> bool:
         if obj is self.main_modal_window.ui.inventory_preset_page:
             if event.type() == QEvent.Show:
+                self.main_modal_window.ui.inventory_preset_qty_input.setText("")
                 self.validator.reset_error_fields(self.fields)
                 return True
         return False

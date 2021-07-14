@@ -18,5 +18,6 @@ class InventoryAddItemUi:
             )
 
     def set_calculator_move_size_list(self, preset_inventory):
+        self.main_modal_window.ui.inventory_preset_combobox.clear()
         for key, value in preset_inventory.items():
             self.main_modal_window.ui.inventory_preset_combobox.addItem(value["move_size_name"], key)

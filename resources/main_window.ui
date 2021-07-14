@@ -101,6 +101,11 @@ QScrollBar::add-line:horizontal {
 	outline: 0;
 }
 
+QLineEdit {
+	background-color: white;
+	color: #070808;
+}
+
 #window_pages .QWidget {
 	background-color: rgb(255, 255, 255);
 }</string>
@@ -2177,6 +2182,8 @@ QLineEdit[error=true] {
 QDateEdit {
 	border: none;
 	font-size: 16px;
+    background-color: white;
+    color: black;                                       	
 }
 
 QDateEdit::drop-down {
@@ -4596,7 +4603,7 @@ color: #070808;</string>
                                   <x>0</x>
                                   <y>0</y>
                                   <width>217</width>
-                                  <height>556</height>
+                                  <height>30</height>
                                  </rect>
                                 </property>
                                 <layout class="QVBoxLayout" name="calc_preset_layout_2">
